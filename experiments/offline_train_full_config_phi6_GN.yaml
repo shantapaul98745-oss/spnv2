@@ -1,4 +1,4 @@
-ROOT: '/media/shared/Jeff/SLAB/spnv2'
+ROOT: '/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2'
 OUTPUT_DIR: 'outputs'
 LOG_DIR:    'logs'
 SEED: 2021
@@ -16,10 +16,10 @@ CUDNN:
   DETERMINISTIC: False
   ENABLED: True
 DATASET:
-  ROOT: '/home/jeffpark/SLAB/Dataset'
+  ROOT: '/home/DATA/Downloads/DataSet'
   DATANAME: 'speedplus'
   CAMERA: 'camera.json'
-  KEYPOINTS: 'models/tangoPoints.mat' # w.r.t. DATASET.ROOT
+  KEYPOINTS: '/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2/core/utils/models/tangoPoints.mat' # Absolute path
   CADMODEL:  'models/tango.ply'       # w.r.t. DATASET.ROOT
   IMAGE_SIZE: [1920, 1200]
   INPUT_SIZE: [768, 512]
