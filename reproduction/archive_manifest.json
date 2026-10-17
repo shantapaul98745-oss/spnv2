@@ -4,8 +4,8 @@
     {
       "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/EXECUTION_PLAN.md",
       "repository_path": "reproduction/runtime/rebaseline_20261017/EXECUTION_PLAN.md",
-      "sha256": "a59a046b15009fe88c408ad6fb3a98aa39ee01db09899ff429ca7c648016c79f",
-      "bytes": 4765
+      "sha256": "cb0f57135681d69438f2996cc8e06e27deccd13057093ac0c4c7415d23b3bc9c",
+      "bytes": 5944
     },
     {
       "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/analysis/README.md",
@@ -2882,6 +2882,12 @@
       "bytes": 19399
     },
     {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pipeline/pending_observers.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/pipeline/pending_observers.py",
+      "sha256": "cda3e4ef64997ab602aed28f1dff791b672f20f0165a14169d2f3413ae1645b5",
+      "bytes": 5954
+    },
+    {
       "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pipeline/progress.py",
       "repository_path": "reproduction/runtime/rebaseline_20261017/pipeline/progress.py",
       "sha256": "f2a6fddc174a2bbbb25bd19ede07800bbc5c3c2ba62f5f0553ed6a5159f96803",
@@ -2896,8 +2902,8 @@
     {
       "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pipeline/runner.py",
       "repository_path": "reproduction/runtime/rebaseline_20261017/pipeline/runner.py",
-      "sha256": "72385d6ca9f9fc4a2e7005a57761e9393a93922921226bbb254402639b9a7c47",
-      "bytes": 33446
+      "sha256": "35c3de5c4b0d3fc3dd320587da984958e5403dc0ccc5bd540f58d46941407e39",
+      "bytes": 34607
     },
     {
       "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pipeline/task_entry.py",
@@ -3096,6 +3102,12 @@
       "repository_path": "reproduction/runtime/rebaseline_20261017/tests/test_inference_summary.py",
       "sha256": "80d416fdd951d1e78600c3669f3fb31acffa4bf2553f0da18b382b7244643357",
       "bytes": 3112
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/tests/test_pending_observers.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/tests/test_pending_observers.py",
+      "sha256": "0ea58889454946ea9de6467983e0ffb8e5a3d4a6123bf6ce0794f51de6de1f82",
+      "bytes": 9285
     },
     {
       "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/tests/test_pipeline.py",

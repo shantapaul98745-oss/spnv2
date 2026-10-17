@@ -160,8 +160,8 @@ def initialize_state(previous, manifest):
     return state
 
 
-def bind_execution_state(previous, manifest, old_manifest=None, caller_context=None):
-    """Explicit prefix-only extension under the caller's exclusive manager lock.
+def bind_execution_state(previous, manifest, old_manifest=None, caller_context=None, pending_task_ids=None):
+    """Explicit extension or queued observer revision under the exclusive manager lock.
 
     Existing worker identity is retained; initialize_state then re-observes that
     same process rather than starting an already recorded phase again.
@@ -170,9 +170,13 @@ def bind_execution_state(previous, manifest, old_manifest=None, caller_context=N
     if old_manifest is None:
         return initialize_state(previous, manifest)
     validate_manifest(old_manifest)
-    from revision import extend_state
-    amended, audit = extend_state(previous, old_manifest, manifest,
-                                 caller_context=caller_context)
+    if pending_task_ids is None:
+        from revision import extend_state
+        amended, audit = extend_state(previous, old_manifest, manifest, caller_context=caller_context)
+    else:
+        from pending_observers import revise_queued_observers
+        amended, audit = revise_queued_observers(previous, old_manifest, manifest,
+            task_ids=pending_task_ids, caller_context=caller_context)
     state = initialize_state(amended, manifest)
     directory = PLAN / "revisions"
     directory.mkdir(parents=True, exist_ok=True)
@@ -183,8 +187,9 @@ def bind_execution_state(previous, manifest, old_manifest=None, caller_context=N
     atomic_json(destination, audit)
     state.setdefault("manifest_revisions", []).append(str(destination))
     state.setdefault("notes", []).append(
-        "队列已作显式追加修订：原有" + str(audit["old_task_count"]) + "项定义及运行证据保留，现共"
-        + str(audit["new_task_count"]) + "项；修订证据：" + str(destination))
+        "队列已作显式修订：所有已启动任务及运行证据保留，原" + str(audit["old_task_count"])
+        + "项，现共" + str(audit["new_task_count"]) + "项；未启动评价observer修订数："
+        + str(len(audit.get("pending_observer_revisions", []))) + "；修订证据：" + str(destination))
     return state
 
 
@@ -566,7 +571,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--manifest", required=True)
     parser.add_argument("--report-only", action="store_true")
-    parser.add_argument("--extend-from", help="Explicit previous bound manifest; append-only revision at this manager restart")
+    revisions = parser.add_mutually_exclusive_group()
+    revisions.add_argument("--extend-from", help="Explicit previous bound manifest; append-only revision at this manager restart")
+    revisions.add_argument("--revise-pending-from", help="Previous bound manifest; only explicit never-started source evaluations may gain observers")
+    parser.add_argument("--pending-task", action="append", help="Exact queued evaluation ID to wrap; repeat for every revision")
     parser.add_argument("--interval", type=float, default=60)
     parser.add_argument("--poll-interval", type=float, default=1)
     args = parser.parse_args()
@@ -583,15 +591,19 @@ def main():
             raise SystemExit("A progress writer/queue manager already holds this plan lock")
         previous = read_json(PLAN / "status.json", {})
         manifest = read_json(manifest_path, {}) if args.report_only else read_json(manifest_path)
-        if args.extend_from and args.report_only:
-            parser.error("--extend-from is only valid for an execution queue")
+        if (args.extend_from or args.revise_pending_from) and args.report_only:
+            parser.error("manifest revisions are only valid for an execution queue")
+        if bool(args.revise_pending_from) != bool(args.pending_task):
+            parser.error("--revise-pending-from requires the exact repeated --pending-task identities")
         if not args.report_only:
-            old_manifest_path = inside(args.extend_from, PLAN) if args.extend_from else None
+            revision_from = args.extend_from or args.revise_pending_from
+            old_manifest_path = inside(revision_from, PLAN) if revision_from else None
             old_manifest = read_json(old_manifest_path) if old_manifest_path else None
             state = bind_execution_state(previous, manifest, old_manifest,
-                caller_context={"operation": "explicit_manager_restart_append", "pid": os.getpid(),
+                caller_context={"operation": "explicit_manager_restart_observer_revision" if args.revise_pending_from else "explicit_manager_restart_append", "pid": os.getpid(),
                                 "old_manifest": str(old_manifest_path) if old_manifest_path else None,
-                                "new_manifest": str(manifest_path)})
+                                "new_manifest": str(manifest_path)},
+                pending_task_ids=args.pending_task if args.revise_pending_from else None)
         else:
             state = copy.deepcopy(previous)
             state.setdefault("tasks", [])
