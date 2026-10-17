@@ -39,6 +39,21 @@ def last_event(path):
         pass
     return {}
 
+
+def event_time(value):
+    """Training uses Unix seconds; ODR may emit an ISO timestamp."""
+    if value is None:
+        return None
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        try:
+            parsed = dt.datetime.fromisoformat(str(value).replace('Z', '+00:00'))
+            return parsed.replace(tzinfo=ZONE).timestamp() if parsed.tzinfo is None else parsed.timestamp()
+        except (TypeError, ValueError):
+            return None
+
+
 def duration(seconds):
     if seconds is None:
         return '未提供'
@@ -58,7 +73,7 @@ def render():
     state = load(PLAN / 'status.json')
     current = dict(state.get('current') or {})
     event = last_event(current.get('log'))
-    if float(event.get('timestamp') or 0) >= float(current.get('timestamp') or 0):
+    if (event_time(event.get('timestamp')) or 0) >= (event_time(current.get('timestamp')) or 0):
         current.update(event)
     tasks = state.get('tasks') or []
     task = next((item for item in tasks if item['id'] == state.get('active')), {})
@@ -74,8 +89,8 @@ def render():
     alive = live(current.get('pid'), current.get('starttime'))
     manager = state.get('manager') or {}
     manager_alive = live(manager.get('pid'), manager.get('starttime'))
-    stamp = current.get('timestamp')
-    age = max(0, int(time.time() - float(stamp))) if stamp else None
+    stamp = event_time(current.get('timestamp'))
+    age = max(0, int(time.time() - stamp)) if stamp is not None else None
     phase = {'train': '训练', 'validation': '评价', 'evaluate': '评价',
              'evaluation': '评价', 'odr': 'ODR适应'}.get(current.get('phase'), current.get('phase', '未提供'))
     rows = ['SPNv2 复现进度（简洁版）', '更新时间：' + now.strftime('%Y-%m-%d %H:%M:%S 北京时间'),
