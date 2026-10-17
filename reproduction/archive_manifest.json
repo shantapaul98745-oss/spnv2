@@ -86,6 +86,66 @@
       "bytes": 3848
     },
     {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/analysis_plots/README.md",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/analysis_plots/README.md",
+      "sha256": "5c943c6b5abb2ad9be345213008a2b63a0b2ddb964ee9f5efa1098d9ed044479",
+      "bytes": 3208
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/analysis_plots/common.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/analysis_plots/common.py",
+      "sha256": "2b3c621f4db26cda1261f023974cf057fd769975611d555a6587b891a093f5be",
+      "bytes": 15962
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/analysis_plots/cpu_tests.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/analysis_plots/cpu_tests.py",
+      "sha256": "0ccc068125dc35dfea5d44bf711e023aa7c4aedbca2d33e89f9409dec7ff971e",
+      "bytes": 7717
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/analysis_plots/implementation_manifest.json",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/analysis_plots/implementation_manifest.json",
+      "sha256": "79df1281ab9acfbb752857d496fafa6f55076e92636f755761bdd7d2a5b894e0",
+      "bytes": 4705
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/analysis_plots/reference/paper_reference.json",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/analysis_plots/reference/paper_reference.json",
+      "sha256": "9509bc25fb2d88135d290c0ac8af4ffb2860d0abdd1ad6790a8a4da4f5e02f56",
+      "bytes": 78106
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/analysis_plots/render.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/analysis_plots/render.py",
+      "sha256": "fe2b84ae8144f13f061b271d046310c1fa29016d92902348d1e9100f24f6b13a",
+      "bytes": 5669
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/analysis_plots/run_plots.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/analysis_plots/run_plots.py",
+      "sha256": "7f2a44720ca5f1e195857818fdd6097582c42a9321ddea715b0049fb0fe5886e",
+      "bytes": 4766
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/analysis_plots/scripts/extract_scope.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/analysis_plots/scripts/extract_scope.py",
+      "sha256": "b2c8f1bd2cebf3c935d88fa60b87a686dee17199978831d401f8525361b27444",
+      "bytes": 900
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/analysis_plots/scripts/probe_pdf.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/analysis_plots/scripts/probe_pdf.py",
+      "sha256": "1807d372f20aba74e0504e8a6a347a7a3a622cd60049beb9f985adbf127fd734",
+      "bytes": 1116
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/analysis_plots/verify_plots.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/analysis_plots/verify_plots.py",
+      "sha256": "d1208713ac3f3edc3a15654b161319ef0c161fb3c12729d2705164b93259ed06",
+      "bytes": 6866
+    },
+    {
       "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi3_bn_ehs.yaml",
       "repository_path": "reproduction/runtime/rebaseline_20261017/configs/phi3_bn_ehs.yaml",
       "sha256": "3a904ca2c75dff317fa84315e818ee89b812c23b6a3e6f2c1285e004a922cbd6",

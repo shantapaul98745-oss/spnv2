@@ -1,0 +1,78 @@
+{
+  "schema": "spnv2-analysis-plots-implementation-v1",
+  "created_at": "2026-10-17T16:03:21.102933+08:00",
+  "status": "CPU engineering verified; real scans/distributions/bench pending",
+  "implementation": {
+    "common.py": {
+      "sha256": "2b3c621f4db26cda1261f023974cf057fd769975611d555a6587b891a093f5be",
+      "bytes": 15962,
+      "reason": "Immutable analysis acceptance boundary, source/CSV/MAT SHA and deep means/denominators, 5stream scan expectations, fixed-pair data, Table6 and exact futurebench protocol gates"
+    },
+    "render.py": {
+      "sha256": "fe2b84ae8144f13f061b271d046310c1fa29016d92902348d1e9100f24f6b13a",
+      "bytes": 5669,
+      "reason": "Agg renderers with metric units/source/line/domain/seed scope, denominator caveats and clear MOCK watermark; parameter/forward scope separation"
+    },
+    "run_plots.py": {
+      "sha256": "7f2a44720ca5f1e195857818fdd6097582c42a9321ddea715b0049fb0fe5886e",
+      "bytes": 4766,
+      "reason": "CPU CLI emits accepted curves or pending points, paired distributions, exact parameters, future acceptedbench and paper-gap records"
+    },
+    "verify_plots.py": {
+      "sha256": "d1208713ac3f3edc3a15654b161319ef0c161fb3c12729d2705164b93259ed06",
+      "bytes": 6866,
+      "reason": "Independent CLI rechecks SHA, actual MAT per-ID values/masks/delta, scan point/mean/SD and figure/source/reference binding"
+    },
+    "cpu_tests.py": {
+      "sha256": "0ccc068125dc35dfea5d44bf711e023aa7c4aedbca2d33e89f9409dec7ff971e",
+      "bytes": 7717,
+      "reason": "Three finite CPU regression groups:504 pending/5stream math, six MOCK layouts/zero-valid/paired-ID correctness, corrupt CSV/MAT/source evidence rejection"
+    },
+    "README.md": {
+      "sha256": "5c943c6b5abb2ad9be345213008a2b63a0b2ddb964ee9f5efa1098d9ed044479",
+      "bytes": 3208,
+      "reason": "CLI, workload, scope, paper mismatch and future observer/bench integration limits"
+    },
+    "scripts/probe_pdf.py": {
+      "sha256": "1807d372f20aba74e0504e8a6a347a7a3a622cd60049beb9f985adbf127fd734",
+      "bytes": 1116,
+      "reason": "Existing Poppler-only PDF table-page extraction/rendering; no package install or whole text copy"
+    },
+    "scripts/extract_scope.py": {
+      "sha256": "b2c8f1bd2cebf3c935d88fa60b87a686dee17199978831d401f8525361b27444",
+      "bytes": 900,
+      "reason": "Exact bounded page9 all-samples paragraph extraction"
+    }
+  },
+  "reference_sha256": {
+    "reference/page9_all_samples_scope.json": "e74c986692c9aeb5c6f524d6192e405b83e2000f51d196f3a8cec1dab6a0f6e4",
+    "reference/paper_page_10.png": "e2bf44c153967c56f40ac218b2a7de218f06c4a5da2d0ac2e2825be8d1ebf765",
+    "reference/paper_page_11.png": "f7f777b03809e242354d0257e6643b0976fbddb947d7f2ac98551d10052e6916",
+    "reference/paper_page_13.png": "7f1e5e4835ff190742c634b4a721cb6c7935754ccd08484ff3d06085b7caef1b",
+    "reference/paper_page_5.png": "c9ac0d0034a55826f1c063b73f761ef068b453a22c3b7f8fe6d10eee99bb3934",
+    "reference/paper_page_8.png": "744b95b7b6e6010b3f32e58d5a3434e6dea7e74d423289dbcb0dd9a29ec86014",
+    "reference/paper_page_9.png": "5c4eb08b8d29e6b4eb590e5f3442a7727c4d4611f0dfb051e6a5c898b0b45ec5",
+    "reference/paper_reference.json": "9509bc25fb2d88135d290c0ac8af4ffb2860d0abdd1ad6790a8a4da4f5e02f56",
+    "reference/pdf_probe.json": "1e3a8c4dee95d6afcef63186e4b051f938b13d34a3d328963ece01b7d47a6c6e"
+  },
+  "analysis_v1_unchanged": true,
+  "analysis_v1_manifest_sha256": "d5e96aefd98d1d274a37dba05fee1bfce00ee280ea9491335d16cf8e1cc46d6f",
+  "analysis_v1_code_rechecked": true,
+  "verified_analysis_snapshot": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/analysis/runs/actual_snapshot_20261017_d",
+  "CPU_report": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/analysis_plots/reports/cpu_acceptance_regression_20261017_d.json",
+    "sha256": "9077859c6a995ccd775966fe568d958fa02a289babdbfa3bc28ebf6c72d618dc"
+  },
+  "plot_acceptance": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/analysis_plots/runs/actual_plots_20261017_c/plot_acceptance.json",
+    "sha256": "ee1191f85117ef06b96b7c0b3104d8b2f2e7a23d39137ee4e4332d26d26493f2"
+  },
+  "visual_review_sha256": "b24e725c890e73ccc5d8d7d03281af3aea809ff05b3eedfb57af17f5f0d32619",
+  "future_bench_schema": {
+    "summary": "spnv2-table6-forward-benchmark-v1",
+    "independent": "spnv2-table6-benchmark-cpu-verification-v1",
+    "contract_code_sha256": "0a8fda9a57c9e5de07d807c8d7a4260f3c01ef5e792bed44046662b41d2ecf6d",
+    "schema_file_sha256": "5a8673fcde29bd610f24704c50e532dfdda2cc7f13a690cee5513dcd09c27341"
+  },
+  "no_GPU_or_model_execution": true
+}
