@@ -1,0 +1,105 @@
+{
+  "schema": "spnv2-analysis-implementation-v1",
+  "created_at": "2026-10-17T15:39:38.568098+08:00",
+  "status": "CPU engineering accepted; scientific results incomplete",
+  "owned_subtree": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/analysis",
+  "implementation": {
+    "core.py": {
+      "sha256": "63d7fc905ee25cf6e957a03263ddd243af619667d8450f340d487d9d00663bab",
+      "bytes": 9650,
+      "reason": "严格ID交集数学、分支单位/公式、不可更换source pin及canonical/种子边界"
+    },
+    "catalog.py": {
+      "sha256": "e64a4a202caa529f286b8e9823f298d06c715d8ced1d7639d722d53c96c8bcf8",
+      "bytes": 3549,
+      "reason": "从实际queue/配置与ODR400项清单生成430记录位置，缺失不借历史"
+    },
+    "records.py": {
+      "sha256": "1725dda98682e807c91d76136f5a72e9f32f55773a45e90074f27b0810989157",
+      "bytes": 5639,
+      "reason": "新source/ODR验收SHA链与3MAT读取；旧26条独立标注"
+    },
+    "matio.py": {
+      "sha256": "58dd2ed6ea2cd027ca23fc86f291d2d7069ec4cab3a54c1d1eb6e9bb4b705abd",
+      "bytes": 2789,
+      "reason": "根版完整物理指标与零H接受验证的只读副本，避免修改结果目录"
+    },
+    "projection.py": {
+      "sha256": "bbf9aeb10763dfa7046e83ddbe547c0a774d0829cc1dc952fd40f757a60122da",
+      "bytes": 1981,
+      "reason": "冻结源码姿态投影数学的具出处副本"
+    },
+    "cases.py": {
+      "sha256": "6773378452b15a66d421bc7c870c44055552bde29279e2014dd81bea30527ec2",
+      "bytes": 4509,
+      "reason": "固定final与预设类别选样、真实姿态CPU投影、输入几何/图像证据绑定"
+    },
+    "materials.py": {
+      "sha256": "5abadadab56c47d170ba1e13ca64291d269974523103704dd58479d9b28a24b3",
+      "bytes": 3496,
+      "reason": "仅项目候选路径PRISMA25材料审计，条件受限与待评区分"
+    },
+    "run_analysis.py": {
+      "sha256": "19446c9732571f3d5e9c2bf9147805290e8dbb10e5563ac71a8657907a34797f",
+      "bytes": 12246,
+      "reason": "CLI生成新/历史CSV、中文MD、各自accepted均值、严格配对和五观测流统计"
+    },
+    "verify_snapshot.py": {
+      "sha256": "432692e1c726caedd616e88b2e6689c8439f3559253f0a54bd1646c1bc326545",
+      "bytes": 3848,
+      "reason": "独立产物SHA/位置/空值/去重/分支公式/范围完成边界验收"
+    },
+    "cpu_tests.py": {
+      "sha256": "9dce88658df2cbe5a4d5ed7802967f00a3f4c6852f1b115fb7666caf3dc46ebe",
+      "bytes": 12572,
+      "reason": "六组有限CPU/mock回归，不是正式科学结果"
+    },
+    "README.md": {
+      "sha256": "a877858a2772bbe1f5f1f130947896f86924baea53071fa96427ddea31c386c8",
+      "bytes": 4663,
+      "reason": "CLI、source pin状态、指标/范围/案例限制说明"
+    },
+    "scripts/probe_schema.py": {
+      "sha256": "8a53695f1c9ddb9ec812fa0d4868a7587f81e0f290f974f141263d146c97bb3f",
+      "bytes": 1547,
+      "reason": "真实report/3MAT稳定ID/schema只读CPU检查"
+    }
+  },
+  "evidence_sha256": {
+    "reports/schema_probe.json": "f4638548fb8276875cb3e4825797b0e51e7e65a343ec575ac53c002cd401013c",
+    "reports/cpu_acceptance_regression_20261017_e.json": "b1356462e5b5a21c2077a1bff915ed6611626c01bf700a5e13bc97fc4f7f21b0",
+    "logs/schema_20261017_a.log": "11736f525c0e71a38428db4431e94be1003072f519d285622530cee8bfca7071",
+    "logs/cpu_20261017_e.log": "c1d16e73755c50da8069372e47ada5e0b525be9e9d6501b9a668f17836441e68",
+    "logs/snapshot_20261017_d.log": "99f64d9904c7303f65246940bcb1c2ffa38ea334d06258c987a1996741426819",
+    "logs/verify_snapshot_20261017_d.log": "fc205b361a92c34cb41e34b3e9e00588de9d877750ac4cf926c5926b3b744a55",
+    "runs/actual_snapshot_20261017_d/artifact_manifest.json": "c86fd46990766f8bb3f34b888fa3bfc537b0bc00d897f19644480614630208c4",
+    "runs/actual_snapshot_20261017_d/snapshot_acceptance.json": "77f60fd426515e9e81d447292fa91f280b5363e53db7a412097a7c6e42ddffb3"
+  },
+  "origins": {
+    "physical_validator": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/tasks/verify_heads.py",
+      "sha256": "e9ec92364595853f1a7b7d8e12237eda69bf2b07776ef1d192c578efa5fec6f8",
+      "change": "read-only copy; result-file write removed only"
+    },
+    "projection": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/utils/postprocess.py",
+      "sha256": "1a525f693582f90ce67136bcbed813a46a1209a988109648c7b7e2f19a9517d6",
+      "change": "exact quat2dcm/project_keypoints functions with original attribution"
+    }
+  },
+  "input_provenance": {
+    "source_manifest_sha256": "d47399919b02c17f5c6c525e1381452ca3810086699746895615c4fd287c739a",
+    "odr_implementation_manifest_sha256": "f11bbc2877154bfa480271b8aee530837e2330c1d642ec9e9c5fa5a27cf3ffdc",
+    "odr_manifest_sha256": "ac7c7b136d6f05ccdc0852dd3c182f11bdf1cb67b1fabefaecddd1da46ca6a77",
+    "queue_sha256": "2b69f3da4c75d7d0a21ab5a4ea51fca8ea0a5e309731fee9a2387654e80b1fc1"
+  },
+  "source_pin_policy": {
+    "initial_empty_is_not_acceptance": true,
+    "only_actual_passed_source_proof_can_establish": true,
+    "requires_actual_final_SHA_cfg_path_frozen_source_SHA": true,
+    "existing_pin_final_path_and_SHA_cannot_change": true,
+    "write_only_after_all_existing_evidence_integrity_passes": true
+  },
+  "no_GPU_execution": true,
+  "read_only_scientific_inputs": true
+}
