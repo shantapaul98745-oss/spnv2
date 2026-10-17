@@ -1,0 +1,23 @@
+{
+  "status": "CPU_preparation_passed_GPU_not_executed",
+  "code_sha256": {
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/resources/bench/verify_benchmark.py": "ef2ea9230de384831becaf82c9efad8e835f02fa6ef711002aa8aae84d0a541b",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/resources/bench/run_benchmark.py": "e31d537c5b6e61eedab9b139fdafa20a130b184631723bfd9bd2d69037444509",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/resources/bench/odr_resources.py": "b335f8faa3a0cd847c649cb315c83281a233aa2631e8b2276fa420073cf11611",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/resources/bench/test_benchmark.py": "e6ecb0fb1d309f4f3d85e81ce8d0fa6110fc95701d59c9e96e46935d5a74102e",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/resources/bench/prepare_pending.py": "7fedbaf0f3dd575281a26ab1c4acc757a153d6c3cf68cfcfae38d29486245eb9",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/resources/bench/bench_contract.py": "0a8fda9a57c9e5de07d807c8d7a4260f3c01ef5e792bed44046662b41d2ecf6d"
+  },
+  "CPU_report": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/resources/bench/reports/table6_bench_cpu_20261017_155647_599988.json",
+  "CPU_report_sha256": "5824f25128c727f8c16cee8efc897a6a8bbce1bc88635b03d8bb79aa5428389b",
+  "CPU_tests": 11,
+  "log": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/resources/bench/logs/table6_bench_cpu_20261017_155647_599988.log",
+  "log_sha256": "dfa0af540f589bdaf9f3efff6e1c4130ec0f2dbd286de6f87afa9e820c0a5175",
+  "exitcode": 0,
+  "exitcode_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+  "pending_task_sha256": "6731c054b5c8aea8a096678995c5985f1d3a7318430f97c640d2e0b64d618b84",
+  "README_sha256": "40c14824b41ff40d43b2656e419abeb105241858607c100ed2eebd4abd2789b3",
+  "report_schema_sha256": "5a8673fcde29bd610f24704c50e532dfdda2cc7f13a690cee5513dcd09c27341",
+  "GPU_executed": false,
+  "activated": false
+}

@@ -34,6 +34,10 @@ def sync(include_analysis=False,include_bench=False):
   for name in ('proposal.json.gz','proposal_index.json','asset_catalog.json','report_contracts.json','archive_verification.json'):
    source=PLAN/'queue_proposals'/directory/name
    if source.is_file():mapping[ARCHIVE/'queue_proposals'/directory/name]=source
+ if include_bench:
+  for name in ('report_schema.json','pending_task.json','preparation_manifest.json'):
+   source=PLAN/'resources/bench'/name
+   if source.is_file():mapping[ARCHIVE/'resources/bench'/name]=source
  if include_analysis:
   source=PLAN/'analysis/implementation_manifest.json'
   if source.is_file():mapping[ARCHIVE/'analysis/implementation_manifest.json']=source

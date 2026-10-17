@@ -92,3 +92,12 @@
 - 审计：在管理器独占锁下保存原/新定义、状态及哈希；恢复时核验同一PID/starttime，不能再启动一次。普通append-only恢复行为保持兼容。
 - 验证：新增11项CPU验收通过（含真实CPU子进程身份接续且无重复启动/无GPU调用）；原队列23、追加18、绑定5、接续7、刷新6共59项回归全部通过，所有screen退出0。
 - 使用状态：代码已准备，当前queue_v2管理器与φ3训练均未重启；observer和完整后续队列另行验收接入。真实batch16仍不安排。
+
+## 2026-10-17：四模型资源测量与独立CPU核验
+
+- 位置：resources/bench的bench_contract、run_benchmark、verify_benchmark、odr_resources、test_benchmark、prepare_pending，以及静态schema/README/准备清单。
+- 原因：论文参数量、整网显存/耗时及ODR更新开销属于不同分母，不能用训练速度或随机模型计时冒充完整模型资源结果。
+- 作用：只在四个EHS final、12个完整域评价及40个固定ODR都验收后，串行测四网FP32/batch1整网EHS forward；10预热＋30个CUDA Event样本，统计均值/中位/分位/吞吐和显存基线/峰值。固定GPU输入，明确排除数据读取、传输及PnP后处理。
+- 参数与ODR：实际参数逐名/shape/numel比对已验真清单；固定40审计的实际适应时间、显存、更新数和affine参数范围独立汇总，不新增φ0或φ3GN ODR。
+- 验证：11项CPU统计/模式/计数/文件破坏/参数分母合同通过；主模型检查所有6个代码SHA、报告SHA和screen退出码0。未来GPU结果另须严格final重载、参数范围与独立NumPy统计验收。
+- 限制：当前没有GPU实测数值；首轮测试汇总父目录错误的失败现场及修复前准备记录保留。pending定义是未激活历史快照，完整队列启用前会重新固定当前实现SHA，不把准备通过写成实验完成。
