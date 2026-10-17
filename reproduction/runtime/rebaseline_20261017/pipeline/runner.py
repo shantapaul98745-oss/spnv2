@@ -383,6 +383,7 @@ class Queue:
                 if any(isinstance(v, float) and not math.isfinite(v) for v in event.values()):
                     raise ValueError("nonfinite event metric")
                 current = self.state.setdefault("current", {})
+                phase_changed = bool(event.get("phase") and event["phase"] != current.get("phase"))
                 current.update(event)
                 if event.get("event") == "checkpoint":
                     current["checkpoint"] = event.get("path")
@@ -400,7 +401,10 @@ class Queue:
                 elif event.get("event") in {"error", "failed", "fatal"} or event.get("error"):
                     task["event_error"] = event
                     self.state["error"] = "Task reported an error; waiting for its exact process exit: " + json.dumps(event, ensure_ascii=False)
-                self.reporter.publish(force=True)
+                frequent = {"update", "progress", "observation", "evaluation_progress", "validation_progress"}
+                # Keep every raw/audit event, but rewrite a potentially large full
+                # state only every 60 seconds unless its phase or milestone changes.
+                self.reporter.publish(force=phase_changed or event.get("event") not in frequent)
             except (ValueError, TypeError) as error:
                 task["event_error"] = {"error": "Malformed task event: " + repr(error)}
                 self.state["error"] = task["event_error"]["error"]

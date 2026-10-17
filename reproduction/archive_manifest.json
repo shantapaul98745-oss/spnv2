@@ -2818,8 +2818,8 @@
     {
       "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pipeline/runner.py",
       "repository_path": "reproduction/runtime/rebaseline_20261017/pipeline/runner.py",
-      "sha256": "fc1f11b3b57d3ce50a36fd6be0b00c2f59e597ea9fa005cd64b2b877ac170eaa",
-      "bytes": 33020
+      "sha256": "72385d6ca9f9fc4a2e7005a57761e9393a93922921226bbb254402639b9a7c47",
+      "bytes": 33446
     },
     {
       "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pipeline/task_entry.py",
@@ -2964,6 +2964,12 @@
       "repository_path": "reproduction/runtime/rebaseline_20261017/tests/test_pipeline.py",
       "sha256": "bff5b46ca1aee6f9fc4b67b3679c49bc60379771c56c62162cf9965092bdbe0b",
       "bytes": 17192
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/tests/test_progress_cadence.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/tests/test_progress_cadence.py",
+      "sha256": "6c932d6ae50caab79a596ee6f592fec43e235c988ffb46983d27cdbe217b86ec",
+      "bytes": 3433
     },
     {
       "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/tests/test_queue_binding.py",
