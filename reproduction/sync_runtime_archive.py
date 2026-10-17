@@ -16,7 +16,7 @@ def atomic(path,data):
  finally:
   if os.path.exists(tmp):os.unlink(tmp)
 
-def sync(include_analysis=False):
+def sync(include_analysis=False,include_bench=False):
  mapping={}
  groups=GROUPS+(('analysis',) if include_analysis else ())
  for group in groups:
@@ -24,10 +24,15 @@ def sync(include_analysis=False):
   if not root.exists():continue
   for source in sorted(root.rglob('*')):
    relative=source.relative_to(root)
+   if group=='resources' and 'bench' in relative.parts and not include_bench:continue
    if source.is_file() and not set(relative.parts)&EXCLUDED and source.suffix in EXTENSIONS:
     mapping[ARCHIVE/group/relative]=source
  for name in ('EXECUTION_PLAN.md','protocol_matrix.json','source_manifest.json','queue.json','queue_v2.json'):
   if (PLAN/name).is_file():mapping[ARCHIVE/name]=PLAN/name
+ for directory in ('v3b',):
+  for name in ('proposal.json.gz','proposal_index.json','asset_catalog.json','report_contracts.json','archive_verification.json'):
+   source=PLAN/'queue_proposals'/directory/name
+   if source.is_file():mapping[ARCHIVE/'queue_proposals'/directory/name]=source
  for name in ('A_sha256.json','B1_sha256.json','B2_sha256.json','implementation_manifest.json'):
   mapping[ARCHIVE/'odr'/name]=PLAN/'odr'/name
  for name in ('run_in_screen_guarded.sh','training.screenrc','compact_progress.py'):
@@ -36,7 +41,11 @@ def sync(include_analysis=False):
  records=[]
  for target,source in sorted(mapping.items()):
   resolved=source.resolve();assert BASE in resolved.parents and resolved.is_file()
-  content=source.read_bytes();text=content.decode('utf-8')
+  content=source.read_bytes()
+  if source.suffix=='.gz':
+   import gzip
+   text=gzip.decompress(content).decode('utf-8')
+  else:text=content.decode('utf-8')
   if '-----BEGIN OPENSSH PRIVATE KEY-----' in text or '-----BEGIN RSA PRIVATE KEY-----' in text:
    raise ValueError('Private key material is not a code archive input: '+str(source))
   if not target.exists() or target.read_bytes()!=content:atomic(target,content)
@@ -52,5 +61,5 @@ def sync(include_analysis=False):
  return index
 
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('--include-analysis',action='store_true');a=p.parse_args()
- index=sync(a.include_analysis);print(json.dumps(dict(files=len(index['files']),total_bytes=sum(x['bytes'] for x in index['files']))))
+ p=argparse.ArgumentParser();p.add_argument('--include-analysis',action='store_true');p.add_argument('--include-bench',action='store_true');a=p.parse_args()
+ index=sync(a.include_analysis,a.include_bench);print(json.dumps(dict(files=len(index['files']),total_bytes=sum(x['bytes'] for x in index['files']))))

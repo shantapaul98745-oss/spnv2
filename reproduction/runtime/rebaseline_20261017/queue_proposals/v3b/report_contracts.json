@@ -1,0 +1,41 @@
+{
+  "fields": {
+    "execution": [
+      "N_seen",
+      "N_unique",
+      "adaptation_audit_sha256",
+      "heads_unchanged",
+      "implementation_manifest_sha256",
+      "input_evidence_sha256",
+      "metrics",
+      "optimizer_and_rng_schema_verified",
+      "optimizer_steps",
+      "protocol",
+      "raw_image_content_hashed",
+      "result_directory",
+      "scope",
+      "source_sha256",
+      "source_strict_reload",
+      "status",
+      "strict_reload",
+      "summary",
+      "task_id"
+    ],
+    "alias": [
+      "canonical_report",
+      "canonical_report_sha256",
+      "implementation_manifest_sha256",
+      "protocol",
+      "reason",
+      "reuse_of",
+      "source_sha256",
+      "status",
+      "task_id"
+    ]
+  },
+  "actual_atomic_report_path_expressions": [
+    "O/'reports'/(t['id']+'.json')",
+    "O/'reports'/(t['id']+'.json')"
+  ],
+  "path_template": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/odr/reports/{task_id}.json"
+}

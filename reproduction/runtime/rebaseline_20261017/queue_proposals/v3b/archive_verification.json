@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "scope": "deterministic archive/readable index only",
+  "archive": {
+    "gzip": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/v3b/proposal.json.gz",
+    "gzip_sha256": "e44d3947c8b319be8df56a10ae42b37d9ff0d7081279d881f6506f28a32e35b7",
+    "gzip_size_bytes": 175367,
+    "raw": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/v3b/full_main_v3_proposal.json",
+    "raw_sha256": "a1916236b15749016b5874eb3cb441197a7ea2ba5ca9f2febe8eeacdf60ad236",
+    "raw_size_bytes": 12433032,
+    "mtime": 0,
+    "filename_header": "",
+    "compression_level": 9,
+    "decompressed_raw_sha256": "a1916236b15749016b5874eb3cb441197a7ea2ba5ca9f2febe8eeacdf60ad236",
+    "decompressed_bytes_equal_raw": true,
+    "repeated_compression_bytes_equal": true,
+    "overview": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/v3b/task_overview.md",
+    "overview_sha256": "84273b3e14b1b19ba9fa7c824f14c1967df3dae38ceece86ce6fa7d4b70b4f3d",
+    "overview_rows": 444,
+    "overview_alias_rows": 30,
+    "overview_dependencies_fully_reversible": true
+  },
+  "package_code_sha256": "58c8727a38bae5b770d5578796d69de531d95543dc8f53682f85e6728053e04d"
+}

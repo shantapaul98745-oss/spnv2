@@ -2852,6 +2852,66 @@
       "bytes": 12107
     },
     {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/v3b/README.md",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/queue_proposals/v3b/README.md",
+      "sha256": "169b30333a5fbd8162d4e2a5b8042d15ad2749aa74b011e9fdfb92da8e820d1e",
+      "bytes": 1737
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/v3b/archive_verification.json",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/queue_proposals/v3b/archive_verification.json",
+      "sha256": "2c299667184debc27e7c3c4ead6c91d4d3e449e1a00d83db06224d8f1f510042",
+      "bytes": 1302
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/v3b/asset_catalog.json",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/queue_proposals/v3b/asset_catalog.json",
+      "sha256": "19573adf8a19063b968c3c0fc03c6ced9be75fc44c449389ec3c415b92057f75",
+      "bytes": 133270
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/v3b/audit_main_proposal.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/queue_proposals/v3b/audit_main_proposal.py",
+      "sha256": "a85b34f1c13a2cc0fcb46e14e0aab1eb2ef950df014406751d6b5cb775f7c256",
+      "bytes": 20787
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/v3b/build_main_proposal.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/queue_proposals/v3b/build_main_proposal.py",
+      "sha256": "682b62934649e9a4f340bac0697a3a0ee0686882984eef60733c394cbc4ae625",
+      "bytes": 11907
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/v3b/package_proposal.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/queue_proposals/v3b/package_proposal.py",
+      "sha256": "58c8727a38bae5b770d5578796d69de531d95543dc8f53682f85e6728053e04d",
+      "bytes": 6256
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/v3b/proposal.json.gz",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/queue_proposals/v3b/proposal.json.gz",
+      "sha256": "e44d3947c8b319be8df56a10ae42b37d9ff0d7081279d881f6506f28a32e35b7",
+      "bytes": 175367
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/v3b/proposal_index.json",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/queue_proposals/v3b/proposal_index.json",
+      "sha256": "0300db6436161c3e0903a35003368e9f8417a96cf24e0aa8f2e2673b4f107a77",
+      "bytes": 13232
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/v3b/report_contracts.json",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/queue_proposals/v3b/report_contracts.json",
+      "sha256": "6f2786939f12acd85bed1ed6a53cd319f0ad8c72869fdf95a448eed908b3f724",
+      "bytes": 995
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/v3b/task_overview.md",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/queue_proposals/v3b/task_overview.md",
+      "sha256": "84273b3e14b1b19ba9fa7c824f14c1967df3dae38ceece86ce6fa7d4b70b4f3d",
+      "bytes": 62728
+    },
+    {
       "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_v2.json",
       "repository_path": "reproduction/runtime/rebaseline_20261017/queue_v2.json",
       "sha256": "2b69f3da4c75d7d0a21ab5a4ea51fca8ea0a5e309731fee9a2387654e80b1fc1",

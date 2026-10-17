@@ -1,0 +1,292 @@
+{
+  "proposal_only": true,
+  "activated": false,
+  "root_review_required": [
+    "ODR real CUDA execution implementation",
+    "Current asset hashes and independent CPU evidence",
+    "Exact worker reconciliation and explicit append-only manager restart"
+  ],
+  "parent_manifest": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_v2.json",
+  "parent_file_sha256": "2b69f3da4c75d7d0a21ab5a4ea51fca8ea0a5e309731fee9a2387654e80b1fc1",
+  "parent_canonical_sha256": "6562b36060f12e72dcdf9340b5262cf766cafea93c9a2fccc7ee1513c240d61b",
+  "proposal": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/v3b/full_main_v3_proposal.json",
+  "proposal_file_sha256": "a1916236b15749016b5874eb3cb441197a7ea2ba5ca9f2febe8eeacdf60ad236",
+  "proposal_canonical_sha256": "d6e401da91c99ab5d16a269b0719485cbbb31ce1f1052b92b56c845f33c2235e",
+  "proposal_task_count": 444,
+  "preserved_prefix_count": 9,
+  "appended_task_count": 435,
+  "fixed_task_ids": [
+    "fixed_phi3_A_lightbox_s2021_N1024_B4",
+    "fixed_phi3_A_lightbox_s2022_N1024_B4",
+    "fixed_phi3_A_lightbox_s2023_N1024_B4",
+    "fixed_phi3_A_lightbox_s2024_N1024_B4",
+    "fixed_phi3_A_lightbox_s2025_N1024_B4",
+    "fixed_phi3_A_sunlamp_s2021_N1024_B4",
+    "fixed_phi3_A_sunlamp_s2022_N1024_B4",
+    "fixed_phi3_A_sunlamp_s2023_N1024_B4",
+    "fixed_phi3_A_sunlamp_s2024_N1024_B4",
+    "fixed_phi3_A_sunlamp_s2025_N1024_B4",
+    "fixed_phi6_A_lightbox_s2021_N4096_B1",
+    "fixed_phi6_A_lightbox_s2022_N4096_B1",
+    "fixed_phi6_A_lightbox_s2023_N4096_B1",
+    "fixed_phi6_A_lightbox_s2024_N4096_B1",
+    "fixed_phi6_A_lightbox_s2025_N4096_B1",
+    "fixed_phi6_A_sunlamp_s2021_N4096_B1",
+    "fixed_phi6_A_sunlamp_s2022_N4096_B1",
+    "fixed_phi6_A_sunlamp_s2023_N4096_B1",
+    "fixed_phi6_A_sunlamp_s2024_N4096_B1",
+    "fixed_phi6_A_sunlamp_s2025_N4096_B1",
+    "fixed_phi3_B1_lightbox_s2021_N1024_B4",
+    "fixed_phi3_B1_lightbox_s2022_N1024_B4",
+    "fixed_phi3_B1_lightbox_s2023_N1024_B4",
+    "fixed_phi3_B1_lightbox_s2024_N1024_B4",
+    "fixed_phi3_B1_lightbox_s2025_N1024_B4",
+    "fixed_phi3_B1_sunlamp_s2021_N1024_B4",
+    "fixed_phi3_B1_sunlamp_s2022_N1024_B4",
+    "fixed_phi3_B1_sunlamp_s2023_N1024_B4",
+    "fixed_phi3_B1_sunlamp_s2024_N1024_B4",
+    "fixed_phi3_B1_sunlamp_s2025_N1024_B4",
+    "fixed_phi3_B2_lightbox_s2021_N1024_B4",
+    "fixed_phi3_B2_lightbox_s2022_N1024_B4",
+    "fixed_phi3_B2_lightbox_s2023_N1024_B4",
+    "fixed_phi3_B2_lightbox_s2024_N1024_B4",
+    "fixed_phi3_B2_lightbox_s2025_N1024_B4",
+    "fixed_phi3_B2_sunlamp_s2021_N1024_B4",
+    "fixed_phi3_B2_sunlamp_s2022_N1024_B4",
+    "fixed_phi3_B2_sunlamp_s2023_N1024_B4",
+    "fixed_phi3_B2_sunlamp_s2024_N1024_B4",
+    "fixed_phi3_B2_sunlamp_s2025_N1024_B4"
+  ],
+  "last_fixed_task_id": "fixed_phi3_B2_sunlamp_s2025_N1024_B4",
+  "first_source_after_fixed": "pilot_table2_h",
+  "last_source_before_scans": "eval_table4_phi3_gn_sunlamp",
+  "first_scan_task_id": "Bscan_phi3_A_lightbox_s2021_N1024_B1",
+  "last_scan_task_id": "Nscan_phi6_A_sunlamp_s2025_N8192_B4",
+  "counts": {
+    "formal_source_configurations": 10,
+    "formal_source_epochs": 190,
+    "source_domain_evaluations": 30,
+    "engineering_pilots": 4,
+    "odr_requests": 400,
+    "odr_fixed": 40,
+    "odr_Bscan": 120,
+    "odr_Nscan": 240,
+    "odr_unique_executions": 370,
+    "odr_alias_requests": 30
+  },
+  "pending_definition_changes": [
+    {
+      "task": "pilot_table2_h",
+      "field": "requires",
+      "old": [],
+      "new": [
+        "fixed_phi3_B2_sunlamp_s2025_N1024_B4"
+      ]
+    }
+  ],
+  "source_configurations": [
+    {
+      "config": "phi3_bn_ehs.yaml",
+      "config_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi3_bn_ehs.yaml",
+      "sha256": "3a904ca2c75dff317fa84315e818ee89b812c23b6a3e6f2c1285e004a922cbd6",
+      "epochs": 20,
+      "phi": 3,
+      "heads": [
+        "heatmap",
+        "efficientpose",
+        "segmentation"
+      ],
+      "physical_batch": 4,
+      "accum_steps": 4,
+      "seed": 2021,
+      "experiment": "rebaseline_phi3_bn_ehs_ga4_seed2021",
+      "model_final": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_phi3_bn_ehs_ga4_seed2021/model_final.pth.tar"
+    },
+    {
+      "config": "phi6_gn_ehs.yaml",
+      "config_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi6_gn_ehs.yaml",
+      "sha256": "3c5262aa11b4e0213d9cc360343b07e42c826e0269cae2724e324fc50cd242ff",
+      "epochs": 20,
+      "phi": 6,
+      "heads": [
+        "heatmap",
+        "efficientpose",
+        "segmentation"
+      ],
+      "physical_batch": 1,
+      "accum_steps": 4,
+      "seed": 2021,
+      "experiment": "rebaseline_phi6_gn_ehs_ga4_seed2021",
+      "model_final": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d6/rebaseline_phi6_gn_ehs_ga4_seed2021/model_final.pth.tar"
+    },
+    {
+      "config": "table2_h.yaml",
+      "config_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/table2_h.yaml",
+      "sha256": "efdf4d69da5e4c5636b9c9f7bde3eb67b62276502015a2f0c0233c6e358cca76",
+      "epochs": 10,
+      "phi": 3,
+      "heads": [
+        "heatmap"
+      ],
+      "physical_batch": 4,
+      "accum_steps": 4,
+      "seed": 2021,
+      "experiment": "rebaseline_table2_h_ga4_seed2021",
+      "model_final": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_table2_h_ga4_seed2021/model_final.pth.tar"
+    },
+    {
+      "config": "table2_e.yaml",
+      "config_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/table2_e.yaml",
+      "sha256": "6df08a5fc9f814fa57149050ad2dee56861965caf1bac8723478a17a968d8596",
+      "epochs": 20,
+      "phi": 3,
+      "heads": [
+        "efficientpose"
+      ],
+      "physical_batch": 4,
+      "accum_steps": 4,
+      "seed": 2021,
+      "experiment": "rebaseline_table2_e_ga4_seed2021",
+      "model_final": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_table2_e_ga4_seed2021/model_final.pth.tar"
+    },
+    {
+      "config": "table2_eh.yaml",
+      "config_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/table2_eh.yaml",
+      "sha256": "9a7f03552c71b3ae54f9d050b67d683ab7dc738121e6bde419ce1225a7a00646",
+      "epochs": 20,
+      "phi": 3,
+      "heads": [
+        "heatmap",
+        "efficientpose"
+      ],
+      "physical_batch": 4,
+      "accum_steps": 4,
+      "seed": 2021,
+      "experiment": "rebaseline_table2_eh_ga4_seed2021",
+      "model_final": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_table2_eh_ga4_seed2021/model_final.pth.tar"
+    },
+    {
+      "config": "table3_base.yaml",
+      "config_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/table3_base.yaml",
+      "sha256": "4826413a1897d0bc6a65431907ecb62ddbfe70140d87095674eb7570142a64cf",
+      "epochs": 20,
+      "phi": 3,
+      "heads": [
+        "heatmap",
+        "efficientpose",
+        "segmentation"
+      ],
+      "physical_batch": 4,
+      "accum_steps": 4,
+      "seed": 2021,
+      "experiment": "rebaseline_table3_base_ga4_seed2021",
+      "model_final": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_table3_base_ga4_seed2021/model_final.pth.tar"
+    },
+    {
+      "config": "table3_erase.yaml",
+      "config_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/table3_erase.yaml",
+      "sha256": "5a991f605660b300bf5863db1b8b4284cb8a19487d4b403eefc0c6b5b7e0678c",
+      "epochs": 20,
+      "phi": 3,
+      "heads": [
+        "heatmap",
+        "efficientpose",
+        "segmentation"
+      ],
+      "physical_batch": 4,
+      "accum_steps": 4,
+      "seed": 2021,
+      "experiment": "rebaseline_table3_erase_ga4_seed2021",
+      "model_final": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_table3_erase_ga4_seed2021/model_final.pth.tar"
+    },
+    {
+      "config": "table3_flare.yaml",
+      "config_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/table3_flare.yaml",
+      "sha256": "e747505e52d97434249f5b3effdde341b05c1a7bda4a92ebbf1a3135055a0e53",
+      "epochs": 20,
+      "phi": 3,
+      "heads": [
+        "heatmap",
+        "efficientpose",
+        "segmentation"
+      ],
+      "physical_batch": 4,
+      "accum_steps": 4,
+      "seed": 2021,
+      "experiment": "rebaseline_table3_flare_ga4_seed2021",
+      "model_final": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_table3_flare_ga4_seed2021/model_final.pth.tar"
+    },
+    {
+      "config": "table4_phi0_bn.yaml",
+      "config_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/table4_phi0_bn.yaml",
+      "sha256": "b4d50da5afee1b48676a9c96ed3372f404dd1127d809eef39ae68388c5647711",
+      "epochs": 20,
+      "phi": 0,
+      "heads": [
+        "heatmap",
+        "efficientpose",
+        "segmentation"
+      ],
+      "physical_batch": 4,
+      "accum_steps": 4,
+      "seed": 2021,
+      "experiment": "rebaseline_table4_phi0_bn_ga4_seed2021",
+      "model_final": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d0/rebaseline_table4_phi0_bn_ga4_seed2021/model_final.pth.tar"
+    },
+    {
+      "config": "table4_phi3_gn.yaml",
+      "config_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/table4_phi3_gn.yaml",
+      "sha256": "f11730e64ee029cb83f62171cd5c4b85349d20a2fc8994fc6bb9032637667c5b",
+      "epochs": 20,
+      "phi": 3,
+      "heads": [
+        "heatmap",
+        "efficientpose",
+        "segmentation"
+      ],
+      "physical_batch": 4,
+      "accum_steps": 4,
+      "seed": 2021,
+      "experiment": "rebaseline_table4_phi3_gn_ga4_seed2021",
+      "model_final": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_table4_phi3_gn_ga4_seed2021/model_final.pth.tar"
+    }
+  ],
+  "odr_manifest_sha256": "ac7c7b136d6f05ccdc0852dd3c182f11bdf1cb67b1fabefaecddd1da46ca6a77",
+  "odr_implementation_manifest_sha256": "f11bbc2877154bfa480271b8aee530837e2330c1d642ec9e9c5fa5a27cf3ffdc",
+  "odr_integration_cpu_report_sha256": "8ea77b86469273831ddcc4bc774128172213ada22e844873b23e15e728cbc801",
+  "odr_gpu_execution_evidence": false,
+  "backlog_preserved": [
+    "Table6：整网/编码器/ODR更新参数及资源统计",
+    "改善/退化与失败转移、关键点/姿态投影案例、材料受限核验",
+    "PRISMA25图像/标签/相机齐全后离线hH；最终完整证据矩阵验收",
+    "GPU资源/吞吐测量、最终分析和完整证据矩阵仍待独立验收；本队列结束不代表整体目标完成"
+  ],
+  "artifact_hashes": {
+    "report_contracts.json": "6f2786939f12acd85bed1ed6a53cd319f0ad8c72869fdf95a448eed908b3f724",
+    "asset_catalog.json": "19573adf8a19063b968c3c0fc03c6ced9be75fc44c449389ec3c415b92057f75",
+    "proposal.json.gz": "e44d3947c8b319be8df56a10ae42b37d9ff0d7081279d881f6506f28a32e35b7",
+    "task_overview.md": "84273b3e14b1b19ba9fa7c824f14c1967df3dae38ceece86ce6fa7d4b70b4f3d"
+  },
+  "summary_zh": "静态未激活提案：444任务；10配置190轮、30域评价、4 pilot、400ODR请求=370独立+30别名；现9→固定40→source35→扫描360；资源与最终分析仍待验收",
+  "runner_code_git_commit": "aa8e26fd717135f86b37b1dc2ce69febf144acf8",
+  "runner_file_sha256": "72385d6ca9f9fc4a2e7005a57761e9393a93922921226bbb254402639b9a7c47",
+  "archive": {
+    "gzip": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/v3b/proposal.json.gz",
+    "gzip_sha256": "e44d3947c8b319be8df56a10ae42b37d9ff0d7081279d881f6506f28a32e35b7",
+    "gzip_size_bytes": 175367,
+    "raw": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/v3b/full_main_v3_proposal.json",
+    "raw_sha256": "a1916236b15749016b5874eb3cb441197a7ea2ba5ca9f2febe8eeacdf60ad236",
+    "raw_size_bytes": 12433032,
+    "mtime": 0,
+    "filename_header": "",
+    "compression_level": 9,
+    "decompressed_raw_sha256": "a1916236b15749016b5874eb3cb441197a7ea2ba5ca9f2febe8eeacdf60ad236",
+    "decompressed_bytes_equal_raw": true,
+    "repeated_compression_bytes_equal": true,
+    "overview": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/v3b/task_overview.md",
+    "overview_sha256": "84273b3e14b1b19ba9fa7c824f14c1967df3dae38ceece86ce6fa7d4b70b4f3d",
+    "overview_rows": 444,
+    "overview_alias_rows": 30,
+    "overview_dependencies_fully_reversible": true
+  }
+}

@@ -15,6 +15,6 @@
 
 运行入口仍在服务器 `/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/`。这里的副本用于版本审阅；路径和源码哈希按原位置核验，不能直接把副本作为新实验入口。当前训练的源码快照保持冻结。
 
-数据集、训练权重、原始日志、实时状态和论文PDF保存在原资产目录。生成的大型任务目录以生成器、全部配置和SHA256记录；目前实际激活的队列文件完整纳入版本。
+数据集、训练权重、原始日志、实时状态和论文PDF保存在原资产目录。生成的大型任务目录以生成器、全部配置和SHA256记录；小队列明文归档；大型提案以完整gzip、可读任务表及哈希清单归档，解压后逐字节与服务器原文件相同。提案归档不等于已激活。
 
-每项代码修改验证后，运行 `python reproduction/sync_runtime_archive.py` 更新副本和清单，再由主模型连同 `CODE_CHANGES.md` 一起提交、推送。它只同步代码副本，不操作实验或Git分支。待分析工具验收后可加 `--include-analysis`。
+每项代码修改验证后，运行 `python reproduction/sync_runtime_archive.py` 更新副本和清单，再由主模型连同 `CODE_CHANGES.md` 一起提交、推送。它只同步代码副本，不操作实验或Git分支。待分析工具和资源测量工具各自验收后，可分别加 `--include-analysis`、`--include-bench`；不能把仍在修改的子目录当成已验收归档。
