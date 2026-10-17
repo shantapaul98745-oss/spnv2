@@ -10,6 +10,7 @@ from __future__ import print_function
 
 import os
 import logging
+import math
 import time
 from scipy.io import savemat
 
@@ -38,7 +39,8 @@ def _get_metric_unit(name):
     return unit
 
 def do_valid(epoch, cfg, model, data_loader, camera, keypts_true_3D,
-                valid_fraction=None, log_dir=None, device=torch.device('cpu')):
+                valid_fraction=None, log_dir=None, device=torch.device('cpu'),
+                return_summary=False, event_callback=None):
 
     batch_time = AverageMeter('', 'ms', ':6.1f')
     data_time  = AverageMeter('', 'ms', ':6.1f')
@@ -71,10 +73,21 @@ def do_valid(epoch, cfg, model, data_loader, camera, keypts_true_3D,
 
     # Check validation set fraction
     num_batches = len(data_loader)
-    if valid_fraction:
-        assert valid_fraction <= 1 and valid_fraction > 0, \
-            'valid_fraction must be within (0, 1]'
-        num_batches = int(len(data_loader) * valid_fraction)
+    if num_batches == 0:
+        raise ValueError('Validation dataset is empty')
+    if valid_fraction is not None:
+        if not 0 < valid_fraction <= 1:
+            raise ValueError('valid_fraction must be within (0, 1]')
+        num_batches = max(1, int(len(data_loader) * valid_fraction))
+
+    def validation_summary():
+        return dict(
+            score=float(metrics['final_pose'].avg) if metrics['final_pose'].count else None,
+            n_samples=len(sample_ids), heatmap_rejections=int(sum(h_reject)),
+            heatmap_valid=int(len(h_reject)-sum(h_reject)),
+            metrics={name: dict(mean=float(m.avg) if m.count else None,
+                                count=int(m.count), unit=_get_metric_unit(name))
+                     for name, m in metrics.items()})
 
     progress = ProgressMeter(
         num_batches,
@@ -87,6 +100,7 @@ def do_valid(epoch, cfg, model, data_loader, camera, keypts_true_3D,
 
     # Loop through dataloader
     end = time.time()
+    last_event = time.monotonic()
     for idx, (images, targets) in enumerate(data_loader):
         start = time.time()
         data_time.update((start - end)*1000)
@@ -192,6 +206,8 @@ def do_valid(epoch, cfg, model, data_loader, camera, keypts_true_3D,
                 valid = not reject
                 if valid:
                     for m, v in result.items():
+                        if v is None or not math.isfinite(float(v)):
+                            raise FloatingPointError(f'Nonfinite validation metric {name[:4]+m} for {sample_ids[-1]}')
                         metrics[name[:4]+m].update(v, 1)
                 for m, v in result.items():
                     per_sample_metrics[name[:4]+m].append(v if valid else np.nan)
@@ -214,9 +230,18 @@ def do_valid(epoch, cfg, model, data_loader, camera, keypts_true_3D,
         if idx+1 == num_batches:
             progress.display_summary()
 
-        # Break
-        if valid_fraction and idx + 1 == num_batches:
+        if event_callback is not None and (idx == 0 or (idx+1) % 200 == 0 or idx+1 == num_batches or time.monotonic()-last_event >= 60):
+            event_callback(dict(validation_summary(), batch=idx+1, batches=num_batches))
+            last_event = time.monotonic()
+
+        # Stop before forwarding beyond the fixed validation fraction.
+        if idx + 1 == num_batches:
             break
+
+    # An empty accepted subset has no score; AverageMeter's default zero is not a prediction.
+    for meter in metrics.values():
+        if meter.count == 0:
+            meter.avg = float('nan')
 
     # ----- Write results
     if log_dir is not None:
@@ -288,5 +313,5 @@ def do_valid(epoch, cfg, model, data_loader, camera, keypts_true_3D,
         savemat(predfn, {'sample_id': np.asarray(sample_ids, dtype=object), 'heat_q': q_hmap, 'heat_t': t_hmap, 'effi_R': R_reg, 'effi_t': t_reg, 'bbox': bbox_reg, 'reject': h_reject}, appendmat=False)
         logger.info(f'Pose predictions saved to {predfn}')
 
-    return metrics['final_pose'].avg
+    return validation_summary() if return_summary else metrics['final_pose'].avg
 

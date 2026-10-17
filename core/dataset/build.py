@@ -12,6 +12,8 @@ import torch
 import numpy as np
 import random
 
+from utils.training_state import EpochBatchSampler, SeededDataset
+
 from .SPEEDPLUSDataset  import SPEEDPLUSDataset
 from .transforms        import *
 from .target_generators import HeatmapGenerator
@@ -62,6 +64,25 @@ def get_dataloader(cfg, split='train', distributed=False, load_labels=True):
     dataset = build_dataset(cfg,
                             split=split,
                             load_labels=load_labels)
+
+    if cfg.TRAIN.REPRODUCIBLE:
+        if distributed:
+            raise ValueError('Exact reproducible resume currently supports one training process')
+        if cfg.SEED is None:
+            raise ValueError('TRAIN.REPRODUCIBLE requires an explicit SEED')
+        # A separate generator prevents iterator creation from consuming model RNG.
+        generator = torch.Generator().manual_seed(int(cfg.SEED) + (1 if split == 'train' else 2))
+        if split == 'train':
+            sampler = EpochBatchSampler(len(dataset), images_per_gpu, cfg.TRAIN.ACCUM_STEPS,
+                                        seed=cfg.SEED, shuffle=shuffle)
+            return torch.utils.data.DataLoader(
+                SeededDataset(dataset, cfg.SEED), batch_sampler=sampler,
+                num_workers=num_workers, pin_memory=cfg.PIN_MEMORY,
+                worker_init_fn=_seed_worker, generator=generator)
+        return torch.utils.data.DataLoader(
+            dataset, batch_size=images_per_gpu, shuffle=False, num_workers=num_workers,
+            pin_memory=cfg.PIN_MEMORY, drop_last=True,
+            worker_init_fn=_seed_worker, generator=generator)
 
     if split=='train' and distributed:
         train_sampler = torch.utils.data.distributed.DistributedSampler(

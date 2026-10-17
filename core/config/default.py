@@ -95,6 +95,12 @@ _C.TRAIN.VALID_FRACTION = None                              # Fraction of valida
 _C.TRAIN.IMAGES_PER_GPU = 32                                # Batch size PER GPU, NOT across all GPUs!
 _C.TRAIN.SHUFFLE        = True
 _C.TRAIN.WORKERS        = 4
+_C.TRAIN.ACCUM_STEPS    = 1                                 # Complete microbatch windows per update
+_C.TRAIN.REPRODUCIBLE   = False                             # Opt-in deterministic data and exact boundary resume
+_C.TRAIN.RESUME_FILE    = ''                                # Explicit owned boundary checkpoint; no implicit reuse
+_C.TRAIN.CHECKPOINT_UPDATES = 500                           # Attempted updates, including AMP skips
+_C.TRAIN.AMP_SKIP_WARMUP = 64
+_C.TRAIN.AMP_MAX_CONSECUTIVE_SKIPS = 16
 
 # - CSV files
 _C.TRAIN.TRAIN_CSV  = 'synthetic/splits/train.csv'
