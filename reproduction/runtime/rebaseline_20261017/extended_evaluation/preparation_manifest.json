@@ -1,0 +1,76 @@
+{
+  "activation_allowed": false,
+  "code_sha256": {
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/extended_evaluation/__init__.py": "968e5cc8e8b1add621e330852bdff103d9ad14de1c7d804407f729f3d88d3818",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/extended_evaluation/capture.py": "d797103bafc6573f333a5cb79a926789c4c03217a51bb7deba06024d6f82e0f1",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/extended_evaluation/report.py": "7deeed6eacf402c02232a735726d232800108f2f72696242e2cd34ad049652f7",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/extended_evaluation/test_extended_evaluation.py": "2864a525091551385e0d49ae3146fc0ee8d4be2cc3812b3fd4becce79a0d4a2a",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/extended_evaluation/verify.py": "0aa491015d38b276fbd0f4378c1ae80f171811bde0dae05459b100076e1ce112"
+  },
+  "cpu_acceptance": {
+    "exitcode": 0,
+    "exitcode_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/extended_evaluation/logs/extended_v2_cpu_20261017_163038_eda1da.log.exitcode",
+    "exitcode_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "log_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/extended_evaluation/logs/extended_v2_cpu_20261017_163038_eda1da.log",
+    "log_sha256": "006294e92b1e7e30a1aea35bb70a2c3e77647b67d73521ab331e5ca4db0bc494",
+    "report_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/extended_evaluation/reports/extended_v2_cpu_20261017_163038_eda1da.json",
+    "report_sha256": "1404aedcd3c773b4d2707a9dc581fb629e35a59ecca942973310656dd8695a20",
+    "screen": "3539209.extended_v2_cpu_20261017_163038_eda1da",
+    "tests": 19
+  },
+  "documentation_sha256": {
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/extended_evaluation/README.md": "0c5485e4d347767aec87c8f135476554028399242a7d5de3e024c6b103b7b64b",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/extended_evaluation/report_schema.json": "b2411814a1af11ab5751282f9ad0d04126bfd383d956f4a1ac11eae963b4e556"
+  },
+  "history": [
+    {
+      "failures": 25,
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/extended_evaluation/reports/extended_cpu_20261017_161422_cd5327.json",
+      "sha256": "5038ab45a4a430239d206ac1952849445f255ccb81deda5fe55a761b60cb44f1",
+      "status": "failed",
+      "tests": 16
+    },
+    {
+      "failures": 1,
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/extended_evaluation/reports/extended_cpu_20261017_161458_da0fd4.json",
+      "sha256": "2f1c4cc23697e917096d33bcef050df58003cf47bab2f7d3a5f7149898a991a1",
+      "status": "failed",
+      "tests": 16
+    },
+    {
+      "failures": 0,
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/extended_evaluation/reports/extended_cpu_20261017_161606_5e88b4.json",
+      "sha256": "d0a9719433e8cada22feb3756171c8df238bfa51c773730b76207484881a0102",
+      "status": "passed",
+      "tests": 17
+    },
+    {
+      "failures": 0,
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/extended_evaluation/reports/extended_cpu_20261017_161801_3bb651.json",
+      "sha256": "4bbd2fae0259b2f2344f29bff23e1d88f3352e375e9057e17359d44afc3f9fc7",
+      "status": "passed",
+      "tests": 18
+    },
+    {
+      "failures": 0,
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/extended_evaluation/reports/extended_v2_cpu_20261017_163038_eda1da.json",
+      "sha256": "1404aedcd3c773b4d2707a9dc581fb629e35a59ecca942973310656dd8695a20",
+      "status": "passed",
+      "tests": 19
+    }
+  ],
+  "math_probe": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/v4/math_probe/hil_boundary_cpu_20261017_162627_29a670.json",
+    "sha256": "171e86e9a4eff5e1c60b6beb7f664ec8149234fc8bd9f57874d544d8da075ef9"
+  },
+  "math_reason": "Preserve frozen dtype staging before discontinuous HIL translation thresholds; float32 E errors/division and float32 GT norm even for double H. Never relax original 2e-5 reconciliation.",
+  "previous_release_backup_manifest": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/extended_evaluation/history/release_18pass_before_dtype_fix/backup_manifest.json",
+    "sha256": "6c5ebd5e863fdff52dcdab26e48cb66633c8cb751519dcf3357a4beb5850c565"
+  },
+  "previous_release_preparation_sha256": "a3f151f0acff5fb49aa8edd24b1906fb2771f37c982a64651699192e1f520f81",
+  "release": "v2_frozen_dtype_staging",
+  "schema": "spnv2-extended-evaluation-frozen-preparation-v1",
+  "scope": "Only new extended_evaluation subtree; no source/pipeline/ODR/config/task edits, GPU launch or manager/worker control; root owns wrappers, integration and Git archive",
+  "status": "cpu_verified_prepared_not_executed_on_gpu"
+}

@@ -386,6 +386,204 @@
       "bytes": 2703
     },
     {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/entrypoints_review/delivery_manifest.json",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/entrypoints_review/delivery_manifest.json",
+      "sha256": "8a665e943586d9bfb1e2d433254a85f0c5c6dde1b07d6f667266ab90893b99a1",
+      "bytes": 3491
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/entrypoints_review/scripts/check_compatibility.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/entrypoints_review/scripts/check_compatibility.py",
+      "sha256": "a96e3d076b476bc1c36430fb2ba80455f0f68830ed73617bfe301938b87dc343",
+      "bytes": 6968
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/README.md",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/evaluation_entrypoints/README.md",
+      "sha256": "14508204347a890f14cadc2c64f21dafee790380069f0ce811176ade7c713d12",
+      "bytes": 3587
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/capture_odr.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/evaluation_entrypoints/capture_odr.py",
+      "sha256": "2945f0de03ae167f47c4577436813d8df32427d3c25b5fb51860f2edba718f11",
+      "bytes": 3128
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/capture_source.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/evaluation_entrypoints/capture_source.py",
+      "sha256": "472d03fe9de9a73ee944ab2c6a0198c47e9e4548c290ff542330126a7cca03e3",
+      "bytes": 6575
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/cpu_fixture.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/evaluation_entrypoints/cpu_fixture.py",
+      "sha256": "7540367782a55e26e79e53e2d900546af1f9f54d4dd606898cd76b92df970505",
+      "bytes": 3798
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/cpu_tests.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/evaluation_entrypoints/cpu_tests.py",
+      "sha256": "003e135b3de8dc750b55505df0b9435f9bab61983a10ed747d640310036dab1e",
+      "bytes": 17408
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/entry_contract.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/evaluation_entrypoints/entry_contract.py",
+      "sha256": "562c32d4f8ba5cfe09135111d8b1b8842767d2d4e52923b28c2e34d6e985a66e",
+      "bytes": 11618
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/implementation_manifest.json",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/evaluation_entrypoints/implementation_manifest.json",
+      "sha256": "214f6f4d11653a85da01c281a4265e01cf6cffbda4e1cfd0e0b3b38d860a4810",
+      "bytes": 6315
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/odr_contract.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/evaluation_entrypoints/odr_contract.py",
+      "sha256": "ee33b8e17de5010a698d05390bf6e7318f2dc8bcec17ade5bf9260a12d847acf",
+      "bytes": 6877
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/protocol_manifest.json",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/evaluation_entrypoints/protocol_manifest.json",
+      "sha256": "b3be72ea10d857549e9bfa9398c7bc848bca1ef186524958b4e0f2865f04093d",
+      "bytes": 2249
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/report_schema.json",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/evaluation_entrypoints/report_schema.json",
+      "sha256": "184b7df47aa5456ce96c484831c7fb75219a3f632372ed9d1134545f7376afa3",
+      "bytes": 2355
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/run_odr.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/evaluation_entrypoints/run_odr.py",
+      "sha256": "145133367d0cbe60e48f0d5c719bc01d1a5c91b6f50e15ba609eb3e78c7cb7db",
+      "bytes": 1325
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/scripts/contract_tests.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/evaluation_entrypoints/scripts/contract_tests.py",
+      "sha256": "3ec552d8fced3015aec7cf1fee9758be63d9bd5f5dc44feca9373bfdb896fc19",
+      "bytes": 4321
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/scripts/verify_cpu_delivery.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/evaluation_entrypoints/scripts/verify_cpu_delivery.py",
+      "sha256": "ba95860664e22fbff19f08e7b869c81fc80c9c7b9fef342618e73d1a54481559",
+      "bytes": 3211
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/verify_odr.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/evaluation_entrypoints/verify_odr.py",
+      "sha256": "ddb603f9273aec92287186fad697bd0d00ba9fe21c94d8698f660f95d825b38a",
+      "bytes": 755
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/extended_evaluation/README.md",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/extended_evaluation/README.md",
+      "sha256": "0c5485e4d347767aec87c8f135476554028399242a7d5de3e024c6b103b7b64b",
+      "bytes": 9178
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/extended_evaluation/__init__.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/extended_evaluation/__init__.py",
+      "sha256": "968e5cc8e8b1add621e330852bdff103d9ad14de1c7d804407f729f3d88d3818",
+      "bytes": 95
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/extended_evaluation/capture.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/extended_evaluation/capture.py",
+      "sha256": "d797103bafc6573f333a5cb79a926789c4c03217a51bb7deba06024d6f82e0f1",
+      "bytes": 8858
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/extended_evaluation/preparation_manifest.json",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/extended_evaluation/preparation_manifest.json",
+      "sha256": "82285fc8f8cf6c1777ec4a40a1c315aab13c41d66891f9132d0660843a500cc5",
+      "bytes": 5256
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/extended_evaluation/report.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/extended_evaluation/report.py",
+      "sha256": "7deeed6eacf402c02232a735726d232800108f2f72696242e2cd34ad049652f7",
+      "bytes": 19173
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/extended_evaluation/report_schema.json",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/extended_evaluation/report_schema.json",
+      "sha256": "b2411814a1af11ab5751282f9ad0d04126bfd383d956f4a1ac11eae963b4e556",
+      "bytes": 2864
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/extended_evaluation/test_extended_evaluation.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/extended_evaluation/test_extended_evaluation.py",
+      "sha256": "2864a525091551385e0d49ae3146fc0ee8d4be2cc3812b3fd4becce79a0d4a2a",
+      "bytes": 25521
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/extended_evaluation/verify.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/extended_evaluation/verify.py",
+      "sha256": "0aa491015d38b276fbd0f4378c1ae80f171811bde0dae05459b100076e1ce112",
+      "bytes": 12116
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/final_reporting/README.md",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/final_reporting/README.md",
+      "sha256": "7dae3975d21164dcf5789d0b19e9e210a576cd282129a640d9a1ee159dd9637a",
+      "bytes": 1496
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/final_reporting/__init__.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/final_reporting/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/final_reporting/evidence.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/final_reporting/evidence.py",
+      "sha256": "70ad3ba9ab74133bea4a73b034851309818cdaf32354383adc6cb996a5bd8fa6",
+      "bytes": 16636
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/final_reporting/requirements.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/final_reporting/requirements.py",
+      "sha256": "e8b950b70ffcd36a2d5f504cb009d96dff8af9f192c7aa080c5ce9c574c2fd5b",
+      "bytes": 10885
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/final_reporting/run_extended.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/final_reporting/run_extended.py",
+      "sha256": "608a24423d8c64d2b584693fb662ac463c87777c9bc9dd983c6f1c7ac191b085",
+      "bytes": 7175
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/final_reporting/stage_preparation_manifest.json",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/final_reporting/stage_preparation_manifest.json",
+      "sha256": "1f996fbbeaff2947522939bafe48a95beaf8b0efbd107c49aa63b81f91b0cf9e",
+      "bytes": 2754
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/final_reporting/test_extended_contract.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/final_reporting/test_extended_contract.py",
+      "sha256": "9677393d93b2bff56b429ec1bdb353d0c682cb9946e9883b5ab47ac03a8130b1",
+      "bytes": 8864
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/final_reporting/test_requirements.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/final_reporting/test_requirements.py",
+      "sha256": "14920c3f225d193127bdb42a6b846def4a026d5d56a9e754b594aa41cf3a7362",
+      "bytes": 5821
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/final_reporting/verify_extended.py",
+      "repository_path": "reproduction/runtime/rebaseline_20261017/final_reporting/verify_extended.py",
+      "sha256": "354ab86696863a0bf5714f7fae155ea92a40d63f725734649806c1d53794d68f",
+      "bytes": 16322
+    },
+    {
       "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/odr/A_sha256.json",
       "repository_path": "reproduction/runtime/rebaseline_20261017/odr/A_sha256.json",
       "sha256": "72531b5cd27740fc6dcecca9b90674e0c9a6f1d82410af103950bba280d42f00",

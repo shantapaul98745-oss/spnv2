@@ -1,0 +1,87 @@
+{
+  "CPU_acceptance": {
+    "passed": 6,
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/reports/cpu_acceptance_regression_20261017_d.json",
+    "schema": "spnv2-evaluation-entrypoints-cpu-acceptance-v1",
+    "sha256": "92b6b23bda0ed674b456f6716d9183970d9216f286f3c6c429b16cff0d7dde4f",
+    "status": "passed"
+  },
+  "CPU_scope": "six integration groups; five source modes; forty fixed MOCK tasks plus one scan and one no-forward alias; four pure contract groups; independent all-link/hash validation",
+  "base_entries_sha256": {
+    "odr/audited_entry.py": "e558b84b085e8553393be8f34be5ea31f56160f59c129347e18afa667841cb8c",
+    "odr/implementation_manifest.json": "f11bbc2877154bfa480271b8aee530837e2330c1d642ec9e9c5fa5a27cf3ffdc",
+    "odr/manifest.json": "ac7c7b136d6f05ccdc0852dd3c182f11bdf1cb67b1fabefaecddd1da46ca6a77",
+    "odr/run_task.py": "6d731289571fe7a6b1ae1f9cb1c97ac754b856930afb10d6de3778edf62a506c",
+    "odr/verify_result.py": "2ff3c20fc41a900d1f3ea9d1f1456704705f8e18d18a82b85da825432d3f3b5f",
+    "tasks/source_artifacts.py": "c922677c9a10ab762cbd9b8404b9b4904fcda9b081c9dac07f624a12b041da2e"
+  },
+  "contract_CPU": {
+    "passed": 4,
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/reports/contract_acceptance_contract_20261017_b.json",
+    "schema": "spnv2-evaluation-entrypoints-contract-cpu-v1",
+    "sha256": "322378f8d19ffa595ed95fa3fc2d45aa3911efa22495235ffe9585cfe3184070",
+    "status": "passed"
+  },
+  "files_sha256": {
+    "README.md": "14508204347a890f14cadc2c64f21dafee790380069f0ce811176ade7c713d12",
+    "capture_odr.py": "2945f0de03ae167f47c4577436813d8df32427d3c25b5fb51860f2edba718f11",
+    "capture_source.py": "472d03fe9de9a73ee944ab2c6a0198c47e9e4548c290ff542330126a7cca03e3",
+    "cpu_fixture.py": "7540367782a55e26e79e53e2d900546af1f9f54d4dd606898cd76b92df970505",
+    "cpu_tests.py": "003e135b3de8dc750b55505df0b9435f9bab61983a10ed747d640310036dab1e",
+    "entry_contract.py": "562c32d4f8ba5cfe09135111d8b1b8842767d2d4e52923b28c2e34d6e985a66e",
+    "odr_contract.py": "ee33b8e17de5010a698d05390bf6e7318f2dc8bcec17ade5bf9260a12d847acf",
+    "protocol_manifest.json": "b3be72ea10d857549e9bfa9398c7bc848bca1ef186524958b4e0f2865f04093d",
+    "report_schema.json": "184b7df47aa5456ce96c484831c7fb75219a3f632372ed9d1134545f7376afa3",
+    "run_odr.py": "145133367d0cbe60e48f0d5c719bc01d1a5c91b6f50e15ba609eb3e78c7cb7db",
+    "scripts/contract_tests.py": "3ec552d8fced3015aec7cf1fee9758be63d9bd5f5dc44feca9373bfdb896fc19",
+    "scripts/verify_cpu_delivery.py": "ba95860664e22fbff19f08e7b869c81fc80c9c7b9fef342618e73d1a54481559",
+    "verify_odr.py": "ddb603f9273aec92287186fad697bd0d00ba9fe21c94d8698f660f95d825b38a"
+  },
+  "formal_scientific_results": false,
+  "frozen_after_delivery": true,
+  "independent_CPU_acceptance": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/reports/independent_cpu_acceptance_regression_20261017_d.json",
+    "schema": "spnv2-evaluation-entrypoints-independent-cpu-acceptance-v1",
+    "sha256": "686e203b54814370c2f5e2821a319bd854101f8d755404e09ff66e3fa3718ac4",
+    "status": "passed"
+  },
+  "limits": [
+    "CPU tiny MOCK integration only; no actual source GPU model construction",
+    "ODR adaptation and base-state-verifier process mocked; original parent runner code, actual frozen inference, original source CPU verifier and observer independent CPU verification exercised",
+    "Actual future source/ODR evaluation requires parent source acceptance dependencies, original GPU gate/serial lock, fixed40 base+extension barriers and root queue review; queue not activated"
+  ],
+  "logs": {
+    "contract_20261017_b": {
+      "exitcode": 0,
+      "exitcode_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/logs/contract_20261017_b.log.exitcode",
+      "exitcode_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/logs/contract_20261017_b.log",
+      "sha256": "45a24e0f889139fe161dcbbb1082ed5919be58e8a0bcae1eabc3cc6419075ea3"
+    },
+    "cpu_20261017_d": {
+      "exitcode": 0,
+      "exitcode_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/logs/cpu_20261017_d.log.exitcode",
+      "exitcode_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/logs/cpu_20261017_d.log",
+      "sha256": "a43a7d2ede0f138745c5e987272bfe8c44bece24fa7c7adaf98ba4f9273178be"
+    },
+    "independent_20261017_d": {
+      "exitcode": 0,
+      "exitcode_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/logs/independent_20261017_d.log.exitcode",
+      "exitcode_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/logs/independent_20261017_d.log",
+      "sha256": "ef440b99c2f18a55935a6e6a4813e31870451f1a5047f39a8e5bb37de779bae6"
+    }
+  },
+  "observer_preparation_manifest_sha256": "82285fc8f8cf6c1777ec4a40a1c315aab13c41d66891f9132d0660843a500cc5",
+  "odr_cli": "PYTHON -B -s -u evaluation_entrypoints/run_odr.py --task ID --execute",
+  "odr_independent_cli": "PYTHON -B -s -u evaluation_entrypoints/verify_odr.py --task ID",
+  "protocol_manifest_sha256": "b3be72ea10d857549e9bfa9398c7bc848bca1ef186524958b4e0f2865f04093d",
+  "public_link_schema": "spnv2-evaluation-extension-link-v1",
+  "real_GPU_executed": false,
+  "real_adaptation_executed": false,
+  "schema": "spnv2-evaluation-entrypoints-implementation-v1",
+  "source_cli": "PYTHON -B -s -u evaluation_entrypoints/capture_source.py --base-entry PLAN/tasks/source_artifacts.py evaluate|verify_eval ORIGINAL_ARGUMENTS",
+  "source_manifest_sha256": "d47399919b02c17f5c6c525e1381452ca3810086699746895615c4fd287c739a",
+  "status": "CPU_verified_ready_for_root_review"
+}

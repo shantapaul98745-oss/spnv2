@@ -1,0 +1,32 @@
+{
+  "activation_allowed": false,
+  "code_sha256": {
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/final_reporting/README.md": "7dae3975d21164dcf5789d0b19e9e210a576cd282129a640d9a1ee159dd9637a",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/final_reporting/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/final_reporting/evidence.py": "70ad3ba9ab74133bea4a73b034851309818cdaf32354383adc6cb996a5bd8fa6",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/final_reporting/requirements.py": "e8b950b70ffcd36a2d5f504cb009d96dff8af9f192c7aa080c5ce9c574c2fd5b",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/final_reporting/run_extended.py": "608a24423d8c64d2b584693fb662ac463c87777c9bc9dd983c6f1c7ac191b085",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/final_reporting/test_extended_contract.py": "9677393d93b2bff56b429ec1bdb353d0c682cb9946e9883b5ab47ac03a8130b1",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/final_reporting/test_requirements.py": "14920c3f225d193127bdb42a6b846def4a026d5d56a9e754b594aa41cf3a7362",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/final_reporting/verify_extended.py": "354ab86696863a0bf5714f7fae155ea92a40d63f725734649806c1d53794d68f"
+  },
+  "cpu_contract": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/final_reporting/reports/final_extended_cpu_20261017_b.json",
+    "sha256": "dec58877adb30f91a8f12e6e003ab7e2dd638c6689bef2f18a822685d6664f99",
+    "tests": 12
+  },
+  "formal_results_complete": false,
+  "independent_link_review": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/entrypoints_review/delivery_manifest.json",
+    "sha256": "8a665e943586d9bfb1e2d433254a85f0c5c6dde1b07d6f667266ab90893b99a1"
+  },
+  "real_GPU_execution": false,
+  "schema": "spnv2-final-reporting-partial-preparation-v1",
+  "scope": "10 source configurations/190 epochs/30 evaluation records/400 ODR requests; raw-numeric matrix and370 canonical same-ID pairs/74 observation-stream groups",
+  "scope_contract": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/final_reporting/reports/requirements_cpu_20261017_c.json",
+    "sha256": "62e011baec962dc574daedae7bbf40f770584fc02fe3e028f64591e1c9d561c4",
+    "tests": 15
+  },
+  "status": "aggregation_stage_CPU_verified_not_full_reporting_ready"
+}

@@ -1,0 +1,32 @@
+{
+  "base_entries_sha256": {
+    "odr/audited_entry.py": "e558b84b085e8553393be8f34be5ea31f56160f59c129347e18afa667841cb8c",
+    "odr/implementation_manifest.json": "f11bbc2877154bfa480271b8aee530837e2330c1d642ec9e9c5fa5a27cf3ffdc",
+    "odr/manifest.json": "ac7c7b136d6f05ccdc0852dd3c182f11bdf1cb67b1fabefaecddd1da46ca6a77",
+    "odr/run_task.py": "6d731289571fe7a6b1ae1f9cb1c97ac754b856930afb10d6de3778edf62a506c",
+    "odr/verify_result.py": "2ff3c20fc41a900d1f3ea9d1f1456704705f8e18d18a82b85da825432d3f3b5f",
+    "tasks/source_artifacts.py": "c922677c9a10ab762cbd9b8404b9b4904fcda9b081c9dac07f624a12b041da2e"
+  },
+  "observer_code_sha256": {
+    "__init__.py": "968e5cc8e8b1add621e330852bdff103d9ad14de1c7d804407f729f3d88d3818",
+    "capture.py": "d797103bafc6573f333a5cb79a926789c4c03217a51bb7deba06024d6f82e0f1",
+    "report.py": "7deeed6eacf402c02232a735726d232800108f2f72696242e2cd34ad049652f7",
+    "test_extended_evaluation.py": "2864a525091551385e0d49ae3146fc0ee8d4be2cc3812b3fd4becce79a0d4a2a",
+    "verify.py": "0aa491015d38b276fbd0f4378c1ae80f171811bde0dae05459b100076e1ce112"
+  },
+  "observer_preparation_manifest_sha256": "82285fc8f8cf6c1777ec4a40a1c315aab13c41d66891f9132d0660843a500cc5",
+  "observer_release": "release-v2 frozen dtype and GT norm arithmetic; 19 CPU checks accepted",
+  "schema": "spnv2-evaluation-entrypoints-protocol-v1",
+  "source_manifest_sha256": "d47399919b02c17f5c6c525e1381452ca3810086699746895615c4fd287c739a",
+  "status": "frozen_for_CPU_verification",
+  "wrapper_code_sha256": {
+    "capture_odr.py": "2945f0de03ae167f47c4577436813d8df32427d3c25b5fb51860f2edba718f11",
+    "capture_source.py": "472d03fe9de9a73ee944ab2c6a0198c47e9e4548c290ff542330126a7cca03e3",
+    "cpu_fixture.py": "7540367782a55e26e79e53e2d900546af1f9f54d4dd606898cd76b92df970505",
+    "cpu_tests.py": "003e135b3de8dc750b55505df0b9435f9bab61983a10ed747d640310036dab1e",
+    "entry_contract.py": "562c32d4f8ba5cfe09135111d8b1b8842767d2d4e52923b28c2e34d6e985a66e",
+    "odr_contract.py": "ee33b8e17de5010a698d05390bf6e7318f2dc8bcec17ade5bf9260a12d847acf",
+    "run_odr.py": "145133367d0cbe60e48f0d5c719bc01d1a5c91b6f50e15ba609eb3e78c7cb7db",
+    "verify_odr.py": "ddb603f9273aec92287186fad697bd0d00ba9fe21c94d8698f660f95d825b38a"
+  }
+}

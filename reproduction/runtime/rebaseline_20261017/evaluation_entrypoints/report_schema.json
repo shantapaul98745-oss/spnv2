@@ -1,0 +1,60 @@
+{
+  "schema": "spnv2-evaluation-entrypoints-public-contract-v1",
+  "link": {
+    "schema": "spnv2-evaluation-extension-link-v1",
+    "report": {
+      "path": "absolute extended_report.json",
+      "sha256": "SHA256"
+    },
+    "verification": {
+      "path": "absolute independent extension CPU proof",
+      "sha256": "SHA256"
+    },
+    "context_sha256": "SHA256",
+    "applicability": [
+      "applicable",
+      "not_applicable_no_heatmap"
+    ],
+    "observer_status": [
+      "complete",
+      "not_applicable"
+    ]
+  },
+  "source": {
+    "accepted_report_additional_key": "extension",
+    "entrypoint_verification": {
+      "path": "absolute wrapper proof",
+      "sha256": "SHA256"
+    },
+    "wrapper_proof_schema": "spnv2-source-evaluation-extension-entrypoint-verification-v1",
+    "status": "passed",
+    "base_fields_sha256": "digest of all accepted base fields excluding extension; original fields are unchanged"
+  },
+  "odr": {
+    "path": "evaluation_entrypoints/reports/TASK.json",
+    "wrapper_proof_schema": "spnv2-odr-evaluation-extension-entrypoint-verification-v1",
+    "status": "passed",
+    "extension": "same link mapping",
+    "base_report": "original odr/reports/TASK.json, never modified by extension",
+    "base_report_sha256": "SHA256",
+    "alias": {
+      "canonical_task": "canonical task ID",
+      "canonical_proof": {
+        "path": "canonical wrapper proof",
+        "sha256": "SHA256"
+      },
+      "reuse_of": "canonical task ID",
+      "extension": "identical canonical mapping; no own capture or forward"
+    }
+  },
+  "observer_report_status": "produced_pending_independent_cpu_verification",
+  "observer_proof_status": "passed",
+  "observer_proof_schema": "spnv2-extended-evaluation-cpu-verification-v1",
+  "context_schema": "spnv2-evaluation-entrypoint-context-v1",
+  "protocol_manifest_schema": "spnv2-evaluation-entrypoints-protocol-v1",
+  "protocol_manifest_status": "frozen_for_CPU_verification",
+  "implementation_manifest_schema": "spnv2-evaluation-entrypoints-implementation-v1",
+  "implementation_manifest_status": "CPU_verified_ready_for_root_review",
+  "all_samples": "Only API per-metric N/N raw-numeric coverage; extension never changes base masks/MAT",
+  "source_pointer_replay": "Original CPU base report is rebuilt then same stable extension pointer restored; final byte equality required"
+}

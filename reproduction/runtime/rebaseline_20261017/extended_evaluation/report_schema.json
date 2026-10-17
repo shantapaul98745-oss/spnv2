@@ -1,0 +1,118 @@
+{
+  "capture": {
+    "E_only_calls": 0,
+    "H_calls": "actual N exactly",
+    "manifest": "capture_manifest.json",
+    "pose_dtype_fields": [
+      "q_dtype",
+      "t_dtype"
+    ],
+    "pose_dtypes": [
+      "float32",
+      "float64",
+      null
+    ],
+    "raw": "heatmap_pose_capture.jsonl",
+    "schema": "spnv2-heatmap-pose-capture-v1",
+    "status": [
+      "complete",
+      "not_applicable",
+      "failed"
+    ]
+  },
+  "context": {
+    "required_keys": [],
+    "type": "finite JSON object",
+    "wrapper_responsibility": "Validate original acceptance, expected frozen source/line, actual cfg/final/base proof and protocol/implementation hashes"
+  },
+  "gpu_execution_performed": false,
+  "implementation_release": "v2_frozen_dtype_staging",
+  "metric": {
+    "dtype_contract": "Preserve frozen predicted/GT subtraction-square-sum-sqrt dtype; float32 GT norm; strict HIL threshold before JSON float conversion",
+    "fields": [
+      "mean",
+      "count",
+      "total",
+      "missing",
+      "coverage",
+      "denominator_scope",
+      "mask",
+      "unit"
+    ],
+    "rules": [
+      "zero count -> mean null",
+      "all_samples iff count=actual N",
+      "never fill absent H with E/zero"
+    ],
+    "scopes": [
+      "original_accepted_subset",
+      "all_samples",
+      "numeric_pose_available_subset"
+    ],
+    "units": {
+      "eR": "deg",
+      "eR_HIL": "rad",
+      "eT": "m",
+      "eT_norm_HIL": "m/m",
+      "pose": "score"
+    }
+  },
+  "proof": {
+    "idempotent": true,
+    "required": [
+      "report_path",
+      "report_sha256",
+      "per_sample_sha256",
+      "inputs",
+      "context_sha256",
+      "observer_code_sha256",
+      "sample_count",
+      "sample_id_sha256",
+      "counts",
+      "primary_mode",
+      "scope"
+    ],
+    "schema": "spnv2-extended-evaluation-cpu-verification-v1",
+    "status": "passed",
+    "summary": null,
+    "timestamps": false
+  },
+  "report": {
+    "file": "extended_report.json",
+    "per_sample": "extended_per_sample.jsonl",
+    "primary_mode": [
+      "H_rotation_E_translation",
+      "H_rotation_H_translation",
+      "E_only_original"
+    ],
+    "protocols": [
+      "original_accepted_H",
+      "original_E",
+      "original_H_E_intersection",
+      "extended_H",
+      "extended_hybrid"
+    ],
+    "required": [
+      "report_path",
+      "per_sample_path",
+      "per_sample_sha256",
+      "inputs",
+      "heads",
+      "domain",
+      "sample_count",
+      "sample_id_sha256",
+      "context",
+      "context_sha256",
+      "observer_code_sha256",
+      "counts",
+      "protocols",
+      "primary_mode",
+      "extended_primary",
+      "original_accepted_subset_unchanged",
+      "interpretation"
+    ],
+    "schema": "spnv2-extended-evaluation-v1",
+    "status": "produced_pending_independent_cpu_verification"
+  },
+  "schema": "spnv2-extended-evaluation-interface-index-v1"
+}

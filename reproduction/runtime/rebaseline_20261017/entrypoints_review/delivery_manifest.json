@@ -1,0 +1,52 @@
+{
+  "alias_MOCK_proofs": 1,
+  "canonical_ODR_MOCK_proofs": 41,
+  "entrypoint_implementation_manifest_sha256": "214f6f4d11653a85da01c281a4265e01cf6cffbda4e1cfd0e0b3b38d860a4810",
+  "entrypoint_protocol_manifest_sha256": "b3be72ea10d857549e9bfa9398c7bc848bca1ef186524958b4e0f2865f04093d",
+  "files_outside_owned_review_modified": false,
+  "findings": [
+    {
+      "issue": "Relative observer/wrapper context code maps treated as paths",
+      "resolution": "Root context_code_maps now resolves separate frozen release dirs and refuses escape; all actual maps verified"
+    },
+    {
+      "issue": "Same-forward source/ODR extension/base proof exact binding",
+      "resolution": "Root wrapper_link_binding and raw source SHA/path binding verified; legal same cfg/source extension crosswire and wrong accepted base both rejected"
+    },
+    {
+      "issue": "Observer preparation and ODR line manifest omitted from input evidence",
+      "resolution": "Root context_assets now rehashes and retains both; all actual fixtures pass"
+    }
+  ],
+  "frozen_after_delivery": true,
+  "limits": [
+    "Full ODR inspect_record uses production task paths and was not redirected; checked_link, exact wrapper/base binding, independent reduce_samples and explicit actual canonical/alias proof chain were exercised instead",
+    "All 41 canonical ODR fixtures use tiny CPU mock inference; adaptation/base state process boundary mocked, no GPU",
+    "First compatibility report used accepted_H label for general original_accepted on E-only; preserved historical artifact only, corrected original_accepted in subsequent b/c reports"
+  ],
+  "log": {
+    "exitcode": 0,
+    "exitcode_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/entrypoints_review/logs/compatibility_20261017_c.log.exitcode",
+    "exitcode_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/entrypoints_review/logs/compatibility_20261017_c.log",
+    "sha256": "8c76f5c68089626f1ad89f498661dbe790cfe2415edb3687fa18facbb0fb44a5"
+  },
+  "negative_contract_checks": 17,
+  "report": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/entrypoints_review/reports/compatibility_20261017_c.json",
+    "sha256": "766ca59652c061ba4040e0d29551b1187288d2e4752ac1c33a4cca02d790e0b9"
+  },
+  "reviewed_implementation_sha256": {
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/final_reporting/evidence.py": "70ad3ba9ab74133bea4a73b034851309818cdaf32354383adc6cb996a5bd8fa6",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/final_reporting/run_extended.py": "608a24423d8c64d2b584693fb662ac463c87777c9bc9dd983c6f1c7ac191b085",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/final_reporting/verify_extended.py": "354ab86696863a0bf5714f7fae155ea92a40d63f725734649806c1d53794d68f"
+  },
+  "schema": "spnv2-entrypoints-review-delivery-v1",
+  "scope": "MOCK engineering compatibility only; no production source/ODR completion claimed",
+  "script": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/entrypoints_review/scripts/check_compatibility.py",
+    "sha256": "a96e3d076b476bc1c36430fb2ba80455f0f68830ed73617bfe301938b87dc343"
+  },
+  "source_modes": 5,
+  "status": "CPU_verified_frozen"
+}

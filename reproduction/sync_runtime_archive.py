@@ -16,7 +16,7 @@ def atomic(path,data):
  finally:
   if os.path.exists(tmp):os.unlink(tmp)
 
-def sync(include_analysis=False,include_bench=False,include_plots=False):
+def sync(include_analysis=False,include_bench=False,include_plots=False,include_evaluation=False,include_reporting=False):
  mapping={}
  groups=GROUPS+(('analysis',) if include_analysis else ())+(('analysis_plots',) if include_plots else ())
  for group in groups:
@@ -24,6 +24,7 @@ def sync(include_analysis=False,include_bench=False,include_plots=False):
   if not root.exists():continue
   for source in sorted(root.rglob('*')):
    relative=source.relative_to(root)
+   if group=='queue_proposals' and relative.parts and relative.parts[0]=='v4':continue
    if group=='resources' and 'bench' in relative.parts and not include_bench:continue
    if group in ('analysis','analysis_plots') and relative.parts and relative.parts[0] in ('runs','tests'):continue
    if source.is_file() and not set(relative.parts)&EXCLUDED and source.suffix in EXTENSIONS:
@@ -34,6 +35,15 @@ def sync(include_analysis=False,include_bench=False,include_plots=False):
   for name in ('proposal.json.gz','proposal_index.json','asset_catalog.json','report_contracts.json','archive_verification.json'):
    source=PLAN/'queue_proposals'/directory/name
    if source.is_file():mapping[ARCHIVE/'queue_proposals'/directory/name]=source
+ if include_evaluation:
+  for group,json_names in [('extended_evaluation',('preparation_manifest.json','report_schema.json')),('evaluation_entrypoints',('implementation_manifest.json','protocol_manifest.json','report_schema.json')),('entrypoints_review',('delivery_manifest.json',))]:
+   root=PLAN/group
+   for source in [*root.glob('*.py'),root/'README.md',*root.glob('scripts/*.py'),*(root/name for name in json_names)]:
+    if source.is_file():mapping[ARCHIVE/group/source.relative_to(root)]=source
+ if include_reporting:
+  for name in ('__init__.py','requirements.py','test_requirements.py','evidence.py','run_extended.py','verify_extended.py','test_extended_contract.py','README.md','stage_preparation_manifest.json'):
+   source=PLAN/'final_reporting'/name
+   if source.is_file():mapping[ARCHIVE/'final_reporting'/name]=source
  if include_plots:
   for name in ('implementation_manifest.json','reference/paper_reference.json'):
    source=PLAN/'analysis_plots'/name
@@ -73,5 +83,5 @@ def sync(include_analysis=False,include_bench=False,include_plots=False):
  return index
 
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('--include-analysis',action='store_true');p.add_argument('--include-bench',action='store_true');p.add_argument('--include-plots',action='store_true');a=p.parse_args()
- index=sync(a.include_analysis,a.include_bench,a.include_plots);print(json.dumps(dict(files=len(index['files']),total_bytes=sum(x['bytes'] for x in index['files']))))
+ p=argparse.ArgumentParser();p.add_argument('--include-analysis',action='store_true');p.add_argument('--include-bench',action='store_true');p.add_argument('--include-plots',action='store_true');p.add_argument('--include-evaluation',action='store_true');p.add_argument('--include-reporting',action='store_true');a=p.parse_args()
+ index=sync(a.include_analysis,a.include_bench,a.include_plots,a.include_evaluation,a.include_reporting);print(json.dumps(dict(files=len(index['files']),total_bytes=sum(x['bytes'] for x in index['files']))))
