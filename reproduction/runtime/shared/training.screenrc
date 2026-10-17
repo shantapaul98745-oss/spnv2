@@ -1,0 +1,11 @@
+startup_message off
+autodetach on
+defscrollback 10000
+# Preserve the dead window after the command ends. No automatic restart key.
+zombie k
+# Disable accidental window/session termination via the usual prefix shortcuts.
+bind k
+bind K
+bind ^k
+bind \\
+bind ^\

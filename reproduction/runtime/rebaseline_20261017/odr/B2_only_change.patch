@@ -1,0 +1,21 @@
+--- source_A/core/engine/adapter.py
++++ source_B2/core/engine/adapter.py
+@@ -110,7 +110,7 @@
+                 optimizer.zero_grad(set_to_none=True)
+ 
+                 # Update running stats
+-                for name, module in model.named_modules():
++                for name, module in model.backbone.named_modules():
+                     if name in bn_mean.keys():
+                         # Current mean & var
+                         mean = bn_mean[name]
+--- source_A/tools/odr.py
++++ source_B2/tools/odr.py
+@@ -102,6 +102,7 @@
+             # (1) Set BatchNorm layers to eval mode, so that running states are
+             #     not updated by every forward() calls
+             m.requires_grad_(True)
++            m.momentum = 0.1  # Paper: new = 0.9 * old + 0.1 * batch
+             m.eval()
+ 
+             # (2) Keep the record of input features to BatchNorm layers

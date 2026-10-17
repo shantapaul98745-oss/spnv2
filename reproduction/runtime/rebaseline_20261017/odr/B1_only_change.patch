@@ -1,0 +1,11 @@
+--- source_A/core/engine/adapter.py
++++ source_B1/core/engine/adapter.py
+@@ -110,7 +110,7 @@
+                 optimizer.zero_grad(set_to_none=True)
+ 
+                 # Update running stats
+-                for name, module in model.named_modules():
++                for name, module in model.backbone.named_modules():
+                     if name in bn_mean.keys():
+                         # Current mean & var
+                         mean = bn_mean[name]

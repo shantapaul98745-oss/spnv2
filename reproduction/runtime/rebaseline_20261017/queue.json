@@ -1,0 +1,294 @@
+{
+  "version": 1,
+  "plan_id": "rebaseline_20261017",
+  "scope": "phase1_phi3",
+  "report_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/paper/SPNv2_复现实时进度.md",
+  "tasks": [
+    {
+      "id": "train_phi3_EHS",
+      "kind": "source_training_20_epochs",
+      "command": [
+        "/home/ps/anaconda3/envs/SPNv2/bin/python",
+        "-B",
+        "-s",
+        "-u",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/tools/train.py",
+        "--cfg",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi3_bn_ehs.yaml",
+        "--gpu",
+        "0"
+      ],
+      "cwd": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source",
+      "requires": [],
+      "session": "spnv2_source_phi3_ga4_20261017",
+      "log": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/logs/source_phi3_bn_ehs_ga4_20261017.log",
+      "env": {
+        "PYTHONNOUSERSITE": "1",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "PYTHONUNBUFFERED": "1",
+        "PYTHONHASHSEED": "2021",
+        "OMP_NUM_THREADS": "2",
+        "OPENBLAS_NUM_THREADS": "2",
+        "MPLBACKEND": "Agg",
+        "TORCH_HOME": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/env/cache/torch",
+        "CUDA_VISIBLE_DEVICES": "0",
+        "CUBLAS_WORKSPACE_CONFIG": ":4096:8"
+      },
+      "gpu": {
+        "index": 0,
+        "min_free_mb": 14500,
+        "max_used_mb": 1200
+      },
+      "verify_gpu": false,
+      "verify_command": [
+        "/home/ps/anaconda3/envs/SPNv2/bin/python",
+        "-B",
+        "-s",
+        "-u",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/tasks/source_artifacts.py",
+        "verify_train",
+        "--cfg",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi3_bn_ehs.yaml",
+        "--report",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/source_phi3_verified.json",
+        "--log",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/logs/source_phi3_bn_ehs_ga4_20261017.log"
+      ],
+      "expected_outputs": [
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/source_phi3_verified.json"
+      ],
+      "metadata": {
+        "source": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi3_bn_ehs.yaml",
+        "initialization": "Independent seed2021 + cached ImageNet EfficientNet; no smoke weights",
+        "physical_batch": 4,
+        "accum_steps": 4,
+        "epochs": 20
+      }
+    },
+    {
+      "id": "eval_phi3_synthetic",
+      "kind": "full_source_evaluation",
+      "command": [
+        "/home/ps/anaconda3/envs/SPNv2/bin/python",
+        "-B",
+        "-s",
+        "-u",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/tasks/source_artifacts.py",
+        "evaluate",
+        "--cfg",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi3_bn_ehs_eval_synthetic.yaml",
+        "--source-report",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/source_phi3_verified.json",
+        "--output",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluations/phi3_bn_ehs/synthetic",
+        "--report",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/eval_phi3_synthetic.json",
+        "--expected-samples",
+        "11994"
+      ],
+      "cwd": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source",
+      "requires": [
+        "train_phi3_EHS"
+      ],
+      "session": "spnv2_eval_phi3_synthetic_20261017",
+      "log": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/logs/eval_phi3_synthetic_20261017.log",
+      "env": {
+        "PYTHONNOUSERSITE": "1",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "PYTHONUNBUFFERED": "1",
+        "PYTHONHASHSEED": "2021",
+        "OMP_NUM_THREADS": "2",
+        "OPENBLAS_NUM_THREADS": "2",
+        "MPLBACKEND": "Agg",
+        "TORCH_HOME": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/env/cache/torch",
+        "CUDA_VISIBLE_DEVICES": "0",
+        "CUBLAS_WORKSPACE_CONFIG": ":4096:8"
+      },
+      "gpu": {
+        "index": 0,
+        "min_free_mb": 14500,
+        "max_used_mb": 1200
+      },
+      "verify_gpu": false,
+      "verify_command": [
+        "/home/ps/anaconda3/envs/SPNv2/bin/python",
+        "-B",
+        "-s",
+        "-u",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/tasks/source_artifacts.py",
+        "verify_eval",
+        "--cfg",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi3_bn_ehs_eval_synthetic.yaml",
+        "--source-report",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/eval_phi3_synthetic.json",
+        "--report",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/eval_phi3_synthetic_verified.json",
+        "--expected-samples",
+        "11994"
+      ],
+      "expected_outputs": [
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/eval_phi3_synthetic_verified.json"
+      ],
+      "metadata": {
+        "source": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi3_bn_ehs_eval_synthetic.yaml",
+        "final_only": true,
+        "samples": 11994
+      }
+    },
+    {
+      "id": "eval_phi3_lightbox",
+      "kind": "full_source_evaluation",
+      "command": [
+        "/home/ps/anaconda3/envs/SPNv2/bin/python",
+        "-B",
+        "-s",
+        "-u",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/tasks/source_artifacts.py",
+        "evaluate",
+        "--cfg",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi3_bn_ehs_eval_lightbox.yaml",
+        "--source-report",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/source_phi3_verified.json",
+        "--output",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluations/phi3_bn_ehs/lightbox",
+        "--report",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/eval_phi3_lightbox.json",
+        "--expected-samples",
+        "6740"
+      ],
+      "cwd": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source",
+      "requires": [
+        "eval_phi3_synthetic"
+      ],
+      "session": "spnv2_eval_phi3_lightbox_20261017",
+      "log": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/logs/eval_phi3_lightbox_20261017.log",
+      "env": {
+        "PYTHONNOUSERSITE": "1",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "PYTHONUNBUFFERED": "1",
+        "PYTHONHASHSEED": "2021",
+        "OMP_NUM_THREADS": "2",
+        "OPENBLAS_NUM_THREADS": "2",
+        "MPLBACKEND": "Agg",
+        "TORCH_HOME": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/env/cache/torch",
+        "CUDA_VISIBLE_DEVICES": "0",
+        "CUBLAS_WORKSPACE_CONFIG": ":4096:8"
+      },
+      "gpu": {
+        "index": 0,
+        "min_free_mb": 14500,
+        "max_used_mb": 1200
+      },
+      "verify_gpu": false,
+      "verify_command": [
+        "/home/ps/anaconda3/envs/SPNv2/bin/python",
+        "-B",
+        "-s",
+        "-u",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/tasks/source_artifacts.py",
+        "verify_eval",
+        "--cfg",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi3_bn_ehs_eval_lightbox.yaml",
+        "--source-report",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/eval_phi3_lightbox.json",
+        "--report",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/eval_phi3_lightbox_verified.json",
+        "--expected-samples",
+        "6740"
+      ],
+      "expected_outputs": [
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/eval_phi3_lightbox_verified.json"
+      ],
+      "metadata": {
+        "source": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi3_bn_ehs_eval_lightbox.yaml",
+        "final_only": true,
+        "samples": 6740
+      }
+    },
+    {
+      "id": "eval_phi3_sunlamp",
+      "kind": "full_source_evaluation",
+      "command": [
+        "/home/ps/anaconda3/envs/SPNv2/bin/python",
+        "-B",
+        "-s",
+        "-u",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/tasks/source_artifacts.py",
+        "evaluate",
+        "--cfg",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi3_bn_ehs_eval_sunlamp.yaml",
+        "--source-report",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/source_phi3_verified.json",
+        "--output",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluations/phi3_bn_ehs/sunlamp",
+        "--report",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/eval_phi3_sunlamp.json",
+        "--expected-samples",
+        "2791"
+      ],
+      "cwd": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source",
+      "requires": [
+        "eval_phi3_lightbox"
+      ],
+      "session": "spnv2_eval_phi3_sunlamp_20261017",
+      "log": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/logs/eval_phi3_sunlamp_20261017.log",
+      "env": {
+        "PYTHONNOUSERSITE": "1",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "PYTHONUNBUFFERED": "1",
+        "PYTHONHASHSEED": "2021",
+        "OMP_NUM_THREADS": "2",
+        "OPENBLAS_NUM_THREADS": "2",
+        "MPLBACKEND": "Agg",
+        "TORCH_HOME": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/env/cache/torch",
+        "CUDA_VISIBLE_DEVICES": "0",
+        "CUBLAS_WORKSPACE_CONFIG": ":4096:8"
+      },
+      "gpu": {
+        "index": 0,
+        "min_free_mb": 14500,
+        "max_used_mb": 1200
+      },
+      "verify_gpu": false,
+      "verify_command": [
+        "/home/ps/anaconda3/envs/SPNv2/bin/python",
+        "-B",
+        "-s",
+        "-u",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/tasks/source_artifacts.py",
+        "verify_eval",
+        "--cfg",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi3_bn_ehs_eval_sunlamp.yaml",
+        "--source-report",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/eval_phi3_sunlamp.json",
+        "--report",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/eval_phi3_sunlamp_verified.json",
+        "--expected-samples",
+        "2791"
+      ],
+      "expected_outputs": [
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/eval_phi3_sunlamp_verified.json"
+      ],
+      "metadata": {
+        "source": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi3_bn_ehs_eval_sunlamp.yaml",
+        "final_only": true,
+        "samples": 2791
+      }
+    }
+  ],
+  "backlog": [
+    "φ6-GN EHS：独立初始化20轮（batch1×累积4）及三域完整评价",
+    "固定ODR：两架构/两域/5观测流种子共20项；φ3 B1/B2修复线另20项",
+    "Table2：H10/E20/EH20，新协议三个pilot先验收",
+    "Table3：基础/+Erase/+Flare各20轮；Style复用新φ3",
+    "Table4：φ0-BN20/φ3-GN20；主线两架构复用",
+    "Table6：整网/编码器/ODR更新参数及资源统计",
+    "B扫描120项；N扫描240项，仅新source和同协议点复用",
+    "改善/退化与失败转移、关键点/姿态投影案例、材料受限核验",
+    "PRISMA25图像/标签/相机齐全后离线hH；最终完整证据矩阵验收"
+  ]
+}

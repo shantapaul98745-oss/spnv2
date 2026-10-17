@@ -1,0 +1,212 @@
+{
+  "source_configs": [
+    {
+      "id": "phi3_bn_ehs",
+      "phi": 3,
+      "backbone_norm": "BN",
+      "heads": [
+        "heatmap",
+        "efficientpose",
+        "segmentation"
+      ],
+      "epochs": 20,
+      "physical_batch": 4,
+      "accum_steps": 4,
+      "effective_batch": 16,
+      "augmentation": "style",
+      "config": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi3_bn_ehs.yaml",
+      "output": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_phi3_bn_ehs_ga4_seed2021",
+      "initialization": "ImageNet cached pretrained EfficientNet; exact source and SHA256 in run manifest",
+      "status": "pending"
+    },
+    {
+      "id": "phi6_gn_ehs",
+      "phi": 6,
+      "backbone_norm": "GN",
+      "heads": [
+        "heatmap",
+        "efficientpose",
+        "segmentation"
+      ],
+      "epochs": 20,
+      "physical_batch": 1,
+      "accum_steps": 4,
+      "effective_batch": 4,
+      "augmentation": "style",
+      "config": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi6_gn_ehs.yaml",
+      "output": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d6/rebaseline_phi6_gn_ehs_ga4_seed2021",
+      "initialization": "published GN construction path; author GN initialization unverified",
+      "status": "pending"
+    },
+    {
+      "id": "table2_h",
+      "phi": 3,
+      "backbone_norm": "BN",
+      "heads": [
+        "heatmap"
+      ],
+      "epochs": 10,
+      "physical_batch": 4,
+      "accum_steps": 4,
+      "effective_batch": 16,
+      "augmentation": "style",
+      "config": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/table2_h.yaml",
+      "output": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_table2_h_ga4_seed2021",
+      "initialization": "ImageNet cached pretrained EfficientNet; exact source and SHA256 in run manifest",
+      "status": "pending"
+    },
+    {
+      "id": "table2_e",
+      "phi": 3,
+      "backbone_norm": "BN",
+      "heads": [
+        "efficientpose"
+      ],
+      "epochs": 20,
+      "physical_batch": 4,
+      "accum_steps": 4,
+      "effective_batch": 16,
+      "augmentation": "style",
+      "config": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/table2_e.yaml",
+      "output": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_table2_e_ga4_seed2021",
+      "initialization": "ImageNet cached pretrained EfficientNet; exact source and SHA256 in run manifest",
+      "status": "pending"
+    },
+    {
+      "id": "table2_eh",
+      "phi": 3,
+      "backbone_norm": "BN",
+      "heads": [
+        "heatmap",
+        "efficientpose"
+      ],
+      "epochs": 20,
+      "physical_batch": 4,
+      "accum_steps": 4,
+      "effective_batch": 16,
+      "augmentation": "style",
+      "config": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/table2_eh.yaml",
+      "output": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_table2_eh_ga4_seed2021",
+      "initialization": "ImageNet cached pretrained EfficientNet; exact source and SHA256 in run manifest",
+      "status": "pending"
+    },
+    {
+      "id": "table3_base",
+      "phi": 3,
+      "backbone_norm": "BN",
+      "heads": [
+        "heatmap",
+        "efficientpose",
+        "segmentation"
+      ],
+      "epochs": 20,
+      "physical_batch": 4,
+      "accum_steps": 4,
+      "effective_batch": 16,
+      "augmentation": "base",
+      "config": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/table3_base.yaml",
+      "output": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_table3_base_ga4_seed2021",
+      "initialization": "ImageNet cached pretrained EfficientNet; exact source and SHA256 in run manifest",
+      "status": "pending"
+    },
+    {
+      "id": "table3_erase",
+      "phi": 3,
+      "backbone_norm": "BN",
+      "heads": [
+        "heatmap",
+        "efficientpose",
+        "segmentation"
+      ],
+      "epochs": 20,
+      "physical_batch": 4,
+      "accum_steps": 4,
+      "effective_batch": 16,
+      "augmentation": "erase",
+      "config": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/table3_erase.yaml",
+      "output": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_table3_erase_ga4_seed2021",
+      "initialization": "ImageNet cached pretrained EfficientNet; exact source and SHA256 in run manifest",
+      "status": "pending"
+    },
+    {
+      "id": "table3_flare",
+      "phi": 3,
+      "backbone_norm": "BN",
+      "heads": [
+        "heatmap",
+        "efficientpose",
+        "segmentation"
+      ],
+      "epochs": 20,
+      "physical_batch": 4,
+      "accum_steps": 4,
+      "effective_batch": 16,
+      "augmentation": "flare",
+      "config": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/table3_flare.yaml",
+      "output": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_table3_flare_ga4_seed2021",
+      "initialization": "ImageNet cached pretrained EfficientNet; exact source and SHA256 in run manifest",
+      "status": "pending"
+    },
+    {
+      "id": "table4_phi0_bn",
+      "phi": 0,
+      "backbone_norm": "BN",
+      "heads": [
+        "heatmap",
+        "efficientpose",
+        "segmentation"
+      ],
+      "epochs": 20,
+      "physical_batch": 4,
+      "accum_steps": 4,
+      "effective_batch": 16,
+      "augmentation": "style",
+      "config": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/table4_phi0_bn.yaml",
+      "output": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d0/rebaseline_table4_phi0_bn_ga4_seed2021",
+      "initialization": "ImageNet cached pretrained EfficientNet; exact source and SHA256 in run manifest",
+      "status": "pending"
+    },
+    {
+      "id": "table4_phi3_gn",
+      "phi": 3,
+      "backbone_norm": "GN",
+      "heads": [
+        "heatmap",
+        "efficientpose",
+        "segmentation"
+      ],
+      "epochs": 20,
+      "physical_batch": 4,
+      "accum_steps": 4,
+      "effective_batch": 16,
+      "augmentation": "style",
+      "config": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/table4_phi3_gn.yaml",
+      "output": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_table4_phi3_gn_ga4_seed2021",
+      "initialization": "published GN construction path; author GN initialization unverified",
+      "status": "pending"
+    }
+  ],
+  "source_config_count": 10,
+  "total_epochs": 190,
+  "seed": 2021,
+  "odr_seeds": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "bscan_points": 120,
+  "nscan_points": 240,
+  "notes": [
+    "Pilots, evaluations, ODR and scans excluded from source epoch total.",
+    "All configs independently initialized; final fixed before target evaluation.",
+    "Table3 baseline is brightness/contrast+Blur+Noise; then Erase, then Flare, then Style.",
+    "Phi0-BN and phi3-GN use physical4 x accumulation4; no SyncBN equivalence claim.",
+    "Existing source and scans remain separate."
+  ],
+  "excluded_experiments": [
+    "true_physical_batch16_probe"
+  ],
+  "latest_decision": "User removed true batch16 feasibility test on 2026-10-17; focus on the approved accumulation reproduction."
+}

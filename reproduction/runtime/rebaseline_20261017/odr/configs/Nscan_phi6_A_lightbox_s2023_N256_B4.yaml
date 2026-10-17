@@ -1,0 +1,114 @@
+ROOT: /home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/odr/source_A
+OUTPUT_DIR: /home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/odr/runs
+LOG_DIR: /home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/odr/training_logs
+AUTO_RESUME: false
+CUDA: true
+FP16: false
+VERBOSE: false
+EXP_NAME: Nscan_phi6_A_lightbox_s2023_N256_B4
+CUDNN:
+  BENCHMARK: true
+  DETERMINISTIC: false
+  ENABLED: true
+DATASET:
+  ROOT: /home/DATA/Downloads/DataSet
+  DATANAME: speedplus
+  CAMERA: camera.json
+  KEYPOINTS: /home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/odr/source_A/core/utils/models/tangoPoints.mat
+  CADMODEL: models/tango.ply
+  IMAGE_SIZE:
+  - 1920
+  - 1200
+  INPUT_SIZE:
+  - 768
+  - 512
+  OUTPUT_SIZE:
+  - 4
+  - 8
+  - 16
+  - 32
+  - 64
+  - 128
+  MAX_NUM_OBJECTS: 1
+  NUM_KEYPOINTS: 11
+  NUM_ANCHORS: 9
+  SIGMA: 2
+AUGMENT:
+  P: 0.0
+  APPLY_TEXTURE_RANDOMIZATION: false
+  RANDOM_TEXTURE:
+    ALPHA: 0.5
+    PROB: 0.0
+  ADJUST_BRIGHTNESS_CONTRAST: true
+  APPLY_BLUR: true
+  APPLY_SOLAR_FLARE: true
+  APPLY_RANDOM_ERASE: true
+  APPLY_NOISE: true
+ODR:
+  MIN_ENTROPY: true
+  NUM_TRAIN_SAMPLES: 256
+  IMAGES_PER_BATCH: 4
+TRAIN:
+  TRAIN_CSV: lightbox/labels/test.csv
+  VAL_CSV: lightbox/labels/test.csv
+  BEGIN_EPOCH: 0
+  END_EPOCH: 1
+  VALID_FREQ: -1
+  VALID_FRACTION: 1
+  IMAGES_PER_GPU: 1
+  OPTIMIZER: AdamW
+  LR: 0.0001
+  SCHEDULER: step
+  LR_FACTOR: 0.1
+  LR_STEP:
+  - 15
+  - 18
+  GAMMA1: 0.9
+  GAMMA2: 0.999
+  WD: 0.0
+  WORKERS: 4
+  ACCUM_STEPS: 1
+  REPRODUCIBLE: false
+  SHUFFLE: true
+TEST:
+  TEST_CSV: lightbox/labels/test.csv
+  IMAGES_PER_GPU: 1
+  HEAD:
+  - heatmap
+  - efficientpose
+  BBOX_THRESHOLD: 0.0
+  HEATMAP_THRESHOLD: 0.5
+  SPEED_THRESHOLD_Q: 0.169
+  SPEED_THRESHOLD_T: 0.002173
+MODEL:
+  BACKBONE:
+    NAME: efficientdet_d6
+  HEAD:
+    NAMES:
+    - heatmap
+    - efficientpose
+    - segmentation
+    LOSS_HEADS: []
+    LOSS_FACTORS: []
+    LOSS_NUMS:
+    - 0
+    EFFICIENTPOSE_LOSS_FACTOR:
+    - 1.0
+    - 1.0
+    - 1.0
+    POSE_REGRESSION_LOSS: speed
+    ANCHOR_SCALE: '[2 ** 0, 2 ** (1.0 / 3.0), 2 ** (2.0 / 3.0)]'
+    ANCHOR_RATIO:
+    - - 1.0
+      - 1.0
+    - - 1.4
+      - 0.7
+    - - 0.7
+      - 1.4
+  EFFICIENTDET_PHI: 6
+  USE_GROUPNORM_BACKBONE: true
+  USE_GROUPNORM_HEADS: true
+  GROUPNORM_SIZE: 16
+  FIND_UNUSED_PARAM: false
+  PRETRAIN_FILE: /home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d6/rebaseline_phi6_gn_ehs_ga4_seed2021/model_final.pth.tar
+SEED: 2023

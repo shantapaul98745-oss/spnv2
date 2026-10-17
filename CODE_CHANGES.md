@@ -28,3 +28,23 @@
 ## 后续记录方式
 
 每项经过验证的代码改动都追加“具体文件、原因、作用、验证、限制”，并附相应Git提交。运行日志和实时进度仍在服务器资产目录持续更新。
+
+## 2026-10-17：实验队列、配置、ODR与简洁进度工具
+
+以下文件在仓库 `reproduction/runtime/` 按实际资产目录结构归档；`reproduction/archive_manifest.json` 逐项记录真实运行文件与副本的SHA256。
+
+| 改动位置 | 为什么改 | 改后作用与验收 |
+|---|---|---|
+| `pipeline/runner.py`、`task_entry.py`、`progress.py` | 长实验需串行启动、精确判断进程、不能只看screen或退出码 | 资源门槛、PID/启动标识、退出证据与独立验收；MD原子刷新，失败停止后续；队列23项CPU回归通过 |
+| `pipeline/revision.py`、`runner.py`及对应测试 | 后续实验需要追加，同时当前健康训练必须继续 | 原队列前缀不可变、独占锁和审计修订；新增资产哈希启动/验收前复核；18项修订、5项接入、7项接续/资产门槛通过 |
+| `queue_v2.json`、`queue_proposals/*.py` | 将完整计划逐步变成可核验的真实命令和依赖 | 当前原φ3四项保持，追加φ6 pilot/独立正式20轮/三域评价；静态9组审计通过。切换只更换管理器，训练worker PID与启动标识未变 |
+| `configs/`、`protocol_matrix.json`、`EXECUTION_PLAN.md` | 防止训练配置漏项、混用输出或偏离用户决策 | 10正式配置共190轮；每模型三域完整评价；真实batch16短测已从计划删除 |
+| `pilots/gpu_smoke.py`、`verify_pilot.py`、`evidence.py`及四份配置 | φ6和H/E/EH正式训练前需要独立短测与恢复证据 | 使用真实生产训练循环，32窗口及第16窗口恢复；CPU证据校验16项通过。φ6和H/E/EH实际GPU短测尚待对应队列执行，不能称已通过 |
+| `tasks/source_artifacts.py`、`verify_heads.py`、`audit_checkpoint.py` | 成功退出不等于权重/全域结果可用 | 独立重载、初始化/样本流/优化器/AMP/RNG与完整分母核验；评价导出4项通过；φ3实际第500窗口checkpoint独立CPU审计通过 |
+| `odr/common.py`、`generate.py`、`run_task.py` | 固定ODR和扫描必须独立、串行且协议一致 | 400请求/370实际执行/30严格别名；统一GPU门槛及缓存；固定40项全部验收前不允许扫描 |
+| `odr/audited_entry.py`、`evidence.py`、`verify_result.py`、`verify_heads.py` | ODR要证明实际观测流、参数范围和评价结果 | 标准进度事件、观测ID/唯一数、适应前后权重、输入证据、完整优化器/RNG、独立CPU重载及零有效预测处理；15项原算法数学测试+7组接入回归通过；真实GPU ODR尚未执行 |
+| `odr/B1_only_change.patch`、`B2_only_change.patch`及SHA清单 | A/B1/B2要可单独复核，不能混线 | B1只限定骨干归一化仿射更新，B2另固定BN动量0.1；每项从对应新source final重新开始 |
+| `resources/scripts/` | 补齐Table6参数量并核实官方初始化 | 四架构整网/骨干/编码器/ODR参数计数独立CPU验收；B0旧URL哈希迁移已由官方新URL及360张量一致性核验；GPU资源测量仍待执行 |
+| `runtime/shared/`、`reproduction/sync_runtime_archive.py` | 原始审计日志过密、仓库外代码不易审阅 | 只读简洁页每5秒同屏刷新；代码副本逐文件一致并映射真实路径；不控制或重启训练 |
+
+上述内容是代码与工程验收记录，不代表10套source、ODR和扫描的正式精度已完成。正式结果仍需完整训练、评价与验收。原始失败日志和历史版本保留在服务器对应资产目录。
