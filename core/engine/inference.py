@@ -24,7 +24,13 @@ logger = logging.getLogger("Testing")
 
 def _get_metric_unit(name):
     unit = ''
-    if 'eR' in name:
+    if 'eR_HIL' in name:
+        unit = 'rad'
+    elif 'eT_norm_HIL' in name:
+        unit = 'm/m'
+    elif name == 'final_pose':
+        unit = 'score'
+    elif 'eR' in name:
         unit = 'deg'
     elif 'eT' in name:
         unit = 'm'
@@ -54,13 +60,14 @@ def do_valid(epoch, cfg, model, data_loader, camera, keypts_true_3D,
         per_sample_metrics[name] = []
 
     # Predictions
-    heatmaps = []
     h_reject = []
     q_hmap   = []
     t_hmap   = []
     R_reg    = []
     t_reg    = []
     bbox_reg = []
+    sample_ids = []
+    per_sample_metrics['final_pose'] = []
 
     # Check validation set fraction
     num_batches = len(data_loader)
@@ -88,6 +95,7 @@ def do_valid(epoch, cfg, model, data_loader, camera, keypts_true_3D,
 
         # Ground-truth
         domain    = targets['domain'][0]
+        sample_ids.append(str(targets['imgpath'][0]))
         q_gt      = targets['quaternion'][0].numpy()
         R_gt      = targets['rotationmatrix'][0].numpy()
         t_gt      = targets['translation'][0].numpy()
@@ -131,11 +139,11 @@ def do_valid(epoch, cfg, model, data_loader, camera, keypts_true_3D,
                     else:
                         q_pr = t_pr = None
 
-                    # Outputs
-                    heatmaps.append(outputs[i].squeeze(0).cpu().numpy())
+                    # Keep fixed-shape, NaN-marked records for rejected samples;
+                    # retaining all heatmaps is unnecessary and can consume GBs.
                     h_reject.append(reject)
-                    q_hmap.append(q_pr)
-                    t_hmap.append(t_pr)
+                    q_hmap.append(np.asarray(q_pr, dtype=np.float32) if q_pr is not None else np.full(4, np.nan, dtype=np.float32))
+                    t_hmap.append(np.asarray(t_pr, dtype=np.float32) if t_pr is not None else np.full(3, np.nan, dtype=np.float32))
 
                     # Metrics
                     result = {'_eR': err_q, '_eT': err_t, '_eR_HIL': speed_q, '_eT_norm_HIL': speed_t, '_pose': speed}
@@ -181,16 +189,21 @@ def do_valid(epoch, cfg, model, data_loader, camera, keypts_true_3D,
                     result = {'_iou': iou, '_eR': err_q, '_eT': err_t, '_eR_HIL': speed_q, '_eT_norm_HIL': speed_t, '_pose': speed}
 
                 # Update metrics of this head
-                if not reject:
+                valid = not reject
+                if valid:
                     for m, v in result.items():
                         metrics[name[:4]+m].update(v, 1)
-                        per_sample_metrics[name[:4]+m].append(v)
+                for m, v in result.items():
+                    per_sample_metrics[name[:4]+m].append(v if valid else np.nan)
 
             # Final pose score
+            final_pose = np.nan
             if not ('heatmap' in cfg.TEST.HEAD and h_reject[-1]):
                 pose_r = per_sample_metrics['heat_eR_HIL'][-1] if 'heatmap' in cfg.TEST.HEAD else per_sample_metrics['effi_eR_HIL'][-1]
                 pose_t = per_sample_metrics['effi_eT_norm_HIL'][-1] if 'efficientpose' in cfg.TEST.HEAD else per_sample_metrics['heat_eT_norm_HIL'][-1]
-                metrics['final_pose'].update(pose_r + pose_t, 1)
+                final_pose = pose_r + pose_t
+                metrics['final_pose'].update(final_pose, 1)
+            per_sample_metrics['final_pose'].append(final_pose)
 
         # Elapsed time
         batch_time.update((time.time() - start)*1000)
@@ -240,10 +253,16 @@ def do_valid(epoch, cfg, model, data_loader, camera, keypts_true_3D,
                 results_mat['h_reject'] = sum(h_reject)
 
         per_sample_metrics["h_reject"] = h_reject
+        per_sample_metrics["sample_id"] = np.asarray(sample_ids, dtype=object)
+        per_sample_metrics["n_samples"] = np.asarray([len(sample_ids)], dtype=np.int64)
+        per_sample_metrics["final_pose_valid"] = np.asarray([np.isfinite(x) for x in per_sample_metrics['final_pose']], dtype=np.uint8)
 
         # Final pose
         results_str += ['Final Pose: {:.5f}\n'.format(metrics['final_pose'].avg)]
         results_mat['final_pose'] = metrics['final_pose'].avg
+        results_mat['n_samples'] = len(sample_ids)
+        results_mat['final_pose_valid'] = metrics['final_pose'].count
+        results_mat['heatmap_valid'] = len(h_reject) - sum(h_reject)
 
         # Write average performances
         resultfn = os.path.join(log_dir, 'mean_performance.txt')
@@ -266,10 +285,8 @@ def do_valid(epoch, cfg, model, data_loader, camera, keypts_true_3D,
         # savemat(predfn, {'hmap': heatmaps, 'hmap_q': q_hmap, 'hmap_t': t_hmap, 'eff_R': R_reg, 'eff_t': t_reg}, appendmat=False)
 
         predfn = os.path.join(log_dir, 'predictions_pose.mat')
-        savemat(predfn, {'heat_q': q_hmap, 'heat_t': t_hmap, 'effi_R': R_reg, 'effi_t': t_reg, 'bbox': bbox_reg, 'reject': h_reject}, appendmat=False)
+        savemat(predfn, {'sample_id': np.asarray(sample_ids, dtype=object), 'heat_q': q_hmap, 'heat_t': t_hmap, 'effi_R': R_reg, 'effi_t': t_reg, 'bbox': bbox_reg, 'reject': h_reject}, appendmat=False)
         logger.info(f'Pose predictions saved to {predfn}')
 
     return metrics['final_pose'].avg
-
-
 

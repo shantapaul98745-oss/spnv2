@@ -96,8 +96,12 @@ def do_train(epoch, cfg, model, data_loader, optimizer, log_dir=None,
         if rank == 0:
             if cfg.VERBOSE:
                 progress.display(idx)
+            elif idx == 0 or (idx + 1) % 200 == 0 or idx + 1 == len(data_loader):
+                logger.info(
+                    'Epoch %d/%d | TRAIN | batch %d/%d (%.1f%%) | loss=%.4g',
+                    epoch + 1, cfg.TRAIN.END_EPOCH, idx + 1, len(data_loader),
+                    100.0 * (idx + 1) / len(data_loader), float(loss.detach()))
             if idx+1 == len(data_loader):
                 progress.display_summary()
 
     # TODO: tensorboard logging
-

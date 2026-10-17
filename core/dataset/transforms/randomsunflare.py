@@ -71,13 +71,30 @@ class RandomSunFlare(A.DualTransform):
     def apply(self, image, src_radius=400, flare_center_x=0.5, flare_center_y=0.5, circles=(), **params):
         clr = random.choice([0, 255])
         src_color = (clr, clr, clr)
+        # Albumentations may convert nested circle tuples to NumPy scalar
+        # values in a worker process.  OpenCV's Python binding is stricter
+        # about the tuple element types than the original Albumentations
+        # implementation, so normalize the geometry at this boundary.
+        safe_circles = []
+        for circle in circles:
+            try:
+                alpha, center, radius, color = circle
+                x, y = center
+                x, y = int(x), int(y)
+                radius = int(radius)
+                color = tuple(int(c) for c in color)
+                if radius < 0 or not (math.isfinite(float(x)) and math.isfinite(float(y))):
+                    continue
+                safe_circles.append((float(alpha), (x, y), radius, color))
+            except (TypeError, ValueError, OverflowError):
+                continue
         return A.functional.add_sun_flare(
             image,
-            flare_center_x,
-            flare_center_y,
-            src_radius,
+            int(flare_center_x),
+            int(flare_center_y),
+            int(src_radius),
             src_color,
-            circles,
+            safe_circles,
         )
 
     @property

@@ -57,7 +57,7 @@ TRAIN:
   WD: 1.0e-4
   WORKERS: 4
 TEST:
-  TEST_CSV: 'lightbox/labels/lightbox.csv'
+  TEST_CSV: 'lightbox/labels/test.csv'
   IMAGES_PER_GPU: 1
   HEAD: ['heatmap', 'efficientpose']
   BBOX_THRESHOLD:    0.0

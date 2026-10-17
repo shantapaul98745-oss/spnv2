@@ -108,7 +108,7 @@ class ProgressMeter(object):
             sys.stdout.write(msg[1:]+'\n')
 
     def display_summary(self):
-        entries = [" *"]
+        entries = [self.prefix.strip(), '| SUMMARY']
         entries += ['Time: ' + self.timer.summary()]
         entries += [meter.summary() for meter in self.meters]
         logger.info(' '.join(entries))

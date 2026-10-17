@@ -121,6 +121,7 @@ class SPEEDPLUSDataset(torch.utils.data.Dataset):
 
         #------------ Generate targets
         targets = {'domain':         anno['domain'],
+                   'imgpath':        anno['imgpath'],
                    'boundingbox':    torch.from_numpy(anno['boundingbox']),
                    'quaternion':     torch.from_numpy(anno['quaternion']),
                    'rotationmatrix': torch.from_numpy(anno['rotationmatrix']),

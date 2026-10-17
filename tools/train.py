@@ -217,6 +217,12 @@ def main_worker(gpu, ngpus_per_node, args, output_dir, log_dir):
         # Learning rate adjustment
         adjust_learning_rate(optimizer, epoch, cfg)
 
+        if args.rank == 0:
+            logger.info(
+                '========== Epoch %d/%d | TRAIN START | batches=%d | lr=%s ==========',
+                epoch + 1, cfg.TRAIN.END_EPOCH, len(train_loader),
+                ', '.join(f"{group['lr']:.2e}" for group in optimizer.param_groups))
+
         # Single epoch training
         do_train(epoch,
                  cfg,
@@ -231,6 +237,7 @@ def main_worker(gpu, ngpus_per_node, args, output_dir, log_dir):
         if not args.distributed or (args.distributed and args.rank == 0):
             # Validate on the fraction of dataset
             if (epoch+1) % cfg.TRAIN.VALID_FREQ == 0:
+                logger.info('Epoch %d/%d | VALIDATION START', epoch + 1, cfg.TRAIN.END_EPOCH)
                 score = do_valid(epoch,
                                  cfg,
                                  model,
@@ -258,6 +265,12 @@ def main_worker(gpu, ngpus_per_node, args, output_dir, log_dir):
                 'optimizer': optimizer.state_dict(),
                 'scaler': scaler.state_dict() if scaler is not None else None
             }, is_best, epoch+1==cfg.TRAIN.END_EPOCH, output_dir)
+
+            logger.info('========== Epoch %d/%d | COMPLETE | checkpoint saved ==========',
+                        epoch + 1, cfg.TRAIN.END_EPOCH)
+
+    if args.rank == 0:
+        logger.info('Training finished: %d/%d epochs complete', cfg.TRAIN.END_EPOCH, cfg.TRAIN.END_EPOCH)
 
 if __name__=='__main__':
     main(cfg)
