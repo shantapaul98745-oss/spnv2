@@ -16,26 +16,46 @@
       "sha256": "21f38b81daf4b594f805b634a342897ad5d23bf3a03eb7e3791c4fe01765b872"
     },
     {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/monitoring/spnv2-2_prompt_20261018.txt",
+      "repository_path": "reproduction/monitoring/spnv2-2_prompt_20261018.txt",
+      "sha256": "e899cb5ed480f8829bc43ef045e5b85808f1f564a575b333cd60f184b60062bf"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/observed_stage_20261018/activate_authorized_b.py",
+      "repository_path": "reproduction/queue_proposals/observed_stage_20261018/activate_authorized_b.py",
+      "sha256": "ae917e90a9de1b82ce18de5aa716982919226e95bc6144509b9d8e43b44905d0"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/revisions/manager_observed_cutover_20261018_b/accepted.json",
+      "repository_path": "reproduction/queue_proposals/observed_stage_20261018/accepted_activation.json",
+      "sha256": "b9a64091f1fa022d6e752f7c555c849e3077d8acef4de042c371a4d0d335b87f"
+    },
+    {
       "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/observed_stage_20261018/README.md",
       "repository_path": "reproduction/queue_proposals/observed_stage_20261018/README.md",
-      "sha256": "8f927a5108f8fc94233ea19d50fece686456d5bf461d4f2aef78428d353cb3ea"
+      "sha256": "ded4406ff5cab1d3ce7c8b25dc080560cd8919c8debccc97b0d22a63f1376d04"
     },
     {
       "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/SERVER_EXECUTION_HANDOFF.md",
       "repository_path": "reproduction/monitoring/SERVER_EXECUTION_HANDOFF.md",
-      "sha256": "0535cbdc4bb065e2b0250fa89a8a685dd57d2ef3575afc892e96264c793ea3a0"
+      "sha256": "6c7a0609ef5c217279fce20d7402d183ff5fdf02a029680d0b6fa4606b421223"
     },
     {
-      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/monitoring/spnv2-2_prompt_20261018.txt",
-      "repository_path": "reproduction/monitoring/spnv2-2_prompt_20261018.txt",
-      "sha256": "e899cb5ed480f8829bc43ef045e5b85808f1f564a575b333cd60f184b60062bf"
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/monitoring/spnv2-2_prompt_active49_20261018.txt",
+      "repository_path": "reproduction/monitoring/spnv2-2_prompt_active49_20261018.txt",
+      "sha256": "c3e72fb7a2f67d3449562377f8c48e12c56a1621050120d7b32f4abefbd88d8e"
     }
   ],
-  "activated": false,
+  "activated": true,
   "full_queue": false,
   "preflight_log": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/observed_stage_20261018/preflight_b.log",
   "initial_failed_log": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/observed_stage_20261018/preflight.log",
   "initial_failed_source": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/observed_stage_20261018/prepare_proposal_initial.py",
   "raw_proposal": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/observed_stage_20261018/proposal.json",
-  "raw_sha256": "9d2ae4f7e74e575a779e611c7d872653aa6495989b38c8b8260abf479b899153"
+  "raw_sha256": "9d2ae4f7e74e575a779e611c7d872653aa6495989b38c8b8260abf479b899153",
+  "activation_receipt": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/revisions/manager_observed_cutover_20261018_b/accepted.json",
+  "production_manifest": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_observed_stage_20261018.json",
+  "production_canonical_sha256": "a6f82b1efc62ebb6223e1cfec4919e44de35424b53709230f39b0655ea3e27a5",
+  "failed_activation_log": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/observed_stage_20261018/activation.log",
+  "successful_activation_log": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/observed_stage_20261018/activation_b.log"
 }

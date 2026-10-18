@@ -116,3 +116,18 @@
 - 独立screen中CPU候选构建与纯修订合同检查通过，291个实际资产SHA核对；旧ODR提案唯一runner绑定漂移更新为已验证现行版本。首版因早期φ3任务未设置asset_sha256字段而失败，修正兼容读取后重新通过，原失败日志与源码保留；未执行GPU评价或ODR，未改生产state/manifest。
 - 已核查当前manager无热加载接口，HUP也会停止它。启用候选必须一次仅管理器的受控重启，训练保持原PID/starttime和screen；这与用户最新“不重启健康队列”限制冲突，必须先取得这一次明确例外。不得以修改当前manifest、状态或热补丁绕过；获允许后先重验六项仍未启动，再按既有排他锁与纯修订流程接续，不能触碰已启动评价。
 - 同一个spnv2-2已用应用工具改为ACTIVE/15分钟并逐字读回；未新建定时任务、未恢复目标模式。进入后续长健康训练后回每小时。当前待用户确认上述管理器例外；若评价已开始，先保留实际证据并汇报，不擅自补跑或回写任务。
+
+
+## 最新接续状态：已按用户一次性授权启用（2026-10-18 14:38）
+
+本节取代上方“候选未启用/等待授权”的当前状态。用户明确同意“允许这一次仅切换管理器，训练继续”。14:38:42已完成manager-only受控切换并验收，训练PID3111276/starttime517862167前后不变，batch5892→5896，未重启训练或其screen。新manager PID1851843/starttime526573814，screen `rebaseline_queue_observed_20261018`；日志`logs/queue_manager_observed_20261018.log`。精确身份仅作交接，今后须读实时状态重核。
+
+当前绑定`queue_observed_stage_20261018.json`，49项，canonical SHA256 `a6f82b1efc62ebb6223e1cfec4919e44de35424b53709230f39b0655ea3e27a5`。六个原source评价均在未启动状态完成严格wrapper绑定；原训练/pilot逐字段保持，原评价参数、旧结果及同次推理次数保持；追加原计划固定ODR40。三域评价同时生成原接受子集与扩展H数值/混合旁证，各自列清分母，只有实际N/N覆盖才可对标论文全部样本口径。尚无正式评价/ODR结果，不提前承诺论文差距。
+
+切换证据：`revisions/manager_observed_cutover_20261018_b/accepted.json`，正式修订审计`revisions/2026-10-18T14-38-42+08-00_1851843_a6f82b1efc62ebb6.json`。首次切换脚本因服务器Python无pidfd接口在发送信号前失败，旧manager/worker未受影响；保留原失败记录，改用既有PID/starttime核验方法后成功，只有一次实际manager切换。
+
+普通故障恢复只使用`--manifest queue_observed_stage_20261018.json`，禁止重用历史`--extend-from`或`--revise-pending-from/--pending-task`参数。一次性健康manager切换授权已经使用；不得重复运行一次性脚本、停止/重启健康训练或队列。目标模式仍暂停。现有spnv2-2保持ACTIVE/15分钟，实际注册完整提示见`monitoring/spnv2-2_prompt_active49_20261018.txt`，已逐字读回验证；后续长健康训练恢复每小时。
+
+接下来由服务器自动：φ3自然结束→成功退出、final严格重载和训练证据验收→synthetic11994/lightbox6740/sunlamp2791评价及原/扩展结果验收→φ6 GPU pilot/恢复验收→独立20轮与三域评价→固定ODR40。任何异常按原规则保留现场并阻止下游，不擅自重训换参。
+
+尚未接入当前49项的全部缺口继续保留：其余8套source150轮及24域评价、Table2三个pilot、Table6资源、B120/N240扫描、案例、PRISMA25材料核验、完整扩展绘图/结果汇总与最终逐项验收。完整范围仍为10套190轮和400 ODR请求/370实际+30严格别名；49项完成不是全部完成。

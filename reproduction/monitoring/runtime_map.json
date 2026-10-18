@@ -4,7 +4,7 @@
     {
       "repository_path": "reproduction/monitoring/SERVER_EXECUTION_HANDOFF.md",
       "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/SERVER_EXECUTION_HANDOFF.md",
-      "sha256": "0535cbdc4bb065e2b0250fa89a8a685dd57d2ef3575afc892e96264c793ea3a0"
+      "sha256": "6c7a0609ef5c217279fce20d7402d183ff5fdf02a029680d0b6fa4606b421223"
     },
     {
       "repository_path": "reproduction/monitoring/spnv2-2_prompt_20261017.txt",
@@ -15,6 +15,11 @@
       "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/monitoring/spnv2-2_prompt_20261018.txt",
       "repository_path": "reproduction/monitoring/spnv2-2_prompt_20261018.txt",
       "sha256": "e899cb5ed480f8829bc43ef045e5b85808f1f564a575b333cd60f184b60062bf"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/monitoring/spnv2-2_prompt_active49_20261018.txt",
+      "repository_path": "reproduction/monitoring/spnv2-2_prompt_active49_20261018.txt",
+      "sha256": "c3e72fb7a2f67d3449562377f8c48e12c56a1621050120d7b32f4abefbd88d8e"
     }
   ],
   "prompt_exact_readback_verified": true,
@@ -25,6 +30,7 @@
   "scope": "Documentation and registered prompt snapshot only; no new task, experiment, daemon or training change",
   "server_independence_report": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/monitoring/server_independence_20261017.json",
   "target_thread_id": "01a13fb0-3cb8-7353-bb70-bd4cb0d436dd",
-  "latest_prompt": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/monitoring/spnv2-2_prompt_20261018.txt",
-  "latest_checked_at": "2026-10-18T14:35:58+08:00"
+  "latest_prompt": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/monitoring/spnv2-2_prompt_active49_20261018.txt",
+  "latest_checked_at": "2026-10-18T14:41:12+08:00",
+  "current_manifest": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_observed_stage_20261018.json"
 }

@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "operation": "authorized_manager_only_observer_revision",
+  "worker_pid_unchanged": 3111276,
+  "worker_starttime_unchanged": "517862167",
+  "training_restarted": false,
+  "old_manager": {
+    "pid": 3298458,
+    "starttime": "518141786",
+    "started_at": "2026-10-17T15:13:22+08:00",
+    "mode": "queue"
+  },
+  "new_manager": {
+    "pid": 1851843,
+    "starttime": "526573814",
+    "started_at": "2026-10-18T14:38:42+08:00",
+    "mode": "queue"
+  },
+  "task_count": 49,
+  "original_training_tasks_unchanged": true,
+  "six_source_evaluations_wrapped_before_start": true,
+  "fixed_odr_tasks_appended": 40,
+  "manifest": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_observed_stage_20261018.json",
+  "manifest_sha256": "a6f82b1efc62ebb6223e1cfec4919e44de35424b53709230f39b0655ea3e27a5",
+  "revision_audit": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/revisions/2026-10-18T14-38-42+08-00_1851843_a6f82b1efc62ebb6.json",
+  "before_epoch": 19,
+  "before_batch": 5892,
+  "after_epoch": 19,
+  "after_batch": 5896,
+  "full_plan_completed": false,
+  "normal_recovery": "Use --manifest /home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_observed_stage_20261018.json without any historical revision/extend flags"
+}
