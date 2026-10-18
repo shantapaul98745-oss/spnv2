@@ -1,0 +1,403 @@
+{
+  "schema": "spnv2-source-targets-and-next-stage-inspection-v1",
+  "checked_at": "2026-10-18T17:16:23+08:00",
+  "status": "accepted_phi3_targets_and_phi6_pilot_phi6_formal_running",
+  "source_final_sha256": "7692e3cb2ac9c1890ff3881aa42f70d0cc81175740e4c8795466e7eda01e011a",
+  "paper_reference": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/analysis_plots/reference/paper_reference.json",
+    "sha256": "9509bc25fb2d88135d290c0ac8af4ffb2860d0abdd1ad6790a8a4da4f5e02f56",
+    "pdf": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/paper/Park2024SPNv2.pdf",
+    "pdf_sha256": "0ba8b235ab705e985a07d6245f7a1820a4878deb608f4db214a3b90b717a1d45"
+  },
+  "comparison": [
+    {
+      "domain": "lightbox",
+      "metric": "effi_eT",
+      "unit": "m",
+      "paper_table": "Table4",
+      "paper": 0.175,
+      "current": 0.2797249496473657,
+      "absolute_gap": 0.10472494964736573,
+      "relative_gap_percent": 59.842828369923275,
+      "count": 6740,
+      "total": 6740,
+      "denominator_scope": "all_samples"
+    },
+    {
+      "domain": "lightbox",
+      "metric": "heat_eR",
+      "unit": "deg",
+      "paper_table": "Table4",
+      "paper": 6.479,
+      "current": 9.881825157871361,
+      "absolute_gap": 3.4028251578713613,
+      "relative_gap_percent": 52.5208389855126,
+      "count": 6740,
+      "total": 6740,
+      "denominator_scope": "all_samples"
+    },
+    {
+      "domain": "lightbox",
+      "metric": "final_pose",
+      "unit": "dimensionless",
+      "paper_table": "Table4",
+      "paper": 0.142,
+      "current": 0.217882591724404,
+      "absolute_gap": 0.07588259172440401,
+      "relative_gap_percent": 53.43844487634085,
+      "count": 6740,
+      "total": 6740,
+      "denominator_scope": "all_samples"
+    },
+    {
+      "domain": "sunlamp",
+      "metric": "effi_eT",
+      "unit": "m",
+      "paper_table": "Table4",
+      "paper": 0.225,
+      "current": 0.2914073256003583,
+      "absolute_gap": 0.06640732560035831,
+      "relative_gap_percent": 29.514366933492582,
+      "count": 2791,
+      "total": 2791,
+      "denominator_scope": "all_samples"
+    },
+    {
+      "domain": "sunlamp",
+      "metric": "heat_eR",
+      "unit": "deg",
+      "paper_table": "Table4",
+      "paper": 11.065,
+      "current": 16.331912979274353,
+      "absolute_gap": 5.266912979274354,
+      "relative_gap_percent": 47.59975580003935,
+      "count": 2791,
+      "total": 2791,
+      "denominator_scope": "all_samples"
+    },
+    {
+      "domain": "sunlamp",
+      "metric": "final_pose",
+      "unit": "dimensionless",
+      "paper_table": "Table4",
+      "paper": 0.23,
+      "current": 0.3353710502519534,
+      "absolute_gap": 0.1053710502519534,
+      "relative_gap_percent": 45.813500109544954,
+      "count": 2791,
+      "total": 2791,
+      "denominator_scope": "all_samples"
+    }
+  ],
+  "reference_correction": "Table4 source is the matched stage. Prior 0.142/5.624/.122 and .182/9.601/.198 are Table5 fixed ODR values; do not use them as source reference.",
+  "domains": {
+    "lightbox": {
+      "base_report": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/eval_phi3_lightbox_verified.json",
+        "sha256": "ece95b6e1c3a60247363c67fa00dc48232941407d9bbb9150e18287ceb40bfbf",
+        "status": "passed"
+      },
+      "original_protocol_summary": {
+        "heatmap_rejections": 10,
+        "heatmap_valid": 6730,
+        "metrics": {
+          "effi_eR": {
+            "count": 6740,
+            "mean": 11.738354490584282,
+            "unit": "deg"
+          },
+          "effi_eR_HIL": {
+            "count": 6740,
+            "mean": 0.20487146202113204,
+            "unit": "rad"
+          },
+          "effi_eT": {
+            "count": 6740,
+            "mean": 0.2797249496473657,
+            "unit": "m"
+          },
+          "effi_eT_norm_HIL": {
+            "count": 6740,
+            "mean": 0.04541849644052539,
+            "unit": "m/m"
+          },
+          "effi_iou": {
+            "count": 6740,
+            "mean": 0.8602088783676971,
+            "unit": ""
+          },
+          "effi_pose": {
+            "count": 6740,
+            "mean": 0.25028995846165697,
+            "unit": ""
+          },
+          "final_pose": {
+            "count": 6730,
+            "mean": 0.21549105464681317,
+            "unit": "score"
+          },
+          "heat_eR": {
+            "count": 6730,
+            "mean": 9.761649691848858,
+            "unit": "deg"
+          },
+          "heat_eR_HIL": {
+            "count": 6730,
+            "mean": 0.17036662837571312,
+            "unit": "rad"
+          },
+          "heat_eT": {
+            "count": 6730,
+            "mean": 0.2565829676118198,
+            "unit": "m"
+          },
+          "heat_eT_norm_HIL": {
+            "count": 6730,
+            "mean": 0.04113398105908863,
+            "unit": "m/m"
+          },
+          "heat_pose": {
+            "count": 6730,
+            "mean": 0.21150060943480148,
+            "unit": ""
+          }
+        },
+        "n_samples": 6740,
+        "score": 0.21549105464681317
+      },
+      "extension": {
+        "report": {
+          "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/runs/source/eval_phi3_lightbox_9c05f71d874b/extension/extended_report.json",
+          "sha256": "aade6007edd1fcfe7906231e5c721df53e93e10134b26e6e1962b30816a80288",
+          "status": "produced_pending_independent_cpu_verification"
+        },
+        "verification": {
+          "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/runs/source/eval_phi3_lightbox_9c05f71d874b/independent_extension_verification.json",
+          "sha256": "a33500b56cff7ae2d51239e0dd23be8c032d86e75414518dc32ad40438892c38",
+          "status": "passed"
+        },
+        "entrypoint_verification": {
+          "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/reports/source/eval_phi3_lightbox_9c05f71d874b.json",
+          "sha256": "66349ade422e98be71015b10a6dc6f261d5a184c9d5000d376aa0a48616cc0fb",
+          "status": "passed"
+        }
+      },
+      "coverage": {
+        "H_E_intersection": 6740,
+        "H_numeric_pose": 6740,
+        "H_numeric_rotation": 6740,
+        "H_numeric_translation": 6740,
+        "efficientpose_applicable": true,
+        "geometry_rejected_numeric_H": 10,
+        "heatmap_applicable": true,
+        "missing_H_rotation": 0,
+        "missing_H_translation": 0,
+        "original_accepted": 6730,
+        "original_accepted_H_E_intersection": 6730,
+        "total": 6740
+      },
+      "original_accepted_subset_unchanged": true,
+      "primary_mode": "H_rotation_E_translation"
+    },
+    "sunlamp": {
+      "base_report": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/eval_phi3_sunlamp_verified.json",
+        "sha256": "b294cf35da76c57206e7c49eca894956faee8f50e4e39bc5a1127e8bc61cafb7",
+        "status": "passed"
+      },
+      "original_protocol_summary": {
+        "heatmap_rejections": 9,
+        "heatmap_valid": 2782,
+        "metrics": {
+          "effi_eR": {
+            "count": 2791,
+            "mean": 17.29150691507911,
+            "unit": "deg"
+          },
+          "effi_eR_HIL": {
+            "count": 2791,
+            "mean": 0.3017937282994987,
+            "unit": "rad"
+          },
+          "effi_eT": {
+            "count": 2791,
+            "mean": 0.2914073256003583,
+            "unit": "m"
+          },
+          "effi_eT_norm_HIL": {
+            "count": 2791,
+            "mean": 0.05032984615438386,
+            "unit": "m/m"
+          },
+          "effi_iou": {
+            "count": 2791,
+            "mean": 0.8799668890412393,
+            "unit": ""
+          },
+          "effi_pose": {
+            "count": 2791,
+            "mean": 0.35212357445388237,
+            "unit": ""
+          },
+          "final_pose": {
+            "count": 2782,
+            "mean": 0.33041975553251013,
+            "unit": "score"
+          },
+          "heat_eR": {
+            "count": 2782,
+            "mean": 16.08016273060677,
+            "unit": "deg"
+          },
+          "heat_eR_HIL": {
+            "count": 2782,
+            "mean": 0.2806473189677402,
+            "unit": "rad"
+          },
+          "heat_eT": {
+            "count": 2782,
+            "mean": 0.33637657162862544,
+            "unit": "m"
+          },
+          "heat_eT_norm_HIL": {
+            "count": 2782,
+            "mean": 0.05749653165910546,
+            "unit": "m/m"
+          },
+          "heat_pose": {
+            "count": 2782,
+            "mean": 0.33814385062684504,
+            "unit": ""
+          }
+        },
+        "n_samples": 2791,
+        "score": 0.33041975553251013
+      },
+      "extension": {
+        "report": {
+          "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/runs/source/eval_phi3_sunlamp_0f6455923ca0/extension/extended_report.json",
+          "sha256": "98c8894672b095e3e782e72f3ab97cd6c9a176adf3def8f308fc32bd7a973253",
+          "status": "produced_pending_independent_cpu_verification"
+        },
+        "verification": {
+          "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/runs/source/eval_phi3_sunlamp_0f6455923ca0/independent_extension_verification.json",
+          "sha256": "4d8a44a243ad630b0c39df0bfebddbcd41e98eb3cccf5ca7e91b955ba0ea434d",
+          "status": "passed"
+        },
+        "entrypoint_verification": {
+          "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/reports/source/eval_phi3_sunlamp_0f6455923ca0.json",
+          "sha256": "dc762c480f24dea92c203f5cd572bc5cdf1d3a90a2066ec32e6cf91f6ee28cc1",
+          "status": "passed"
+        }
+      },
+      "coverage": {
+        "H_E_intersection": 2791,
+        "H_numeric_pose": 2791,
+        "H_numeric_rotation": 2791,
+        "H_numeric_translation": 2791,
+        "efficientpose_applicable": true,
+        "geometry_rejected_numeric_H": 9,
+        "heatmap_applicable": true,
+        "missing_H_rotation": 0,
+        "missing_H_translation": 0,
+        "original_accepted": 2782,
+        "original_accepted_H_E_intersection": 2782,
+        "total": 2791
+      },
+      "original_accepted_subset_unchanged": true,
+      "primary_mode": "H_rotation_E_translation"
+    }
+  },
+  "accepted_events": {
+    "eval_phi3_lightbox": "2026-10-18T16:49:57+08:00",
+    "eval_phi3_sunlamp": "2026-10-18T16:51:56+08:00",
+    "pilot_phi6_EHS": "2026-10-18T16:53:41+08:00"
+  },
+  "exits": {
+    "eval_phi3_lightbox.main.result.json": {
+      "exit_code": 0,
+      "started_at": "2026-10-18T16:45:22+08:00",
+      "ended_at": "2026-10-18T16:49:50+08:00",
+      "pid": 2538602,
+      "starttime": "527333819"
+    },
+    "eval_phi3_lightbox.verify.result.json": {
+      "exit_code": 0,
+      "started_at": "2026-10-18T16:49:53+08:00",
+      "ended_at": "2026-10-18T16:49:55+08:00",
+      "pid": 2563188,
+      "starttime": "527360907"
+    },
+    "eval_phi3_sunlamp.main.result.json": {
+      "exit_code": 0,
+      "started_at": "2026-10-18T16:49:59+08:00",
+      "ended_at": "2026-10-18T16:51:50+08:00",
+      "pid": 2563763,
+      "starttime": "527361502"
+    },
+    "eval_phi3_sunlamp.verify.result.json": {
+      "exit_code": 0,
+      "started_at": "2026-10-18T16:51:53+08:00",
+      "ended_at": "2026-10-18T16:51:55+08:00",
+      "pid": 2574197,
+      "starttime": "527372914"
+    },
+    "pilot_phi6_EHS.main.result.json": {
+      "exit_code": 0,
+      "started_at": "2026-10-18T16:51:58+08:00",
+      "ended_at": "2026-10-18T16:53:32+08:00",
+      "pid": 2574664,
+      "starttime": "527373386"
+    },
+    "pilot_phi6_EHS.verify.result.json": {
+      "exit_code": 0,
+      "started_at": "2026-10-18T16:53:33+08:00",
+      "ended_at": "2026-10-18T16:53:41+08:00",
+      "pid": 2583321,
+      "starttime": "527382952"
+    }
+  },
+  "phi6_pilot": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/reports/phi6_gn_ehs_queuev2_20261017_verified.json",
+    "sha256": "2193e9302196f2a4172602d72c2c2e34c86dcd011e93ac6799d07322c8fce56a",
+    "status": "passed",
+    "scope": "32 update attempts on engineering subset; no formal accuracy result",
+    "verified": [
+      "artifact_hashes",
+      "frozen_source",
+      "configuration",
+      "input_shapes",
+      "csv_and_inventory",
+      "actual_sample_id_stream",
+      "initial_model",
+      "every_active_head_and_backbone_changed",
+      "all_complete_boundary_counters",
+      "full_model_optimizer_scaler_rng_sampler_and_manifest_resume_equality"
+    ]
+  },
+  "phi6_formal": {
+    "started_at": "2026-10-18T16:53:44+08:00",
+    "pid": 2584192,
+    "starttime": "527383895",
+    "physical_batch": 1,
+    "accum_steps": 4,
+    "epoch": 1,
+    "epochs": 20,
+    "independent_initialization": true,
+    "pilot_weights_used": false,
+    "screen": "spnv2_train_phi6_ehs_qv2_20261017",
+    "log": "logs/train_phi6_ehs_qv2_20261017.log"
+  },
+  "constraints": {
+    "no_restart": true,
+    "no_retrain_or_extra_forward": true,
+    "training_code_or_parameters_changed": false,
+    "goal_remains_paused": true,
+    "complete_plan_not_finished": true
+  },
+  "limitations": [
+    "Statistical branch choice and N/N coverage align with Table4; training is single-card physical4xaccum4 BN, not four-GPU SyncBN.",
+    "Initialization/style and fixed-final protocol differences remain; cannot attribute all score gaps to accumulation.",
+    "ODR remains unexecuted, remaining8 source configurations150 epochs and all later work remain in scope."
+  ]
+}

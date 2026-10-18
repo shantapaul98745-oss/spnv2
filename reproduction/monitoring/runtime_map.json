@@ -17,11 +17,6 @@
       "sha256": "c3e72fb7a2f67d3449562377f8c48e12c56a1621050120d7b32f4abefbd88d8e"
     },
     {
-      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/SERVER_EXECUTION_HANDOFF.md",
-      "repository_path": "reproduction/monitoring/SERVER_EXECUTION_HANDOFF.md",
-      "sha256": "7d9d270c0dae19b8e69477e6e2a551aa9d9d957004ff470f9f21c5b82dfca051"
-    },
-    {
       "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/monitoring/phi3_source_synthetic_accepted_20261018.json",
       "repository_path": "reproduction/monitoring/phi3_source_synthetic_accepted_20261018.json",
       "sha256": "db80e0834ab3e7aba04f0e89bbdd5cb14b5e4a51a4badb4aa8a628a2ab2ead04"
@@ -30,18 +25,38 @@
       "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/monitoring/spnv2-2_prompt_phi3_evaluation_20261018.txt",
       "repository_path": "reproduction/monitoring/spnv2-2_prompt_phi3_evaluation_20261018.txt",
       "sha256": "40dbde19f22671dd96ff56d2410303ba567117de7f85c4aa95c18a589ed3d132"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/monitoring/phi3_targets_phi6_start_20261018.json",
+      "repository_path": "reproduction/monitoring/phi3_targets_phi6_start_20261018.json",
+      "sha256": "93aac95b3f2ad3ccc2378b812f2030bb3bcc3cea43a9f10a2225f4f892d07f16"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/monitoring/PHI3_SOURCE_COMPARISON_20261018.md",
+      "repository_path": "reproduction/monitoring/PHI3_SOURCE_COMPARISON_20261018.md",
+      "sha256": "19719c49d4ce0036f9e0f31b43a0c2909347a4494193f61c2e851cc507002724"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/monitoring/spnv2-2_prompt_phi6_training_20261018.txt",
+      "repository_path": "reproduction/monitoring/spnv2-2_prompt_phi6_training_20261018.txt",
+      "sha256": "4e91ff3cb77c80f4862e5ca61f8e2afbf7b6c02251a409b40d57d5644951858f"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/SERVER_EXECUTION_HANDOFF.md",
+      "repository_path": "reproduction/monitoring/SERVER_EXECUTION_HANDOFF.md",
+      "sha256": "a9bf17a2a12e145c13344c46522ffbd25c9000c2f2cd27ce738e1ccf6bc5518f"
     }
   ],
   "prompt_exact_readback_verified": true,
-  "registered_interval_minutes": 15,
+  "registered_interval_minutes": 60,
   "registered_status": "ACTIVE",
   "runtime_cursor_not_versioned": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/monitoring/guard_cursor.json",
   "schema": "spnv2-periodic-guard-document-map-v1",
   "scope": "Documentation and registered prompt snapshot only; no new task, experiment, daemon or training change",
   "server_independence_report": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/monitoring/server_independence_20261017.json",
   "target_thread_id": "01a13fb0-3cb8-7353-bb70-bd4cb0d436dd",
-  "latest_prompt": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/monitoring/spnv2-2_prompt_phi3_evaluation_20261018.txt",
-  "latest_checked_at": "2026-10-18T16:51:05+08:00",
+  "latest_prompt": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/monitoring/spnv2-2_prompt_phi6_training_20261018.txt",
+  "latest_checked_at": "2026-10-18T17:25:14+08:00",
   "current_manifest": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_observed_stage_20261018.json",
-  "latest_milestone": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/monitoring/phi3_source_synthetic_accepted_20261018.json"
+  "latest_milestone": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/monitoring/phi3_targets_phi6_start_20261018.json"
 }
