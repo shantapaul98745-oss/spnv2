@@ -1,0 +1,607 @@
+{
+  "status": "passed",
+  "verified_at": "2026-10-18T19:17:34+08:00",
+  "scope": "fixed old/new phi3 source versus paper Table4; no training or ODR",
+  "rows": [
+    {
+      "domain": "synthetic",
+      "metric": "eT",
+      "paper": 0.054,
+      "old": 0.052027289029684565,
+      "new": 0.05892310668186719,
+      "old_minus_paper": -0.0019727109703154347,
+      "old_vs_paper_percent": -3.6531684635470962,
+      "new_minus_paper": 0.004923106681867191,
+      "new_vs_paper_percent": 9.116864225679988,
+      "new_minus_old": 0.006895817652182626,
+      "new_vs_old_percent": 13.254232117011068
+    },
+    {
+      "domain": "synthetic",
+      "metric": "eR",
+      "paper": 0.987,
+      "old": 0.9966560529217847,
+      "new": 1.034867125318975,
+      "old_minus_paper": 0.00965605292178473,
+      "old_vs_paper_percent": 0.9783234976479038,
+      "new_minus_paper": 0.04786712531897497,
+      "new_vs_paper_percent": 4.849759404151466,
+      "new_minus_old": 0.03821107239719024,
+      "new_vs_old_percent": 3.8339276910194897
+    },
+    {
+      "domain": "synthetic",
+      "metric": "pose",
+      "paper": 0.027,
+      "old": 0.026685249284877012,
+      "new": 0.02852483198765668,
+      "old_minus_paper": -0.00031475071512298766,
+      "old_vs_paper_percent": -1.165743389344398,
+      "new_minus_paper": 0.0015248319876566795,
+      "new_vs_paper_percent": 5.647525880209914,
+      "new_minus_old": 0.0018395827027796671,
+      "new_vs_old_percent": 6.893631320964233
+    },
+    {
+      "domain": "lightbox",
+      "metric": "eT",
+      "paper": 0.175,
+      "old": 0.30245349838288976,
+      "new": 0.2797249496473657,
+      "old_minus_paper": 0.12745349838288977,
+      "old_vs_paper_percent": 72.83057050450846,
+      "new_minus_paper": 0.10472494964736573,
+      "new_vs_paper_percent": 59.842828369923275,
+      "new_minus_old": -0.022728548735524046,
+      "new_vs_old_percent": -7.514725026176072
+    },
+    {
+      "domain": "lightbox",
+      "metric": "eR",
+      "paper": 6.479,
+      "old": 10.461928843905046,
+      "new": 9.881825157871361,
+      "old_minus_paper": 3.9829288439050456,
+      "old_vs_paper_percent": 61.47443809083262,
+      "new_minus_paper": 3.4028251578713613,
+      "new_vs_paper_percent": 52.52083898551261,
+      "new_minus_old": -0.5801036860336843,
+      "new_vs_old_percent": -5.544901850213247
+    },
+    {
+      "domain": "lightbox",
+      "metric": "pose",
+      "paper": 0.142,
+      "old": 0.23062200632125812,
+      "new": 0.217882591724404,
+      "old_minus_paper": 0.08862200632125813,
+      "old_vs_paper_percent": 62.409863606519814,
+      "new_minus_paper": 0.07588259172440401,
+      "new_vs_paper_percent": 53.43844487634086,
+      "new_minus_old": -0.012739414596854126,
+      "new_vs_old_percent": -5.523937112535582
+    },
+    {
+      "domain": "sunlamp",
+      "metric": "eT",
+      "paper": 0.225,
+      "old": 0.22688994825050496,
+      "new": 0.2914073256003583,
+      "old_minus_paper": 0.0018899482505049525,
+      "old_vs_paper_percent": 0.8399770002244233,
+      "new_minus_paper": 0.06640732560035831,
+      "new_vs_paper_percent": 29.514366933492585,
+      "new_minus_old": 0.06451737734985336,
+      "new_vs_old_percent": 28.435537954559777
+    },
+    {
+      "domain": "sunlamp",
+      "metric": "eR",
+      "paper": 11.065,
+      "old": 16.610412779300983,
+      "new": 16.331912979274353,
+      "old_minus_paper": 5.5454127793009835,
+      "old_vs_paper_percent": 50.11669931586971,
+      "new_minus_paper": 5.266912979274354,
+      "new_vs_paper_percent": 47.59975580003935,
+      "new_minus_old": -0.2784998000266299,
+      "new_vs_old_percent": -1.6766579116786362
+    },
+    {
+      "domain": "sunlamp",
+      "metric": "pose",
+      "paper": 0.23,
+      "old": 0.32926700806281745,
+      "new": 0.3353710502519534,
+      "old_minus_paper": 0.09926700806281744,
+      "old_vs_paper_percent": 43.159568722964096,
+      "new_minus_paper": 0.1053710502519534,
+      "new_vs_paper_percent": 45.81350010954495,
+      "new_minus_old": 0.006104042189135961,
+      "new_vs_old_percent": 1.853827452998713
+    }
+  ],
+  "models": [
+    {
+      "domain": "synthetic",
+      "n": 11994,
+      "old": {
+        "eT": 0.052027289029684565,
+        "eR": 0.9966560529217847,
+        "pose": 0.026685249284877012
+      },
+      "new": {
+        "eT": 0.05892310668186719,
+        "eR": 1.034867125318975,
+        "pose": 0.02852483198765668
+      },
+      "old_counts": {
+        "H_E_intersection": 11994,
+        "H_numeric_pose": 11994,
+        "H_numeric_rotation": 11994,
+        "H_numeric_translation": 11994,
+        "efficientpose_applicable": true,
+        "geometry_rejected_numeric_H": 0,
+        "heatmap_applicable": true,
+        "missing_H_rotation": 0,
+        "missing_H_translation": 0,
+        "original_accepted": 11994,
+        "original_accepted_H_E_intersection": 11994,
+        "total": 11994
+      },
+      "new_counts": {
+        "H_E_intersection": 11994,
+        "H_numeric_pose": 11994,
+        "H_numeric_rotation": 11994,
+        "H_numeric_translation": 11994,
+        "efficientpose_applicable": true,
+        "geometry_rejected_numeric_H": 0,
+        "heatmap_applicable": true,
+        "missing_H_rotation": 0,
+        "missing_H_translation": 0,
+        "original_accepted": 11994,
+        "original_accepted_H_E_intersection": 11994,
+        "total": 11994
+      },
+      "old_accepted_score": 0.026685249284876974,
+      "new_accepted_score": 0.02852483198765664
+    },
+    {
+      "domain": "lightbox",
+      "n": 6740,
+      "old": {
+        "eT": 0.30245349838288976,
+        "eR": 10.461928843905046,
+        "pose": 0.23062200632125812
+      },
+      "new": {
+        "eT": 0.2797249496473657,
+        "eR": 9.881825157871361,
+        "pose": 0.217882591724404
+      },
+      "old_counts": {
+        "H_E_intersection": 6740,
+        "H_numeric_pose": 6740,
+        "H_numeric_rotation": 6740,
+        "H_numeric_translation": 6740,
+        "efficientpose_applicable": true,
+        "geometry_rejected_numeric_H": 10,
+        "heatmap_applicable": true,
+        "missing_H_rotation": 0,
+        "missing_H_translation": 0,
+        "original_accepted": 6730,
+        "original_accepted_H_E_intersection": 6730,
+        "total": 6740
+      },
+      "new_counts": {
+        "H_E_intersection": 6740,
+        "H_numeric_pose": 6740,
+        "H_numeric_rotation": 6740,
+        "H_numeric_translation": 6740,
+        "efficientpose_applicable": true,
+        "geometry_rejected_numeric_H": 10,
+        "heatmap_applicable": true,
+        "missing_H_rotation": 0,
+        "missing_H_translation": 0,
+        "original_accepted": 6730,
+        "original_accepted_H_E_intersection": 6730,
+        "total": 6740
+      },
+      "old_accepted_score": 0.22741847632359838,
+      "new_accepted_score": 0.21549105464681317
+    },
+    {
+      "domain": "sunlamp",
+      "n": 2791,
+      "old": {
+        "eT": 0.22688994825050496,
+        "eR": 16.610412779300983,
+        "pose": 0.32926700806281745
+      },
+      "new": {
+        "eT": 0.2914073256003583,
+        "eR": 16.331912979274353,
+        "pose": 0.3353710502519534
+      },
+      "old_counts": {
+        "H_E_intersection": 2791,
+        "H_numeric_pose": 2791,
+        "H_numeric_rotation": 2791,
+        "H_numeric_translation": 2791,
+        "efficientpose_applicable": true,
+        "geometry_rejected_numeric_H": 4,
+        "heatmap_applicable": true,
+        "missing_H_rotation": 0,
+        "missing_H_translation": 0,
+        "original_accepted": 2787,
+        "original_accepted_H_E_intersection": 2787,
+        "total": 2791
+      },
+      "new_counts": {
+        "H_E_intersection": 2791,
+        "H_numeric_pose": 2791,
+        "H_numeric_rotation": 2791,
+        "H_numeric_translation": 2791,
+        "efficientpose_applicable": true,
+        "geometry_rejected_numeric_H": 9,
+        "heatmap_applicable": true,
+        "missing_H_rotation": 0,
+        "missing_H_translation": 0,
+        "original_accepted": 2782,
+        "original_accepted_H_E_intersection": 2782,
+        "total": 2791
+      },
+      "old_accepted_score": 0.3274321538296082,
+      "new_accepted_score": 0.33041975553251013
+    }
+  ],
+  "historical_comparison": [
+    {
+      "domain": "lightbox",
+      "historical_score": 0.23098159406399732,
+      "reevaluated_score": 0.23062200632125812,
+      "absolute_change": -0.000359587742739198,
+      "relative_percent": -0.15567809383095765,
+      "evidence": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/reports/analysis_20261008/phi3_lightbox_offline_denominator.json",
+        "sha256": "a1e7eb73452f56ac4eebcc8ddac230a53288d4d2e73e615633dfc77560cd1cf8"
+      }
+    },
+    {
+      "domain": "sunlamp",
+      "historical_score": 0.32926112346300784,
+      "reevaluated_score": 0.32926700806281745,
+      "absolute_change": 5.884599809602431e-06,
+      "relative_percent": 0.0017872136703234176,
+      "evidence": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/reports/analysis_20261008/phi3_sunlamp_offline_denominator.json",
+        "sha256": "5fde4d248966845de6d62317593e5d4dfcf72178022adeffafe3c2e09147d7de"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/reports/reeval_lux_old_b4_synthetic_verified.json",
+      "sha256": "de9225fba4e27d6619affc11eca20c62087ced16af36d3cf48b2e7eea147718f"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/eval_phi3_synthetic_verified.json",
+      "sha256": "e450c16c47bbf6ecbc749a73dbe0b09afadd0b03358973c62b1c3128436f5159"
+    },
+    "applicable",
+    "0d9ee1e0a49ef4a2db7caf1b4f9b28431016209a0f14f7aa1b90bd351d6a7d61",
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/reports/source/eval_phi3_synthetic_de7e0a962d79.json",
+      "sha256": "229dc16fa7936b6ad53413e7310d0c215f6b08e2a54775de5784f1e1fd8bb123"
+    },
+    "complete",
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/runs/source/eval_phi3_synthetic_de7e0a962d79/extension/extended_report.json",
+      "sha256": "7a7c16438cf88d3f332c60752473c08fa91d5ab7ce88de4b794c8546ea5b72d8"
+    },
+    "spnv2-evaluation-extension-link-v1",
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/runs/source/eval_phi3_synthetic_de7e0a962d79/independent_extension_verification.json",
+      "sha256": "f04c9c93b73a5e3e87b010153b9c16f1c303641a6831b768878a593f645a66e4"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/reports/reeval_lux_old_b4_lightbox_verified.json",
+      "sha256": "ec973aabbde21e18b6152a3c5eefe32f039096f4341d48c5741819eaa749e4a9"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/eval_phi3_lightbox_verified.json",
+      "sha256": "ece95b6e1c3a60247363c67fa00dc48232941407d9bbb9150e18287ceb40bfbf"
+    },
+    "applicable",
+    "b2fd2fa2c61a351faf692438e044a6943d6fb87f50e58b386904b42b5be813f1",
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/reports/source/eval_phi3_lightbox_9c05f71d874b.json",
+      "sha256": "66349ade422e98be71015b10a6dc6f261d5a184c9d5000d376aa0a48616cc0fb"
+    },
+    "complete",
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/runs/source/eval_phi3_lightbox_9c05f71d874b/extension/extended_report.json",
+      "sha256": "aade6007edd1fcfe7906231e5c721df53e93e10134b26e6e1962b30816a80288"
+    },
+    "spnv2-evaluation-extension-link-v1",
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/runs/source/eval_phi3_lightbox_9c05f71d874b/independent_extension_verification.json",
+      "sha256": "a33500b56cff7ae2d51239e0dd23be8c032d86e75414518dc32ad40438892c38"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/reports/reeval_lux_old_b4_sunlamp_verified.json",
+      "sha256": "048ce9dbb2152320d73e9114a08f527484e5bc22d4c9e8b97594a3ee00a0a9ab"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/eval_phi3_sunlamp_verified.json",
+      "sha256": "b294cf35da76c57206e7c49eca894956faee8f50e4e39bc5a1127e8bc61cafb7"
+    },
+    "applicable",
+    "2610ebe53353711574c63a6b21dbb0b018028d86ad128aa556c180ac0a5c1a39",
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/reports/source/eval_phi3_sunlamp_0f6455923ca0.json",
+      "sha256": "dc762c480f24dea92c203f5cd572bc5cdf1d3a90a2066ec32e6cf91f6ee28cc1"
+    },
+    "complete",
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/runs/source/eval_phi3_sunlamp_0f6455923ca0/extension/extended_report.json",
+      "sha256": "98c8894672b095e3e782e72f3ab97cd6c9a176adf3def8f308fc32bd7a973253"
+    },
+    "spnv2-evaluation-extension-link-v1",
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/runs/source/eval_phi3_sunlamp_0f6455923ca0/independent_extension_verification.json",
+      "sha256": "4d8a44a243ad630b0c39df0bfebddbcd41e98eb3cccf5ca7e91b955ba0ea434d"
+    }
+  ],
+  "phase_exits": [
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/events/reeval_lux_old_b4_synthetic.main.result.json",
+      "sha256": "8f659a016e662236a3da76deb0ea134c410764274ff7ab54a230f26ca972a320"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/events/reeval_lux_old_b4_synthetic.verify.result.json",
+      "sha256": "addbf08507aaf5ce005e0f824944899688326bcf1dbf7315d2c702ba2bc2d26f"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/events/reeval_lux_old_b4_lightbox.main.result.json",
+      "sha256": "5cbb397b40b972b3accc5ad2046b8e3dcf8f6d9bbb56576fd33c56fc729addc6"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/events/reeval_lux_old_b4_lightbox.verify.result.json",
+      "sha256": "6d10a51acbd8013af30cc41df587ca0b8ca791680794c572264e460ab9a9cdaa"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/events/reeval_lux_old_b4_sunlamp.main.result.json",
+      "sha256": "14f2102cee30a85d28bc6239b7848f7785930163c14ac2a1e8ad8a12d9ba9c3d"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/events/reeval_lux_old_b4_sunlamp.verify.result.json",
+      "sha256": "1e80bccd58d548d8e3c500184fbf2388dfc3689ac64349d493152eb0f54cadfd"
+    }
+  ],
+  "manifest": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/manifest.json",
+    "sha256": "33bee675a2b0853ccb90fddf2de73cf6595cf94f1731b8589fe73112b26fd5ff"
+  },
+  "paper_reference": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/reference/paper_reference.json",
+    "sha256": "9509bc25fb2d88135d290c0ac8af4ffb2860d0abdd1ad6790a8a4da4f5e02f56"
+  },
+  "phi6_resume": {
+    "before": {
+      "at": "2026-10-18T18:59:20+08:00",
+      "paused_monotonic": 5281376.726342206,
+      "trainer": {
+        "pid": 2584192,
+        "starttime": "527383895",
+        "state": "S",
+        "ppid": 2584187,
+        "command": [
+          "/home/ps/anaconda3/envs/SPNv2/bin/python",
+          "-B",
+          "-s",
+          "-u",
+          "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/tools/train.py",
+          "--cfg",
+          "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi6_gn_ehs.yaml",
+          "--gpu",
+          "0"
+        ]
+      },
+      "owner": {
+        "pid": 3268978,
+        "starttime": "528137619",
+        "state": "R",
+        "ppid": 3268975,
+        "command": [
+          "/home/ps/anaconda3/envs/SPNv2/bin/python",
+          "-B",
+          "-s",
+          "-u",
+          "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/pause_controller.py",
+          "--mode",
+          "controller",
+          "--manifest",
+          "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/manifest.json"
+        ]
+      },
+      "log_offset": 2712023,
+      "last_event": {
+        "task_id": "train_phi6_EHS",
+        "execution_phase": "main",
+        "phase": "train",
+        "log": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/logs/train_phi6_ehs_qv2_20261017.log",
+        "command": [
+          "/home/ps/anaconda3/envs/SPNv2/bin/python",
+          "-B",
+          "-s",
+          "-u",
+          "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/tools/train.py",
+          "--cfg",
+          "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi6_gn_ehs.yaml",
+          "--gpu",
+          "0"
+        ],
+        "outputs": [
+          "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/source_phi6_verified.json"
+        ],
+        "source": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi6_gn_ehs.yaml",
+        "resume": null,
+        "started_at": "2026-10-18T16:53:42+08:00",
+        "process_state": "live PID and /proc starttime verified",
+        "pid": 2584192,
+        "starttime": "527383895",
+        "screen_id": "2584182.spnv2_train_phi6_ehs_qv2_20261017",
+        "amp_skips": 12,
+        "batch": 21204,
+        "batches": 47964,
+        "epoch": 1,
+        "epochs": 20,
+        "event": "update",
+        "loss": 14.099159240722656,
+        "lr": 0.001,
+        "optimizer_updates": 5289,
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d6/rebaseline_phi6_gn_ehs_ga4_seed2021/checkpoint.pth.tar",
+        "samples_seen": 21204,
+        "timestamp": 1792321130.8897607,
+        "update_attempts": 5301,
+        "last_event_at": "2026-10-18T18:58:51+08:00",
+        "checkpoint": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d6/rebaseline_phi6_gn_ehs_ga4_seed2021/checkpoint.pth.tar"
+      }
+    },
+    "after": {
+      "worker": {
+        "pid": 2584192,
+        "starttime": "527383895",
+        "state": "R",
+        "ppid": 2584187,
+        "command": [
+          "/home/ps/anaconda3/envs/SPNv2/bin/python",
+          "-B",
+          "-s",
+          "-u",
+          "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/tools/train.py",
+          "--cfg",
+          "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi6_gn_ehs.yaml",
+          "--gpu",
+          "0"
+        ]
+      },
+      "manager": {
+        "pid": 1851843,
+        "starttime": "526573814",
+        "state": "S",
+        "ppid": 1851840,
+        "command": [
+          "/home/ps/anaconda3/envs/SPNv2/bin/python",
+          "-B",
+          "-s",
+          "-u",
+          "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pipeline/runner.py",
+          "--manifest",
+          "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_observed_stage_20261018.json",
+          "--revise-pending-from",
+          "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_v2.json",
+          "--pending-task",
+          "eval_phi3_synthetic",
+          "--pending-task",
+          "eval_phi3_lightbox",
+          "--pending-task",
+          "eval_phi3_sunlamp",
+          "--pending-task",
+          "eval_phi6_synthetic",
+          "--pending-task",
+          "eval_phi6_lightbox",
+          "--pending-task",
+          "eval_phi6_sunlamp"
+        ]
+      },
+      "manifest_sha256": "a6f82b1efc62ebb6223e1cfec4919e44de35424b53709230f39b0655ea3e27a5",
+      "log": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/logs/train_phi6_ehs_qv2_20261017.log",
+      "log_offset": 2772850,
+      "last_event": {
+        "task_id": "train_phi6_EHS",
+        "execution_phase": "main",
+        "phase": "train",
+        "log": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/logs/train_phi6_ehs_qv2_20261017.log",
+        "command": [
+          "/home/ps/anaconda3/envs/SPNv2/bin/python",
+          "-B",
+          "-s",
+          "-u",
+          "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/tools/train.py",
+          "--cfg",
+          "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi6_gn_ehs.yaml",
+          "--gpu",
+          "0"
+        ],
+        "outputs": [
+          "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/source_phi6_verified.json"
+        ],
+        "source": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi6_gn_ehs.yaml",
+        "resume": null,
+        "started_at": "2026-10-18T16:53:42+08:00",
+        "process_state": "live PID and /proc starttime verified",
+        "pid": 2584192,
+        "starttime": "527383895",
+        "screen_id": "2584182.spnv2_train_phi6_ehs_qv2_20261017",
+        "amp_skips": 12,
+        "batch": 21664,
+        "batches": 47964,
+        "epoch": 1,
+        "epochs": 20,
+        "event": "update",
+        "loss": 10.438165664672852,
+        "lr": 0.001,
+        "optimizer_updates": 5404,
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d6/rebaseline_phi6_gn_ehs_ga4_seed2021/checkpoint.pth.tar",
+        "samples_seen": 21664,
+        "timestamp": 1792322218.0476723,
+        "update_attempts": 5416,
+        "last_event_at": "2026-10-18T19:16:58+08:00",
+        "checkpoint": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d6/rebaseline_phi6_gn_ehs_ga4_seed2021/checkpoint.pth.tar"
+      },
+      "checked_at": "2026-10-18T19:17:34+08:00"
+    },
+    "recovery": {
+      "at": "2026-10-18T19:14:46+08:00",
+      "reason": "controller finally",
+      "cleaned_pids": [
+        3269291,
+        3308948,
+        3309332,
+        3329431,
+        3329777,
+        3338054
+      ],
+      "trainer": {
+        "pid": 2584192,
+        "starttime": "527383895"
+      },
+      "status": "resumed",
+      "after_identity": {
+        "pid": 2584192,
+        "starttime": "527383895",
+        "state": "R",
+        "ppid": 2584187,
+        "command": [
+          "/home/ps/anaconda3/envs/SPNv2/bin/python",
+          "-B",
+          "-s",
+          "-u",
+          "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/tools/train.py",
+          "--cfg",
+          "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi6_gn_ehs.yaml",
+          "--gpu",
+          "0"
+        ]
+      }
+    },
+    "paused_seconds": 926.0
+  },
+  "limitations": [
+    "Matched inference and sample denominator, but source training is not a strict paired experiment.",
+    "Physical BN batch4 is not paper four-GPU SyncBN.",
+    "Paper values use published rounding; synthetic is validation, not hidden test."
+  ]
+}

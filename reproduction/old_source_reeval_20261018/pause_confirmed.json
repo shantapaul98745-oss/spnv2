@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-18T18:59:23+08:00",
+  "trainer": {
+    "pid": 2584192,
+    "starttime": "527383895",
+    "state": "T",
+    "ppid": 2584187,
+    "command": [
+      "/home/ps/anaconda3/envs/SPNv2/bin/python",
+      "-B",
+      "-s",
+      "-u",
+      "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/tools/train.py",
+      "--cfg",
+      "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi6_gn_ehs.yaml",
+      "--gpu",
+      "0"
+    ]
+  },
+  "gpu": {
+    "used_mb": 9676,
+    "free_mb": 6391,
+    "utilization": 0,
+    "processes": [
+      {
+        "pid": 7890,
+        "name": "/usr/libexec/gnome-remote-desktop-daemon",
+        "memory": "120"
+      },
+      {
+        "pid": 2584192,
+        "name": "/home/ps/anaconda3/envs/SPNv2/bin/python",
+        "memory": "9324"
+      }
+    ]
+  }
+}

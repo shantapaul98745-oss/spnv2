@@ -181,3 +181,11 @@
 - 作用：旧权重原样重评三域；独立watchdog先验收再暂停，最多30分钟，失联或失败先清理自有评价进程再继续同一φ6进程，保留所有训练状态；不修改冻结训练/推理代码、生产队列或旧结果。
 - 验证：旧final CPU strict reload与有限性通过；全样本gate8/8、暂停隔离/身份/清理顺序12/12，真实生产状态/锁与pidfd无作用自检通过。实际暂停已核原PID/start和GPU空闲；三域正式补评及恢复证据待自然产出后追加，不提前标完成。
 - 运行路径与Git副本逐文件SHA256一致，见runtime_map.json；不提交模型、数据、原始日志或实时状态。
+
+
+## 2026-10-18：完成旧source补评与同口径对比，确认φ6恢复
+
+- 位置：reproduction/old_source_reeval_20261018/finalize_comparison.py、SOURCE_COMPARISON.md及reports/source_old_new_verified.json；AGENT与交接说明。
+- 原因/作用：立即整理用户追加补评，严格核对旧/新模型同一评价代码、配置、数据顺序及全样本分母，给出论文绝对/相对差和历史补评差异；复用新模型结果，不新增GPU推理。
+- 验证：三域main/verify六项退出0、原/扩展独立验收和N/N覆盖通过，CPU汇总及旧新对比退出0；原φ6同一PID/start恢复、后续样本增长、manager和队列绑定保持，controller/watchdog均退出0。已恢复小时巡检。
+- 结果：lightbox新比旧综合误差减少5.52%，sunlamp增加1.85%；新相对论文仍高53.44%/45.81%。完整数值和逐样本证据路径入库；训练差异不作单因素因果归因。

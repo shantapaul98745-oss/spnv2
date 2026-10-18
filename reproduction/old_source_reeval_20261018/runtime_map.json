@@ -66,15 +66,82 @@
       "sha256": "729a8f9b9cd72f1a9490e221f0da2379c33698979e6ff9b291122bedeba1637a"
     },
     {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/finalize_comparison.py",
+      "repository_path": "reproduction/old_source_reeval_20261018/finalize_comparison.py",
+      "sha256": "56144b4691f0ff42aea643669bf268ef2dfd7183577695a348a33e1e4f36be26"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/SOURCE_COMPARISON.md",
+      "repository_path": "reproduction/old_source_reeval_20261018/SOURCE_COMPARISON.md",
+      "sha256": "19d6b9c86daa3139634dc1c4740c832c07333985062abb12a5b67360f33375ae"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/COMPARISON.md",
+      "repository_path": "reproduction/old_source_reeval_20261018/COMPARISON.md",
+      "sha256": "fa5a8b32da747fe986508ec7260a0535d0412b2feb9145e2122d9b2145757fb1"
+    },
+    {
       "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/OPERATION.md",
       "repository_path": "reproduction/old_source_reeval_20261018/OPERATION.md",
-      "sha256": "91bd6ea60f7278924574dd6ec3f7563f4e6cf2c0233cb88b1aae0bc3ac757a03"
+      "sha256": "b96ae9d975fd729cf3f3b889f1c7c25ad48e84a0f41fb60f53e2813d243a2e1d"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/guard_prompt_complete.txt",
+      "repository_path": "reproduction/old_source_reeval_20261018/guard_prompt_complete.txt",
+      "sha256": "b226d9711c4624dfcf6a4a4b12206274f59f578ec8db75a5592b1ff07d553626"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/reports/source_old_new_verified.json",
+      "repository_path": "reproduction/old_source_reeval_20261018/reports/source_old_new_verified.json",
+      "sha256": "66fc53429451b00d1ac39840a93c6395db0c71090ce4f12f44bb5f4170a900c1"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/reports/comparison_verified.json",
+      "repository_path": "reproduction/old_source_reeval_20261018/reports/comparison_verified.json",
+      "sha256": "3a83c74bdd477f60c461e38527c867fdacd5affcc1aca3dd10a645405fefe933"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/reports/comparison.csv",
+      "repository_path": "reproduction/old_source_reeval_20261018/reports/comparison.csv",
+      "sha256": "08e6efeb8f7061e4cd86cd7a73c1f4880e652b95cd3b0c68f2ec3720d244035f"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/pause_intent.json",
+      "repository_path": "reproduction/old_source_reeval_20261018/pause_intent.json",
+      "sha256": "688aceb5e85438b073e60809f2e262d24558bb21b6751a2b446082ac5036b678"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/pause_confirmed.json",
+      "repository_path": "reproduction/old_source_reeval_20261018/pause_confirmed.json",
+      "sha256": "e5b525c076a17a401254bb3f6fa1df73b7800e4f42896b4110785df9982216f2"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/recovery.json",
+      "repository_path": "reproduction/old_source_reeval_20261018/recovery.json",
+      "sha256": "6d9607cff658ef810e18612a9f35c2c490204c1dffb6ce43ab752e0162c51ac6"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/reports/reeval_lux_old_b4_synthetic_verified.json",
+      "repository_path": "reproduction/old_source_reeval_20261018/reports/reeval_lux_old_b4_synthetic_verified.json",
+      "sha256": "de9225fba4e27d6619affc11eca20c62087ced16af36d3cf48b2e7eea147718f"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/reports/reeval_lux_old_b4_lightbox_verified.json",
+      "repository_path": "reproduction/old_source_reeval_20261018/reports/reeval_lux_old_b4_lightbox_verified.json",
+      "sha256": "ec973aabbde21e18b6152a3c5eefe32f039096f4341d48c5741819eaa749e4a9"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/reports/reeval_lux_old_b4_sunlamp_verified.json",
+      "repository_path": "reproduction/old_source_reeval_20261018/reports/reeval_lux_old_b4_sunlamp_verified.json",
+      "sha256": "048ce9dbb2152320d73e9114a08f527484e5bc22d4c9e8b97594a3ee00a0a9ab"
     },
     {
       "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/SERVER_EXECUTION_HANDOFF.md",
       "repository_path": "reproduction/monitoring/SERVER_EXECUTION_HANDOFF.md",
-      "sha256": "66a327978631960dbd221bd5883b1867969ebba7e38463d6bd6d8e7f0782cea9"
+      "sha256": "c499ac6779d0f9d6620a739fa236f7aca57ccb4568f1981cd2623f3bfbbfdefd"
     }
   ],
-  "scope": "one fixed old source / three domains; one authorized SIGSTOP-SIGCONT; production queue unchanged"
+  "scope": "one fixed old source / three domains; one authorized SIGSTOP-SIGCONT; production queue unchanged",
+  "status": "accepted_phi6_resumed",
+  "latest_report": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/SOURCE_COMPARISON.md"
 }

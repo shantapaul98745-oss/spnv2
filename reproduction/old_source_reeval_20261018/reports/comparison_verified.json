@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "verified_at": "2026-10-18T19:15:41+08:00",
+  "task_count": 3,
+  "comparison_rows": 9,
+  "manifest_sha256": "33bee675a2b0853ccb90fddf2de73cf6595cf94f1731b8589fe73112b26fd5ff",
+  "files": {
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/reports/comparison.json": "94122b16b17ab68e323c01b183324c8189d7f5349ba42a10b16ebcbfa97d184f",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/reports/comparison.csv": "08e6efeb8f7061e4cd86cd7a73c1f4880e652b95cd3b0c68f2ec3720d244035f",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/COMPARISON.md": "fa5a8b32da747fe986508ec7260a0535d0412b2feb9145e2122d9b2145757fb1"
+  }
+}

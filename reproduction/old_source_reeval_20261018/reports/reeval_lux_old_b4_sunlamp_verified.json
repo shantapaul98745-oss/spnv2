@@ -1,0 +1,148 @@
+{
+  "schema": "spnv2-unified-source-full-samples-verified-v1",
+  "status": "passed",
+  "verified_at": "2026-10-18T19:14:45+08:00",
+  "task_id": "reeval_lux_old_b4_sunlamp",
+  "model_id": "lux_old_b4",
+  "domain": "sunlamp",
+  "final": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/frozen/phi3_BN_single_gpu_localstyle_seed2021_epoch20/model_final.pth.tar",
+  "final_sha256": "dbb9deb17c37ce48b01edc1d658ad1a64c09094cf88d28a3c79adb49fd4cad50",
+  "manifest_sha256": "33bee675a2b0853ccb90fddf2de73cf6595cf94f1731b8589fe73112b26fd5ff",
+  "cfg_sha256": "63a3fdd89b36ebb11bd5510d811e6ef749f9913a3b98ca30db864d36487d0367",
+  "csv_sha256": "ff3dba6c431761baa0e9f53780c747251c66c9e3de7a730ee39c3432820acebf",
+  "sample_id_sha256": "bc6a1e41a0e3a23ca78ec5a1688e53473cb7406542c40f3f780134976248da7f",
+  "counts": {
+    "H_E_intersection": 2791,
+    "H_numeric_pose": 2791,
+    "H_numeric_rotation": 2791,
+    "H_numeric_translation": 2791,
+    "efficientpose_applicable": true,
+    "geometry_rejected_numeric_H": 4,
+    "heatmap_applicable": true,
+    "missing_H_rotation": 0,
+    "missing_H_translation": 0,
+    "original_accepted": 2787,
+    "original_accepted_H_E_intersection": 2787,
+    "total": 2791
+  },
+  "metrics": {
+    "eT": {
+      "count": 2791,
+      "coverage": 1.0,
+      "denominator_scope": "all_samples",
+      "mask": "extended_hybrid:eT",
+      "mean": 0.22688994825050496,
+      "missing": 0,
+      "total": 2791,
+      "unit": "m"
+    },
+    "eR": {
+      "count": 2791,
+      "coverage": 1.0,
+      "denominator_scope": "all_samples",
+      "mask": "extended_hybrid:eR",
+      "mean": 16.610412779300983,
+      "missing": 0,
+      "total": 2791,
+      "unit": "deg"
+    },
+    "pose": {
+      "count": 2791,
+      "coverage": 1.0,
+      "denominator_scope": "all_samples",
+      "mask": "extended_hybrid:pose",
+      "mean": 0.32926700806281745,
+      "missing": 0,
+      "total": 2791,
+      "unit": "score"
+    }
+  },
+  "accepted_subset": {
+    "heatmap_rejections": 4,
+    "heatmap_valid": 2787,
+    "metrics": {
+      "effi_eR": {
+        "count": 2791,
+        "mean": 17.44173689205307,
+        "unit": "deg"
+      },
+      "effi_eR_HIL": {
+        "count": 2791,
+        "mean": 0.3044153861358836,
+        "unit": "rad"
+      },
+      "effi_eT": {
+        "count": 2791,
+        "mean": 0.22688994825050496,
+        "unit": "m"
+      },
+      "effi_eT_norm_HIL": {
+        "count": 2791,
+        "mean": 0.03936443053484924,
+        "unit": "m/m"
+      },
+      "effi_iou": {
+        "count": 2791,
+        "mean": 0.8815326335189569,
+        "unit": ""
+      },
+      "effi_pose": {
+        "count": 2791,
+        "mean": 0.3437798166707329,
+        "unit": ""
+      },
+      "final_pose": {
+        "count": 2787,
+        "mean": 0.3274321538296082,
+        "unit": "score"
+      },
+      "heat_eR": {
+        "count": 2787,
+        "mean": 16.515359339225196,
+        "unit": "deg"
+      },
+      "heat_eR_HIL": {
+        "count": 2787,
+        "mean": 0.28824357655703564,
+        "unit": "rad"
+      },
+      "heat_eT": {
+        "count": 2787,
+        "mean": 0.32816807707349166,
+        "unit": "m"
+      },
+      "heat_eT_norm_HIL": {
+        "count": 2787,
+        "mean": 0.054997323550264036,
+        "unit": "m/m"
+      },
+      "heat_pose": {
+        "count": 2787,
+        "mean": 0.3432409001073001,
+        "unit": ""
+      }
+    },
+    "n_samples": 2791,
+    "score": 0.3274321538296082
+  },
+  "base_report": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/reports/reeval_lux_old_b4_sunlamp_base_verified.json",
+  "base_report_sha256": "4988de73d2f06455cacfeb88e59883d8f4b54eb2aaeea19efb6a4f2c2396cbbc",
+  "extension": {
+    "applicability": "applicable",
+    "context_sha256": "df469ae89e8cea15bad959e11e34c0ba656854efe83a5421b7061e31e117a33b",
+    "entrypoint_verification": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/reports/source/reeval_lux_old_b4_sunlamp_cb332bd73979.json",
+      "sha256": "7e0e60667d2dcc123b504725cb3b178db06470a871a24374862bd2e89c981aaa"
+    },
+    "observer_status": "complete",
+    "report": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/runs/source/reeval_lux_old_b4_sunlamp_cb332bd73979/extension/extended_report.json",
+      "sha256": "3fe06372af65535300501c274545ea842ef306c1ab0e0abf0ecbc1cb8a292acf"
+    },
+    "schema": "spnv2-evaluation-extension-link-v1",
+    "verification": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/runs/source/reeval_lux_old_b4_sunlamp_cb332bd73979/independent_extension_verification.json",
+      "sha256": "1f58cfa906e47e30441e50d5146e19eed41938016bb00646d73ea2d212de4572"
+    }
+  }
+}

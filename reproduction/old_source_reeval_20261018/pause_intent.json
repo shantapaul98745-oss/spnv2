@@ -1,0 +1,81 @@
+{
+  "at": "2026-10-18T18:59:20+08:00",
+  "paused_monotonic": 5281376.726342206,
+  "trainer": {
+    "pid": 2584192,
+    "starttime": "527383895",
+    "state": "S",
+    "ppid": 2584187,
+    "command": [
+      "/home/ps/anaconda3/envs/SPNv2/bin/python",
+      "-B",
+      "-s",
+      "-u",
+      "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/tools/train.py",
+      "--cfg",
+      "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi6_gn_ehs.yaml",
+      "--gpu",
+      "0"
+    ]
+  },
+  "owner": {
+    "pid": 3268978,
+    "starttime": "528137619",
+    "state": "R",
+    "ppid": 3268975,
+    "command": [
+      "/home/ps/anaconda3/envs/SPNv2/bin/python",
+      "-B",
+      "-s",
+      "-u",
+      "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/pause_controller.py",
+      "--mode",
+      "controller",
+      "--manifest",
+      "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/manifest.json"
+    ]
+  },
+  "log_offset": 2712023,
+  "last_event": {
+    "task_id": "train_phi6_EHS",
+    "execution_phase": "main",
+    "phase": "train",
+    "log": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/logs/train_phi6_ehs_qv2_20261017.log",
+    "command": [
+      "/home/ps/anaconda3/envs/SPNv2/bin/python",
+      "-B",
+      "-s",
+      "-u",
+      "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/tools/train.py",
+      "--cfg",
+      "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi6_gn_ehs.yaml",
+      "--gpu",
+      "0"
+    ],
+    "outputs": [
+      "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/source_phi6_verified.json"
+    ],
+    "source": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/configs/phi6_gn_ehs.yaml",
+    "resume": null,
+    "started_at": "2026-10-18T16:53:42+08:00",
+    "process_state": "live PID and /proc starttime verified",
+    "pid": 2584192,
+    "starttime": "527383895",
+    "screen_id": "2584182.spnv2_train_phi6_ehs_qv2_20261017",
+    "amp_skips": 12,
+    "batch": 21204,
+    "batches": 47964,
+    "epoch": 1,
+    "epochs": 20,
+    "event": "update",
+    "loss": 14.099159240722656,
+    "lr": 0.001,
+    "optimizer_updates": 5289,
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d6/rebaseline_phi6_gn_ehs_ga4_seed2021/checkpoint.pth.tar",
+    "samples_seen": 21204,
+    "timestamp": 1792321130.8897607,
+    "update_attempts": 5301,
+    "last_event_at": "2026-10-18T18:58:51+08:00",
+    "checkpoint": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d6/rebaseline_phi6_gn_ehs_ga4_seed2021/checkpoint.pth.tar"
+  }
+}
