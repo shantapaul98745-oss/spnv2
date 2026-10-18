@@ -1,0 +1,63 @@
+{
+  "status": "passed_inactive_proposal",
+  "activated": false,
+  "operation": "wrap_six_never_started_source_evaluations_and_append_authorized_fixed40",
+  "proposal_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/observed_stage_20261018/proposal.json",
+  "proposal_sha256": "9d2ae4f7e74e575a779e611c7d872653aa6495989b38c8b8260abf479b899153",
+  "proposal_canonical_sha256": "a6f82b1efc62ebb6223e1cfec4919e44de35424b53709230f39b0655ea3e27a5",
+  "proposal_gzip_sha256": "4dab21049abe463750bd0664b91511b7e8f13924d7b989a23adaee5f0ba61d36",
+  "old_canonical_sha256": "6562b36060f12e72dcdf9340b5262cf766cafea93c9a2fccc7ee1513c240d61b",
+  "pending_task_ids": [
+    "eval_phi3_synthetic",
+    "eval_phi3_lightbox",
+    "eval_phi3_sunlamp",
+    "eval_phi6_synthetic",
+    "eval_phi6_lightbox",
+    "eval_phi6_sunlamp"
+  ],
+  "task_count": 49,
+  "appended_fixed_odr": 40,
+  "reused_original_training_tasks": [
+    "train_phi3_EHS",
+    "pilot_phi6_EHS",
+    "train_phi6_EHS"
+  ],
+  "preserved_original_assets": true,
+  "old_original_args_env_gpu_dependencies_outputs_preserved": true,
+  "current_worker": {
+    "pid": 3111276,
+    "starttime": "517862167",
+    "epoch": 19,
+    "batch": 5148
+  },
+  "current_manager": {
+    "pid": 3298458,
+    "starttime": "518141786",
+    "started_at": "2026-10-17T15:13:22+08:00",
+    "mode": "queue"
+  },
+  "changed_historical_bindings": {
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pipeline/runner.py": {
+      "historical": "72385d6ca9f9fc4a2e7005a57761e9393a93922921226bbb254402639b9a7c47",
+      "current_verified": "35c3de5c4b0d3fc3dd320587da984958e5403dc0ccc5bd540f58d46941407e39"
+    }
+  },
+  "unique_verified_assets": 291,
+  "requires_user_exception": "one manager-only graceful restart; healthy worker untouched",
+  "no_process_control": true,
+  "live_state_written": false,
+  "scientific_results": false,
+  "future_activation": {
+    "manifest_flag": "--revise-pending-from",
+    "old_manifest": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_v2.json",
+    "exact_pending_tasks": [
+      "eval_phi3_synthetic",
+      "eval_phi3_lightbox",
+      "eval_phi3_sunlamp",
+      "eval_phi6_synthetic",
+      "eval_phi6_lightbox",
+      "eval_phi6_sunlamp"
+    ]
+  },
+  "full_scope": "10 source configurations /190 epochs plus all planned evaluations, ODR, scans and final audit remains unchanged"
+}

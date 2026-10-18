@@ -1,0 +1,41 @@
+{
+  "files": [
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/observed_stage_20261018/prepare_proposal.py",
+      "repository_path": "reproduction/queue_proposals/observed_stage_20261018/prepare_proposal.py",
+      "sha256": "555630b7cb41c49396d62b4fe9fc6f77bf01f39f9989308e2b13ee48e9555bd1"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/observed_stage_20261018/proposal.json.gz",
+      "repository_path": "reproduction/queue_proposals/observed_stage_20261018/proposal.json.gz",
+      "sha256": "4dab21049abe463750bd0664b91511b7e8f13924d7b989a23adaee5f0ba61d36"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/observed_stage_20261018/preflight.json",
+      "repository_path": "reproduction/queue_proposals/observed_stage_20261018/preflight.json",
+      "sha256": "21f38b81daf4b594f805b634a342897ad5d23bf3a03eb7e3791c4fe01765b872"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/observed_stage_20261018/README.md",
+      "repository_path": "reproduction/queue_proposals/observed_stage_20261018/README.md",
+      "sha256": "8f927a5108f8fc94233ea19d50fece686456d5bf461d4f2aef78428d353cb3ea"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/SERVER_EXECUTION_HANDOFF.md",
+      "repository_path": "reproduction/monitoring/SERVER_EXECUTION_HANDOFF.md",
+      "sha256": "0535cbdc4bb065e2b0250fa89a8a685dd57d2ef3575afc892e96264c793ea3a0"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/monitoring/spnv2-2_prompt_20261018.txt",
+      "repository_path": "reproduction/monitoring/spnv2-2_prompt_20261018.txt",
+      "sha256": "e899cb5ed480f8829bc43ef045e5b85808f1f564a575b333cd60f184b60062bf"
+    }
+  ],
+  "activated": false,
+  "full_queue": false,
+  "preflight_log": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/observed_stage_20261018/preflight_b.log",
+  "initial_failed_log": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/observed_stage_20261018/preflight.log",
+  "initial_failed_source": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/observed_stage_20261018/prepare_proposal_initial.py",
+  "raw_proposal": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/observed_stage_20261018/proposal.json",
+  "raw_sha256": "9d2ae4f7e74e575a779e611c7d872653aa6495989b38c8b8260abf479b899153"
+}
