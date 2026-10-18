@@ -53,3 +53,14 @@
 接下来由服务器自动：φ3自然结束→成功退出、final严格重载和训练证据验收→synthetic11994/lightbox6740/sunlamp2791评价及原/扩展结果验收→φ6 GPU pilot/恢复验收→独立20轮与三域评价→固定ODR40。任何异常按原规则保留现场并阻止下游，不擅自重训换参。
 
 尚未接入当前49项的全部缺口继续保留：其余8套source150轮及24域评价、Table2三个pilot、Table6资源、B120/N240扫描、案例、PRISMA25材料核验、完整扩展绘图/结果汇总与最终逐项验收。完整范围仍为10套190轮和400 ODR请求/370实际+30严格别名；49项完成不是全部完成。
+
+
+## 最新阶段：φ3训练及synthetic正式评价通过（2026-10-18 16:48核验）
+
+φ3-BN EHS独立20轮于16:36:40完成、16:36:49通过验收；main/verify均退出0，final严格重载并与最终checkpoint一致。固定final SHA256为7692e3cb2ac9c1890ff3881aa42f70d0cc81175740e4c8795466e7eda01e011a；原训练进程自然退出，不再要求其PID存活。权重与验收路径见本轮reports/source_phi3_verified.json，未重训或选其他checkpoint。
+
+synthetic全11994样本于16:45:20验收通过，H拒绝0、11994/11994覆盖；hE平移0.0589231m、hH旋转1.0348671度、混合分数0.02852483。同次推理扩展report、独立proof和entrypoint proof哈希及passed状态已读核；无需重复GPU forward。小型每轮validation的1199样本不当作这次正式11994结果。
+
+16:48正在评价lightbox，后续sunlamp再经各自原/扩展验收，由既有49项队列进入φ6 pilot/独立20轮/三域评价/固定ODR40。主模型不等待这些任务跑完，不重复扫描或增加额外测试。目标域论文差距尚待真实结果；不拿synthetic数字代替。守护保持同一spnv2-2每15分钟、目标模式暂停；完整190轮及所有其余阶段/约束不变，不能将φ3训练完成称为整体完成。
+
+阶段凭据：monitoring/phi3_source_synthetic_accepted_20261018.json；最新完整守护提示：monitoring/spnv2-2_prompt_phi3_evaluation_20261018.txt。实时阶段与PID以status.json和进度MD为准；本节替代之前“φ3仍训练中/没有正式评价”的当前状态。

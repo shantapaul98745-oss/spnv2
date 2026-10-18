@@ -1,0 +1,94 @@
+{
+  "source_accepted_at": "2026-10-18T16:36:49+08:00",
+  "synthetic_accepted_at": "2026-10-18T16:45:20+08:00",
+  "source_final": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_phi3_bn_ehs_ga4_seed2021/model_final.pth.tar",
+  "source_final_sha256": "7692e3cb2ac9c1890ff3881aa42f70d0cc81175740e4c8795466e7eda01e011a",
+  "strict_reload": true,
+  "epochs": 20,
+  "synthetic_samples": 11994,
+  "synthetic_rejections": 0,
+  "synthetic_metrics": {
+    "effi_eR": {
+      "count": 11994,
+      "mean": 2.2973378718273536,
+      "unit": "deg"
+    },
+    "effi_eR_HIL": {
+      "count": 11994,
+      "mean": 0.04009610989414691,
+      "unit": "rad"
+    },
+    "effi_eT": {
+      "count": 11994,
+      "mean": 0.05892310668186719,
+      "unit": "m"
+    },
+    "effi_eT_norm_HIL": {
+      "count": 11994,
+      "mean": 0.010462993330191794,
+      "unit": "m/m"
+    },
+    "effi_iou": {
+      "count": 11994,
+      "mean": 0.9075194328591011,
+      "unit": ""
+    },
+    "effi_pose": {
+      "count": 11994,
+      "mean": 0.050559103224338466,
+      "unit": ""
+    },
+    "final_pose": {
+      "count": 11994,
+      "mean": 0.02852483198765664,
+      "unit": "score"
+    },
+    "heat_eR": {
+      "count": 11994,
+      "mean": 1.0348671253189778,
+      "unit": "deg"
+    },
+    "heat_eR_HIL": {
+      "count": 11994,
+      "mean": 0.018061838657464892,
+      "unit": "rad"
+    },
+    "heat_eT": {
+      "count": 11994,
+      "mean": 0.04308597172336363,
+      "unit": "m"
+    },
+    "heat_eT_norm_HIL": {
+      "count": 11994,
+      "mean": 0.0070638839186397484,
+      "unit": "m/m"
+    },
+    "heat_pose": {
+      "count": 11994,
+      "mean": 0.02512572257610466,
+      "unit": ""
+    }
+  },
+  "links": {
+    "applicability": "applicable",
+    "context_sha256": "0d9ee1e0a49ef4a2db7caf1b4f9b28431016209a0f14f7aa1b90bd351d6a7d61",
+    "entrypoint_verification": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/reports/source/eval_phi3_synthetic_de7e0a962d79.json",
+      "sha256": "229dc16fa7936b6ad53413e7310d0c215f6b08e2a54775de5784f1e1fd8bb123"
+    },
+    "observer_status": "complete",
+    "report": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/runs/source/eval_phi3_synthetic_de7e0a962d79/extension/extended_report.json",
+      "sha256": "7a7c16438cf88d3f332c60752473c08fa91d5ab7ce88de4b794c8546ea5b72d8"
+    },
+    "schema": "spnv2-evaluation-extension-link-v1",
+    "verification": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/runs/source/eval_phi3_synthetic_de7e0a962d79/independent_extension_verification.json",
+      "sha256": "f04c9c93b73a5e3e87b010153b9c16f1c303641a6831b768878a593f645a66e4"
+    }
+  },
+  "current_active": "eval_phi3_lightbox",
+  "checked_at": "2026-10-18T16:51:05+08:00",
+  "scope": "Accepted phi3 source and synthetic only; target domain evaluations still require their own evidence",
+  "full_plan_complete": false
+}
