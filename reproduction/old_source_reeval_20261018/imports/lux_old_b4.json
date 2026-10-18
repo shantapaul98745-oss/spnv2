@@ -1,0 +1,16 @@
+{
+  "cuda_initialized": false,
+  "final": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/frozen/phi3_BN_single_gpu_localstyle_seed2021_epoch20/model_final.pth.tar",
+  "final_sha256": "dbb9deb17c37ce48b01edc1d658ad1a64c09094cf88d28a3c79adb49fd4cad50",
+  "finite_tensors": true,
+  "is_training_acceptance": false,
+  "model_id": "lux_old_b4",
+  "schema": "spnv2-existing-source-inference-import-v1",
+  "scope": "Fixed existing old final, safe CPU load, strict common-architecture reload and finite tensors; NOT historical training acceptance.",
+  "source_manifest": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source_manifest.json",
+  "source_manifest_sha256": "d47399919b02c17f5c6c525e1381452ca3810086699746895615c4fd287c739a",
+  "status": "passed",
+  "strict_reload": true,
+  "tensor_count": 1550,
+  "tensor_sha256": "2c9ef9d74900aec88aa212e15219d20ac712a4670e58b68fa5dfedda3919b380"
+}

@@ -1,0 +1,11 @@
+{
+  "authorized_by": "Latest direct user request: temporarily pause phi6, complete old source evaluation, then resume phi6.",
+  "operation": "one SIGSTOP/SIGCONT of exact existing train PID; preserve manager and source training state",
+  "training_pid": 2584192,
+  "training_starttime": "527383895",
+  "evaluation_count": 3,
+  "controller_sha256": "1963a32e9df18c9d2ac0824256c7e8e0721d0352e072cf1ecad4e0f433761a15",
+  "manifest_sha256": "33bee675a2b0853ccb90fddf2de73cf6595cf94f1731b8589fe73112b26fd5ff",
+  "cpu_gates_passed": 20,
+  "independent_watchdog_required": true
+}

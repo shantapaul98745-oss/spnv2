@@ -1,0 +1,59 @@
+{
+  "checked_at": "2026-10-18T18:55:27+08:00",
+  "cuda_initialized": false,
+  "domain_count": 3,
+  "domains": [
+    {
+      "csv": "/home/DATA/Downloads/DataSet/speedplus/synthetic/labels/validation.csv",
+      "csv_sha256": "530953c8d6bf67216d487f29617e44849729504ee982e756af2fb64467713e32",
+      "expected_samples": 11994,
+      "id": "synthetic",
+      "relative_csv": "synthetic/labels/validation.csv",
+      "sample_ids_sha256": "f563eec7196166d3a98f0e5ced582c590f2573fd3c9cf5c2113df1315c956b53"
+    },
+    {
+      "csv": "/home/DATA/Downloads/DataSet/speedplus/lightbox/labels/test.csv",
+      "csv_sha256": "57bfc35d6475bad1a2b35cb4b08df9f825cc14f5b93c452d682228349bd3661c",
+      "expected_samples": 6740,
+      "id": "lightbox",
+      "relative_csv": "lightbox/labels/test.csv",
+      "sample_ids_sha256": "fc794412094e120944237c2c979da3e86345d625964c59dd6664f11108db5495"
+    },
+    {
+      "csv": "/home/DATA/Downloads/DataSet/speedplus/sunlamp/labels/test.csv",
+      "csv_sha256": "ff3dba6c431761baa0e9f53780c747251c66c9e3de7a730ee39c3432820acebf",
+      "expected_samples": 2791,
+      "id": "sunlamp",
+      "relative_csv": "sunlamp/labels/test.csv",
+      "sample_ids_sha256": "bc6a1e41a0e3a23ca78ec5a1688e53473cb7406542c40f3f780134976248da7f"
+    }
+  ],
+  "finite_tensors": true,
+  "geometry": {
+    "camera": "/home/DATA/Downloads/DataSet/speedplus/camera.json",
+    "keypoints": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/utils/models/tangoPoints.mat"
+  },
+  "gpu_work_launched": false,
+  "inference_protocol": "same frozen source and same-forward H observer",
+  "model_count": 1,
+  "models": [
+    {
+      "accum_steps": 1,
+      "final": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/frozen/phi3_BN_single_gpu_localstyle_seed2021_epoch20/model_final.pth.tar",
+      "final_sha256": "dbb9deb17c37ce48b01edc1d658ad1a64c09094cf88d28a3c79adb49fd4cad50",
+      "id": "lux_old_b4",
+      "import_report": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/imports/lux_old_b4.json",
+      "import_report_sha256": "82a56a71fe337843ce3237bdc3dff9f8b5b9c19963b980c25b1ca3aec1ef914b",
+      "label": "旧模型：batch4、不累积",
+      "physical_batch": 4,
+      "tensor_count": 1550,
+      "tensor_sha256": "2c9ef9d74900aec88aa212e15219d20ac712a4670e58b68fa5dfedda3919b380"
+    }
+  ],
+  "no_training": true,
+  "original_training_acceptance": false,
+  "production_state_modified": false,
+  "schema": "spnv2-old-source-reevaluation-preflight-v1",
+  "status": "passed",
+  "strict_reload": true
+}

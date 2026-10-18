@@ -1,0 +1,80 @@
+{
+  "files": [
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/prepare.py",
+      "repository_path": "reproduction/old_source_reeval_20261018/prepare.py",
+      "sha256": "996da34171d66aa128fda9f3cbf2a17b84ba3da52f5dd7cdf1fe107f1d51c4a7"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/verify_comparison.py",
+      "repository_path": "reproduction/old_source_reeval_20261018/verify_comparison.py",
+      "sha256": "0f1a66cf59dbee36ca3e3dacd552ea38dda2b98f0f7e99dc8edfd964421b8a56"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/pause_controller.py",
+      "repository_path": "reproduction/old_source_reeval_20261018/pause_controller.py",
+      "sha256": "1963a32e9df18c9d2ac0824256c7e8e0721d0352e072cf1ecad4e0f433761a15"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/test_pause_controller.py",
+      "repository_path": "reproduction/old_source_reeval_20261018/test_pause_controller.py",
+      "sha256": "46cac2ff6378080a5be3ddab28377a5afac8648ac7a0d4afcfb782d4206097c0"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/test_verify_comparison.py",
+      "repository_path": "reproduction/old_source_reeval_20261018/test_verify_comparison.py",
+      "sha256": "3bb2473bde004e02398b162332c86da5e23dace733034a62688039a7dd2328bb"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/manifest.json",
+      "repository_path": "reproduction/old_source_reeval_20261018/manifest.json",
+      "sha256": "33bee675a2b0853ccb90fddf2de73cf6595cf94f1731b8589fe73112b26fd5ff"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/preflight.json",
+      "repository_path": "reproduction/old_source_reeval_20261018/preflight.json",
+      "sha256": "4b9d5eb3311ea445d4446d1698334ccdfbd450050587428c9a36cc78a8c6150f"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/launch_authorization.json",
+      "repository_path": "reproduction/old_source_reeval_20261018/launch_authorization.json",
+      "sha256": "8c68357a3052cf277d220e0d44dd017095dd9c502ab342ad69afdd32c234a90c"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/pipeline/progress.py",
+      "repository_path": "reproduction/old_source_reeval_20261018/pipeline/progress.py",
+      "sha256": "f2a6fddc174a2bbbb25bd19ede07800bbc5c3c2ba62f5f0553ed6a5159f96803"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/imports/lux_old_b4.json",
+      "repository_path": "reproduction/old_source_reeval_20261018/imports/lux_old_b4.json",
+      "sha256": "82a56a71fe337843ce3237bdc3dff9f8b5b9c19963b980c25b1ca3aec1ef914b"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/configs/reeval_lux_old_b4_lightbox.yaml",
+      "repository_path": "reproduction/old_source_reeval_20261018/configs/reeval_lux_old_b4_lightbox.yaml",
+      "sha256": "72477d80e2957aebf271061e210ba4184b0ace8d7a2b8ffac50c70d475b9999f"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/configs/reeval_lux_old_b4_sunlamp.yaml",
+      "repository_path": "reproduction/old_source_reeval_20261018/configs/reeval_lux_old_b4_sunlamp.yaml",
+      "sha256": "63a3fdd89b36ebb11bd5510d811e6ef749f9913a3b98ca30db864d36487d0367"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/configs/reeval_lux_old_b4_synthetic.yaml",
+      "repository_path": "reproduction/old_source_reeval_20261018/configs/reeval_lux_old_b4_synthetic.yaml",
+      "sha256": "729a8f9b9cd72f1a9490e221f0da2379c33698979e6ff9b291122bedeba1637a"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/old_source_reeval_20261018/OPERATION.md",
+      "repository_path": "reproduction/old_source_reeval_20261018/OPERATION.md",
+      "sha256": "91bd6ea60f7278924574dd6ec3f7563f4e6cf2c0233cb88b1aae0bc3ac757a03"
+    },
+    {
+      "runtime_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/SERVER_EXECUTION_HANDOFF.md",
+      "repository_path": "reproduction/monitoring/SERVER_EXECUTION_HANDOFF.md",
+      "sha256": "66a327978631960dbd221bd5883b1867969ebba7e38463d6bd6d8e7f0782cea9"
+    }
+  ],
+  "scope": "one fixed old source / three domains; one authorized SIGSTOP-SIGCONT; production queue unchanged"
+}
