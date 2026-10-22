@@ -1,0 +1,50 @@
+{
+  "status": "diagnostic_complete",
+  "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+  "sample_id": "lightbox/img001764.jpg",
+  "input_immutable": true,
+  "comparisons": [
+    {
+      "call": 1,
+      "different_coordinates": 0,
+      "max_abs_difference": 0.0,
+      "same_as_last": false
+    },
+    {
+      "call": 2,
+      "different_coordinates": 2541,
+      "max_abs_difference": 6.103515625e-05,
+      "same_as_last": true
+    },
+    {
+      "call": 3,
+      "different_coordinates": 2541,
+      "max_abs_difference": 6.103515625e-05,
+      "same_as_last": true
+    },
+    {
+      "call": 4,
+      "different_coordinates": 2541,
+      "max_abs_difference": 6.103515625e-05,
+      "same_as_last": true
+    },
+    {
+      "call": 5,
+      "different_coordinates": 2541,
+      "max_abs_difference": 6.103515625e-05,
+      "same_as_last": true
+    },
+    {
+      "call": 6,
+      "different_coordinates": 2541,
+      "max_abs_difference": 6.103515625e-05,
+      "same_as_last": true
+    }
+  ],
+  "hot_outputs_identical": true,
+  "cold_hot_graphs_differ": true,
+  "script_sha256": "97f95d22a1d081ec12d394b65d3ee578356d2f732c09af4d66ff9b4ee210c5e9",
+  "tensor_artifact_sha256": "605ea7a51dbfc59347c26fb0017e54fa12df34533745d75de3376a07ab27cb07",
+  "no_labels": true,
+  "no_optimizer": true
+}

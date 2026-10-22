@@ -212,3 +212,20 @@ Validation: syntax compilation and independent static review before execution; c
 Locations: reproduction/queue_proposals/table2_formal_20261022/ build_candidate.py, verify_candidate.py, proposal and evidence; AGENT.md and monitoring/SERVER_EXECUTION_HANDOFF.md. Reason/effect: append only H10/E20/EH20 and nine full source evaluations to completed52, preserving all52 definitions and execution evidence. Keep frozen train config/source/initialization, prepend same-forward observer only to new evaluation commands. H/E/EH modes and original accepted-subset versus extension denominators are explicit; no entropy ODR, missing values remain None. Candidate is not activated; a new explicit manager-only cutover authorization is required.
 
 Validation: unique independent CPU build and verify screens exit0; existing validate_manifest/extend_state contracts, 52-prefix and execution evidence invariance, three train configs/independent final, nine original evaluation argv/output/GPU contracts, 85 actual asset SHAs, three CSV row counts, missing-head/None/full-coverage mode contracts and absent outputs passed. Main model reviewed both scripts and existing single-head entrypoints; independently checked candidate/proof hashes. No GPU run, production state write or process signal occurred. Prior pending commits were synchronized with exact identical trees through GitHub connector; original local commit identities retained in a backup branch.
+
+
+# 003首轮探索实现与验收
+
+用户已确认v2，授权有限探索：36次基础ODR，有合格趋势时最多18次随机预算对照。目标模式暂停；剩余150轮source消融保留为可选扩展。
+
+官方φ3-BN EHS offline权重SHA256为d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc，已通过1550张量严格加载和有限性验证。来源展示采用作者发布入口与文件哈希。
+
+数据边界固定：两域各512开发，lightbox6228/sunlamp2279预留；seed20261022整组划分；3条无放回N1024观测流使用2021/2022/2023。图像相似性筛查不能证明采集独立。适应和门控不读取GT。
+
+CPU合同：风险20项、数据9项、门控状态7项、坐标/HIL5项、runner真实资产入口9项通过。真实GPU验收b的82项严格检查和实际状态文件独立CPU读回通过；ALL与冻结A逐图输出/损失/完整状态相同，mixed拒绝/尾部及恢复相同。首次验收a失败记录保留：首图未选中bbox出现6.103515625e-05差异；固定输入诊断证实原TorchScript解码器冷/热图差异。使用6次纯算子合成输入预热统一执行起点，零容差保持，不读取额外图像、不修改权重/优化器或原A数学。
+
+实现位置：implementation/gate_core.py（固定共享分位门控）、state_adapter.py（保留原A更新与BN命名行为）、prediction.py（无GT评分和独立评价边界）、data_boundary.py（冻结图像清单）、risk_metrics.py（固定O/A参考与预设筛选）、run_exploration.py/verify_exploration.py（单任务及独立验收）、phase_tools.py（校准及汇总）。
+
+先执行两域官方O开发评价和共享校准；实际校准SHA确定后，再绑定36次基础探索。不提前写入科学结果；每项main成功退出、严格重载、完整开发记录与独立proof均通过才推进。
+
+候选首次构建因manager禁止绑定项目外数据集相机路径而拒绝，尚未发送任何进程信号。修正只让manager检查项目内资产，相机仍由运行入口和独立验收逐次核对SHA；原失败候选保留。

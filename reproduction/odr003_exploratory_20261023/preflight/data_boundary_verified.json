@@ -1,0 +1,74 @@
+{
+  "checks": [
+    "all_prepared_artifact_hashes",
+    "whole_groups_no_cross_split",
+    "seed_selection_reproducible",
+    "lightbox_GT_and_paired_stream_boundaries",
+    "lightbox_all_actual_image_hashes",
+    "sunlamp_GT_and_paired_stream_boundaries",
+    "sunlamp_all_actual_image_hashes"
+  ],
+  "counts": {
+    "lightbox": {
+      "developer": 512,
+      "pool": 6740,
+      "reserve": 6228,
+      "streams": {
+        "2021": {
+          "developer_images": 86,
+          "observed": 1024,
+          "reserve_images_unlabeled": 938,
+          "unique": 1024
+        },
+        "2022": {
+          "developer_images": 79,
+          "observed": 1024,
+          "reserve_images_unlabeled": 945,
+          "unique": 1024
+        },
+        "2023": {
+          "developer_images": 73,
+          "observed": 1024,
+          "reserve_images_unlabeled": 951,
+          "unique": 1024
+        }
+      }
+    },
+    "sunlamp": {
+      "developer": 512,
+      "pool": 2791,
+      "reserve": 2279,
+      "streams": {
+        "2021": {
+          "developer_images": 189,
+          "observed": 1024,
+          "reserve_images_unlabeled": 835,
+          "unique": 1024
+        },
+        "2022": {
+          "developer_images": 201,
+          "observed": 1024,
+          "reserve_images_unlabeled": 823,
+          "unique": 1024
+        },
+        "2023": {
+          "developer_images": 186,
+          "observed": 1024,
+          "reserve_images_unlabeled": 838,
+          "unique": 1024
+        }
+      }
+    }
+  },
+  "created_at": "2026-10-22T16:44:16.563352+00:00",
+  "full_source_labels_opened": false,
+  "limitations": [
+    "Grouping screens deterministic image similarity; no supplied acquisition groups and no guarantee of acquisition independence."
+  ],
+  "model_loaded": false,
+  "prepared_proof_sha256": "6605eb43b8760d74dd521f867c422378d760f5ce56ee3a74645443ee5cb6a9b7",
+  "reserve_numeric_gt_rows_parsed": 0,
+  "scores_computed": false,
+  "status": "passed",
+  "verifier_sha256": "70ebc6dd6c714131ca3733976708823f646014918a64f5c8bfeb16eebba7d2f7"
+}

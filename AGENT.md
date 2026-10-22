@@ -214,3 +214,8 @@ Table2三个pilot的最小52项候选已独立CPU验收通过，目录queue_prop
 当前仅候选，不曾启动正式Table2训练或改变生产状态/manager。主模型审查构建/独立验收源码，独立核对原52前缀、候选与proof哈希及主指标分母逻辑。等待新的这一次manager-only切换授权；之前52项pilot切换授权已消耗，不能任意重启健康manager。候选activation_review.json列明受控接续；当前正常恢复仍只用52项manifest。
 
 原两笔待推送记录已通过GitHub连接器等树同步并读回，服务器对齐bc2e770e，旧本地SHA保留archive/local-pending-before-connector-20261022分支。完整190轮仍只有40轮正式source完成，150轮尚未执行；本候选不等于已完成50轮。其余100轮、24域评价中未执行项、Table6、B/N扫描、案例/PRISMA及最终验收不缩减。守护ACTIVE/15分钟单次，目标暂停，未变化不反复索取同一授权。
+
+
+## 2026-10-23 current authorized research stage
+
+User confirmed ODR003 exploration v2 and standing manager-only switches. Remaining150 source epochs are deferred optional, not prerequisites. Official offline phi3 source identity and full GPU correctness with zero tolerance passed. See reproduction/odr003_exploratory_20261023/EXPERIMENT_PLAN.md and IMPLEMENTATION_STATUS.md. Runtime plans/odr003_exploratory_20261023/status.json governs the new phase; original52 accepted tasks must never rerun. Pure synthetic bbox decoder warmup addresses the independently diagnosed original TorchScript cold/hot arithmetic difference; original A update behavior remains frozen. Goal mode stays paused.

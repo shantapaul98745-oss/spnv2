@@ -1,0 +1,217 @@
+[
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/implementation/phase_tools.py",
+    "repository": "reproduction/odr003_exploratory_20261023/implementation/phase_tools.py",
+    "sha256": "29187d892724ca7349324b5a89a0f986fb37221685273169057e738317e7543d"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/implementation/test_prediction.py",
+    "repository": "reproduction/odr003_exploratory_20261023/implementation/test_prediction.py",
+    "sha256": "5ae16e62a3705ca74445c835d37851aa7bd208a7b5b8fcb33e9769b9b58d7a35"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/implementation/state_adapter.py",
+    "repository": "reproduction/odr003_exploratory_20261023/implementation/state_adapter.py",
+    "sha256": "d3e6cedaae3262abf83a6c3206c504a82a295b04cd9db11e66a51e0d74bcc6dc"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/implementation/test_risk_metrics.py",
+    "repository": "reproduction/odr003_exploratory_20261023/implementation/test_risk_metrics.py",
+    "sha256": "28f3df7d22f92a07a9138f23f196e4bb761ff1f53ac4b0493b5860a48a8ca280"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/implementation/verify_real_correctness.py",
+    "repository": "reproduction/odr003_exploratory_20261023/implementation/verify_real_correctness.py",
+    "sha256": "a5a012400dab3a8d619d4fe061c22af5541dfdf693dc43124b61d70d46b965ad"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/implementation/test_gate_state.py",
+    "repository": "reproduction/odr003_exploratory_20261023/implementation/test_gate_state.py",
+    "sha256": "f057fc440e4c64f0178adc48c58884642e55f1f0498c9dce343492b5b5167716"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/implementation/prepare_calibration_queue.py",
+    "repository": "reproduction/odr003_exploratory_20261023/implementation/prepare_calibration_queue.py",
+    "sha256": "15b202cd0d3a44064acf4c441b3c27d3053f814ed55d71d39c1366dfb802e2bf"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/implementation/diagnose_bbox_jit.py",
+    "repository": "reproduction/odr003_exploratory_20261023/implementation/diagnose_bbox_jit.py",
+    "sha256": "97f95d22a1d081ec12d394b65d3ee578356d2f732c09af4d66ff9b4ee210c5e9"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/implementation/test_runner_contract.py",
+    "repository": "reproduction/odr003_exploratory_20261023/implementation/test_runner_contract.py",
+    "sha256": "2713f2aff2d7df72f10ffd8d8e2ad59576c3470ca79b748e53a37a0438f93be8"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/implementation/prediction.py",
+    "repository": "reproduction/odr003_exploratory_20261023/implementation/prediction.py",
+    "sha256": "5c87896d000c3291184c3669e013cdbf025ebf1f5d0fd30b37c00511fdc7b80d"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/implementation/test_real_model.py",
+    "repository": "reproduction/odr003_exploratory_20261023/implementation/test_real_model.py",
+    "sha256": "8a16f3881dde4861d8f5fa13d3714a432b58598f2e899e49d035c3b535060e74"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/implementation/verify_exploration.py",
+    "repository": "reproduction/odr003_exploratory_20261023/implementation/verify_exploration.py",
+    "sha256": "056728b05668589c47fb3bab48a3d405b0113d4a4c4259e1059c8f1a4783960b"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/implementation/manage_calibration.py",
+    "repository": "reproduction/odr003_exploratory_20261023/implementation/manage_calibration.py",
+    "sha256": "87b16a21fc387949fe0597717c249ec8d446af78b46237f79756fcff5b73db8b"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/implementation/risk_metrics.py",
+    "repository": "reproduction/odr003_exploratory_20261023/implementation/risk_metrics.py",
+    "sha256": "493bd95c74454614a9ee549593c4ff7b5f27caef587e4dc5043c9277a9b7a274"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/implementation/data_boundary.py",
+    "repository": "reproduction/odr003_exploratory_20261023/implementation/data_boundary.py",
+    "sha256": "70ebc6dd6c714131ca3733976708823f646014918a64f5c8bfeb16eebba7d2f7"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/implementation/run_exploration.py",
+    "repository": "reproduction/odr003_exploratory_20261023/implementation/run_exploration.py",
+    "sha256": "e6243d1b86e7c43fe189c6cf4ca67fab1922fcf24ef3fb517e3058a8d17d29aa"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/implementation/gate_core.py",
+    "repository": "reproduction/odr003_exploratory_20261023/implementation/gate_core.py",
+    "sha256": "b86f050a0b5519509b434dd245a3b24652477f575af646a2463bb0e63c93c7b5"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/implementation/diagnose_correctness_a.py",
+    "repository": "reproduction/odr003_exploratory_20261023/implementation/diagnose_correctness_a.py",
+    "sha256": "4b6c04888086938174d292770356281db971ea187fe487c47fe6bafdd17ab4f8"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/preflight/official_strict_load.py",
+    "repository": "reproduction/odr003_exploratory_20261023/preflight/official_strict_load.py",
+    "sha256": "8060b3624d1af3eceb4b242cbf9dfa7645db093286a58fcf10c75e98cb927d6a"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/preflight/data_boundary_tests_a_source.py",
+    "repository": "reproduction/odr003_exploratory_20261023/preflight/data_boundary_tests_a_source.py",
+    "sha256": "4a40fa3309b62162d35175d94e73bdd2dec9849ab607c6489170301daee121f0"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/preflight/data_boundary.py",
+    "repository": "reproduction/odr003_exploratory_20261023/preflight/data_boundary.py",
+    "sha256": "70ebc6dd6c714131ca3733976708823f646014918a64f5c8bfeb16eebba7d2f7"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/preflight/data_boundary_tests.py",
+    "repository": "reproduction/odr003_exploratory_20261023/preflight/data_boundary_tests.py",
+    "sha256": "1146d72b81221a19d4c7c68c9896dca35261dad12bcceb3703d4fa0b339e5776"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/EXPERIMENT_PLAN.md",
+    "repository": "reproduction/odr003_exploratory_20261023/EXPERIMENT_PLAN.md",
+    "sha256": "b14f411316a8c7ee9b7abdf24c27cff0860a6afa7efcd4f658616e6e91dadb04"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/EXPERIMENT_PLAN_DRAFT.md",
+    "repository": "reproduction/odr003_exploratory_20261023/EXPERIMENT_PLAN_DRAFT.md",
+    "sha256": "c6cf67e58b02f039dc231d3da7cf518d01d5f1ef4d247573287a591082f2f615"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/decisions.json",
+    "repository": "reproduction/odr003_exploratory_20261023/decisions.json",
+    "sha256": "ec11ace888b6bc72af8014582ca4e0a153c2a1439087f5f3b580c080c82e7f31"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/confirmation.json",
+    "repository": "reproduction/odr003_exploratory_20261023/confirmation.json",
+    "sha256": "88f63d8f8c097921e829f5898112b13d02cac86677f1b90949f27d58066c8b6d"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/IMPLEMENTATION_STATUS.md",
+    "repository": "reproduction/odr003_exploratory_20261023/IMPLEMENTATION_STATUS.md",
+    "sha256": "d93ccc216cb38e245f496647705b7f2c638c2603882fd62a4139f85228ee08bb"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/preflight/official_source_receipt.json",
+    "repository": "reproduction/odr003_exploratory_20261023/preflight/official_source_receipt.json",
+    "sha256": "ec3f20fc905a80ca2de82c08ff71bfa56ae383fde5187e09f199f2d0997e61d8"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/preflight/official_strict_load.json",
+    "repository": "reproduction/odr003_exploratory_20261023/preflight/official_strict_load.json",
+    "sha256": "07c0dcc8f141ded955ca53e726a84c64039911c5c48df270e4e14601556d8b52"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/preflight/source_core_manifest.json",
+    "repository": "reproduction/odr003_exploratory_20261023/preflight/source_core_manifest.json",
+    "sha256": "3386fb7f165b7307f90047b2360c4dacd97c199d73fb4b635785a30d547d5d7e"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/preflight/data_boundary_prepared.json",
+    "repository": "reproduction/odr003_exploratory_20261023/preflight/data_boundary_prepared.json",
+    "sha256": "6605eb43b8760d74dd521f867c422378d760f5ce56ee3a74645443ee5cb6a9b7"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/preflight/data_boundary_verified.json",
+    "repository": "reproduction/odr003_exploratory_20261023/preflight/data_boundary_verified.json",
+    "sha256": "bba0d11de425312ef84ecbfea1b69ac7778453f89221e01ab70d0aed0b970267"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/preflight/real_correctness_verified.json",
+    "repository": "reproduction/odr003_exploratory_20261023/preflight/real_correctness_verified.json",
+    "sha256": "fec6371c4d9cc58675e71e6ff9aaaf4042100d2b86e3cab95f3ff13cc083c891"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/tests/bbox_jit_20261023_a/report.json",
+    "repository": "reproduction/odr003_exploratory_20261023/tests/bbox_jit_20261023_a/report.json",
+    "sha256": "0a20baadb4489d1e184dfb5f105540ec0286efac28c0a71c22d204859fd817ee"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/tests/real_correctness_20261023_b/report.json",
+    "repository": "reproduction/odr003_exploratory_20261023/tests/real_correctness_20261023_b/report.json",
+    "sha256": "ee06d0aae7e14f12591109bc355cedd2e62ca32a3161736bb081987d650bd778"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/tests/real_correctness_20261023_a/report.json",
+    "repository": "reproduction/odr003_exploratory_20261023/tests/real_correctness_20261023_a/report.json",
+    "sha256": "ccad1e1b74374f70efe53dafb296715061adb373e57757af40bb4defbb64592c"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/queue_calibration_20261023/verified.json",
+    "repository": "reproduction/odr003_exploratory_20261023/queue_calibration_20261023/verified.json",
+    "sha256": "6acbeb5bad548ace3c198f20583de1abc115eff178c95b994b3d067fda2cd899"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/tests/real_correctness_20261023_a/source_snapshot/state_adapter.py",
+    "repository": "reproduction/odr003_exploratory_20261023/tests/real_correctness_20261023_a/source_snapshot/state_adapter.py",
+    "sha256": "d3e6cedaae3262abf83a6c3206c504a82a295b04cd9db11e66a51e0d74bcc6dc"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/tests/real_correctness_20261023_a/source_snapshot/prediction.py",
+    "repository": "reproduction/odr003_exploratory_20261023/tests/real_correctness_20261023_a/source_snapshot/prediction.py",
+    "sha256": "a0aa96412623b784d4e7eaf5a43e616fb155652c516a2f7ee6bc7eb77a4ad330"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/tests/real_correctness_20261023_a/source_snapshot/test_real_model.py",
+    "repository": "reproduction/odr003_exploratory_20261023/tests/real_correctness_20261023_a/source_snapshot/test_real_model.py",
+    "sha256": "bb95df29d837259000b0ccc85a2e5abcd8eeec19b4b3ffc54d535e352457ce41"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/tests/real_correctness_20261023_a/source_snapshot/data_boundary.py",
+    "repository": "reproduction/odr003_exploratory_20261023/tests/real_correctness_20261023_a/source_snapshot/data_boundary.py",
+    "sha256": "70ebc6dd6c714131ca3733976708823f646014918a64f5c8bfeb16eebba7d2f7"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/queue_calibration_20261023/odr003_O_lightbox.json",
+    "repository": "reproduction/odr003_exploratory_20261023/queue_calibration_20261023/odr003_O_lightbox.json",
+    "sha256": "2e95ae845c975cf4e138a4f7d8a961d86435da34986ead52cdd99d1b3c90a742"
+  },
+  {
+    "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/queue_calibration_20261023/odr003_O_sunlamp.json",
+    "repository": "reproduction/odr003_exploratory_20261023/queue_calibration_20261023/odr003_O_sunlamp.json",
+    "sha256": "216666398d27581ebb85b4049f02c64448a0513760e6669ddb788e347630b1b2"
+  }
+]

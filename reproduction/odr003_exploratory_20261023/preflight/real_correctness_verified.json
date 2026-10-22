@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "strict_equality_required": true,
+  "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+  "report_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/tests/real_correctness_20261023_b/report.json",
+  "report_sha256": "ee06d0aae7e14f12591109bc355cedd2e62ca32a3161736bb081987d650bd778",
+  "all_accept_actual_artifacts_equal": true,
+  "mixed_resume_actual_artifacts_equal": true,
+  "checks": 82,
+  "original_failure_preserved": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/tests/real_correctness_20261023_a/report.json",
+  "pure_operator_warmup": {
+    "calls": 6,
+    "model_forward_calls": 0,
+    "operator": "original raw_output_to_bbox",
+    "reason": "fixed-input cold/hot decoder diagnostic; preserve zero-tolerance comparisons",
+    "source_state_modified": false,
+    "synthetic_inputs": true
+  },
+  "verifier_sha256": "a5a012400dab3a8d619d4fe061c22af5541dfdf693dc43124b61d70d46b965ad",
+  "scientific_accuracy_computed": false
+}

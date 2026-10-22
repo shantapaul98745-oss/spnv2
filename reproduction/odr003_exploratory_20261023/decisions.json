@@ -1,0 +1,35 @@
+{
+  "schema": "spnv2-odr003-exploratory-plan-v2",
+  "date": "2026-10-23",
+  "status": "confirmed_implementation_authorized",
+  "source_ablations_150_epochs": "deferred_as_optional_extended_validation",
+  "official_phi3_source_primary": true,
+  "original_A_primary": true,
+  "objective": "risk_reduction_exploration",
+  "minimum_risk_improvement_percent": null,
+  "compute_cost_hard_cap": null,
+  "formal_confirmation_in_this_phase": false,
+  "development_streams": [
+    2021,
+    2022,
+    2023
+  ],
+  "N": 1024,
+  "B": 4,
+  "development_GT_target_per_domain": 512,
+  "mean_error_cap_vs_A": 1.05,
+  "min_A_gain_retained": 0.8,
+  "allow_new_missing_on_fixed_reference": false,
+  "base_adaptation_runs": 36,
+  "conditional_random_control_runs": 18,
+  "max_planned_adaptation_runs": 54,
+  "experiment_code_authorized_now": true,
+  "experiment_execution_authorized_now": true,
+  "standing_manager_switch_authorization": true,
+  "goal_mode": "remain_paused",
+  "user_answers": [
+    "只预设改善方向，暂不设最低百分比",
+    "先验证风险效果，不设耗时硬上限（推荐）",
+    "首轮只做探索，正式确认方案之后再定"
+  ]
+}

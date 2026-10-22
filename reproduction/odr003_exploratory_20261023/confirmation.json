@@ -1,0 +1,13 @@
+{
+  "schema": "spnv2-odr003-user-confirmation-v1",
+  "date": "2026-10-23",
+  "user_verbatim": "那就按现在确认的这版方案去做",
+  "confirmed_draft_sha256": "c6cf67e58b02f039dc231d3da7cf518d01d5f1ef4d247573287a591082f2f615",
+  "implementation_authorized": true,
+  "correctness_trials_authorized": true,
+  "base_exploration_runs": 36,
+  "conditional_random_controls_max": 18,
+  "formal_confirmation_authorized": false,
+  "source_ablations_150_epochs": "deferred_optional",
+  "goal_mode": "remain_paused"
+}

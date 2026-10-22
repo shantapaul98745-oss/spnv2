@@ -1,0 +1,172 @@
+{
+  "artifacts": {
+    "groups": {
+      "bytes": 1532097,
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/groups.json",
+      "sha256": "3ae40270d487f1902be4c4bcd440630a0ae06396e8674eced3c2d121bfd1e173"
+    },
+    "lightbox/developer": {
+      "bytes": 107740,
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/lightbox/developer_images.json",
+      "sha256": "f0c208440311804cd2e1de362c3a45a3068ffd5bbc3621fffedc9aa97a8b3c99"
+    },
+    "lightbox/developer_labels": {
+      "bytes": 797482,
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/lightbox/dev_labels.json",
+      "sha256": "7b61ca380e3f004a0e78f8035fec65a60a3b5db420f697dbf23512cf917c7f3d"
+    },
+    "lightbox/pool": {
+      "bytes": 1415611,
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/lightbox/pool_images.json",
+      "sha256": "3c2ebdcd6f66ef3ed64c9b37d745f9e9490f5f73a884d9ef35f7d8f3753a85c5"
+    },
+    "lightbox/reserve": {
+      "bytes": 1308098,
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/lightbox/reserve_images.json",
+      "sha256": "63d2ec62fba0cd5ddfdf2383b08ad279cfc9d0d5d5c7cfd9e2bf30fb7ee0cbb9"
+    },
+    "lightbox/stream_2021": {
+      "bytes": 215271,
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/lightbox/stream_2021.json",
+      "sha256": "37bd346bc597c354fe2e17198aa595363faf3f67a7139ad2f4f91e73d90b4bbe"
+    },
+    "lightbox/stream_2022": {
+      "bytes": 215271,
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/lightbox/stream_2022.json",
+      "sha256": "cfd67b0e57d66bcca5787249fdaed6a1dc0abcc92dd2f20ddf67a1b12693b53e"
+    },
+    "lightbox/stream_2023": {
+      "bytes": 215271,
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/lightbox/stream_2023.json",
+      "sha256": "e6f724d9ddbc4195829d326014c8396271e0ac4f4fd62cf232317ca879dca433"
+    },
+    "split": {
+      "bytes": 293610,
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/split.json",
+      "sha256": "eab95c69f1f26be0254046aa00cecce87a1a08723c413b55ce6b863af62f0fcc"
+    },
+    "sunlamp/developer": {
+      "bytes": 106716,
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/sunlamp/developer_images.json",
+      "sha256": "db2df5adb9f99af94371226537578ff9aede7aa6ee959c419e0fd7c570c828e0"
+    },
+    "sunlamp/developer_labels": {
+      "bytes": 796565,
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/sunlamp/dev_labels.json",
+      "sha256": "6782b4fe7f35f7e6f5b88bfde5705ef0362b16610df8086c3b359cea5a4a5239"
+    },
+    "sunlamp/pool": {
+      "bytes": 580739,
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/sunlamp/pool_images.json",
+      "sha256": "4c289e652c757b2779db042fa0ef2ea769b5e3a4fba998e248f8c0820e298033"
+    },
+    "sunlamp/reserve": {
+      "bytes": 474250,
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/sunlamp/reserve_images.json",
+      "sha256": "c50c7bbce3b56334aee95503aa14b199fb8cd92b8ef5c09cc1e3b1b48d6fd492"
+    },
+    "sunlamp/stream_2021": {
+      "bytes": 213223,
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/sunlamp/stream_2021.json",
+      "sha256": "fc1c866305ab081d65e3e1fea9b27264e4d0f5ebea9692b0cc074c1a9c69571d"
+    },
+    "sunlamp/stream_2022": {
+      "bytes": 213223,
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/sunlamp/stream_2022.json",
+      "sha256": "e275e927377991c57fd779374f39e92a3bcb77cffdb4f522bccf7d1134efc851"
+    },
+    "sunlamp/stream_2023": {
+      "bytes": 213223,
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/sunlamp/stream_2023.json",
+      "sha256": "f68809e4d70782eb1d6b5029aa1d64077d8d4ec7bde451995a69b07398f55873"
+    }
+  },
+  "counts": {
+    "lightbox": {
+      "developer": 512,
+      "pool": 6740,
+      "reserve": 6228,
+      "streams": {
+        "2021": {
+          "developer_images": 86,
+          "observed": 1024,
+          "reserve_images_unlabeled": 938,
+          "unique": 1024
+        },
+        "2022": {
+          "developer_images": 79,
+          "observed": 1024,
+          "reserve_images_unlabeled": 945,
+          "unique": 1024
+        },
+        "2023": {
+          "developer_images": 73,
+          "observed": 1024,
+          "reserve_images_unlabeled": 951,
+          "unique": 1024
+        }
+      }
+    },
+    "sunlamp": {
+      "developer": 512,
+      "pool": 2791,
+      "reserve": 2279,
+      "streams": {
+        "2021": {
+          "developer_images": 189,
+          "observed": 1024,
+          "reserve_images_unlabeled": 835,
+          "unique": 1024
+        },
+        "2022": {
+          "developer_images": 201,
+          "observed": 1024,
+          "reserve_images_unlabeled": 823,
+          "unique": 1024
+        },
+        "2023": {
+          "developer_images": 186,
+          "observed": 1024,
+          "reserve_images_unlabeled": 838,
+          "unique": 1024
+        }
+      }
+    }
+  },
+  "created_at": "2026-10-22T16:43:41.396708+00:00",
+  "cross_domain_groups": 9,
+  "developer_gt_rows_parsed": 1024,
+  "group_count": 8490,
+  "maximum_group_size": 274,
+  "model_loaded": false,
+  "next_gate": "independent_verify_required",
+  "non_singleton_groups": 98,
+  "numpy": "1.26.4",
+  "opencv": "4.5.5",
+  "perceptual_edge_count": 5945,
+  "python": "3.11.16 (main, Sep  2 2026, 23:39:52) [GCC 15.3.0]",
+  "reserve_numeric_gt_rows_parsed": 0,
+  "scores_computed": false,
+  "script_sha256": "70ebc6dd6c714131ca3733976708823f646014918a64f5c8bfeb16eebba7d2f7",
+  "sources": {
+    "lightbox": {
+      "acquisition_group_available": false,
+      "csv_path": "/home/DATA/Downloads/DataSet/speedplus/lightbox/labels/test.csv",
+      "metadata_keys": [
+        "filename"
+      ],
+      "rows": 6740,
+      "sha256": "57bfc35d6475bad1a2b35cb4b08df9f825cc14f5b93c452d682228349bd3661c"
+    },
+    "sunlamp": {
+      "acquisition_group_available": false,
+      "csv_path": "/home/DATA/Downloads/DataSet/speedplus/sunlamp/labels/test.csv",
+      "metadata_keys": [
+        "filename"
+      ],
+      "rows": 2791,
+      "sha256": "ff3dba6c431761baa0e9f53780c747251c66c9e3de7a730ee39c3432820acebf"
+    }
+  },
+  "status": "prepared"
+}

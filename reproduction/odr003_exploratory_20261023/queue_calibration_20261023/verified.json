@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "proposal_sha256": "a9acf585945b3a19794a5097108df6a1161ebc5d88838d71018b1edff8266b5c",
+  "canonical_sha256": "1628c1fa396b7ac51c06d53c34763b95d81787857ae4d72c523e1b718805e487",
+  "old52_preserved": true,
+  "new_tasks": 3,
+  "manager": {
+    "pid": 3305820,
+    "starttime": "564320727",
+    "started_at": "2026-10-22T23:29:51+08:00",
+    "mode": "queue",
+    "terminal": "complete"
+  },
+  "at": "2026-10-23T01:27:42+08:00"
+}
