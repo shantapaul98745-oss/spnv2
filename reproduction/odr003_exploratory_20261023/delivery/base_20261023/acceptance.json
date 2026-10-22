@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "source_summary_sha256": "53bab307ca8c87f65555f8b134b42daf8cbf06357443d17bd3aca58ceadc410b",
+  "source_proof_sha256": "9f81730aa7ef444be922da4def54db9c59bce5b30d43d3f8473feeb84d80772f",
+  "delivery_manifest_sha256": "923d73ba91777920c89d7ca8709c9120110063fb13a395de41aeef867eb7b4ab",
+  "artifact_hashes_verified": true,
+  "table_counts": {
+    "run_resources_and_coverage.csv": 38,
+    "paired_stream_metrics.csv": 42,
+    "accepted_subset_vs_extended.csv": 42
+  },
+  "case_count": 4,
+  "plots_visually_reviewed": true,
+  "model_forward_passes_for_delivery": 0,
+  "reserved_GT_read": false,
+  "random_runs": 0,
+  "base_runs": 36,
+  "next_action": "Await user research decision; do not start new experiments"
+}

@@ -1,0 +1,206 @@
+{
+  "status": "complete",
+  "source_summary_sha256": "53bab307ca8c87f65555f8b134b42daf8cbf06357443d17bd3aca58ceadc410b",
+  "source_proof_sha256": "9f81730aa7ef444be922da4def54db9c59bce5b30d43d3f8473feeb84d80772f",
+  "base_runs": 36,
+  "random_runs": 0,
+  "formal_confirmation": false,
+  "selection": {
+    "selected_method": null,
+    "run_random_controls": false,
+    "candidates": {
+      "G50": {
+        "eligible_for_random_control": false,
+        "domains": {
+          "lightbox": {
+            "pass": true,
+            "coverage_pass": true,
+            "accuracy": {
+              "pass": true,
+              "a_improves_offline": true,
+              "offline_mean": 0.1471907954601479,
+              "a_mean": 0.12243122775500383,
+              "candidate_mean": 0.11945007242142086,
+              "five_percent_bound": 0.12855278914275403,
+              "eighty_percent_bound": 0.12738314129603265,
+              "retained_gain_fraction": 1.1204041754316898,
+              "fallback_offline_bound": null
+            },
+            "risk": {
+              "mean_positive_degradation": {
+                "pass": true,
+                "baseline_zero": false,
+                "delta_vs_a": -0.004683667437962523,
+                "relative_reduction": 0.2193347469587999
+              },
+              "worst_5pct_degradation": {
+                "pass": true,
+                "baseline_zero": false,
+                "delta_vs_a": -0.08664131156555333,
+                "relative_reduction": 0.3018658269695949
+              }
+            },
+            "reasons": [],
+            "has_risk_improvement_space": true
+          },
+          "sunlamp": {
+            "pass": false,
+            "coverage_pass": true,
+            "accuracy": {
+              "pass": true,
+              "a_improves_offline": true,
+              "offline_mean": 0.22283088328803768,
+              "a_mean": 0.18589447254964056,
+              "candidate_mean": 0.1858774078387399,
+              "five_percent_bound": 0.1951891961771226,
+              "eighty_percent_bound": 0.19328175469731998,
+              "retained_gain_fraction": 1.0004620024133237,
+              "fallback_offline_bound": null
+            },
+            "risk": {
+              "mean_positive_degradation": {
+                "pass": true,
+                "baseline_zero": false,
+                "delta_vs_a": -0.00037070297213340556,
+                "relative_reduction": 0.026772318083530554
+              },
+              "worst_5pct_degradation": {
+                "pass": false,
+                "baseline_zero": false,
+                "delta_vs_a": 0.007853623410569832,
+                "relative_reduction": -0.03964645523584329
+              }
+            },
+            "reasons": [
+              "risk_direction_failed_or_unavailable"
+            ],
+            "has_risk_improvement_space": true
+          }
+        },
+        "has_risk_improvement_space": true,
+        "maximum_domain_tail": 0.20594506346116942,
+        "equal_domain_mean_degradation": 0.015073050714109297
+      },
+      "G75": {
+        "eligible_for_random_control": false,
+        "domains": {
+          "lightbox": {
+            "pass": true,
+            "coverage_pass": true,
+            "accuracy": {
+              "pass": true,
+              "a_improves_offline": true,
+              "offline_mean": 0.1471907954601479,
+              "a_mean": 0.12243122775500383,
+              "candidate_mean": 0.12048460515413248,
+              "five_percent_bound": 0.12855278914275403,
+              "eighty_percent_bound": 0.12738314129603265,
+              "retained_gain_fraction": 1.0786210253770672,
+              "fallback_offline_bound": null
+            },
+            "risk": {
+              "mean_positive_degradation": {
+                "pass": true,
+                "baseline_zero": false,
+                "delta_vs_a": -0.0006927409986355638,
+                "relative_reduction": 0.03244085402225211
+              },
+              "worst_5pct_degradation": {
+                "pass": true,
+                "baseline_zero": false,
+                "delta_vs_a": -0.029881259999367138,
+                "relative_reduction": 0.10410889560204492
+              }
+            },
+            "reasons": [],
+            "has_risk_improvement_space": true
+          },
+          "sunlamp": {
+            "pass": false,
+            "coverage_pass": true,
+            "accuracy": {
+              "pass": true,
+              "a_improves_offline": true,
+              "offline_mean": 0.22283088328803768,
+              "a_mean": 0.18589447254964056,
+              "candidate_mean": 0.184541903652638,
+              "five_percent_bound": 0.1951891961771226,
+              "eighty_percent_bound": 0.19328175469731998,
+              "retained_gain_fraction": 1.036618850342069,
+              "fallback_offline_bound": null
+            },
+            "risk": {
+              "mean_positive_degradation": {
+                "pass": false,
+                "baseline_zero": false,
+                "delta_vs_a": 0.001413248704906991,
+                "relative_reduction": -0.10206539117062025
+              },
+              "worst_5pct_degradation": {
+                "pass": false,
+                "baseline_zero": false,
+                "delta_vs_a": 0.030726976671167083,
+                "relative_reduction": -0.1551151158440684
+              }
+            },
+            "reasons": [
+              "risk_direction_failed_or_unavailable"
+            ],
+            "has_risk_improvement_space": true
+          }
+        },
+        "has_risk_improvement_space": true,
+        "maximum_domain_tail": 0.25713801752316,
+        "equal_domain_mean_degradation": 0.017960489772292976
+      }
+    },
+    "status": "no_eligible_shared_setting",
+    "scope": "exploration_only_not_formal_confirmation",
+    "rank_order": [
+      "maximum_domain_tail",
+      "equal_domain_mean_degradation",
+      "prefer_G75_on_exact_tie"
+    ],
+    "comparison_tolerance": 0.0,
+    "note": "No minimum improvement percentage; zero baseline risk has no percentage improvement and cannot alone justify extra runs."
+  },
+  "files": {
+    "paired_risk_plot.png": {
+      "sha256": "9f51a60cfc280ac6da60fa942f31aec4c661229b72179e226d1ec8c874e62ea9",
+      "bytes": 174752
+    },
+    "accepted_subset_vs_extended.csv": {
+      "sha256": "8faae9d99fe2e2902610e41cebd64b96305c5660d7779e642ad50c619824f17c",
+      "bytes": 2301
+    },
+    "case_evidence.json": {
+      "sha256": "ae65468692f9177cbec0ecf2382271e9855b9669db1ddd2d0e1e5447adfa75f6",
+      "bytes": 52046
+    },
+    "paired_stream_metrics.csv": {
+      "sha256": "0ce4a206df5062f13fd18642f697b1f0f6b1bf878f687ae73ba17386d9b163ac",
+      "bytes": 6529
+    },
+    "projection_cases.png": {
+      "sha256": "7200962f9a1a23d8c06bb3b749a6f3184416ba89cf45e077e58a7914497ca2e1",
+      "bytes": 899516
+    },
+    "run_resources_and_coverage.csv": {
+      "sha256": "ec46a5234637ae2af1a491c7527b86af3d1561784c97020753d378eba780c56b",
+      "bytes": 18063
+    },
+    "REPORT.md": {
+      "sha256": "a28acedf4080c8d601fae08f333a8bcd73a5a84bbf9584f42e64bbbbdd6749c7",
+      "bytes": 6930
+    },
+    "full_summary.json": {
+      "sha256": "53bab307ca8c87f65555f8b134b42daf8cbf06357443d17bd3aca58ceadc410b",
+      "bytes": 14997144
+    },
+    "full_summary_proof.json": {
+      "sha256": "9f81730aa7ef444be922da4def54db9c59bce5b30d43d3f8473feeb84d80772f",
+      "bytes": 26435
+    }
+  },
+  "generator_sha256": "b3d6b2670ede3da59610277202e106f13d9607634d7a6fe4720e5f110ca3b962"
+}

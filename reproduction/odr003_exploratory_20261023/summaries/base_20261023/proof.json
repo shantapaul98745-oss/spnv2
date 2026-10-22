@@ -1,0 +1,468 @@
+{
+  "adaptation_runs": 36,
+  "calibration": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/calibration/bundle.json",
+    "sha256": "dbb62a407e319ad1625d68085a2dcac1814511cd5b46e95d5a79237d6ff5fb27"
+  },
+  "calibration_proof": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/calibration/proof.json",
+    "sha256": "39d61c9fcff2461a399c91a919d135dafbebc97da781fb4311dfc41e4ce0cc44"
+  },
+  "checked_at": "2026-10-22T19:03:37.328398+00:00",
+  "core_fields_recomputed": [
+    "protocol",
+    "domains",
+    "selection"
+  ],
+  "developer_count_per_domain": 512,
+  "formal_confirmation": false,
+  "forward_passes": 0,
+  "independent_unit": "three_observation_streams",
+  "index_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/queue_base/tasks/summary_index.json",
+  "index_sha256": "65a5574ed7a5f5c7d6115b583dded768da898f7e6fe387544deb3ac90147ae3f",
+  "inputs": [
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_O_lightbox_r1",
+      "proof_sha256": "b43516dcaf8b56a76853a610a866df5e178f811186046a5e150333c9dce520c7",
+      "report_sha256": "d2a230c65f301dc08f28327c99c772ae67aeb1688fc9ba647494468ca7dac68e",
+      "run_id": "odr003_O_lightbox_r1",
+      "task_sha256": "ea5eb893ffde94a3379e7f4212eb20b46eba43235a3268ee70b95b3305ffda0c"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_O_sunlamp_r1",
+      "proof_sha256": "482dd1f1b62476a7723e8b674b0bd76478d789f869fbebb506dc80f584c5bd1a",
+      "report_sha256": "615255c58dc806f1acff883feac0e1cb6dbe3d1913cbeb57b20e88622422ed14",
+      "run_id": "odr003_O_sunlamp_r1",
+      "task_sha256": "7989dd13693eebd3ba6ac5b02c3071e4958c7bfe4a6d45812e5f15770a5e0654"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_A_lightbox_s2021_N1024_B4",
+      "proof_sha256": "9d9e3cdd4372225fb58541f780e49c59dbbb788c780a77d71d102674b972a184",
+      "report_sha256": "c653eaeb3b5c795fc751e2631d0414c7a65a2ef446f6fe9c7b11ebd33be790e1",
+      "run_id": "odr003_A_lightbox_s2021_N1024_B4",
+      "task_sha256": "8344cd80dcccb4a42bac59a6314088bf885ddc3e72aeed63243f394b82311882"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_V_lightbox_s2021_N1024_B4",
+      "proof_sha256": "83ff308f35f681aa2c53c164a25a6b712f77d98c4fad6cfb37fa46ad10790a7c",
+      "report_sha256": "405ad032314027b498332def3c9909b653cb6e2c7324308aa5bc60344dfac20d",
+      "run_id": "odr003_V_lightbox_s2021_N1024_B4",
+      "task_sha256": "aae9ff0e300bec5516dbcb2ba6ecdea259ea26c516acd11fbac95710c49384d2"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_E50_lightbox_s2021_N1024_B4",
+      "proof_sha256": "4497c7b27f47853f2d6605d3fa7c87d1adb3d0a7de12cc263d8878367cc92190",
+      "report_sha256": "6ac75659a3d71ab8798f03969071b1c039c36272e92e53c4b255eedb292f3fd1",
+      "run_id": "odr003_E50_lightbox_s2021_N1024_B4",
+      "task_sha256": "d6c575a1ecd677b18d847eda2e978aafb2067458fb435fbad0667de8b062c6f0"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_E75_lightbox_s2021_N1024_B4",
+      "proof_sha256": "485918d40d025f6a6db46065cb65b797dfae6e01b46f9b1737ecf2d0062881db",
+      "report_sha256": "210769800862dced710fa6baba50aa4f072ff82d85113c2b9e066211d7d7a193",
+      "run_id": "odr003_E75_lightbox_s2021_N1024_B4",
+      "task_sha256": "4c4b78ed431a7c3dfa6c40cf5cb168a03e118b7bc72150cb978a6a0a15b907de"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_G50_lightbox_s2021_N1024_B4",
+      "proof_sha256": "1dfb562d4cc757e4c777ad13b9813c9452fa628dba0a0b7a962b814a1dfda31a",
+      "report_sha256": "55f36da253fbc83b6e79cbec9a8cfaaa014bb12802a517fe9e9c49891d2dc128",
+      "run_id": "odr003_G50_lightbox_s2021_N1024_B4",
+      "task_sha256": "78bc96dee441d47317b34967956ac3b7a61217f382b3ec52509580583192b290"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_G75_lightbox_s2021_N1024_B4",
+      "proof_sha256": "b2872464e98c83821e5c968b8988b38f7d8b3144f156804a46db6f7227cd0eba",
+      "report_sha256": "c057a4bebb2c596b69f6c068aa625771e1906e70352f3cca00e3bbaacd7628e1",
+      "run_id": "odr003_G75_lightbox_s2021_N1024_B4",
+      "task_sha256": "ab447a224f09ac42766960e83bcee1ec9aff9e78648475111683efccb52d1890"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_A_lightbox_s2022_N1024_B4",
+      "proof_sha256": "43d51c39ad2445f6df2fc803075dfb8b1f23281b1e428f9294c810149cf7fe79",
+      "report_sha256": "7bfdaeb4b2a2959bb15184ac095c2194356f08932d9a3f3f22b8083136025261",
+      "run_id": "odr003_A_lightbox_s2022_N1024_B4",
+      "task_sha256": "dfa9c66cc5a2e56a61b9a59810f91f6828e32eefedd1c1f6102a21cc1a5016fc"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_V_lightbox_s2022_N1024_B4",
+      "proof_sha256": "9966b5aa1425b457ec6b15e8a12c225ad55d25cdc3186a11d77c3d604f239342",
+      "report_sha256": "dd91c3b7729dcaf422a957d5d5e2e7aa12287861ef06734967a3a4bd5928df74",
+      "run_id": "odr003_V_lightbox_s2022_N1024_B4",
+      "task_sha256": "0ed709199e5dfc6aa8d5a4af60a09b2d6e29058a9fecf2419b1ab662bdac2f4a"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_E50_lightbox_s2022_N1024_B4",
+      "proof_sha256": "6c8c6501093160b8d8ef552c46f24484565172f09e4e14674108a76862efa41d",
+      "report_sha256": "1dfbc5bb68fb4fa20ded65059104497528dc7fac1cd909ef8c49997a8951dc78",
+      "run_id": "odr003_E50_lightbox_s2022_N1024_B4",
+      "task_sha256": "55e2dc1079cb438bcbf806c4ebf616d7ab29fc49e5addd79cc4c47aa58ad1f32"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_E75_lightbox_s2022_N1024_B4",
+      "proof_sha256": "81c71725f0a325dd82733890a29d5329026a1bbbdb48ef2c8ee8d215f5168963",
+      "report_sha256": "db1fea54f61c4275e38e73418decffdb51f43b48e9ded2c485868f5afd1da9c6",
+      "run_id": "odr003_E75_lightbox_s2022_N1024_B4",
+      "task_sha256": "952d232990aee6c86059a4ba1286e548fda78ff2cc851b1e802aa12e602465a3"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_G50_lightbox_s2022_N1024_B4",
+      "proof_sha256": "ebaeffd1a2ac08e525f0e8969dc86e1cd8a3f1222f60c426f2486a99c3f3dcec",
+      "report_sha256": "376e8e7714629a43c42e9e5d82d0d154cd5642f79ae0f2a0b87f3a77d73334e0",
+      "run_id": "odr003_G50_lightbox_s2022_N1024_B4",
+      "task_sha256": "ff6f3ff78b1c4b06b6e51e5f50f9d8c0143243cdfaaf1648dab22f45132306a6"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_G75_lightbox_s2022_N1024_B4",
+      "proof_sha256": "ced51a7ac5a25d5f0a0468530ce623581f7cbceb47e067fc72e7e8ce915b6fad",
+      "report_sha256": "6572b33f7fe4af9afd3b241032ffaf0f034ce86e126610d396b65f907b14b0cb",
+      "run_id": "odr003_G75_lightbox_s2022_N1024_B4",
+      "task_sha256": "d57b9745ade6ca1493f7709039db29005843de6a0ccd7d47d87ec68e61395239"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_A_lightbox_s2023_N1024_B4",
+      "proof_sha256": "2f5b5448664816ea04c97e395f7276003a974039d71d5411a9e75d6f87bbc378",
+      "report_sha256": "1bd2f40dd7071e36d8f7e37b95c8ca1ee5dc773464ebe2e0faf8f4da9b13eb1c",
+      "run_id": "odr003_A_lightbox_s2023_N1024_B4",
+      "task_sha256": "f179e8778d71a1f8a058821a97eb434832e2a0b876d370db39494d0abc74b075"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_V_lightbox_s2023_N1024_B4",
+      "proof_sha256": "d9e7f17ef967672f0346204c2f2936415dd31de1072cb44106794724fdca44a4",
+      "report_sha256": "d1dd38ffd5fcaeee61d1c5c10f72219ce1b5357b26703680ecd30814698bf8ae",
+      "run_id": "odr003_V_lightbox_s2023_N1024_B4",
+      "task_sha256": "f6dd3a8395b17dbbf9599a864e36e1fb63b1a77c96837a27c02271f15fb1e382"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_E50_lightbox_s2023_N1024_B4",
+      "proof_sha256": "390c446e94e111dded71799c9dc31ad1e31f52531c733a5d8abe7b2323960fb6",
+      "report_sha256": "fccf8f10f72d1b3847a6ce69aceaec61b5ed3aa70419749ca0da4715afc67a08",
+      "run_id": "odr003_E50_lightbox_s2023_N1024_B4",
+      "task_sha256": "a854fe643e2636691813d834b25379d360de638dcbd1f9c6b9c55ddf9c91c707"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_E75_lightbox_s2023_N1024_B4",
+      "proof_sha256": "4327f4f0c16d32a0515364302aef8b27b11bc56ec8587d46d4465d42dddd9374",
+      "report_sha256": "51372c4d11004dbe0e379cde554a1158fd1cf7a34cc96303ae07877720182525",
+      "run_id": "odr003_E75_lightbox_s2023_N1024_B4",
+      "task_sha256": "7d3e2f72b0ece953acd6f6c4e9ca5f8d8cae8e5e8566d1bf49300540b27a023c"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_G50_lightbox_s2023_N1024_B4",
+      "proof_sha256": "a928b2cc6f685ea2eb7c9e7a4cbe5a50ca991145d44547af8561996ffec385a2",
+      "report_sha256": "59584a56c498ccd262528ad5882a89233fae53f2fc60074ca99ac3304c72bf7a",
+      "run_id": "odr003_G50_lightbox_s2023_N1024_B4",
+      "task_sha256": "ac2c4573d26d8756e650e998bc5070b1d113f02d02ee3924ba61725cf7ff10f8"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_G75_lightbox_s2023_N1024_B4",
+      "proof_sha256": "aa9e5e9d05590488a11fa777123cd997c0dca17ed4a43ff84f3d08b52d4efb87",
+      "report_sha256": "f6a6e6404df0db881d672905fd56b5c663727736d816d61a577b78f93b28f6d9",
+      "run_id": "odr003_G75_lightbox_s2023_N1024_B4",
+      "task_sha256": "eecc9e1cf91bea809cb86c6c5e7d8650e59470494c7bee18bb1b98f293189388"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_A_sunlamp_s2021_N1024_B4",
+      "proof_sha256": "046d4f44b99f293ff7ae116cdc781b2e376a3c188c94656b6e92fbf308e50373",
+      "report_sha256": "0c701a6fe48108aca02339ddd8d78d2c1b06e66e448f708e7e770910eb8aa1c9",
+      "run_id": "odr003_A_sunlamp_s2021_N1024_B4",
+      "task_sha256": "3e6152deac5e697cdcded69c8e094fd6592d4cacdb813c887818dfdbabd85754"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_V_sunlamp_s2021_N1024_B4",
+      "proof_sha256": "a2809a3b18e4ef207e71f56212376488ec2333677e4b4cbc90cccb8c6429a92a",
+      "report_sha256": "691c2b27312bbc16d6e2ec850c003dde51db485e77db39d3691a4ae3abf61fd2",
+      "run_id": "odr003_V_sunlamp_s2021_N1024_B4",
+      "task_sha256": "a6d40a36d83c64247d72d68f97974f1b4e10fe65fb5f833ccbd2a9a8a76f20ff"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_E50_sunlamp_s2021_N1024_B4",
+      "proof_sha256": "c963d4229af4aa28a6ca579878718ab5c0bfc73bcaf77f47f17647de3c92339d",
+      "report_sha256": "e2637f5ad5a45af69529ea2c238d0162eb3fe76d1530457fc8c317187f78f27d",
+      "run_id": "odr003_E50_sunlamp_s2021_N1024_B4",
+      "task_sha256": "061ae255e9b0ce28e6faf6366dddcb6f9329cadcc6ba021d41d4e1bd726a2dc8"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_E75_sunlamp_s2021_N1024_B4",
+      "proof_sha256": "03e87f3f711b5e181370f46f73956e0ab645081cbda82ad3818e8b5240d4288a",
+      "report_sha256": "3138961bd5620e7d5f97cb9043cd95bc235963c829b632dcda767a4027ca06e6",
+      "run_id": "odr003_E75_sunlamp_s2021_N1024_B4",
+      "task_sha256": "226af8c55f5061b185dd8966b6de4f3b6a6c38677bebb23c51b1d4dd12d94faa"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_G50_sunlamp_s2021_N1024_B4",
+      "proof_sha256": "bc7b704799e40dc4c1181d8f36c0d3e9c9dfca026420b0f57f488e86cc17a1e9",
+      "report_sha256": "6bbd1343b30e8c4bce397cce860fec5a0fa0160bb24265dd147ab288675b98fd",
+      "run_id": "odr003_G50_sunlamp_s2021_N1024_B4",
+      "task_sha256": "b6f17045fa30ea96a991156b8208c2f7f9b3e255f39a22ce973354529927df3a"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_G75_sunlamp_s2021_N1024_B4",
+      "proof_sha256": "94deb7e30e0fc9d459c9ad40f2c9a93dbe5236aaf1f2210072b0419199e5e076",
+      "report_sha256": "f4afa5171ddb4ca26d60e2fa50a0bbc3f754e6ccdf955062260207888db84918",
+      "run_id": "odr003_G75_sunlamp_s2021_N1024_B4",
+      "task_sha256": "8ca8ff30c6098fef0ce6df1f546fc24a05078e126550586240976ed94f73c8ac"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_A_sunlamp_s2022_N1024_B4",
+      "proof_sha256": "16782117eb4e228d4524dc0dbeebd889a60cd4579a9a646cd082757e429ea77c",
+      "report_sha256": "53ebc803792d5382e2799a770b985f8deb1da410e8af37c9b100830c0e71fc8a",
+      "run_id": "odr003_A_sunlamp_s2022_N1024_B4",
+      "task_sha256": "9ab5cf7d2caeb0f45eed953e1154bb1109210a05b6269cdede1f1d0b52a0ecd0"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_V_sunlamp_s2022_N1024_B4",
+      "proof_sha256": "d2c76232fded05491618032f5831573c09df5b0364d29163600b7475981e840e",
+      "report_sha256": "a30201843d982f1357fc8612fbdbe43f6240adba3cbb2ac84ba09bccb14549bd",
+      "run_id": "odr003_V_sunlamp_s2022_N1024_B4",
+      "task_sha256": "8c10f83c584a9136b8c5ee240b98fdc52eae559164a6b850007e59fb990f42c9"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_E50_sunlamp_s2022_N1024_B4",
+      "proof_sha256": "32cc346790c3eaac945377bd410a9842a3c0451a5f89bb9822698aa369c3a579",
+      "report_sha256": "2604b59c74f1110609625cc8f2e3aead2c83ade01d2cec6700faa6eb62218d67",
+      "run_id": "odr003_E50_sunlamp_s2022_N1024_B4",
+      "task_sha256": "0255956328ce22eea89a8ebc0a6051b0f85f3cac93a1aedf406fdc35b7caf814"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_E75_sunlamp_s2022_N1024_B4",
+      "proof_sha256": "20c190e1c837994239dd3452248b6be9015c2893c11c191366b1a71cb9fec790",
+      "report_sha256": "ca6c262aa8e0ddd7c046a19746d409709cb5ac0561537ebab3edf59d8db8cee9",
+      "run_id": "odr003_E75_sunlamp_s2022_N1024_B4",
+      "task_sha256": "ab57595afec8ec1d39f540e79bd288e79766840d5c7de509e71e6bc7283c96f4"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_G50_sunlamp_s2022_N1024_B4",
+      "proof_sha256": "65cd96eee35b5775d58ac4a5d5f097f6b319211db0db59fae3c25ec9e88896b1",
+      "report_sha256": "b82f2547c6b818a080617885fa299f945e15cdee60e768decc481857866136f1",
+      "run_id": "odr003_G50_sunlamp_s2022_N1024_B4",
+      "task_sha256": "26ed8270dde506c10bc1e7c1f01a51f312d07ba0099d53e47d968f73671c4fea"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_G75_sunlamp_s2022_N1024_B4",
+      "proof_sha256": "54f173d7c7156d1261eaa2a96555f879cb21c6fc3dd2aef4d373d9591ba66d42",
+      "report_sha256": "1fb0318cdcd0355218b1ad6a9994cd3417a787f81584a0cfb683dbe3d49103bf",
+      "run_id": "odr003_G75_sunlamp_s2022_N1024_B4",
+      "task_sha256": "725957b4eb801c3eeecca4ed148ab31cf8dbc20736ca7410c41c65678eef5cd6"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_A_sunlamp_s2023_N1024_B4",
+      "proof_sha256": "9f1c3e9575ffe7b9d522b0fa4794c2acb7bb411549860d22ab9e305e61e52682",
+      "report_sha256": "528bc6223a853a5ecd6851c916917d63e924cde9068bb22fac3f25aa70be6492",
+      "run_id": "odr003_A_sunlamp_s2023_N1024_B4",
+      "task_sha256": "dad10114acbe569b76a5cd44ba75939fdbc21f240c0e24e71ec2886869fe3806"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_V_sunlamp_s2023_N1024_B4",
+      "proof_sha256": "ffef651427393b65c5a145ac1e76245be060ef715c52c794c658e26a5f347f32",
+      "report_sha256": "2d93c4903dc3e30e00c18710798b9518c695c049b04599758780f8f65115dcbb",
+      "run_id": "odr003_V_sunlamp_s2023_N1024_B4",
+      "task_sha256": "565cd24de895170f943876891df26ef6e86570138658368122b2908c75a64438"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_E50_sunlamp_s2023_N1024_B4",
+      "proof_sha256": "1a16813831ae34e6cb0d33d31985f3c1eba987276691cee7bb8b6474c398e26c",
+      "report_sha256": "c5b0a085484ba3815f259ac95e874033b071efd77a3f381d83ef1505dd5b0408",
+      "run_id": "odr003_E50_sunlamp_s2023_N1024_B4",
+      "task_sha256": "09aa0a91374471de18ee73d7e86bf2be2628db3bc300958e44c20ce08c122722"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_E75_sunlamp_s2023_N1024_B4",
+      "proof_sha256": "a0340c59a8014ad55e277c46bbd78a912c295d7d67444f9416933f6879ade754",
+      "report_sha256": "b4dbb97fd71ec1900f6ba14f5255313a780b67d16229edda81c2179eeb2fdcf8",
+      "run_id": "odr003_E75_sunlamp_s2023_N1024_B4",
+      "task_sha256": "0ce9e5c11d6d2faab091866f886d4b7175302657494444a314071938736cc3f6"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_G50_sunlamp_s2023_N1024_B4",
+      "proof_sha256": "d54815ada37ee33bfdb559c3de42696494355ac89aac0511248fca2febc63d81",
+      "report_sha256": "9b44bdb9925ddefe627d6f4676cb8b340e0c1707a4b8c739d23170bf8c912047",
+      "run_id": "odr003_G50_sunlamp_s2023_N1024_B4",
+      "task_sha256": "b05487d6c1acc1825a144d3f3b104967d634324727ab1abdf81d5ac5918c6dd9"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_G75_sunlamp_s2023_N1024_B4",
+      "proof_sha256": "984abfbf03a09222103ef8d4fbfb8af61154b18113169873fc124731f197d241",
+      "report_sha256": "165651e3bbc8a14971715cb913857ff09fcd289f1ea5f88dfbb9b9caab81e375",
+      "run_id": "odr003_G75_sunlamp_s2023_N1024_B4",
+      "task_sha256": "90bd04ccd50215f09c86686176a5ddf0a9c96eece4fc146b5b436a7bf5f965cd"
+    }
+  ],
+  "main_exitcode": 0,
+  "main_exitcode_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/logs/odr003_base_summary.log.exitcode",
+  "markdown_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/summaries/base_20261023/summary.md",
+  "markdown_sha256": "b13da062d6722694ff4a9d6c251cd646bbeea570496a87ac913c7b1a2d1ac806",
+  "model_loaded": false,
+  "next_action": "Only a qualifying shared G setting permits separately prepared at-most18 matched-random tasks; no automatic launches here",
+  "offline_runs": 2,
+  "random_runs_executed_by_verifier": 0,
+  "risk_record_count": 21504,
+  "run_count": 38,
+  "schema": "odr003-independent-base-summary-proof-v1",
+  "selection": {
+    "candidates": {
+      "G50": {
+        "domains": {
+          "lightbox": {
+            "accuracy": {
+              "a_improves_offline": true,
+              "a_mean": 0.12243122775500383,
+              "candidate_mean": 0.11945007242142086,
+              "eighty_percent_bound": 0.12738314129603265,
+              "fallback_offline_bound": null,
+              "five_percent_bound": 0.12855278914275403,
+              "offline_mean": 0.1471907954601479,
+              "pass": true,
+              "retained_gain_fraction": 1.1204041754316898
+            },
+            "coverage_pass": true,
+            "has_risk_improvement_space": true,
+            "pass": true,
+            "reasons": [],
+            "risk": {
+              "mean_positive_degradation": {
+                "baseline_zero": false,
+                "delta_vs_a": -0.004683667437962523,
+                "pass": true,
+                "relative_reduction": 0.2193347469587999
+              },
+              "worst_5pct_degradation": {
+                "baseline_zero": false,
+                "delta_vs_a": -0.08664131156555333,
+                "pass": true,
+                "relative_reduction": 0.3018658269695949
+              }
+            }
+          },
+          "sunlamp": {
+            "accuracy": {
+              "a_improves_offline": true,
+              "a_mean": 0.18589447254964056,
+              "candidate_mean": 0.1858774078387399,
+              "eighty_percent_bound": 0.19328175469731998,
+              "fallback_offline_bound": null,
+              "five_percent_bound": 0.1951891961771226,
+              "offline_mean": 0.22283088328803768,
+              "pass": true,
+              "retained_gain_fraction": 1.0004620024133237
+            },
+            "coverage_pass": true,
+            "has_risk_improvement_space": true,
+            "pass": false,
+            "reasons": [
+              "risk_direction_failed_or_unavailable"
+            ],
+            "risk": {
+              "mean_positive_degradation": {
+                "baseline_zero": false,
+                "delta_vs_a": -0.00037070297213340556,
+                "pass": true,
+                "relative_reduction": 0.026772318083530554
+              },
+              "worst_5pct_degradation": {
+                "baseline_zero": false,
+                "delta_vs_a": 0.007853623410569832,
+                "pass": false,
+                "relative_reduction": -0.03964645523584329
+              }
+            }
+          }
+        },
+        "eligible_for_random_control": false,
+        "equal_domain_mean_degradation": 0.015073050714109297,
+        "has_risk_improvement_space": true,
+        "maximum_domain_tail": 0.20594506346116942
+      },
+      "G75": {
+        "domains": {
+          "lightbox": {
+            "accuracy": {
+              "a_improves_offline": true,
+              "a_mean": 0.12243122775500383,
+              "candidate_mean": 0.12048460515413248,
+              "eighty_percent_bound": 0.12738314129603265,
+              "fallback_offline_bound": null,
+              "five_percent_bound": 0.12855278914275403,
+              "offline_mean": 0.1471907954601479,
+              "pass": true,
+              "retained_gain_fraction": 1.0786210253770672
+            },
+            "coverage_pass": true,
+            "has_risk_improvement_space": true,
+            "pass": true,
+            "reasons": [],
+            "risk": {
+              "mean_positive_degradation": {
+                "baseline_zero": false,
+                "delta_vs_a": -0.0006927409986355638,
+                "pass": true,
+                "relative_reduction": 0.03244085402225211
+              },
+              "worst_5pct_degradation": {
+                "baseline_zero": false,
+                "delta_vs_a": -0.029881259999367138,
+                "pass": true,
+                "relative_reduction": 0.10410889560204492
+              }
+            }
+          },
+          "sunlamp": {
+            "accuracy": {
+              "a_improves_offline": true,
+              "a_mean": 0.18589447254964056,
+              "candidate_mean": 0.184541903652638,
+              "eighty_percent_bound": 0.19328175469731998,
+              "fallback_offline_bound": null,
+              "five_percent_bound": 0.1951891961771226,
+              "offline_mean": 0.22283088328803768,
+              "pass": true,
+              "retained_gain_fraction": 1.036618850342069
+            },
+            "coverage_pass": true,
+            "has_risk_improvement_space": true,
+            "pass": false,
+            "reasons": [
+              "risk_direction_failed_or_unavailable"
+            ],
+            "risk": {
+              "mean_positive_degradation": {
+                "baseline_zero": false,
+                "delta_vs_a": 0.001413248704906991,
+                "pass": false,
+                "relative_reduction": -0.10206539117062025
+              },
+              "worst_5pct_degradation": {
+                "baseline_zero": false,
+                "delta_vs_a": 0.030726976671167083,
+                "pass": false,
+                "relative_reduction": -0.1551151158440684
+              }
+            }
+          }
+        },
+        "eligible_for_random_control": false,
+        "equal_domain_mean_degradation": 0.017960489772292976,
+        "has_risk_improvement_space": true,
+        "maximum_domain_tail": 0.25713801752316
+      }
+    },
+    "comparison_tolerance": 0.0,
+    "note": "No minimum improvement percentage; zero baseline risk has no percentage improvement and cannot alone justify extra runs.",
+    "rank_order": [
+      "maximum_domain_tail",
+      "equal_domain_mean_degradation",
+      "prefer_G75_on_exact_tie"
+    ],
+    "run_random_controls": false,
+    "scope": "exploration_only_not_formal_confirmation",
+    "selected_method": null,
+    "status": "no_eligible_shared_setting"
+  },
+  "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+  "status": "passed",
+  "summary_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/summaries/base_20261023/summary.json",
+  "summary_sha256": "53bab307ca8c87f65555f8b134b42daf8cbf06357443d17bd3aca58ceadc410b",
+  "target_GT_files_read": false,
+  "verifier_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/implementation/verify_summary.py",
+  "verifier_sha256": "5ac10aa9346bec036deb670265e9a95d56d98fc3eadf7b2b30bc64c377cc8ee1"
+}
