@@ -1,0 +1,66 @@
+{
+  "status": "prepared_pending_independent_cpu_verification",
+  "activation_allowed": false,
+  "old_manifest": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_observed_stage_20261018.json",
+  "old_manifest_canonical_sha256": "a6f82b1efc62ebb6223e1cfec4919e44de35424b53709230f39b0655ea3e27a5",
+  "candidate": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/table2_pilots_20261022/proposal.json",
+  "candidate_canonical_sha256": "976cf1bf4caf473d47b861e01b69a216399da0e492b6bcb9fe282134365e5adc",
+  "old_tasks": 49,
+  "new_tasks": 52,
+  "original49_exact_prefix": true,
+  "existing_manifest_fields_changed": [
+    "scope",
+    "tasks"
+  ],
+  "backlog_preserved_exactly": true,
+  "added_ids": [
+    "pilot_table2_h",
+    "pilot_table2_e",
+    "pilot_table2_eh"
+  ],
+  "pending_definition_changes": [
+    {
+      "id": "pilot_table2_h",
+      "field": "requires",
+      "before": [],
+      "after": [
+        "fixed_phi3_B2_sunlamp_s2025_N1024_B4"
+      ]
+    },
+    {
+      "id": "pilot_table2_e",
+      "field": "requires",
+      "before": [
+        "eval_table2_h_sunlamp"
+      ],
+      "after": [
+        "pilot_table2_h"
+      ]
+    },
+    {
+      "id": "pilot_table2_eh",
+      "field": "requires",
+      "before": [
+        "eval_table2_e_sunlamp"
+      ],
+      "after": [
+        "pilot_table2_e"
+      ]
+    }
+  ],
+  "manager_identity": {
+    "pid": 1851843,
+    "starttime": "526573814",
+    "state": "S",
+    "command": "/home/ps/anaconda3/envs/SPNv2/bin/python -B -s -u /home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pipeline/runner.py --manifest /home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_observed_stage_20261018.json --revise-pending-from /home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_v2.json --pending-task eval_phi3_synthetic --pending-task eval_phi3_lightbox --pending-task eval_phi3_sunlamp --pending-task eval_phi6_synthetic --pending-task eval_phi6_lightbox --pending-task eval_phi6_sunlamp "
+  },
+  "source_pending_file_sha256": "d4cc043e73f2c3f31d23d0c7ea89b31000538092140b87dd9460a69bca844429",
+  "pipeline_sha256": {
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pipeline/runner.py": "35c3de5c4b0d3fc3dd320587da984958e5403dc0ccc5bd540f58d46941407e39",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pipeline/revision.py": "13f8451172bf112598d8023ab732dda0aa3cb382d9c881a352f8b863735ae03e",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pipeline/progress.py": "f2a6fddc174a2bbbb25bd19ede07800bbc5c3c2ba62f5f0553ed6a5159f96803",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pipeline/task_entry.py": "c2185fde0b9cad3fb86b1584b7c4268a41e53c40cb10f9054b19e4c40bd38b37"
+  },
+  "not_activated": true,
+  "formal_table2_training_added": false
+}

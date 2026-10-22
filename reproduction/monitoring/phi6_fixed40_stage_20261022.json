@@ -1,0 +1,861 @@
+{
+  "schema": "spnv2-main-sources-fixed40-stage-check-v1",
+  "checked_at": "2026-10-22T22:58:38+08:00",
+  "stage_completed": true,
+  "full_plan_completed": false,
+  "source_epochs_completed": 40,
+  "full_source_epochs_required": 190,
+  "remaining_source_epochs": 150,
+  "queue_manifest": "queue_observed_stage_20261018.json",
+  "queue_sha256": "a6f82b1efc62ebb6223e1cfec4919e44de35424b53709230f39b0655ea3e27a5",
+  "phi6": {
+    "checked_at": "2026-10-22T22:58:38.579031",
+    "source": {
+      "status": "passed",
+      "strict_reload": true,
+      "final_matches_checkpoint": true,
+      "final": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d6/rebaseline_phi6_gn_ehs_ga4_seed2021/model_final.pth.tar",
+      "final_sha256": "362c4c035371ac88ecb205a60e21f529e6601ff465b27e9ef81d45317934261d",
+      "checkpoint_sha256": "dc3ea5d71dba16633d9c82d75c10c837fbcb20777ec15790677de490db49c510",
+      "physical_batch": 1,
+      "accum_steps": 4,
+      "samples_per_epoch": 47964,
+      "state": {
+        "amp_skips": 97,
+        "consecutive_amp_skips": 0,
+        "epoch": 20,
+        "last_loss": 1.7486320734024048,
+        "microbatches_seen": 959280,
+        "next_batch": 0,
+        "optimizer_updates": 239723,
+        "samples_seen": 959280,
+        "update_attempts": 239820
+      },
+      "actual_final_sha256": "362c4c035371ac88ecb205a60e21f529e6601ff465b27e9ef81d45317934261d",
+      "actual_checkpoint_sha256": "dc3ea5d71dba16633d9c82d75c10c837fbcb20777ec15790677de490db49c510"
+    },
+    "domains": [
+      {
+        "domain": "synthetic",
+        "base_proof": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/eval_phi6_synthetic_verified.json",
+        "base_proof_sha256": "6176d353ed38fade505f83425f587e0afbbc8fc4f7e2c3c746ca4120b0808d6c",
+        "base_status": "passed",
+        "links": {
+          "report": {
+            "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/runs/source/eval_phi6_synthetic_abdc6f8073bd/extension/extended_report.json",
+            "sha256": "bc0adf86fa45b0ff489c0f40e12b8e002b8131975cb950c1615042bd0ebf5441",
+            "hash_matches": true,
+            "status": "produced_pending_independent_cpu_verification"
+          },
+          "verification": {
+            "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/runs/source/eval_phi6_synthetic_abdc6f8073bd/independent_extension_verification.json",
+            "sha256": "a537b1bc416517b22cd385950e6bd3f4e8d05b2adfdcb81ab747d9587f5d33af",
+            "hash_matches": true,
+            "status": "passed"
+          },
+          "entrypoint_verification": {
+            "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/reports/source/eval_phi6_synthetic_abdc6f8073bd.json",
+            "sha256": "81fc5d7a65f59d35e798ab66db916ae240fec826574d7b1e30fcb98bcfcff57c",
+            "hash_matches": true,
+            "status": "passed"
+          }
+        },
+        "counts": {
+          "H_E_intersection": 11994,
+          "H_numeric_pose": 11994,
+          "H_numeric_rotation": 11994,
+          "H_numeric_translation": 11994,
+          "efficientpose_applicable": true,
+          "geometry_rejected_numeric_H": 0,
+          "heatmap_applicable": true,
+          "missing_H_rotation": 0,
+          "missing_H_translation": 0,
+          "original_accepted": 11994,
+          "original_accepted_H_E_intersection": 11994,
+          "total": 11994
+        },
+        "metrics": {
+          "eT": {
+            "count": 11994,
+            "coverage": 1,
+            "denominator_scope": "all_samples",
+            "mask": "extended_hybrid:eT",
+            "mean": 0.03532762965609162,
+            "missing": 0,
+            "total": 11994,
+            "unit": "m"
+          },
+          "eR": {
+            "count": 11994,
+            "coverage": 1,
+            "denominator_scope": "all_samples",
+            "mask": "extended_hybrid:eR",
+            "mean": 0.9451783999095305,
+            "missing": 0,
+            "total": 11994,
+            "unit": "deg"
+          },
+          "pose": {
+            "count": 11994,
+            "coverage": 1,
+            "denominator_scope": "all_samples",
+            "mask": "extended_hybrid:pose",
+            "mean": 0.022700497816607917,
+            "missing": 0,
+            "total": 11994,
+            "unit": "score"
+          }
+        },
+        "accepted": {
+          "eT": {
+            "count": 11994,
+            "coverage": 1,
+            "denominator_scope": "original_accepted_subset",
+            "mask": "original_H_E_intersection:eT",
+            "mean": 0.03532762965609162,
+            "missing": 0,
+            "total": 11994,
+            "unit": "m"
+          },
+          "eR": {
+            "count": 11994,
+            "coverage": 1,
+            "denominator_scope": "original_accepted_subset",
+            "mask": "original_H_E_intersection:eR",
+            "mean": 0.9451783999095305,
+            "missing": 0,
+            "total": 11994,
+            "unit": "deg"
+          },
+          "pose": {
+            "count": 11994,
+            "coverage": 1,
+            "denominator_scope": "original_accepted_subset",
+            "mask": "original_H_E_intersection:pose",
+            "mean": 0.022700497816607917,
+            "missing": 0,
+            "total": 11994,
+            "unit": "score"
+          }
+        },
+        "per_sample_sha_matches": true,
+        "per_sample_lines": 11994
+      },
+      {
+        "domain": "lightbox",
+        "base_proof": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/eval_phi6_lightbox_verified.json",
+        "base_proof_sha256": "dfdb55aed4a96857073bcfed140af97e44e7da4979ada4984750efc895636bcf",
+        "base_status": "passed",
+        "links": {
+          "report": {
+            "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/runs/source/eval_phi6_lightbox_fc537ed63a4b/extension/extended_report.json",
+            "sha256": "c15b64f38cc4e2f18d22cddab8b809a35c9ff0cba132a1975cf29da89c50663b",
+            "hash_matches": true,
+            "status": "produced_pending_independent_cpu_verification"
+          },
+          "verification": {
+            "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/runs/source/eval_phi6_lightbox_fc537ed63a4b/independent_extension_verification.json",
+            "sha256": "b3c679a8bc9f6134100c5af661cda567f574b964282a6823f83e329e4989a646",
+            "hash_matches": true,
+            "status": "passed"
+          },
+          "entrypoint_verification": {
+            "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/reports/source/eval_phi6_lightbox_fc537ed63a4b.json",
+            "sha256": "0182aa1bfddedc642903c64d44949e3cf12f98cb82921403c967c367fd08598a",
+            "hash_matches": true,
+            "status": "passed"
+          }
+        },
+        "counts": {
+          "H_E_intersection": 6740,
+          "H_numeric_pose": 6740,
+          "H_numeric_rotation": 6740,
+          "H_numeric_translation": 6740,
+          "efficientpose_applicable": true,
+          "geometry_rejected_numeric_H": 18,
+          "heatmap_applicable": true,
+          "missing_H_rotation": 0,
+          "missing_H_translation": 0,
+          "original_accepted": 6722,
+          "original_accepted_H_E_intersection": 6722,
+          "total": 6740
+        },
+        "metrics": {
+          "eT": {
+            "count": 6740,
+            "coverage": 1,
+            "denominator_scope": "all_samples",
+            "mask": "extended_hybrid:eT",
+            "mean": 0.2744757288346483,
+            "missing": 0,
+            "total": 6740,
+            "unit": "m"
+          },
+          "eR": {
+            "count": 6740,
+            "coverage": 1,
+            "denominator_scope": "all_samples",
+            "mask": "extended_hybrid:eR",
+            "mean": 9.687370309886097,
+            "missing": 0,
+            "total": 6740,
+            "unit": "deg"
+          },
+          "pose": {
+            "count": 6740,
+            "coverage": 1,
+            "denominator_scope": "all_samples",
+            "mask": "extended_hybrid:pose",
+            "mean": 0.211010809640841,
+            "missing": 0,
+            "total": 6740,
+            "unit": "score"
+          }
+        },
+        "accepted": {
+          "eT": {
+            "count": 6722,
+            "coverage": 0.9973293768545994,
+            "denominator_scope": "original_accepted_subset",
+            "mask": "original_H_E_intersection:eT",
+            "mean": 0.26547542382572364,
+            "missing": 18,
+            "total": 6740,
+            "unit": "m"
+          },
+          "eR": {
+            "count": 6722,
+            "coverage": 0.9973293768545994,
+            "denominator_scope": "original_accepted_subset",
+            "mask": "original_H_E_intersection:eR",
+            "mean": 9.46482016637678,
+            "missing": 18,
+            "total": 6740,
+            "unit": "deg"
+          },
+          "pose": {
+            "count": 6722,
+            "coverage": 0.9973293768545994,
+            "denominator_scope": "original_accepted_subset",
+            "mask": "original_H_E_intersection:pose",
+            "mean": 0.20588266052376436,
+            "missing": 18,
+            "total": 6740,
+            "unit": "score"
+          }
+        },
+        "per_sample_sha_matches": true,
+        "per_sample_lines": 6740
+      },
+      {
+        "domain": "sunlamp",
+        "base_proof": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/reports/eval_phi6_sunlamp_verified.json",
+        "base_proof_sha256": "c8b9bad4968d5da9fd384da16c3443ab2a8736bfa2b26a1ae13ade90b8aa4da8",
+        "base_status": "passed",
+        "links": {
+          "report": {
+            "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/runs/source/eval_phi6_sunlamp_8aeb0767a583/extension/extended_report.json",
+            "sha256": "5f26c34abb4a628ae10f1cb9163b83d0c47a9f8991fea4dbbc468b8cc16c2340",
+            "hash_matches": true,
+            "status": "produced_pending_independent_cpu_verification"
+          },
+          "verification": {
+            "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/runs/source/eval_phi6_sunlamp_8aeb0767a583/independent_extension_verification.json",
+            "sha256": "0078cdb56d979ef7867d62392bd189880d8b011fa5d2ab776671b20549494149",
+            "hash_matches": true,
+            "status": "passed"
+          },
+          "entrypoint_verification": {
+            "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/evaluation_entrypoints/reports/source/eval_phi6_sunlamp_8aeb0767a583.json",
+            "sha256": "559f82304f5433d09df4868c4ead0621a8e73a2171db66b1df1c18face3ba905",
+            "hash_matches": true,
+            "status": "passed"
+          }
+        },
+        "counts": {
+          "H_E_intersection": 2791,
+          "H_numeric_pose": 2791,
+          "H_numeric_rotation": 2791,
+          "H_numeric_translation": 2791,
+          "efficientpose_applicable": true,
+          "geometry_rejected_numeric_H": 2,
+          "heatmap_applicable": true,
+          "missing_H_rotation": 0,
+          "missing_H_translation": 0,
+          "original_accepted": 2789,
+          "original_accepted_H_E_intersection": 2789,
+          "total": 2791
+        },
+        "metrics": {
+          "eT": {
+            "count": 2791,
+            "coverage": 1,
+            "denominator_scope": "all_samples",
+            "mask": "extended_hybrid:eT",
+            "mean": 0.2452483187317488,
+            "missing": 0,
+            "total": 2791,
+            "unit": "m"
+          },
+          "eR": {
+            "count": 2791,
+            "coverage": 1,
+            "denominator_scope": "all_samples",
+            "mask": "extended_hybrid:eR",
+            "mean": 11.928890886496422,
+            "missing": 0,
+            "total": 2791,
+            "unit": "deg"
+          },
+          "pose": {
+            "count": 2791,
+            "coverage": 1,
+            "denominator_scope": "all_samples",
+            "mask": "extended_hybrid:pose",
+            "mean": 0.24820638219319055,
+            "missing": 0,
+            "total": 2791,
+            "unit": "score"
+          }
+        },
+        "accepted": {
+          "eT": {
+            "count": 2789,
+            "coverage": 0.9992834109638122,
+            "denominator_scope": "original_accepted_subset",
+            "mask": "original_H_E_intersection:eT",
+            "mean": 0.2451838096448475,
+            "missing": 2,
+            "total": 2791,
+            "unit": "m"
+          },
+          "eR": {
+            "count": 2789,
+            "coverage": 0.9992834109638122,
+            "denominator_scope": "original_accepted_subset",
+            "mask": "original_H_E_intersection:eR",
+            "mean": 11.89424215653736,
+            "missing": 2,
+            "total": 2791,
+            "unit": "deg"
+          },
+          "pose": {
+            "count": 2789,
+            "coverage": 0.9992834109638122,
+            "denominator_scope": "original_accepted_subset",
+            "mask": "original_H_E_intersection:pose",
+            "mean": 0.24757013182991092,
+            "missing": 2,
+            "total": 2791,
+            "unit": "score"
+          }
+        },
+        "per_sample_sha_matches": true,
+        "per_sample_lines": 2791
+      }
+    ],
+    "exits": [
+      {
+        "id": "train_phi6_EHS",
+        "accepted_at": "2026-10-22T16:09:12+08:00",
+        "phases": [
+          {
+            "phase": "main",
+            "result_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/events/train_phi6_EHS.main.result.json",
+            "exit_code": 0,
+            "ended_at": "2026-10-22T16:08:57+08:00",
+            "sha256": "c7a1338b24c93fde987b2037314c65c89c30a4ae0ff54519876304860032527e"
+          },
+          {
+            "phase": "verify",
+            "result_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/events/train_phi6_EHS.verify.result.json",
+            "exit_code": 0,
+            "ended_at": "2026-10-22T16:09:11+08:00",
+            "sha256": "489d0747dcc134544fd41c81cc224fd659ff432d8b702019b8e571efbc3ac74f"
+          }
+        ]
+      },
+      {
+        "id": "eval_phi6_synthetic",
+        "accepted_at": "2026-10-22T16:31:17+08:00",
+        "phases": [
+          {
+            "phase": "main",
+            "result_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/events/eval_phi6_synthetic.main.result.json",
+            "exit_code": 0,
+            "ended_at": "2026-10-22T16:31:12+08:00",
+            "sha256": "70f11ac4f255f7e16751f1e208c11bb07666e303dd268cfb8c4c34c8e7018b2d"
+          },
+          {
+            "phase": "verify",
+            "result_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/events/eval_phi6_synthetic.verify.result.json",
+            "exit_code": 0,
+            "ended_at": "2026-10-22T16:31:16+08:00",
+            "sha256": "4e5ae3fa87acc8bd29fc86e1f5134b8177673ef6148a2f059b1d8650101a1d5f"
+          }
+        ]
+      },
+      {
+        "id": "eval_phi6_lightbox",
+        "accepted_at": "2026-10-22T16:43:34+08:00",
+        "phases": [
+          {
+            "phase": "main",
+            "result_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/events/eval_phi6_lightbox.main.result.json",
+            "exit_code": 0,
+            "ended_at": "2026-10-22T16:43:29+08:00",
+            "sha256": "9ddb1ea423ec3beef350d5ec0e673010dba4f5f8983c3d2fe37a54590372b01f"
+          },
+          {
+            "phase": "verify",
+            "result_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/events/eval_phi6_lightbox.verify.result.json",
+            "exit_code": 0,
+            "ended_at": "2026-10-22T16:43:33+08:00",
+            "sha256": "b51d46f0fe645a199f21d531257daadee85922430b820f3c497e1a3c33fc53fb"
+          }
+        ]
+      },
+      {
+        "id": "eval_phi6_sunlamp",
+        "accepted_at": "2026-10-22T16:48:41+08:00",
+        "phases": [
+          {
+            "phase": "main",
+            "result_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/events/eval_phi6_sunlamp.main.result.json",
+            "exit_code": 0,
+            "ended_at": "2026-10-22T16:48:37+08:00",
+            "sha256": "dbbe811eeb6ec37deefc640c272f46a5eef88ad4c430a014a40b212609e91977"
+          },
+          {
+            "phase": "verify",
+            "result_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/events/eval_phi6_sunlamp.verify.result.json",
+            "exit_code": 0,
+            "ended_at": "2026-10-22T16:48:41+08:00",
+            "sha256": "9257e0639e611b35c4ee4d7106dc4c901d8359b46e23d362625ddb4889076845"
+          }
+        ]
+      }
+    ],
+    "paper_source": [
+      {
+        "table": "Table4",
+        "pdf_page": 9,
+        "config": "phi6_gn_ehs",
+        "domain": "synthetic",
+        "branch": "E translation + H rotation",
+        "metric": "effi_eT",
+        "value": 0.031,
+        "unit": "m",
+        "feature_encoder_parameters_million": 52.5,
+        "requires_all_samples": true,
+        "paper_valid_denominator": null,
+        "scope": "Page9 Sec5.4 says all samples from full SPNv2 onward; current rejected-H filtered means not automatically equivalent"
+      },
+      {
+        "table": "Table4",
+        "pdf_page": 9,
+        "config": "phi6_gn_ehs",
+        "domain": "synthetic",
+        "branch": "E translation + H rotation",
+        "metric": "heat_eR",
+        "value": 0.885,
+        "unit": "deg",
+        "feature_encoder_parameters_million": 52.5,
+        "requires_all_samples": true,
+        "paper_valid_denominator": null,
+        "scope": "Page9 Sec5.4 says all samples from full SPNv2 onward; current rejected-H filtered means not automatically equivalent"
+      },
+      {
+        "table": "Table4",
+        "pdf_page": 9,
+        "config": "phi6_gn_ehs",
+        "domain": "synthetic",
+        "branch": "E translation + H rotation",
+        "metric": "final_pose",
+        "value": 0.021,
+        "unit": "dimensionless",
+        "feature_encoder_parameters_million": 52.5,
+        "requires_all_samples": true,
+        "paper_valid_denominator": null,
+        "scope": "Page9 Sec5.4 says all samples from full SPNv2 onward; current rejected-H filtered means not automatically equivalent"
+      },
+      {
+        "table": "Table4",
+        "pdf_page": 9,
+        "config": "phi6_gn_ehs",
+        "domain": "lightbox",
+        "branch": "E translation + H rotation",
+        "metric": "effi_eT",
+        "value": 0.216,
+        "unit": "m",
+        "feature_encoder_parameters_million": 52.5,
+        "requires_all_samples": true,
+        "paper_valid_denominator": null,
+        "scope": "Page9 Sec5.4 says all samples from full SPNv2 onward; current rejected-H filtered means not automatically equivalent"
+      },
+      {
+        "table": "Table4",
+        "pdf_page": 9,
+        "config": "phi6_gn_ehs",
+        "domain": "lightbox",
+        "branch": "E translation + H rotation",
+        "metric": "heat_eR",
+        "value": 7.984,
+        "unit": "deg",
+        "feature_encoder_parameters_million": 52.5,
+        "requires_all_samples": true,
+        "paper_valid_denominator": null,
+        "scope": "Page9 Sec5.4 says all samples from full SPNv2 onward; current rejected-H filtered means not automatically equivalent"
+      },
+      {
+        "table": "Table4",
+        "pdf_page": 9,
+        "config": "phi6_gn_ehs",
+        "domain": "lightbox",
+        "branch": "E translation + H rotation",
+        "metric": "final_pose",
+        "value": 0.173,
+        "unit": "dimensionless",
+        "feature_encoder_parameters_million": 52.5,
+        "requires_all_samples": true,
+        "paper_valid_denominator": null,
+        "scope": "Page9 Sec5.4 says all samples from full SPNv2 onward; current rejected-H filtered means not automatically equivalent"
+      },
+      {
+        "table": "Table4",
+        "pdf_page": 9,
+        "config": "phi6_gn_ehs",
+        "domain": "sunlamp",
+        "branch": "E translation + H rotation",
+        "metric": "effi_eT",
+        "value": 0.23,
+        "unit": "m",
+        "feature_encoder_parameters_million": 52.5,
+        "requires_all_samples": true,
+        "paper_valid_denominator": null,
+        "scope": "Page9 Sec5.4 says all samples from full SPNv2 onward; current rejected-H filtered means not automatically equivalent"
+      },
+      {
+        "table": "Table4",
+        "pdf_page": 9,
+        "config": "phi6_gn_ehs",
+        "domain": "sunlamp",
+        "branch": "E translation + H rotation",
+        "metric": "heat_eR",
+        "value": 10.369,
+        "unit": "deg",
+        "feature_encoder_parameters_million": 52.5,
+        "requires_all_samples": true,
+        "paper_valid_denominator": null,
+        "scope": "Page9 Sec5.4 says all samples from full SPNv2 onward; current rejected-H filtered means not automatically equivalent"
+      },
+      {
+        "table": "Table4",
+        "pdf_page": 9,
+        "config": "phi6_gn_ehs",
+        "domain": "sunlamp",
+        "branch": "E translation + H rotation",
+        "metric": "final_pose",
+        "value": 0.219,
+        "unit": "dimensionless",
+        "feature_encoder_parameters_million": 52.5,
+        "requires_all_samples": true,
+        "paper_valid_denominator": null,
+        "scope": "Page9 Sec5.4 says all samples from full SPNv2 onward; current rejected-H filtered means not automatically equivalent"
+      }
+    ],
+    "comparison": [
+      {
+        "domain": "synthetic",
+        "metric": "eT",
+        "paper": 0.031,
+        "current": 0.03532762965609162,
+        "absolute_gap": 0.004327629656091618,
+        "relative_gap_percent": 13.960095664811668,
+        "unit": "m",
+        "coverage": 11994,
+        "same_statistical_definition": true,
+        "training_conditions_equivalent": false
+      },
+      {
+        "domain": "synthetic",
+        "metric": "eR",
+        "paper": 0.885,
+        "current": 0.9451783999095305,
+        "absolute_gap": 0.060178399909530444,
+        "relative_gap_percent": 6.799819198817003,
+        "unit": "deg",
+        "coverage": 11994,
+        "same_statistical_definition": true,
+        "training_conditions_equivalent": false
+      },
+      {
+        "domain": "synthetic",
+        "metric": "pose",
+        "paper": 0.021,
+        "current": 0.022700497816607917,
+        "absolute_gap": 0.0017004978166079154,
+        "relative_gap_percent": 8.097608650513877,
+        "unit": "score",
+        "coverage": 11994,
+        "same_statistical_definition": true,
+        "training_conditions_equivalent": false
+      },
+      {
+        "domain": "lightbox",
+        "metric": "eT",
+        "paper": 0.216,
+        "current": 0.2744757288346483,
+        "absolute_gap": 0.05847572883464833,
+        "relative_gap_percent": 27.07209668270756,
+        "unit": "m",
+        "coverage": 6740,
+        "same_statistical_definition": true,
+        "training_conditions_equivalent": false
+      },
+      {
+        "domain": "lightbox",
+        "metric": "eR",
+        "paper": 7.984,
+        "current": 9.687370309886097,
+        "absolute_gap": 1.7033703098860968,
+        "relative_gap_percent": 21.334798470517246,
+        "unit": "deg",
+        "coverage": 6740,
+        "same_statistical_definition": true,
+        "training_conditions_equivalent": false
+      },
+      {
+        "domain": "lightbox",
+        "metric": "pose",
+        "paper": 0.173,
+        "current": 0.211010809640841,
+        "absolute_gap": 0.038010809640841026,
+        "relative_gap_percent": 21.971566266382105,
+        "unit": "score",
+        "coverage": 6740,
+        "same_statistical_definition": true,
+        "training_conditions_equivalent": false
+      },
+      {
+        "domain": "sunlamp",
+        "metric": "eT",
+        "paper": 0.23,
+        "current": 0.2452483187317488,
+        "absolute_gap": 0.015248318731748783,
+        "relative_gap_percent": 6.629703796412523,
+        "unit": "m",
+        "coverage": 2791,
+        "same_statistical_definition": true,
+        "training_conditions_equivalent": false
+      },
+      {
+        "domain": "sunlamp",
+        "metric": "eR",
+        "paper": 10.369,
+        "current": 11.928890886496422,
+        "absolute_gap": 1.5598908864964223,
+        "relative_gap_percent": 15.043792906706743,
+        "unit": "deg",
+        "coverage": 2791,
+        "same_statistical_definition": true,
+        "training_conditions_equivalent": false
+      },
+      {
+        "domain": "sunlamp",
+        "metric": "pose",
+        "paper": 0.219,
+        "current": 0.24820638219319055,
+        "absolute_gap": 0.02920638219319055,
+        "relative_gap_percent": 13.336247576799343,
+        "unit": "score",
+        "coverage": 2791,
+        "same_statistical_definition": true,
+        "training_conditions_equivalent": false
+      }
+    ]
+  },
+  "fixed40": {
+    "accepted": 40,
+    "main_verify_exit_zero": 80,
+    "all_full_domain": true,
+    "all_actual_no_alias": true,
+    "first_started_at": "2026-10-22T16:48:43+08:00",
+    "last_accepted_at": "2026-10-22T22:03:22+08:00",
+    "audit_file": "monitoring/fixed40_completion_20261022.json",
+    "audit_rows_canonical_sha256": "4c7287515e5051f3db39b65173a3bc16d8751b45362b5c411f06e457b7bbfc3f",
+    "mean_rows": [
+      {
+        "arch": "phi3",
+        "branch": "A",
+        "domain": "lightbox",
+        "eT": 0.1598447951,
+        "eR": 7.1474592507,
+        "pose": 0.1515658323,
+        "observation_seeds": [
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "N": 1024,
+        "B": 4,
+        "samples": 6740
+      },
+      {
+        "arch": "phi3",
+        "branch": "A",
+        "domain": "sunlamp",
+        "eT": 0.1979138058,
+        "eR": 13.3310315613,
+        "pose": 0.2666349625,
+        "observation_seeds": [
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "N": 1024,
+        "B": 4,
+        "samples": 2791
+      },
+      {
+        "arch": "phi6",
+        "branch": "A",
+        "domain": "lightbox",
+        "eT": 0.1932310803,
+        "eR": 6.4008807992,
+        "pose": 0.1441083912,
+        "observation_seeds": [
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "N": 4096,
+        "B": 1,
+        "samples": 6740
+      },
+      {
+        "arch": "phi6",
+        "branch": "A",
+        "domain": "sunlamp",
+        "eT": 0.155134547,
+        "eR": 10.5992768075,
+        "pose": 0.2106138069,
+        "observation_seeds": [
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "N": 4096,
+        "B": 1,
+        "samples": 2791
+      },
+      {
+        "arch": "phi3",
+        "branch": "B1",
+        "domain": "lightbox",
+        "eT": 0.2681775309,
+        "eR": 9.4698071917,
+        "pose": 0.2075186931,
+        "observation_seeds": [
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "N": 1024,
+        "B": 4,
+        "samples": 6740
+      },
+      {
+        "arch": "phi3",
+        "branch": "B1",
+        "domain": "sunlamp",
+        "eT": 0.2536731637,
+        "eR": 16.9232721526,
+        "pose": 0.3375281941,
+        "observation_seeds": [
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "N": 1024,
+        "B": 4,
+        "samples": 2791
+      },
+      {
+        "arch": "phi3",
+        "branch": "B2",
+        "domain": "lightbox",
+        "eT": 0.26720722,
+        "eR": 9.4925221615,
+        "pose": 0.2077681685,
+        "observation_seeds": [
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "N": 1024,
+        "B": 4,
+        "samples": 6740
+      },
+      {
+        "arch": "phi3",
+        "branch": "B2",
+        "domain": "sunlamp",
+        "eT": 0.2532170775,
+        "eR": 16.9826176084,
+        "pose": 0.3385243001,
+        "observation_seeds": [
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "N": 1024,
+        "B": 4,
+        "samples": 2791
+      }
+    ],
+    "strict_table5_comparability": false,
+    "limitations": [
+      "Table5 cross-seed aggregation unspecified; phi6 paper B not explicitly recorded",
+      "Five observation streams are not five source trainings",
+      "phi6 sunlamp N4096 uses 2791 unique images",
+      "Raw image content hashes were not independently revalidated"
+    ],
+    "audit_file_sha256": "f673ae7d9facf0b58dad6c6c2c57657f0ff493e2fcedbf50d92e17d92e7d2fd2"
+  },
+  "next_stage": "Table2 H/E/EH three new pilots; candidate preparation and independent CPU acceptance, then explicit new manager-only cutover authorization",
+  "server_control_performed": false,
+  "next_candidate": {
+    "path": "queue_proposals/table2_pilots_20261022/proposal.json",
+    "tasks": 52,
+    "canonical_sha256": "976cf1bf4caf473d47b861e01b69a216399da0e492b6bcb9fe282134365e5adc",
+    "file_sha256": "2f8eedf7f0f5121401c108b38a2dfa970af2d51da21893022e37f71a4bfec3e3",
+    "verification": "queue_proposals/table2_pilots_20261022/verified.json",
+    "verification_sha256": "3ac714bcaaaa3461d1f5951035248f10daf3e0c79c66f76f3e3bd45427a5d0af",
+    "status": "cpu_verified_not_activated",
+    "build_exit": 0,
+    "verify_exit": 0,
+    "requires_new_manager_only_authorization": true,
+    "added_ids": [
+      "pilot_table2_h",
+      "pilot_table2_e",
+      "pilot_table2_eh"
+    ]
+  }
+}

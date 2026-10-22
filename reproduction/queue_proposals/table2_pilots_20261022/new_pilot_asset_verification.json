@@ -1,0 +1,280 @@
+{
+  "status": "passed",
+  "unique_assets": 56,
+  "assets": {
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/config/__init__.py": {
+      "expected": "1461206fa35536528e323b372a837f96b6b6f714c2bc0860f8dfb2a2f2f9e08e",
+      "actual": "1461206fa35536528e323b372a837f96b6b6f714c2bc0860f8dfb2a2f2f9e08e"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/config/default.py": {
+      "expected": "1d236111d714b7647500fd9e1237d22a1d6c4e860ea669d0d1765833245652e4",
+      "actual": "1d236111d714b7647500fd9e1237d22a1d6c4e860ea669d0d1765833245652e4"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/config/efficientdet.py": {
+      "expected": "df337b1d6f854a5e36128696ef67e26ddf1df92b7fe895d40d9f05a302ec9903",
+      "actual": "df337b1d6f854a5e36128696ef67e26ddf1df92b7fe895d40d9f05a302ec9903"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/dataset/SPEEDPLUSDataset.py": {
+      "expected": "ad004bec11e575c2c51389dd1eccfa9896bb58bb18ef939991240ec88b819fef",
+      "actual": "ad004bec11e575c2c51389dd1eccfa9896bb58bb18ef939991240ec88b819fef"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/dataset/__init__.py": {
+      "expected": "855d9ebc7fd3431eb980d37f6108c26fe66b8b76ff0a2a2a141d48ec2acc53ff",
+      "actual": "855d9ebc7fd3431eb980d37f6108c26fe66b8b76ff0a2a2a141d48ec2acc53ff"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/dataset/build.py": {
+      "expected": "4085e0e9c62bce4be36566b01149032c82fc591f078f73114d1a1e7142f61b60",
+      "actual": "4085e0e9c62bce4be36566b01149032c82fc591f078f73114d1a1e7142f61b60"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/dataset/target_generators/__init__.py": {
+      "expected": "c9af0cdc1848006ff340e5a4e4ca97af576b699b19956c08e1619011284c371e",
+      "actual": "c9af0cdc1848006ff340e5a4e4ca97af576b699b19956c08e1619011284c371e"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/dataset/target_generators/heatmap_generator.py": {
+      "expected": "b1e41d0b52c395250e243b8f5e9b2b707c12f6f263cea0d11e0edac42cc7d178",
+      "actual": "b1e41d0b52c395250e243b8f5e9b2b707c12f6f263cea0d11e0edac42cc7d178"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/dataset/transforms/__init__.py": {
+      "expected": "372fbe8e1bde3033936e3156b8c83b37de4f39cfbba862cd848c7d834eca5d5c",
+      "actual": "372fbe8e1bde3033936e3156b8c83b37de4f39cfbba862cd848c7d834eca5d5c"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/dataset/transforms/build.py": {
+      "expected": "9c5bf4ecb70973d208a7cf153022ad4290e8775fd5d2d82c459fbc3c1b8affd2",
+      "actual": "9c5bf4ecb70973d208a7cf153022ad4290e8775fd5d2d82c459fbc3c1b8affd2"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/dataset/transforms/coarsedropout.py": {
+      "expected": "dda2378a8310c43603c5d604ef38d64930187d3dba4c1fcec78baac74eb0e823",
+      "actual": "dda2378a8310c43603c5d604ef38d64930187d3dba4c1fcec78baac74eb0e823"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/dataset/transforms/randomsunflare.py": {
+      "expected": "289234076485abdd6ad8139eeb965830f7a06c793724549a5300d01ea91b8c7f",
+      "actual": "289234076485abdd6ad8139eeb965830f7a06c793724549a5300d01ea91b8c7f"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/engine/adapter.py": {
+      "expected": "05d762e4c05a96804dd951d5a341fb9e6d3eddbc234214bd8542ea840d567690",
+      "actual": "05d762e4c05a96804dd951d5a341fb9e6d3eddbc234214bd8542ea840d567690"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/engine/inference.py": {
+      "expected": "1323f6b1cc133b868b0de070b8b6bae9ee7928a4a2431d5c7863ace64fd284df",
+      "actual": "1323f6b1cc133b868b0de070b8b6bae9ee7928a4a2431d5c7863ace64fd284df"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/engine/trainer.py": {
+      "expected": "e1e48e2b1fe2bd6b1d40f1ce55d786ad554bc866ed52bd018a657a87891db8db",
+      "actual": "e1e48e2b1fe2bd6b1d40f1ce55d786ad554bc866ed52bd018a657a87891db8db"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/nets/__init__.py": {
+      "expected": "1f162dfb733e375d5ab45ca06688d9e53ad68899ee9d13c34d57c150e32ef1de",
+      "actual": "1f162dfb733e375d5ab45ca06688d9e53ad68899ee9d13c34d57c150e32ef1de"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/nets/backbones/__init__.py": {
+      "expected": "78c908ce864086b80ed2690a87ff5d3a7e9d93c45412c7d571d39170bf65a623",
+      "actual": "78c908ce864086b80ed2690a87ff5d3a7e9d93c45412c7d571d39170bf65a623"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/nets/backbones/bifpn.py": {
+      "expected": "97c69ed4dee4572e9f2e68f40e4c6350bd3eff4f31f9c3f5b8b86c2819287689",
+      "actual": "97c69ed4dee4572e9f2e68f40e4c6350bd3eff4f31f9c3f5b8b86c2819287689"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/nets/backbones/efficientdet.py": {
+      "expected": "9ab90d3785bac749697796aaa56a9c27dc82af46aff418d505c300b38f920e58",
+      "actual": "9ab90d3785bac749697796aaa56a9c27dc82af46aff418d505c300b38f920e58"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/nets/backbones/efficientnet.py": {
+      "expected": "9a06de97bbf18c94eef733fb64be6339edf0f3bbc3bd0aa3c55d9215cfcc8a97",
+      "actual": "9a06de97bbf18c94eef733fb64be6339edf0f3bbc3bd0aa3c55d9215cfcc8a97"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/nets/build.py": {
+      "expected": "fde202e285f2872b8a6468f947376717e735f6719b109209c66e9da9972be219",
+      "actual": "fde202e285f2872b8a6468f947376717e735f6719b109209c66e9da9972be219"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/nets/heads/__init__.py": {
+      "expected": "563993fedbe9c51b2c5d0a3567364882638e2be3a181477ce95f76c28dd3103b",
+      "actual": "563993fedbe9c51b2c5d0a3567364882638e2be3a181477ce95f76c28dd3103b"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/nets/heads/anchors.py": {
+      "expected": "40e88fa9d98815ec5d75752d432d9d7fcfb2b948f9d68f222958af2d569ecbc8",
+      "actual": "40e88fa9d98815ec5d75752d432d9d7fcfb2b948f9d68f222958af2d569ecbc8"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/nets/heads/efficientpose.py": {
+      "expected": "d8a93846041d5e2d82e8c366a97373ef982e0d745613e5bab12fd0fa1c070273",
+      "actual": "d8a93846041d5e2d82e8c366a97373ef982e0d745613e5bab12fd0fa1c070273"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/nets/heads/heatmap.py": {
+      "expected": "ead75cc73c081efc8cedd46e764b31fb2bd83e20f273ab010df31ef1ea99698f",
+      "actual": "ead75cc73c081efc8cedd46e764b31fb2bd83e20f273ab010df31ef1ea99698f"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/nets/heads/segmentation.py": {
+      "expected": "6dcff5b03ef4758d274dad60d0d6eaf0a1e9695ec4098ac2698432dbd4e22a8d",
+      "actual": "6dcff5b03ef4758d274dad60d0d6eaf0a1e9695ec4098ac2698432dbd4e22a8d"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/nets/layers/__init__.py": {
+      "expected": "5c33dc53171d2a11217148aa8050ece80e4904305043cea311a3b1dd13fe1dab",
+      "actual": "5c33dc53171d2a11217148aa8050ece80e4904305043cea311a3b1dd13fe1dab"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/nets/layers/conv.py": {
+      "expected": "4ed92de2cbce35e80b1874cbadf5f9471aa25dc800254aa0dea4d4030481d984",
+      "actual": "4ed92de2cbce35e80b1874cbadf5f9471aa25dc800254aa0dea4d4030481d984"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/nets/loss/__init__.py": {
+      "expected": "85bbac8a0e39550751779e8577f2a47f898be18a1556b2ddbf576590a3e94782",
+      "actual": "85bbac8a0e39550751779e8577f2a47f898be18a1556b2ddbf576590a3e94782"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/nets/loss/ciou_loss.py": {
+      "expected": "18252a04b938ff2df7f81c6abfb7038d249f15f38826bf6992a3378d6bedfe78",
+      "actual": "18252a04b938ff2df7f81c6abfb7038d249f15f38826bf6992a3378d6bedfe78"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/nets/loss/focal_loss.py": {
+      "expected": "9f607c3ff9e69f650aa154ef986f293c3a6a2e5081795e7f2b900da62d9fbe57",
+      "actual": "9f607c3ff9e69f650aa154ef986f293c3a6a2e5081795e7f2b900da62d9fbe57"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/nets/loss/heatmap_loss.py": {
+      "expected": "dc2e0d7ff1a27ab22811b5485e02b707ab705dcb3e0a5e45015101aeef31a4df",
+      "actual": "dc2e0d7ff1a27ab22811b5485e02b707ab705dcb3e0a5e45015101aeef31a4df"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/nets/loss/speed_loss.py": {
+      "expected": "7efce75932b957ffdea39ac91ddd96333dd7a9ee610438e388d414706589c117",
+      "actual": "7efce75932b957ffdea39ac91ddd96333dd7a9ee610438e388d414706589c117"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/nets/loss/transformation_loss.py": {
+      "expected": "8fc74d293fda1031f67b74df4ca7e65b62d27624df8026e97dd3a9ac298f8fb5",
+      "actual": "8fc74d293fda1031f67b74df4ca7e65b62d27624df8026e97dd3a9ac298f8fb5"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/solver/__init__.py": {
+      "expected": "4a6a7692fa65bf46b612a1ea32e99724cfb5672b0cc98d12c69430203e249a37",
+      "actual": "4a6a7692fa65bf46b612a1ea32e99724cfb5672b0cc98d12c69430203e249a37"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/solver/build.py": {
+      "expected": "39aa3872115b237aac0fd4da4af3a18aa556039085cb19879256299798effb2d",
+      "actual": "39aa3872115b237aac0fd4da4af3a18aa556039085cb19879256299798effb2d"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/utils/checkpoints.py": {
+      "expected": "884c114c57beafbccd041003d618655f6d60f9842ae8f72bc694757a52b10163",
+      "actual": "884c114c57beafbccd041003d618655f6d60f9842ae8f72bc694757a52b10163"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/utils/metrics.py": {
+      "expected": "045ff61a4199bfb91bb95955eaa63aa9a0281d70be16ad2c00eba432cc804c90",
+      "actual": "045ff61a4199bfb91bb95955eaa63aa9a0281d70be16ad2c00eba432cc804c90"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/utils/models/tangoPoints.mat": {
+      "expected": "6d6a57f353ceb3691117deeab921debb29a68cfed60653cebf07a001da9c1725",
+      "actual": "6d6a57f353ceb3691117deeab921debb29a68cfed60653cebf07a001da9c1725"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/utils/postprocess.py": {
+      "expected": "1a525f693582f90ce67136bcbed813a46a1209a988109648c7b7e2f19a9517d6",
+      "actual": "1a525f693582f90ce67136bcbed813a46a1209a988109648c7b7e2f19a9517d6"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/utils/training_state.py": {
+      "expected": "7cc7eb9dd2d9b6ea4ec8f7a55bc25d77d3bdf8c105ebff94d03ac4df442ca7ca",
+      "actual": "7cc7eb9dd2d9b6ea4ec8f7a55bc25d77d3bdf8c105ebff94d03ac4df442ca7ca"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/utils/utils.py": {
+      "expected": "f73fcac6b2759b27f32840abfd1e2e2ab10158aac0d7b6d5330ebe093dda3137",
+      "actual": "f73fcac6b2759b27f32840abfd1e2e2ab10158aac0d7b6d5330ebe093dda3137"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/core/utils/visualize.py": {
+      "expected": "0f5512ab09605a10845a188f62036538c9369c3dafde279570d89ef32638f774",
+      "actual": "0f5512ab09605a10845a188f62036538c9369c3dafde279570d89ef32638f774"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/tools/_init_paths.py": {
+      "expected": "f615936c0acc008d88c7c80d51a4f865f8613effef0381f7e6138b8da5a6a846",
+      "actual": "f615936c0acc008d88c7c80d51a4f865f8613effef0381f7e6138b8da5a6a846"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/tools/odr.py": {
+      "expected": "b07aefc2a996a21cb439aeb54a95a1a82cc76c5925ecbaf1a5b91358fa11b9d8",
+      "actual": "b07aefc2a996a21cb439aeb54a95a1a82cc76c5925ecbaf1a5b91358fa11b9d8"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/tools/preprocess.py": {
+      "expected": "4064adec6e4374521cf0943b205abd3858fba1ded29cf722b3967c73585329dd",
+      "actual": "4064adec6e4374521cf0943b205abd3858fba1ded29cf722b3967c73585329dd"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/tools/test.py": {
+      "expected": "9641d368354e8f1f9ec6d70442436537e29659c57cc3f01b15dc1ecde6c3ee2f",
+      "actual": "9641d368354e8f1f9ec6d70442436537e29659c57cc3f01b15dc1ecde6c3ee2f"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source/tools/train.py": {
+      "expected": "1636b1b7682b9f034e33ffd8a1b8c8efa7d723b61194a3b19d3fb0e018c75e6c",
+      "actual": "1636b1b7682b9f034e33ffd8a1b8c8efa7d723b61194a3b19d3fb0e018c75e6c"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source_manifest.json": {
+      "expected": "d47399919b02c17f5c6c525e1381452ca3810086699746895615c4fd287c739a",
+      "actual": "d47399919b02c17f5c6c525e1381452ca3810086699746895615c4fd287c739a"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/configs/table2_h.yaml": {
+      "expected": "a6cd176884eb6a0268a694312b5eb55754c5a0470122b2f500a4e14301b49b3b",
+      "actual": "a6cd176884eb6a0268a694312b5eb55754c5a0470122b2f500a4e14301b49b3b"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/gpu_smoke.py": {
+      "expected": "30f10ba24388caf0d9b71a4ee762c33de2c5841296f19ad6124a8f8afc17cc8a",
+      "actual": "30f10ba24388caf0d9b71a4ee762c33de2c5841296f19ad6124a8f8afc17cc8a"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/verify_pilot.py": {
+      "expected": "6f5b911429b988a278cfb1821a15d0079a8bcfde9382113e5834346f4a2a547f",
+      "actual": "6f5b911429b988a278cfb1821a15d0079a8bcfde9382113e5834346f4a2a547f"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/evidence.py": {
+      "expected": "811db8505ad41e4d226ffb3007a246273c541c02ed52ee453a17788ee8fae7c2",
+      "actual": "811db8505ad41e4d226ffb3007a246273c541c02ed52ee453a17788ee8fae7c2"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/env/cache/torch/hub/checkpoints/efficientnet_b3_rwightman-cf984f9c.pth": {
+      "expected": "b3899882250c22946d0229d266049fcd133c169233530b36b9ffa7983988362f",
+      "actual": "b3899882250c22946d0229d266049fcd133c169233530b36b9ffa7983988362f"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/configs/table2_e.yaml": {
+      "expected": "72822a867aa39bc44212e396e75d71a380c77792aeb88a1f57a0687f0e81777e",
+      "actual": "72822a867aa39bc44212e396e75d71a380c77792aeb88a1f57a0687f0e81777e"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/configs/table2_eh.yaml": {
+      "expected": "96b9f07ec258c405cf36125e9ef2f8c76a15a5a6dac3fe558c72d85a7115e8fb",
+      "actual": "96b9f07ec258c405cf36125e9ef2f8c76a15a5a6dac3fe558c72d85a7115e8fb"
+    }
+  },
+  "per_task": [
+    {
+      "id": "pilot_table2_h",
+      "assets": 54,
+      "absent_outputs": [
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/logs/pilot_table2_h_qv2_20261017.log",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/logs/pilot_table2_h_qv2_20261017.log.exitcode",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/logs/pilot_table2_h_qv2_20261017.log.verify",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/logs/pilot_table2_h_qv2_20261017.log.verify.exitcode",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/reports/table2_h_queuev2_20261017.json",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/artifacts/table2_h_queuev2_20261017",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/reports/table2_h_queuev2_20261017_verified.json"
+      ],
+      "requires": [
+        "fixed_phi3_B2_sunlamp_s2025_N1024_B4"
+      ]
+    },
+    {
+      "id": "pilot_table2_e",
+      "assets": 54,
+      "absent_outputs": [
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/logs/pilot_table2_e_qv2_20261017.log",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/logs/pilot_table2_e_qv2_20261017.log.exitcode",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/logs/pilot_table2_e_qv2_20261017.log.verify",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/logs/pilot_table2_e_qv2_20261017.log.verify.exitcode",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/reports/table2_e_queuev2_20261017.json",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/artifacts/table2_e_queuev2_20261017",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/reports/table2_e_queuev2_20261017_verified.json"
+      ],
+      "requires": [
+        "pilot_table2_h"
+      ]
+    },
+    {
+      "id": "pilot_table2_eh",
+      "assets": 54,
+      "absent_outputs": [
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/logs/pilot_table2_eh_qv2_20261017.log",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/logs/pilot_table2_eh_qv2_20261017.log.exitcode",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/logs/pilot_table2_eh_qv2_20261017.log.verify",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/logs/pilot_table2_eh_qv2_20261017.log.verify.exitcode",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/reports/table2_eh_queuev2_20261017.json",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/artifacts/table2_eh_queuev2_20261017",
+        "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/reports/table2_eh_queuev2_20261017_verified.json"
+      ],
+      "requires": [
+        "pilot_table2_e"
+      ]
+    }
+  ]
+}

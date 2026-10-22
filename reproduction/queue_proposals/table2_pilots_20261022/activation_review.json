@@ -1,0 +1,51 @@
+{
+  "status": "prepared_and_cpu_verified_not_activated",
+  "requires_new_explicit_manager_only_authorization": true,
+  "candidate": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/table2_pilots_20261022/proposal.json",
+  "candidate_canonical_sha256": "976cf1bf4caf473d47b861e01b69a216399da0e492b6bcb9fe282134365e5adc",
+  "verification_record": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/table2_pilots_20261022/verified.json",
+  "verification_record_sha256": "3ac714bcaaaa3461d1f5951035248f10daf3e0c79c66f76f3e3bd45427a5d0af",
+  "existing_manager": {
+    "pid": 1851843,
+    "starttime": "526573814",
+    "screen": "rebaseline_queue_observed_20261018"
+  },
+  "new_pilot_sequence": [
+    "fixed_phi3_B2_sunlamp_s2025_N1024_B4",
+    "pilot_table2_h",
+    "pilot_table2_e",
+    "pilot_table2_eh"
+  ],
+  "future_one_time_switch": {
+    "prerequisites": [
+      "New explicit user authorization for this manager-only switch",
+      "Reverify original manager PID/starttime/actual command and held plan lock",
+      "Reverify production phase_complete, 49 accepted tasks and no active worker",
+      "Reverify old and candidate canonical hashes, candidate verification receipt, new pilot assets and absent outputs",
+      "Stop only the identified original manager using existing controlled procedure, then confirm exit and lock release; do not create a second manager while it lives"
+    ],
+    "manager_command_after_prerequisites": [
+      "/home/ps/anaconda3/envs/SPNv2/bin/python",
+      "-B",
+      "-s",
+      "-u",
+      "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pipeline/runner.py",
+      "--manifest",
+      "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/table2_pilots_20261022/proposal.json",
+      "--extend-from",
+      "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_observed_stage_20261018.json"
+    ],
+    "screen": "rebaseline_queue_table2_pilots_20261022",
+    "guarded_wrapper": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/scripts/run_in_screen_guarded.sh",
+    "new_log": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/table2_pilots_20261022/manager_activation.log",
+    "acceptance": [
+      "Only one manager holds plan lock; original 49 definitions and execution evidence preserved",
+      "Append audit matches this candidate canonical hash; only three new queued pilots",
+      "Subsequent launches use existing GPU gate and main exit plus independent verification",
+      "No formal Table2 training or additional task appended"
+    ]
+  },
+  "future_normal_recovery": "Use only --manifest /home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/table2_pilots_20261022/proposal.json; never reuse --extend-from after successful binding",
+  "current_activation_performed": false,
+  "full_plan_remaining": "This candidate adds only three engineering pilots. Table2 formal H10/E20/EH20, remaining five source configs, all remaining evaluations, resource measurements, scans, cases and final delivery still require later necessary preparation."
+}

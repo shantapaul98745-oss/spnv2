@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "at": "2026-10-22T23:03:57+08:00",
+  "screen": "3199870.spnv2_table2_pilots_candidate_verify_20261022",
+  "candidate": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/table2_pilots_20261022/proposal.json",
+  "candidate_canonical_sha256": "976cf1bf4caf473d47b861e01b69a216399da0e492b6bcb9fe282134365e5adc",
+  "candidate_file_sha256": "2f8eedf7f0f5121401c108b38a2dfa970af2d51da21893022e37f71a4bfec3e3",
+  "old_manifest_canonical_sha256": "a6f82b1efc62ebb6223e1cfec4919e44de35424b53709230f39b0655ea3e27a5",
+  "old_tasks_preserved": 49,
+  "new_queued_pilots": 3,
+  "unique_new_assets_checked": 56,
+  "checks": [
+    "candidate_bytes_match_build_receipt",
+    "original49_exact_prefix",
+    "new3_only_dependency_changes",
+    "existing_manifest_validator",
+    "existing_pure_append_contract",
+    "simulation_preserves49_execution_evidence",
+    "only3_new_pilots_queued_without_runtime",
+    "current_original_manager_identity_and_phase_complete",
+    "new3_assets_actual_sha256",
+    "new3_outputs_still_absent"
+  ],
+  "files_sha256": {
+    "build_candidate.py": "a3ca06f6b73fe54d512cc0cd3aec3f1cdf95d527f6863260e51fa811a1b32cd6",
+    "verify_candidate.py": "d1615209d494d5992cbfad5f54e6cf3430dfec4de9b830c8f4dffe845caa61d8",
+    "build_receipt.json": "dfd2084728ad022b2537baba7eedb266cf6aaefa464577f1e977728679ad1717",
+    "diff_audit.json": "bd89e1c0d0964f617707f9268856edaa56d185d9fe3f7caa5c5c187fbdd16356",
+    "new_pilot_asset_verification.json": "21f9243a57a6020b5d60a85b2186a32abb4bae630e6a10c64ecda7fe79061fe8",
+    "independent_append_contract_audit.json": "3d35ecf468fa315f35154f3caf64d07034a828cf4d3bc3204a4223e872efa20a"
+  },
+  "activation_allowed": false,
+  "new_manager_only_authorization_required": true,
+  "production_write_performed": false,
+  "gpu_experiment_started": false
+}

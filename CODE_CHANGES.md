@@ -189,3 +189,12 @@
 - 原因/作用：立即整理用户追加补评，严格核对旧/新模型同一评价代码、配置、数据顺序及全样本分母，给出论文绝对/相对差和历史补评差异；复用新模型结果，不新增GPU推理。
 - 验证：三域main/verify六项退出0、原/扩展独立验收和N/N覆盖通过，CPU汇总及旧新对比退出0；原φ6同一PID/start恢复、后续样本增长、manager和队列绑定保持，controller/watchdog均退出0。已恢复小时巡检。
 - 结果：lightbox新比旧综合误差减少5.52%，sunlamp增加1.85%；新相对论文仍高53.44%/45.81%。完整数值和逐样本证据路径入库；训练差异不作单因素因果归因。
+
+
+## 2026-10-22 - Accepted main sources and fixed40; prepare Table2 pilots
+
+Locations: reproduction/monitoring/phi6_fixed40_stage_20261022.json, PHI6_FIXED40_COMPARISON_20261022.md and fixed40_completion_20261022.json; reproduction/queue_proposals/table2_pilots_20261022/; AGENT.md and SERVER_EXECUTION_HANDOFF.md.
+
+Reason/effect: archive accepted phi6 final/three-domain evidence and fixed40 actual runs; prepare only H/E/EH engineering pilots after stage49. Original49 definitions and evidence are preserved. Candidate52 stays inactive pending a new explicit manager-only authorization. Full190 epochs and remaining resource/scans/delivery remain incomplete.
+
+Validation: actual source final/checkpoint/evaluation proof/per-sample hashes match; 40 ODR main/verify pairs exited0, independent proofs and N/N coverage checked read-only. Candidate build and independent CPU acceptance used distinct screens, exit0; existing validate_manifest/extend_state contracts passed, 49-prefix exact and 56 distinct new asset hashes matched. Main agent reviewed both scripts and independently compared prefix/hash/receipts. CPU acceptance is not a GPU pilot/scientific result. Logs/status/model/data remain outside Git. Production runner/manifest/processes were not changed.

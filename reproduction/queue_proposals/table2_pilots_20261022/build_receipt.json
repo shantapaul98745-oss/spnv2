@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "at": "2026-10-22T23:03:37+08:00",
+  "screen": "3198464.spnv2_table2_pilots_candidate_build_20261022",
+  "candidate_canonical_sha256": "976cf1bf4caf473d47b861e01b69a216399da0e492b6bcb9fe282134365e5adc",
+  "files_sha256": {
+    "proposal.json": "2f8eedf7f0f5121401c108b38a2dfa970af2d51da21893022e37f71a4bfec3e3",
+    "baseline_status_snapshot.json": "4254e20a4662514a9eb9f1104d9c9e7e6e22226e70916bb8e20a6a1efd0c3a39",
+    "append_contract_audit.json": "ad74a4110c9aa0e18dfc21580940abb71d16907b3b1109c4f0724fe898a27ade",
+    "diff_audit.json": "bd89e1c0d0964f617707f9268856edaa56d185d9fe3f7caa5c5c187fbdd16356"
+  },
+  "production_write_performed": false,
+  "gpu_experiment_started": false
+}

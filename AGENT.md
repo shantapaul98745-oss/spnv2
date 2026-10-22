@@ -183,3 +183,14 @@ synthetic全11994样本于16:45:20验收通过，H拒绝0、11994/11994覆盖；
 本次一次性暂停18:59:20→19:14:46，约926秒。控制器与独立watchdog退出0，先清理自有评价后继续原φ6 PID2584192/start527383895；19:17已核训练恢复后samples_seen21664，大于暂停前记录21204，manager1851843/start526573814及49项manifest保持，GPU恢复φ6计算。无重训、重载、回退或重新初始化。一次性授权已执行完毕，禁止重跑控制器或再次暂停健康训练。静态恢复凭据recovery.json及上述机器证据包含完整前后身份和事件。
 
 原spnv2-2已恢复ACTIVE每小时单次巡检，完整提示见old_source_reeval_20261018/guard_prompt_complete.txt；目标模式仍暂停。用户要求“持续扫描、结束立即整理”针对本次补评，现已完成。后续继续φ6自然训练→严格final验收→三域完整评价→固定ODR40；完整10配置190轮及其余150轮/消融/扫描/资源/案例/材料核验/最终验收范围和缺口不变。
+
+
+## 最新阶段：两套主模型及固定ODR40完成，Table2候选待授权（2026-10-22）
+
+φ6独立20轮16:08:57退出0，16:09:12严格final验收；三域原/扩展结果16:48:41前全部通过。final SHA256=362c4c035371ac88ecb205a60e21f529e6601ff465b27e9ef81d45317934261d。扩展三域11994/6740/2791均真实N/N，原拒绝0/18/2另存。固定ODR40于22:03:22最后验收，40实际执行、80 main/verify退出0，各原/入口/独立扩展proof与逐样本哈希通过只读核验。详见本轮monitoring/PHI6_FIXED40_COMPARISON_20261022.md、phi6_fixed40_stage_20261022.json与fixed40_completion_20261022.json。Table5跨种子汇总方式和phi6论文B未明确，参考差不能称严格同协议差距。
+
+当前49项phase_complete、active=null；manager1851843/start526573814健康待机，无活动训练worker属于预期。仅完成40/190 source轮；剩余8套150轮及24域评价、Table2三个新pilot、Table6、B120/N240、案例、PRISMA25材料和最终验收均保留。
+
+Table2三个pilot的最小52项候选已独立CPU验收通过，目录queue_proposals/table2_pilots_20261022。原49项完全保留，仅追加H→E→EH，56个不同新增资产哈希匹配；canonical SHA256=976cf1bf4caf473d47b861e01b69a216399da0e492b6bcb9fe282134365e5adc。未执行GPU pilot、未激活候选、未改生产状态或发送信号。健康manager无热扩展接口，旧一次性切换授权已消耗；必须取得新的这一次manager-only授权后按activation_review.json复核锁/身份/证据并切换，不能另起重复队列绕过。
+
+本次现有spnv2-2设为ACTIVE/15分钟，已应用读回；完整提示monitoring/spnv2-2_prompt_stage49_complete_20261022.txt。目标模式仍暂停，全部完整计划通过最终验收前守护不能停用。待授权且状态无变化时结束单次巡检，不重复播报、重跑验收或反复请求相同授权。
