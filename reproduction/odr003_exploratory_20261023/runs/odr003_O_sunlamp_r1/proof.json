@@ -1,0 +1,131 @@
+{
+  "actual_image_files_hashed": 512,
+  "all_buffers_equal_source": true,
+  "bindings": {
+    "camera": {
+      "path": "/home/DATA/Downloads/DataSet/speedplus/camera.json",
+      "sha256": "996bd50a83991f8dc11da9f4afc0a6e609d62eb532014a4256f3974f14e46558"
+    },
+    "config": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/odr/configs/fixed_phi3_A_lightbox_s2021_N1024_B4.yaml",
+      "sha256": "9b102f845fff584e320cc183c475d23e47e09645be9a65b42dd4bb8acb60de23"
+    },
+    "data_prepared": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/preflight/data_boundary_prepared.json",
+      "sha256": "6605eb43b8760d74dd521f867c422378d760f5ce56ee3a74645443ee5cb6a9b7"
+    },
+    "data_verified": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/preflight/data_boundary_verified.json",
+      "sha256": "bba0d11de425312ef84ecbfea1b69ac7778453f89221e01ab70d0aed0b970267"
+    },
+    "developer_labels": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/sunlamp/dev_labels.json",
+      "sha256": "6782b4fe7f35f7e6f5b88bfde5705ef0362b16610df8086c3b359cea5a4a5239"
+    },
+    "developer_manifest": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/sunlamp/developer_images.json",
+      "sha256": "db2df5adb9f99af94371226537578ff9aede7aa6ee959c419e0fd7c570c828e0"
+    },
+    "keypoints": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/odr/source_A/core/utils/models/tangoPoints.mat",
+      "sha256": "6d6a57f353ceb3691117deeab921debb29a68cfed60653cebf07a001da9c1725"
+    },
+    "official_receipt": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/preflight/official_source_receipt.json",
+      "sha256": "ec3f20fc905a80ca2de82c08ff71bfa56ae383fde5187e09f199f2d0997e61d8"
+    },
+    "source": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/assets/spnv2_efficientnetb3_fullconfig_offline.pth.tar",
+      "sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc"
+    },
+    "source_core_manifest": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/preflight/source_core_manifest.json",
+      "sha256": "3386fb7f165b7307f90047b2360c4dacd97c199d73fb4b635785a30d547d5d7e"
+    }
+  },
+  "checked_at": "2026-10-22T17:47:17.520357+00:00",
+  "checkpoint_verification": {
+    "changed_parameter_count": 0,
+    "changed_parameter_names": [],
+    "optimizer_steps": 0,
+    "state_keys": 1550,
+    "strict_reload": true
+  },
+  "code_sha256": {
+    "data_boundary.py": "70ebc6dd6c714131ca3733976708823f646014918a64f5c8bfeb16eebba7d2f7",
+    "gate_core.py": "b86f050a0b5519509b434dd245a3b24652477f575af646a2463bb0e63c93c7b5",
+    "prediction.py": "5c87896d000c3291184c3669e013cdbf025ebf1f5d0fd30b37c00511fdc7b80d",
+    "risk_metrics.py": "493bd95c74454614a9ee549593c4ff7b5f27caef587e4dc5043c9277a9b7a274",
+    "run_exploration.py": "12653e9b2ac88d1612ab6b9914612422ccdc0980375d5d94e843983697247bb7",
+    "state_adapter.py": "d3e6cedaae3262abf83a6c3206c504a82a295b04cd9db11e66a51e0d74bcc6dc"
+  },
+  "counts": {
+    "accepted": 0,
+    "observed": 0,
+    "rejected": 0,
+    "tail": 0,
+    "updates": 0,
+    "used": 0
+  },
+  "cuda_initialized": false,
+  "developer_count": 512,
+  "developer_only_labels_read": true,
+  "domain": "sunlamp",
+  "extended_valid": 511,
+  "final_checkpoint": {
+    "bytes": 55315258,
+    "observed": 0,
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_O_sunlamp_r1/final_checkpoint.pt",
+    "sha256": "e38db62997f1b77e427e71936f715b2b0df4e885ec3f8eac5d345a4d6f1bba7a",
+    "updates": 0
+  },
+  "full_source_GT_read": false,
+  "independently_recomputed_metric_rows": 512,
+  "limitations": [
+    "Saved predictions and serialized state are independently checked; this does not replay model inference or prove causation.",
+    "Formal efficacy and reserved/full-domain evaluation remain outside this exploratory proof."
+  ],
+  "main_exitcode": 0,
+  "main_exitcode_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/logs/odr003_O_sunlamp_r1.log.exitcode",
+  "method": "O",
+  "only_original_A_backbone_BN_affine_may_change": true,
+  "original_rejected": 2,
+  "original_valid": 509,
+  "outputs": {
+    "decisions": {
+      "bytes": 0,
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_O_sunlamp_r1/decisions.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "effective_config": {
+      "bytes": 3071,
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_O_sunlamp_r1/effective_config.yaml",
+      "sha256": "bcbd1e95391d7e39cc52d15942476cd895cdf4ad1321a885a7299ae1f4ce7bb9"
+    },
+    "predictions": {
+      "bytes": 1004743,
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_O_sunlamp_r1/predictions.jsonl",
+      "sha256": "be8f185af46fc1b2bf4193dcee13c01b56b0bce73efd484d403744e5bc5a54fe"
+    },
+    "risk_rows": {
+      "bytes": 705381,
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_O_sunlamp_r1/risk_rows.jsonl",
+      "sha256": "ea14444ba87799272b28118b5422a3dc00202af6ba22d8ccc41f7fba4bad2358"
+    }
+  },
+  "report_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_O_sunlamp_r1/report.json",
+  "report_sha256": "615255c58dc806f1acff883feac0e1cb6dbe3d1913cbeb57b20e88622422ed14",
+  "reserved_GT_read": false,
+  "risk_rows": 1536,
+  "run_id": "odr003_O_sunlamp_r1",
+  "schema": "odr003-independent-single-task-proof-v1",
+  "source_offline_identity_verified": true,
+  "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+  "status": "passed",
+  "stream": "offline",
+  "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/queue_offline_r1/odr003_O_sunlamp_r1.json",
+  "task_sha256": "7989dd13693eebd3ba6ac5b02c3071e4958c7bfe4a6d45812e5f15770a5e0654",
+  "verifier_forward_passes": 0,
+  "verifier_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/implementation/verify_exploration.py",
+  "verifier_sha256": "38db956deb88d39060b4e06b0515efa1d2eeba4ba704f6e17e0363901ea901ac"
+}

@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "bundle_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/calibration/bundle.json",
+  "bundle_sha256": "dbb62a407e319ad1625d68085a2dcac1814511cd5b46e95d5a79237d6ff5fb27",
+  "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+  "developer_records": 1024,
+  "recomputed": true,
+  "scope": "CPU source-prediction calibration verification"
+}

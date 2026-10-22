@@ -229,3 +229,8 @@ CPU合同：风险20项、数据9项、门控状态7项、坐标/HIL5项、runne
 先执行两域官方O开发评价和共享校准；实际校准SHA确定后，再绑定36次基础探索。不提前写入科学结果；每项main成功退出、严格重载、完整开发记录与独立proof均通过才推进。
 
 候选首次构建因manager禁止绑定项目外数据集相机路径而拒绝，尚未发送任何进程信号。修正只让manager检查项目内资产，相机仍由运行入口和独立验收逐次核对SHA；原失败候选保留。
+
+
+## 2026-10-23 ODR003 execution repair and frozen36-run stage
+
+The independent003 plan uses an unchanged copy of the validated queue engine with an explicit plan-directory launcher holding both legacy and current plan locks. Historical52 completed tasks and failed preflight remain preserved. Fixed CUDA initialization before peak-memory accounting, verified without model forward. Repaired CPU confidence recomputation to preserve the original float32 quantile operation; all512 saved lightbox predictions were independently accepted without repeating forward. Both official Offline developer512 evaluations and shared calibration now accepted. Prepared and independently validated3->40 manifest adds36 paired-stream adaptations plus one summary; no conditional random runs yet. Implementations/configurations mapped under reproduction/odr003_exploratory_20261023; source weights, images, labels and raw tensors excluded.

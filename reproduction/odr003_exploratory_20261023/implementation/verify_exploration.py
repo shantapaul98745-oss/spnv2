@@ -159,7 +159,9 @@ def inspect_pose(row, *, full=False):
         number(row['entropy'],'binary entropy')
         require(row['entropy']<=math.log(2)+1e-6, 'Binary entropy out of range')
         require(np.asarray(row['heat_peaks']).shape==(11,) and np.asarray(row['all_heat_xy']).shape==(11,2), 'All 11 heatmap points required')
-        close(row['confidence'],float(np.quantile(row['heat_peaks'],.25,method='linear')),'confidence')
+        # Serialized peaks retain their values but lose ndarray dtype. Restore
+        # original head float32 before NumPy's interpolation arithmetic.
+        close(row['confidence'],float(np.quantile(np.asarray(row['heat_peaks'],dtype=np.float32),.25,method='linear')),'confidence')
     return legal
 
 

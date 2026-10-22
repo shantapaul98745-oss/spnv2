@@ -1,0 +1,72 @@
+{
+  "bindings": {
+    "calibration": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/calibration/bundle.json",
+      "sha256": "dbb62a407e319ad1625d68085a2dcac1814511cd5b46e95d5a79237d6ff5fb27"
+    },
+    "calibration_proof": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/calibration/proof.json",
+      "sha256": "39d61c9fcff2461a399c91a919d135dafbebc97da781fb4311dfc41e4ce0cc44"
+    },
+    "camera": {
+      "path": "/home/DATA/Downloads/DataSet/speedplus/camera.json",
+      "sha256": "996bd50a83991f8dc11da9f4afc0a6e609d62eb532014a4256f3974f14e46558"
+    },
+    "config": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/odr/configs/fixed_phi3_A_lightbox_s2021_N1024_B4.yaml",
+      "sha256": "9b102f845fff584e320cc183c475d23e47e09645be9a65b42dd4bb8acb60de23"
+    },
+    "data_prepared": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/preflight/data_boundary_prepared.json",
+      "sha256": "6605eb43b8760d74dd521f867c422378d760f5ce56ee3a74645443ee5cb6a9b7"
+    },
+    "data_verified": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/preflight/data_boundary_verified.json",
+      "sha256": "bba0d11de425312ef84ecbfea1b69ac7778453f89221e01ab70d0aed0b970267"
+    },
+    "developer_labels": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/sunlamp/dev_labels.json",
+      "sha256": "6782b4fe7f35f7e6f5b88bfde5705ef0362b16610df8086c3b359cea5a4a5239"
+    },
+    "developer_manifest": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/sunlamp/developer_images.json",
+      "sha256": "db2df5adb9f99af94371226537578ff9aede7aa6ee959c419e0fd7c570c828e0"
+    },
+    "keypoints": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/odr/source_A/core/utils/models/tangoPoints.mat",
+      "sha256": "6d6a57f353ceb3691117deeab921debb29a68cfed60653cebf07a001da9c1725"
+    },
+    "official_receipt": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/preflight/official_source_receipt.json",
+      "sha256": "ec3f20fc905a80ca2de82c08ff71bfa56ae383fde5187e09f199f2d0997e61d8"
+    },
+    "source": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/assets/spnv2_efficientnetb3_fullconfig_offline.pth.tar",
+      "sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc"
+    },
+    "source_core_manifest": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/preflight/source_core_manifest.json",
+      "sha256": "3386fb7f165b7307f90047b2360c4dacd97c199d73fb4b635785a30d547d5d7e"
+    },
+    "stream_manifest": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/sunlamp/stream_2023.json",
+      "sha256": "f68809e4d70782eb1d6b5029aa1d64077d8d4ec7bde451995a69b07398f55873"
+    }
+  },
+  "checkpoint_every_updates": 64,
+  "code_sha256": {
+    "data_boundary.py": "70ebc6dd6c714131ca3733976708823f646014918a64f5c8bfeb16eebba7d2f7",
+    "gate_core.py": "b86f050a0b5519509b434dd245a3b24652477f575af646a2463bb0e63c93c7b5",
+    "prediction.py": "5c87896d000c3291184c3669e013cdbf025ebf1f5d0fd30b37c00511fdc7b80d",
+    "risk_metrics.py": "493bd95c74454614a9ee549593c4ff7b5f27caef587e4dc5043c9277a9b7a274",
+    "run_exploration.py": "12653e9b2ac88d1612ab6b9914612422ccdc0980375d5d94e843983697247bb7",
+    "state_adapter.py": "d3e6cedaae3262abf83a6c3206c504a82a295b04cd9db11e66a51e0d74bcc6dc"
+  },
+  "domain": "sunlamp",
+  "method": "E75",
+  "output_dir": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_E75_sunlamp_s2023_N1024_B4",
+  "run_id": "odr003_E75_sunlamp_s2023_N1024_B4",
+  "schema": "odr003-task-v1",
+  "seed": 2023,
+  "stream": "2023"
+}

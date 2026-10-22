@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "manifest_sha256": "ce507fa8c02c4ced723a585404302b4f6a3543c9cb01532c31976ae25eba0c36",
+  "proposal_sha256": "cfb61ac03ef10a03681c11a8482c2ccd40eaad81005a166719526dbad7643c1c",
+  "old3_preserved": true,
+  "added_adaptations": 36,
+  "added_summary": 1
+}

@@ -356,6 +356,7 @@ def run(task_path):
         from gate_core import decide
         if not torch.cuda.is_available(): raise RuntimeError('This is an actual GPU experiment; CPU substitution forbidden')
         device=torch.device('cuda:0')
+        torch.cuda.set_device(device)
         set_seeds_cudnn(cfg,seed=task['seed'])
         torch.cuda.reset_peak_memory_stats(device)
         timings={'preflight_and_load_seconds':0.,'adaptation_seconds':0.,'image_read_seconds':0.,

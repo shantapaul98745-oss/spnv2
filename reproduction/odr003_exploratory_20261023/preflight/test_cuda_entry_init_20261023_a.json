@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "checked_at": "2026-10-22T17:39:20.961859+00:00",
+  "screen": "3843301.spnv2_003_cuda_entry_init_20261023_a",
+  "pid": 3843306,
+  "device": "cuda:0",
+  "device_name": "NVIDIA GeForce RTX 4060 Ti",
+  "torch_version": "2.5.1+cu121",
+  "cuda_version": "12.1",
+  "initialized_before": false,
+  "initialized_after_set_device": true,
+  "reset_peak_memory_stats_passed": true,
+  "synchronize_passed": true,
+  "peak_allocated_bytes": 0,
+  "peak_reserved_bytes": 0,
+  "model_instantiated": false,
+  "forward_passes": 0,
+  "tensor_allocations": 0,
+  "GT_read": false,
+  "prelaunch_compute_processes": [
+    {
+      "pid": 7890,
+      "process_name": "/usr/libexec/gnome-remote-desktop-daemon",
+      "memory_mib": 120
+    }
+  ],
+  "sequence": [
+    "is_available",
+    "device_cuda0",
+    "set_device",
+    "reset_peak_memory_stats",
+    "synchronize"
+  ],
+  "script_sha256": "cd01bc2a410bbd6b5454046f8b909306090abd2533b8ef578ae46b586fba698c"
+}

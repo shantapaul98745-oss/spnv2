@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "old_verifier_sha256": "056728b05668589c47fb3bab48a3d405b0113d4a4c4259e1059c8f1a4783960b",
+  "new_verifier_sha256": "38db956deb88d39060b4e06b0515efa1d2eeba4ba704f6e17e0363901ea901ac",
+  "old_failure_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_O_lightbox_r1/proof.json.failure.confidence_dtype_20261023.json",
+  "old_failure_sha256": "65981601d47a6184a2da1c4a025007d44a10a5dab648fa4b667783b15a0fc412",
+  "fixture_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/preflight/confidence_dtype_fixture_20261023_a.json",
+  "fixture_sha256": "ee0086a61cb3948f8eaf11cd8bf4bf05e40be70b0e163a7de1ed81a982e00ad6",
+  "change": "Restore float32 heatmap peak dtype before confidence quantile; no tolerance change, no main product change, no forward",
+  "runtime_config_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/events/odr003_O_lightbox_r1.verify_repaired.config.json",
+  "old_main_exitcode": "0",
+  "reverification_result_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/events/odr003_O_lightbox_r1.verify_repaired.result.json",
+  "reverification_exit_code": 0,
+  "proof_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/runs/odr003_O_lightbox_r1/proof.json",
+  "proof_sha256": "b43516dcaf8b56a76853a610a866df5e178f811186046a5e150333c9dce520c7",
+  "reverification_process_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/events/odr003_O_lightbox_r1.verify_repaired.process.json",
+  "reverification_log_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/logs/odr003_O_lightbox_r1.verify_repaired.log",
+  "reverification_log_exitcode_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/logs/odr003_O_lightbox_r1.verify_repaired.log.exitcode",
+  "main_report_sha256": "d2a230c65f301dc08f28327c99c772ae67aeb1688fc9ba647494468ca7dac68e",
+  "main_predictions_sha256": "d4bf7b460dabb407ea3f2b4875403ded1c812c620e7869fb9bc19a2763ff4755",
+  "manager_state_modified": false,
+  "forward_passes": 0
+}
