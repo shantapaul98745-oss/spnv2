@@ -1,0 +1,40 @@
+{
+  "status": "reviewable_not_authorized_to_activate",
+  "candidate": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/table2_formal_20261022/proposal.json",
+  "candidate_canonical_sha256": "f53581b9add1460ae4f5582bcbda3c84d647c901ffd946950aa343183b60b4a2",
+  "old_manifest": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/table2_pilots_20261022/proposal.json",
+  "old_manifest_canonical_sha256": "976cf1bf4caf473d47b861e01b69a216399da0e492b6bcb9fe282134365e5adc",
+  "manager": {
+    "pid": 3305820,
+    "starttime": "564320727",
+    "started_at": "2026-10-22T23:29:51+08:00",
+    "mode": "queue",
+    "terminal": "complete"
+  },
+  "first_new_task": "train_table2_h",
+  "new_task_ids": [
+    "train_table2_h",
+    "eval_table2_h_synthetic",
+    "eval_table2_h_lightbox",
+    "eval_table2_h_sunlamp",
+    "train_table2_e",
+    "eval_table2_e_synthetic",
+    "eval_table2_e_lightbox",
+    "eval_table2_e_sunlamp",
+    "train_table2_eh",
+    "eval_table2_eh_synthetic",
+    "eval_table2_eh_lightbox",
+    "eval_table2_eh_sunlamp"
+  ],
+  "required_actions_before_activation": [
+    "Obtain a new explicit one-time manager-only switch authorization; previous pilot switch authorization is consumed.",
+    "Recheck current 52-task manifest, all 52 accepted task records and no active worker; exact manager PID/starttime/cmd and exclusive pipeline.lock ownership.",
+    "Recheck this candidate/acceptance and all new assets and output absence; preserve source configs, frozen source, existing 52 definitions and execution evidence.",
+    "Use the existing guarded manager-only graceful cutover under the same lock, durable revision and GPU resource gate. No direct state or active manifest mutation.",
+    "Start replacement manager with --manifest candidate plus the one-time --extend-from current52 only for this authorized cutover; verify lock/new identity and only train_table2_h newly starts.",
+    "For later ordinary fault recovery use only --manifest candidate, never repeat extension flags or the one-time cutover controller."
+  ],
+  "production_write_performed": false,
+  "gpu_experiment_started": false,
+  "activation_allowed": false
+}

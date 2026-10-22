@@ -1,0 +1,48 @@
+{
+  "files": {
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/table2_formal_20261022/build_candidate.py": {
+      "path": "reproduction/queue_proposals/table2_formal_20261022/build_candidate.py",
+      "sha256": "949ca69b7faabbfd0ad0f2ea5361e45caf32de9e6412404c7c526423570766fd"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/table2_formal_20261022/verify_candidate.py": {
+      "path": "reproduction/queue_proposals/table2_formal_20261022/verify_candidate.py",
+      "sha256": "1a029e44ef1c843cb2b39e2de788a35d1ac6a68a6de0f07c24e840140db0a47b"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/table2_formal_20261022/proposal.json": {
+      "path": "reproduction/queue_proposals/table2_formal_20261022/proposal.json",
+      "sha256": "c84e3e08d263103ae748d675719030bb949a80f41e8e913e9e84b265d86cdb84"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/table2_formal_20261022/build_receipt.json": {
+      "path": "reproduction/queue_proposals/table2_formal_20261022/build_receipt.json",
+      "sha256": "1f2b62d3c2ab52aab7cabbbb5d2f60fb2c486457623f94b6db08573343898498"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/table2_formal_20261022/diff_audit.json": {
+      "path": "reproduction/queue_proposals/table2_formal_20261022/diff_audit.json",
+      "sha256": "4bb4e3f895b0c85576fbee6e8a1fcfea35d5b51b4f85a68755bcac0d661a4717"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/table2_formal_20261022/verified.json": {
+      "path": "reproduction/queue_proposals/table2_formal_20261022/verified.json",
+      "sha256": "126545de404173a6fc38b468a9d009cfa95b9cf91f80dde261a3280f3c38fe60"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/table2_formal_20261022/new_asset_verification.json": {
+      "path": "reproduction/queue_proposals/table2_formal_20261022/new_asset_verification.json",
+      "sha256": "bc843281dc6034a19b3df50c927e2af247a5a3662ece5474eb2089ae13c87038"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/table2_formal_20261022/evaluation_branch_contract.json": {
+      "path": "reproduction/queue_proposals/table2_formal_20261022/evaluation_branch_contract.json",
+      "sha256": "387c9a60f32eee9cd67e45b04e74821631fc3d3a07a648494fc5f700d13b9f9e"
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/table2_formal_20261022/activation_review.json": {
+      "path": "reproduction/queue_proposals/table2_formal_20261022/activation_review.json",
+      "sha256": "43a7033c3cb8a415b0332feb84921198bfe0fe336f3f5e64ecd29fec99679f7a"
+    }
+  },
+  "excluded_runtime_evidence": [
+    "baseline_status_snapshot.json",
+    "append_contract_audit.json",
+    "independent_append_contract_audit.json",
+    "build.log",
+    "verify.log"
+  ],
+  "reason": "Runtime snapshots and logs remain at original server paths; independent verification binds their SHA. No weights/data uploaded."
+}

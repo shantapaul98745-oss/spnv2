@@ -205,3 +205,12 @@ Table2三个pilot的最小52项候选已独立CPU验收通过，目录queue_prop
 现有spnv2-2继续ACTIVE/15分钟单次巡检，完整提示monitoring/spnv2-2_prompt_table2_active52_20261022.txt；目标模式保持暂停。下一步逐项核验3个pilot的main/verify与严格恢复/计数/有限性，之后按原计划准备Table2正式H10/E20/EH20及三域。其余8套150轮/24域评价、Table6、B120/N240、案例/PRISMA25材料与最终交付仍未接入；52项阶段不是190轮完成。无变化不循环等待或重复验收。
 
 本次记录时新增pilot状态：pilot_table2_h=accepted, pilot_table2_e=accepted, pilot_table2_eh=accepted。已accepted的项目均main/verify退出0，真实RTX4060Ti工程报告SHA与独立proof匹配，完整连续/恢复状态树相等；它们是工程短测，不是正式精度。机器记录monitoring/table2_pilots_cutover_20261022.json。
+
+
+## Table2正式64项候选已验收、未启用（2026-10-22 23:44）
+
+原52项与三个真实GPU pilot全部accepted，manager3305820/start564320727健康phase_complete。新目录queue_proposals/table2_formal_20261022已通过独立build/verify screen退出0，canonical SHA256=f53581b9add1460ae4f5582bcbda3c84d647c901ffd946950aa343183b60b4a2；verified.json SHA256=126545de404173a6fc38b468a9d009cfa95b9cf91f80dde261a3280f3c38fe60。原52项完全保留，仅追加H10/E20/EH20及各synthetic11994/lightbox6740/sunlamp2791三域，共50轮和9项评价；85个不同新增资产SHA通过，新输出均为空。训练独立初始化4×4、原参数/冻结source保持，不继承pilot权重。9项评价同次前向wrapper，H-only只用H，E-only无H适用项，EH混合；Table2原接受子集逐头主口径与扩展分表，缺失None，不填零或E代替H。
+
+当前仅候选，不曾启动正式Table2训练或改变生产状态/manager。主模型审查构建/独立验收源码，独立核对原52前缀、候选与proof哈希及主指标分母逻辑。等待新的这一次manager-only切换授权；之前52项pilot切换授权已消耗，不能任意重启健康manager。候选activation_review.json列明受控接续；当前正常恢复仍只用52项manifest。
+
+原两笔待推送记录已通过GitHub连接器等树同步并读回，服务器对齐bc2e770e，旧本地SHA保留archive/local-pending-before-connector-20261022分支。完整190轮仍只有40轮正式source完成，150轮尚未执行；本候选不等于已完成50轮。其余100轮、24域评价中未执行项、Table6、B/N扫描、案例/PRISMA及最终验收不缩减。守护ACTIVE/15分钟单次，目标暂停，未变化不反复索取同一授权。

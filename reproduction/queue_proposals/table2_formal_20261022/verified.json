@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "at": "2026-10-22T23:44:22+08:00",
+  "screen": "3367361.table2_formal64_verify_20261022",
+  "candidate": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/table2_formal_20261022/proposal.json",
+  "candidate_canonical_sha256": "f53581b9add1460ae4f5582bcbda3c84d647c901ffd946950aa343183b60b4a2",
+  "candidate_file_sha256": "c84e3e08d263103ae748d675719030bb949a80f41e8e913e9e84b265d86cdb84",
+  "old_manifest_canonical_sha256": "976cf1bf4caf473d47b861e01b69a216399da0e492b6bcb9fe282134365e5adc",
+  "old_tasks_preserved": 52,
+  "new_queued_tasks": 12,
+  "formal_source_epochs_added": 50,
+  "new_domain_evaluations": 9,
+  "unique_new_assets_checked": 85,
+  "checks": [
+    "build_receipt_bytes",
+    "original52_exact_prefix",
+    "all52_execution_evidence_preserved_in_pure_append_simulation",
+    "three_train_configs_frozen_4x4_independent_final_H10_E20_EH20",
+    "all_three_pilots_precede_H",
+    "E_EH_wait_previous_full_source_acceptance",
+    "new12_only_allowed_template_changes",
+    "new_assets_actual_sha256",
+    "new_outputs_absent",
+    "evaluation_branch_contract",
+    "no_gpu_or_production_mutation"
+  ],
+  "files_sha256": {
+    "build_candidate.py": "949ca69b7faabbfd0ad0f2ea5361e45caf32de9e6412404c7c526423570766fd",
+    "verify_candidate.py": "1a029e44ef1c843cb2b39e2de788a35d1ac6a68a6de0f07c24e840140db0a47b",
+    "build_receipt.json": "1f2b62d3c2ab52aab7cabbbb5d2f60fb2c486457623f94b6db08573343898498",
+    "diff_audit.json": "4bb4e3f895b0c85576fbee6e8a1fcfea35d5b51b4f85a68755bcac0d661a4717",
+    "new_asset_verification.json": "bc843281dc6034a19b3df50c927e2af247a5a3662ece5474eb2089ae13c87038",
+    "independent_append_contract_audit.json": "4e9dbc218a045260a80a50cffb77d95af6dcfc48e671e7105386d103c04b89b8",
+    "evaluation_branch_contract.json": "387c9a60f32eee9cd67e45b04e74821631fc3d3a07a648494fc5f700d13b9f9e",
+    "activation_review.json": "43a7033c3cb8a415b0332feb84921198bfe0fe336f3f5e64ecd29fec99679f7a"
+  },
+  "activation_allowed": false,
+  "new_manager_only_authorization_required": true,
+  "production_write_performed": false,
+  "gpu_experiment_started": false
+}

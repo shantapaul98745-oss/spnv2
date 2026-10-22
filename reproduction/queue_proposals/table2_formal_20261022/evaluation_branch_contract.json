@@ -1,0 +1,153 @@
+{
+  "status": "passed",
+  "scope": "Static candidate configuration and accepted-code contract, not scientific accuracy or new inference",
+  "tasks": [
+    {
+      "id": "eval_table2_h_synthetic",
+      "heads": [
+        "heatmap"
+      ],
+      "source_final": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_table2_h_ga4_seed2021/model_final.pth.tar",
+      "expected_samples": 11994,
+      "extension_applicability": "applicable",
+      "extended_primary_mode": "H_rotation_H_translation",
+      "original_paper_table2_head_specific_accepted_evidence_preserved": true,
+      "missing_head_metrics": null,
+      "actual_numeric_coverage_required_for_all_samples": true,
+      "no_extra_forward": true,
+      "no_entropy_odr": true
+    },
+    {
+      "id": "eval_table2_h_lightbox",
+      "heads": [
+        "heatmap"
+      ],
+      "source_final": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_table2_h_ga4_seed2021/model_final.pth.tar",
+      "expected_samples": 6740,
+      "extension_applicability": "applicable",
+      "extended_primary_mode": "H_rotation_H_translation",
+      "original_paper_table2_head_specific_accepted_evidence_preserved": true,
+      "missing_head_metrics": null,
+      "actual_numeric_coverage_required_for_all_samples": true,
+      "no_extra_forward": true,
+      "no_entropy_odr": true
+    },
+    {
+      "id": "eval_table2_h_sunlamp",
+      "heads": [
+        "heatmap"
+      ],
+      "source_final": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_table2_h_ga4_seed2021/model_final.pth.tar",
+      "expected_samples": 2791,
+      "extension_applicability": "applicable",
+      "extended_primary_mode": "H_rotation_H_translation",
+      "original_paper_table2_head_specific_accepted_evidence_preserved": true,
+      "missing_head_metrics": null,
+      "actual_numeric_coverage_required_for_all_samples": true,
+      "no_extra_forward": true,
+      "no_entropy_odr": true
+    },
+    {
+      "id": "eval_table2_e_synthetic",
+      "heads": [
+        "efficientpose"
+      ],
+      "source_final": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_table2_e_ga4_seed2021/model_final.pth.tar",
+      "expected_samples": 11994,
+      "extension_applicability": "not_applicable_no_heatmap",
+      "extended_primary_mode": "E_only_original",
+      "original_paper_table2_head_specific_accepted_evidence_preserved": true,
+      "missing_head_metrics": null,
+      "actual_numeric_coverage_required_for_all_samples": true,
+      "no_extra_forward": true,
+      "no_entropy_odr": true
+    },
+    {
+      "id": "eval_table2_e_lightbox",
+      "heads": [
+        "efficientpose"
+      ],
+      "source_final": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_table2_e_ga4_seed2021/model_final.pth.tar",
+      "expected_samples": 6740,
+      "extension_applicability": "not_applicable_no_heatmap",
+      "extended_primary_mode": "E_only_original",
+      "original_paper_table2_head_specific_accepted_evidence_preserved": true,
+      "missing_head_metrics": null,
+      "actual_numeric_coverage_required_for_all_samples": true,
+      "no_extra_forward": true,
+      "no_entropy_odr": true
+    },
+    {
+      "id": "eval_table2_e_sunlamp",
+      "heads": [
+        "efficientpose"
+      ],
+      "source_final": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_table2_e_ga4_seed2021/model_final.pth.tar",
+      "expected_samples": 2791,
+      "extension_applicability": "not_applicable_no_heatmap",
+      "extended_primary_mode": "E_only_original",
+      "original_paper_table2_head_specific_accepted_evidence_preserved": true,
+      "missing_head_metrics": null,
+      "actual_numeric_coverage_required_for_all_samples": true,
+      "no_extra_forward": true,
+      "no_entropy_odr": true
+    },
+    {
+      "id": "eval_table2_eh_synthetic",
+      "heads": [
+        "heatmap",
+        "efficientpose"
+      ],
+      "source_final": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_table2_eh_ga4_seed2021/model_final.pth.tar",
+      "expected_samples": 11994,
+      "extension_applicability": "applicable",
+      "extended_primary_mode": "H_rotation_E_translation",
+      "original_paper_table2_head_specific_accepted_evidence_preserved": true,
+      "missing_head_metrics": null,
+      "actual_numeric_coverage_required_for_all_samples": true,
+      "no_extra_forward": true,
+      "no_entropy_odr": true
+    },
+    {
+      "id": "eval_table2_eh_lightbox",
+      "heads": [
+        "heatmap",
+        "efficientpose"
+      ],
+      "source_final": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_table2_eh_ga4_seed2021/model_final.pth.tar",
+      "expected_samples": 6740,
+      "extension_applicability": "applicable",
+      "extended_primary_mode": "H_rotation_E_translation",
+      "original_paper_table2_head_specific_accepted_evidence_preserved": true,
+      "missing_head_metrics": null,
+      "actual_numeric_coverage_required_for_all_samples": true,
+      "no_extra_forward": true,
+      "no_entropy_odr": true
+    },
+    {
+      "id": "eval_table2_eh_sunlamp",
+      "heads": [
+        "heatmap",
+        "efficientpose"
+      ],
+      "source_final": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/outputs/efficientdet_d3/rebaseline_table2_eh_ga4_seed2021/model_final.pth.tar",
+      "expected_samples": 2791,
+      "extension_applicability": "applicable",
+      "extended_primary_mode": "H_rotation_E_translation",
+      "original_paper_table2_head_specific_accepted_evidence_preserved": true,
+      "missing_head_metrics": null,
+      "actual_numeric_coverage_required_for_all_samples": true,
+      "no_extra_forward": true,
+      "no_entropy_odr": true
+    }
+  ],
+  "checks": [
+    "nine_original_argument_vectors_preserved",
+    "same_forward_wrapper_protocol_pins",
+    "single_head_mode_expressions_match_producer_and_independent_verifier",
+    "missing_protocol_metrics_None",
+    "empty_mean_None",
+    "actual_finite_count_controls_all_samples",
+    "original_accepted_subset_preserved"
+  ]
+}

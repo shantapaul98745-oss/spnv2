@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "at": "2026-10-22T23:42:41+08:00",
+  "screen": "3360331.table2_formal64_build_20261022",
+  "candidate_canonical_sha256": "f53581b9add1460ae4f5582bcbda3c84d647c901ffd946950aa343183b60b4a2",
+  "files_sha256": {
+    "proposal.json": "c84e3e08d263103ae748d675719030bb949a80f41e8e913e9e84b265d86cdb84",
+    "baseline_status_snapshot.json": "5b3fdac0b375e95e44221e625994528b3b4f4aa9dda84c1cef17be1afb05cd1a",
+    "append_contract_audit.json": "e5a99586b2244517a69159608570373e4c2f577731ff3eb395695c81bc5133ec",
+    "diff_audit.json": "4bb4e3f895b0c85576fbee6e8a1fcfea35d5b51b4f85a68755bcac0d661a4717"
+  },
+  "production_write_performed": false,
+  "gpu_experiment_started": false
+}
