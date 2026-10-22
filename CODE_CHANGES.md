@@ -198,3 +198,10 @@ Locations: reproduction/monitoring/phi6_fixed40_stage_20261022.json, PHI6_FIXED4
 Reason/effect: archive accepted phi6 final/three-domain evidence and fixed40 actual runs; prepare only H/E/EH engineering pilots after stage49. Original49 definitions and evidence are preserved. Candidate52 stays inactive pending a new explicit manager-only authorization. Full190 epochs and remaining resource/scans/delivery remain incomplete.
 
 Validation: actual source final/checkpoint/evaluation proof/per-sample hashes match; 40 ODR main/verify pairs exited0, independent proofs and N/N coverage checked read-only. Candidate build and independent CPU acceptance used distinct screens, exit0; existing validate_manifest/extend_state contracts passed, 49-prefix exact and 56 distinct new asset hashes matched. Main agent reviewed both scripts and independently compared prefix/hash/receipts. CPU acceptance is not a GPU pilot/scientific result. Logs/status/model/data remain outside Git. Production runner/manifest/processes were not changed.
+
+
+## 2026-10-22 - Authorized Table2 pilot manager cutover
+
+Location: reproduction/revisions/manager_table2_pilots_cutover_20261022/activate.py and acceptance records; monitoring/table2_pilots_cutover_20261022.json; AGENT.md and SERVER_EXECUTION_HANDOFF.md. Reason/effect: execute the user-authorized one-time transition from completed49 to accepted52 candidate, adding H/E/EH pilots only. Retain all original49 definitions/evidence and never rerun them. New independent manager screen uses existing GPU/exit/verification gates. Normal recovery uses only new --manifest, without one-time extension flags.
+
+Validation: syntax compilation and independent static review before execution; controller own screen exit0; accepted receipt and independent readback confirm original49 exact records, old-manager exit/sole new lock owner, new manifest SHA and only pilot launch events. Actual pilot/independent proof statuses are recorded in the monitoring receipt; short pilots are not formal scientific results. No other process was signalled, no goal mode resumed. Raw before/after state, logs, checkpoints and data stay on server.

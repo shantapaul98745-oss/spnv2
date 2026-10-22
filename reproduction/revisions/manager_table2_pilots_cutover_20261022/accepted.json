@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "at": "2026-10-22T23:29:53+08:00",
+  "operation": "explicitly_authorized_manager_only_table2_pilots_append",
+  "old_manager": {
+    "pid": 1851843,
+    "starttime": "526573814",
+    "started_at": "2026-10-18T14:38:42+08:00",
+    "mode": "queue",
+    "terminal": "complete"
+  },
+  "new_manager": {
+    "pid": 3305820,
+    "starttime": "564320727",
+    "started_at": "2026-10-22T23:29:51+08:00",
+    "mode": "queue"
+  },
+  "worker": {
+    "pid": 3305913,
+    "starttime": "564320812",
+    "screen_id": "3305902.spnv2_pilot_table2_h_qv2_20261017",
+    "command": [
+      "/home/ps/anaconda3/envs/SPNv2/bin/python",
+      "-B",
+      "-s",
+      "-u",
+      "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/gpu_smoke.py",
+      "--source",
+      "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/source",
+      "--cfg",
+      "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/configs/table2_h.yaml",
+      "--report",
+      "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/reports/table2_h_queuev2_20261017.json",
+      "--artifacts",
+      "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/artifacts/table2_h_queuev2_20261017",
+      "--attempts",
+      "32",
+      "--checkpoint",
+      "16"
+    ]
+  },
+  "old49_definitions_preserved": true,
+  "old49_execution_evidence_preserved": true,
+  "old49_restarted": false,
+  "task_count": 52,
+  "manifest": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/table2_pilots_20261022/proposal.json",
+  "manifest_sha256": "976cf1bf4caf473d47b861e01b69a216399da0e492b6bcb9fe282134365e5adc",
+  "revision_audit": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/revisions/2026-10-22T23-29-51+08-00_3305820_976cf1bf4caf473d.json",
+  "active": "pilot_table2_h",
+  "remaining_pilots_queued": [
+    "pilot_table2_e",
+    "pilot_table2_eh"
+  ],
+  "full_plan_completed": false,
+  "normal_recovery": "Use only --manifest /home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/table2_pilots_20261022/proposal.json; never reuse this one-time --extend-from or this controller."
+}

@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "checked_at": "2026-10-22T23:30:59+08:00",
+  "controller_exit": 0,
+  "receipt_sha256": "a16bfb23b4084fce09a8b90fd0a0fce4159b34e7352eaa1a39156d175d60c505",
+  "new_manager": {
+    "pid": 3305820,
+    "starttime": "564320727",
+    "started_at": "2026-10-22T23:29:51+08:00",
+    "mode": "queue"
+  },
+  "actual_manager_command": [
+    "/home/ps/anaconda3/envs/SPNv2/bin/python",
+    "-B",
+    "-s",
+    "-u",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pipeline/runner.py",
+    "--manifest",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_proposals/table2_pilots_20261022/proposal.json",
+    "--extend-from",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/queue_observed_stage_20261018.json"
+  ],
+  "sole_lock_owner": [
+    3305820
+  ],
+  "original49_records_equal_before": true,
+  "new_launch_intents_only": [
+    "pilot_table2_h",
+    "pilot_table2_h"
+  ],
+  "observed_new_tasks": [
+    {
+      "id": "pilot_table2_h",
+      "status": "accepted"
+    },
+    {
+      "id": "pilot_table2_e",
+      "status": "queued"
+    },
+    {
+      "id": "pilot_table2_eh",
+      "status": "queued"
+    }
+  ],
+  "active": "pilot_table2_h",
+  "full_plan_completed": false
+}

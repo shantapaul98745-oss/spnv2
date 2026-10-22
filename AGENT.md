@@ -194,3 +194,14 @@ synthetic全11994样本于16:45:20验收通过，H拒绝0、11994/11994覆盖；
 Table2三个pilot的最小52项候选已独立CPU验收通过，目录queue_proposals/table2_pilots_20261022。原49项完全保留，仅追加H→E→EH，56个不同新增资产哈希匹配；canonical SHA256=976cf1bf4caf473d47b861e01b69a216399da0e492b6bcb9fe282134365e5adc。未执行GPU pilot、未激活候选、未改生产状态或发送信号。健康manager无热扩展接口，旧一次性切换授权已消耗；必须取得新的这一次manager-only授权后按activation_review.json复核锁/身份/证据并切换，不能另起重复队列绕过。
 
 本次现有spnv2-2设为ACTIVE/15分钟，已应用读回；完整提示monitoring/spnv2-2_prompt_stage49_complete_20261022.txt。目标模式仍暂停，全部完整计划通过最终验收前守护不能停用。待授权且状态无变化时结束单次巡检，不重复播报、重跑验收或反复请求相同授权。
+
+
+## 最新接续：用户本次授权的52项管理器切换已验收（2026-10-22 23:29）
+
+用户明确允许这一次仅切换管理器，按已验收52项候选启动H/E/EH三个pilot。控制器独立screen退出0，23:29:53切换验收通过，23:30:59独立读回通过；原49项定义与执行记录逐字段保持，没有重跑。旧manager1851843/start526573814正常退出释放锁，新manager3305820/start564320727独占pipeline.lock，独立screen rebaseline_queue_table2_pilots_20261022。H pilot已实际启动并使用GPU；E、EH由服务器依次成功退出、独立验收并检查GPU后串行接续。实时任务/PID从status.json读取，不要求已完成pilot的旧worker继续存活。
+
+当前正式manifest为queue_proposals/table2_pilots_20261022/proposal.json，52项，canonical SHA256=976cf1bf4caf473d47b861e01b69a216399da0e492b6bcb9fe282134365e5adc。切换证据revisions/manager_table2_pilots_cutover_20261022/accepted.json和independent_readback.json，正式修订revisions/2026-10-22T23-29-51+08-00_3305820_976cf1bf4caf473d.json。普通故障恢复仅用新--manifest；绝不能重用一次性--extend-from、旧observer修订参数或控制器。该次授权已执行完毕，不能任意重复重启健康队列。
+
+现有spnv2-2继续ACTIVE/15分钟单次巡检，完整提示monitoring/spnv2-2_prompt_table2_active52_20261022.txt；目标模式保持暂停。下一步逐项核验3个pilot的main/verify与严格恢复/计数/有限性，之后按原计划准备Table2正式H10/E20/EH20及三域。其余8套150轮/24域评价、Table6、B120/N240、案例/PRISMA25材料与最终交付仍未接入；52项阶段不是190轮完成。无变化不循环等待或重复验收。
+
+本次记录时新增pilot状态：pilot_table2_h=accepted, pilot_table2_e=accepted, pilot_table2_eh=accepted。已accepted的项目均main/verify退出0，真实RTX4060Ti工程报告SHA与独立proof匹配，完整连续/恢复状态树相等；它们是工程短测，不是正式精度。机器记录monitoring/table2_pilots_cutover_20261022.json。

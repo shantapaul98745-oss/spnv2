@@ -1,0 +1,158 @@
+{
+  "checked_at": "2026-10-22T23:34:52+08:00",
+  "manager": {
+    "pid": 3305820,
+    "starttime": "564320727",
+    "started_at": "2026-10-22T23:29:51+08:00",
+    "mode": "queue",
+    "terminal": "complete"
+  },
+  "manifest_sha256": "976cf1bf4caf473d47b861e01b69a216399da0e492b6bcb9fe282134365e5adc",
+  "original49_preserved": true,
+  "pilots": [
+    {
+      "id": "pilot_table2_h",
+      "status": "accepted",
+      "accepted_at": "2026-10-22T23:30:58+08:00",
+      "proof": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/reports/table2_h_queuev2_20261017_verified.json",
+      "proof_sha256": "a6e7ef6be63432c9bbd521122b71114e706b2a00f3f9444373bb116718d60afe",
+      "report": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/reports/table2_h_queuev2_20261017.json",
+      "report_sha256": "0e9f000a91bdf637eb8263efdcfb9bba1a631b93207464bb3c856d46e8f8638b",
+      "full_resume_equality": true,
+      "device": {
+        "capability": [
+          8,
+          9
+        ],
+        "name": "NVIDIA GeForce RTX 4060 Ti",
+        "total_memory": 16848453632
+      },
+      "scope": "32 update attempts on engineering subset; no formal accuracy result",
+      "verified": [
+        "artifact_hashes",
+        "frozen_source",
+        "configuration",
+        "input_shapes",
+        "csv_and_inventory",
+        "actual_sample_id_stream",
+        "initial_model",
+        "every_active_head_and_backbone_changed",
+        "all_complete_boundary_counters",
+        "full_model_optimizer_scaler_rng_sampler_and_manifest_resume_equality"
+      ],
+      "phases": [
+        {
+          "phase": "main",
+          "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/events/pilot_table2_h.main.result.json",
+          "sha256": "d1aba20e4c446013067be31d37866cc18a1791f1708a3efa07f03fd7575943cc",
+          "ended_at": "2026-10-22T23:30:52+08:00",
+          "exit_code": 0
+        },
+        {
+          "phase": "verify",
+          "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/events/pilot_table2_h.verify.result.json",
+          "sha256": "76de03c49b37c7262869645561c969cebd38cdb76acd079594493fcc0c578782",
+          "ended_at": "2026-10-22T23:30:57+08:00",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "id": "pilot_table2_e",
+      "status": "accepted",
+      "accepted_at": "2026-10-22T23:32:13+08:00",
+      "proof": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/reports/table2_e_queuev2_20261017_verified.json",
+      "proof_sha256": "e2b5afdc6c9b0031db715a3cfeaba3d2dbdf41bf50f4ca6e5f9198a71c839d5a",
+      "report": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/reports/table2_e_queuev2_20261017.json",
+      "report_sha256": "c61381958a9324aca8fad9378f06709e6b08ee4806133e78d420a8937d6f1d86",
+      "full_resume_equality": true,
+      "device": {
+        "capability": [
+          8,
+          9
+        ],
+        "name": "NVIDIA GeForce RTX 4060 Ti",
+        "total_memory": 16848453632
+      },
+      "scope": "32 update attempts on engineering subset; no formal accuracy result",
+      "verified": [
+        "artifact_hashes",
+        "frozen_source",
+        "configuration",
+        "input_shapes",
+        "csv_and_inventory",
+        "actual_sample_id_stream",
+        "initial_model",
+        "every_active_head_and_backbone_changed",
+        "all_complete_boundary_counters",
+        "full_model_optimizer_scaler_rng_sampler_and_manifest_resume_equality"
+      ],
+      "phases": [
+        {
+          "phase": "main",
+          "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/events/pilot_table2_e.main.result.json",
+          "sha256": "be1adb76c397d5e5397249399929735dec5f3e87687d7e0522095a8a3bd470c2",
+          "ended_at": "2026-10-22T23:32:06+08:00",
+          "exit_code": 0
+        },
+        {
+          "phase": "verify",
+          "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/events/pilot_table2_e.verify.result.json",
+          "sha256": "dd097542019e6ed3fa915544c2763c5fefc713f86fbc3186fc23e519cb31783c",
+          "ended_at": "2026-10-22T23:32:12+08:00",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "id": "pilot_table2_eh",
+      "status": "accepted",
+      "accepted_at": "2026-10-22T23:33:37+08:00",
+      "proof": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/reports/table2_eh_queuev2_20261017_verified.json",
+      "proof_sha256": "c7b29d0de8529e4a70e1aae52437027c0f8b0bbd4ad09cfdced2430eed73a064",
+      "report": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pilots/reports/table2_eh_queuev2_20261017.json",
+      "report_sha256": "d861220b87e7aae10d471dc4e90116581a2a6fbc81c57d02e11c72f6a29a4d01",
+      "full_resume_equality": true,
+      "device": {
+        "capability": [
+          8,
+          9
+        ],
+        "name": "NVIDIA GeForce RTX 4060 Ti",
+        "total_memory": 16848453632
+      },
+      "scope": "32 update attempts on engineering subset; no formal accuracy result",
+      "verified": [
+        "artifact_hashes",
+        "frozen_source",
+        "configuration",
+        "input_shapes",
+        "csv_and_inventory",
+        "actual_sample_id_stream",
+        "initial_model",
+        "every_active_head_and_backbone_changed",
+        "all_complete_boundary_counters",
+        "full_model_optimizer_scaler_rng_sampler_and_manifest_resume_equality"
+      ],
+      "phases": [
+        {
+          "phase": "main",
+          "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/events/pilot_table2_eh.main.result.json",
+          "sha256": "fab70d5eeadbcb82a60438d20aec274e85f1b7eeb388453307d7a0b729e52395",
+          "ended_at": "2026-10-22T23:33:31+08:00",
+          "exit_code": 0
+        },
+        {
+          "phase": "verify",
+          "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/events/pilot_table2_eh.verify.result.json",
+          "sha256": "f96a86e732e1c3de48d914f482a012e1ee69fb42ad3bf5ee7679552182c89742",
+          "ended_at": "2026-10-22T23:33:37+08:00",
+          "exit_code": 0
+        }
+      ]
+    }
+  ],
+  "all_three_pilots_accepted": true,
+  "formal_table2_training_started": false,
+  "full_plan_completed": false
+}
