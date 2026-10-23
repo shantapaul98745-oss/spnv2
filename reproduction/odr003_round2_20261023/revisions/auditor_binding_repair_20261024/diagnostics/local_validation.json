@@ -1,0 +1,19 @@
+{
+  "checks": [
+    "CPU tensor differences and scale",
+    "recursive first-difference position",
+    "CPU-only tensor deserialization",
+    "bound report tamper rejection"
+  ],
+  "diagnostic_implementation_sha256": {
+    "guarded_saved_diagnostic.py": "12b41de03426e408e3ca3076a9f8ef0074090738f1980b62dc9afbb9e6d64b36",
+    "saved_state_diagnostic.py": "92f75fa07bcef2e65c619722d7ed149a95f89c7fb1e08d95683b3e1febf24d73",
+    "test_saved_state_diagnostic.py": "9bc852830b4eb2b86578e1072b7382a68e2208e65a22fd052f044d07f0a9e29e"
+  },
+  "isolated_entry": "guarded_entry admission/ownership/locks/outcome body retained; diagnostic-only explicit action; additional entry/module source SHA bindings",
+  "real_model_forward": false,
+  "schema": "odr003-round2-diagnostic-local-validation-v1",
+  "shared_compute": false,
+  "status": "passed",
+  "tests_run": 4
+}
