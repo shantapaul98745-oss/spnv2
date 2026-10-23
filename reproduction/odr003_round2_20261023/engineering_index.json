@@ -1,1 +1,316 @@
-{"actual_recomputed_work_separate": true, "automatic_full_continuation": true, "baseline_result_bindings": {"path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/baseline_result_bindings.json", "sha256": "95d55952f5920d3fe81673b6499456a01a9bd439a6789c84af41d2d0fe1676f1"}, "execution_policy": {"path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/EXECUTION_POLICY.json", "sha256": "7cad69b15d3a60d645d66f9d297660db91f76c80a5e3316102c191ffe8ec8625"}, "execution_revision": "preprocess_rng_fix_20261024", "first_round_acceptance": {"proof": {"path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/summaries/base_20261023/proof.json", "sha256": "9f81730aa7ef444be922da4def54db9c59bce5b30d43d3f8473feeb84d80772f"}, "summary": {"path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/summaries/base_20261023/summary.json", "sha256": "53bab307ca8c87f65555f8b134b42daf8cbf06357443d17bd3aca58ceadc410b"}}, "immediate_resource_recheck": "private_manager_request_ack", "implementation_sha256": {"complete_phase_tools.py": "5122c867dde553b8d184e253c7b663639944e1a256f4768f9fcde551e2afde68", "durable_state.py": "62d27f792bd13f9bf42146434e21aae1191c34d01953b70debb92cab1c32e2d3", "frozen_backend.py": "1a4034dc4cadf4a02406991e212192438006dd620e2ff2a51199b6cbf27d9bc0", "guard_pools.py": "8479bc7c28b6832c90bece564873931a8f8d99074e9fe5bb44d15f370033ccfe", "guarded_entry.py": "3619917aa775b2707c89067fa66ec96787976d3cbc586777e94fdf9c9071ba84", "host_gate.py": "cbd08e5ca4384c4ab035579eda300d7930c3d8920fadb8eeecbbbc69b252b3c4", "host_snapshot.py": "88e3956ef0ddaaa4933a58ad2f1c420e52108f0b7f7968de8d2bba7a66da4e6c", "preforward_repair.py": "0bd872b31211429aedf8731ee1107e52603e42b6d866ca254c3ff68af08c0256", "prepare_round2.py": "d0dfacc25633a6c886f77c7eb3068c4828c53089f68c5fa43e4cde6453a96a6e", "protected_engine.py": "88ae9fd81e65cf4dcbd743df81424202240fe5f4352a30136ca07afbd142f5b1", "protected_learning.py": "122409e29979f2021912a9731d6979857ec034ae9ef2e8e0664242e66520634e", "queue_control.py": "91fcf9d886ea82a002a29ae7542c0b4833e6fe4c311dc4c4c25bb374cae2f285", "queue_round2.py": "dbb0fbda5599e1f9f12900eeae66520e78b1890b79291b5c5d0c6da00a29b249", "reference_driver.py": "258bcbc42f1b9d949fe9f8eaf6251d4b93a5f651407499243957158a8f097bb8", "round2_protocol.py": "12532cb863d4b4b116db0dca1534f58b898ac3f152dc63b4724faf740bc163de", "run_round2.py": "cfe14be5329ce1bc4ebe62d2ac39858e12b59a712c2f3124467707edbe987fe2", "summarize_round2.py": "3c6f783b46989a904c2d541bf1884bb0fadbc340b8e4462747f99656bc3f8dec", "test_complete_phase_tools.py": "8c90153de00c52035860c8b50da93f940d4063a08faf6a6570cfcbb00cffadb3", "test_durable_state.py": "43f89752d3da8ea49fca6cc7cb2b0637918b9bc27d88d71bd11ec2ffef66789b", "test_engineering_repair_audit.py": "9cee7bc20b4a726c7de7582cd9fd7ccc8dac534c8f3d7425f05197a3575d0259", "test_frozen_backend.py": "828540be15f277396e8355cc1d0f6d0de571d9cfb235af10d6181ee48b67a3d2", "test_guard_pools.py": "aec2f8a54bc992aaac22366c79702ceb9b3875e99cc1023234e2e0a99dbc0ae6", "test_guarded_entry.py": "5cf16c297404cd4fd5ecef1d1b73c04b44e972bfb8ed069bc24a4f647b654817", "test_host_gate.py": "43b6b26a2c547ae1904f322ea017e860d5a2a8e5618cc74320a613cb7f89b226", "test_host_snapshot.py": "a39099b22e372cca3fc0fab3c85f4fb65719060e1e3bc36b85c5f2d1a58b2019", "test_preforward_repair.py": "b7f789bfacd5b3cf357d6a23efbaeab5ed20feb55389adc82f14cbfc8e1dd983", "test_private_json.py": "91bfb3616f8e68d84253678915aafa4c946ec07d1bd1c9f53bc71bc006fb1935", "test_protected_engine.py": "3c40405d79e4af19b2e6b9c72f519e8000f4aa9dbb59bd6045262fb5a0f17b5a", "test_protected_learning.py": "9b642577ceacb70a47bfcebd16a908d2b008c63e1c4dc3ef8f2fb6c4af331959", "test_queue_control.py": "f552826d6ae5106efee0bd6c450fc2571724e0258bbf63dd35d69965ccc0ca0c", "test_queue_round2.py": "dfa143ad2eceed43754d4f3b863203e3933a3a825900c97b50b1dd7cd6f9660a", "test_reference_driver.py": "a832301b04ac7ad6314d540d4afd88adb271a56afa8ac23a162e3f7e54de4dc0", "test_round2_protocol.py": "aef05f38d805a3155df61019e897f2d9cdfbe92f7c382e90fe6c20c30a124100", "test_run_round2.py": "fd67f38e0eff0be97d33147546a2934ed46fc8f17b87008d9d22683f34dbd1d4", "test_summarize_round2.py": "7f90756b73e92a667e68534576646673883c692552e0750ac912351e76a2c82e", "test_verify_complete.py": "8277649c584c19584b07e594e2cd5eb858298f7396b9c9f301f0f2624fb76a81", "test_verify_round2.py": "e5bd6874126f2c2f485206de70dcd4a81fb38f89f5e50425432b0b527dea630f", "verify_complete.py": "e4868f5dc08a1aac34d7ab40cfcccd030e125b1e4809523d67e6a33d6a6cfcd5", "verify_engineering_phase.py": "bdd61132f74d9d830bbaf1ca3c65caa38dc56f4a634fac1b2378b7f245cc99ff", "verify_round2.py": "3e85ebe4601c2778b5fc29ce4c820f8d067cb3e24fcc8b220cdd478b1df03b3b"}, "independent_verification_required": true, "logical_trajectories": 8, "maximum_logical_observations": 1024, "next_stage": "only_if_independent_engineering_proof_allows_complete_matrix", "pre_forward_repair": {"path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/preprocessing_rng_repair_20261024/import_proof.json", "sha256": "8042176effbe21774c4f145f25b03be143d9d73a115c61df732b86b9baaabbd3"}, "pre_forward_repair_required": true, "protocol_sha256": "d8090e7e5cea9c249ae6e8bede12d05507e06b0fc8579770ed44f158ad3687ed", "resource_wait_interval_seconds": 300, "schema": "odr003-round2-engineering-index-v1", "shared_host_idle_gate_required": true, "stage": "prepared_not_started", "synthetic_contracts": {"path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/local_validation/contract_report.json", "sha256": "79fe47a61b9b45f264c22ddd84c8f13a22300f73894644cec42ecef365879596"}, "tasks": [{"definition": {"developer_accuracy_evaluation": false, "domain": "lightbox", "interruptions": [], "logical_observation_budget": 128, "observation_prefix": [0, 128], "observations": 128, "protection_enabled": false, "resume_recomputations": "charged work; same logical trajectory and budget", "rng_seeds": {"rp_permutation": 2026102331, "rw_coin": 2026102321, "uniform_pool": 2026102311, "vulnerable_pool": 2026102312}, "run_key": "engineering:lightbox:2021:G50_reference", "stream_seed": 2021, "trajectory": "G50_reference"}, "run_id": "g50p2_eng_lightbox_g50_reference", "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_eng_lightbox_g50_reference.json", "task_sha256": "c12cacffea17da96510c0a7bf663187cb7973ad45f5deb80db73bfe66b61190c"}, {"definition": {"developer_accuracy_evaluation": false, "domain": "lightbox", "interruptions": [], "logical_observation_budget": 128, "observation_prefix": [0, 128], "observations": 128, "protection_enabled": false, "resume_recomputations": "charged work; same logical trajectory and budget", "rng_seeds": {"rp_permutation": 2026102331, "rw_coin": 2026102321, "uniform_pool": 2026102311, "vulnerable_pool": 2026102312}, "run_key": "engineering:lightbox:2021:P_disabled", "stream_seed": 2021, "trajectory": "P_disabled"}, "run_id": "g50p2_eng_lightbox_p_disabled", "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_eng_lightbox_p_disabled.json", "task_sha256": "c917599db8d12a25c25b92fdcbb3cbdf3c4e864ccc59e182785535e41c2d0f43"}, {"definition": {"developer_accuracy_evaluation": false, "domain": "lightbox", "interruptions": [], "logical_observation_budget": 128, "observation_prefix": [0, 128], "observations": 128, "protection_enabled": true, "resume_recomputations": "charged work; same logical trajectory and budget", "rng_seeds": {"rp_permutation": 2026102331, "rw_coin": 2026102321, "uniform_pool": 2026102311, "vulnerable_pool": 2026102312}, "run_key": "engineering:lightbox:2021:P_continuous", "stream_seed": 2021, "trajectory": "P_continuous"}, "run_id": "g50p2_eng_lightbox_p_continuous", "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_eng_lightbox_p_continuous.json", "task_sha256": "6810fdd655ab2888b454017c25c56c910ffe62326f2602a15b15e35a428c0a8b"}, {"definition": {"developer_accuracy_evaluation": false, "domain": "lightbox", "interruptions": ["candidate_2_after_temporary_update", "observation_31_safe_point"], "logical_observation_budget": 128, "observation_prefix": [0, 128], "observations": 128, "protection_enabled": true, "resume_recomputations": "charged work; same logical trajectory and budget", "rng_seeds": {"rp_permutation": 2026102331, "rw_coin": 2026102321, "uniform_pool": 2026102311, "vulnerable_pool": 2026102312}, "run_key": "engineering:lightbox:2021:P_interrupted_resumed", "stream_seed": 2021, "trajectory": "P_interrupted_resumed"}, "run_id": "g50p2_eng_lightbox_p_interrupted_resumed", "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_eng_lightbox_p_interrupted_resumed.json", "task_sha256": "4860dcbd1963e5abdde1115da43f7e79ad2571b4b10a2e68a6f4479301187ad7"}, {"definition": {"developer_accuracy_evaluation": false, "domain": "sunlamp", "interruptions": [], "logical_observation_budget": 128, "observation_prefix": [0, 128], "observations": 128, "protection_enabled": false, "resume_recomputations": "charged work; same logical trajectory and budget", "rng_seeds": {"rp_permutation": 2026112331, "rw_coin": 2026112321, "uniform_pool": 2026112311, "vulnerable_pool": 2026112312}, "run_key": "engineering:sunlamp:2021:G50_reference", "stream_seed": 2021, "trajectory": "G50_reference"}, "run_id": "g50p2_eng_sunlamp_g50_reference", "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_eng_sunlamp_g50_reference.json", "task_sha256": "685a51927457b56deb718df2b2af6cbf57ead2efef01f009f9022b7fc8d25e5d"}, {"definition": {"developer_accuracy_evaluation": false, "domain": "sunlamp", "interruptions": [], "logical_observation_budget": 128, "observation_prefix": [0, 128], "observations": 128, "protection_enabled": false, "resume_recomputations": "charged work; same logical trajectory and budget", "rng_seeds": {"rp_permutation": 2026112331, "rw_coin": 2026112321, "uniform_pool": 2026112311, "vulnerable_pool": 2026112312}, "run_key": "engineering:sunlamp:2021:P_disabled", "stream_seed": 2021, "trajectory": "P_disabled"}, "run_id": "g50p2_eng_sunlamp_p_disabled", "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_eng_sunlamp_p_disabled.json", "task_sha256": "e13cfed44ea38fb1e543f660f9b8250e2ca896be408c55ef6266319a6b0b7393"}, {"definition": {"developer_accuracy_evaluation": false, "domain": "sunlamp", "interruptions": [], "logical_observation_budget": 128, "observation_prefix": [0, 128], "observations": 128, "protection_enabled": true, "resume_recomputations": "charged work; same logical trajectory and budget", "rng_seeds": {"rp_permutation": 2026112331, "rw_coin": 2026112321, "uniform_pool": 2026112311, "vulnerable_pool": 2026112312}, "run_key": "engineering:sunlamp:2021:P_continuous", "stream_seed": 2021, "trajectory": "P_continuous"}, "run_id": "g50p2_eng_sunlamp_p_continuous", "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_eng_sunlamp_p_continuous.json", "task_sha256": "02c78c820788d6372752062008114d34ab91cf8a3b536a1b31d5e12cd1f81fb4"}, {"definition": {"developer_accuracy_evaluation": false, "domain": "sunlamp", "interruptions": ["candidate_2_after_temporary_update", "observation_31_safe_point"], "logical_observation_budget": 128, "observation_prefix": [0, 128], "observations": 128, "protection_enabled": true, "resume_recomputations": "charged work; same logical trajectory and budget", "rng_seeds": {"rp_permutation": 2026112331, "rw_coin": 2026112321, "uniform_pool": 2026112311, "vulnerable_pool": 2026112312}, "run_key": "engineering:sunlamp:2021:P_interrupted_resumed", "stream_seed": 2021, "trajectory": "P_interrupted_resumed"}, "run_id": "g50p2_eng_sunlamp_p_interrupted_resumed", "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_eng_sunlamp_p_interrupted_resumed.json", "task_sha256": "55acc194b1df3737003d31528da0f13c286fb0e58ef4c92420cf700d874ed32e"}]}
+{
+  "actual_recomputed_work_separate": true,
+  "auditor_repair": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/auditor_binding_repair_20261024/manifest.json",
+    "sha256": "0b401e76f9e6215060e6a2ff7395812fc5a17d93a74f76d102b0e3e324a87286"
+  },
+  "automatic_full_continuation": true,
+  "baseline_result_bindings": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/baseline_result_bindings.json",
+    "sha256": "95d55952f5920d3fe81673b6499456a01a9bd439a6789c84af41d2d0fe1676f1"
+  },
+  "execution_policy": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/EXECUTION_POLICY.json",
+    "sha256": "7cad69b15d3a60d645d66f9d297660db91f76c80a5e3316102c191ffe8ec8625"
+  },
+  "execution_revision": "preprocess_rng_fix_20261024",
+  "first_round_acceptance": {
+    "proof": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/summaries/base_20261023/proof.json",
+      "sha256": "9f81730aa7ef444be922da4def54db9c59bce5b30d43d3f8473feeb84d80772f"
+    },
+    "summary": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/summaries/base_20261023/summary.json",
+      "sha256": "53bab307ca8c87f65555f8b134b42daf8cbf06357443d17bd3aca58ceadc410b"
+    }
+  },
+  "immediate_resource_recheck": "private_manager_request_ack",
+  "implementation_sha256": {
+    "artifact_binding.py": "1ac7ae7391f235cda8eabd40105ea86bc78f390708078c0207f74c26cc70ab6c",
+    "audit_revision.py": "026408280468a895056ebb330685e6b30f769a37f0970fdc411a1113e6443528",
+    "complete_phase_tools.py": "5122c867dde553b8d184e253c7b663639944e1a256f4768f9fcde551e2afde68",
+    "durable_state.py": "62d27f792bd13f9bf42146434e21aae1191c34d01953b70debb92cab1c32e2d3",
+    "frozen_backend.py": "1a4034dc4cadf4a02406991e212192438006dd620e2ff2a51199b6cbf27d9bc0",
+    "guard_pools.py": "8479bc7c28b6832c90bece564873931a8f8d99074e9fe5bb44d15f370033ccfe",
+    "guarded_entry.py": "3619917aa775b2707c89067fa66ec96787976d3cbc586777e94fdf9c9071ba84",
+    "host_gate.py": "cbd08e5ca4384c4ab035579eda300d7930c3d8920fadb8eeecbbbc69b252b3c4",
+    "host_snapshot.py": "88e3956ef0ddaaa4933a58ad2f1c420e52108f0b7f7968de8d2bba7a66da4e6c",
+    "preforward_repair.py": "0bd872b31211429aedf8731ee1107e52603e42b6d866ca254c3ff68af08c0256",
+    "prepare_round2.py": "d0dfacc25633a6c886f77c7eb3068c4828c53089f68c5fa43e4cde6453a96a6e",
+    "protected_engine.py": "88ae9fd81e65cf4dcbd743df81424202240fe5f4352a30136ca07afbd142f5b1",
+    "protected_learning.py": "122409e29979f2021912a9731d6979857ec034ae9ef2e8e0664242e66520634e",
+    "queue_control.py": "91fcf9d886ea82a002a29ae7542c0b4833e6fe4c311dc4c4c25bb374cae2f285",
+    "queue_round2.py": "888d20a6a6ff1336835825a5858e775d9aa13c8b817421e711809d0c88ddbdfd",
+    "reference_driver.py": "258bcbc42f1b9d949fe9f8eaf6251d4b93a5f651407499243957158a8f097bb8",
+    "round2_protocol.py": "12532cb863d4b4b116db0dca1534f58b898ac3f152dc63b4724faf740bc163de",
+    "run_round2.py": "cfe14be5329ce1bc4ebe62d2ac39858e12b59a712c2f3124467707edbe987fe2",
+    "summarize_round2.py": "3c6f783b46989a904c2d541bf1884bb0fadbc340b8e4462747f99656bc3f8dec",
+    "test_artifact_binding.py": "db6ddb9b9fb1b5814eb45cf65890934ed01b84ca396950f08e29515e4c864a59",
+    "test_audit_revision.py": "c3990be9ac96dec3b01b7eb85cc2ff2b1d7d879598c65d5a0a49615d16f70e32",
+    "test_complete_phase_tools.py": "8c90153de00c52035860c8b50da93f940d4063a08faf6a6570cfcbb00cffadb3",
+    "test_durable_state.py": "43f89752d3da8ea49fca6cc7cb2b0637918b9bc27d88d71bd11ec2ffef66789b",
+    "test_engineering_repair_audit.py": "9cee7bc20b4a726c7de7582cd9fd7ccc8dac534c8f3d7425f05197a3575d0259",
+    "test_frozen_backend.py": "828540be15f277396e8355cc1d0f6d0de571d9cfb235af10d6181ee48b67a3d2",
+    "test_guard_pools.py": "aec2f8a54bc992aaac22366c79702ceb9b3875e99cc1023234e2e0a99dbc0ae6",
+    "test_guarded_entry.py": "5cf16c297404cd4fd5ecef1d1b73c04b44e972bfb8ed069bc24a4f647b654817",
+    "test_host_gate.py": "43b6b26a2c547ae1904f322ea017e860d5a2a8e5618cc74320a613cb7f89b226",
+    "test_host_snapshot.py": "a39099b22e372cca3fc0fab3c85f4fb65719060e1e3bc36b85c5f2d1a58b2019",
+    "test_preforward_repair.py": "b7f789bfacd5b3cf357d6a23efbaeab5ed20feb55389adc82f14cbfc8e1dd983",
+    "test_private_json.py": "91bfb3616f8e68d84253678915aafa4c946ec07d1bd1c9f53bc71bc006fb1935",
+    "test_protected_engine.py": "3c40405d79e4af19b2e6b9c72f519e8000f4aa9dbb59bd6045262fb5a0f17b5a",
+    "test_protected_learning.py": "9b642577ceacb70a47bfcebd16a908d2b008c63e1c4dc3ef8f2fb6c4af331959",
+    "test_queue_control.py": "f552826d6ae5106efee0bd6c450fc2571724e0258bbf63dd35d69965ccc0ca0c",
+    "test_queue_round2.py": "023030c7682b2e6d831aa98c1cb8a099681de9f11dae3bbaa00afb5eb6fab462",
+    "test_reference_driver.py": "a832301b04ac7ad6314d540d4afd88adb271a56afa8ac23a162e3f7e54de4dc0",
+    "test_round2_protocol.py": "aef05f38d805a3155df61019e897f2d9cdfbe92f7c382e90fe6c20c30a124100",
+    "test_run_round2.py": "fd67f38e0eff0be97d33147546a2934ed46fc8f17b87008d9d22683f34dbd1d4",
+    "test_summarize_round2.py": "7f90756b73e92a667e68534576646673883c692552e0750ac912351e76a2c82e",
+    "test_verify_complete.py": "8277649c584c19584b07e594e2cd5eb858298f7396b9c9f301f0f2624fb76a81",
+    "test_verify_round2.py": "e5bd6874126f2c2f485206de70dcd4a81fb38f89f5e50425432b0b527dea630f",
+    "verify_complete.py": "1ff1fb722cecfde52c620ec8f3e79fe4871ef9ce7601d71fc895a8e040963740",
+    "verify_engineering_phase.py": "3a63a1d6c0068bcd7de9fca317b9265b1ec0378401ecd9658d464f6f476516f1",
+    "verify_round2.py": "3e85ebe4601c2778b5fc29ce4c820f8d067cb3e24fcc8b220cdd478b1df03b3b"
+  },
+  "independent_verification_required": true,
+  "logical_trajectories": 8,
+  "maximum_logical_observations": 1024,
+  "next_stage": "only_if_independent_engineering_proof_allows_complete_matrix",
+  "pre_forward_repair": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/preprocessing_rng_repair_20261024/import_proof.json",
+    "sha256": "8042176effbe21774c4f145f25b03be143d9d73a115c61df732b86b9baaabbd3"
+  },
+  "pre_forward_repair_required": true,
+  "protocol_sha256": "d8090e7e5cea9c249ae6e8bede12d05507e06b0fc8579770ed44f158ad3687ed",
+  "resource_wait_interval_seconds": 300,
+  "schema": "odr003-round2-engineering-index-v1",
+  "shared_host_idle_gate_required": true,
+  "stage": "prepared_not_started",
+  "synthetic_contracts": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/auditor_binding_repair_20261024/validation/contract_report.json",
+    "sha256": "5725b07befd322f129d15a51ea3b5bb26bc8f7472eaaad1a6aacfd8faf402de2"
+  },
+  "tasks": [
+    {
+      "definition": {
+        "developer_accuracy_evaluation": false,
+        "domain": "lightbox",
+        "interruptions": [],
+        "logical_observation_budget": 128,
+        "observation_prefix": [
+          0,
+          128
+        ],
+        "observations": 128,
+        "protection_enabled": false,
+        "resume_recomputations": "charged work; same logical trajectory and budget",
+        "rng_seeds": {
+          "rp_permutation": 2026102331,
+          "rw_coin": 2026102321,
+          "uniform_pool": 2026102311,
+          "vulnerable_pool": 2026102312
+        },
+        "run_key": "engineering:lightbox:2021:G50_reference",
+        "stream_seed": 2021,
+        "trajectory": "G50_reference"
+      },
+      "run_id": "g50p2_eng_lightbox_g50_reference",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_eng_lightbox_g50_reference.json",
+      "task_sha256": "c12cacffea17da96510c0a7bf663187cb7973ad45f5deb80db73bfe66b61190c"
+    },
+    {
+      "definition": {
+        "developer_accuracy_evaluation": false,
+        "domain": "lightbox",
+        "interruptions": [],
+        "logical_observation_budget": 128,
+        "observation_prefix": [
+          0,
+          128
+        ],
+        "observations": 128,
+        "protection_enabled": false,
+        "resume_recomputations": "charged work; same logical trajectory and budget",
+        "rng_seeds": {
+          "rp_permutation": 2026102331,
+          "rw_coin": 2026102321,
+          "uniform_pool": 2026102311,
+          "vulnerable_pool": 2026102312
+        },
+        "run_key": "engineering:lightbox:2021:P_disabled",
+        "stream_seed": 2021,
+        "trajectory": "P_disabled"
+      },
+      "run_id": "g50p2_eng_lightbox_p_disabled",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_eng_lightbox_p_disabled.json",
+      "task_sha256": "c917599db8d12a25c25b92fdcbb3cbdf3c4e864ccc59e182785535e41c2d0f43"
+    },
+    {
+      "definition": {
+        "developer_accuracy_evaluation": false,
+        "domain": "lightbox",
+        "interruptions": [],
+        "logical_observation_budget": 128,
+        "observation_prefix": [
+          0,
+          128
+        ],
+        "observations": 128,
+        "protection_enabled": true,
+        "resume_recomputations": "charged work; same logical trajectory and budget",
+        "rng_seeds": {
+          "rp_permutation": 2026102331,
+          "rw_coin": 2026102321,
+          "uniform_pool": 2026102311,
+          "vulnerable_pool": 2026102312
+        },
+        "run_key": "engineering:lightbox:2021:P_continuous",
+        "stream_seed": 2021,
+        "trajectory": "P_continuous"
+      },
+      "run_id": "g50p2_eng_lightbox_p_continuous",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_eng_lightbox_p_continuous.json",
+      "task_sha256": "6810fdd655ab2888b454017c25c56c910ffe62326f2602a15b15e35a428c0a8b"
+    },
+    {
+      "definition": {
+        "developer_accuracy_evaluation": false,
+        "domain": "lightbox",
+        "interruptions": [
+          "candidate_2_after_temporary_update",
+          "observation_31_safe_point"
+        ],
+        "logical_observation_budget": 128,
+        "observation_prefix": [
+          0,
+          128
+        ],
+        "observations": 128,
+        "protection_enabled": true,
+        "resume_recomputations": "charged work; same logical trajectory and budget",
+        "rng_seeds": {
+          "rp_permutation": 2026102331,
+          "rw_coin": 2026102321,
+          "uniform_pool": 2026102311,
+          "vulnerable_pool": 2026102312
+        },
+        "run_key": "engineering:lightbox:2021:P_interrupted_resumed",
+        "stream_seed": 2021,
+        "trajectory": "P_interrupted_resumed"
+      },
+      "run_id": "g50p2_eng_lightbox_p_interrupted_resumed",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_eng_lightbox_p_interrupted_resumed.json",
+      "task_sha256": "4860dcbd1963e5abdde1115da43f7e79ad2571b4b10a2e68a6f4479301187ad7"
+    },
+    {
+      "definition": {
+        "developer_accuracy_evaluation": false,
+        "domain": "sunlamp",
+        "interruptions": [],
+        "logical_observation_budget": 128,
+        "observation_prefix": [
+          0,
+          128
+        ],
+        "observations": 128,
+        "protection_enabled": false,
+        "resume_recomputations": "charged work; same logical trajectory and budget",
+        "rng_seeds": {
+          "rp_permutation": 2026112331,
+          "rw_coin": 2026112321,
+          "uniform_pool": 2026112311,
+          "vulnerable_pool": 2026112312
+        },
+        "run_key": "engineering:sunlamp:2021:G50_reference",
+        "stream_seed": 2021,
+        "trajectory": "G50_reference"
+      },
+      "run_id": "g50p2_eng_sunlamp_g50_reference",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_eng_sunlamp_g50_reference.json",
+      "task_sha256": "685a51927457b56deb718df2b2af6cbf57ead2efef01f009f9022b7fc8d25e5d"
+    },
+    {
+      "definition": {
+        "developer_accuracy_evaluation": false,
+        "domain": "sunlamp",
+        "interruptions": [],
+        "logical_observation_budget": 128,
+        "observation_prefix": [
+          0,
+          128
+        ],
+        "observations": 128,
+        "protection_enabled": false,
+        "resume_recomputations": "charged work; same logical trajectory and budget",
+        "rng_seeds": {
+          "rp_permutation": 2026112331,
+          "rw_coin": 2026112321,
+          "uniform_pool": 2026112311,
+          "vulnerable_pool": 2026112312
+        },
+        "run_key": "engineering:sunlamp:2021:P_disabled",
+        "stream_seed": 2021,
+        "trajectory": "P_disabled"
+      },
+      "run_id": "g50p2_eng_sunlamp_p_disabled",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_eng_sunlamp_p_disabled.json",
+      "task_sha256": "e13cfed44ea38fb1e543f660f9b8250e2ca896be408c55ef6266319a6b0b7393"
+    },
+    {
+      "definition": {
+        "developer_accuracy_evaluation": false,
+        "domain": "sunlamp",
+        "interruptions": [],
+        "logical_observation_budget": 128,
+        "observation_prefix": [
+          0,
+          128
+        ],
+        "observations": 128,
+        "protection_enabled": true,
+        "resume_recomputations": "charged work; same logical trajectory and budget",
+        "rng_seeds": {
+          "rp_permutation": 2026112331,
+          "rw_coin": 2026112321,
+          "uniform_pool": 2026112311,
+          "vulnerable_pool": 2026112312
+        },
+        "run_key": "engineering:sunlamp:2021:P_continuous",
+        "stream_seed": 2021,
+        "trajectory": "P_continuous"
+      },
+      "run_id": "g50p2_eng_sunlamp_p_continuous",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_eng_sunlamp_p_continuous.json",
+      "task_sha256": "02c78c820788d6372752062008114d34ab91cf8a3b536a1b31d5e12cd1f81fb4"
+    },
+    {
+      "definition": {
+        "developer_accuracy_evaluation": false,
+        "domain": "sunlamp",
+        "interruptions": [
+          "candidate_2_after_temporary_update",
+          "observation_31_safe_point"
+        ],
+        "logical_observation_budget": 128,
+        "observation_prefix": [
+          0,
+          128
+        ],
+        "observations": 128,
+        "protection_enabled": true,
+        "resume_recomputations": "charged work; same logical trajectory and budget",
+        "rng_seeds": {
+          "rp_permutation": 2026112331,
+          "rw_coin": 2026112321,
+          "uniform_pool": 2026112311,
+          "vulnerable_pool": 2026112312
+        },
+        "run_key": "engineering:sunlamp:2021:P_interrupted_resumed",
+        "stream_seed": 2021,
+        "trajectory": "P_interrupted_resumed"
+      },
+      "run_id": "g50p2_eng_sunlamp_p_interrupted_resumed",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_eng_sunlamp_p_interrupted_resumed.json",
+      "task_sha256": "55acc194b1df3737003d31528da0f13c286fb0e58ef4c92420cf700d874ed32e"
+    }
+  ]
+}

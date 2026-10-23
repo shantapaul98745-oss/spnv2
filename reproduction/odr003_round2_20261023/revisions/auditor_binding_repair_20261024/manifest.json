@@ -1,0 +1,43 @@
+{
+  "allowed_added_files": [
+    "artifact_binding.py",
+    "audit_revision.py",
+    "test_artifact_binding.py",
+    "test_audit_revision.py"
+  ],
+  "allowed_changed_files": [
+    "queue_round2.py",
+    "test_queue_round2.py",
+    "verify_complete.py",
+    "verify_engineering_phase.py"
+  ],
+  "failed_verification": {
+    "exitcode": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/auditor_binding_repair_20261024/before/g50p2_engineering_verification_b18ee82116f4412cb56bccf4c16f0f59.log.exitcode",
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    "log": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/auditor_binding_repair_20261024/before/g50p2_engineering_verification_b18ee82116f4412cb56bccf4c16f0f59.log",
+      "sha256": "64d373b2fab23d7dadf30829c24df70856c0e7960b290bafe5828c2be353e7ef"
+    },
+    "outcome": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/auditor_binding_repair_20261024/before/outcome.json",
+      "sha256": "0572eb8fb62a1e6b511d8ec93f77b82d0b60f96da51a54cf28e85eb65ced748d"
+    },
+    "status": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/auditor_binding_repair_20261024/before/status.json",
+      "sha256": "cdae2a6bfb4e20f4cc3f1233cb0ee42b9f12dd5ebff16dfc0d5ae2b21d04d46c"
+    },
+    "task": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/auditor_binding_repair_20261024/before/g50p2_engineering_verification.json",
+      "sha256": "41d8bde1d000025c33f42983e33736b8bd884c46d28b0b0b1b6f73e575aa0941"
+    }
+  },
+  "original_implementation_root": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/auditor_binding_repair_20261024/before/implementation",
+  "original_index": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/auditor_binding_repair_20261024/before/engineering_index.json",
+    "sha256": "5accc542c2fbb54fcd52b559a6f693c6cea87f4f196f5001e7e2852dec31ab3f"
+  },
+  "schema": "odr003-round2-auditor-repair-v1",
+  "scope": "verification_only_no_scientific_reexecution"
+}

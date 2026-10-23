@@ -150,6 +150,42 @@ class QueueContracts(unittest.TestCase):
         self.assertEqual(self.launches, [row["run_id"] for row in self.index["tasks"][3:]]
                          + ["g50p2_engineering_verification"])
 
+    def test_auditor_repair_cannot_launch_missing_scientific_result(self):
+        index = copy.deepcopy(self.index)
+        index['auditor_repair'] = {'path': 'bound-repair', 'sha256': 'a'*64}
+        with self.assertRaisesRegex(ValueError, 'cannot launch/repeat'):
+            queue.next_task(index, self.state())
+        self.assertEqual(self.launches, [])
+
+    def test_auditor_repair_preserves_failed_task_and_receipts(self):
+        state = self.state()
+        for row in self.index['tasks']:
+            self.attempt(state, row)
+            queue._finish_attempt(state)
+        original_path, _ = queue.verification_task(self.index, state)
+        original_bytes = original_path.read_bytes()
+        receipts_path = self.plan/'engineering_receipts.json'
+        receipts_bytes = receipts_path.read_bytes()
+        failed = self.attempt(state, dict(run_id='g50p2_engineering_verification',
+                             task_path=str(original_path), task_sha256=queue.sha256(original_path)),
+                             code=1, status='failed')
+        queue._finish_attempt(state)
+        self.assertEqual(state['status'], 'blocked')
+        failed_copy = copy.deepcopy(state['attempts'][-1])
+        # Reviewed metadata migration clears only active/block and binds the
+        # repaired auditor; it cannot turn the actual exit1 into a success.
+        state.update(active=None, status='between_tasks')
+        repaired = copy.deepcopy(self.index)
+        repaired['auditor_repair'] = {'path': 'bound-repair', 'sha256': 'b'*64}
+        repaired['implementation_sha256'] = {'verify_engineering_phase.py': 'c'*64}
+        new_path, run_id = queue.next_task(repaired, state)
+        self.assertNotEqual(new_path, original_path)
+        self.assertEqual(run_id, 'g50p2_engineering_verification')
+        self.assertEqual(original_path.read_bytes(), original_bytes)
+        self.assertEqual(receipts_path.read_bytes(), receipts_bytes)
+        self.assertEqual(state['attempts'][-1], failed_copy)
+        self.assertEqual(len(state['completed']), 8)
+
     def test_exit_75_waits_five_minutes(self):
         state = self.state()
         self.attempt(state, self.index["tasks"][0], code=75, status="waiting_resources")

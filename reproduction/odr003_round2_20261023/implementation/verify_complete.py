@@ -11,6 +11,7 @@ import copy
 import json
 import math
 from pathlib import Path
+from artifact_binding import require_same_artifact
 import os
 import sys
 
@@ -247,9 +248,10 @@ def _assets(run_task, cache):
     cfg, _ = baseline.configure(run_task["baseline_task"], paths, core)
     definition = run_task["definition"]
     domain, seed = definition["domain"], definition["stream_seed"]
-    require(b["stream_manifest"] == prepared["artifacts"][f"{domain}/stream_{seed}"]
-            and b["developer_manifest"] == prepared["artifacts"][domain+"/developer"]
-            and b["developer_labels"] == prepared["artifacts"][domain+"/developer_labels"], "frozen split/stream binding differs")
+    for name, artifact in (("stream_manifest", f"{domain}/stream_{seed}"),
+                           ("developer_manifest", domain+"/developer"),
+                           ("developer_labels", domain+"/developer_labels")):
+        require_same_artifact(b[name], prepared["artifacts"][artifact], "frozen split/stream binding differs: "+artifact)
     stream, dev, labels = (load_json(paths[name]) for name in ("stream_manifest", "developer_manifest", "developer_labels"))
     require(stream["seed"] == seed and len(stream["items"]) == len({row["sample_id"] for row in stream["items"]}) == 1024,
             "observation stream identity/size differs")

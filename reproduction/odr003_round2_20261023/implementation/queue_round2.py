@@ -22,6 +22,7 @@ from host_snapshot import collect_snapshot
 from frozen_backend import sha256, canonical_sha
 from round2_protocol import build_engineering_matrix
 import complete_phase_tools as complete_tools
+from audit_revision import validate_revision
 from queue_control import pending_refreshes, acknowledge
 
 PYTHON = '/home/ps/anaconda3/envs/SPNv2/bin/python'
@@ -240,7 +241,11 @@ def verification_task(index, state):
                 execution_receipts=dict(path=str(receipts_path), sha256=sha256(receipts_path)))
     if index.get('pre_forward_repair') is not None:
         task['pre_forward_repair'] = index['pre_forward_repair']
-    path = PLAN/'tasks/g50p2_engineering_verification.json'
+    # Preserve the failed verifier's task bytes and process evidence. Only its
+    # CPU audit is rerun; completed scientific trajectories remain immutable.
+    filename = ('g50p2_engineering_verification_audit_repair.json' if index.get('auditor_repair')
+                else 'g50p2_engineering_verification.json')
+    path = PLAN/'tasks'/filename
     if path.exists() and read(path) != task: raise ValueError('Verification task identity changed')
     if not path.exists(): atomic_json(path, task)
     return path, task['run_id']
@@ -251,6 +256,8 @@ def next_task(index, state):
     done = {row['run_id'] for row in state['completed']}
     pending = [row for row in index['tasks'] if row['run_id'] not in done]
     if pending:
+        if index.get('auditor_repair'):
+            raise ValueError('Auditor-only revision cannot launch/repeat an engineering trajectory')
         row = pending[0]
         if sha256(row['task_path']) != row['task_sha256']:
             raise ValueError('Engineering task identity changed')
@@ -305,6 +312,8 @@ def main(index_path):
         completed_ids = [item['run_id'] for item in state['completed']]
         if len(completed_ids) != len(set(completed_ids)) or not set(completed_ids) <= known_ids:
             raise ValueError('Completed records duplicate or escape this engineering matrix')
+        if index.get('auditor_repair') and set(completed_ids) != known_ids:
+            raise ValueError('Auditor-only revision requires all eight completed producers')
         if len(state['complete_main']) > 18 or not set(state['complete_accepted']) <= set(state['complete_main']):
             raise ValueError('Complete ledger exceeds authorized scope or lacks actual results')
         if not state.get('active'):
@@ -360,6 +369,8 @@ def main(index_path):
 
 
 def validate_engineering_index(index):
+    producer_code = (validate_revision(index, PLAN/'implementation', plan=PLAN)
+                     if index.get('auditor_repair') else index['implementation_sha256'])
     rows = index.get('tasks', [])
     if (index.get('schema') != 'odr003-round2-engineering-index-v1' or len(rows) != 8
             or [item['definition'] for item in rows] != build_engineering_matrix()
@@ -376,7 +387,7 @@ def validate_engineering_index(index):
         task = read(path)
         if (task['run_id'] != item['run_id'] or task['definition'] != item['definition']
                 or task.get('stage') != 'engineering' or task.get('action', 'run') != 'run'
-                or task['implementation_sha256'] != index['implementation_sha256']):
+                or task['implementation_sha256'] != producer_code):
             raise ValueError('Non-engineering or inconsistent task in engineering-only queue')
 
 

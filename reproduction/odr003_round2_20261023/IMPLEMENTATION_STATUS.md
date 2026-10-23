@@ -9,3 +9,7 @@
 完整队列、逐run独立记录/512开发指标验收和最终汇总入口已提前实现。工程proof通过后服务器自动执行P6，依据各P已验收Q/K生成固定RW/RP；原O/A/G50由一致身份的既有14个run复用，不增加前向。Q0/近冻结等原研究停止条件保持，遇到时报告等待研究决定；实现错误保留证据自主修复。未确认工作以真实未知界限披露，不填0或重复计科学统计。
 
 当前修复来源：revisions/preprocessing_rng_repair_20261024/spec.json；迁移proof在同目录import_proof.json；进度与进程事实以status.json、monitoring/guard_cursor.json及各唯一launch/exit/proof为准。code/本地合同/真实模型验收/科学结果分别记录。
+
+## 2026-10-24 auditor binding repair
+
+All eight fixed GPU engineering main trajectories completed, preserving their original task/code/checkpoint identities. Independent CPU acceptance then stopped on an auditor schema mismatch: prepared artifacts include informational bytes in addition to the same path and SHA. Both engineering and complete-run auditors now compare strict path/SHA identity, validate optional byte metadata, and keep their existing file hashes and GT boundaries. An explicit auditor-only revision binds original index/code, the failed audit and unchanged eight producer tasks; missing producers cannot be relaunched. Current335 local CPU synthetic/mock contracts pass, including21 new metadata/tamper contracts and2 no-replay queue cases. Real engineering acceptance remains pending until a separately admitted CPU process verifies the saved states; no additional model forward is required. Evidence: revisions/auditor_binding_repair_20261024/. Scientific thresholds, seeds, source, streams and18-run cap are unchanged.

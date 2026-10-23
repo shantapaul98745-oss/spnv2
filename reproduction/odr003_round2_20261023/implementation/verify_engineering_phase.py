@@ -18,6 +18,8 @@ import re
 from frozen_backend import sha256, canonical_sha, import_bound_module
 from guarded_entry import PLAN
 from round2_protocol import frozen_protocol, build_engineering_matrix, assess_engineering
+from artifact_binding import require_same_artifact
+from audit_revision import validate_revision
 
 
 RUN_ID = "g50p2_engineering_verification"
@@ -138,9 +140,9 @@ def _frozen_assets(task, cache):
             and verified["prepared_proof_sha256"] == bindings["data_prepared"]["sha256"], "frozen data proof differs")
     domain = task["definition"]["domain"]
     for name, artifact in (("stream_manifest", domain + "/stream_2021"), ("developer_manifest", domain + "/developer")):
-        require(bindings[name] == prepared["artifacts"][artifact], "frozen data boundary differs: " + artifact)
+        require_same_artifact(bindings[name], prepared["artifacts"][artifact], "frozen data boundary differs: " + artifact)
     # The label binding may be compared to its old proof without opening it.
-    require(bindings["developer_labels"] == prepared["artifacts"][domain + "/developer_labels"], "developer GT boundary changed")
+    require_same_artifact(bindings["developer_labels"], prepared["artifacts"][domain + "/developer_labels"], "developer GT boundary changed")
     require(verified["counts"][domain]["developer"] == 512, "developer count changed")
     bundle, proof = load_json(paths["calibration"]), load_json(paths["calibration_proof"])
     require(proof.get("status") == "passed" and proof.get("recomputed") is True
@@ -438,6 +440,9 @@ def execute(task_path, *, admission, launch_record, conflict_check):
     require(index["schema"] == "odr003-round2-engineering-index-v1"
             and index["protocol_sha256"] == task["protocol"]["protocol_sha256"]
             and index["implementation_sha256"] == task["implementation_sha256"], "engineering index differs")
+    # Successful producers keep their original task/checkpoint identities. An
+    # independently bound auditor-only repair cannot rewrite their code map.
+    producer_code = validate_revision(index, Path(__file__).resolve().parent, plan=PLAN)
     expected_definitions = {row["run_key"]: row for row in build_engineering_matrix()}
     require(len(index["tasks"]) == 8 and {entry["definition"]["run_key"] for entry in index["tasks"]} == set(expected_definitions),
             "engineering index is not exactly the fixed eight trajectories")
@@ -463,7 +468,7 @@ def execute(task_path, *, admission, launch_record, conflict_check):
         require(definition == entry["definition"] == expected_definitions[definition["run_key"]]
                 and run_task["stage"] == "engineering" and run_task["run_id"] == entry["run_id"]
                 and run_task["protocol"] == task["protocol"]
-                and run_task["implementation_sha256"] == task["implementation_sha256"], "actual trajectory task differs")
+                and run_task["implementation_sha256"] == producer_code, "actual trajectory task differs")
         records, calibration = _frozen_assets(run_task, cache)
         gate = import_bound_module("gate_core", run_task["frozen_modules"]["gate_core"])
         import_bound_module("state_adapter", run_task["frozen_modules"]["state_adapter"])
@@ -564,6 +569,8 @@ def execute(task_path, *, admission, launch_record, conflict_check):
     proof = dict(schema="odr003-round2-engineering-phase-proof-v1", status="held" if held else "passed",
                  allow_complete_matrix=not held, verification_task_sha256=sha256(task_path),
                  implementation_sha256=task["implementation_sha256"], protocol_sha256=task["protocol"]["protocol_sha256"],
+                 engineering_producer_implementation_sha256=producer_code,
+                 auditor_repair=index.get("auditor_repair"),
                  source_sha256=task["protocol"]["source_sha256"], engineering_index=task["engineering_index"],
                  execution_receipts=task["execution_receipts"], synthetic_contracts=synthetic,
                  actual_trajectories=8, logical_observations=1024, model_forwards_added_by_verification=0,
