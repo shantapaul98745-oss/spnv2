@@ -219,3 +219,10 @@ Table2三个pilot的最小52项候选已独立CPU验收通过，目录queue_prop
 ## 2026-10-23 current authorized research stage
 
 User confirmed ODR003 exploration v2 and standing manager-only switches. Remaining150 source epochs are deferred optional, not prerequisites. Official offline phi3 source identity and full GPU correctness with zero tolerance passed. See reproduction/odr003_exploratory_20261023/EXPERIMENT_PLAN.md and IMPLEMENTATION_STATUS.md. Runtime plans/odr003_exploratory_20261023/status.json governs the new phase; original52 accepted tasks must never rerun. Pure synthetic bbox decoder warmup addresses the independently diagnosed original TorchScript cold/hot arithmetic difference; original A update behavior remains frozen. Goal mode stays paused.
+
+
+## 2026-10-23 - Confirmed G50-P round-two implementation
+
+User confirmation authorizes G50-P, G50-RW and R-P within maximum18 complete ODR runs, after the fixed eight engineering trajectories pass. Historical150 source-training epochs remain deferred; goal mode stays paused. The current plan is ../spnv2_runs/plans/odr003_round2_20261023/EXPERIMENT_PLAN.md and confirmation.json. A shared GPU may be used when idle; no extra scheduler authorization is needed. Any other live compute process blocks launch. Never signal or interfere with other users processes. Only exact per-run launch identity, PID/starttime/boot/command/nonce and exclusive locks establish ownership. Waiting resource checks occur at least30 minutes apart.
+
+Complete recoverable checkpoints, not log commits, determine durable scientific progress. Unpersisted computation may replay and is separately charged; persisted commits never replay. Local227 CPU synthetic/mock contracts passed. Real SPNv2/GPU engineering and independent proof are still pending; no second-round efficacy result exists. Source/A/G50/PnP/data boundaries and fixed rules stay unchanged. Implementation and current state are in the independent round-two plan; never restart old completed queues.
