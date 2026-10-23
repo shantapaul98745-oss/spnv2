@@ -96,12 +96,21 @@ class FrozenScorers:
 class DeterministicImageProvider:
     """Rebuild observed images without changing any learning RNG or GT boundary.
 
-    The baseline inference preprocessing is deterministic. Unexpected randomness
-    is rejected, not silently seeded into a new preprocessing protocol. The LRU
-    is a performance cache only: every returned tensor is cloned, and scientific
-    checkpoints bind the reconstructed tensor digests rather than cache contents.
+    The original inference transform may draw from global RNGs even when a
+    probability-one operation leaves the pixels deterministic. Its arithmetic
+    and draws are preserved inside an independent data RNG stream. Every first
+    materialization advances that stream once; protection/cache reconstruction
+    replays that image's saved pre-transform RNG instead. Global model-compute
+    RNGs are restored in every case, including failures. Complete checkpoints
+    retain both the stream position and each observed image's replay states.
+
+    The LRU is only a performance cache: returned tensors are cloned, and replay
+    must reproduce both its tensor digest and post-transform RNG. This adapter
+    handles the frozen transform's global Python/NumPy/Torch CPU/CUDA RNGs; a
+    transform with a separate private generator needs an explicit state adapter.
     """
-    SCHEMA = 'odr003-round2-image-provider-v1'
+    SCHEMA = 'odr003-round2-image-provider-v2'
+    RNG_POLICY = 'isolated_data_rng_first_materialization_and_per_image_replay_v1'
 
     def __init__(self, dataset, *, preprocess_sha256, rng_state, restore_rng,
                  equal_tree, cache_capacity=16, manifest_file_sha256=None):
@@ -120,6 +129,10 @@ class DeterministicImageProvider:
         self.rng_state, self.restore_rng, self.equal_tree = rng_state, restore_rng, equal_tree
         self.capacity = cache_capacity
         self.cache, self.tensor_sha256 = OrderedDict(), {}
+        self.initial_data_rng = copy.deepcopy(self.rng_state())
+        self.data_rng = copy.deepcopy(self.initial_data_rng)
+        self.rng_replay = {}
+        self.materialization_order = []
         self.materializations = 0  # Physical work; deliberately not rewound.
 
     @staticmethod
@@ -135,20 +148,27 @@ class DeterministicImageProvider:
             image = self.cache.pop(sample_id)
             self.cache[sample_id] = image
             return image.clone()
-        before = self.rng_state()
+        before = copy.deepcopy(self.rng_state())
+        replay = self.rng_replay.get(sample_id)
+        data_before = copy.deepcopy(replay['before'] if replay is not None else self.data_rng)
         try:
+            self.restore_rng(data_before)
             sample = self.dataset[self.indices[sample_id]]
-            after = self.rng_state()
-            if not self.equal_tree(before, after):
-                raise RuntimeError('Frozen inference preprocessing unexpectedly consumed RNG')
+            data_after = copy.deepcopy(self.rng_state())
             if sample['sample_id'] != sample_id or set(sample) - {'image', 'sample_id', 'domain', 'filename'}:
                 raise ValueError('Input identity/label-free schema changed')
             image = sample['image'].unsqueeze(0).detach().cpu().clone()
         finally:
             self.restore_rng(before)
         digest = self.tensor_digest(image)
+        if replay is not None and not self.equal_tree(replay['after'], data_after):
+            raise ValueError('Reconstructed preprocessing RNG consumption changed')
         if sample_id in self.tensor_sha256 and self.tensor_sha256[sample_id] != digest:
             raise ValueError('Reconstructed protection image tensor changed')
+        if replay is None:
+            self.rng_replay[sample_id] = dict(before=data_before, after=data_after)
+            self.materialization_order.append(sample_id)
+            self.data_rng = copy.deepcopy(data_after)
         self.tensor_sha256[sample_id] = digest
         self.materializations += 1
         self.cache[sample_id] = image
@@ -161,18 +181,90 @@ class DeterministicImageProvider:
                     manifest_semantic_sha256=self.manifest_semantic_sha256,
                     preprocess_sha256=self.preprocess_sha256,
                     tensor_sha256=dict(self.tensor_sha256),
-                    data_rng_policy='deterministic_preprocessing_no_RNG_consumption')
+                    data_rng_policy=self.RNG_POLICY,
+                    initial_data_rng=copy.deepcopy(self.initial_data_rng),
+                    data_rng=copy.deepcopy(self.data_rng),
+                    rng_replay=copy.deepcopy(self.rng_replay),
+                    materialization_order=list(self.materialization_order))
 
     def load_state_dict(self, state):
         if (state.get('schema') != self.SCHEMA or state.get('manifest_sha256') != self.manifest_sha256
                 or state.get('manifest_semantic_sha256') != self.manifest_semantic_sha256
                 or state.get('preprocess_sha256') != self.preprocess_sha256
-                or state.get('data_rng_policy') != 'deterministic_preprocessing_no_RNG_consumption'
+                or state.get('data_rng_policy') != self.RNG_POLICY
+                or not isinstance(state.get('tensor_sha256'), dict)
                 or not set(state['tensor_sha256']) <= self.indices.keys()
-                or any(len(x) != 64 for x in state['tensor_sha256'].values())):
+                or any(not isinstance(x, str) or len(x) != 64
+                       or any(c not in '0123456789abcdef' for c in x)
+                       for x in state['tensor_sha256'].values())
+                or not isinstance(state.get('rng_replay'), dict)
+                or set(state['rng_replay']) != set(state['tensor_sha256'])
+                or not isinstance(state.get('materialization_order'), list)
+                or len(state['materialization_order']) != len(state['tensor_sha256'])
+                or set(state['materialization_order']) != set(state['tensor_sha256'])):
             raise ValueError('Image reconstruction checkpoint identity changed')
+        # Validate the chronological first-read RNG chain, not dict key order.
+        # restore_rng validates actual Python/NumPy/Torch state structures while
+        # the finally clause prevents a malformed checkpoint changing globals.
+        before = copy.deepcopy(self.rng_state())
+        try:
+            current = copy.deepcopy(state['initial_data_rng'])
+            self.restore_rng(current)
+            if not self.equal_tree(current, self.rng_state()):
+                raise ValueError('Initial data RNG state did not round-trip')
+            for sample_id in state['materialization_order']:
+                replay = state['rng_replay'][sample_id]
+                if (not isinstance(replay, dict) or set(replay) != {'before', 'after'}
+                        or not self.equal_tree(current, replay['before'])):
+                    raise ValueError('Image preprocessing RNG replay chain changed')
+                self.restore_rng(replay['after'])
+                if not self.equal_tree(replay['after'], self.rng_state()):
+                    raise ValueError('Replayed data RNG state did not round-trip')
+                current = replay['after']
+            if not self.equal_tree(current, state['data_rng']):
+                raise ValueError('Current data RNG position changed')
+        except (KeyError, TypeError, RuntimeError) as exc:
+            raise ValueError('Invalid preprocessing RNG checkpoint state') from exc
+        finally:
+            self.restore_rng(before)
         self.tensor_sha256 = dict(state['tensor_sha256'])
+        self.initial_data_rng = copy.deepcopy(state['initial_data_rng'])
+        self.data_rng = copy.deepcopy(state['data_rng'])
+        self.rng_replay = copy.deepcopy(state['rng_replay'])
+        self.materialization_order = list(state['materialization_order'])
         self.cache.clear()
+
+
+def convert_legacy_empty_state(old_state, *, initial_data_rng):
+    """Explicit audited migration for a proven zero-progress v1 checkpoint.
+
+    This pure helper never loads a checkpoint or claims the whole run is empty.
+    Its caller must independently prove zero observations/candidates/updates and
+    zero model forwards, preserve the failed version, and take initial_data_rng
+    from that checkpoint's unchanged learning RNG. Normal load_state_dict keeps
+    rejecting v1. The v2 provider performs full RNG-structure validation on load.
+    """
+    expected = {'schema', 'manifest_sha256', 'manifest_semantic_sha256',
+                'preprocess_sha256', 'tensor_sha256', 'data_rng_policy'}
+    if (not isinstance(old_state, dict) or set(old_state) != expected
+            or old_state['schema'] != 'odr003-round2-image-provider-v1'
+            or old_state['data_rng_policy'] != 'deterministic_preprocessing_no_RNG_consumption'
+            or not isinstance(old_state['tensor_sha256'], dict) or old_state['tensor_sha256']
+            or not isinstance(initial_data_rng, dict)
+            or not {'python', 'numpy', 'cpu', 'cuda'} <= initial_data_rng.keys()):
+        raise ValueError('Only a proven empty legacy provider can be explicitly migrated')
+    for key in ('manifest_sha256', 'manifest_semantic_sha256', 'preprocess_sha256'):
+        value = old_state[key]
+        if (not isinstance(value, str) or len(value) != 64
+                or any(c not in '0123456789abcdef' for c in value)):
+            raise ValueError('Legacy image provider identity is malformed')
+    state = copy.deepcopy(old_state)
+    state.update(schema=DeterministicImageProvider.SCHEMA,
+                 data_rng_policy=DeterministicImageProvider.RNG_POLICY,
+                 initial_data_rng=copy.deepcopy(initial_data_rng),
+                 data_rng=copy.deepcopy(initial_data_rng),
+                 rng_replay={}, materialization_order=[])
+    return state
 
 
 def stream_records(dataset, preprocess_sha256, *, limit):

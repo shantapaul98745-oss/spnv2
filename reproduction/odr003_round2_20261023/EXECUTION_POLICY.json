@@ -1,0 +1,29 @@
+{
+  "schema": "odr003-round2-execution-policy-v2",
+  "effective_date": "2026-10-24",
+  "user_authorized": true,
+  "research_protocol_unchanged": true,
+  "goal_mode": "paused",
+  "resource_wait_interval_seconds": 300,
+  "explicit_start_or_idle_report": "immediate_fresh_resource_recheck_via_private_manager_control_without_restart",
+  "automatic_sequence": [
+    "finish_current_RNG_fix_and_independent_recovery_validation",
+    "engineering8_and_independent_proof",
+    "P6_and_independent_proofs",
+    "derive_RW_RP_from_each_accepted_P_counts_max12",
+    "fixed_round2_summary_and_independent_acceptance",
+    "deliver_current_exploration"
+  ],
+  "max_complete_odr": 18,
+  "no_repeated_accepted_experiments": true,
+  "preserve_current_processes_and_checkpoints": true,
+  "scientific_progress_authority": "complete_recoverable_checkpoint",
+  "technical_fault_repair_authorized_without_scientific_protocol_change": true,
+  "ask_only_for": [
+    "research_stop_condition",
+    "change_of_goal_core_rules_data_boundary_or_budget"
+  ],
+  "resource_reports_require_sampling_time_and_live_vs_cache_label": true,
+  "automation_id": "spnv2-g50-p",
+  "no_duplicate_automations": true
+}

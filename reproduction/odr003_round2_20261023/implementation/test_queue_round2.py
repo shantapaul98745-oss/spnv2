@@ -10,7 +10,7 @@ import unittest
 from unittest.mock import patch
 
 import queue_round2 as queue
-from round2_protocol import build_engineering_matrix, frozen_protocol
+from round2_protocol import build_engineering_matrix, build_complete_matrix, frozen_protocol
 
 
 class StopFakeLoop(Exception):
@@ -150,18 +150,18 @@ class QueueContracts(unittest.TestCase):
         self.assertEqual(self.launches, [row["run_id"] for row in self.index["tasks"][3:]]
                          + ["g50p2_engineering_verification"])
 
-    def test_exit_75_waits_at_least_thirty_minutes(self):
+    def test_exit_75_waits_five_minutes(self):
         state = self.state()
         self.attempt(state, self.index["tasks"][0], code=75, status="waiting_resources")
         queue._finish_attempt(state)
         self.assertIsNone(state["active"])
         self.assertEqual(state["status"], "waiting_resources")
-        self.assertGreaterEqual(state["next_resource_check"] - self.clock.time(), 1800)
+        self.assertGreaterEqual(state["next_resource_check"] - self.clock.time(), 300)
         self.assertEqual(state["completed"], [])
 
-    def test_busy_monitor_only_reads_resources_every_thirty_minutes(self):
+    def test_busy_monitor_only_reads_resources_every_five_minutes(self):
         checks = []
-        self.clock.max_sleeps = 361
+        self.clock.max_sleeps = 121
         def snapshot(*args, **kwargs):
             checks.append(self.clock.time())
             return {}
@@ -170,7 +170,7 @@ class QueueContracts(unittest.TestCase):
              patch.object(queue, "_launch", side_effect=AssertionError("Busy host cannot launch")):
             with self.assertRaises(StopFakeLoop):
                 queue.main(self.index_path)
-        self.assertEqual(checks, [10000.0, 11800.0])
+        self.assertEqual(checks, [10000.0, 10300.0, 10600.0])
 
     def test_only_two_distinct_declared_fault_points_may_resume(self):
         state = self.state()
@@ -264,6 +264,92 @@ class QueueContracts(unittest.TestCase):
         with patch.object(queue, "_launch", side_effect=AssertionError("Invalid completed ledger cannot launch")):
             with self.assertRaises(ValueError):
                 queue.main(self.index_path)
+
+    def test_private_wake_samples_immediately_without_restarting_or_probing_model(self):
+        checks, polls, acknowledgements = [], [], []
+        self.clock.max_sleeps = 3
+        def refresh(*args, **kwargs):
+            polls.append(self.clock.time())
+            return [{'request_id':'once'}] if len(polls)==2 else []
+        def sample(*args, **kwargs):
+            checks.append(self.clock.time())
+            return {'snapshot_id':str(len(checks)), 'captured_at':self.clock.time()}
+        with patch.object(queue, 'pending_refreshes', side_effect=refresh), \
+             patch.object(queue, 'acknowledge', side_effect=lambda *a,**kw:acknowledgements.append(kw)), \
+             patch.object(queue, 'collect_snapshot', side_effect=sample), \
+             patch.object(queue, 'assess_snapshot', return_value=SimpleNamespace(allow_start=False,reasons=('busy',))), \
+             patch.object(queue, '_launch', side_effect=AssertionError('No probe model')):
+            with self.assertRaises(StopFakeLoop): queue.main(self.index_path)
+        self.assertEqual(checks, [10000., 10005.])
+        self.assertEqual(len(acknowledgements), 1)
+        self.assertEqual(acknowledgements[0]['snapshot']['captured_at'], 10005.)
+        self.assertEqual(len(queue.read(self.plan/'status.json')['attempts']), 0)
+
+    def test_autonomous_engineering_P6_controls18_audit_and_delivery_once(self):
+        # The real transition code is exercised, with only model execution and
+        # metadata compilation replaced by tiny immutable local fixtures.
+        rows=[]
+        for i,definition in enumerate(build_complete_matrix()):
+            run_id=f'synthetic_complete_{i}'
+            task_path=self.plan/'tasks'/(run_id+'.json')
+            self.write_json(task_path, dict(run_id=run_id, stage='complete', action='run', definition=definition))
+            rows.append(dict(run_id=run_id, task_path=str(task_path), task_sha256=queue.sha256(task_path), definition=definition))
+        def prepare_P(plan,index):
+            path=self.plan/'P_index.json'; data={'phase':'P','tasks':rows[:6]}
+            self.write_json(path,data); return path,data
+        def prepare_controls(plan,index,P,accepted):
+            self.assertEqual(set(accepted),{row['run_id'] for row in rows[:6]})
+            path=self.plan/'all_index.json'; data={'phase':'controls','tasks':rows}
+            self.write_json(path,data); return path,data
+        def verify(plan,index,row,receipt,**kwargs):
+            path=self.plan/'tasks'/(row['run_id']+'_verify.json')
+            data=dict(run_id=row['run_id']+'_verify', action='verify_complete', stage='verification',
+                      run_task=queue.complete_tools.binding(row['task_path']),
+                      proof_path=str(self.plan/(row['run_id']+'_proof.json')))
+            self.write_json(path,data); return path,data['run_id']
+        def summarize(plan,index_path,index,state):
+            self.assertEqual(len(state['complete_accepted']),18)
+            path=self.plan/'tasks/summary.json'
+            self.write_json(path,dict(run_id='summary', action='summarize_round2', stage='verification',
+                                     summary_path=str(self.plan/'summary.json'),proof_path=str(self.plan/'summary_proof.json')))
+            return path,'summary'
+        def execute(state,path,run_id):
+            self.launches.append(run_id)
+            task=queue.read(path)
+            row=dict(run_id=run_id, task_path=str(path), task_sha256=queue.sha256(path))
+            if task.get('action')=='verify_engineering':
+                self.attempt(state,row,status='engineering_passed')
+            elif task.get('action')=='verify_complete':
+                science=queue.complete_tools.checked(task['run_task'])['run_id']
+                report=state['complete_main'][science]['report_path']
+                self.write_json(task['proof_path'],dict(status='passed',report_sha256=queue.sha256(report)))
+                a=self.attempt(state,row,status='complete_run_verified')
+                self.write_json(Path(a['launch_directory'])/'outcome.json',
+                                dict(status='complete_run_verified',exit_code=0,run_id=science,proof=task['proof_path']))
+            elif task.get('action')=='summarize_round2':
+                self.write_json(task['summary_path'],{'all':18})
+                self.write_json(task['proof_path'],dict(status='passed',summary_sha256=queue.sha256(task['summary_path'])))
+                self.attempt(state,row,status='round2_delivered')
+            else:
+                self.attempt(state,row)
+            self.write_progress(state)
+        with patch.object(queue,'collect_snapshot',return_value={}),self.allow_resources(), \
+             patch.object(queue,'_launch',side_effect=execute), \
+             patch.object(queue.complete_tools,'prepare_P',side_effect=prepare_P), \
+             patch.object(queue.complete_tools,'prepare_controls',side_effect=prepare_controls), \
+             patch.object(queue.complete_tools,'verify_task',side_effect=verify), \
+             patch.object(queue.complete_tools,'summary_task',side_effect=summarize):
+            self.assertEqual(queue.main(self.index_path),0)
+            first=list(self.launches)
+            self.assertEqual(queue.main(self.index_path),0)
+            self.assertEqual(self.launches,first)
+        state=queue.read(self.plan/'status.json')
+        self.assertEqual(state['status'],'complete')
+        self.assertEqual(len(state['completed']),8)
+        self.assertEqual(len(state['complete_accepted']),18)
+        self.assertEqual(len(self.launches),46)
+        science=[r for r in self.launches if r.startswith('synthetic_complete_') and not r.endswith('_verify')]
+        self.assertEqual(science,[r['run_id'] for r in rows])
 
 
 if __name__ == "__main__":

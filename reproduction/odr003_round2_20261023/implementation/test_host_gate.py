@@ -164,7 +164,7 @@ class ResourceTests(unittest.TestCase):
     def test_wait_is_advice_only_at_least_thirty_minutes(self):
         blocked=h.assess_snapshot(snapshot(processes=[process()]),now=102)
         advice=h.wait_advice(blocked,requested_seconds=10)
-        self.assertEqual(advice['retry_after_seconds'],1800)
+        self.assertEqual(advice['retry_after_seconds'],300)
         self.assertFalse(advice['poll_loop']);self.assertFalse(advice['sleep_performed'])
         self.assertTrue(advice['heavy_CPU_model_validation_must_also_wait'])
         self.assertEqual(h.wait_advice(blocked,3600)['retry_after_seconds'],3600)

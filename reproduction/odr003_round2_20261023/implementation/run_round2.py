@@ -56,6 +56,16 @@ def verify_runtime_task(task):
             raise ValueError('Complete exploration lacks independent engineering admission')
     elif task['stage'] != 'engineering':
         raise ValueError('Only engineering and complete stages are authorized')
+    if task.get('initial_checkpoint_import_required'):
+        origin = task['initial_checkpoint_origin']
+        if sha256(origin['path']) != origin['sha256']:
+            raise ValueError('Original zero-progress failure spec changed')
+        receipt = load_json(output/'zero_checkpoint_import.json')
+        if (receipt.get('status') != 'passed' or receipt.get('new_task_canonical_sha256') != canonical_sha(task)
+                or receipt.get('origin_spec') != origin):
+            raise ValueError('The exact complete zero-progress checkpoint must be imported before this run')
+        if not (output/'durable/identity.json').is_file():
+            raise ValueError('Imported complete checkpoint is missing')
     return output
 
 

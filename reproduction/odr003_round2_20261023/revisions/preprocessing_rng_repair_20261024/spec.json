@@ -1,0 +1,62 @@
+{
+  "schema": "odr003-round2-preforward-repair-spec-v1",
+  "failed_nonce": "be01859de69743f181c337a9a17fcf01",
+  "run_id": "g50p2_eng_lightbox_g50_reference",
+  "plan_root": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023",
+  "old_task": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/preprocessing_rng_repair_20261024/before/original_task.json",
+    "sha256": "dee8eb701b32a7e16eb3d31f3170f197ea74562081c1dbc858ca667930e22739"
+  },
+  "original_task_launch_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_eng_lightbox_g50_reference.json",
+  "old_output_dir": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_eng_lightbox_g50_reference",
+  "generation": 1,
+  "old_store_files": {
+    "CURRENT": "35748adf2a7a8504f41833bf2fd600ab384a193698c293a7099912d14e59884b",
+    "identity.json": "ea652437a7d5a7896dc183c93ee59b42c2a65c03ffaac71c58a2f8f09fff9156",
+    ".writer.lock": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+    "checkpoints/generation-00000000000000000001/state.bin": "e226ddf5726398187aeaca56e657fc11acde362d610895f91ae242fc1bb982fa",
+    "checkpoints/generation-00000000000000000001/metadata.sha256": "d14e28438c700e5feaf101a943fa013d3577025738b168342bc2711288846196",
+    "checkpoints/generation-00000000000000000001/metadata.json": "51610578e372d9cb9e5375d46aab7b8f1f8d40548b922422ffe272568ef0831b",
+    "journal/segment-00000000000000000001.jsonl": "606fefa6607ba795c79d3cb08949e3312ce6f610282c0ad1d03d97d24ec0d438"
+  },
+  "old_implementation_files": {
+    "run_round2.py": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/preprocessing_rng_repair_20261024/before/implementation/run_round2.py",
+      "sha256": "2a5d51eb0199c7b43152c0146b9338ae5f50ba6da93dfcb9c3b2aba34d44fcd3"
+    },
+    "frozen_backend.py": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/preprocessing_rng_repair_20261024/before/implementation/frozen_backend.py",
+      "sha256": "5faeddf26fea4160bd7f06ff3b3f5352edc95752c0f7b786cc22d0785f4e0732"
+    },
+    "reference_driver.py": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/preprocessing_rng_repair_20261024/before/implementation/reference_driver.py",
+      "sha256": "258bcbc42f1b9d949fe9f8eaf6251d4b93a5f651407499243957158a8f097bb8"
+    }
+  },
+  "artifacts": {
+    "launch": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/launches/be01859de69743f181c337a9a17fcf01/launch.json",
+      "sha256": "7dea499323b368be40ef9df0054820b421725453476aa52cbf530d3fea9c6bc3"
+    },
+    "outcome": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/launches/be01859de69743f181c337a9a17fcf01/outcome.json",
+      "sha256": "26338b2a5da2aa4bdd33272be26a5da6aedd6f10ae709810c20cd19628e7ac1d"
+    },
+    "failure": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_eng_lightbox_g50_reference/failure.json",
+      "sha256": "105295a34f9c12d762b12fb6c3ebb5f89ea37dd97e81c02d41dc362921086bfa"
+    },
+    "log": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_lightbox_g50_reference_be01859de69743f181c337a9a17fcf01.log",
+      "sha256": "35396cf0bdc3ecdaca60d2b2376efb0abfc3a74c0c8380d223b821646fc9e63a"
+    },
+    "exit_code": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_lightbox_g50_reference_be01859de69743f181c337a9a17fcf01.log.exitcode",
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    }
+  },
+  "expected_failure": {
+    "type": "RuntimeError",
+    "message_exact": "Frozen inference preprocessing unexpectedly consumed RNG"
+  }
+}

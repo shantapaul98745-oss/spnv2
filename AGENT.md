@@ -231,3 +231,8 @@ Complete recoverable checkpoints, not log commits, determine durable scientific 
 ## 2026-10-23 G50-P metadata writer repair
 
 The first bounded guard detected a registry trust failure from this host umask0002 and mode0664. The registry remained empty; no worker/model run had started. The writer now explicitly creates0600 metadata; strict trust validation remains. Local230 contracts passed. The eight engineering definitions, IDs, model/data/scientific rules are unchanged; current status/index and scoped revisions record the authorized manager-only deployment. Other users GPU tasks remain untouched.
+
+
+## 2026-10-24 G50-P latest execution policy and preprocessing repair
+
+Latest user authorization requires autonomous delivery,300-second waiting resource checks and private immediate resource requests without ordinary manager restart. The first real reference failed at first image_read, before any model forward; old failure and complete zero checkpoint remain intact. The RNG correction and guarded independent complete-state import have passed;312 local contracts passed. Eight logical engineering trajectories are preserved and must pass real independent proof before automatic P6 then count-matched RW/RP(max12) and independent delivery. Current actual processes/stage come from the new plan status and guard cursor, not historical manager IDs or GPU snapshots. Target/goal mode remains paused.

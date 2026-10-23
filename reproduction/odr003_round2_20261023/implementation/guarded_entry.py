@@ -1,7 +1,7 @@
 """One owned screen attempt, with shared-host admission before heavy imports.
 
 No signals, process termination, sleeps, or probing model runs. A busy host exits
-75 and the caller may inspect it again after at least thirty minutes. All project
+75 and the caller may inspect it again after at least five minutes. All project
 locks remain held for this attempt's lifetime. They serialize our experiments;
 they are not a reservation enforceable on other lab users.
 """
@@ -146,7 +146,7 @@ def main(task_path, log_path):
                         decision=asdict(admission), task_sha256=sha256(task_path)))
             if not admission.allow_start:
                 outcome(dict(status='waiting_resources', exit_code=75,
-                            reasons=admission.reasons, retry_not_before=time.time()+1800,
+                            reasons=admission.reasons, retry_not_before=time.time()+300,
                             shared_model_imported=False, experiments_started=0))
                 return 75
             if time.time() > admission.valid_until:
@@ -167,10 +167,16 @@ def main(task_path, log_path):
             if conflict or time.time() > admission.valid_until:
                 reason = conflict or 'admission_expired_after_registration'
                 outcome(dict(status='waiting_resources', exit_code=75,
-                            reason=reason, retry_not_before=time.time()+1800, experiments_started=0))
+                            reason=reason, retry_not_before=time.time()+300, experiments_started=0))
                 return 75
             if task.get('action', 'run') == 'verify_engineering':
                 from verify_engineering_phase import execute
+            elif task.get('action', 'run') == 'import_zero_checkpoint':
+                from preforward_repair import execute
+            elif task.get('action', 'run') == 'verify_complete':
+                from verify_complete import execute
+            elif task.get('action', 'run') == 'summarize_round2':
+                from summarize_round2 import execute
             elif task.get('action', 'run') == 'run':
                 from run_round2 import execute
             else:
@@ -181,7 +187,7 @@ def main(task_path, log_path):
             return int(result['exit_code'])
     except BlockingIOError:
         outcome(dict(status='waiting_project_lock', exit_code=75,
-                    retry_not_before=time.time()+1800, experiments_started=0))
+                    retry_not_before=time.time()+300, experiments_started=0))
         return 75
     except Exception as error:
         outcome(dict(status='failed', exit_code=1, error_type=type(error).__name__, error=str(error)))

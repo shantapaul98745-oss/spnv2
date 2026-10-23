@@ -288,6 +288,91 @@ def _attempt_costs(attempts):
     return result
 
 
+def _repair_audit(index, task, *, verifier=None):
+    """Keep one proved zero-forward implementation failure in the history.
+
+    This is deliberately separate from `_attempt_evidence`: a genuine exit 1
+    never becomes a resource wait/interruption or an accepted current attempt.
+    The index and verification task must name the same independently bound
+    repair proof, and its verifier rereads the failed execution and imported
+    complete initial state. All other unexpected failures remain fatal.
+    """
+    binding = index.get("pre_forward_repair")
+    require(task.get("pre_forward_repair") == binding,
+            "verification task/index pre-forward repair binding differs")
+    if binding is None:
+        return None, []
+    require(isinstance(binding, dict) and set(binding) == {"path", "sha256"},
+            "invalid pre-forward repair proof binding")
+    if verifier is None:
+        from preforward_repair import verify_preforward_repair
+        verifier = verify_preforward_repair
+    evidence = verifier(binding, expected_index=index, plan=PLAN)
+    require(isinstance(evidence, dict) and evidence.get("status") == "passed",
+            "pre-forward repair evidence did not independently pass")
+    rows = evidence.get("prior_failed_engineering_attempts")
+    require(isinstance(rows, list) and len(rows) == 1,
+            "repair must retain exactly its one actual prior failed attempt")
+    row = rows[0]
+    require(row.get("actual_exit_code") == 1
+            and row.get("actual_outcome", {}).get("exit_code") == 1,
+            "the prior implementation failure must retain its genuine exit 1")
+    require(row.get("run_id") == index["tasks"][0]["run_id"]
+            and isinstance(row.get("nonce"), str) and len(row["nonce"]) >= 16,
+            "prior failed execution is not the proved first trajectory")
+    physical = row.get("physical_work")
+    require(isinstance(physical, dict)
+            and all(type(v) is int and v == 0 for v in physical.get("forwards_execution_upper_bound", {}).values()),
+            "prior failure cannot be excused if any model forward was dispatched or is unknown")
+    zero_forward = row.get("zero_forward_proof", {})
+    non_model_work = zero_forward.get("unconfirmed_non_model_work")
+    require(zero_forward.get("model_forward_upper_bound") == 0
+            and isinstance(non_model_work, list) and len(non_model_work) == 1
+            and non_model_work[0].get("work_kind") == "image_read"
+            and non_model_work[0].get("forwards_reserved") == {}
+            and physical.get("attempts_started") == 1 and physical.get("attempts_finished") == 0
+            and physical.get("inflight_unknown_attempt_ids") == [non_model_work[0].get("attempt_id")]
+            and physical.get("compute_time_incomplete") is True,
+            "prior unconfirmed image-read work must be retained with its zero model-forward reservation")
+    require(row.get("scientific_cursors") == dict(observed=0, candidates=0, commits=0, rollbacks=0, next_index=0),
+            "prior failed initial checkpoint has scientific progress")
+    return evidence, copy.deepcopy(rows)
+
+
+def _phase_costs(current_attempts, prior_failed_attempts, physical_ledgers):
+    """Sum physical ledgers once; retain failure/wait timing uncertainty."""
+    attempts = [row for rows in current_attempts.values() for row in rows] + list(prior_failed_attempts)
+    nonces = [row["nonce"] for row in attempts]
+    require(len(set(nonces)) == len(nonces), "phase cost history contains duplicate attempt nonces")
+    ledgers = list(physical_ledgers.values()) + [row["physical_work"] for row in prior_failed_attempts]
+    sums = {}
+    for name in ("forwards_confirmed_completed", "forwards_execution_lower_bound",
+                 "forwards_execution_upper_bound", "forwards_inflight_unknown_upper_bound",
+                 "replay_forwards_confirmed_completed"):
+        total = Counter()
+        for ledger in ledgers:
+            for category, value in ledger[name].items():
+                require(type(value) is int and value >= 0, "invalid physical forward cost")
+                total[category] += value
+        sums[name] = dict(sorted(total.items()))
+    compute = [ledger["compute_seconds_confirmed"] for ledger in ledgers]
+    require(all(type(value) in (int, float) and math.isfinite(value) and value >= 0 for value in compute),
+            "invalid physical compute time")
+    return dict(scope="eight engineering trajectories and the explicitly bound prior zero-forward failure; verifier own execution remains in its launch outcome",
+                actual_attempt_count=len(attempts),
+                prior_failed_attempt_count=len(prior_failed_attempts),
+                prior_failed_attempts_included=True,
+                actual_exit_codes={str(code): count for code, count in sorted(Counter(
+                    row["actual_exit_code"] for row in attempts).items())},
+                forward_costs=sums,
+                compute_seconds_confirmed=sum(compute),
+                compute_time_incomplete=any(ledger["compute_time_incomplete"] for ledger in ledgers),
+                attempt_measurements=_attempt_costs(attempts),
+                scientific_trajectories=8, logical_observations=1024,
+                prior_failure_is_additional_scientific_trajectory=False,
+                queue_wait_excluded_from_compute_time=True)
+
+
 def _reference_check(state, records, calibration, gate_module, identity):
     from verify_round2 import _same, _learning_contract, _json_hash
     require(state["schema"] == "odr003-round2-original-g50-reference-v1"
@@ -356,6 +441,7 @@ def execute(task_path, *, admission, launch_record, conflict_check):
     expected_definitions = {row["run_key"]: row for row in build_engineering_matrix()}
     require(len(index["tasks"]) == 8 and {entry["definition"]["run_key"] for entry in index["tasks"]} == set(expected_definitions),
             "engineering index is not exactly the fixed eight trajectories")
+    repair_evidence, prior_failed_attempts = _repair_audit(index, task)
     require(receipts_doc.get("schema") == "odr003-round2-engineering-receipts-v1", "wrong execution receipts schema")
     receipts = receipts_doc["runs"]
     require(len(receipts) == 8 and len({row["run_id"] for row in receipts}) == 8, "exactly eight unique final-run receipts required")
@@ -474,6 +560,7 @@ def execute(task_path, *, admission, launch_record, conflict_check):
               synthetic_contracts_do_not_prove_real_threshold_effectiveness=True,
               assessment=screening)
     held = any(row["assessment"]["hold_full_exploration"] for row in domains.values())
+    all_cost = _phase_costs(attempts_by_run, prior_failed_attempts, work)
     proof = dict(schema="odr003-round2-engineering-phase-proof-v1", status="held" if held else "passed",
                  allow_complete_matrix=not held, verification_task_sha256=sha256(task_path),
                  implementation_sha256=task["implementation_sha256"], protocol_sha256=task["protocol"]["protocol_sha256"],
@@ -482,6 +569,9 @@ def execute(task_path, *, admission, launch_record, conflict_check):
                  actual_trajectories=8, logical_observations=1024, model_forwards_added_by_verification=0,
                  queue_wait_seconds_recorded_by_controller=receipts_doc["queue_wait_seconds"],
                  queue_wait_excluded_from_compute_time=True,
+                 pre_forward_repair=repair_evidence,
+                 prior_failed_engineering_attempts=prior_failed_attempts,
+                 all_cost=all_cost,
                  target_GT_read_by_verification=False, run_proofs=proofs, domains=domains,
                  interpretation="engineering contracts only; no scientific efficacy claim",
                  next_action="report predefined hold without changing parameters" if held else "eligible for the fixed maximum18 complete matrix")
