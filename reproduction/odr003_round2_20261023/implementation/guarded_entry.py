@@ -29,7 +29,11 @@ def atomic_json(path, value):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_name(path.name+f'.{os.getpid()}.tmp')
-    with temporary.open('x', encoding='utf8') as handle:
+    # Trust-bearing metadata must not inherit a shared host's umask=0002.
+    # O_EXCL retains the no-overwrite behavior; 0600 is set on the inode before
+    # any content is written and remains in place after the atomic rename.
+    descriptor = os.open(temporary, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+    with os.fdopen(descriptor, 'w', encoding='utf8') as handle:
         json.dump(value, handle, ensure_ascii=False, sort_keys=True, allow_nan=False)
         handle.write('\n'); handle.flush(); os.fsync(handle.fileno())
     os.replace(temporary, path)
