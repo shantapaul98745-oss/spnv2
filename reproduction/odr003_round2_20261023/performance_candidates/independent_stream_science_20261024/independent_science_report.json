@@ -1,0 +1,217 @@
+{
+  "schema": "odr003-independent-local-stream-store-science-v1",
+  "status": "passed",
+  "script_sha256": "717224b24212fa589e2ae29817f1e9a06adcb1a4c432cf94ffb2784d6a51585a",
+  "source_bindings": {
+    "durable_state_original.py": "62d27f792bd13f9bf42146434e21aae1191c34d01953b70debb92cab1c32e2d3",
+    "durable_state_candidate.py": "543dee24ba21ec209170082f6c983d9bba8e97b93ead5263661ff80ca8b94997"
+  },
+  "platform": {
+    "system": "Windows",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "torch": "2.5.1+cpu",
+    "numpy": "1.26.4",
+    "gpu_used": false
+  },
+  "comparisons": [
+    {
+      "left": "original_continuous",
+      "right": "candidate_continuous",
+      "exact_science_equal": true
+    },
+    {
+      "left": "original_resumed",
+      "right": "candidate_resumed",
+      "exact_science_equal": true
+    },
+    {
+      "left": "original_continuous",
+      "right": "original_resumed",
+      "exact_science_equal": true
+    },
+    {
+      "left": "candidate_continuous",
+      "right": "candidate_resumed",
+      "exact_science_equal": true
+    }
+  ],
+  "checked_fields": [
+    "synthetic model predictions",
+    "gates",
+    "protection lists and signals",
+    "commit/rollback decisions",
+    "full science trace",
+    "model and optimizer",
+    "gradients and buffers",
+    "all RNG states",
+    "both pools and pending records",
+    "science cursors and counters",
+    "provider recovery state",
+    "fixed interrupted/replayed observation and update accounting"
+  ],
+  "cases": {
+    "original_continuous": {
+      "counters": {
+        "observed": 36,
+        "accepted": 34,
+        "candidates": 8,
+        "commits": 6,
+        "rollbacks": 2,
+        "tail_discarded": 2,
+        "consecutive_rollbacks": 0,
+        "max_consecutive_rollbacks": 1
+      },
+      "saved_scientific_cursors": {
+        "candidates": 8,
+        "commits": 6,
+        "next_index": 36,
+        "observed": 36,
+        "rollbacks": 2
+      },
+      "interruptions": [],
+      "store_calls": {
+        "deserialize_true": 1,
+        "deserialize_false": 1,
+        "fsync_calls": 866
+      },
+      "checkpoint_publications": 2,
+      "forward_counts": {
+        "arrival_scoring": 36,
+        "adaptation": 34,
+        "protection_pre": 75,
+        "protection_post": 75
+      },
+      "replay_forward_counts": {},
+      "unconfirmed_work": [],
+      "elapsed_seconds": 4.981818099971861
+    },
+    "original_resumed": {
+      "counters": {
+        "observed": 36,
+        "accepted": 34,
+        "candidates": 8,
+        "commits": 6,
+        "rollbacks": 2,
+        "tail_discarded": 2,
+        "consecutive_rollbacks": 0,
+        "max_consecutive_rollbacks": 1
+      },
+      "saved_scientific_cursors": {
+        "candidates": 8,
+        "commits": 6,
+        "next_index": 36,
+        "observed": 36,
+        "rollbacks": 2
+      },
+      "interruptions": [
+        "candidate_2_tentative",
+        "observation_31"
+      ],
+      "store_calls": {
+        "deserialize_true": 3,
+        "deserialize_false": 3,
+        "fsync_calls": 882
+      },
+      "checkpoint_publications": 4,
+      "forward_counts": {
+        "arrival_scoring": 36,
+        "adaptation": 35,
+        "protection_pre": 75,
+        "protection_post": 75
+      },
+      "replay_forward_counts": {
+        "adaptation": 1
+      },
+      "unconfirmed_work": [],
+      "elapsed_seconds": 3.381686700042337
+    },
+    "candidate_continuous": {
+      "counters": {
+        "observed": 36,
+        "accepted": 34,
+        "candidates": 8,
+        "commits": 6,
+        "rollbacks": 2,
+        "tail_discarded": 2,
+        "consecutive_rollbacks": 0,
+        "max_consecutive_rollbacks": 1
+      },
+      "saved_scientific_cursors": {
+        "candidates": 8,
+        "commits": 6,
+        "next_index": 36,
+        "observed": 36,
+        "rollbacks": 2
+      },
+      "interruptions": [],
+      "store_calls": {
+        "deserialize_true": 1,
+        "deserialize_false": 1,
+        "fsync_calls": 866
+      },
+      "checkpoint_publications": 2,
+      "forward_counts": {
+        "arrival_scoring": 36,
+        "adaptation": 34,
+        "protection_pre": 75,
+        "protection_post": 75
+      },
+      "replay_forward_counts": {},
+      "unconfirmed_work": [],
+      "elapsed_seconds": 2.8232012999942526
+    },
+    "candidate_resumed": {
+      "counters": {
+        "observed": 36,
+        "accepted": 34,
+        "candidates": 8,
+        "commits": 6,
+        "rollbacks": 2,
+        "tail_discarded": 2,
+        "consecutive_rollbacks": 0,
+        "max_consecutive_rollbacks": 1
+      },
+      "saved_scientific_cursors": {
+        "candidates": 8,
+        "commits": 6,
+        "next_index": 36,
+        "observed": 36,
+        "rollbacks": 2
+      },
+      "interruptions": [
+        "candidate_2_tentative",
+        "observation_31"
+      ],
+      "store_calls": {
+        "deserialize_true": 3,
+        "deserialize_false": 3,
+        "fsync_calls": 882
+      },
+      "checkpoint_publications": 4,
+      "forward_counts": {
+        "arrival_scoring": 36,
+        "adaptation": 35,
+        "protection_pre": 75,
+        "protection_post": 75
+      },
+      "replay_forward_counts": {
+        "adaptation": 1
+      },
+      "unconfirmed_work": [],
+      "elapsed_seconds": 2.9655649999622256
+    }
+  },
+  "logical_observations_per_case": 36,
+  "synthetic_cases": 4,
+  "fsync": {
+    "actual_file_fsync_executed": true,
+    "writes_disabled": false,
+    "directory_fsync_supported_on_this_platform": false
+  },
+  "limits": [
+    "Local synthetic CPU contract only; not real SPNv2 or real GPU equivalence",
+    "No end-to-end experiment speed claim; timing is descriptive only",
+    "No production code/task/checkpoint/worker was changed",
+    "Physical journal UUIDs, timestamps and checkpoint byte SHAs are not science identity"
+  ]
+}

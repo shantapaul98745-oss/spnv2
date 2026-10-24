@@ -1,0 +1,55 @@
+{
+  "Linux_directory_durability_verified": false,
+  "actual_fsync_counts_equal": true,
+  "artifacts": {
+    "independent_stream_science_20261024/independent_science_check.py": "717224b24212fa589e2ae29817f1e9a06adcb1a4c432cf94ffb2784d6a51585a",
+    "independent_stream_science_20261024/independent_science_report.json": "6dd5af388ad70501c2d6e4bdcaa6ebf028502c0043e6e939dbf583a9dd957116",
+    "review_20261024/diagnosis.json": "25a49643cf0210d89d4394a3532368490aecca699c0afb6549d82162101c9ba7",
+    "stream_validation_20261024/benchmark.json": "e16631b8f8f5883f02c33f9720427823c610c1a94a30628905a7e4afa84d54ed",
+    "stream_validation_20261024/manifest.json": "355f047ab47e381810c5e2d9a0acddfd4eb8dcd9ab4e852790ee388c5e32cf09",
+    "stream_validation_20261024/validation.json": "6a82a6bda23a451c1348bb76884a22df872ed4f3537064db3a5ac9c4c659aa3d"
+  },
+  "benchmark_summary": [
+    {
+      "candidate_cycle_ms": 95.38810001686215,
+      "candidate_save_ms": 68.09509999584407,
+      "cycle_change_percent": 1.6907936694278813,
+      "original_cycle_ms": 93.80210004746914,
+      "original_save_ms": 66.4898999966681,
+      "save_peak_RSS_reduction_mib": 14.046875,
+      "size_mib": 16
+    },
+    {
+      "candidate_cycle_ms": 307.962300023064,
+      "candidate_save_ms": 223.72689994517714,
+      "cycle_change_percent": 0.36036389591165285,
+      "original_cycle_ms": 306.8564999848604,
+      "original_save_ms": 224.03529996518046,
+      "save_peak_RSS_reduction_mib": 61.85546875,
+      "size_mib": 64
+    }
+  ],
+  "candidate_durable_sha256": "543dee24ba21ec209170082f6c983d9bba8e97b93ead5263661ff80ca8b94997",
+  "decision": "NOT_DEPLOYED_KEEP_ORIGINAL_FOR_CURRENT_ROUND",
+  "local_synthetic_forward_count": 882,
+  "local_synthetic_seconds": 14.152271099970676,
+  "new_complete_ODR": 0,
+  "new_offline_evaluations": 0,
+  "production_end_to_end_speedup_established": false,
+  "production_files_or_tasks_modified": false,
+  "real_SPNv2_or_GPU_equivalence_verified": false,
+  "reason": [
+    "No credible complete save/recover speedup in finite local benchmark",
+    "Current frozen queue has no accepted mixed-producer implementation handoff",
+    "Real SPNv2/GPU equivalence and end-to-end performance not established"
+  ],
+  "reviewed_at": "2026-10-24T10:23:51.260744+00:00",
+  "rollback": "No deployment: retain original producer/index/tasks and existing checkpoints. Candidate must not replace a bound module.",
+  "runtime_durable_sha256": "62d27f792bd13f9bf42146434e21aae1191c34d01953b70debb92cab1c32e2d3",
+  "runtime_source_commit": "3ef5cbd32f16bcfcb650f4b5d7a04a69e718aa47",
+  "schema": "odr003-engineering-performance-review-v1",
+  "shared_model_forwards_added": 0,
+  "storage_contracts_passed": 7,
+  "strict_synthetic_science_and_resume_equal": true,
+  "synthetic_science_cases_passed": 4
+}

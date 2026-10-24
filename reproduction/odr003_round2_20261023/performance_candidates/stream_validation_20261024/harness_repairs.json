@@ -1,0 +1,23 @@
+{
+  "schema": "isolated-local-harness-repairs-v1",
+  "production_or_science_modified": false,
+  "candidate_algorithm_changed_after_creation": false,
+  "events": [
+    {
+      "issue": "Windows MAX_PATH on deeply nested candidate scratch generations",
+      "scope": "validation fixture path only",
+      "fix": "Windows extended path spelling; scratch remains under this candidate; cleanup checks resolved intended path",
+      "retained_log": "validation_path_limit_failure.log",
+      "retained_report": "validation_path_limit_failure.json"
+    },
+    {
+      "issue": "Windows GetProcessMemoryInfo ctypes missing HANDLE argtypes caused OverflowError before timed save",
+      "scope": "local benchmark instrumentation only",
+      "fix": "explicit HANDLE/pointer/DWORD argument types and BOOL result",
+      "completed_performance_measurements_before_fix": 0
+    }
+  ],
+  "final_benchmark_samples": 12,
+  "final_repeats_per_variant_and_size": 3,
+  "additional_size_or_repeats_for_benefit_search": false
+}

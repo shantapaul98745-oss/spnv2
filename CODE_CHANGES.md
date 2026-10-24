@@ -274,3 +274,12 @@ Added reproduction/odr003_round2_20261023/revisions/auditor_binding_repair_20261
 ## 2026-10-24: user-approved deterministic execution and30-ODR baseline matrix
 
 Location: reproduction/odr003_round2_20261023 implementation and revisions/deterministic_20261024. Reason: saved initial state and inputs matched while first GPU output differed before updates; strict equivalence/recovery blocked. Change: enforce deterministic FP32 backend before model work and recheck full backend/version on restore, retain original A/G50 reference updates, add source-only O checkpoint/evaluation, new A6/G506 and independent v2 acceptance, freeze original six reference lists, automate all32 outputs (30ODR+O2) and independently audit full summary. Historical eight runs, failed audits, CPU migration and65-second diagnostic are retained, costs separately bound; no source retraining or threshold/data changes. Validation:373 isolated Windows CPU synthetic/mock contracts passed with no code drift; two agent cross-reviews; metadata-only server validation verified50 implementation files,8 unique new engineering tasks and6 original reference-ID lists. All mapped runtime files have identical SHA. Scientific model results require actual independent GPU engineering and per-run proofs, not these local checks. A Windows/POSIX staging separator error failed before model work and was preserved and corrected; deployment subsequently passed without a model forward.
+
+
+## 2026-10-24 — G50-P隔离内存候选，验证后不部署
+
+- 在 reproduction/odr003_round2_20261023/performance_candidates/ 保留原版和仅优化上一代checkpoint False校验分支的流式候选；未修改50个当前绑定实现、任何任务/协议/检查点或健康worker。
+- 完整P的guarded attempt2203.3268秒、确认操作385.6070秒、26次完整checkpoint213.0093秒；差额不全归因fsync。候选保留全部字节SHA/长度验证和持久化顺序。
+- 7组存储合同、4组36图合成CPU科学状态/双中断恢复严格相等；文件fsync真实执行且次数一致。真实SPNv2/GPU新增forward0、ODR/O新增0。
+- 固定16/64 MiB各版本3次完整save+fsync+recover，无可信净提速；64 MiB完整周期慢约0.36%，仅保存峰内存少约62 MiB。Windows不支持目录fsync，结果不代表Linux/GPU端到端验收。
+- 本轮继续原producer 3ef5cbd3；候选仅归档，无安全混合版本准入且生产端到端收益未证实。细节、SHA及工程成本见候选REVIEW和结构化验收记录。

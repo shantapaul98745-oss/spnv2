@@ -1,0 +1,27 @@
+{
+  "schema": "odr003-isolated-stream-validation-candidate-v1",
+  "origin_path": "C:\\Users\\17574\\Documents\\Codex\\2026-10-12\\referenced-chatgpt-conversation-this-is-an\\work\\odr003_round2_20261023\\implementation\\durable_state.py",
+  "origin_sha256": "62d27f792bd13f9bf42146434e21aae1191c34d01953b70debb92cab1c32e2d3",
+  "original_sha256": "62d27f792bd13f9bf42146434e21aae1191c34d01953b70debb92cab1c32e2d3",
+  "candidate_sha256": "543dee24ba21ec209170082f6c983d9bba8e97b93ead5263661ff80ca8b94997",
+  "changed_scope": "_read_generation deserialize=False complete state SHA and byte-length validation only",
+  "block_bytes": 1048576,
+  "production_modified": false,
+  "fsync_unchanged": true,
+  "checkpoint_frequency_unchanged": true,
+  "GPU_or_model_forward": false,
+  "artifacts": {
+    "durable_state_original.py": "62d27f792bd13f9bf42146434e21aae1191c34d01953b70debb92cab1c32e2d3",
+    "durable_state_candidate.py": "543dee24ba21ec209170082f6c983d9bba8e97b93ead5263661ff80ca8b94997",
+    "validate_and_benchmark.py": "3581b02c80a08e9ed2730a9c41c9d2eaa6d5b3a3e3513e32b57675682b7f6ae2",
+    "validation.json": "6a82a6bda23a451c1348bb76884a22df872ed4f3537064db3a5ac9c4c659aa3d",
+    "validation.log": "3106f9a7240136e036b014d03f31d37fa47af0b3544dfb3c0368f39babc8abcc",
+    "benchmark.json": "e16631b8f8f5883f02c33f9720427823c610c1a94a30628905a7e4afa84d54ed",
+    "harness_repairs.json": "a2317ba6d8ddbde909e8a6d11465709fc768504b5432b21e5c7d7115409d3f39",
+    "validation_path_limit_failure.json": "e4bfd8580a3323211f9a4da57376c920e9043ee27a3449674fd8eaaad44c36d9",
+    "validation_path_limit_failure.log": "92302c5009c95a1930c287f3cf6914bd4adddd5547d5eb6890158d924d0016aa"
+  },
+  "final_correctness_passed": true,
+  "benchmark_completed": true,
+  "end_to_end_speedup_established": false
+}

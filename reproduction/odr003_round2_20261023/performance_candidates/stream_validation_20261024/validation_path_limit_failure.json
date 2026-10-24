@@ -1,0 +1,11 @@
+{
+  "GPU_used": false,
+  "errors": 6,
+  "failures": 0,
+  "local_only": true,
+  "passed": false,
+  "production_modified": false,
+  "real_model_forward": 0,
+  "schema": "isolated-durable-stream-check-v1",
+  "tests_run": 7
+}
