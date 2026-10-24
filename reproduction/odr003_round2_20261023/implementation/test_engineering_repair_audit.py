@@ -7,6 +7,37 @@ import unittest
 from unittest.mock import Mock, patch
 
 import verify_engineering_phase as phase
+import deterministic_runtime
+from test_deterministic_runtime import fake_torch
+
+
+class DeterministicEvidenceContracts(unittest.TestCase):
+    def setUp(self):
+        self.temp=tempfile.TemporaryDirectory();self.output=Path(self.temp.name)
+        with patch.dict('os.environ', {'CUBLAS_WORKSPACE_CONFIG':':4096:8'}):
+            self.receipt=deterministic_runtime.apply(fake_torch())
+        self.path=self.output/'deterministic_runtime.json'
+        self.path.write_text(json.dumps(self.receipt),encoding='utf8')
+        self.report=dict(deterministic_runtime=copy.deepcopy(self.receipt),
+                         deterministic_runtime_binding=dict(path=str(self.path),sha256=phase.sha256(self.path)),
+                         torch_version=self.receipt['torch_version'])
+    def tearDown(self):self.temp.cleanup()
+    def test_actual_runtime_sidecar_and_versions_are_bound(self):
+        result=phase._deterministic_evidence(self.report,self.output,{})
+        self.assertEqual(result['status'],'passed')
+        self.assertEqual(result['receipt'],self.receipt)
+    def test_sidecar_tamper_and_rebound_disagreement_are_both_rejected(self):
+        changed=copy.deepcopy(self.receipt);changed['torch_version']='changed-version'
+        self.path.write_text(json.dumps(changed),encoding='utf8')
+        with self.assertRaisesRegex(ValueError,'bound file changed'):
+            phase._deterministic_evidence(self.report,self.output,{})
+        self.report['deterministic_runtime_binding']['sha256']=phase.sha256(self.path)
+        with self.assertRaisesRegex(ValueError,'persisted deterministic'):
+            phase._deterministic_evidence(self.report,self.output,{})
+    def test_report_cannot_disagree_with_recorded_actual_torch_version(self):
+        self.report['torch_version']='another-version'
+        with self.assertRaisesRegex(ValueError,'Torch version'):
+            phase._deterministic_evidence(self.report,self.output,{})
 
 
 def zero_work():

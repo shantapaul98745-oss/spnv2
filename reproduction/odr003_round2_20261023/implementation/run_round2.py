@@ -14,11 +14,14 @@ from pathlib import Path
 import sys
 import time
 import traceback
+import uuid
 
 from frozen_backend import (sha256, canonical_sha, import_bound_module, FrozenScorers,
                             DeterministicImageProvider, stream_records)
 from guarded_entry import atomic_json, PLAN
-from round2_protocol import frozen_protocol, build_engineering_matrix, build_complete_matrix, derive_controls
+from round2_protocol import (frozen_protocol, build_engineering_matrix, build_complete_matrix,
+                             build_baseline_matrix, derive_controls)
+from deterministic_runtime import prepare_environment, apply as apply_deterministic, validate as validate_deterministic
 
 
 def load_json(path):
@@ -30,7 +33,8 @@ def verify_runtime_task(task):
         raise ValueError('Wrong task schema')
     if task['protocol'] != frozen_protocol():
         raise ValueError('Confirmed fixed rules or seeds changed')
-    rows = build_engineering_matrix() if task['stage'] == 'engineering' else build_complete_matrix()
+    rows = build_engineering_matrix() if task['stage'] == 'engineering' else (
+        build_complete_matrix() + [row for row in build_baseline_matrix() if row['group'] in ('A', 'G50')])
     expected = [r for r in rows if r['run_key'] == task['definition']['run_key']]
     if len(expected) != 1 or expected[0] != task['definition']:
         raise ValueError('Run does not belong to the fixed authorized matrix')
@@ -70,7 +74,7 @@ def verify_runtime_task(task):
 
 
 def controls(task):
-    if task['stage'] != 'complete' or task['definition']['group'] == 'P':
+    if task['stage'] != 'complete' or task['definition']['group'] in ('A', 'G50', 'P'):
         return {}
     binding = task['paired_P_report']
     proof_binding = task['paired_P_proof']
@@ -107,6 +111,36 @@ def scientific_counts(engine):
                 consecutive_rollbacks=0, max_consecutive_rollbacks=0)
 
 
+def state_learning(state):
+    return state['learning'] if 'learning' in state else state['learner']['learning']
+
+
+def state_counts(state):
+    if 'counters' in state:
+        return dict(state['counters'])
+    value = state['learning']['counters']
+    return dict(observed=value['observed'], accepted=value['accepted'],
+                candidates=value['updates'], commits=value['updates'], rollbacks=0,
+                tail_discarded=value['tail'], consecutive_rollbacks=0, max_consecutive_rollbacks=0)
+
+
+def state_cursors(state):
+    counts = state_counts(state)
+    return dict(observed=counts['observed'], candidates=counts['candidates'],
+                commits=counts['commits'], rollbacks=counts['rollbacks'], next_index=state['next_index'])
+
+
+def bind_deterministic_runtime(output, receipt):
+    """Persist effective backend/version identity before the first real pass."""
+    path = Path(output)/'deterministic_runtime.json'
+    if path.exists():
+        if load_json(path) != receipt:
+            raise ValueError('Saved deterministic backend/version differs from this attempt')
+    else:
+        atomic_json(path, receipt)
+    return receipt
+
+
 def attempt_statistics(started):
     result = dict(execution_attempt_elapsed_seconds=time.monotonic()-started,
                   peak_gpu_allocated_bytes=None, peak_gpu_reserved_bytes=None)
@@ -127,6 +161,7 @@ def execute(task_path, *, admission, launch_record, conflict_check):
     # Only guarded_entry supplies actual freshly verified live admission.
     if not admission.get('allow_start') or not admission.get('boundary_verified'):
         raise RuntimeError('Shared-host admission is required before heavy imports')
+    prepare_environment()
     task_path = Path(task_path)
     task = load_json(task_path)
     output = verify_runtime_task(task)
@@ -173,6 +208,7 @@ def execute(task_path, *, admission, launch_record, conflict_check):
         device = torch.device('cuda:0')
         torch.cuda.set_device(device)
         set_seeds_cudnn(cfg, seed=task['definition']['stream_seed'])
+        deterministic = bind_deterministic_runtime(output, apply_deterministic(torch))
         torch.cuda.reset_peak_memory_stats(device)
         model = SPNv2(cfg)
         source = torch.load(paths['source'], map_location='cpu', weights_only=True)
@@ -209,11 +245,16 @@ def execute(task_path, *, admission, launch_record, conflict_check):
         identity = _identity(task, task_path)
         sync = lambda: torch.cuda.synchronize(device)
         trajectory = task['definition'].get('trajectory')
-        if trajectory == 'G50_reference':
+        direct_reference = trajectory == 'G50_reference' or (
+            task['stage'] == 'complete' and task['definition']['group'] in ('A', 'G50'))
+        if direct_reference:
             from reference_driver import ReferenceDriver, validate_reference_state
             store = DurableRunStore(output/'durable', identity, state_validator=validate_reference_state)
+            gate = (lambda _arrival: True) if (
+                task['stage'] == 'complete' and task['definition']['group'] == 'A') else scorers.gate
             engine = ReferenceDriver(stream_records=records, adapter=adapter, store=store,
-                         image_provider=provider, scorer=scorers.arrival, gate=scorers.gate, sync=sync)
+                         image_provider=provider, scorer=scorers.arrival, gate=gate, sync=sync,
+                         complete_run=task['stage'] == 'complete', verify_purity=task['stage'] == 'engineering')
         else:
             mode = ('disabled' if trajectory == 'P_disabled' else 'P') if task['stage'] == 'engineering' else task['definition']['group']
             control = controls(task)
@@ -232,10 +273,12 @@ def execute(task_path, *, admission, launch_record, conflict_check):
                          fault_points=('candidate_2_tentative', 'observation_31') if trajectory == 'P_interrupted_resumed' else (),
                          verify_purity=task['stage'] == 'engineering', **args)
         recovered = engine.resume()
+        validate_deterministic(deterministic, torch)
         atomic_json(output/'effective_config_overrides.json', overrides)
         boundary.phase = 'adaptation'
         last_progress = last_resource_check = time.monotonic()
         while engine.step():
+            validate_deterministic(deterministic, torch)
             baseline.finite_state(model, adapter.optimizer)
             now = time.monotonic()
             if now-last_progress >= 60:
@@ -252,7 +295,7 @@ def execute(task_path, *, admission, launch_record, conflict_check):
                     return dict(status='waiting_resources', exit_code=75, reason=conflict, **attempt_statistics(started))
         saved = store.recover()
         final_state = saved.state
-        learning = final_state['learning'] if trajectory == 'G50_reference' else final_state['learner']['learning']
+        learning = state_learning(final_state)
         if not equal_tree(learning['model'], model.state_dict()):
             raise ValueError('Actual durable final model differs from live model')
         model.load_state_dict(learning['model'], strict=True)
@@ -262,12 +305,13 @@ def execute(task_path, *, admission, launch_record, conflict_check):
         if task['stage'] == 'complete':
             evaluation = evaluate_developer(task, paths, cfg, camera, points, prediction,
                          frozen['data_boundary'], transforms, model, adapter, boundary, store, final_state,
-                         output, conflict_check, sync)
+                         output, conflict_check, sync, deterministic_receipt=deterministic)
             if evaluation.get('waiting_resources'):
                 return dict(status='waiting_resources', exit_code=75, reason=evaluation['reason'], **attempt_statistics(started))
         if boundary.denied:
             raise ValueError('GT boundary violation was attempted')
         sync()
+        validate_deterministic(deterministic, torch)
         saved = store.recover()
         report = dict(schema='odr003-round2-run-report-v1', status='main_completed_pending_independent_verification',
                      run_id=task['run_id'], stage=task['stage'], definition=task['definition'],
@@ -277,7 +321,11 @@ def execute(task_path, *, admission, launch_record, conflict_check):
                      counts=scientific_counts(engine), final_generation=saved.info.generation,
                      final_state_sha256=saved.info.metadata['state_sha256'],
                      strict_source_load=True, strict_final_reload=True, operator_warmup=operator_warmup,
+                     deterministic_runtime=deterministic,
+                     deterministic_runtime_binding=dict(path=str(output/'deterministic_runtime.json'),
+                                                        sha256=sha256(output/'deterministic_runtime.json')),
                      physical_work=store.work_summary(), evaluation=evaluation,
+                     outputs={} if evaluation is None else dict(predictions=evaluation['flat_predictions']),
                      peak_gpu_allocated_bytes=torch.cuda.max_memory_allocated(device),
                      peak_gpu_reserved_bytes=torch.cuda.max_memory_reserved(device),
                      attempt_elapsed_seconds=time.monotonic()-started, recovered_generation=None if recovered is None else recovered.generation,
@@ -303,7 +351,8 @@ def execute(task_path, *, admission, launch_record, conflict_check):
 
 
 def evaluate_developer(task, paths, cfg, camera, points, prediction, data_module, transforms,
-                       model, adapter, boundary, store, final_state, output, conflict_check, sync):
+                       model, adapter, boundary, store, final_state, output, conflict_check, sync,
+                       deterministic_receipt=None):
     """Developer-only evaluation resumes its own complete state; no reserve read."""
     from state_adapter import equal_tree
     boundary.phase = 'evaluation'
@@ -322,12 +371,15 @@ def evaluate_developer(task, paths, cfg, camera, points, prediction, data_module
     for event in store.read_journal()[0]:
         if event['kind'] == 'work_started':
             attempts[event['payload']['logical_key']] = event['payload']['attempt_id']
-    frozen_model = final_state['learner']['learning']['model']
+    frozen_model = state_learning(final_state)['model']
+    counts = state_counts(state)
     for i in range(evaluation['next_index'], 512):
         if i % 64 == 0:
+            if deterministic_receipt is not None:
+                validate_deterministic(deterministic_receipt)
             reason = conflict_check()
             if reason:
-                _progress(output, task, phase='resource_wait', counts=state['counters'],
+                _progress(output, task, phase='resource_wait', counts=counts,
                           status='waiting_resources', reason=reason, evaluated=evaluation['next_index'])
                 return dict(waiting_resources=True, reason=reason)
         key = f'developer:{i:04d}'
@@ -349,20 +401,51 @@ def evaluate_developer(task, paths, cfg, camera, points, prediction, data_module
                 raise ValueError('Evaluation changed model before checkpoint publication')
             checkpoint_started = time.perf_counter()
             state['evaluation'] = copy.deepcopy(evaluation)
-            info = store.save(state, dict(observed=state['counters']['observed'], candidates=state['counters']['candidates'],
-                       commits=state['counters']['commits'], rollbacks=state['counters']['rollbacks'], next_index=state['next_index']))
+            info = store.save(state, state_cursors(state))
             store.append_event('checkpoint_published', dict(generation=info.generation,
                                reason='developer_evaluation', checkpoint_seconds=time.perf_counter()-checkpoint_started,
                                evaluated=evaluation['next_index']))
-            _progress(output, task, phase='developer_evaluation', counts=state['counters'], evaluated=i+1)
+            _progress(output, task, phase='developer_evaluation', counts=counts, evaluated=i+1)
     if not equal_tree(frozen_model, model.state_dict()):
         raise ValueError('Evaluation changed the frozen adapted model')
     validate_evaluation_state(evaluation, [row['sample_id'] for row in labels], complete=True)
     atomic_json(output/'developer_predictions.json', evaluation)
+    flat_binding = export_developer_predictions(output, evaluation)
     return dict(count=512, extended_valid=sum(x['metrics']['valid'] for x in evaluation['rows']),
                 original_valid=sum(x['metrics']['original_valid'] for x in evaluation['rows']),
                 prediction_path=str(output/'developer_predictions.json'),
-                prediction_sha256=sha256(output/'developer_predictions.json'))
+                prediction_sha256=sha256(output/'developer_predictions.json'),
+                flat_predictions=flat_binding)
+
+
+def export_developer_predictions(output, evaluation):
+    """Export only already-persisted poses/metrics, without a model pass."""
+    if evaluation.get('next_index') != 512 or len(evaluation.get('rows', [])) != 512:
+        raise ValueError('Cannot export incomplete developer predictions')
+    rows = []
+    for row in evaluation['rows']:
+        merged = dict(row['prediction'])
+        merged.update(row['metrics'])
+        if 'sample_id' in merged and merged['sample_id'] != row['sample_id']:
+            raise ValueError('Saved prediction identity differs during export')
+        merged['sample_id'] = row['sample_id']
+        rows.append(json.dumps(merged, ensure_ascii=False, sort_keys=True, allow_nan=False))
+    content = ('\n'.join(rows)+'\n').encode('utf8')
+    path = Path(output)/'predictions.jsonl'
+    if path.exists():
+        if path.read_bytes() != content:
+            raise ValueError('Existing saved prediction export differs; preserve it')
+    else:
+        temporary = path.with_name(path.name+'.'+uuid.uuid4().hex+'.tmp')
+        descriptor = os.open(temporary, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+        with os.fdopen(descriptor, 'wb') as handle:
+            handle.write(content); handle.flush(); os.fsync(handle.fileno())
+        os.replace(temporary, path)
+        if os.name != 'nt':
+            fd = os.open(path.parent, os.O_RDONLY | os.O_DIRECTORY)
+            try: os.fsync(fd)
+            finally: os.close(fd)
+    return dict(path=str(path), sha256=sha256(path))
 
 
 def validate_evaluation_state(evaluation, developer_ids, *, complete=False):

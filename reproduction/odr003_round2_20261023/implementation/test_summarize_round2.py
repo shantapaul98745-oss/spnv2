@@ -5,33 +5,52 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from round2_protocol import frozen_protocol, build_complete_matrix, derive_controls
+from round2_protocol import frozen_protocol, build_complete_matrix, build_baseline_matrix, derive_controls
 from summarize_round2 import build_summary, validate_matrix, _verification_processes
 from verify_complete import evaluate_fixed_reference
-from test_verify_complete import rows
+from test_verify_complete import rows, runtime_receipt
+from verify_complete import PROOF_SCHEMA
+from frozen_backend import canonical_sha
 
 
 def fixture():
     proofs = []
-    for definition in build_complete_matrix():
+    definitions = build_complete_matrix()+build_baseline_matrix()
+    def binding(key, name): return dict(path=f'/{key}/{name}', sha256=canonical_sha([key,name]))
+    for definition in definitions:
         d, seed, group = definition["domain"], definition["stream_seed"], definition["group"]
         o, a, g, new = rows(1.), rows(.8), rows(.7), rows(.72 if d == "lightbox" else .65)
         if d == "sunlamp":
             o[-1].update(valid=False, error=None); a[-1].update(valid=False, error=None)
         ids = [r["sample_id"] for r in o]
-        risk = evaluate_fixed_reference(ids, o, a, {"G50": g, group: new}, expected_reference_count=512 if d == "lightbox" else 511)
+        risk = evaluate_fixed_reference(ids, o, a, {"G50": g, group: new},
+                   expected_reference_count=512 if d == "lightbox" else 511,
+                   fixed_reference_ids=ids if d == 'lightbox' else ids[:-1]) if group in ('P','RW','RP') else None
         counts = dict(observed=1024, accepted=40, candidates=10, commits=8, rollbacks=2,
                       tail_discarded=0, consecutive_rollbacks=0, max_consecutive_rollbacks=1)
         if group == "RW": counts.update(candidates=11, commits=7, rollbacks=4, accepted=44)
         elif group == "RP": counts.update(candidates=8, commits=8, rollbacks=0, accepted=32)
+        elif group == "A": counts.update(candidates=256, commits=256, rollbacks=0, accepted=1024)
+        elif group == "G50": counts.update(candidates=128, commits=128, rollbacks=0, accepted=512)
+        elif group == "O": counts={key:0 for key in counts}
         physical = {k: {"adaptation": 40, "developer_evaluation": 512} for k in (
             "forwards_confirmed_completed", "forwards_execution_lower_bound", "forwards_execution_upper_bound")}
         physical.update(forwards_inflight_unknown_upper_bound={}, replay_forwards_confirmed_completed={},
                         compute_seconds_confirmed=10., compute_time_incomplete=False)
-        proofs.append(dict(schema="odr003-round2-complete-run-proof-v1", status="passed", definition=definition,
+        reused = {}
+        if group in ('P','RW','RP'):
+            for method in ('O','A','G50'):
+                key=f'O:{d}:offline' if method=='O' else f'{method}:{d}:{seed}'
+                reused[method] = dict(bindings={name:binding(key,name) for name in ('task','report','proof','predictions')})
+        key=definition['run_key']
+        proofs.append(dict(schema=PROOF_SCHEMA, status="passed", definition=definition,
                            run_id=definition["run_key"], source_sha256=frozen_protocol()["source_sha256"],
                            protocol_sha256=frozen_protocol()["protocol_sha256"], counts=counts,
-                           controls_derived_from_verified_counts=derive_controls(d, seed, 10, 8),
+                           controls_derived_from_verified_counts=derive_controls(d, seed, 10, 8) if group in ('P','RW','RP') else None,
+                           deterministic_runtime=runtime_receipt(),
+                           task_binding=binding(key,'task'),report_path=binding(key,'report')['path'],
+                           report_sha256=binding(key,'report')['sha256'],predictions=binding(key,'predictions'),
+                           reused_baselines=reused,fixed_reference_binding=binding(f'fixed:{d}:{seed}','reference'),
                            stream_binding=dict(path=f"{d}:{seed}", sha256="a"*64), risk=risk,
                            physical_work=physical, all_attempt_costs=dict(execution_attempt_elapsed_seconds_sum_recorded=12.),
                            independent_state=dict(rule_triggered_window_counts=dict(rule1=2)), queue_wait_seconds=1.))
@@ -39,17 +58,20 @@ def fixture():
 
 
 class SummarizeRound2Tests(unittest.TestCase):
-    def test_full_matrix_exactly_eighteen_and_RW_budget_honest(self):
+    def test_full_matrix_thirty_ODR_plus_two_O_and_RW_budget_honest(self):
         result = build_summary(fixture(), [], queue_wait_seconds=91.)
-        self.assertEqual(result["complete_ODR_executed"], 18)
-        self.assertEqual(result["actual_groups"], dict(P=6, RW=6, RP=6))
+        self.assertEqual(result["complete_ODR_executed"], 30)
+        self.assertEqual(result["experimental_ODR_executed"], 18)
+        self.assertEqual(result['offline_O_evaluations'], 2)
+        self.assertEqual(result['newly_executed_baseline_ODR'], 12)
+        self.assertEqual(result["actual_groups"], dict(O=2,A=6,G50=6,P=6, RW=6, RP=6))
         budget = result["budgets"][0]
         self.assertEqual(budget["RW_commit_difference"], -1)
         self.assertEqual(budget["RW_used_image_difference"], -4)
         self.assertFalse(budget["RW_exact_actual_commit_budget_match"])
         self.assertTrue(budget["RP_exact_actual_commit_budget_match"])
         self.assertEqual(result["total_resources"]["queue_wait_seconds"], 91.)
-        self.assertEqual(result["total_resources"]["compute_seconds_confirmed"], 180.)
+        self.assertEqual(result["total_resources"]["compute_seconds_confirmed"], 320.)
         self.assertFalse(result["formal_efficacy_claim"])
 
     def test_actual_RW_equality_allowed_but_does_not_imply_equal_history(self):
@@ -70,7 +92,7 @@ class SummarizeRound2Tests(unittest.TestCase):
         report = build_summary(bad, [])
         self.assertFalse(report["exploration_screen"]["exploratory_screen_passed"])
         self.assertFalse(report["automatic_parameter_changes_or_extra_runs"])
-        self.assertEqual(report["complete_ODR_executed"], 18)
+        self.assertEqual(report["complete_ODR_executed"], 30)
 
     def test_RP_must_really_match_K_not_claimed_label(self):
         bad = fixture()
@@ -87,14 +109,14 @@ class SummarizeRound2Tests(unittest.TestCase):
 
     def test_Q_zero_skip_requires_actual_P_proof_and_no_silent_RP_skip(self):
         proofs = fixture()
-        pair = [p for p in proofs if p["definition"]["domain"] == "lightbox" and p["definition"]["stream_seed"] == 2021]
+        pair = [p for p in proofs if p['definition']['group'] in ('P','RW','RP') and p["definition"]["domain"] == "lightbox" and p["definition"]["stream_seed"] == 2021]
         for p in pair:
             p["counts"].update(candidates=0, commits=0, accepted=0, rollbacks=0)
             p["controls_derived_from_verified_counts"] = derive_controls("lightbox", 2021, 0, 0)
         proofs = [p for p in proofs if p["definition"]["run_key"] != "RW:lightbox:2021"]
         skips = [dict(run_key="RW:lightbox:2021", reason="P_candidates_zero_probability_undefined")]
         result = build_summary(proofs, skips)
-        self.assertEqual(result["complete_ODR_executed"], 17)
+        self.assertEqual(result["complete_ODR_executed"], 29)
         self.assertEqual(result["domains"]["lightbox"]["method_summaries"]["RW"]["stream_count"], 2)
         self.assertIsNone(result["domains"]["lightbox"]["method_summaries"]["RW"]["metrics"]["mean_error"]["mean"])
         with self.assertRaises(ValueError): build_summary(proofs, [])
@@ -144,6 +166,32 @@ class SummarizeRound2Tests(unittest.TestCase):
         self.assertEqual(len(stream["methods"]["P"]["per_sample"]), 512)
         self.assertEqual(stream["reference_count"], 511)
         self.assertFalse(stream["methods"]["P"]["per_sample"][-1]["in_reference"])
+
+    def test_new_baselines_mandatory_and_old_nondeterministic_schema_rejected(self):
+        proofs=fixture()
+        with self.assertRaises(ValueError):build_summary(proofs[:18],[])
+        bad=copy.deepcopy(proofs);bad[-1]['schema']='odr003-round2-complete-run-proof-v1'
+        with self.assertRaisesRegex(ValueError,'unaccepted scientific'):build_summary(bad,[])
+        bad=copy.deepcopy(proofs);bad[-1]['protocol_sha256']='historical_protocol'
+        with self.assertRaisesRegex(ValueError,'unaccepted scientific'):build_summary(bad,[])
+
+    def test_mixed_backend_flags_or_versions_rejected(self):
+        for key,value in [('cudnn_benchmark',True),('cuda_version','12.2')]:
+            bad=fixture();bad[-1]['deterministic_runtime'][key]=value
+            with self.assertRaises(ValueError):build_summary(bad,[])
+
+    def test_risk_must_reuse_newly_executed_baseline_task_and_prediction_identity(self):
+        bad=fixture();bad[0]['reused_baselines']['A']['bindings']['task']['sha256']='old_task'
+        with self.assertRaisesRegex(ValueError,'newly executed deterministic'):build_summary(bad,[])
+
+    def test_O_is_not_an_extra_ODR_or_an_adaptation(self):
+        bad=fixture();o=next(p for p in bad if p['definition']['group']=='O');o['counts']['commits']=1
+        with self.assertRaises(ValueError):build_summary(bad,[])
+
+    def test_original_A_cannot_silently_use_input_gating(self):
+        bad=fixture();a=next(p for p in bad if p['definition']['group']=='A')
+        a['counts'].update(accepted=512,candidates=128,commits=128)
+        with self.assertRaisesRegex(ValueError,'Original A'):build_summary(bad,[])
 
 
 if __name__ == "__main__": unittest.main()

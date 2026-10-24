@@ -1,0 +1,65 @@
+{
+  "complete_groups": {
+    "A": 6,
+    "G50": 6,
+    "P": 6,
+    "RP": 6,
+    "RW": 6
+  },
+  "confirmed_choice": "strict_deterministic_execution_with_same_protocol_baselines_and_all_controls",
+  "engineering": "revalidate same8 logical engineering trajectories/128 prefix each under deterministic execution; old results/failures retained",
+  "fixed_reference_bindings": {
+    "lightbox:2021": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/deterministic_20261024/fixed_references/lightbox_2021.json",
+      "sha256": "c3e289fb14ad514e75969906c1088db844406973f12b753168e85b7601f7a2d0"
+    },
+    "lightbox:2022": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/deterministic_20261024/fixed_references/lightbox_2022.json",
+      "sha256": "d6f6bad9c5f79d1d2d2328e0e398d812dba3e5360e99c35790b0d6cbf3e4ef33"
+    },
+    "lightbox:2023": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/deterministic_20261024/fixed_references/lightbox_2023.json",
+      "sha256": "dcf20783aa7b3785da1c565b2997536300f79a046b01d8c9826bcd43a719a2d2"
+    },
+    "sunlamp:2021": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/deterministic_20261024/fixed_references/sunlamp_2021.json",
+      "sha256": "73de88351f2eb70d5c88be27bb276121013b563140294a6037a2d922589dace3"
+    },
+    "sunlamp:2022": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/deterministic_20261024/fixed_references/sunlamp_2022.json",
+      "sha256": "e56acb79ad9609dc4f72c34459a4728cf1eb952262b2ad6bfde2ed5a4307853b"
+    },
+    "sunlamp:2023": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/deterministic_20261024/fixed_references/sunlamp_2023.json",
+      "sha256": "2c9b5edd67798d32d91a70fedd5cf1afa8b5ae07dd60ee5c286683dbf433c73d"
+    }
+  },
+  "goal_mode": "paused",
+  "max_complete_odr": 30,
+  "offline_O": {
+    "lightbox": 512,
+    "sunlamp": 512
+  },
+  "prior_block": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/auditor_binding_repair_20261024/PENDING_RESEARCH_DECISION.json",
+    "sha256": "f4c9462911e470d8f05cee5ebdc6d3dc9e490b8a41554f00999ef9bcedba08b9"
+  },
+  "prior_confirmation": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/deterministic_20261024/before/confirmation.json",
+    "sha256": "b22d5a6c6d6c16f71dfe2dcc463baa40ff3a492ced0935945365d16c7d6ad786"
+  },
+  "recorded_at": "2026-10-24T04:38:49.637542+00:00",
+  "schema": "odr003-round2-deterministic-confirmation-v1",
+  "status": "confirmed_implementation_authorized",
+  "unchanged": [
+    "official source SHA",
+    "original A update mathematics/PnP/decoding/loss",
+    "G50 calibration and protection thresholds",
+    "frozen image/split/streams/seeds",
+    "fixed reference IDs/count512/511",
+    "reservedGTsealed",
+    "sharedhostprotections",
+    "no150sourceepochs"
+  ],
+  "user_answer": "批准最多30次ODR：新增A6/G50 6，保留P6、RW6、RP6（推荐）；另做两域O各512张离线评价"
+}

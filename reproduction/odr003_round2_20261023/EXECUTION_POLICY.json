@@ -1,20 +1,20 @@
 {
-  "schema": "odr003-round2-execution-policy-v2",
+  "schema": "odr003-round2-execution-policy-v3",
   "effective_date": "2026-10-24",
   "user_authorized": true,
-  "research_protocol_unchanged": true,
+  "research_protocol_unchanged": false,
   "goal_mode": "paused",
   "resource_wait_interval_seconds": 300,
   "explicit_start_or_idle_report": "immediate_fresh_resource_recheck_via_private_manager_control_without_restart",
   "automatic_sequence": [
-    "finish_current_RNG_fix_and_independent_recovery_validation",
-    "engineering8_and_independent_proof",
+    "strict_deterministic_engineering8_and_independent_proof",
+    "offline_O2_and_A6_G506_same_protocol_independent_proofs",
     "P6_and_independent_proofs",
     "derive_RW_RP_from_each_accepted_P_counts_max12",
     "fixed_round2_summary_and_independent_acceptance",
     "deliver_current_exploration"
   ],
-  "max_complete_odr": 18,
+  "max_complete_odr": 30,
   "no_repeated_accepted_experiments": true,
   "preserve_current_processes_and_checkpoints": true,
   "scientific_progress_authority": "complete_recoverable_checkpoint",
@@ -25,5 +25,7 @@
   ],
   "resource_reports_require_sampling_time_and_live_vs_cache_label": true,
   "automation_id": "spnv2-g50-p",
-  "no_duplicate_automations": true
+  "no_duplicate_automations": true,
+  "deterministic_execution_authorized": true,
+  "offline_O_each_domain": 512
 }

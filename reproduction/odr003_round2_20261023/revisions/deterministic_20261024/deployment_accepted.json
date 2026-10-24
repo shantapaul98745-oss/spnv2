@@ -1,0 +1,25 @@
+{
+  "code_files": 50,
+  "fixed_references_checked": 6,
+  "local_attestation": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/deterministic_20261024/validation/execution_attestation.json",
+    "sha256": "810581b3a414808a9c40aeb2d0a32028f59565487db4173efadf8408c486ecc9"
+  },
+  "local_contracts": 373,
+  "max_complete_odr": 30,
+  "model_forwards": 0,
+  "new_engineering_index": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/engineering_index.json",
+    "sha256": "887e230c74c5ae7c51ba69b61e4d69f2ff93effb443cd0b7a4beeb602db9253e"
+  },
+  "offline_evaluations": 2,
+  "previous_engineering_runs_preserved": 8,
+  "prior_history": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/deterministic_20261024/prior_execution_history.json",
+    "sha256": "ada16d5889a312b119c4e94c0af506a34c1524c1e59b7788d3a409a41687728d"
+  },
+  "protocol_sha256": "8a0f78758bb94b462c65ac19354dc29a79397d3df8d5a859e1a4c73b9902c0d5",
+  "server_state_not_yet_switched": true,
+  "shared_model_compute": false,
+  "status": "passed"
+}

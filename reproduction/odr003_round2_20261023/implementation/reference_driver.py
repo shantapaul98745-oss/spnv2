@@ -2,7 +2,8 @@
 
 Learning uses OriginalAAdapter.accept/finish directly. WindowLearner is only a
 complete-state serializer/restorer; none of its transactional update methods is
-called. The production scope is exactly the frozen 128-observation prefix.
+called. Production scope is the frozen 128-observation engineering prefix or
+the explicitly selected 1024-observation deterministic A/G50 baseline run.
 """
 from __future__ import annotations
 
@@ -30,8 +31,10 @@ def validate_reference_state(state):
     if not isinstance(state, dict) or not required <= state.keys() or state["schema"] != SCHEMA:
         raise ValueError("Incomplete original-G50 reference state")
     next_index = state["next_index"]
-    if type(next_index) is not int or not 0 <= next_index <= len(state["stream_records"]) <= 128:
-        raise ValueError("Reference prefix/cursor exceeds engineering scope")
+    size = len(state["stream_records"])
+    if (type(next_index) is not int or not 0 <= next_index <= size
+            or not (1 <= size <= 128 or size == 1024)):
+        raise ValueError("Reference prefix/cursor exceeds fixed engineering/full-run scope")
     learning = state["learning"]
     needed = {"model", "buffers", "optimizer", "optimizer_type", "optimizer_parameter_names",
               "modes", "requires_grad", "gradients", "bn_features", "bn_mean", "bn_mean_sq",
@@ -68,14 +71,20 @@ def validate_reference_state(state):
 class ReferenceDriver:
     def __init__(self, *, stream_records, adapter: OriginalAAdapter,
                  store: DurableRunStore, image_provider, scorer, gate,
-                 sync=lambda: None, verify_purity=True, allow_stub_prefix=False):
+                 sync=lambda: None, verify_purity=True, allow_stub_prefix=False,
+                 complete_run=False):
         if not isinstance(adapter, OriginalAAdapter) or adapter.batch != 4:
             raise ValueError("Reference requires the unchanged batch-four OriginalAAdapter")
         if store.state_validator is not validate_reference_state:
             raise ValueError("Store must use validate_reference_state")
         records = _science(stream_records)
-        if not 1 <= len(records) <= 128 or (not allow_stub_prefix and len(records) != 128):
-            raise ValueError("Production reference is exactly the frozen 128-observation prefix")
+        if type(complete_run) is not bool or type(allow_stub_prefix) is not bool:
+            raise ValueError("Reference scope flags must be explicit booleans")
+        expected = 1024 if complete_run else 128
+        if (complete_run and allow_stub_prefix) or (not allow_stub_prefix and len(records) != expected):
+            raise ValueError("Production reference must use its exact frozen 128/1024 scope")
+        if allow_stub_prefix and not 1 <= len(records) <= 128:
+            raise ValueError("Synthetic engineering prefixes cannot expand the production budget")
         ids = [record["sample_id"] for record in records]
         if len(set(ids)) != len(ids):
             raise ValueError("Reference images must be distinct")

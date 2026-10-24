@@ -177,6 +177,8 @@ def main(task_path, log_path):
                 from verify_complete import execute
             elif task.get('action', 'run') == 'summarize_round2':
                 from summarize_round2 import execute
+            elif task.get('action', 'run') == 'run_offline':
+                from offline_baseline import execute
             elif task.get('action', 'run') == 'run':
                 from run_round2 import execute
             else:

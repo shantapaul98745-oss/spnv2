@@ -1,0 +1,352 @@
+{
+  "actual_attempts": [
+    {
+      "exit_code": 0,
+      "exitcode": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_lightbox_g50_reference_7c67a9936b9048f586e3c8f5b4ff5d79.log.exitcode",
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "log": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_lightbox_g50_reference_7c67a9936b9048f586e3c8f5b4ff5d79.log",
+        "sha256": "7377ecbc6c183826f408aaae8f761af92185d77c2383bafc658d662b758aa823"
+      },
+      "nonce": "7c67a9936b9048f586e3c8f5b4ff5d79",
+      "outcome": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/launches/7c67a9936b9048f586e3c8f5b4ff5d79/outcome.json",
+        "sha256": "726b75ad60551e81fd764ab3ec45304a94f3ddf61cd1d5c1a5a795def7e6336d"
+      },
+      "run_id": "g50p2_eng_lightbox_g50_reference"
+    },
+    {
+      "exit_code": 0,
+      "exitcode": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_lightbox_p_disabled_5e2db04d91594d7e94de8aaaf57a7581.log.exitcode",
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "log": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_lightbox_p_disabled_5e2db04d91594d7e94de8aaaf57a7581.log",
+        "sha256": "e83f58af1343189eb54f447f2378894d860b4cc96195bd4e756f0ac08e868006"
+      },
+      "nonce": "5e2db04d91594d7e94de8aaaf57a7581",
+      "outcome": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/launches/5e2db04d91594d7e94de8aaaf57a7581/outcome.json",
+        "sha256": "89a98f87538831bdba13450890096c25087db2c7c03ea1eb86e4bba4ebac1506"
+      },
+      "run_id": "g50p2_eng_lightbox_p_disabled"
+    },
+    {
+      "exit_code": 0,
+      "exitcode": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_lightbox_p_continuous_0d50028962d048839b993c6baa620107.log.exitcode",
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "log": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_lightbox_p_continuous_0d50028962d048839b993c6baa620107.log",
+        "sha256": "dd2a7b2762ef1322140d36f7f9f58e2e3f95453739f5ec006d8569f6af3ae806"
+      },
+      "nonce": "0d50028962d048839b993c6baa620107",
+      "outcome": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/launches/0d50028962d048839b993c6baa620107/outcome.json",
+        "sha256": "29765d8c069f1c65e17ad0b5dff3ebf6f4fd6bb3f19ce35eb9feeafb378ea3f6"
+      },
+      "run_id": "g50p2_eng_lightbox_p_continuous"
+    },
+    {
+      "exit_code": 76,
+      "exitcode": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_lightbox_p_interrupted_resumed_46e2426631ce421ea1dd47b800fb952b.log.exitcode",
+        "sha256": "461144ccfd56ee3cf0f9a9d80e520c5b872166b23092d5fd838ecbdb46d64dab"
+      },
+      "log": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_lightbox_p_interrupted_resumed_46e2426631ce421ea1dd47b800fb952b.log",
+        "sha256": "58ab8470885802397407c9c55367444932df7337da68c584692291d13392b965"
+      },
+      "nonce": "46e2426631ce421ea1dd47b800fb952b",
+      "outcome": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/launches/46e2426631ce421ea1dd47b800fb952b/outcome.json",
+        "sha256": "431bc51b79be47a68c7f7e7a19d57b0a2ccfbc820bafff6ca62562843ef40477"
+      },
+      "run_id": "g50p2_eng_lightbox_p_interrupted_resumed"
+    },
+    {
+      "exit_code": 76,
+      "exitcode": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_lightbox_p_interrupted_resumed_906bae266e0c4b05aecec75f3400321d.log.exitcode",
+        "sha256": "461144ccfd56ee3cf0f9a9d80e520c5b872166b23092d5fd838ecbdb46d64dab"
+      },
+      "log": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_lightbox_p_interrupted_resumed_906bae266e0c4b05aecec75f3400321d.log",
+        "sha256": "f26ee1fc6fc79c66819fb925a9b01b79f32189b540a38a3e67dfae649748e079"
+      },
+      "nonce": "906bae266e0c4b05aecec75f3400321d",
+      "outcome": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/launches/906bae266e0c4b05aecec75f3400321d/outcome.json",
+        "sha256": "7e7e6460e5f5b7e4f673cc0f40470a32385e44caa93d21603118612c4cfdd77d"
+      },
+      "run_id": "g50p2_eng_lightbox_p_interrupted_resumed"
+    },
+    {
+      "exit_code": 0,
+      "exitcode": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_lightbox_p_interrupted_resumed_de3cb2a1ddb84b62b22d67a6ce2a2ebb.log.exitcode",
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "log": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_lightbox_p_interrupted_resumed_de3cb2a1ddb84b62b22d67a6ce2a2ebb.log",
+        "sha256": "8108fb12bd69e95638d89bcaa93da54c805ed670adfd7444e14ee8b9a5dc6e60"
+      },
+      "nonce": "de3cb2a1ddb84b62b22d67a6ce2a2ebb",
+      "outcome": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/launches/de3cb2a1ddb84b62b22d67a6ce2a2ebb/outcome.json",
+        "sha256": "36dace2f6bfb3edf0b44dd7497cd4f424ee15ee8abfddb9187657bb15a765efd"
+      },
+      "run_id": "g50p2_eng_lightbox_p_interrupted_resumed"
+    },
+    {
+      "exit_code": 0,
+      "exitcode": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_sunlamp_g50_reference_b33011a3e5bf4167bd4a588ee90c65e4.log.exitcode",
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "log": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_sunlamp_g50_reference_b33011a3e5bf4167bd4a588ee90c65e4.log",
+        "sha256": "ebbb4e26ac684788768a11ed76bdadce1c57e49d76c8c5ec7d5dcb9787c6d51a"
+      },
+      "nonce": "b33011a3e5bf4167bd4a588ee90c65e4",
+      "outcome": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/launches/b33011a3e5bf4167bd4a588ee90c65e4/outcome.json",
+        "sha256": "fe994c9a78fbe065c77c818bf622f35a6ccdbc4d3dcbe63fb5fa990cb2f767b2"
+      },
+      "run_id": "g50p2_eng_sunlamp_g50_reference"
+    },
+    {
+      "exit_code": 0,
+      "exitcode": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_sunlamp_p_disabled_177d83e6a37a449ea11af3baddad5210.log.exitcode",
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "log": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_sunlamp_p_disabled_177d83e6a37a449ea11af3baddad5210.log",
+        "sha256": "4747f2e49bbb83cecd3391b7843f8fd66398200836f9a5d12754e922e4651a7e"
+      },
+      "nonce": "177d83e6a37a449ea11af3baddad5210",
+      "outcome": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/launches/177d83e6a37a449ea11af3baddad5210/outcome.json",
+        "sha256": "0e4e73044360696127e7d5a386516c5bbebc04c3aa1aaa9c7f5bf90431203645"
+      },
+      "run_id": "g50p2_eng_sunlamp_p_disabled"
+    },
+    {
+      "exit_code": 0,
+      "exitcode": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_sunlamp_p_continuous_1fe87e402e8543afbd7a88ffc2f9a535.log.exitcode",
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "log": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_sunlamp_p_continuous_1fe87e402e8543afbd7a88ffc2f9a535.log",
+        "sha256": "2809d75f6f77cd8d126d58807421846014dc7635de35387d19094b8256f74c67"
+      },
+      "nonce": "1fe87e402e8543afbd7a88ffc2f9a535",
+      "outcome": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/launches/1fe87e402e8543afbd7a88ffc2f9a535/outcome.json",
+        "sha256": "b24c8b12169f3a296bdabddd0f1a2035078fd933d9a64b6bda6eb627822757d3"
+      },
+      "run_id": "g50p2_eng_sunlamp_p_continuous"
+    },
+    {
+      "exit_code": 76,
+      "exitcode": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_sunlamp_p_interrupted_resumed_0a7e8fa408a848ecada67f8d952290c2.log.exitcode",
+        "sha256": "461144ccfd56ee3cf0f9a9d80e520c5b872166b23092d5fd838ecbdb46d64dab"
+      },
+      "log": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_sunlamp_p_interrupted_resumed_0a7e8fa408a848ecada67f8d952290c2.log",
+        "sha256": "e83d897a47fb80ae649ffff988af08e742a4993f15b134c61a727a1f53ba5f6a"
+      },
+      "nonce": "0a7e8fa408a848ecada67f8d952290c2",
+      "outcome": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/launches/0a7e8fa408a848ecada67f8d952290c2/outcome.json",
+        "sha256": "d1ab412db7722d8bfd10ddd4f5dee3d0c537d62cd93149debc8ac4bd90fabb43"
+      },
+      "run_id": "g50p2_eng_sunlamp_p_interrupted_resumed"
+    },
+    {
+      "exit_code": 76,
+      "exitcode": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_sunlamp_p_interrupted_resumed_d33f3b9577b74c1f9813c18aaebaa25a.log.exitcode",
+        "sha256": "461144ccfd56ee3cf0f9a9d80e520c5b872166b23092d5fd838ecbdb46d64dab"
+      },
+      "log": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_sunlamp_p_interrupted_resumed_d33f3b9577b74c1f9813c18aaebaa25a.log",
+        "sha256": "dcaf00904e923adcdf56d84d90539f1d7a0cef837ebd8f54bade37f3a560b097"
+      },
+      "nonce": "d33f3b9577b74c1f9813c18aaebaa25a",
+      "outcome": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/launches/d33f3b9577b74c1f9813c18aaebaa25a/outcome.json",
+        "sha256": "a0460b2901c08c1368bb9dfc879876f9a1bd7d51ebdda34d60f22bc27ce25ed6"
+      },
+      "run_id": "g50p2_eng_sunlamp_p_interrupted_resumed"
+    },
+    {
+      "exit_code": 0,
+      "exitcode": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_sunlamp_p_interrupted_resumed_b96c3500b4354358b340beb22bf543e0.log.exitcode",
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "log": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_sunlamp_p_interrupted_resumed_b96c3500b4354358b340beb22bf543e0.log",
+        "sha256": "1900a476338ed2c1d307e02dacf54cc5da5adfd0b97855ec39cfc47515fcb319"
+      },
+      "nonce": "b96c3500b4354358b340beb22bf543e0",
+      "outcome": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/launches/b96c3500b4354358b340beb22bf543e0/outcome.json",
+        "sha256": "80c935f0af3718816affa775b69d853ee4fe2d7c7b52923338941585ea7079a2"
+      },
+      "run_id": "g50p2_eng_sunlamp_p_interrupted_resumed"
+    },
+    {
+      "exit_code": 1,
+      "exitcode": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_engineering_verification_b18ee82116f4412cb56bccf4c16f0f59.log.exitcode",
+        "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+      },
+      "log": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_engineering_verification_b18ee82116f4412cb56bccf4c16f0f59.log",
+        "sha256": "64d373b2fab23d7dadf30829c24df70856c0e7960b290bafe5828c2be353e7ef"
+      },
+      "nonce": "b18ee82116f4412cb56bccf4c16f0f59",
+      "outcome": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/launches/b18ee82116f4412cb56bccf4c16f0f59/outcome.json",
+        "sha256": "0572eb8fb62a1e6b511d8ec93f77b82d0b60f96da51a54cf28e85eb65ced748d"
+      },
+      "run_id": "g50p2_engineering_verification"
+    },
+    {
+      "exit_code": 1,
+      "exitcode": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_engineering_verification_0bad27e6949f4070944e852ae4dc47f8.log.exitcode",
+        "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+      },
+      "log": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_engineering_verification_0bad27e6949f4070944e852ae4dc47f8.log",
+        "sha256": "f6f81135d40c9bb7e3b220fc42d8d6b83283d0eeb3b331d1a58dd247b65a6e46"
+      },
+      "nonce": "0bad27e6949f4070944e852ae4dc47f8",
+      "outcome": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/launches/0bad27e6949f4070944e852ae4dc47f8/outcome.json",
+        "sha256": "21c46f988b79f10c868b2cd508165cac1f144cf53e4e574929e0463fb5271288"
+      },
+      "run_id": "g50p2_engineering_verification"
+    },
+    {
+      "exit_code": 0,
+      "exitcode": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/saved_state_diagnostic_aa2f96ccee194603b230422df52eeec4.log.exitcode",
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "log": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/saved_state_diagnostic_aa2f96ccee194603b230422df52eeec4.log",
+        "sha256": "adb21bd952dfb59a0c631882a32ce287cda5b9d209e8fee6d545738720484dc4"
+      },
+      "nonce": "aa2f96ccee194603b230422df52eeec4",
+      "outcome": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/launches/aa2f96ccee194603b230422df52eeec4/outcome.json",
+        "sha256": "d450a0c9d708170f1d63af8f941d49e12e4898464acd605817623df712fbc4ea"
+      },
+      "scope": "prior CPU diagnostic / zero-state migration / original zero-forward failure"
+    },
+    {
+      "exit_code": 0,
+      "exitcode": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/preforward_import_c8748da555b44c358787ec5e4e5c5d10.log.exitcode",
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "log": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/preforward_import_c8748da555b44c358787ec5e4e5c5d10.log",
+        "sha256": "3ad63b634cf236ddc420edb5755ec23267c96fa7872c70a59c823073c2862d51"
+      },
+      "nonce": "c8748da555b44c358787ec5e4e5c5d10",
+      "outcome": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/launches/c8748da555b44c358787ec5e4e5c5d10/outcome.json",
+        "sha256": "15bd26b63ce9b0c07a14c859e7b937defce33eaecbbef3b9ac708e93739695ac"
+      },
+      "scope": "prior CPU diagnostic / zero-state migration / original zero-forward failure"
+    },
+    {
+      "exit_code": 1,
+      "exitcode": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_lightbox_g50_reference_be01859de69743f181c337a9a17fcf01.log.exitcode",
+        "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+      },
+      "log": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/logs/g50p2_eng_lightbox_g50_reference_be01859de69743f181c337a9a17fcf01.log",
+        "sha256": "35396cf0bdc3ecdaca60d2b2376efb0abfc3a74c0c8380d223b821646fc9e63a"
+      },
+      "nonce": "be01859de69743f181c337a9a17fcf01",
+      "outcome": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/launches/be01859de69743f181c337a9a17fcf01/outcome.json",
+        "sha256": "26338b2a5da2aa4bdd33272be26a5da6aedd6f10ae709810c20cd19628e7ac1d"
+      },
+      "scope": "prior CPU diagnostic / zero-state migration / original zero-forward failure"
+    }
+  ],
+  "confirmed_model_forwards": {
+    "adaptation": 518,
+    "arrival_scoring": 1024,
+    "protection_post": 700,
+    "protection_pre": 700
+  },
+  "eligible_as_current_scientific_results": false,
+  "interpretation": "preserved historical engineering and repair work, not accepted current deterministic evidence; actual costs retained separately",
+  "old_index": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/deterministic_20261024/before/engineering_index.json",
+    "sha256": "75c7ca72369b5107a673f058f4c5ff85fc6e6c27bea7a5f5d352a3c73f0bd267"
+  },
+  "old_status": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/deterministic_20261024/before/status.json",
+    "sha256": "1d12010cfd2f504d8a378b307607ca3468225edbabcfc3d934f06f4133a93e6b"
+  },
+  "previous_complete_ODR": 0,
+  "previous_engineering_main_runs": 8,
+  "queue_wait_seconds": 17150.338302135468,
+  "recorded_at": "2026-10-24T04:44:10.510468+00:00",
+  "run_reports": [
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/preprocess_rng_fix_20261024/g50p2_eng_lightbox_g50_reference/report.json",
+      "sha256": "d80a145141d269315e66b333364c88479754c457eab688e4d44e0dfd6331bf4b"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/preprocess_rng_fix_20261024/g50p2_eng_lightbox_p_disabled/report.json",
+      "sha256": "5591319db6cf178812df64d4bd88ef0e2b2d99af134e9c6d4ebedc0b5af3f2cb"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/preprocess_rng_fix_20261024/g50p2_eng_lightbox_p_continuous/report.json",
+      "sha256": "170a7e2508da95fe39a05c2494ea68286cf012f3d80a5c1454816c293fce558b"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/preprocess_rng_fix_20261024/g50p2_eng_lightbox_p_interrupted_resumed/report.json",
+      "sha256": "a78810b0b1da51f5ed96e942844a7c29c5ec55e0a2e1fc70a6147143e5d5b821"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/preprocess_rng_fix_20261024/g50p2_eng_sunlamp_g50_reference/report.json",
+      "sha256": "dfa0c61f0fc9b602aee6838c910fcd3485a7b89872baa961559020b14b3b5fa0"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/preprocess_rng_fix_20261024/g50p2_eng_sunlamp_p_disabled/report.json",
+      "sha256": "316f434afe34a804d5936e2eb9cdccbe9b2daf1d0bad274fb5667b2f508c6aa7"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/preprocess_rng_fix_20261024/g50p2_eng_sunlamp_p_continuous/report.json",
+      "sha256": "5dc95c89fa76514c396b3439d40546adac4fbe135f3510b792acf4d192289545"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/preprocess_rng_fix_20261024/g50p2_eng_sunlamp_p_interrupted_resumed/report.json",
+      "sha256": "89c1b520e05eeec32e939d7bea828094dff36ce72c855209996696d72136ae08"
+    }
+  ],
+  "saved_state_diagnostic": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/auditor_binding_repair_20261024/saved_state_diagnostic.json",
+    "sha256": "6f4f41a47453fad24f38c04c130f2173444b3c8f5a1c66f452443c7c08a4655f"
+  },
+  "schema": "odr003-round2-prior-execution-history-v1"
+}

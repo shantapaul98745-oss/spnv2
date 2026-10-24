@@ -1,4 +1,4 @@
-"""Compile the approved P/RW/RP matrix and its independent audit tasks.
+"""Compile deterministic O/A/G50 baselines and the approved P/RW/RP matrix.
 
 Only immutable metadata is read here. No model import, GT access, process launch,
 or resource probe occurs while preparing the next stage.
@@ -11,7 +11,7 @@ from pathlib import Path
 
 from frozen_backend import sha256
 from guarded_entry import atomic_json
-from round2_protocol import build_complete_matrix, derive_controls, frozen_protocol
+from round2_protocol import build_baseline_matrix, build_complete_matrix, derive_controls, frozen_protocol
 
 
 def read(path):
@@ -49,59 +49,93 @@ def accepted_engineering(plan, index):
     return binding(proof_path)
 
 
-def freeze_reusable_baselines(plan, index):
-    """Retain exact accepted O/A/G50 metadata, never rerun those forwards."""
-    admission = index.get('first_round_acceptance')
-    if not admission:
-        raise ValueError('First-round accepted summary/proof must be bound before automatic continuation')
-    summary, proof = checked(admission['summary']), checked(admission['proof'])
-    if summary.get('status') != 'completed' and summary.get('status') != 'passed':
-        # The original summarizer uses accepted_exploratory_summary in some
-        # versions. Its independent proof, not a guessed status spelling, binds it.
-        if proof.get('status') != 'passed':
-            raise ValueError('Original baseline summary lacks accepted evidence')
-    if proof.get('status') != 'passed':
-        raise ValueError('Original baseline summary proof did not pass')
-    if (proof.get('summary_sha256') is not None
-            and proof['summary_sha256'] != admission['summary']['sha256']):
-        raise ValueError('Original summary proof hash mismatch')
-    document_path = Path(plan)/'baseline_result_bindings.json'
-    document = read(document_path)
-    if (document.get('source_sha256') != frozen_protocol()['source_sha256']
-            or document.get('measurement_repeated') is not False):
-        raise ValueError('Original result binding document identity changed')
-    inputs = {str(Path(row['path'])): row for row in summary['inputs']}
-    pairs = {}
-    for definition in build_complete_matrix()[:6]:
-        domain, seed = definition['domain'], definition['stream_seed']
-        pair = {}
-        for group in ('O', 'A', 'G50'):
-            candidates = [row for row in document['runs'] if row['method'] == group
-                          and row['domain'] == domain
-                          and str(row['stream']) == ('offline' if group == 'O' else str(seed))]
-            if len(candidates) != 1:
-                raise ValueError('Original accepted baseline is missing or ambiguous')
-            source = candidates[0]
-            directory = str(Path(source['report']['path']).parent)
-            entry = inputs.get(directory)
-            if (entry is None or source['report']['sha256'] != entry['report_sha256']
-                    or source['proof']['sha256'] != entry['proof_sha256']):
-                raise ValueError('Original binding differs from accepted summary')
-            run_proof = checked(source['proof'])
-            checked(source['report'])
-            if (run_proof.get('status') != 'passed'
-                    or run_proof.get('report_sha256') != source['report']['sha256']):
-                raise ValueError('Original run lacks independent acceptance')
-            pair[group] = {}
-            for key in ('task', 'report', 'proof', 'predictions'):
-                if sha256(source[key]['path']) != source[key]['sha256']:
-                    raise ValueError('Original baseline artifact changed: '+key)
-                pair[group][key] = source[key]
-        pairs[f'{domain}:{seed}'] = pair
-    value = dict(schema='odr003-round2-reused-baselines-v1',
-                 first_round_acceptance=admission, pairs=pairs, no_forwards=True,
-                 no_reserved_GT=True)
-    path = immutable(Path(plan)/'complete/baseline_reuse.json', value)
+def run_name(index, definition):
+    prefix = index.get('run_prefix', 'g50p2_det_20261024')
+    if not prefix or any(ch not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-' for ch in prefix):
+        raise ValueError('Current execution requires a safe unique run prefix')
+    group, domain = definition['group'], definition['domain']
+    suffix = 'offline_dev512' if group == 'O' else f"s{definition['stream_seed']}_N1024_B4"
+    return f'{prefix}_{group.lower()}_{domain}_{suffix}'
+
+
+def baseline_task(plan, index, definition, engineering):
+    plan = Path(plan)
+    seed = definition.get('stream_seed') or 2021
+    original = read(plan/'baseline_bindings.json')['tasks'][f"{definition['domain']}_{seed}"]
+    template = read(index['tasks'][0]['task_path'])
+    run_id = run_name(index, definition)
+    task = dict(schema='odr003-round2-task-v1', action='run_offline' if definition['group'] == 'O' else 'run',
+                stage='offline' if definition['group'] == 'O' else 'complete', run_id=run_id,
+                output_dir=str(plan/'runs'/run_id), definition=definition, protocol=frozen_protocol(),
+                implementation_sha256=index['implementation_sha256'], baseline_task=original,
+                frozen_modules=template['frozen_modules'], confirmation_sha256=sha256(plan/'confirmation.json'),
+                engineering_admission=engineering)
+    if index.get('confirmation'):
+        checked(index['confirmation'])
+        task['confirmation'] = index['confirmation']
+    path = immutable(plan/'tasks'/(run_id+'.json'), task)
+    return dict(run_id=run_id, definition=definition, task_path=str(path), task_sha256=sha256(path))
+
+
+def prepare_baselines(plan, index):
+    engineering = accepted_engineering(plan, index)
+    rows = [baseline_task(plan, index, row, engineering) for row in build_baseline_matrix()]
+    if len(rows) != 14 or len({row['run_id'] for row in rows}) != 14:
+        raise ValueError('Deterministic comparison requires exactly two O and twelve A/G50 results')
+    value = dict(schema='odr003-round2-complete-index-v2', phase='baselines', tasks=rows,
+                 protocol_sha256=frozen_protocol()['protocol_sha256'], implementation_sha256=index['implementation_sha256'],
+                 engineering_admission=engineering, skipped_controls=[], max_new_complete_odr=30,
+                 max_offline_evaluations=2, fixed_reference_bindings=index.get('fixed_reference_bindings'))
+    if index.get('confirmation'): value['confirmation'] = index['confirmation']
+    path = immutable(Path(plan)/'complete/baseline_index.json', value)
+    return path, value
+
+
+def freeze_reusable_baselines(plan, index, baseline_index, accepted):
+    """Freeze only fourteen independently accepted results from this backend.
+
+    Historical results remain provenance. They cannot substitute for the newly
+    authorized deterministic O/A/G50 measurements.
+    """
+    definitions = build_baseline_matrix()
+    rows = baseline_index['tasks']
+    if ([row['definition'] for row in rows] != definitions
+            or baseline_index['implementation_sha256'] != index['implementation_sha256']):
+        raise ValueError('Baseline matrix does not belong to this deterministic execution')
+    by_group = {}
+    proofs = []
+    for row in rows:
+        item = accepted.get(row['run_id'])
+        if item is None:
+            raise ValueError('All fourteen deterministic baselines require independent acceptance')
+        task_binding = dict(path=row['task_path'], sha256=row['task_sha256'])
+        task, report, proof = checked(task_binding), checked(item['report']), checked(item['proof'])
+        if (task['definition'] != row['definition'] or report.get('definition') != row['definition']
+                or task['protocol'] != frozen_protocol() or report.get('protocol_sha256') != frozen_protocol()['protocol_sha256']
+                or report.get('source_sha256') != frozen_protocol()['source_sha256']
+                or task['implementation_sha256'] != index['implementation_sha256']
+                or proof.get('status') != 'passed' or proof.get('report_sha256') != item['report']['sha256']
+                or proof.get('definition') != row['definition'] or proof.get('task_binding') != task_binding):
+            raise ValueError('Deterministic baseline proof/source/task identity differs')
+        prediction = report['outputs']['predictions']
+        if sha256(prediction['path']) != prediction['sha256']:
+            raise ValueError('Accepted deterministic baseline predictions changed')
+        definition = row['definition']
+        key = (definition['domain'], definition['group'], None if definition['group'] == 'O' else definition['stream_seed'])
+        if key in by_group:
+            raise ValueError('Duplicate deterministic baseline slot')
+        by_group[key] = dict(task=task_binding, report=item['report'], proof=item['proof'], predictions=prediction)
+        proofs.append(item['proof'])
+    pairs = {f"{definition['domain']}:{definition['stream_seed']}": {
+                group: by_group[(definition['domain'], group, None if group == 'O' else definition['stream_seed'])]
+                for group in ('O', 'A', 'G50')}
+             for definition in build_complete_matrix()[:6]}
+    value = dict(schema='odr003-round2-reused-baselines-v2', pairs=pairs,
+                 protocol_sha256=frozen_protocol()['protocol_sha256'], source_sha256=frozen_protocol()['source_sha256'],
+                 implementation_sha256=index['implementation_sha256'], baseline_proofs=proofs,
+                 baseline_index=binding(Path(plan)/'complete/baseline_index.json'),
+                 historical_results_reused_as_new_backend=False, no_additional_forwards=True, no_reserved_GT=True)
+    path = immutable(Path(plan)/'complete/baseline_reuse_deterministic.json', value)
     return path, value
 
 
@@ -112,13 +146,16 @@ def complete_task(plan, index, definition, engineering, *, paired=None):
     # Engineering records bind the exact original modules, including their
     # pre-existing scientific semantics. Only domain/stream changes below.
     template = read(index['tasks'][0]['task_path'])
-    run_id = f"g50p2_{definition['group'].lower()}_{domain}_s{seed}_N1024_B4"
+    run_id = run_name(index, definition)
     task = dict(schema='odr003-round2-task-v1', action='run', stage='complete',
                 run_id=run_id, output_dir=str(plan/'runs'/run_id),
                 definition=definition, protocol=frozen_protocol(),
                 implementation_sha256=index['implementation_sha256'],
                 baseline_task=original, frozen_modules=template['frozen_modules'],
                 confirmation_sha256=sha256(plan/'confirmation.json'), engineering_admission=engineering)
+    if index.get('confirmation'):
+        checked(index['confirmation'])
+        task['confirmation'] = index['confirmation']
     if paired is not None:
         report = checked(paired['report'])
         proof = checked(paired['proof'])
@@ -133,15 +170,20 @@ def complete_task(plan, index, definition, engineering, *, paired=None):
     return dict(run_id=run_id, definition=definition, task_path=str(path), task_sha256=sha256(path))
 
 
-def prepare_P(plan, index):
+def prepare_P(plan, index, baseline_index=None, accepted=None):
     engineering = accepted_engineering(plan, index)
-    baseline_path, _ = freeze_reusable_baselines(plan, index)
-    rows = [complete_task(plan, index, row, engineering) for row in build_complete_matrix()[:6]]
-    value = dict(schema='odr003-round2-complete-index-v1', phase='P', tasks=rows,
+    if baseline_index is None or accepted is None:
+        raise ValueError('Fourteen accepted deterministic baselines are required before P6')
+    baseline_path, _ = freeze_reusable_baselines(plan, index, baseline_index, accepted)
+    rows = list(baseline_index['tasks']) + [complete_task(plan, index, row, engineering) for row in build_complete_matrix()[:6]]
+    value = dict(schema='odr003-round2-complete-index-v2', phase='P', tasks=rows,
                  protocol_sha256=frozen_protocol()['protocol_sha256'],
                  implementation_sha256=index['implementation_sha256'],
                  engineering_admission=engineering, reusable_baselines=binding(baseline_path),
-                 skipped_controls=[], max_new_complete_odr=18)
+                 baseline_index=binding(Path(plan)/'complete/baseline_index.json'),
+                 skipped_controls=[], max_new_complete_odr=30, max_offline_evaluations=2,
+                 fixed_reference_bindings=index.get('fixed_reference_bindings'))
+    if index.get('confirmation'): value['confirmation'] = index['confirmation']
     path = immutable(Path(plan)/'complete/P_index.json', value)
     return path, value
 
@@ -149,6 +191,8 @@ def prepare_P(plan, index):
 def prepare_controls(plan, index, P_index, accepted):
     by_key = {}
     for row in P_index['tasks']:
+        if row['definition']['group'] != 'P':
+            continue
         item = accepted.get(row['run_id'])
         if item is None:
             raise ValueError('All six P runs require independent acceptance before controls')
@@ -164,7 +208,9 @@ def prepare_controls(plan, index, P_index, accepted):
                                 paired_P_report=pair['report'], paired_P_proof=pair['proof']))
             continue
         rows.append(complete_task(plan, index, definition, P_index['engineering_admission'], paired=pair))
-    if len(rows) > 18 or len({row['run_id'] for row in rows}) != len(rows):
+    if (sum(row['definition']['group'] != 'O' for row in rows) > 30
+            or sum(row['definition']['group'] == 'O' for row in rows) != 2
+            or len({row['run_id'] for row in rows}) != len(rows)):
         raise ValueError('Complete run budget or uniqueness violated')
     value = {**P_index, 'phase': 'controls', 'tasks': rows, 'skipped_controls': skipped,
              'P_index': binding(Path(plan)/'complete/P_index.json')}
@@ -174,8 +220,10 @@ def prepare_controls(plan, index, P_index, accepted):
 
 def verify_task(plan, index, science_row, receipt, *, queue_wait_seconds=0.):
     original_task = checked(dict(path=science_row['task_path'], sha256=science_row['task_sha256']))
-    pair_key = f"{science_row['definition']['domain']}:{science_row['definition']['stream_seed']}"
-    baselines = checked(index['reusable_baselines'])['pairs'][pair_key]
+    baselines = None
+    if science_row['definition']['group'] in ('P', 'RW', 'RP'):
+        pair_key = f"{science_row['definition']['domain']}:{science_row['definition']['stream_seed']}"
+        baselines = checked(index['reusable_baselines'])['pairs'][pair_key]
     run_id = science_row['run_id']+'_verify'
     task = dict(schema='odr003-round2-task-v1', action='verify_complete', stage='verification',
                 run_id=run_id, protocol=frozen_protocol(), implementation_sha256=index['implementation_sha256'],
@@ -183,6 +231,9 @@ def verify_task(plan, index, science_row, receipt, *, queue_wait_seconds=0.):
                 execution_receipt=receipt, all_attempts=receipt['attempts'],
                 proof_path=str(Path(original_task['output_dir'])/'proof.json'), reusable_baselines=baselines,
                 queue_wait_seconds=queue_wait_seconds)
+    references = index.get('fixed_reference_bindings')
+    if references:
+        task['fixed_reference_binding'] = references[f"{science_row['definition']['domain']}:{science_row['definition']['stream_seed']}"]
     path = Path(plan)/'tasks'/(run_id+'.json')
     if path.exists():
         previous = read(path)
@@ -213,6 +264,9 @@ def summary_task(plan, index_path, index, state):
                 implementation_sha256=index['implementation_sha256'],
                 complete_index=binding(index_path),
                 run_proofs=[accepted[row['run_id']]['proof'] for row in index['tasks']],
+                baseline_proofs=[accepted[row['run_id']]['proof'] for row in index['tasks']
+                                 if row['definition']['group'] in ('O', 'A', 'G50')],
+                baseline_reuse=index['reusable_baselines'],
                 skipped_controls=index['skipped_controls'], execution_receipts=binding(receipts_path),
                 summary_path=str(Path(plan)/'summaries/round2/summary.json'),
                 proof_path=str(Path(plan)/'summaries/round2/proof.json'))

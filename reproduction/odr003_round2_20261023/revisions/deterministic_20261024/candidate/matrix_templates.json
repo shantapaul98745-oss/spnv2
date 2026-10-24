@@ -1,0 +1,843 @@
+{
+  "baseline": [
+    {
+      "counts_must_be_bound_before_start": false,
+      "developer_observations": 512,
+      "domain": "lightbox",
+      "engineering_all_pairs_required": true,
+      "group": "O",
+      "observations": 0,
+      "paired_P_dependency": null,
+      "rng_seeds": {
+        "rp_permutation": 2026102331,
+        "rw_coin": 2026102321,
+        "uniform_pool": 2026102311,
+        "vulnerable_pool": 2026102312
+      },
+      "run_key": "O:lightbox:offline",
+      "run_limit_slot": null,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2021
+    },
+    {
+      "counts_must_be_bound_before_start": false,
+      "developer_observations": 512,
+      "domain": "sunlamp",
+      "engineering_all_pairs_required": true,
+      "group": "O",
+      "observations": 0,
+      "paired_P_dependency": null,
+      "rng_seeds": {
+        "rp_permutation": 2026112331,
+        "rw_coin": 2026112321,
+        "uniform_pool": 2026112311,
+        "vulnerable_pool": 2026112312
+      },
+      "run_key": "O:sunlamp:offline",
+      "run_limit_slot": null,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2021
+    },
+    {
+      "counts_must_be_bound_before_start": false,
+      "developer_observations": 512,
+      "domain": "lightbox",
+      "engineering_all_pairs_required": true,
+      "group": "A",
+      "observations": 1024,
+      "paired_P_dependency": null,
+      "rng_seeds": {
+        "rp_permutation": 2026102331,
+        "rw_coin": 2026102321,
+        "uniform_pool": 2026102311,
+        "vulnerable_pool": 2026102312
+      },
+      "run_key": "A:lightbox:2021",
+      "run_limit_slot": 1,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2021
+    },
+    {
+      "counts_must_be_bound_before_start": false,
+      "developer_observations": 512,
+      "domain": "lightbox",
+      "engineering_all_pairs_required": true,
+      "group": "A",
+      "observations": 1024,
+      "paired_P_dependency": null,
+      "rng_seeds": {
+        "rp_permutation": 2026102431,
+        "rw_coin": 2026102421,
+        "uniform_pool": 2026102411,
+        "vulnerable_pool": 2026102412
+      },
+      "run_key": "A:lightbox:2022",
+      "run_limit_slot": 2,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2022
+    },
+    {
+      "counts_must_be_bound_before_start": false,
+      "developer_observations": 512,
+      "domain": "lightbox",
+      "engineering_all_pairs_required": true,
+      "group": "A",
+      "observations": 1024,
+      "paired_P_dependency": null,
+      "rng_seeds": {
+        "rp_permutation": 2026102531,
+        "rw_coin": 2026102521,
+        "uniform_pool": 2026102511,
+        "vulnerable_pool": 2026102512
+      },
+      "run_key": "A:lightbox:2023",
+      "run_limit_slot": 3,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2023
+    },
+    {
+      "counts_must_be_bound_before_start": false,
+      "developer_observations": 512,
+      "domain": "sunlamp",
+      "engineering_all_pairs_required": true,
+      "group": "A",
+      "observations": 1024,
+      "paired_P_dependency": null,
+      "rng_seeds": {
+        "rp_permutation": 2026112331,
+        "rw_coin": 2026112321,
+        "uniform_pool": 2026112311,
+        "vulnerable_pool": 2026112312
+      },
+      "run_key": "A:sunlamp:2021",
+      "run_limit_slot": 4,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2021
+    },
+    {
+      "counts_must_be_bound_before_start": false,
+      "developer_observations": 512,
+      "domain": "sunlamp",
+      "engineering_all_pairs_required": true,
+      "group": "A",
+      "observations": 1024,
+      "paired_P_dependency": null,
+      "rng_seeds": {
+        "rp_permutation": 2026112431,
+        "rw_coin": 2026112421,
+        "uniform_pool": 2026112411,
+        "vulnerable_pool": 2026112412
+      },
+      "run_key": "A:sunlamp:2022",
+      "run_limit_slot": 5,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2022
+    },
+    {
+      "counts_must_be_bound_before_start": false,
+      "developer_observations": 512,
+      "domain": "sunlamp",
+      "engineering_all_pairs_required": true,
+      "group": "A",
+      "observations": 1024,
+      "paired_P_dependency": null,
+      "rng_seeds": {
+        "rp_permutation": 2026112531,
+        "rw_coin": 2026112521,
+        "uniform_pool": 2026112511,
+        "vulnerable_pool": 2026112512
+      },
+      "run_key": "A:sunlamp:2023",
+      "run_limit_slot": 6,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2023
+    },
+    {
+      "counts_must_be_bound_before_start": false,
+      "developer_observations": 512,
+      "domain": "lightbox",
+      "engineering_all_pairs_required": true,
+      "group": "G50",
+      "observations": 1024,
+      "paired_P_dependency": null,
+      "rng_seeds": {
+        "rp_permutation": 2026102331,
+        "rw_coin": 2026102321,
+        "uniform_pool": 2026102311,
+        "vulnerable_pool": 2026102312
+      },
+      "run_key": "G50:lightbox:2021",
+      "run_limit_slot": 7,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2021
+    },
+    {
+      "counts_must_be_bound_before_start": false,
+      "developer_observations": 512,
+      "domain": "lightbox",
+      "engineering_all_pairs_required": true,
+      "group": "G50",
+      "observations": 1024,
+      "paired_P_dependency": null,
+      "rng_seeds": {
+        "rp_permutation": 2026102431,
+        "rw_coin": 2026102421,
+        "uniform_pool": 2026102411,
+        "vulnerable_pool": 2026102412
+      },
+      "run_key": "G50:lightbox:2022",
+      "run_limit_slot": 8,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2022
+    },
+    {
+      "counts_must_be_bound_before_start": false,
+      "developer_observations": 512,
+      "domain": "lightbox",
+      "engineering_all_pairs_required": true,
+      "group": "G50",
+      "observations": 1024,
+      "paired_P_dependency": null,
+      "rng_seeds": {
+        "rp_permutation": 2026102531,
+        "rw_coin": 2026102521,
+        "uniform_pool": 2026102511,
+        "vulnerable_pool": 2026102512
+      },
+      "run_key": "G50:lightbox:2023",
+      "run_limit_slot": 9,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2023
+    },
+    {
+      "counts_must_be_bound_before_start": false,
+      "developer_observations": 512,
+      "domain": "sunlamp",
+      "engineering_all_pairs_required": true,
+      "group": "G50",
+      "observations": 1024,
+      "paired_P_dependency": null,
+      "rng_seeds": {
+        "rp_permutation": 2026112331,
+        "rw_coin": 2026112321,
+        "uniform_pool": 2026112311,
+        "vulnerable_pool": 2026112312
+      },
+      "run_key": "G50:sunlamp:2021",
+      "run_limit_slot": 10,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2021
+    },
+    {
+      "counts_must_be_bound_before_start": false,
+      "developer_observations": 512,
+      "domain": "sunlamp",
+      "engineering_all_pairs_required": true,
+      "group": "G50",
+      "observations": 1024,
+      "paired_P_dependency": null,
+      "rng_seeds": {
+        "rp_permutation": 2026112431,
+        "rw_coin": 2026112421,
+        "uniform_pool": 2026112411,
+        "vulnerable_pool": 2026112412
+      },
+      "run_key": "G50:sunlamp:2022",
+      "run_limit_slot": 11,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2022
+    },
+    {
+      "counts_must_be_bound_before_start": false,
+      "developer_observations": 512,
+      "domain": "sunlamp",
+      "engineering_all_pairs_required": true,
+      "group": "G50",
+      "observations": 1024,
+      "paired_P_dependency": null,
+      "rng_seeds": {
+        "rp_permutation": 2026112531,
+        "rw_coin": 2026112521,
+        "uniform_pool": 2026112511,
+        "vulnerable_pool": 2026112512
+      },
+      "run_key": "G50:sunlamp:2023",
+      "run_limit_slot": 12,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2023
+    }
+  ],
+  "experimental": [
+    {
+      "counts_must_be_bound_before_start": false,
+      "domain": "lightbox",
+      "engineering_all_pairs_required": true,
+      "group": "P",
+      "observations": 1024,
+      "paired_P_dependency": null,
+      "rng_seeds": {
+        "rp_permutation": 2026102331,
+        "rw_coin": 2026102321,
+        "uniform_pool": 2026102311,
+        "vulnerable_pool": 2026102312
+      },
+      "run_key": "P:lightbox:2021",
+      "run_limit_slot": 13,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2021
+    },
+    {
+      "counts_must_be_bound_before_start": false,
+      "domain": "lightbox",
+      "engineering_all_pairs_required": true,
+      "group": "P",
+      "observations": 1024,
+      "paired_P_dependency": null,
+      "rng_seeds": {
+        "rp_permutation": 2026102431,
+        "rw_coin": 2026102421,
+        "uniform_pool": 2026102411,
+        "vulnerable_pool": 2026102412
+      },
+      "run_key": "P:lightbox:2022",
+      "run_limit_slot": 14,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2022
+    },
+    {
+      "counts_must_be_bound_before_start": false,
+      "domain": "lightbox",
+      "engineering_all_pairs_required": true,
+      "group": "P",
+      "observations": 1024,
+      "paired_P_dependency": null,
+      "rng_seeds": {
+        "rp_permutation": 2026102531,
+        "rw_coin": 2026102521,
+        "uniform_pool": 2026102511,
+        "vulnerable_pool": 2026102512
+      },
+      "run_key": "P:lightbox:2023",
+      "run_limit_slot": 15,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2023
+    },
+    {
+      "counts_must_be_bound_before_start": false,
+      "domain": "sunlamp",
+      "engineering_all_pairs_required": true,
+      "group": "P",
+      "observations": 1024,
+      "paired_P_dependency": null,
+      "rng_seeds": {
+        "rp_permutation": 2026112331,
+        "rw_coin": 2026112321,
+        "uniform_pool": 2026112311,
+        "vulnerable_pool": 2026112312
+      },
+      "run_key": "P:sunlamp:2021",
+      "run_limit_slot": 16,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2021
+    },
+    {
+      "counts_must_be_bound_before_start": false,
+      "domain": "sunlamp",
+      "engineering_all_pairs_required": true,
+      "group": "P",
+      "observations": 1024,
+      "paired_P_dependency": null,
+      "rng_seeds": {
+        "rp_permutation": 2026112431,
+        "rw_coin": 2026112421,
+        "uniform_pool": 2026112411,
+        "vulnerable_pool": 2026112412
+      },
+      "run_key": "P:sunlamp:2022",
+      "run_limit_slot": 17,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2022
+    },
+    {
+      "counts_must_be_bound_before_start": false,
+      "domain": "sunlamp",
+      "engineering_all_pairs_required": true,
+      "group": "P",
+      "observations": 1024,
+      "paired_P_dependency": null,
+      "rng_seeds": {
+        "rp_permutation": 2026112531,
+        "rw_coin": 2026112521,
+        "uniform_pool": 2026112511,
+        "vulnerable_pool": 2026112512
+      },
+      "run_key": "P:sunlamp:2023",
+      "run_limit_slot": 18,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2023
+    },
+    {
+      "counts_must_be_bound_before_start": true,
+      "domain": "lightbox",
+      "engineering_all_pairs_required": true,
+      "group": "RW",
+      "observations": 1024,
+      "paired_P_dependency": "P:lightbox:2021",
+      "rng_seeds": {
+        "rp_permutation": 2026102331,
+        "rw_coin": 2026102321,
+        "uniform_pool": 2026102311,
+        "vulnerable_pool": 2026102312
+      },
+      "run_key": "RW:lightbox:2021",
+      "run_limit_slot": 19,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2021
+    },
+    {
+      "counts_must_be_bound_before_start": true,
+      "domain": "lightbox",
+      "engineering_all_pairs_required": true,
+      "group": "RW",
+      "observations": 1024,
+      "paired_P_dependency": "P:lightbox:2022",
+      "rng_seeds": {
+        "rp_permutation": 2026102431,
+        "rw_coin": 2026102421,
+        "uniform_pool": 2026102411,
+        "vulnerable_pool": 2026102412
+      },
+      "run_key": "RW:lightbox:2022",
+      "run_limit_slot": 20,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2022
+    },
+    {
+      "counts_must_be_bound_before_start": true,
+      "domain": "lightbox",
+      "engineering_all_pairs_required": true,
+      "group": "RW",
+      "observations": 1024,
+      "paired_P_dependency": "P:lightbox:2023",
+      "rng_seeds": {
+        "rp_permutation": 2026102531,
+        "rw_coin": 2026102521,
+        "uniform_pool": 2026102511,
+        "vulnerable_pool": 2026102512
+      },
+      "run_key": "RW:lightbox:2023",
+      "run_limit_slot": 21,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2023
+    },
+    {
+      "counts_must_be_bound_before_start": true,
+      "domain": "sunlamp",
+      "engineering_all_pairs_required": true,
+      "group": "RW",
+      "observations": 1024,
+      "paired_P_dependency": "P:sunlamp:2021",
+      "rng_seeds": {
+        "rp_permutation": 2026112331,
+        "rw_coin": 2026112321,
+        "uniform_pool": 2026112311,
+        "vulnerable_pool": 2026112312
+      },
+      "run_key": "RW:sunlamp:2021",
+      "run_limit_slot": 22,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2021
+    },
+    {
+      "counts_must_be_bound_before_start": true,
+      "domain": "sunlamp",
+      "engineering_all_pairs_required": true,
+      "group": "RW",
+      "observations": 1024,
+      "paired_P_dependency": "P:sunlamp:2022",
+      "rng_seeds": {
+        "rp_permutation": 2026112431,
+        "rw_coin": 2026112421,
+        "uniform_pool": 2026112411,
+        "vulnerable_pool": 2026112412
+      },
+      "run_key": "RW:sunlamp:2022",
+      "run_limit_slot": 23,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2022
+    },
+    {
+      "counts_must_be_bound_before_start": true,
+      "domain": "sunlamp",
+      "engineering_all_pairs_required": true,
+      "group": "RW",
+      "observations": 1024,
+      "paired_P_dependency": "P:sunlamp:2023",
+      "rng_seeds": {
+        "rp_permutation": 2026112531,
+        "rw_coin": 2026112521,
+        "uniform_pool": 2026112511,
+        "vulnerable_pool": 2026112512
+      },
+      "run_key": "RW:sunlamp:2023",
+      "run_limit_slot": 24,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2023
+    },
+    {
+      "counts_must_be_bound_before_start": true,
+      "domain": "lightbox",
+      "engineering_all_pairs_required": true,
+      "group": "RP",
+      "observations": 1024,
+      "paired_P_dependency": "P:lightbox:2021",
+      "rng_seeds": {
+        "rp_permutation": 2026102331,
+        "rw_coin": 2026102321,
+        "uniform_pool": 2026102311,
+        "vulnerable_pool": 2026102312
+      },
+      "run_key": "RP:lightbox:2021",
+      "run_limit_slot": 25,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2021
+    },
+    {
+      "counts_must_be_bound_before_start": true,
+      "domain": "lightbox",
+      "engineering_all_pairs_required": true,
+      "group": "RP",
+      "observations": 1024,
+      "paired_P_dependency": "P:lightbox:2022",
+      "rng_seeds": {
+        "rp_permutation": 2026102431,
+        "rw_coin": 2026102421,
+        "uniform_pool": 2026102411,
+        "vulnerable_pool": 2026102412
+      },
+      "run_key": "RP:lightbox:2022",
+      "run_limit_slot": 26,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2022
+    },
+    {
+      "counts_must_be_bound_before_start": true,
+      "domain": "lightbox",
+      "engineering_all_pairs_required": true,
+      "group": "RP",
+      "observations": 1024,
+      "paired_P_dependency": "P:lightbox:2023",
+      "rng_seeds": {
+        "rp_permutation": 2026102531,
+        "rw_coin": 2026102521,
+        "uniform_pool": 2026102511,
+        "vulnerable_pool": 2026102512
+      },
+      "run_key": "RP:lightbox:2023",
+      "run_limit_slot": 27,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2023
+    },
+    {
+      "counts_must_be_bound_before_start": true,
+      "domain": "sunlamp",
+      "engineering_all_pairs_required": true,
+      "group": "RP",
+      "observations": 1024,
+      "paired_P_dependency": "P:sunlamp:2021",
+      "rng_seeds": {
+        "rp_permutation": 2026112331,
+        "rw_coin": 2026112321,
+        "uniform_pool": 2026112311,
+        "vulnerable_pool": 2026112312
+      },
+      "run_key": "RP:sunlamp:2021",
+      "run_limit_slot": 28,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2021
+    },
+    {
+      "counts_must_be_bound_before_start": true,
+      "domain": "sunlamp",
+      "engineering_all_pairs_required": true,
+      "group": "RP",
+      "observations": 1024,
+      "paired_P_dependency": "P:sunlamp:2022",
+      "rng_seeds": {
+        "rp_permutation": 2026112431,
+        "rw_coin": 2026112421,
+        "uniform_pool": 2026112411,
+        "vulnerable_pool": 2026112412
+      },
+      "run_key": "RP:sunlamp:2022",
+      "run_limit_slot": 29,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2022
+    },
+    {
+      "counts_must_be_bound_before_start": true,
+      "domain": "sunlamp",
+      "engineering_all_pairs_required": true,
+      "group": "RP",
+      "observations": 1024,
+      "paired_P_dependency": "P:sunlamp:2023",
+      "rng_seeds": {
+        "rp_permutation": 2026112531,
+        "rw_coin": 2026112521,
+        "uniform_pool": 2026112511,
+        "vulnerable_pool": 2026112512
+      },
+      "run_key": "RP:sunlamp:2023",
+      "run_limit_slot": 30,
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+      "stream_seed": 2023
+    }
+  ],
+  "max_new_complete_odr": 30,
+  "max_offline_evaluations": 2,
+  "protocol": {
+    "accepted_images_per_window": 4,
+    "architecture": "official_phi3_BN_EHS_source",
+    "automatic_parameter_changes_or_extra_runs": false,
+    "complete_groups": {
+      "A": 6,
+      "G50": 6,
+      "P": 6,
+      "RP": 6,
+      "RW": 6
+    },
+    "cost": {
+      "complete_run_protection_forwards_max": 6144,
+      "protection_forwards_per_candidate_max": 24,
+      "queue_wait_separate_from_compute": true,
+      "recomputed_forwards_count_as_actual_work": true,
+      "recomputed_scientific_observations_or_updates_count_twice": false,
+      "short_trajectory_protection_forwards_max": 768,
+      "wall_clock_success_cap": null
+    },
+    "data": {
+      "developer_count_each_domain": 512,
+      "fixed_reference_count": {
+        "lightbox": 512,
+        "sunlamp": 511
+      },
+      "frozen_splits_and_streams_reused": true,
+      "gate_protection_update_GT_access": false,
+      "protection_inputs": "already observed unlabeled images only",
+      "reserved_GT_access": false
+    },
+    "deterministic_execution": {
+      "backend_receipt_and_actual_versions_recorded": true,
+      "cublas_workspace_config": ":4096:8",
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": false,
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": true,
+      "float32_matmul_precision": "highest",
+      "required_on_every_attempt_and_restore": true,
+      "schema": "odr003-strict-deterministic-execution-v1",
+      "torch_deterministic_algorithms": true,
+      "unsupported_operation": "stop; no automatic nondeterministic fallback",
+      "warn_only": false
+    },
+    "domains": [
+      "lightbox",
+      "sunlamp"
+    ],
+    "engineering": {
+      "Q0_holds_full_exploration": true,
+      "developer_accuracy_evaluation": false,
+      "interruptions": [
+        "after temporary update of second full candidate window",
+        "safe point at observation index 31"
+      ],
+      "long_rollback_warning": 8,
+      "max_total_logical_observations": 1024,
+      "max_trajectories_per_domain": 4,
+      "max_trajectories_total": 8,
+      "missing_second_window": "record uncovered real branch; synthetic contract only; never extend prefix",
+      "near_frozen": {
+        "holds_full_exploration": true,
+        "maximum_commit_fraction": 0.1,
+        "minimum_candidates": 8
+      },
+      "prefix_observations": 128,
+      "required_contracts": [
+        "protection_disabled_equivalence",
+        "commit_rollback_state",
+        "pool_replay",
+        "interruption_recovery",
+        "gt_isolation",
+        "counts_and_protocol",
+        "finite_outputs"
+      ],
+      "required_measurements": [
+        "per_rule_and_subcondition_evaluable_and_triggered_counts",
+        "actual_protection_IDs_order_sources_and_pre_post_signals",
+        "pool_sizes_candidate_replacement_counts_and_unique_coverage",
+        "rejected_G50_images_checked_and_cold_start_coverage",
+        "candidate_commit_rollback_tail_and_longest_rollback_counts",
+        "forward_counts_recomputations_component_time_peak_memory_and_queue_wait"
+      ],
+      "stream_seed": 2021,
+      "zero_real_trigger_when_Q_positive": "not a hold if all engineering contracts pass"
+    },
+    "exploration": {
+      "A_improvement_over_O_retention": 0.8,
+      "A_without_improvement": "P mean error <= O mean error",
+      "aggregation": "three paired observation streams, equal weights; retain all per-stream outcomes",
+      "average_error_relative_to_A_max": 1.05,
+      "coverage": "per stream no worse than A and no new fixed-reference missing predictions",
+      "formal_efficacy_claim": false,
+      "lightbox_risk_retention": 0.8,
+      "minimum_risk_improvement_percent": null,
+      "sunlamp": {
+        "mean_D": "P <= A",
+        "tail_D": "P < G50"
+      }
+    },
+    "historical_nondeterministic_results": "preserved; never used as current same-protocol baselines",
+    "max_new_complete_odr_runs": 30,
+    "observations_per_complete_run": 1024,
+    "offline_O_evaluations": {
+      "lightbox": 512,
+      "sunlamp": 512
+    },
+    "original_A_G50_PnP_decode_evaluation_unchanged": true,
+    "pools": {
+      "candidate_population": "all historical observations including G50 rejections",
+      "duplicate_ids": "first occurrence retained",
+      "insertion": "after window decision, pending observations in arrival order",
+      "maximum_unique_checks_per_window": 12,
+      "replacement": "independent uniform reservoir, jth candidate enters with probability 4/j",
+      "selection_order": [
+        "current_window",
+        "uniform_slots",
+        "vulnerable_slots"
+      ],
+      "uniform_capacity": 4,
+      "vulnerable_capacity": 4,
+      "vulnerable_peak_threshold_distance_max": 0.05,
+      "vulnerable_point_count_max": 6
+    },
+    "protection": {
+      "all_11_point_reprojection_increase_gt": {
+        "absolute_pixels_over_original_image_diagonal": 1.0,
+        "combine": "max",
+        "relative_to_pre": 0.25
+      },
+      "extra_translation_quality_gate": false,
+      "h_rotation_change_degrees_gt": 15.0,
+      "he_rotation_disagreement_increase_degrees_gt": 10.0,
+      "keypoint_set_change_alone_rejects": false,
+      "large_prediction_change_alone_rejects": false,
+      "raw_nonfinite": "engineering failure, preserve evidence and block downstream",
+      "rule1": "previously usable and original-geometrically-valid H becomes unusable or invalid",
+      "rule2_join": "all three conditions on the same checked image"
+    },
+    "protocol_sha256": "8a0f78758bb94b462c65ac19354dc29a79397d3df8d5a859e1a4c73b9902c0d5",
+    "protocol_version": "G50P-round2-deterministic-approved-v2",
+    "random_controls": {
+      "RP": {
+        "exact_successful_update_budget": true,
+        "order": "original stream order",
+        "permutation_prefix": true,
+        "population": "same 1024 input positions",
+        "selected_count": "4*P.commits"
+      },
+      "RW": {
+        "Q0": "skip paired RW; probability undefined",
+        "commit_probability": "P.commits/P.candidates",
+        "equal_budget_label": "only when actual K_RW equals actual K_P",
+        "exact_update_budget_guaranteed": false,
+        "keep_dynamic_G50": true,
+        "quota_filling": false,
+        "repeat_seed_to_match_budget": false,
+        "required_budget_reporting": [
+          "Q_P",
+          "K_P",
+          "Q_RW",
+          "K_RW",
+          "M_P",
+          "M_RW",
+          "actual_differences"
+        ]
+      }
+    },
+    "randomness": {
+      "algorithm": "stdlib random.Random; persist actual lists and exact RNG states",
+      "dependent_on_GT_or_scores": false,
+      "domain_indices": {
+        "lightbox": 0,
+        "sunlamp": 1
+      },
+      "paired_continuous_and_recovery_pool_seeds_identical": true,
+      "role_offsets": {
+        "rp_permutation": 31,
+        "rw_coin": 21,
+        "uniform_pool": 11,
+        "vulnerable_pool": 12
+      },
+      "seed_formula": "2026102300 + domain_index*10000 + (stream_seed-2021)*100 + role_offset",
+      "seeds": {
+        "lightbox:2021": {
+          "rp_permutation": 2026102331,
+          "rw_coin": 2026102321,
+          "uniform_pool": 2026102311,
+          "vulnerable_pool": 2026102312
+        },
+        "lightbox:2022": {
+          "rp_permutation": 2026102431,
+          "rw_coin": 2026102421,
+          "uniform_pool": 2026102411,
+          "vulnerable_pool": 2026102412
+        },
+        "lightbox:2023": {
+          "rp_permutation": 2026102531,
+          "rw_coin": 2026102521,
+          "uniform_pool": 2026102511,
+          "vulnerable_pool": 2026102512
+        },
+        "sunlamp:2021": {
+          "rp_permutation": 2026112331,
+          "rw_coin": 2026112321,
+          "uniform_pool": 2026112311,
+          "vulnerable_pool": 2026112312
+        },
+        "sunlamp:2022": {
+          "rp_permutation": 2026112431,
+          "rw_coin": 2026112421,
+          "uniform_pool": 2026112411,
+          "vulnerable_pool": 2026112412
+        },
+        "sunlamp:2023": {
+          "rp_permutation": 2026112531,
+          "rw_coin": 2026112521,
+          "uniform_pool": 2026112511,
+          "vulnerable_pool": 2026112512
+        }
+      }
+    },
+    "recovery": {
+      "authority": "latest complete recoverable checkpoint; log commit alone is insufficient",
+      "normal_rollback": "learning state rolls back; observation and decision histories advance",
+      "persisted_complete_commit": "never execute again",
+      "unpersisted_work": "may recompute; charge actual work; do not double-count science"
+    },
+    "reuse_groups": [],
+    "reuse_requirement": "identical identity and complete protocol with accepted evidence",
+    "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc",
+    "stream_seeds": [
+      2021,
+      2022,
+      2023
+    ],
+    "update": {
+      "lr": 0.0001,
+      "optimizer": "AdamW",
+      "precision": "FP32",
+      "weight_decay": 0.0
+    }
+  },
+  "status": "inactive_templates_only"
+}

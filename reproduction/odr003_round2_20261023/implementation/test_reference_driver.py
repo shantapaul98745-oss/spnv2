@@ -33,7 +33,8 @@ class ReferenceContracts(unittest.TestCase):
             adapter.close()
         self.temp.cleanup()
 
-    def make(self, directory, *, count=13, disabled=False, rejects=("s0001", "s0004"), production=False):
+    def make(self, directory, *, count=13, disabled=False, rejects=("s0001", "s0004"), production=False,
+             complete_run=False):
         torch.manual_seed(17)
         np.random.seed(18)
         random.seed(19)
@@ -59,7 +60,8 @@ class ReferenceContracts(unittest.TestCase):
                                    protection_scorer=scorer, gate=gate)
         return ReferenceDriver(stream_records=records, adapter=adapter, store=store,
                                image_provider=provider, scorer=scorer, gate=gate,
-                               allow_stub_prefix=not production)
+                               allow_stub_prefix=not production and not complete_run,
+                               complete_run=complete_run)
 
     def test_direct_original_reference_equals_disabled_engine_including_tail(self):
         reference = self.make("direct")
@@ -135,6 +137,19 @@ class ReferenceContracts(unittest.TestCase):
             validate_reference_state(state)
         reference.store.append_event("commit", {"updates": 999})
         self.assertEqual(reference.store.recover().scientific_cursors["commits"], 0)
+
+    def test_complete_scope_requires_exact_1024_without_expanding_engineering(self):
+        with self.assertRaises(ValueError):
+            self.make('engineering-cannot-expand', count=1024, production=True)
+        with self.assertRaises(ValueError):
+            self.make('complete-cannot-shorten', count=128, complete_run=True)
+        reference = self.make('complete1024', count=1024, complete_run=True,
+                              rejects=tuple(f's{i:04d}' for i in range(1024)))
+        result = reference.run()
+        self.assertEqual(result['finish_counts']['observed'], 1024)
+        self.assertEqual(result['finish_counts']['accepted'], 0)
+        self.assertEqual(result['physical_work']['forwards_confirmed_completed'], {'arrival_scoring': 1024})
+        self.assertEqual(reference.store.recover().scientific_cursors['next_index'], 1024)
 
     def test_impure_score_raises_and_keeps_last_complete_cursor(self):
         reference = self.make("impure")

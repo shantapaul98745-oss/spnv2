@@ -2,8 +2,10 @@
 
 Waiting is server-side, low frequency and read-only. Never signals any process.
 An ambiguous launch or unexpected failure stops advancement. Passed independent
-engineering unlocks P6, accepted P counts unlock controls, and all accepted runs
-unlock the audited summary. Historical source training remains outside scope.
+engineering unlocks the fourteen deterministic O/A/G50 measurements, then P6;
+accepted P counts unlock controls. All accepted results unlock the audited
+summary. The budget is thirty ODR runs plus two O evaluations. Historical source
+training remains outside scope.
 """
 from __future__ import annotations
 import argparse
@@ -20,7 +22,7 @@ from guarded_entry import PLAN, BASE, atomic_json, project_lock, LOCKS
 from host_gate import assess_snapshot, launch_record_sha256, command_sha256
 from host_snapshot import collect_snapshot
 from frozen_backend import sha256, canonical_sha
-from round2_protocol import build_engineering_matrix
+from round2_protocol import build_engineering_matrix, build_baseline_matrix, build_complete_matrix
 import complete_phase_tools as complete_tools
 from audit_revision import validate_revision
 from queue_control import pending_refreshes, acknowledge
@@ -55,9 +57,9 @@ def write_progress(state):
     atomic_json(PLAN/'status.json', state)
     active = state.get('active')
     lines = ['# SPNv2 实时进度', '',
-             '当前方向：已确认 G50-P 第二轮；最多18次完整 ODR，先完成8条工程轨迹。',
+             '当前方向：已确认 G50-P 确定性修订；先8条工程轨迹，再2次O评价和最多30次完整ODR。',
              f"状态：{state['status']}",
-             f"已完成工程轨迹：{len(state['completed'])}/8；完整 ODR已独立验收：{len(state.get('complete_accepted', {}))}/18。",
+             f"已完成工程主轨迹：{len(state['completed'])}/8；后续独立验收结果：{len(state.get('complete_accepted', {}))}/32（含2次O）。",
              f"当前任务：{active['run_id'] if active else '无运行 worker'}",
              f"排队等待：{state['queue_wait_seconds_reported']:.1f} 秒，与计算时间分开。",
              '共享主机有其他计算进程时等待；不暂停、终止或重启其他人的任务。',
@@ -183,9 +185,14 @@ def _finish_attempt(state):
             if a['run_id'] in {row['run_id'] for row in state['completed']}:
                 raise ValueError('Already completed engineering result cannot be replaced')
             state['completed'].append(receipt)
-        elif task['stage'] == 'complete':
+        elif task['stage'] in ('complete', 'offline'):
             if a['run_id'] in state['complete_main']:
                 raise ValueError('Already completed ODR result cannot be replaced')
+            group = task['definition']['group']
+            if ((task['stage'] == 'offline') != (group == 'O')
+                    or group not in ('O', 'A', 'G50', 'P', 'RW', 'RP')):
+                raise ValueError('Main result belongs to an unauthorized baseline/exploration group')
+            receipt['definition'] = task['definition']
             state['complete_main'][a['run_id']] = receipt
         else:
             raise ValueError('Model report from unauthorized stage')
@@ -208,7 +215,7 @@ def _finish_attempt(state):
             raise ValueError('Independent complete proof does not bind the actual report')
         state['complete_accepted'][science_id] = dict(report=complete_tools.binding(report_path),
                 proof=complete_tools.binding(proof_path), verification_attempt=a,
-                run_task=verify_spec['run_task'])
+                run_task=verify_spec['run_task'], definition=science_task['definition'])
         state.update(status='between_tasks', active=None, waiting_since=time.time(), next_resource_check=0.)
     elif rc == 0 and outcome['status'] == 'round2_delivered':
         task = read(a['task_path'])
@@ -227,7 +234,8 @@ def _finish_attempt(state):
 def verification_task(index, state):
     receipts = dict(schema='odr003-round2-engineering-receipts-v1', runs=state['completed'],
                     all_attempts=state['attempts'], queue_wait_seconds=state['queue_wait_seconds'])
-    receipts_path = PLAN/'engineering_receipts.json'
+    prefix = index.get('run_prefix')
+    receipts_path = PLAN/((prefix+'_engineering_receipts.json') if prefix else 'engineering_receipts.json')
     if receipts_path.exists():
         if read(receipts_path)['runs'] != receipts['runs']:
             raise ValueError('Completed engineering receipts changed')
@@ -243,7 +251,8 @@ def verification_task(index, state):
         task['pre_forward_repair'] = index['pre_forward_repair']
     # Preserve the failed verifier's task bytes and process evidence. Only its
     # CPU audit is rerun; completed scientific trajectories remain immutable.
-    filename = ('g50p2_engineering_verification_audit_repair.json' if index.get('auditor_repair')
+    filename = (prefix+'_engineering_verification.json' if prefix else
+                'g50p2_engineering_verification_audit_repair.json' if index.get('auditor_repair')
                 else 'g50p2_engineering_verification.json')
     path = PLAN/'tasks'/filename
     if path.exists() and read(path) != task: raise ValueError('Verification task identity changed')
@@ -267,8 +276,8 @@ def next_task(index, state):
     if state.get('status') == 'engineering_held':
         return None
     if state.get('complete_index') is None:
-        path, compiled = complete_tools.prepare_P(PLAN, index)
-        state.update(complete_index=complete_tools.binding(path), complete_phase='P', status='between_tasks')
+        path, compiled = complete_tools.prepare_baselines(PLAN, index)
+        state.update(complete_index=complete_tools.binding(path), complete_phase='baselines', status='between_tasks')
     else:
         compiled = complete_tools.checked(state['complete_index'])
     accepted = state['complete_accepted']
@@ -284,6 +293,10 @@ def next_task(index, state):
         if sha256(row['task_path']) != row['task_sha256']:
             raise ValueError('Complete task identity changed')
         return Path(row['task_path']), row['run_id']
+    if compiled['phase'] == 'baselines':
+        path, compiled = complete_tools.prepare_P(PLAN, index, compiled, accepted)
+        state.update(complete_index=complete_tools.binding(path), complete_phase='P')
+        return next_task(index, state)
     if compiled['phase'] == 'P':
         path, compiled = complete_tools.prepare_controls(PLAN, index, compiled, accepted)
         state.update(complete_index=complete_tools.binding(path), complete_phase='controls')
@@ -314,7 +327,16 @@ def main(index_path):
             raise ValueError('Completed records duplicate or escape this engineering matrix')
         if index.get('auditor_repair') and set(completed_ids) != known_ids:
             raise ValueError('Auditor-only revision requires all eight completed producers')
-        if len(state['complete_main']) > 18 or not set(state['complete_accepted']) <= set(state['complete_main']):
+        complete_rows = list(state['complete_main'].values())
+        allowed_definitions = build_baseline_matrix()+build_complete_matrix()
+        definitions = [row.get('definition') for row in complete_rows]
+        if (any(row not in allowed_definitions for row in definitions)
+                or len({row['run_key'] for row in definitions}) != len(definitions)):
+            raise ValueError('Completed baseline/exploration ledger has unknown or duplicated scientific slots')
+        offline_count = sum(row.get('definition', {}).get('group') == 'O' for row in complete_rows)
+        odr_count = len(complete_rows) - offline_count
+        if (len(complete_rows) > 32 or odr_count > 30 or offline_count > 2
+                or not set(state['complete_accepted']) <= set(state['complete_main'])):
             raise ValueError('Complete ledger exceeds authorized scope or lacks actual results')
         if not state.get('active'):
             with ExitStack() as stack:
@@ -369,6 +391,10 @@ def main(index_path):
 
 
 def validate_engineering_index(index):
+    prefix = index.get('run_prefix')
+    if prefix is not None and (not isinstance(prefix, str) or not prefix
+            or any(ch not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-' for ch in prefix)):
+        raise ValueError('Execution run prefix must be a safe unique metadata filename component')
     producer_code = (validate_revision(index, PLAN/'implementation', plan=PLAN)
                      if index.get('auditor_repair') else index['implementation_sha256'])
     rows = index.get('tasks', [])

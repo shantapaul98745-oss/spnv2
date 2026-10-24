@@ -50,17 +50,30 @@ def _rng_seeds(domain: str, stream_seed: int) -> dict[str, int]:
 def frozen_protocol() -> dict:
     """Return an independent JSON-serializable copy of the approved fixed rules."""
     payload = {
-        "protocol_version": "G50P-round2-revised-v1",
+        "protocol_version": "G50P-round2-deterministic-approved-v2",
         "source_sha256": SOURCE_SHA256,
         "architecture": "official_phi3_BN_EHS_source",
         "domains": list(DOMAINS), "stream_seeds": list(STREAM_SEEDS),
         "observations_per_complete_run": 1024, "accepted_images_per_window": 4,
-        "max_new_complete_odr_runs": 18,
-        "complete_groups": {"P": 6, "RW": 6, "RP": 6},
-        "reuse_groups": ["O", "A", "G50"],
+        "max_new_complete_odr_runs": 30,
+        "complete_groups": {"A": 6, "G50": 6, "P": 6, "RW": 6, "RP": 6},
+        "offline_O_evaluations": {"lightbox": 512, "sunlamp": 512},
+        "reuse_groups": [],
+        "historical_nondeterministic_results": "preserved; never used as current same-protocol baselines",
         "reuse_requirement": "identical identity and complete protocol with accepted evidence",
         "original_A_G50_PnP_decode_evaluation_unchanged": True,
         "update": {"precision": "FP32", "optimizer": "AdamW", "lr": 1e-4, "weight_decay": 0.0},
+        "deterministic_execution": {
+            "schema": "odr003-strict-deterministic-execution-v1",
+            "cudnn_benchmark": False, "cudnn_deterministic": True,
+            "cudnn_allow_tf32": False, "cuda_matmul_allow_tf32": False,
+            "torch_deterministic_algorithms": True, "warn_only": False,
+            "float32_matmul_precision": "highest",
+            "cublas_workspace_config": ":4096:8",
+            "unsupported_operation": "stop; no automatic nondeterministic fallback",
+            "required_on_every_attempt_and_restore": True,
+            "backend_receipt_and_actual_versions_recorded": True,
+        },
         "data": {"developer_count_each_domain": 512,
                  "fixed_reference_count": {"lightbox": 512, "sunlamp": 511},
                  "frozen_splits_and_streams_reused": True, "reserved_GT_access": False,
@@ -195,8 +208,34 @@ def build_complete_matrix() -> list[dict]:
                     "engineering_all_pairs_required": True,
                     "paired_P_dependency": None if group == "P" else f"P:{domain}:{stream_seed}",
                     "counts_must_be_bound_before_start": group != "P",
-                    "run_limit_slot": len(rows) + 1,
+                    "run_limit_slot": len(rows) + 13,
                 })
+    return rows
+
+
+def build_baseline_matrix() -> list[dict]:
+    """Two offline O evaluations and twelve same-backend A/G50 ODR runs.
+
+    These are the explicitly approved additions, not aliases of historical
+    nondeterministic results. O never observes or adapts to an input stream.
+    """
+    rows = []
+    for domain in DOMAINS:
+        rows.append(dict(run_key=f"O:{domain}:offline", group="O", domain=domain,
+                         stream_seed=2021, observations=0, developer_observations=512,
+                         source_sha256=SOURCE_SHA256, rng_seeds=_rng_seeds(domain, 2021),
+                         engineering_all_pairs_required=True, paired_P_dependency=None,
+                         counts_must_be_bound_before_start=False, run_limit_slot=None))
+    for group in ("A", "G50"):
+        for domain in DOMAINS:
+            for stream_seed in STREAM_SEEDS:
+                rows.append(dict(run_key=f"{group}:{domain}:{stream_seed}", group=group,
+                                 domain=domain, stream_seed=stream_seed, observations=1024,
+                                 developer_observations=512, source_sha256=SOURCE_SHA256,
+                                 rng_seeds=_rng_seeds(domain, stream_seed),
+                                 engineering_all_pairs_required=True, paired_P_dependency=None,
+                                 counts_must_be_bound_before_start=False,
+                                 run_limit_slot=len(rows)-1))
     return rows
 
 

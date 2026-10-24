@@ -20,6 +20,7 @@ from guarded_entry import PLAN
 from round2_protocol import frozen_protocol, build_engineering_matrix, assess_engineering
 from artifact_binding import require_same_artifact
 from audit_revision import validate_revision
+from deterministic_runtime import validate_saved_receipt
 
 
 RUN_ID = "g50p2_engineering_verification"
@@ -211,10 +212,53 @@ def _read_run_receipt(receipt, task, task_path, cache):
     require(report["evaluation"] is None and report["gt_denied_attempts"] == [], "engineering GT/evaluation boundary violated")
     require(report["strict_source_load"] is True and report["strict_final_reload"] is True,
             "main did not complete its strict load/reload checks")
+    deterministic = _deterministic_evidence(report, output, cache)
     return output, report, dict(log_path=str(log_path), exit_code_path=str(exit_path), actual_exit_code=0,
                                report_path=str(report_path), report_sha256=receipt["report_sha256"],
                                launch_record_path=str(record_path), launch_record_sha256=canonical_sha(launch),
-                               outcome_path=str(outcome_path), outcome_sha256=sha256(outcome_path))
+                               outcome_path=str(outcome_path), outcome_sha256=sha256(outcome_path),
+                               deterministic_runtime=deterministic)
+
+
+def _deterministic_evidence(report, output, cache):
+    """Require the actual persisted runtime record, not an unchecked run flag."""
+    receipt = validate_saved_receipt(report.get('deterministic_runtime'))
+    binding = report.get('deterministic_runtime_binding')
+    path = _binding(binding, cache)
+    require(path == Path(output).resolve()/'deterministic_runtime.json',
+            'deterministic receipt escaped the actual run')
+    require(load_json(path) == receipt, 'persisted deterministic runtime receipt differs')
+    require(report.get('torch_version') == receipt['torch_version'],
+            'reported Torch version differs from actual deterministic runtime')
+    return dict(binding=binding, receipt=receipt, status='passed')
+
+
+def _prior_execution_history(index, cache):
+    """Keep actual previous engineering work/costs distinct from this revision."""
+    binding = index.get('prior_execution_history')
+    if binding is None:
+        return None
+    doc = load_json(_binding(binding, cache))
+    require(doc.get('schema') == 'odr003-round2-prior-execution-history-v1'
+            and doc.get('eligible_as_current_scientific_results') is False,
+            'prior engineering history has an ambiguous reuse scope')
+    require(len(doc.get('run_reports', [])) == 8, 'prior eight engineering reports missing')
+    forward_counts = Counter()
+    for entry in doc['run_reports']:
+        report = load_json(_binding(entry, cache))
+        require(report.get('stage') == 'engineering', 'prior history contains unapproved science')
+        forward_counts.update(report['physical_work']['forwards_confirmed_completed'])
+    require(dict(sorted(forward_counts.items())) == doc['confirmed_model_forwards'],
+            'prior engineering physical forward totals differ')
+    for attempt in doc.get('actual_attempts', []):
+        outcome = load_json(_binding(attempt['outcome'], cache))
+        exit_path = _binding(attempt['exitcode'], cache)
+        require(outcome['exit_code'] == int(exit_path.read_text(encoding='ascii').strip())
+                == attempt['exit_code'], 'prior actual exit evidence differs')
+    return dict(binding=binding, confirmed_model_forwards=dict(sorted(forward_counts.items())),
+                queue_wait_seconds=doc['queue_wait_seconds'],
+                eligible_as_current_scientific_results=False,
+                actual_attempts=doc['actual_attempts'], scope='historical work; separately charged, never current engineering acceptance')
 
 
 def _attempt_evidence(receipts_doc, expected_entries):
@@ -443,6 +487,7 @@ def execute(task_path, *, admission, launch_record, conflict_check):
     # Successful producers keep their original task/checkpoint identities. An
     # independently bound auditor-only repair cannot rewrite their code map.
     producer_code = validate_revision(index, Path(__file__).resolve().parent, plan=PLAN)
+    prior_execution = _prior_execution_history(index, cache)
     expected_definitions = {row["run_key"]: row for row in build_engineering_matrix()}
     require(len(index["tasks"]) == 8 and {entry["definition"]["run_key"] for entry in index["tasks"]} == set(expected_definitions),
             "engineering index is not exactly the fixed eight trajectories")
@@ -524,6 +569,9 @@ def execute(task_path, *, admission, launch_record, conflict_check):
                   peak_memory_and_elapsed_scope="final completed attempt; earlier actual outcomes retained separately",
                   all_attempt_costs=_attempt_costs(attempts_by_run[entry["run_id"]]),
                   actual_attempts=attempts_by_run[entry["run_id"]])
+    runtime_receipts = [row['receipt']['deterministic_runtime']['receipt'] for row in proofs.values()]
+    require(all(value == runtime_receipts[0] for value in runtime_receipts),
+            'engineering backend/version differs across the eight paired trajectories')
     domains = {}
     for domain in ("lightbox", "sunlamp"):
         reference, disabled = states[(domain, "G50_reference")], states[(domain, "P_disabled")]
@@ -571,6 +619,7 @@ def execute(task_path, *, admission, launch_record, conflict_check):
                  implementation_sha256=task["implementation_sha256"], protocol_sha256=task["protocol"]["protocol_sha256"],
                  engineering_producer_implementation_sha256=producer_code,
                  auditor_repair=index.get("auditor_repair"),
+                 prior_execution_history=prior_execution,
                  source_sha256=task["protocol"]["source_sha256"], engineering_index=task["engineering_index"],
                  execution_receipts=task["execution_receipts"], synthetic_contracts=synthetic,
                  actual_trajectories=8, logical_observations=1024, model_forwards_added_by_verification=0,

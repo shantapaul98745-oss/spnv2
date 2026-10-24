@@ -10,7 +10,7 @@ import unittest
 from unittest.mock import patch
 
 import queue_round2 as queue
-from round2_protocol import build_engineering_matrix, build_complete_matrix, frozen_protocol
+from round2_protocol import build_engineering_matrix, build_baseline_matrix, build_complete_matrix, frozen_protocol
 
 
 class StopFakeLoop(Exception):
@@ -186,6 +186,21 @@ class QueueContracts(unittest.TestCase):
         self.assertEqual(state['attempts'][-1], failed_copy)
         self.assertEqual(len(state['completed']), 8)
 
+    def test_new_execution_namespaces_engineering_audit_without_overwriting_history(self):
+        state = self.state()
+        for row in self.index['tasks']:
+            self.attempt(state, row)
+            queue._finish_attempt(state)
+        original, _ = queue.verification_task(self.index, state)
+        old_task, old_receipts = original.read_bytes(), (self.plan/'engineering_receipts.json').read_bytes()
+        current = copy.deepcopy(self.index); current['run_prefix'] = 'det_current'
+        path, _ = queue.verification_task(current, state)
+        task = queue.read(path)
+        self.assertEqual(path.name, 'det_current_engineering_verification.json')
+        self.assertEqual(Path(task['execution_receipts']['path']).name, 'det_current_engineering_receipts.json')
+        self.assertEqual(original.read_bytes(), old_task)
+        self.assertEqual((self.plan/'engineering_receipts.json').read_bytes(), old_receipts)
+
     def test_exit_75_waits_five_minutes(self):
         state = self.state()
         self.attempt(state, self.index["tasks"][0], code=75, status="waiting_resources")
@@ -275,6 +290,9 @@ class QueueContracts(unittest.TestCase):
         self.assertIsNotNone(saved["active"])
 
     def test_index_cannot_expand_or_mix_complete_runs(self):
+        for prefix in ('../escape', '', 'bad/path'):
+            invalid = copy.deepcopy(self.index); invalid['run_prefix'] = prefix
+            with self.assertRaises(ValueError): queue.validate_engineering_index(invalid)
         expanded = copy.deepcopy(self.index)
         expanded["tasks"].append(copy.deepcopy(expanded["tasks"][0]))
         with self.assertRaises(ValueError):
@@ -321,20 +339,25 @@ class QueueContracts(unittest.TestCase):
         self.assertEqual(acknowledgements[0]['snapshot']['captured_at'], 10005.)
         self.assertEqual(len(queue.read(self.plan/'status.json')['attempts']), 0)
 
-    def test_autonomous_engineering_P6_controls18_audit_and_delivery_once(self):
+    def test_autonomous_engineering_baselines14_P6_controls30_and_delivery_once(self):
         # The real transition code is exercised, with only model execution and
         # metadata compilation replaced by tiny immutable local fixtures.
         rows=[]
-        for i,definition in enumerate(build_complete_matrix()):
+        for i,definition in enumerate(build_baseline_matrix()+build_complete_matrix()):
             run_id=f'synthetic_complete_{i}'
             task_path=self.plan/'tasks'/(run_id+'.json')
-            self.write_json(task_path, dict(run_id=run_id, stage='complete', action='run', definition=definition))
+            self.write_json(task_path, dict(run_id=run_id, stage='offline' if definition['group']=='O' else 'complete',
+                                           action='run_offline' if definition['group']=='O' else 'run', definition=definition))
             rows.append(dict(run_id=run_id, task_path=str(task_path), task_sha256=queue.sha256(task_path), definition=definition))
-        def prepare_P(plan,index):
-            path=self.plan/'P_index.json'; data={'phase':'P','tasks':rows[:6]}
+        def prepare_baselines(plan,index):
+            path=self.plan/'baseline_index.json'; data={'phase':'baselines','tasks':rows[:14]}
+            self.write_json(path,data); return path,data
+        def prepare_P(plan,index,baselines,accepted):
+            self.assertEqual(set(accepted),{row['run_id'] for row in rows[:14]})
+            path=self.plan/'P_index.json'; data={'phase':'P','tasks':rows[:20]}
             self.write_json(path,data); return path,data
         def prepare_controls(plan,index,P,accepted):
-            self.assertEqual(set(accepted),{row['run_id'] for row in rows[:6]})
+            self.assertEqual(set(accepted),{row['run_id'] for row in rows[:20]})
             path=self.plan/'all_index.json'; data={'phase':'controls','tasks':rows}
             self.write_json(path,data); return path,data
         def verify(plan,index,row,receipt,**kwargs):
@@ -344,7 +367,7 @@ class QueueContracts(unittest.TestCase):
                       proof_path=str(self.plan/(row['run_id']+'_proof.json')))
             self.write_json(path,data); return path,data['run_id']
         def summarize(plan,index_path,index,state):
-            self.assertEqual(len(state['complete_accepted']),18)
+            self.assertEqual(len(state['complete_accepted']),32)
             path=self.plan/'tasks/summary.json'
             self.write_json(path,dict(run_id='summary', action='summarize_round2', stage='verification',
                                      summary_path=str(self.plan/'summary.json'),proof_path=str(self.plan/'summary_proof.json')))
@@ -363,7 +386,7 @@ class QueueContracts(unittest.TestCase):
                 self.write_json(Path(a['launch_directory'])/'outcome.json',
                                 dict(status='complete_run_verified',exit_code=0,run_id=science,proof=task['proof_path']))
             elif task.get('action')=='summarize_round2':
-                self.write_json(task['summary_path'],{'all':18})
+                self.write_json(task['summary_path'],{'all':32, 'ODR':30, 'offline':2})
                 self.write_json(task['proof_path'],dict(status='passed',summary_sha256=queue.sha256(task['summary_path'])))
                 self.attempt(state,row,status='round2_delivered')
             else:
@@ -371,6 +394,7 @@ class QueueContracts(unittest.TestCase):
             self.write_progress(state)
         with patch.object(queue,'collect_snapshot',return_value={}),self.allow_resources(), \
              patch.object(queue,'_launch',side_effect=execute), \
+             patch.object(queue.complete_tools,'prepare_baselines',side_effect=prepare_baselines), \
              patch.object(queue.complete_tools,'prepare_P',side_effect=prepare_P), \
              patch.object(queue.complete_tools,'prepare_controls',side_effect=prepare_controls), \
              patch.object(queue.complete_tools,'verify_task',side_effect=verify), \
@@ -382,8 +406,8 @@ class QueueContracts(unittest.TestCase):
         state=queue.read(self.plan/'status.json')
         self.assertEqual(state['status'],'complete')
         self.assertEqual(len(state['completed']),8)
-        self.assertEqual(len(state['complete_accepted']),18)
-        self.assertEqual(len(self.launches),46)
+        self.assertEqual(len(state['complete_accepted']),32)
+        self.assertEqual(len(self.launches),74)
         science=[r for r in self.launches if r.startswith('synthetic_complete_') and not r.endswith('_verify')]
         self.assertEqual(science,[r['run_id'] for r in rows])
 

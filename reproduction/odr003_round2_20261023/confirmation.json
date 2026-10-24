@@ -1,12 +1,12 @@
 {
-  "schema": "odr003-round2-confirmation-v1",
+  "schema": "odr003-round2-confirmation-v2",
   "recorded_at": "2026-10-23T11:14:53.522978+00:00",
   "status": "confirmed_implementation_authorized",
   "confirmed_plan_path": "C:\\Users\\17574\\Documents\\Codex\\2026-10-12\\referenced-chatgpt-conversation-this-is-an\\work\\odr003_round2_plan_20261023\\ROUND2_REVISED_PLAN.md",
   "confirmed_plan_sha256": "d52eae6479a9c27bd48d98f22a84f584d4895d3a44263d66805b14fb12c18216",
   "user_confirmation": "我确认《G50-P第二轮修订方案》，可以开始实现，并在满足以下主机使用条件后开展实验。",
   "host_clarification": "原则上不是强制的，GPU空闲就可以开始",
-  "maximum_complete_odr": 18,
+  "maximum_complete_odr": 30,
   "maximum_engineering_trajectories": 8,
   "engineering_logical_observations_per_trajectory": 128,
   "goal_mode": "paused",
@@ -15,7 +15,14 @@
     "idle_gpu_required": true,
     "no_external_queue_entry_required": true,
     "unknown_live_compute_process_blocks_even_if_utilization_zero": true,
-    "resource_poll_minimum_seconds": 1800
+    "resource_poll_minimum_seconds": 300
   },
-  "recovery": "Only the most recent complete recoverable checkpoint authorizes logical progress. Unpersisted computation may replay and is separately charged; journal commits alone are not durable scientific commits. Persisted commits never replay."
+  "recovery": "Only the most recent complete recoverable checkpoint authorizes logical progress. Unpersisted computation may replay and is separately charged; journal commits alone are not durable scientific commits. Persisted commits never replay.",
+  "deterministic_execution_authorized": true,
+  "offline_O_each_domain": 512,
+  "user_deterministic_confirmation": "批准最多30次ODR：新增A6/G50 6，保留P6、RW6、RP6（推荐）；另做两域O各512张离线评价",
+  "deterministic_confirmation": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/deterministic_20261024/confirmation.json",
+    "sha256": "bba1fd3b19df802be4c9490b91e19530fc702d5ed5e973c4c4746ecf169524d6"
+  }
 }

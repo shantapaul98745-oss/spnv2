@@ -7,7 +7,7 @@ import unittest
 from round2_protocol import (
     DOMAINS, ENGINEERING_CONTRACTS, SOURCE_SHA256, STREAM_SEEDS,
     assess_engineering, assess_exploration, build_complete_matrix,
-    build_engineering_matrix, derive_controls, frozen_protocol,
+    build_engineering_matrix, build_baseline_matrix, derive_controls, frozen_protocol,
 )
 
 
@@ -54,7 +54,7 @@ class ProtocolMatrixContracts(unittest.TestCase):
         rows = build_complete_matrix()
         self.assertEqual(len(rows), 18)
         self.assertEqual(len({r["run_key"] for r in rows}), 18)
-        self.assertEqual([r["run_limit_slot"] for r in rows], list(range(1, 19)))
+        self.assertEqual([r["run_limit_slot"] for r in rows], list(range(13, 31)))
         expected = {(d, s) for d in DOMAINS for s in STREAM_SEEDS}
         for group in ("P", "RW", "RP"):
             subset = [r for r in rows if r["group"] == group]
@@ -63,6 +63,37 @@ class ProtocolMatrixContracts(unittest.TestCase):
         self.assertFalse(any(r["counts_must_be_bound_before_start"] for r in rows[:6]))
         self.assertTrue(all(r["counts_must_be_bound_before_start"] for r in rows[6:]))
         self.assertEqual(rows[6]["paired_P_dependency"], "P:lightbox:2021")
+
+    def test_confirmed_deterministic_revision_has_30_odr_and_two_offline_only(self):
+        baseline = build_baseline_matrix()
+        self.assertEqual(len(baseline), 14)
+        self.assertEqual(len({row['run_key'] for row in baseline}), 14)
+        offline = [row for row in baseline if row['group']=='O']
+        self.assertEqual({row['domain'] for row in offline}, set(DOMAINS))
+        self.assertTrue(all(row['observations']==0 and row['developer_observations']==512
+                            and row['run_limit_slot'] is None for row in offline))
+        scientific = [row for row in baseline if row['group']!='O']+build_complete_matrix()
+        self.assertEqual(len(scientific), 30)
+        self.assertEqual([row['run_limit_slot'] for row in scientific], list(range(1,31)))
+        for group in ('A','G50','P','RW','RP'):
+            self.assertEqual(sum(row['group']==group for row in scientific), 6)
+        self.assertEqual(frozen_protocol()['max_new_complete_odr_runs'], 30)
+        self.assertEqual(frozen_protocol()['reuse_groups'], [])
+
+    def test_deterministic_revision_preserves_scientific_thresholds_and_fails_closed(self):
+        protocol=frozen_protocol()
+        execution=protocol['deterministic_execution']
+        self.assertFalse(execution['cudnn_benchmark'])
+        self.assertTrue(execution['cudnn_deterministic'])
+        self.assertTrue(execution['torch_deterministic_algorithms'])
+        self.assertFalse(execution['warn_only'])
+        self.assertFalse(execution['cudnn_allow_tf32'])
+        self.assertFalse(execution['cuda_matmul_allow_tf32'])
+        self.assertEqual(protocol['data']['fixed_reference_count'], {'lightbox':512,'sunlamp':511})
+        self.assertEqual(protocol['protection']['h_rotation_change_degrees_gt'], 15.)
+        self.assertEqual(protocol['randomness']['seeds']['lightbox:2021'],
+                         {'uniform_pool':2026102311,'vulnerable_pool':2026102312,
+                          'rw_coin':2026102321,'rp_permutation':2026102331})
 
     def test_engineering_has_eight_fixed_prefixes_and_resumes_do_not_expand_budget(self):
         rows = build_engineering_matrix()
