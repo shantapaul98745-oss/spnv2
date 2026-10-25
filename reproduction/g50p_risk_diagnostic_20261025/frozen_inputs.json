@@ -1,0 +1,2878 @@
+{
+  "candidate_population": 793,
+  "diagnostic_id": "g50p_risk_diagnostic_20261025",
+  "execution_order": [
+    "lightbox:2021:1",
+    "sunlamp:2021:9",
+    "lightbox:2021:22",
+    "lightbox:2021:44",
+    "lightbox:2021:66",
+    "lightbox:2021:88",
+    "lightbox:2021:110",
+    "lightbox:2021:132",
+    "lightbox:2021:154",
+    "lightbox:2022:1",
+    "lightbox:2022:22",
+    "lightbox:2022:44",
+    "lightbox:2022:65",
+    "lightbox:2022:87",
+    "lightbox:2022:108",
+    "lightbox:2022:130",
+    "lightbox:2022:152",
+    "lightbox:2023:1",
+    "lightbox:2023:22",
+    "lightbox:2023:44",
+    "lightbox:2023:65",
+    "lightbox:2023:87",
+    "lightbox:2023:108",
+    "lightbox:2023:130",
+    "lightbox:2023:152",
+    "sunlamp:2021:1",
+    "sunlamp:2021:16",
+    "sunlamp:2021:23",
+    "sunlamp:2021:31",
+    "sunlamp:2021:54",
+    "sunlamp:2021:84",
+    "sunlamp:2021:114",
+    "sunlamp:2022:1",
+    "sunlamp:2022:5",
+    "sunlamp:2022:9",
+    "sunlamp:2022:14",
+    "sunlamp:2022:15",
+    "sunlamp:2022:46",
+    "sunlamp:2022:77",
+    "sunlamp:2022:108",
+    "sunlamp:2023:1",
+    "sunlamp:2023:17",
+    "sunlamp:2023:33",
+    "sunlamp:2023:49",
+    "sunlamp:2023:65",
+    "sunlamp:2023:81",
+    "sunlamp:2023:97",
+    "sunlamp:2023:113"
+  ],
+  "labels_opened": false,
+  "new_model_forwards": 0,
+  "offline_predictions": [
+    {
+      "domain": "lightbox",
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_o_lightbox_offline_dev512/developer_predictions.json",
+      "proof": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_o_lightbox_offline_dev512/proof.json",
+        "sha256": "362c9d5475f8beaa7afe6f1d50dfbf3c04f9cc99a3f6ef9a465c40d6e8d323f2"
+      },
+      "report": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_o_lightbox_offline_dev512/report.json",
+        "sha256": "8c6fa5fcff1facba39762f3ad7942b198b11238538941cd41961e5dd5c3929ae"
+      },
+      "sha256": "1f35c6d61d3f9d25d6d70173ce27fbb3e86026349d7cce57b3e503424e91e00d"
+    },
+    {
+      "domain": "sunlamp",
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_o_sunlamp_offline_dev512/developer_predictions.json",
+      "proof": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_o_sunlamp_offline_dev512/proof.json",
+        "sha256": "0e05c700798e7ad1e160b3f6cf12c78cb0d6dee981b8583df53e9d4e68dcc087"
+      },
+      "report": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_o_sunlamp_offline_dev512/report.json",
+        "sha256": "ac40915beb3e83dc88d2063e5226c3803a842e55855e0385d1e7dc201c03037b"
+      },
+      "sha256": "0723119678f41b370dc64662b3eeb88334a30fb15ccd607d112480636f50dd88"
+    }
+  ],
+  "old_summary": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/summaries/round2/summary.json",
+    "sha256": "2deebbe799a312961a6df86f1175cc2c2227dfd36990f919d218ae58deac9cc8"
+  },
+  "old_summary_proof": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/summaries/round2/proof.json",
+    "sha256": "e1ea891b203f18cffb73ba3d8b500884bbac727bd0b2643b6611a77c59d6fa40"
+  },
+  "panels": {
+    "lightbox:2021": {
+      "labels": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/lightbox/dev_labels.json",
+        "sha256": "7b61ca380e3f004a0e78f8035fec65a60a3b5db420f697dbf23512cf917c7f3d"
+      },
+      "manifest": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/panels/lightbox_2021.json",
+        "sha256": "435982e4652726b59b7fc109f8766d0abe219cbb95c46f8b1c20894f748eb0f0"
+      },
+      "offline_predictions": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_o_lightbox_offline_dev512/developer_predictions.json",
+        "sha256": "1f35c6d61d3f9d25d6d70173ce27fbb3e86026349d7cce57b3e503424e91e00d"
+      }
+    },
+    "lightbox:2022": {
+      "labels": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/lightbox/dev_labels.json",
+        "sha256": "7b61ca380e3f004a0e78f8035fec65a60a3b5db420f697dbf23512cf917c7f3d"
+      },
+      "manifest": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/panels/lightbox_2022.json",
+        "sha256": "505bc285be8e1e3a3f964dc595918e6739369f1bbab4d0cdfb8427326ba0f630"
+      },
+      "offline_predictions": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_o_lightbox_offline_dev512/developer_predictions.json",
+        "sha256": "1f35c6d61d3f9d25d6d70173ce27fbb3e86026349d7cce57b3e503424e91e00d"
+      }
+    },
+    "lightbox:2023": {
+      "labels": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/lightbox/dev_labels.json",
+        "sha256": "7b61ca380e3f004a0e78f8035fec65a60a3b5db420f697dbf23512cf917c7f3d"
+      },
+      "manifest": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/panels/lightbox_2023.json",
+        "sha256": "9689a46edf077e35ede2588f44aa64b37b36f1b39b45e385baa27e8aa04468f9"
+      },
+      "offline_predictions": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_o_lightbox_offline_dev512/developer_predictions.json",
+        "sha256": "1f35c6d61d3f9d25d6d70173ce27fbb3e86026349d7cce57b3e503424e91e00d"
+      }
+    },
+    "sunlamp:2021": {
+      "labels": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/sunlamp/dev_labels.json",
+        "sha256": "6782b4fe7f35f7e6f5b88bfde5705ef0362b16610df8086c3b359cea5a4a5239"
+      },
+      "manifest": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/panels/sunlamp_2021.json",
+        "sha256": "e7229a7e87b418926f59ce0f5e4995a66e477722a82fc80c382c745e1a94358c"
+      },
+      "offline_predictions": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_o_sunlamp_offline_dev512/developer_predictions.json",
+        "sha256": "0723119678f41b370dc64662b3eeb88334a30fb15ccd607d112480636f50dd88"
+      }
+    },
+    "sunlamp:2022": {
+      "labels": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/sunlamp/dev_labels.json",
+        "sha256": "6782b4fe7f35f7e6f5b88bfde5705ef0362b16610df8086c3b359cea5a4a5239"
+      },
+      "manifest": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/panels/sunlamp_2022.json",
+        "sha256": "a86695b3bf1e2fe5f3a75a22a1497af051f53ef2116b248e08170bc1099c2c3a"
+      },
+      "offline_predictions": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_o_sunlamp_offline_dev512/developer_predictions.json",
+        "sha256": "0723119678f41b370dc64662b3eeb88334a30fb15ccd607d112480636f50dd88"
+      }
+    },
+    "sunlamp:2023": {
+      "labels": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/sunlamp/dev_labels.json",
+        "sha256": "6782b4fe7f35f7e6f5b88bfde5705ef0362b16610df8086c3b359cea5a4a5239"
+      },
+      "manifest": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/panels/sunlamp_2023.json",
+        "sha256": "ca9f0a90f662a0c8badbb4ce059292ab1690f6e21c3e7a925b4efdc157605073"
+      },
+      "offline_predictions": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_o_sunlamp_offline_dev512/developer_predictions.json",
+        "sha256": "0723119678f41b370dc64662b3eeb88334a30fb15ccd607d112480636f50dd88"
+      }
+    }
+  },
+  "producer": {
+    "commit": "3ef5cbd32f16bcfcb650f4b5d7a04a69e718aa47",
+    "implementation_dir": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/implementation",
+    "implementation_sha256": {
+      "artifact_binding.py": "1ac7ae7391f235cda8eabd40105ea86bc78f390708078c0207f74c26cc70ab6c",
+      "audit_revision.py": "026408280468a895056ebb330685e6b30f769a37f0970fdc411a1113e6443528",
+      "complete_phase_tools.py": "b1ccdd6f4741762f288e6cb4f11380367c467ab2ed9c67015dd4b6e43a13ec2e",
+      "deterministic_runtime.py": "59ea6ef8e58e9a238589151a168263e90981a15fb81e3799f33b405df1cc5c30",
+      "durable_state.py": "62d27f792bd13f9bf42146434e21aae1191c34d01953b70debb92cab1c32e2d3",
+      "frozen_backend.py": "1a4034dc4cadf4a02406991e212192438006dd620e2ff2a51199b6cbf27d9bc0",
+      "guard_pools.py": "8479bc7c28b6832c90bece564873931a8f8d99074e9fe5bb44d15f370033ccfe",
+      "guarded_entry.py": "2d1faf9f6a0d031655d188fb8245ac40ea9505a902231996d5e41782c1453077",
+      "host_gate.py": "cbd08e5ca4384c4ab035579eda300d7930c3d8920fadb8eeecbbbc69b252b3c4",
+      "host_snapshot.py": "88e3956ef0ddaaa4933a58ad2f1c420e52108f0b7f7968de8d2bba7a66da4e6c",
+      "offline_baseline.py": "dbafd2d7213e218956471a22ccebc8270e7375a29c2af63ea207abd115c9504d",
+      "preforward_repair.py": "0bd872b31211429aedf8731ee1107e52603e42b6d866ca254c3ff68af08c0256",
+      "prepare_deterministic_revision.py": "c89f74eb1eed1d7de2ca9caa9bec908088b9fba50e7fe3e7a412e74aa7cde56e",
+      "prepare_round2.py": "d0dfacc25633a6c886f77c7eb3068c4828c53089f68c5fa43e4cde6453a96a6e",
+      "protected_engine.py": "88ae9fd81e65cf4dcbd743df81424202240fe5f4352a30136ca07afbd142f5b1",
+      "protected_learning.py": "122409e29979f2021912a9731d6979857ec034ae9ef2e8e0664242e66520634e",
+      "queue_control.py": "91fcf9d886ea82a002a29ae7542c0b4833e6fe4c311dc4c4c25bb374cae2f285",
+      "queue_round2.py": "f887ee9d7f0a9e4399e002ed7be66d82beaa59733f2fcc93553e0f83a7d6e74d",
+      "reference_driver.py": "a376513021a7adf778364999135da4c15d88bec935a5590028a1d3e644130742",
+      "round2_protocol.py": "5e698098bffaaf098a7cbe2b6dac8f599281f72418caaad9869fc0ca623dcdc5",
+      "run_round2.py": "24cd081dafb53013b29ea7ae775e030cea081d1a219191b0b6e3b6748f8e4e3e",
+      "summarize_round2.py": "8e56c78345783a4cc3d90384cb8079023c79b7f750fa70e84840caa972b544f5",
+      "test_artifact_binding.py": "db6ddb9b9fb1b5814eb45cf65890934ed01b84ca396950f08e29515e4c864a59",
+      "test_audit_revision.py": "c3990be9ac96dec3b01b7eb85cc2ff2b1d7d879598c65d5a0a49615d16f70e32",
+      "test_complete_phase_tools.py": "bbf6a97dc786ee95ff5645072cab25e51ff96f3616ee30f1d07e107e27fbcc52",
+      "test_deterministic_runtime.py": "62a4525d14590530e9ed570e8c356cbb073cc43eb600382055380bd55d63a8b6",
+      "test_durable_state.py": "43f89752d3da8ea49fca6cc7cb2b0637918b9bc27d88d71bd11ec2ffef66789b",
+      "test_engineering_repair_audit.py": "ef2283e77ccde66a8f4c6aa0a0491bf3dfe8d9321fedd1ee08e08fc24dc1376a",
+      "test_frozen_backend.py": "828540be15f277396e8355cc1d0f6d0de571d9cfb235af10d6181ee48b67a3d2",
+      "test_guard_pools.py": "aec2f8a54bc992aaac22366c79702ceb9b3875e99cc1023234e2e0a99dbc0ae6",
+      "test_guarded_entry.py": "5cf16c297404cd4fd5ecef1d1b73c04b44e972bfb8ed069bc24a4f647b654817",
+      "test_host_gate.py": "43b6b26a2c547ae1904f322ea017e860d5a2a8e5618cc74320a613cb7f89b226",
+      "test_host_snapshot.py": "a39099b22e372cca3fc0fab3c85f4fb65719060e1e3bc36b85c5f2d1a58b2019",
+      "test_offline_baseline.py": "514da93e1ba7bc2ee6a5d194621c2620f6df16d5260d07a39c33992387ba1e8a",
+      "test_preforward_repair.py": "b7f789bfacd5b3cf357d6a23efbaeab5ed20feb55389adc82f14cbfc8e1dd983",
+      "test_prepare_deterministic_revision.py": "1dec7985898d5360bd9e1632c1e23382cb6fd113816018e1d89ca776156f35ad",
+      "test_private_json.py": "91bfb3616f8e68d84253678915aafa4c946ec07d1bd1c9f53bc71bc006fb1935",
+      "test_protected_engine.py": "3c40405d79e4af19b2e6b9c72f519e8000f4aa9dbb59bd6045262fb5a0f17b5a",
+      "test_protected_learning.py": "9b642577ceacb70a47bfcebd16a908d2b008c63e1c4dc3ef8f2fb6c4af331959",
+      "test_queue_control.py": "f552826d6ae5106efee0bd6c450fc2571724e0258bbf63dd35d69965ccc0ca0c",
+      "test_queue_round2.py": "a73c047459dc3ed55cd8501f0fc94d1bbfa7d4beed04757b50ceeef66ac4fc24",
+      "test_reference_driver.py": "9ef769c93e1157fd03eff1d49b38bf90dfea09bb9a5af4b8887331551fcf405b",
+      "test_round2_protocol.py": "0f00a60e8b5630cf856cf872ba8c70fbe9f1d4c730198d2e042d4057870be6c0",
+      "test_run_round2.py": "fd67f38e0eff0be97d33147546a2934ed46fc8f17b87008d9d22683f34dbd1d4",
+      "test_summarize_round2.py": "a02906cc4bc9d0c2054d081408946109d16e35e9b6aa58956a0cdad5aba33724",
+      "test_verify_complete.py": "1d2c23be248147bbef244547fc42e9a2f60121068cee8defdb594550772ea552",
+      "test_verify_round2.py": "e5bd6874126f2c2f485206de70dcd4a81fb38f89f5e50425432b0b527dea630f",
+      "verify_complete.py": "70c5c4cdc817f2820b90ed747486952ea9d79610abfec3b6f858fbc32b9895a4",
+      "verify_engineering_phase.py": "6fa41caa5ff5fba57cbf52c1cb06b4c65ea3c9eafcf500bbff002899ed043230",
+      "verify_round2.py": "3e85ebe4601c2778b5fc29ce4c820f8d067cb3e24fcc8b220cdd478b1df03b3b"
+    }
+  },
+  "protocol": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/protocol.json",
+    "sha256": "3b873f77db09e70e11e062d06af9ff7d6be74e522a09aeb9b34a824f5d6dbe54"
+  },
+  "rollback_population": 117,
+  "runs": {
+    "lightbox:2021": {
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 154,
+          "commits": 154,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "67e5a233ef865acca6eb4146a588f3697a2eef8366a12e3b283761cc969d7eb4",
+        "state_sha256": "5ac255f58fa6ba09206d685a4d6385b18db8ea9db2187f8bdd08f5db526c0144"
+      },
+      "original_proof": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/proof.json",
+        "sha256": "0bc675b92ff1186ef1ea00300378042cdc70266e40232d2a01023dbf34e8c357"
+      },
+      "original_report": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/report.json",
+        "sha256": "98974895c5394c4c77e3324a48372d10b17d3994210ecf2c24eb35674af9e3a1"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2021_N1024_B4.json",
+        "sha256": "e6836f279eb7439a4544ca13ad57ecc47cb9c399ab51920bd1f11e332c2363c0"
+      },
+      "protocol_sha256": "8a0f78758bb94b462c65ac19354dc29a79397d3df8d5a859e1a4c73b9902c0d5",
+      "run_id": "g50p2_det_20261024_p_lightbox_s2021_N1024_B4",
+      "run_key": "P:lightbox:2021",
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc"
+    },
+    "lightbox:2022": {
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 152,
+          "commits": 152,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "891e2100cee1598d6ca2ab2863286412d99d5c4f62b4ed586f45d005004c3e59",
+        "state_sha256": "9d3be2fde8f5ac51f61e34a3bcbb189cf3744b620b10f85f817c7e08c88ee4ed"
+      },
+      "original_proof": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/proof.json",
+        "sha256": "2c4350b5c0d416a288c6021533cdc337ff620e0e360619824a1ebb2d1be2ca4b"
+      },
+      "original_report": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/report.json",
+        "sha256": "c0dbaa01f4e7a782a7650606e1346e0267180396328d00720233b58203712faa"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2022_N1024_B4.json",
+        "sha256": "e4d2a606f7524e3a1c9c38685b81800e23fc2de41b8067ec8d7d049d1f99c990"
+      },
+      "protocol_sha256": "8a0f78758bb94b462c65ac19354dc29a79397d3df8d5a859e1a4c73b9902c0d5",
+      "run_id": "g50p2_det_20261024_p_lightbox_s2022_N1024_B4",
+      "run_key": "P:lightbox:2022",
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc"
+    },
+    "lightbox:2023": {
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 152,
+          "commits": 152,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "87f36ec0933723dd2be0a028eaf30e872d76e5bfbab3bf4a6d82629e37943717",
+        "state_sha256": "83667519b6ccdd7546c0e9aef560d5809bcc197d4e7f93ba51c3cbb31837652a"
+      },
+      "original_proof": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/proof.json",
+        "sha256": "49627ab7aa6b5211cb4aca2baa6cdfed778ba1c624012ddb030c112e96181aa4"
+      },
+      "original_report": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/report.json",
+        "sha256": "c40ba54e2d454a71d84f89b81ed4ee433527c29a0d005c86136bec92afa390cb"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2023_N1024_B4.json",
+        "sha256": "ed7a42183b99ec4b58be641c0ae0279537b9766f293818a9c6d4f2cd89e577b5"
+      },
+      "protocol_sha256": "8a0f78758bb94b462c65ac19354dc29a79397d3df8d5a859e1a4c73b9902c0d5",
+      "run_id": "g50p2_det_20261024_p_lightbox_s2023_N1024_B4",
+      "run_key": "P:lightbox:2023",
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc"
+    },
+    "sunlamp:2021": {
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 114,
+          "commits": 91,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 23
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "705920a0f6903aa331d5a80478da85e8ae6ac763b581be7835a68b7e33403514",
+        "state_sha256": "d6f6e4ca17cc8059768d22064d2bd198fb10451396e1b28398742f50f3afd2da"
+      },
+      "original_proof": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/proof.json",
+        "sha256": "6b62fe9aa1cc410f24e36bab2424080a65bdf2e30bf2f5ea29bcc602748f8986"
+      },
+      "original_report": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/report.json",
+        "sha256": "2884a9aa5f0cd8c8974e3112856e2eea78ab1afae39c901071da5359470d5723"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4.json",
+        "sha256": "5e75793f85cf3b2284fec225fffaa88508b119ddd64bf780315abaa18819f4f4"
+      },
+      "protocol_sha256": "8a0f78758bb94b462c65ac19354dc29a79397d3df8d5a859e1a4c73b9902c0d5",
+      "run_id": "g50p2_det_20261024_p_sunlamp_s2021_N1024_B4",
+      "run_key": "P:sunlamp:2021",
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc"
+    },
+    "sunlamp:2022": {
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 108,
+          "commits": 14,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 94
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "e161933869035e0e1d6fde89be0053f21d7d753dcb683d0f70b8a0c68c0e816f",
+        "state_sha256": "564199c144c7806ba44c3f4b9d53b4fc407235f0e8106311cd6ff694ff11b127"
+      },
+      "original_proof": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/proof.json",
+        "sha256": "fabead0253d76a37c3bfa3707ae1ea0b838a143d53df70024aef8c1b60bcb674"
+      },
+      "original_report": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/report.json",
+        "sha256": "dd85ad679145360ea05ac7141a09df9fa65a48f623e57aa1ad699e601e11121a"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4.json",
+        "sha256": "04d44aef4305b82400bddaba2a97e6fd35ab930ccf66c5d18538e8a947421d49"
+      },
+      "protocol_sha256": "8a0f78758bb94b462c65ac19354dc29a79397d3df8d5a859e1a4c73b9902c0d5",
+      "run_id": "g50p2_det_20261024_p_sunlamp_s2022_N1024_B4",
+      "run_key": "P:sunlamp:2022",
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc"
+    },
+    "sunlamp:2023": {
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 113,
+          "commits": 113,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "6ec269582e25932f319231a053010a795f0f1064f315661ea71e222b39134918",
+        "state_sha256": "4554053f1511a873bce4502867a332decc27086162ea84039efc089f5af015b7"
+      },
+      "original_proof": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/proof.json",
+        "sha256": "76f0a2b57fcb56a6ea55ebbeee107ec8531b0329b31095f74b43ab53fb07694c"
+      },
+      "original_report": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/report.json",
+        "sha256": "5bfbf685c5766250ae42fa5417a1fa16a6e9561cc503ad8af037cd64daee3fd2"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4.json",
+        "sha256": "4e19e663efd2e7671270b0576f83e63feeaa9fd4739449619cf307b26681054c"
+      },
+      "protocol_sha256": "8a0f78758bb94b462c65ac19354dc29a79397d3df8d5a859e1a4c73b9902c0d5",
+      "run_id": "g50p2_det_20261024_p_sunlamp_s2023_N1024_B4",
+      "run_key": "P:sunlamp:2023",
+      "source_sha256": "d8f9c281d23adaeb77d03023aee8d40ae1cb9e18dd503539c4719bbe719514cc"
+    }
+  },
+  "schema": "g50p-risk-diagnostic-inputs-v1",
+  "windows": [
+    {
+      "candidate_number": 1,
+      "domain": "lightbox",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 10,
+          "commits": 10,
+          "next_index": 64,
+          "observed": 64,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000002",
+        "generation": 2,
+        "metadata_sha256": "9f43c572b4cc479889d2205aaa0677486b54724f8bb83fb5d2f9af3d71aa8995",
+        "state_sha256": "873a6b526990f09d917ed42d6b28e728150533a05dbe3deb3cf4de74ad19eab6"
+      },
+      "observed_at_decision": 7,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 154,
+          "commits": 154,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "67e5a233ef865acca6eb4146a588f3697a2eef8366a12e3b283761cc969d7eb4",
+        "state_sha256": "5ac255f58fa6ba09206d685a4d6385b18db8ea9db2187f8bdd08f5db526c0144"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2021_N1024_B4.json",
+        "sha256": "e6836f279eb7439a4544ca13ad57ecc47cb9c399ab51920bd1f11e332c2363c0"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 0,
+          "commits": 0,
+          "next_index": 0,
+          "observed": 0,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000001",
+        "generation": 1,
+        "metadata_sha256": "6da72290b28e5ce2e9c6e73fbcd0c775a99efe58d0a34077212bb13402430ac4",
+        "state_sha256": "cad19650f495a4088953bccdccb951c5a6cdcd443a5cb6596e1ecaf3d694a1af"
+      },
+      "stream_seed": 2021,
+      "window_id": "lightbox:2021:1"
+    },
+    {
+      "candidate_number": 22,
+      "domain": "lightbox",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 29,
+          "commits": 29,
+          "next_index": 192,
+          "observed": 192,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000004",
+        "generation": 4,
+        "metadata_sha256": "9e3a67d974f87a8222951238a57579cbc73829331e4ce8d1f778727dc535de72",
+        "state_sha256": "6b808ff5237629c4041ea4c2d9aec45fbf230887802e7b4262da5bb5130d92c6"
+      },
+      "observed_at_decision": 143,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 154,
+          "commits": 154,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "67e5a233ef865acca6eb4146a588f3697a2eef8366a12e3b283761cc969d7eb4",
+        "state_sha256": "5ac255f58fa6ba09206d685a4d6385b18db8ea9db2187f8bdd08f5db526c0144"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2021_N1024_B4.json",
+        "sha256": "e6836f279eb7439a4544ca13ad57ecc47cb9c399ab51920bd1f11e332c2363c0"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 19,
+          "commits": 19,
+          "next_index": 128,
+          "observed": 128,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000003",
+        "generation": 3,
+        "metadata_sha256": "de2f81fdd8e4d4fdab8a4ea535830a5fb6f278d3975fe972fc290c38d3736631",
+        "state_sha256": "1ecd012bad20b2509432b703ae13e4fce1596d4ca140dbd78de3e60b0bddf180"
+      },
+      "stream_seed": 2021,
+      "window_id": "lightbox:2021:22"
+    },
+    {
+      "candidate_number": 44,
+      "domain": "lightbox",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 48,
+          "commits": 48,
+          "next_index": 320,
+          "observed": 320,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000006",
+        "generation": 6,
+        "metadata_sha256": "6d5f03f96c6a681bb45d6e970e43ad2f21ebbfda5dce3aaed80233f2a101875b",
+        "state_sha256": "314b92a8b8a4101941e76fde84483032cc22edad9cd5c6e2ce8a39800b556ea7"
+      },
+      "observed_at_decision": 288,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 154,
+          "commits": 154,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "67e5a233ef865acca6eb4146a588f3697a2eef8366a12e3b283761cc969d7eb4",
+        "state_sha256": "5ac255f58fa6ba09206d685a4d6385b18db8ea9db2187f8bdd08f5db526c0144"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2021_N1024_B4.json",
+        "sha256": "e6836f279eb7439a4544ca13ad57ecc47cb9c399ab51920bd1f11e332c2363c0"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 38,
+          "commits": 38,
+          "next_index": 256,
+          "observed": 256,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000005",
+        "generation": 5,
+        "metadata_sha256": "ffd2f244bdc85bd2673dba2c3c763e2f397855fb0e801754ed06e6d22427f0d7",
+        "state_sha256": "bcdf01dfcf838f52e07f379441d3fd4b5718dc218a899000148db47b28eeb32c"
+      },
+      "stream_seed": 2021,
+      "window_id": "lightbox:2021:44"
+    },
+    {
+      "candidate_number": 66,
+      "domain": "lightbox",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 68,
+          "commits": 68,
+          "next_index": 448,
+          "observed": 448,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000008",
+        "generation": 8,
+        "metadata_sha256": "80a13a93a4c3c96a84e124dca905fd970abda172a1d03c2c963e92b7a7fda78a",
+        "state_sha256": "ce15f614c2ccd086ddf7307661423ee0bc125c0bc857ccd02c47f8170126de1e"
+      },
+      "observed_at_decision": 430,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 154,
+          "commits": 154,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "67e5a233ef865acca6eb4146a588f3697a2eef8366a12e3b283761cc969d7eb4",
+        "state_sha256": "5ac255f58fa6ba09206d685a4d6385b18db8ea9db2187f8bdd08f5db526c0144"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2021_N1024_B4.json",
+        "sha256": "e6836f279eb7439a4544ca13ad57ecc47cb9c399ab51920bd1f11e332c2363c0"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 59,
+          "commits": 59,
+          "next_index": 384,
+          "observed": 384,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000007",
+        "generation": 7,
+        "metadata_sha256": "60c29ab7663191bef9359f0cc88d1bd90b31ea44411292e2eab027e3ae307597",
+        "state_sha256": "a7953644335107255bb3ea707376b801257746266d7a9e591d7d0cbce790dbb3"
+      },
+      "stream_seed": 2021,
+      "window_id": "lightbox:2021:66"
+    },
+    {
+      "candidate_number": 88,
+      "domain": "lightbox",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 98,
+          "commits": 98,
+          "next_index": 640,
+          "observed": 640,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000011",
+        "generation": 11,
+        "metadata_sha256": "219c8311d9a57d334c0477b3cabdf8e08e371d9ea45d9982da680ec79fd24940",
+        "state_sha256": "bb5b98404ab1141bd09593e47ab1d36b2b5caca3671cde839c3886e950757580"
+      },
+      "observed_at_decision": 586,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 154,
+          "commits": 154,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "67e5a233ef865acca6eb4146a588f3697a2eef8366a12e3b283761cc969d7eb4",
+        "state_sha256": "5ac255f58fa6ba09206d685a4d6385b18db8ea9db2187f8bdd08f5db526c0144"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2021_N1024_B4.json",
+        "sha256": "e6836f279eb7439a4544ca13ad57ecc47cb9c399ab51920bd1f11e332c2363c0"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 86,
+          "commits": 86,
+          "next_index": 576,
+          "observed": 576,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000010",
+        "generation": 10,
+        "metadata_sha256": "28f50fd606c542d1cbc49476e428bab3d4282a5b9e8f61d9252e9d08bacc88c7",
+        "state_sha256": "3b889941fc29f14cfc9510fff7b453aee545310f45b94538445348d366f1f8e9"
+      },
+      "stream_seed": 2021,
+      "window_id": "lightbox:2021:88"
+    },
+    {
+      "candidate_number": 110,
+      "domain": "lightbox",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 115,
+          "commits": 115,
+          "next_index": 768,
+          "observed": 768,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000013",
+        "generation": 13,
+        "metadata_sha256": "3901dfeb0088be0696e5f000bc775daf14a2371849a9f9240296a3439ef081d4",
+        "state_sha256": "c2116a4d5db3623350e597410e870201f1e218f44a8bb208279175c3eaa1876a"
+      },
+      "observed_at_decision": 728,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 154,
+          "commits": 154,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "67e5a233ef865acca6eb4146a588f3697a2eef8366a12e3b283761cc969d7eb4",
+        "state_sha256": "5ac255f58fa6ba09206d685a4d6385b18db8ea9db2187f8bdd08f5db526c0144"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2021_N1024_B4.json",
+        "sha256": "e6836f279eb7439a4544ca13ad57ecc47cb9c399ab51920bd1f11e332c2363c0"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 106,
+          "commits": 106,
+          "next_index": 704,
+          "observed": 704,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000012",
+        "generation": 12,
+        "metadata_sha256": "e937cadfd99e98e87ad7f2718587734b086906738286e8f66c93c62e47e368ac",
+        "state_sha256": "8c98e176a662ad96d915a8fe955ac90ef6128276f886b2267f629cd0eae36292"
+      },
+      "stream_seed": 2021,
+      "window_id": "lightbox:2021:110"
+    },
+    {
+      "candidate_number": 132,
+      "domain": "lightbox",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 133,
+          "commits": 133,
+          "next_index": 896,
+          "observed": 896,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000015",
+        "generation": 15,
+        "metadata_sha256": "af04fe65b54f28a8064c120ff64946eba664314a8e5549b4c3376a07e638e77e",
+        "state_sha256": "42520deafd46b361e4fe7e1d684bf01e34cef7a98ac59dc91ddfe084ff2bf4bb"
+      },
+      "observed_at_decision": 879,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 154,
+          "commits": 154,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "67e5a233ef865acca6eb4146a588f3697a2eef8366a12e3b283761cc969d7eb4",
+        "state_sha256": "5ac255f58fa6ba09206d685a4d6385b18db8ea9db2187f8bdd08f5db526c0144"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2021_N1024_B4.json",
+        "sha256": "e6836f279eb7439a4544ca13ad57ecc47cb9c399ab51920bd1f11e332c2363c0"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 125,
+          "commits": 125,
+          "next_index": 832,
+          "observed": 832,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000014",
+        "generation": 14,
+        "metadata_sha256": "90076548dc6a0b2d03de9e725d7c313aea67f443505424f30c179cf19f496054",
+        "state_sha256": "c06aac7793a9f05b845b7809ee59c8137d733b938a274a49f9de7b44fb3519ad"
+      },
+      "stream_seed": 2021,
+      "window_id": "lightbox:2021:132"
+    },
+    {
+      "candidate_number": 154,
+      "domain": "lightbox",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 154,
+          "commits": 154,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000017",
+        "generation": 17,
+        "metadata_sha256": "81dd0e62dd1e337e9a31c420aaa8a77ae04430cea772e911780801d60f6cbc40",
+        "state_sha256": "72eb3bd0e42e31db10a74369843a01972f0e556b419b68bd5a58feee8f2d468b"
+      },
+      "observed_at_decision": 1020,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 154,
+          "commits": 154,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "67e5a233ef865acca6eb4146a588f3697a2eef8366a12e3b283761cc969d7eb4",
+        "state_sha256": "5ac255f58fa6ba09206d685a4d6385b18db8ea9db2187f8bdd08f5db526c0144"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2021_N1024_B4.json",
+        "sha256": "e6836f279eb7439a4544ca13ad57ecc47cb9c399ab51920bd1f11e332c2363c0"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 144,
+          "commits": 144,
+          "next_index": 960,
+          "observed": 960,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000016",
+        "generation": 16,
+        "metadata_sha256": "dccca2b71fed3be6e548a75cd3aff33519a10f3fe64e48d3e27e7aeec6e471fc",
+        "state_sha256": "1720a8b49df5df545f64a5ebeaf080203a87536c5d3367819bb5131eb18ed4cf"
+      },
+      "stream_seed": 2021,
+      "window_id": "lightbox:2021:154"
+    },
+    {
+      "candidate_number": 1,
+      "domain": "lightbox",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 8,
+          "commits": 8,
+          "next_index": 64,
+          "observed": 64,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000002",
+        "generation": 2,
+        "metadata_sha256": "851599edba42278eaf477133e19bff1c00ced825f2fb2aadbe8549eee9c79424",
+        "state_sha256": "bbed3c49161cd6b1e71daf8404820ca24808d458f80fd7bd7238c8b584bab0fd"
+      },
+      "observed_at_decision": 8,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 152,
+          "commits": 152,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "891e2100cee1598d6ca2ab2863286412d99d5c4f62b4ed586f45d005004c3e59",
+        "state_sha256": "9d3be2fde8f5ac51f61e34a3bcbb189cf3744b620b10f85f817c7e08c88ee4ed"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2022_N1024_B4.json",
+        "sha256": "e4d2a606f7524e3a1c9c38685b81800e23fc2de41b8067ec8d7d049d1f99c990"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 0,
+          "commits": 0,
+          "next_index": 0,
+          "observed": 0,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000001",
+        "generation": 1,
+        "metadata_sha256": "c4aff170a4a92d9dadd14b2f7dd1b560871b5c3c1d0808fc47ceee39019bb1df",
+        "state_sha256": "18c66d8113e828e2086454ce450addd750d7914bf969a8f235f8d0dd24a40015"
+      },
+      "stream_seed": 2022,
+      "window_id": "lightbox:2022:1"
+    },
+    {
+      "candidate_number": 22,
+      "domain": "lightbox",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 26,
+          "commits": 26,
+          "next_index": 192,
+          "observed": 192,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000004",
+        "generation": 4,
+        "metadata_sha256": "c3e56c906fad1be3922ef5ef0768e975b183f01131136b269dfe64f233e032a0",
+        "state_sha256": "708663abd5dfabe5faf145f8fbedb5f5a067aec3ed314ee83b1275b000349f1b"
+      },
+      "observed_at_decision": 164,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 152,
+          "commits": 152,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "891e2100cee1598d6ca2ab2863286412d99d5c4f62b4ed586f45d005004c3e59",
+        "state_sha256": "9d3be2fde8f5ac51f61e34a3bcbb189cf3744b620b10f85f817c7e08c88ee4ed"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2022_N1024_B4.json",
+        "sha256": "e4d2a606f7524e3a1c9c38685b81800e23fc2de41b8067ec8d7d049d1f99c990"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 17,
+          "commits": 17,
+          "next_index": 128,
+          "observed": 128,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000003",
+        "generation": 3,
+        "metadata_sha256": "b5e32675b09eea4b00157c53aebe2369a6ae919f8570a70550b717080299c52b",
+        "state_sha256": "85ddd111f89a47b1864ee17b2d2f6db268aa19027ec1104caddf6671b6f2a8d0"
+      },
+      "stream_seed": 2022,
+      "window_id": "lightbox:2022:22"
+    },
+    {
+      "candidate_number": 44,
+      "domain": "lightbox",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 47,
+          "commits": 47,
+          "next_index": 320,
+          "observed": 320,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000006",
+        "generation": 6,
+        "metadata_sha256": "3a798a8393737fe6193958895c8d97c1f9d025353a41398c95685507781c7d4d",
+        "state_sha256": "902ccb18a06a17eedbae153e91b536b34cb8c3c617fa9fa229714d96340b8043"
+      },
+      "observed_at_decision": 300,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 152,
+          "commits": 152,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "891e2100cee1598d6ca2ab2863286412d99d5c4f62b4ed586f45d005004c3e59",
+        "state_sha256": "9d3be2fde8f5ac51f61e34a3bcbb189cf3744b620b10f85f817c7e08c88ee4ed"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2022_N1024_B4.json",
+        "sha256": "e4d2a606f7524e3a1c9c38685b81800e23fc2de41b8067ec8d7d049d1f99c990"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 36,
+          "commits": 36,
+          "next_index": 256,
+          "observed": 256,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000005",
+        "generation": 5,
+        "metadata_sha256": "dcdc69bcdbea65570905c00edce273e5fe202b7b22fa3033b90e3370844ae7b5",
+        "state_sha256": "153e804fdd5f95db343c0a74072a89c469aeef64e6e8b03b58aef8f752d324c6"
+      },
+      "stream_seed": 2022,
+      "window_id": "lightbox:2022:44"
+    },
+    {
+      "candidate_number": 65,
+      "domain": "lightbox",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 67,
+          "commits": 67,
+          "next_index": 448,
+          "observed": 448,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000008",
+        "generation": 8,
+        "metadata_sha256": "1dbc24d2d4076aacbc5468e2ded53831ea60404e5de20a1bf6484fc30f3ab53f",
+        "state_sha256": "9269736e7a948bdf9f9d9e2d23a54a2e159bc4af473cea966d71c22904107bf4"
+      },
+      "observed_at_decision": 439,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 152,
+          "commits": 152,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "891e2100cee1598d6ca2ab2863286412d99d5c4f62b4ed586f45d005004c3e59",
+        "state_sha256": "9d3be2fde8f5ac51f61e34a3bcbb189cf3744b620b10f85f817c7e08c88ee4ed"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2022_N1024_B4.json",
+        "sha256": "e4d2a606f7524e3a1c9c38685b81800e23fc2de41b8067ec8d7d049d1f99c990"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 57,
+          "commits": 57,
+          "next_index": 384,
+          "observed": 384,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000007",
+        "generation": 7,
+        "metadata_sha256": "69330fa2e1a7ab82af2ef0ada0e495e78fc9b426604b3fd881dabf89380d386e",
+        "state_sha256": "83c754a712aad6c3ee4661fb976da8a9a98cb59d664bf22fd59cb9176e85f650"
+      },
+      "stream_seed": 2022,
+      "window_id": "lightbox:2022:65"
+    },
+    {
+      "candidate_number": 87,
+      "domain": "lightbox",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 95,
+          "commits": 95,
+          "next_index": 640,
+          "observed": 640,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000011",
+        "generation": 11,
+        "metadata_sha256": "273147ecacaeebe38a0788d7a426b0f56dc08c82b16f19c63b20078f2bb7cef2",
+        "state_sha256": "265150e916906e46493ee1f63c8780921d9b5a0c816d7b501c195bd110992fe3"
+      },
+      "observed_at_decision": 582,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 152,
+          "commits": 152,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "891e2100cee1598d6ca2ab2863286412d99d5c4f62b4ed586f45d005004c3e59",
+        "state_sha256": "9d3be2fde8f5ac51f61e34a3bcbb189cf3744b620b10f85f817c7e08c88ee4ed"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2022_N1024_B4.json",
+        "sha256": "e4d2a606f7524e3a1c9c38685b81800e23fc2de41b8067ec8d7d049d1f99c990"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 86,
+          "commits": 86,
+          "next_index": 576,
+          "observed": 576,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000010",
+        "generation": 10,
+        "metadata_sha256": "6ca349c0ab518506b8e8bd8d4dff5afdeb164d94e65c6a22720188da93961cfe",
+        "state_sha256": "a93f5050c1c1dfe9880132f84d935edbadbd2c949d6752333cc26cce4b483915"
+      },
+      "stream_seed": 2022,
+      "window_id": "lightbox:2022:87"
+    },
+    {
+      "candidate_number": 108,
+      "domain": "lightbox",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 115,
+          "commits": 115,
+          "next_index": 768,
+          "observed": 768,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000013",
+        "generation": 13,
+        "metadata_sha256": "f4d09d70a1839214f9f71d3069750663358233e6f8b3dc8bae4f501d416d05a8",
+        "state_sha256": "4b486dd4dd058ef526643f08eb3988d189b5fcf254bedab214a1462228baf3f1"
+      },
+      "observed_at_decision": 724,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 152,
+          "commits": 152,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "891e2100cee1598d6ca2ab2863286412d99d5c4f62b4ed586f45d005004c3e59",
+        "state_sha256": "9d3be2fde8f5ac51f61e34a3bcbb189cf3744b620b10f85f817c7e08c88ee4ed"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2022_N1024_B4.json",
+        "sha256": "e4d2a606f7524e3a1c9c38685b81800e23fc2de41b8067ec8d7d049d1f99c990"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 104,
+          "commits": 104,
+          "next_index": 704,
+          "observed": 704,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000012",
+        "generation": 12,
+        "metadata_sha256": "0440044dd58dcf0b630883a9298f97acce3ff021fd4f4e4bd28245728fa08c2a",
+        "state_sha256": "8995eaaa86541f587b6defda2f21bb9084a3236b9a9889e462e96d9d15b0f740"
+      },
+      "stream_seed": 2022,
+      "window_id": "lightbox:2022:108"
+    },
+    {
+      "candidate_number": 130,
+      "domain": "lightbox",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 132,
+          "commits": 132,
+          "next_index": 896,
+          "observed": 896,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000015",
+        "generation": 15,
+        "metadata_sha256": "1c682b2d68c85018a469a0641702b413188401ced82d09fd5a886a4bab4bad8e",
+        "state_sha256": "f7adfa274791c0ef8d0931748df7a92bd786e046f30e4f425623bb5481fc4043"
+      },
+      "observed_at_decision": 883,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 152,
+          "commits": 152,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "891e2100cee1598d6ca2ab2863286412d99d5c4f62b4ed586f45d005004c3e59",
+        "state_sha256": "9d3be2fde8f5ac51f61e34a3bcbb189cf3744b620b10f85f817c7e08c88ee4ed"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2022_N1024_B4.json",
+        "sha256": "e4d2a606f7524e3a1c9c38685b81800e23fc2de41b8067ec8d7d049d1f99c990"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 124,
+          "commits": 124,
+          "next_index": 832,
+          "observed": 832,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000014",
+        "generation": 14,
+        "metadata_sha256": "1169351e748c77b39ecbc05ca97ca586d297b4e23dc84a1f9969beb908400d19",
+        "state_sha256": "bdd3c36ca7da9e469cfe2e940d5911e47cc764f872eab919ff22d883da435f75"
+      },
+      "stream_seed": 2022,
+      "window_id": "lightbox:2022:130"
+    },
+    {
+      "candidate_number": 152,
+      "domain": "lightbox",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 152,
+          "commits": 152,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000017",
+        "generation": 17,
+        "metadata_sha256": "a389def00992d0121abf1eadc4be69751af075fb7cf77857a7997a143ecbc219",
+        "state_sha256": "125b49b5956565cfedd6eaca9f9d0afed836a558439625b45ad3856cd27935ac"
+      },
+      "observed_at_decision": 1021,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 152,
+          "commits": 152,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "891e2100cee1598d6ca2ab2863286412d99d5c4f62b4ed586f45d005004c3e59",
+        "state_sha256": "9d3be2fde8f5ac51f61e34a3bcbb189cf3744b620b10f85f817c7e08c88ee4ed"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2022_N1024_B4.json",
+        "sha256": "e4d2a606f7524e3a1c9c38685b81800e23fc2de41b8067ec8d7d049d1f99c990"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 142,
+          "commits": 142,
+          "next_index": 960,
+          "observed": 960,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000016",
+        "generation": 16,
+        "metadata_sha256": "9fb5a64175978ad55b5a0f18aaf9fb933c929690f427ddd078c09c8cc3fdfaf8",
+        "state_sha256": "50c88f812c9c73606cffbfedbc36a6ea75a1917edee2af208377c990eca55ead"
+      },
+      "stream_seed": 2022,
+      "window_id": "lightbox:2022:152"
+    },
+    {
+      "candidate_number": 1,
+      "domain": "lightbox",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 8,
+          "commits": 8,
+          "next_index": 64,
+          "observed": 64,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000002",
+        "generation": 2,
+        "metadata_sha256": "1ac6664fbbf814d74bc6209477716dfff6193ad476672073e017837fa7656b0f",
+        "state_sha256": "a30a571a132a915ee705d3fc3fe01b9484ecf4c796db997d3ee9a26e360362a4"
+      },
+      "observed_at_decision": 9,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 152,
+          "commits": 152,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "87f36ec0933723dd2be0a028eaf30e872d76e5bfbab3bf4a6d82629e37943717",
+        "state_sha256": "83667519b6ccdd7546c0e9aef560d5809bcc197d4e7f93ba51c3cbb31837652a"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2023_N1024_B4.json",
+        "sha256": "ed7a42183b99ec4b58be641c0ae0279537b9766f293818a9c6d4f2cd89e577b5"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 0,
+          "commits": 0,
+          "next_index": 0,
+          "observed": 0,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000001",
+        "generation": 1,
+        "metadata_sha256": "af81ddd12b5f1b49d6efd65e67cdfd66edfd871c2e94ace153340926d8c6a77c",
+        "state_sha256": "7760ffb6be3279bc84a675ae79c4912e65350033012b1f62c5df482f86231d6d"
+      },
+      "stream_seed": 2023,
+      "window_id": "lightbox:2023:1"
+    },
+    {
+      "candidate_number": 22,
+      "domain": "lightbox",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 27,
+          "commits": 27,
+          "next_index": 192,
+          "observed": 192,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000004",
+        "generation": 4,
+        "metadata_sha256": "f6388c4ad664196c68143ed00c445906a926e5e620f578787fe72770574072d5",
+        "state_sha256": "78d559c639b2aa78124af7517c4ffb7f0ed5ee50a3a9ec089a0fc9737154db60"
+      },
+      "observed_at_decision": 157,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 152,
+          "commits": 152,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "87f36ec0933723dd2be0a028eaf30e872d76e5bfbab3bf4a6d82629e37943717",
+        "state_sha256": "83667519b6ccdd7546c0e9aef560d5809bcc197d4e7f93ba51c3cbb31837652a"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2023_N1024_B4.json",
+        "sha256": "ed7a42183b99ec4b58be641c0ae0279537b9766f293818a9c6d4f2cd89e577b5"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 18,
+          "commits": 18,
+          "next_index": 128,
+          "observed": 128,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000003",
+        "generation": 3,
+        "metadata_sha256": "a1758133012057e298000a82f71fb5e9e718ec4ade2b422bb8ae98a20fa39c76",
+        "state_sha256": "733a2c9a42d8e8876b9489ef73959eb75339f5d7cd493bb5ada77c9d60f221a7"
+      },
+      "stream_seed": 2023,
+      "window_id": "lightbox:2023:22"
+    },
+    {
+      "candidate_number": 44,
+      "domain": "lightbox",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 49,
+          "commits": 49,
+          "next_index": 320,
+          "observed": 320,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000006",
+        "generation": 6,
+        "metadata_sha256": "20e02167109c94c51dabeaaf5bc60f4c0c129eb16ba9e46b2e822d9e9f8b608c",
+        "state_sha256": "72a8462c8a6f01cd1c31675d2f355717487bbe4cc3fa3faae224e97c3f3ea962"
+      },
+      "observed_at_decision": 288,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 152,
+          "commits": 152,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "87f36ec0933723dd2be0a028eaf30e872d76e5bfbab3bf4a6d82629e37943717",
+        "state_sha256": "83667519b6ccdd7546c0e9aef560d5809bcc197d4e7f93ba51c3cbb31837652a"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2023_N1024_B4.json",
+        "sha256": "ed7a42183b99ec4b58be641c0ae0279537b9766f293818a9c6d4f2cd89e577b5"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 38,
+          "commits": 38,
+          "next_index": 256,
+          "observed": 256,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000005",
+        "generation": 5,
+        "metadata_sha256": "4ca1eaca164db4a5ea02fe224ca5d48742bcaf15b6f069f5b4927a7355ce97d0",
+        "state_sha256": "750a8606a0519bd86002aeffee43c437df2d70c755877169ef937dcb755fd457"
+      },
+      "stream_seed": 2023,
+      "window_id": "lightbox:2023:44"
+    },
+    {
+      "candidate_number": 65,
+      "domain": "lightbox",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 67,
+          "commits": 67,
+          "next_index": 448,
+          "observed": 448,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000008",
+        "generation": 8,
+        "metadata_sha256": "76df6bb0724540b1eddd8e868d28ca6c646b88ffda989dc0e874402068e65e2e",
+        "state_sha256": "4f6ea10e52adad1f95f61edb6f8dd66b53e20a5b5238e2ae062d63f230e93280"
+      },
+      "observed_at_decision": 428,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 152,
+          "commits": 152,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "87f36ec0933723dd2be0a028eaf30e872d76e5bfbab3bf4a6d82629e37943717",
+        "state_sha256": "83667519b6ccdd7546c0e9aef560d5809bcc197d4e7f93ba51c3cbb31837652a"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2023_N1024_B4.json",
+        "sha256": "ed7a42183b99ec4b58be641c0ae0279537b9766f293818a9c6d4f2cd89e577b5"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 58,
+          "commits": 58,
+          "next_index": 384,
+          "observed": 384,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000007",
+        "generation": 7,
+        "metadata_sha256": "e6416d92bc7b0214a70fdd8a7c3d9b9bf67279028b5c14a3807a5e033930e75c",
+        "state_sha256": "bb847170e05f9b1f6306d20ea8803c9cca8679bf9901d8b565ccf1dbdd8a625d"
+      },
+      "stream_seed": 2023,
+      "window_id": "lightbox:2023:65"
+    },
+    {
+      "candidate_number": 87,
+      "domain": "lightbox",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 87,
+          "commits": 87,
+          "next_index": 576,
+          "observed": 576,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000010",
+        "generation": 10,
+        "metadata_sha256": "ed27658a9ad10ad9af960a1d1353191870a6485b8791b7e9df52c280ba83d5f4",
+        "state_sha256": "ab9094c1c66f5a995178574cdb8ea1d41732ebd4d18428affcc3328456058705"
+      },
+      "observed_at_decision": 576,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 152,
+          "commits": 152,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "87f36ec0933723dd2be0a028eaf30e872d76e5bfbab3bf4a6d82629e37943717",
+        "state_sha256": "83667519b6ccdd7546c0e9aef560d5809bcc197d4e7f93ba51c3cbb31837652a"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2023_N1024_B4.json",
+        "sha256": "ed7a42183b99ec4b58be641c0ae0279537b9766f293818a9c6d4f2cd89e577b5"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 77,
+          "commits": 77,
+          "next_index": 512,
+          "observed": 512,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000009",
+        "generation": 9,
+        "metadata_sha256": "f7bf094f0f917cb952b4b9ea5c70d170294877d8f155dc2534ac8d085d7ae1b5",
+        "state_sha256": "22b7db3d43080ddcf5690bb0fa3a9f8af1aaec07392bbde22eb48dd9320acf64"
+      },
+      "stream_seed": 2023,
+      "window_id": "lightbox:2023:87"
+    },
+    {
+      "candidate_number": 108,
+      "domain": "lightbox",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 114,
+          "commits": 114,
+          "next_index": 768,
+          "observed": 768,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000013",
+        "generation": 13,
+        "metadata_sha256": "5e13391cc16f334f4dbf08777ec2a03ad80250231f53f6a700ab7240cca74ff4",
+        "state_sha256": "42de3f6f5e1302af4ef25430e21b6f514a6f934c0e01fa42f6d4d0a91d972200"
+      },
+      "observed_at_decision": 714,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 152,
+          "commits": 152,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "87f36ec0933723dd2be0a028eaf30e872d76e5bfbab3bf4a6d82629e37943717",
+        "state_sha256": "83667519b6ccdd7546c0e9aef560d5809bcc197d4e7f93ba51c3cbb31837652a"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2023_N1024_B4.json",
+        "sha256": "ed7a42183b99ec4b58be641c0ae0279537b9766f293818a9c6d4f2cd89e577b5"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 105,
+          "commits": 105,
+          "next_index": 704,
+          "observed": 704,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000012",
+        "generation": 12,
+        "metadata_sha256": "f8d7d33dd69e4c1f29541cb8211b1f9b91b529a30a683bcf387987e6ec8b6335",
+        "state_sha256": "78f3171de4a4ada04cd065d1f9bac95a1bf166ef9f9254b2f20809c1e6811f32"
+      },
+      "stream_seed": 2023,
+      "window_id": "lightbox:2023:108"
+    },
+    {
+      "candidate_number": 130,
+      "domain": "lightbox",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 134,
+          "commits": 134,
+          "next_index": 896,
+          "observed": 896,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000015",
+        "generation": 15,
+        "metadata_sha256": "87caa3f479e4347ef8fe274379bafc096103eabaa8a81260055994f7621d6551",
+        "state_sha256": "9d5657a3c133cf763656746de2274bed57355cf18fbf763e20c9edc5b017775d"
+      },
+      "observed_at_decision": 869,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 152,
+          "commits": 152,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "87f36ec0933723dd2be0a028eaf30e872d76e5bfbab3bf4a6d82629e37943717",
+        "state_sha256": "83667519b6ccdd7546c0e9aef560d5809bcc197d4e7f93ba51c3cbb31837652a"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2023_N1024_B4.json",
+        "sha256": "ed7a42183b99ec4b58be641c0ae0279537b9766f293818a9c6d4f2cd89e577b5"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 124,
+          "commits": 124,
+          "next_index": 832,
+          "observed": 832,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000014",
+        "generation": 14,
+        "metadata_sha256": "a012fc81565702e46e181fca2e1a9bef194d86f9ecc02bb3b52a76ec9ad380a6",
+        "state_sha256": "a37a0f815a4dc3a3d4b4b42db40786b11c9f2d0f99470b3ce13211ec25500448"
+      },
+      "stream_seed": 2023,
+      "window_id": "lightbox:2023:130"
+    },
+    {
+      "candidate_number": 152,
+      "domain": "lightbox",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 152,
+          "commits": 152,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000017",
+        "generation": 17,
+        "metadata_sha256": "f5f73e31f0d72b1e4d1dfb0ae7fb9fda1456318e05677e2e6686a3025a1e195f",
+        "state_sha256": "85d09496c525514eb2995b825313bab430d92f71933a9df8a46443a79f33eb1c"
+      },
+      "observed_at_decision": 1024,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 152,
+          "commits": 152,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "87f36ec0933723dd2be0a028eaf30e872d76e5bfbab3bf4a6d82629e37943717",
+        "state_sha256": "83667519b6ccdd7546c0e9aef560d5809bcc197d4e7f93ba51c3cbb31837652a"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_lightbox_s2023_N1024_B4.json",
+        "sha256": "ed7a42183b99ec4b58be641c0ae0279537b9766f293818a9c6d4f2cd89e577b5"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 143,
+          "commits": 143,
+          "next_index": 960,
+          "observed": 960,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_lightbox_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000016",
+        "generation": 16,
+        "metadata_sha256": "5284d467194e279ff3f1a126a6a93476ed6c185eebfbcb7c25bb96707caeb2e1",
+        "state_sha256": "1a10a2d8e710bf4bb1948b1ff8d7054554d43fa883a621ce6d72de440362b4f7"
+      },
+      "stream_seed": 2023,
+      "window_id": "lightbox:2023:152"
+    },
+    {
+      "candidate_number": 1,
+      "domain": "sunlamp",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 4,
+          "commits": 4,
+          "next_index": 64,
+          "observed": 64,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000002",
+        "generation": 2,
+        "metadata_sha256": "53ac82703b39c5be90083ada70998c1a22cb98c2a8332e8317fea4e81e314bd5",
+        "state_sha256": "4a096346615dee63433cf2251e40a402af8d461850e38c13f385d2c8b4f37683"
+      },
+      "observed_at_decision": 20,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 114,
+          "commits": 91,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 23
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "705920a0f6903aa331d5a80478da85e8ae6ac763b581be7835a68b7e33403514",
+        "state_sha256": "d6f6e4ca17cc8059768d22064d2bd198fb10451396e1b28398742f50f3afd2da"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4.json",
+        "sha256": "5e75793f85cf3b2284fec225fffaa88508b119ddd64bf780315abaa18819f4f4"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 0,
+          "commits": 0,
+          "next_index": 0,
+          "observed": 0,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000001",
+        "generation": 1,
+        "metadata_sha256": "97c7be93b8086f5a66495b1fa38f093eca653d76906d64f6bc0c23d0724c13a1",
+        "state_sha256": "486c575630e4d58f0b331f0ff8a3e33ed4c54427e15756017c850a66291e00dd"
+      },
+      "stream_seed": 2021,
+      "window_id": "sunlamp:2021:1"
+    },
+    {
+      "candidate_number": 9,
+      "domain": "sunlamp",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 12,
+          "commits": 8,
+          "next_index": 128,
+          "observed": 128,
+          "rollbacks": 4
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000003",
+        "generation": 3,
+        "metadata_sha256": "37c0f56ab6382eba11a8b8f682f978f74980179a3cdd48c993bd980e9e85eee2",
+        "state_sha256": "7cd92893d00c761e4926277974355d7d33fffa6c811a10835f1a7fff83ae59b5"
+      },
+      "observed_at_decision": 98,
+      "original_decision": "rollback",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 114,
+          "commits": 91,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 23
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "705920a0f6903aa331d5a80478da85e8ae6ac763b581be7835a68b7e33403514",
+        "state_sha256": "d6f6e4ca17cc8059768d22064d2bd198fb10451396e1b28398742f50f3afd2da"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4.json",
+        "sha256": "5e75793f85cf3b2284fec225fffaa88508b119ddd64bf780315abaa18819f4f4"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 4,
+          "commits": 4,
+          "next_index": 64,
+          "observed": 64,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000002",
+        "generation": 2,
+        "metadata_sha256": "53ac82703b39c5be90083ada70998c1a22cb98c2a8332e8317fea4e81e314bd5",
+        "state_sha256": "4a096346615dee63433cf2251e40a402af8d461850e38c13f385d2c8b4f37683"
+      },
+      "stream_seed": 2021,
+      "window_id": "sunlamp:2021:9"
+    },
+    {
+      "candidate_number": 16,
+      "domain": "sunlamp",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 23,
+          "commits": 8,
+          "next_index": 192,
+          "observed": 192,
+          "rollbacks": 15
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000004",
+        "generation": 4,
+        "metadata_sha256": "07726922e2e074321be857c7ddb11f9eec56ada1aaac5fa0ce05e549ce35d1c8",
+        "state_sha256": "1601b976ffbd11e155553e1cfdcf42b7174ea9225da869c23700127b216c2b43"
+      },
+      "observed_at_decision": 150,
+      "original_decision": "rollback",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 114,
+          "commits": 91,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 23
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "705920a0f6903aa331d5a80478da85e8ae6ac763b581be7835a68b7e33403514",
+        "state_sha256": "d6f6e4ca17cc8059768d22064d2bd198fb10451396e1b28398742f50f3afd2da"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4.json",
+        "sha256": "5e75793f85cf3b2284fec225fffaa88508b119ddd64bf780315abaa18819f4f4"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 12,
+          "commits": 8,
+          "next_index": 128,
+          "observed": 128,
+          "rollbacks": 4
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000003",
+        "generation": 3,
+        "metadata_sha256": "37c0f56ab6382eba11a8b8f682f978f74980179a3cdd48c993bd980e9e85eee2",
+        "state_sha256": "7cd92893d00c761e4926277974355d7d33fffa6c811a10835f1a7fff83ae59b5"
+      },
+      "stream_seed": 2021,
+      "window_id": "sunlamp:2021:16"
+    },
+    {
+      "candidate_number": 23,
+      "domain": "sunlamp",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 23,
+          "commits": 8,
+          "next_index": 192,
+          "observed": 192,
+          "rollbacks": 15
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000004",
+        "generation": 4,
+        "metadata_sha256": "07726922e2e074321be857c7ddb11f9eec56ada1aaac5fa0ce05e549ce35d1c8",
+        "state_sha256": "1601b976ffbd11e155553e1cfdcf42b7174ea9225da869c23700127b216c2b43"
+      },
+      "observed_at_decision": 191,
+      "original_decision": "rollback",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 114,
+          "commits": 91,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 23
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "705920a0f6903aa331d5a80478da85e8ae6ac763b581be7835a68b7e33403514",
+        "state_sha256": "d6f6e4ca17cc8059768d22064d2bd198fb10451396e1b28398742f50f3afd2da"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4.json",
+        "sha256": "5e75793f85cf3b2284fec225fffaa88508b119ddd64bf780315abaa18819f4f4"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 12,
+          "commits": 8,
+          "next_index": 128,
+          "observed": 128,
+          "rollbacks": 4
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000003",
+        "generation": 3,
+        "metadata_sha256": "37c0f56ab6382eba11a8b8f682f978f74980179a3cdd48c993bd980e9e85eee2",
+        "state_sha256": "7cd92893d00c761e4926277974355d7d33fffa6c811a10835f1a7fff83ae59b5"
+      },
+      "stream_seed": 2021,
+      "window_id": "sunlamp:2021:23"
+    },
+    {
+      "candidate_number": 31,
+      "domain": "sunlamp",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 34,
+          "commits": 11,
+          "next_index": 320,
+          "observed": 320,
+          "rollbacks": 23
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000006",
+        "generation": 6,
+        "metadata_sha256": "feb48ab7607f5aafb8aba5faa37e783af5cc1dbaeac3c603459e6076dd9bfff9",
+        "state_sha256": "cbc6f9371a7d7f5b5ecf798352483e182adc860c003e0b177bed69a880cbdbdf"
+      },
+      "observed_at_decision": 283,
+      "original_decision": "rollback",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 114,
+          "commits": 91,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 23
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "705920a0f6903aa331d5a80478da85e8ae6ac763b581be7835a68b7e33403514",
+        "state_sha256": "d6f6e4ca17cc8059768d22064d2bd198fb10451396e1b28398742f50f3afd2da"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4.json",
+        "sha256": "5e75793f85cf3b2284fec225fffaa88508b119ddd64bf780315abaa18819f4f4"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 29,
+          "commits": 8,
+          "next_index": 256,
+          "observed": 256,
+          "rollbacks": 21
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000005",
+        "generation": 5,
+        "metadata_sha256": "81da7ab1ad6ff24857a0736946bc1d27dbf4113ea471cec2605e9db169762535",
+        "state_sha256": "e641f5b93d81a9df570e0a90ef344ea7569e7bdc92c4d4f1348adaba3fc06690"
+      },
+      "stream_seed": 2021,
+      "window_id": "sunlamp:2021:31"
+    },
+    {
+      "candidate_number": 54,
+      "domain": "sunlamp",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 55,
+          "commits": 32,
+          "next_index": 512,
+          "observed": 512,
+          "rollbacks": 23
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000009",
+        "generation": 9,
+        "metadata_sha256": "065639841b3b491c64e3c64a682f97fbf5332afee1842cc36ad616e06013cdd1",
+        "state_sha256": "152aea824959bbd905f917888d09b05b7c839d7f6947bdc2876ecd772b811b5f"
+      },
+      "observed_at_decision": 490,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 114,
+          "commits": 91,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 23
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "705920a0f6903aa331d5a80478da85e8ae6ac763b581be7835a68b7e33403514",
+        "state_sha256": "d6f6e4ca17cc8059768d22064d2bd198fb10451396e1b28398742f50f3afd2da"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4.json",
+        "sha256": "5e75793f85cf3b2284fec225fffaa88508b119ddd64bf780315abaa18819f4f4"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 49,
+          "commits": 26,
+          "next_index": 448,
+          "observed": 448,
+          "rollbacks": 23
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000008",
+        "generation": 8,
+        "metadata_sha256": "b1d93c80531911e9abd58ddaa6363b68b55a732a7190057ea7c7b815602b752d",
+        "state_sha256": "34904abcf7bea572e928deabfab07a6281ae657844704f03356b6482f99664bf"
+      },
+      "stream_seed": 2021,
+      "window_id": "sunlamp:2021:54"
+    },
+    {
+      "candidate_number": 84,
+      "domain": "sunlamp",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 84,
+          "commits": 61,
+          "next_index": 768,
+          "observed": 768,
+          "rollbacks": 23
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000013",
+        "generation": 13,
+        "metadata_sha256": "f0403ee95b9831888ccced1a015b251e997be45f1d026d861ca5fb01227cb561",
+        "state_sha256": "86361f842c0aac21d533af6e1bae798f604480b5dbea2f8c8403c78d3ca2e1e2"
+      },
+      "observed_at_decision": 762,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 114,
+          "commits": 91,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 23
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "705920a0f6903aa331d5a80478da85e8ae6ac763b581be7835a68b7e33403514",
+        "state_sha256": "d6f6e4ca17cc8059768d22064d2bd198fb10451396e1b28398742f50f3afd2da"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4.json",
+        "sha256": "5e75793f85cf3b2284fec225fffaa88508b119ddd64bf780315abaa18819f4f4"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 77,
+          "commits": 54,
+          "next_index": 704,
+          "observed": 704,
+          "rollbacks": 23
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000012",
+        "generation": 12,
+        "metadata_sha256": "a38a153d0b64d57a27f92d79e0283543951493d82cdbd674506fcec14f77eedf",
+        "state_sha256": "970e9a93d5fc99acf92238756c02782d2dd4ab4be829ff25e7fdea7d396a176d"
+      },
+      "stream_seed": 2021,
+      "window_id": "sunlamp:2021:84"
+    },
+    {
+      "candidate_number": 114,
+      "domain": "sunlamp",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 114,
+          "commits": 91,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 23
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000017",
+        "generation": 17,
+        "metadata_sha256": "181298f993156f66b9083857e4372bdfcf9b80d42099e7d2be7314697f1b7ed7",
+        "state_sha256": "7b6998f668c1657d1aaaf6550e3c127c78a723c26c926b52a7eeb655423841f5"
+      },
+      "observed_at_decision": 1023,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 114,
+          "commits": 91,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 23
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "705920a0f6903aa331d5a80478da85e8ae6ac763b581be7835a68b7e33403514",
+        "state_sha256": "d6f6e4ca17cc8059768d22064d2bd198fb10451396e1b28398742f50f3afd2da"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4.json",
+        "sha256": "5e75793f85cf3b2284fec225fffaa88508b119ddd64bf780315abaa18819f4f4"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 106,
+          "commits": 83,
+          "next_index": 960,
+          "observed": 960,
+          "rollbacks": 23
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2021_N1024_B4/durable/checkpoints/generation-00000000000000000016",
+        "generation": 16,
+        "metadata_sha256": "47e88e98822381c08b3d01ae5f5c5c0707680aa397f83150e8b112e293576b9b",
+        "state_sha256": "371b2786a873ce513f2842da354c0d8cb7b31f81cdac4b6c3430193c6ed300d3"
+      },
+      "stream_seed": 2021,
+      "window_id": "sunlamp:2021:114"
+    },
+    {
+      "candidate_number": 1,
+      "domain": "sunlamp",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 7,
+          "commits": 7,
+          "next_index": 64,
+          "observed": 64,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000002",
+        "generation": 2,
+        "metadata_sha256": "a1d91c839d4a910a1aa3eafd3e9f5aae6a8b4737260f46aa4a0831c84e87f507",
+        "state_sha256": "88385bb003bb540751ddfcd3621efe7439f406d25fa5c83383c6b01585ae43e6"
+      },
+      "observed_at_decision": 9,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 108,
+          "commits": 14,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 94
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "e161933869035e0e1d6fde89be0053f21d7d753dcb683d0f70b8a0c68c0e816f",
+        "state_sha256": "564199c144c7806ba44c3f4b9d53b4fc407235f0e8106311cd6ff694ff11b127"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4.json",
+        "sha256": "04d44aef4305b82400bddaba2a97e6fd35ab930ccf66c5d18538e8a947421d49"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 0,
+          "commits": 0,
+          "next_index": 0,
+          "observed": 0,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000001",
+        "generation": 1,
+        "metadata_sha256": "e78e343d89737bea8ab104760bac75a3ec5b5e17d5494634a83abe1566c66150",
+        "state_sha256": "c5b5c083cdeb922c197001a628123564ce31150a1d329df37641d543730c9fb7"
+      },
+      "stream_seed": 2022,
+      "window_id": "sunlamp:2022:1"
+    },
+    {
+      "candidate_number": 5,
+      "domain": "sunlamp",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 7,
+          "commits": 7,
+          "next_index": 64,
+          "observed": 64,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000002",
+        "generation": 2,
+        "metadata_sha256": "a1d91c839d4a910a1aa3eafd3e9f5aae6a8b4737260f46aa4a0831c84e87f507",
+        "state_sha256": "88385bb003bb540751ddfcd3621efe7439f406d25fa5c83383c6b01585ae43e6"
+      },
+      "observed_at_decision": 46,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 108,
+          "commits": 14,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 94
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "e161933869035e0e1d6fde89be0053f21d7d753dcb683d0f70b8a0c68c0e816f",
+        "state_sha256": "564199c144c7806ba44c3f4b9d53b4fc407235f0e8106311cd6ff694ff11b127"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4.json",
+        "sha256": "04d44aef4305b82400bddaba2a97e6fd35ab930ccf66c5d18538e8a947421d49"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 0,
+          "commits": 0,
+          "next_index": 0,
+          "observed": 0,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000001",
+        "generation": 1,
+        "metadata_sha256": "e78e343d89737bea8ab104760bac75a3ec5b5e17d5494634a83abe1566c66150",
+        "state_sha256": "c5b5c083cdeb922c197001a628123564ce31150a1d329df37641d543730c9fb7"
+      },
+      "stream_seed": 2022,
+      "window_id": "sunlamp:2022:5"
+    },
+    {
+      "candidate_number": 9,
+      "domain": "sunlamp",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 13,
+          "commits": 13,
+          "next_index": 128,
+          "observed": 128,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000003",
+        "generation": 3,
+        "metadata_sha256": "5301abf4e0c2e469e228810ed491a91cba5ebfdef655e84e3058f197c2c5bfd8",
+        "state_sha256": "646486bec75bbeb431e36ee9b927e9bf1bcc61e72ddfd791970bbf2b02fc16cf"
+      },
+      "observed_at_decision": 88,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 108,
+          "commits": 14,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 94
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "e161933869035e0e1d6fde89be0053f21d7d753dcb683d0f70b8a0c68c0e816f",
+        "state_sha256": "564199c144c7806ba44c3f4b9d53b4fc407235f0e8106311cd6ff694ff11b127"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4.json",
+        "sha256": "04d44aef4305b82400bddaba2a97e6fd35ab930ccf66c5d18538e8a947421d49"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 7,
+          "commits": 7,
+          "next_index": 64,
+          "observed": 64,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000002",
+        "generation": 2,
+        "metadata_sha256": "a1d91c839d4a910a1aa3eafd3e9f5aae6a8b4737260f46aa4a0831c84e87f507",
+        "state_sha256": "88385bb003bb540751ddfcd3621efe7439f406d25fa5c83383c6b01585ae43e6"
+      },
+      "stream_seed": 2022,
+      "window_id": "sunlamp:2022:9"
+    },
+    {
+      "candidate_number": 14,
+      "domain": "sunlamp",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 20,
+          "commits": 14,
+          "next_index": 192,
+          "observed": 192,
+          "rollbacks": 6
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000004",
+        "generation": 4,
+        "metadata_sha256": "43de4b282ec69c572545a44f4e36f096a722382c71e6e8f8878f9709167bcb21",
+        "state_sha256": "840c6cec0a4c67cdf27e82c177af5d1d383d8eee6127776e11023b39830bb3ae"
+      },
+      "observed_at_decision": 140,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 108,
+          "commits": 14,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 94
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "e161933869035e0e1d6fde89be0053f21d7d753dcb683d0f70b8a0c68c0e816f",
+        "state_sha256": "564199c144c7806ba44c3f4b9d53b4fc407235f0e8106311cd6ff694ff11b127"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4.json",
+        "sha256": "04d44aef4305b82400bddaba2a97e6fd35ab930ccf66c5d18538e8a947421d49"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 13,
+          "commits": 13,
+          "next_index": 128,
+          "observed": 128,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000003",
+        "generation": 3,
+        "metadata_sha256": "5301abf4e0c2e469e228810ed491a91cba5ebfdef655e84e3058f197c2c5bfd8",
+        "state_sha256": "646486bec75bbeb431e36ee9b927e9bf1bcc61e72ddfd791970bbf2b02fc16cf"
+      },
+      "stream_seed": 2022,
+      "window_id": "sunlamp:2022:14"
+    },
+    {
+      "candidate_number": 15,
+      "domain": "sunlamp",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 20,
+          "commits": 14,
+          "next_index": 192,
+          "observed": 192,
+          "rollbacks": 6
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000004",
+        "generation": 4,
+        "metadata_sha256": "43de4b282ec69c572545a44f4e36f096a722382c71e6e8f8878f9709167bcb21",
+        "state_sha256": "840c6cec0a4c67cdf27e82c177af5d1d383d8eee6127776e11023b39830bb3ae"
+      },
+      "observed_at_decision": 150,
+      "original_decision": "rollback",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 108,
+          "commits": 14,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 94
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "e161933869035e0e1d6fde89be0053f21d7d753dcb683d0f70b8a0c68c0e816f",
+        "state_sha256": "564199c144c7806ba44c3f4b9d53b4fc407235f0e8106311cd6ff694ff11b127"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4.json",
+        "sha256": "04d44aef4305b82400bddaba2a97e6fd35ab930ccf66c5d18538e8a947421d49"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 13,
+          "commits": 13,
+          "next_index": 128,
+          "observed": 128,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000003",
+        "generation": 3,
+        "metadata_sha256": "5301abf4e0c2e469e228810ed491a91cba5ebfdef655e84e3058f197c2c5bfd8",
+        "state_sha256": "646486bec75bbeb431e36ee9b927e9bf1bcc61e72ddfd791970bbf2b02fc16cf"
+      },
+      "stream_seed": 2022,
+      "window_id": "sunlamp:2022:15"
+    },
+    {
+      "candidate_number": 46,
+      "domain": "sunlamp",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 50,
+          "commits": 14,
+          "next_index": 448,
+          "observed": 448,
+          "rollbacks": 36
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000008",
+        "generation": 8,
+        "metadata_sha256": "73fca1911c9defb2c942ceebb7fe4b3fb1881af949c552bd24bc4e6d4f6dd9f4",
+        "state_sha256": "79dbefb437e7328ff34249d8f920579f218679ba272c7dcbb6c50eac5042f5a7"
+      },
+      "observed_at_decision": 415,
+      "original_decision": "rollback",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 108,
+          "commits": 14,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 94
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "e161933869035e0e1d6fde89be0053f21d7d753dcb683d0f70b8a0c68c0e816f",
+        "state_sha256": "564199c144c7806ba44c3f4b9d53b4fc407235f0e8106311cd6ff694ff11b127"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4.json",
+        "sha256": "04d44aef4305b82400bddaba2a97e6fd35ab930ccf66c5d18538e8a947421d49"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 41,
+          "commits": 14,
+          "next_index": 384,
+          "observed": 384,
+          "rollbacks": 27
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000007",
+        "generation": 7,
+        "metadata_sha256": "5c346a7fb03b118ba68deb1485396ded0bdacf1c77b9fef9f852b5d370eb29c7",
+        "state_sha256": "e297ec55422ed70f6e53ddfbf209b12e014c7053fc37d4ce469e84876b99435b"
+      },
+      "stream_seed": 2022,
+      "window_id": "sunlamp:2022:46"
+    },
+    {
+      "candidate_number": 77,
+      "domain": "sunlamp",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 81,
+          "commits": 14,
+          "next_index": 768,
+          "observed": 768,
+          "rollbacks": 67
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000013",
+        "generation": 13,
+        "metadata_sha256": "a6993c003c72e5c15d48f29edd846a8f2354a54616fbd4d889b3eea42db816cb",
+        "state_sha256": "7902b768a58fc102ca556b48aa03bed7fc04d36145a07f056c1d4c231574f806"
+      },
+      "observed_at_decision": 722,
+      "original_decision": "rollback",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 108,
+          "commits": 14,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 94
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "e161933869035e0e1d6fde89be0053f21d7d753dcb683d0f70b8a0c68c0e816f",
+        "state_sha256": "564199c144c7806ba44c3f4b9d53b4fc407235f0e8106311cd6ff694ff11b127"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4.json",
+        "sha256": "04d44aef4305b82400bddaba2a97e6fd35ab930ccf66c5d18538e8a947421d49"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 76,
+          "commits": 14,
+          "next_index": 704,
+          "observed": 704,
+          "rollbacks": 62
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000012",
+        "generation": 12,
+        "metadata_sha256": "bd02db8edf621c76faf89acdd5283a7b659770a2d75f6074342ed9b7515de06f",
+        "state_sha256": "66ccfc0d466f1b8c461b992b606507b9243fe8f4111a2308837bf6e8f34427d4"
+      },
+      "stream_seed": 2022,
+      "window_id": "sunlamp:2022:77"
+    },
+    {
+      "candidate_number": 108,
+      "domain": "sunlamp",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 108,
+          "commits": 14,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 94
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000017",
+        "generation": 17,
+        "metadata_sha256": "3f4084e7ffbfc075c1b3d68c3f66c16b99a1cb3660ead15a5c22ee9ef8b1cc52",
+        "state_sha256": "34f0a9f338733b57062b71c928ff22c872fd39b162b05439100f52fb136b9dbe"
+      },
+      "observed_at_decision": 1010,
+      "original_decision": "rollback",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 108,
+          "commits": 14,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 94
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "e161933869035e0e1d6fde89be0053f21d7d753dcb683d0f70b8a0c68c0e816f",
+        "state_sha256": "564199c144c7806ba44c3f4b9d53b4fc407235f0e8106311cd6ff694ff11b127"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4.json",
+        "sha256": "04d44aef4305b82400bddaba2a97e6fd35ab930ccf66c5d18538e8a947421d49"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 102,
+          "commits": 14,
+          "next_index": 960,
+          "observed": 960,
+          "rollbacks": 88
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2022_N1024_B4/durable/checkpoints/generation-00000000000000000016",
+        "generation": 16,
+        "metadata_sha256": "beb61d3a933b3bb0d7b04022ed8141a96e061e1618d4db0eac9606c9fa737cf6",
+        "state_sha256": "963b874f3929b0cee01e8a4f8622954c967fdedde3d7747f0bf3449b800727c0"
+      },
+      "stream_seed": 2022,
+      "window_id": "sunlamp:2022:108"
+    },
+    {
+      "candidate_number": 1,
+      "domain": "sunlamp",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 7,
+          "commits": 7,
+          "next_index": 64,
+          "observed": 64,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000002",
+        "generation": 2,
+        "metadata_sha256": "139e084a8d498a9e903af58d851aef2e8587eb806ff4beca01a0943f48028297",
+        "state_sha256": "c33ca7ac4e0b618b7fc28f49c9799b0b12586409c8793ee945f44e69c046ad3f"
+      },
+      "observed_at_decision": 8,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 113,
+          "commits": 113,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "6ec269582e25932f319231a053010a795f0f1064f315661ea71e222b39134918",
+        "state_sha256": "4554053f1511a873bce4502867a332decc27086162ea84039efc089f5af015b7"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4.json",
+        "sha256": "4e19e663efd2e7671270b0576f83e63feeaa9fd4739449619cf307b26681054c"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 0,
+          "commits": 0,
+          "next_index": 0,
+          "observed": 0,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000001",
+        "generation": 1,
+        "metadata_sha256": "3c3c5adf7df9976442710c1163523175e75251c415d76b0d749f1c1b705a0ec4",
+        "state_sha256": "a95ba9d4f33dbf1403279533de296f8407a19d3b49b844e17d9168158419cbd9"
+      },
+      "stream_seed": 2023,
+      "window_id": "sunlamp:2023:1"
+    },
+    {
+      "candidate_number": 17,
+      "domain": "sunlamp",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 21,
+          "commits": 21,
+          "next_index": 192,
+          "observed": 192,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000004",
+        "generation": 4,
+        "metadata_sha256": "ca938d65be9a066c3700cb390cf7cee5ce48f408530876ccb88633db1a631028",
+        "state_sha256": "1ff9784fa0949dda50944cf8cf7f72dc79d7d00853a4e3076ad65fd41bda67ba"
+      },
+      "observed_at_decision": 156,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 113,
+          "commits": 113,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "6ec269582e25932f319231a053010a795f0f1064f315661ea71e222b39134918",
+        "state_sha256": "4554053f1511a873bce4502867a332decc27086162ea84039efc089f5af015b7"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4.json",
+        "sha256": "4e19e663efd2e7671270b0576f83e63feeaa9fd4739449619cf307b26681054c"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 14,
+          "commits": 14,
+          "next_index": 128,
+          "observed": 128,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000003",
+        "generation": 3,
+        "metadata_sha256": "2ba50af2963a027883a288cfd945e35c310590006e7df49e993b1dc410dee099",
+        "state_sha256": "3e074365608fa6a5121668194cb9fb18671627bd993ae08f1b550fc50d157502"
+      },
+      "stream_seed": 2023,
+      "window_id": "sunlamp:2023:17"
+    },
+    {
+      "candidate_number": 33,
+      "domain": "sunlamp",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 40,
+          "commits": 40,
+          "next_index": 384,
+          "observed": 384,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000007",
+        "generation": 7,
+        "metadata_sha256": "9ba03b60fce38723ce8c12d9a5c75c3d4088c4a45d2b64bd655752c620b83cf0",
+        "state_sha256": "f6b392837204b2a5337ba016a4a8c72c75d7d0e5818ed5ae56caed59a8dacd2f"
+      },
+      "observed_at_decision": 325,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 113,
+          "commits": 113,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "6ec269582e25932f319231a053010a795f0f1064f315661ea71e222b39134918",
+        "state_sha256": "4554053f1511a873bce4502867a332decc27086162ea84039efc089f5af015b7"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4.json",
+        "sha256": "4e19e663efd2e7671270b0576f83e63feeaa9fd4739449619cf307b26681054c"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 32,
+          "commits": 32,
+          "next_index": 320,
+          "observed": 320,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000006",
+        "generation": 6,
+        "metadata_sha256": "2726e6a01592e782016bfef9370759ce922673522061930993b537bdabc72b6b",
+        "state_sha256": "4b26b5e296a3c75f85e5f8c2c9ff0729cac5dbc6c88f57d4e3f4a4bb2958dc0b"
+      },
+      "stream_seed": 2023,
+      "window_id": "sunlamp:2023:33"
+    },
+    {
+      "candidate_number": 49,
+      "domain": "sunlamp",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 54,
+          "commits": 54,
+          "next_index": 512,
+          "observed": 512,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000009",
+        "generation": 9,
+        "metadata_sha256": "d96fbd20850161f657f5eeb4beae78b8d62228bc54871796672fc213bc6d7318",
+        "state_sha256": "dec3b8c454d21ad77c3cda52f3a6fff48525f69c1a77927c42eb7b21d05245d1"
+      },
+      "observed_at_decision": 466,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 113,
+          "commits": 113,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "6ec269582e25932f319231a053010a795f0f1064f315661ea71e222b39134918",
+        "state_sha256": "4554053f1511a873bce4502867a332decc27086162ea84039efc089f5af015b7"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4.json",
+        "sha256": "4e19e663efd2e7671270b0576f83e63feeaa9fd4739449619cf307b26681054c"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 47,
+          "commits": 47,
+          "next_index": 448,
+          "observed": 448,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000008",
+        "generation": 8,
+        "metadata_sha256": "fe9299bdf4c2b10ad750fe491ca0b8f3f361d45d1621ab8a1f4dc63a6b982205",
+        "state_sha256": "50974af49eff0b4ebebb7c8624172b5f4c1db43ca1cdc602ae9d3878f4fbec75"
+      },
+      "stream_seed": 2023,
+      "window_id": "sunlamp:2023:49"
+    },
+    {
+      "candidate_number": 65,
+      "domain": "sunlamp",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 66,
+          "commits": 66,
+          "next_index": 640,
+          "observed": 640,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000011",
+        "generation": 11,
+        "metadata_sha256": "a765ee5b9a3b77661e517bc5e18ebf1ade268bfc2448fc44803e4e7a4816130f",
+        "state_sha256": "2a045ec526849edbbec850bde1329974c0e4e231c3b80cb879831e2470a659e1"
+      },
+      "observed_at_decision": 630,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 113,
+          "commits": 113,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "6ec269582e25932f319231a053010a795f0f1064f315661ea71e222b39134918",
+        "state_sha256": "4554053f1511a873bce4502867a332decc27086162ea84039efc089f5af015b7"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4.json",
+        "sha256": "4e19e663efd2e7671270b0576f83e63feeaa9fd4739449619cf307b26681054c"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 59,
+          "commits": 59,
+          "next_index": 576,
+          "observed": 576,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000010",
+        "generation": 10,
+        "metadata_sha256": "1ca047f6dedf773c298cb64d505093cd1b019c043188be53d2db88506ca5fc77",
+        "state_sha256": "7360d16ebe9938b853d0cc2aaf0ecccbdbf14108f50d4943ad376038f741b1f8"
+      },
+      "stream_seed": 2023,
+      "window_id": "sunlamp:2023:65"
+    },
+    {
+      "candidate_number": 81,
+      "domain": "sunlamp",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 83,
+          "commits": 83,
+          "next_index": 768,
+          "observed": 768,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000013",
+        "generation": 13,
+        "metadata_sha256": "9b2a516a19b1732b39e04a8262a15778c100354e54cc6b1552cc8076a006a66e",
+        "state_sha256": "0cea2e64e89d37593955f7ba2c98a92cd9d77a64ec4754e316da3c38a5fb8eba"
+      },
+      "observed_at_decision": 752,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 113,
+          "commits": 113,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "6ec269582e25932f319231a053010a795f0f1064f315661ea71e222b39134918",
+        "state_sha256": "4554053f1511a873bce4502867a332decc27086162ea84039efc089f5af015b7"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4.json",
+        "sha256": "4e19e663efd2e7671270b0576f83e63feeaa9fd4739449619cf307b26681054c"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 75,
+          "commits": 75,
+          "next_index": 704,
+          "observed": 704,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000012",
+        "generation": 12,
+        "metadata_sha256": "96db5c1cf1d2b01b8699c2a4dc506c261e1ca21671d0bdb304a37a45bec135d4",
+        "state_sha256": "60491fd0075b5c30d81f250c6a15f8fa34afb8707baa7082ae5da7020f5fbc25"
+      },
+      "stream_seed": 2023,
+      "window_id": "sunlamp:2023:81"
+    },
+    {
+      "candidate_number": 97,
+      "domain": "sunlamp",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 99,
+          "commits": 99,
+          "next_index": 896,
+          "observed": 896,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000015",
+        "generation": 15,
+        "metadata_sha256": "4167d2978d1500901f908a3e8e7e005ec076a9c057524b075cd2ad894fc16c4c",
+        "state_sha256": "ef0c139787d61e71c79d0b110a88c8cd50a80c0f89c1e874de7667395df3ca94"
+      },
+      "observed_at_decision": 878,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 113,
+          "commits": 113,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "6ec269582e25932f319231a053010a795f0f1064f315661ea71e222b39134918",
+        "state_sha256": "4554053f1511a873bce4502867a332decc27086162ea84039efc089f5af015b7"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4.json",
+        "sha256": "4e19e663efd2e7671270b0576f83e63feeaa9fd4739449619cf307b26681054c"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 90,
+          "commits": 90,
+          "next_index": 832,
+          "observed": 832,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000014",
+        "generation": 14,
+        "metadata_sha256": "7bea432bd2a4524333a6d8f34c84ecde3f24d26acd1b654e886971cb10b599f6",
+        "state_sha256": "e9b0084b9b65a40e4646567a41e00e19a03d700269a0b7e6aba605724b8336b0"
+      },
+      "stream_seed": 2023,
+      "window_id": "sunlamp:2023:97"
+    },
+    {
+      "candidate_number": 113,
+      "domain": "sunlamp",
+      "match_checkpoint": {
+        "cursors": {
+          "candidates": 113,
+          "commits": 113,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000017",
+        "generation": 17,
+        "metadata_sha256": "be1161974083b2ba0d89cffe7f26fb32e90ef71b41771e48047be6f5ffcdef5a",
+        "state_sha256": "cc8bbf41b10aab0aec4885cda8ce5286f9e878296771733ce76d40bd3eac6894"
+      },
+      "observed_at_decision": 1019,
+      "original_decision": "commit",
+      "original_final_checkpoint": {
+        "cursors": {
+          "candidates": 113,
+          "commits": 113,
+          "next_index": 1024,
+          "observed": 1024,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+        "generation": 26,
+        "metadata_sha256": "6ec269582e25932f319231a053010a795f0f1064f315661ea71e222b39134918",
+        "state_sha256": "4554053f1511a873bce4502867a332decc27086162ea84039efc089f5af015b7"
+      },
+      "original_task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4.json",
+        "sha256": "4e19e663efd2e7671270b0576f83e63feeaa9fd4739449619cf307b26681054c"
+      },
+      "parent_checkpoint": {
+        "cursors": {
+          "candidates": 106,
+          "commits": 106,
+          "next_index": 960,
+          "observed": 960,
+          "rollbacks": 0
+        },
+        "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000016",
+        "generation": 16,
+        "metadata_sha256": "04e84af328c9e8be74876512b0b263e0293b84450195da67acbb697296ad1379",
+        "state_sha256": "44b24b60cf43b84a600f5960759e44689c0345a85c8e24ac261c118d01f11bea"
+      },
+      "stream_seed": 2023,
+      "window_id": "sunlamp:2023:113"
+    }
+  ]
+}

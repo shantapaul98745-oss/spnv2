@@ -1,0 +1,794 @@
+{
+  "auxiliary_seed": 2026102602,
+  "contains_gt": false,
+  "developer_binding": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/lightbox/developer_images.json",
+    "sha256": "f0c208440311804cd2e1de362c3a45a3068ffd5bbc3621fffedc9aa97a8b3c99"
+  },
+  "eligible_count": 433,
+  "image_folder": "images_768x512_RGB",
+  "image_root": "/home/DATA/Downloads/DataSet/speedplus",
+  "items": [
+    {
+      "domain": "lightbox",
+      "filename": "img000004.jpg",
+      "image_sha256": "8d9e436e04d00e4df0e049bac04dea91604ecfd6ea0cc82dab59d17c160069b9",
+      "sample_id": "lightbox/img000004.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img000050.jpg",
+      "image_sha256": "fdbd6b5509abbf3f6db468c9a8c8d65eb93a0e8cec7de6a0ea908c4b8be8218c",
+      "sample_id": "lightbox/img000050.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img000070.jpg",
+      "image_sha256": "6a6d3e92608e5fcdd0a23d4e1247658be89c85f682215b4bf8eaf3ba5b55f7a7",
+      "sample_id": "lightbox/img000070.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img000312.jpg",
+      "image_sha256": "1184ea9bb36086d3ba0fd990e5cf6be1fd36290a0d764d207b3a9142ee5fa12c",
+      "sample_id": "lightbox/img000312.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img000324.jpg",
+      "image_sha256": "79d2f4fd67de79d4e25d6d2ed0d2595e38d8c8a2169c379cdffcd8ea979515f4",
+      "sample_id": "lightbox/img000324.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img000396.jpg",
+      "image_sha256": "3b51c06fb37bc838bb1ff308a7bc7942875c22ebd9209adaf299d0c13cc165c4",
+      "sample_id": "lightbox/img000396.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img000412.jpg",
+      "image_sha256": "74e2e56b932b16460e31bd00a9fbfa60b1e608308ce8ba56b0fb2b907cf4edb8",
+      "sample_id": "lightbox/img000412.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img000433.jpg",
+      "image_sha256": "2a7e535e55acd8e9fae6f97102360cc7658b8c08f4b6c343e7be674eeba42a11",
+      "sample_id": "lightbox/img000433.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img000456.jpg",
+      "image_sha256": "cd6da0b805f30153c90c61e7854d6841e25eb148b2ce6e00af073193bf3afe7c",
+      "sample_id": "lightbox/img000456.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img000511.jpg",
+      "image_sha256": "9abd79167fe242c99ea1fe0c810038615ac6968aee60a072e931f2f52d9b656e",
+      "sample_id": "lightbox/img000511.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img000526.jpg",
+      "image_sha256": "a01d80f0b31795674ca8801e075497782f3b705069345cc6169d9c8f3c4e4b50",
+      "sample_id": "lightbox/img000526.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img000533.jpg",
+      "image_sha256": "c09a35a9ec51a3f01dd81134e6c838932d82cee6ce598c2a7471571af4530832",
+      "sample_id": "lightbox/img000533.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img000589.jpg",
+      "image_sha256": "f7936b411d080e3e040052670c12e7aa82fbf06943d99dcdd7603bcf75873b54",
+      "sample_id": "lightbox/img000589.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img000590.jpg",
+      "image_sha256": "74f6ddf33d6572b5c048be4aac2dda90ec024e94f1a292d20b4b7a4b750143a1",
+      "sample_id": "lightbox/img000590.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img000680.jpg",
+      "image_sha256": "95c1f8c693e3533cb38cccb1929e3e7a9d7ad61850b4a164a90eacb73d1e012c",
+      "sample_id": "lightbox/img000680.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img000715.jpg",
+      "image_sha256": "e9bfaf85dbce26ec98fcbc1e98703dff74376ba33115853b67cc9083996921ac",
+      "sample_id": "lightbox/img000715.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img000742.jpg",
+      "image_sha256": "620edb5a32b0b4a5476688af2a0ffdab266b199f96e27a0fd6eafec94a54c9d6",
+      "sample_id": "lightbox/img000742.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img000750.jpg",
+      "image_sha256": "e2730596457ab2fe64242faf75352d5bd660ef4210a0d1f959e84e8042e4004b",
+      "sample_id": "lightbox/img000750.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img000752.jpg",
+      "image_sha256": "ab0d650983c537fc60f5a1d8bc0f7c13dba7630f6ba1f1b66ec8f088aee25a6b",
+      "sample_id": "lightbox/img000752.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img000767.jpg",
+      "image_sha256": "98f2c80b5358f9ca443889a3a5331fcfe95c205e715c5273732120727e079912",
+      "sample_id": "lightbox/img000767.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img000905.jpg",
+      "image_sha256": "60f53739503f61a5d6e4546f68321bd36a9a553f24905cf8169ffd0b3e61ee93",
+      "sample_id": "lightbox/img000905.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img000920.jpg",
+      "image_sha256": "a8a42f65b7a69f36814f8deebb0a53c9ee37b5df49a61b437634799b1b9cfd8f",
+      "sample_id": "lightbox/img000920.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img000925.jpg",
+      "image_sha256": "6f4bc189478ad9f7e73767045c802d825b64ce5cf0bc8809ff2ecbc2aed468f9",
+      "sample_id": "lightbox/img000925.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img000982.jpg",
+      "image_sha256": "5207b13f0da8e1f6da148c8340fcca75f4526d91f6db9eb8d9552c154330eb12",
+      "sample_id": "lightbox/img000982.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img000987.jpg",
+      "image_sha256": "98d89cc5384c218ea9228d45535db4262cb18c9b31a86705eced0d7554fd7d1b",
+      "sample_id": "lightbox/img000987.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img001046.jpg",
+      "image_sha256": "c7b5cca1c554e4f8f8ad6d92e0496e77b33ac3c2ad9f9a797b073f89d5d1c01a",
+      "sample_id": "lightbox/img001046.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img001164.jpg",
+      "image_sha256": "4ebad6c369dc99003e654c8cec5a0b309045bde6c612345abe29b43d8a09f8c7",
+      "sample_id": "lightbox/img001164.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img001181.jpg",
+      "image_sha256": "bcf417caae133e01f32cff9cbe6f307bc3bc0cfcc70c0d0348fad600f90af367",
+      "sample_id": "lightbox/img001181.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img001274.jpg",
+      "image_sha256": "de09382b74b4acb173ec313fb10a4b73b79a48aa147695592b3e819b21ac4ab0",
+      "sample_id": "lightbox/img001274.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img001322.jpg",
+      "image_sha256": "3fe82eb8cfd04173e120ce77b1adb10fc73c960cfc0c860681678ee0bbb5a6c5",
+      "sample_id": "lightbox/img001322.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img001329.jpg",
+      "image_sha256": "c576656467d2beb3ce42f4756cd3923179ae391ac099ec9e061f1da78e882119",
+      "sample_id": "lightbox/img001329.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img001334.jpg",
+      "image_sha256": "ef0e478f42a28a83b356804d871de79dfd5fb77f9e77f0174aca61c6f138e555",
+      "sample_id": "lightbox/img001334.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img001351.jpg",
+      "image_sha256": "54ac461a174752108f417ca546053d1f0f3527148470b1ca7bbfb9552ac1ff2b",
+      "sample_id": "lightbox/img001351.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img001436.jpg",
+      "image_sha256": "3f3d8aa09d79e9853319fb884c088790a7ab012ec775ac13543dbd69d49943cc",
+      "sample_id": "lightbox/img001436.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img001446.jpg",
+      "image_sha256": "d8e5950f3bae0a27c2981bc1b1f6da32f894a23420479c9a82aecede7c73dd7f",
+      "sample_id": "lightbox/img001446.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img001529.jpg",
+      "image_sha256": "fdee24a103e782a9183a358e50330ab3230a9443db387ecf89deb93f8bc24f17",
+      "sample_id": "lightbox/img001529.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img001579.jpg",
+      "image_sha256": "f5780f322c3948dd18da418ae1b5ab468aaef61bc4e7a615b36dab6b16277c12",
+      "sample_id": "lightbox/img001579.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img001608.jpg",
+      "image_sha256": "6e11ea523a836c29ac326962f6b7b14463f1426156276578d0d25b2098126b45",
+      "sample_id": "lightbox/img001608.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img001726.jpg",
+      "image_sha256": "e9777b6fb066c8e42e76143b2235bfb65268e66ac5f872e9da1d80ad68238e99",
+      "sample_id": "lightbox/img001726.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img001755.jpg",
+      "image_sha256": "17817e24b52839d641a25df4a5932d196465ca63aa1f1e8b5b639dd6a9dd8cf9",
+      "sample_id": "lightbox/img001755.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img001960.jpg",
+      "image_sha256": "81400734f954c675f67155d6d4839288fc6ec279255bf13dcef8a39591c2e67a",
+      "sample_id": "lightbox/img001960.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img002017.jpg",
+      "image_sha256": "2d1ee02f9606e228c8d2cce89107e9fe72ea9f64a0277f9111b3052a014ce70c",
+      "sample_id": "lightbox/img002017.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img002030.jpg",
+      "image_sha256": "46a4a7cd37ea57b14bf6926258ae022320af4c0eeeca10e15218f4a868570f4c",
+      "sample_id": "lightbox/img002030.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img002192.jpg",
+      "image_sha256": "b039b2905537cdfda453ea44835d3a8a432b5c72ad016d0ba4cbe018c299d006",
+      "sample_id": "lightbox/img002192.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img002390.jpg",
+      "image_sha256": "73742fa2ded14d42881979d0be969f65fa51a58751c516a4244ceab68126639b",
+      "sample_id": "lightbox/img002390.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img002427.jpg",
+      "image_sha256": "de00d633e014fd65357384d17fda84b7adc912ef5c87b5df85c5b252bb14d468",
+      "sample_id": "lightbox/img002427.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img002437.jpg",
+      "image_sha256": "7e7c82877b934050408399a0a9ab83b2900aa91febba78b7a6bdb1dc4408ca4d",
+      "sample_id": "lightbox/img002437.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img002464.jpg",
+      "image_sha256": "331d1b1ff44563203381c8833e5f6dfdbd453da42333003fd329494be6fb8845",
+      "sample_id": "lightbox/img002464.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img002476.jpg",
+      "image_sha256": "2d59cf61e31f3cb14b19e50f97f5ae3e03ad1c09ce3d9e63a4d24af62ce6b543",
+      "sample_id": "lightbox/img002476.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img002519.jpg",
+      "image_sha256": "b04f14c0c3e5bc2f98a6eff571c540f903ff808141ffc39ea9d14a28ccb5cd2a",
+      "sample_id": "lightbox/img002519.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img002648.jpg",
+      "image_sha256": "c2521b5deb24809200780dfb7c8ace69d300bafca3c6861c7c6f77025b32919b",
+      "sample_id": "lightbox/img002648.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img002653.jpg",
+      "image_sha256": "4c67bd08424a235f22b5ba4bcc1c28d1f51414e6be3af49e5a62570f1503d0dc",
+      "sample_id": "lightbox/img002653.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img002744.jpg",
+      "image_sha256": "05a241a204cac545b0f740f053225ba733e745e9032c4f7d189125359b866cdb",
+      "sample_id": "lightbox/img002744.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img002807.jpg",
+      "image_sha256": "eb3586930621e3b35c098cf3c313e3d2c30858552d274062692b2e5dc4bf38a6",
+      "sample_id": "lightbox/img002807.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img002813.jpg",
+      "image_sha256": "6d8eb816dd454c078406947c3ba9ac313f0ca1f3fc2283fcca7f3865bc696103",
+      "sample_id": "lightbox/img002813.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img002876.jpg",
+      "image_sha256": "9e1ab14624e45850194dbd78ec8ddc5988eceac323acc7323ae1a14e041f3f1c",
+      "sample_id": "lightbox/img002876.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img002900.jpg",
+      "image_sha256": "4fb2f553f52bff924d050513722bdd970c3e514663b5c57afd1c302c629366a8",
+      "sample_id": "lightbox/img002900.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img002912.jpg",
+      "image_sha256": "8b17e1b1febb4203bce3644a46379aff71c260cb45285c49415d62d6056ce3a7",
+      "sample_id": "lightbox/img002912.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img002964.jpg",
+      "image_sha256": "92455a57c9ea50db2278255e382a6029a8a46b8db4bf77afd5bf8b68c4944ba2",
+      "sample_id": "lightbox/img002964.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img003131.jpg",
+      "image_sha256": "79b78ba5825ee8aa99071183a3a1ab95f756259cdd45b441f1b6cac9ac5f6091",
+      "sample_id": "lightbox/img003131.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img003201.jpg",
+      "image_sha256": "fd7177bb76133a2eb7072f8a23c0d981a78488a31334999f0fbfd6e2856a4f01",
+      "sample_id": "lightbox/img003201.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img003291.jpg",
+      "image_sha256": "02fb8fa97eecf6f606ce40807dfe0dadd1a42f115433cb91c52ccc2dab7ffb51",
+      "sample_id": "lightbox/img003291.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img003403.jpg",
+      "image_sha256": "b69813c809c15b6c4e459e2692568008ccb6560f8629ccd5373087abe5205dc6",
+      "sample_id": "lightbox/img003403.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img003446.jpg",
+      "image_sha256": "5658a2dc38164d85593f9b067658e918e00bc96c71ef3339f2460cfe45057d5b",
+      "sample_id": "lightbox/img003446.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img003481.jpg",
+      "image_sha256": "6e2bcb40566fb28f54a26791e7459ff13e10d94b8bc3d50d49c59bbfba1efe7f",
+      "sample_id": "lightbox/img003481.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img003503.jpg",
+      "image_sha256": "4aab5efad4e6d460ea683fe61b1109b5689524385e6bbbe9f5024082207d069c",
+      "sample_id": "lightbox/img003503.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img003545.jpg",
+      "image_sha256": "31f9471e75d99be526cf9abf8555b881e3988cede19ccf1f2aab57235b4986ce",
+      "sample_id": "lightbox/img003545.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img003548.jpg",
+      "image_sha256": "45933bc51645bfe62c7498c4ac88f993ef238fa92ce507e04cb30f7e84a685f4",
+      "sample_id": "lightbox/img003548.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img003559.jpg",
+      "image_sha256": "07efe7ae30d5b40e921a7929ce02823921d0659262f0b50997839fd5d52b2ab4",
+      "sample_id": "lightbox/img003559.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img003582.jpg",
+      "image_sha256": "7b41f5804f2758d771f1722710ee72cbfa6c826a38fef0e19f2d1c60a997b3d3",
+      "sample_id": "lightbox/img003582.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img003590.jpg",
+      "image_sha256": "d85ecaa49321b593d81cda817b70fee1f97793596452bcc12acb57d15534900b",
+      "sample_id": "lightbox/img003590.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img003657.jpg",
+      "image_sha256": "e4af3920e0dad23f8f405f325c54be8cc12d8fef25bbf9787e356dabe629021d",
+      "sample_id": "lightbox/img003657.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img003659.jpg",
+      "image_sha256": "ee1368443bafcdbf2f8cc8d516acc43c3ec6e6b1bed5ae85fee710155b3c54b8",
+      "sample_id": "lightbox/img003659.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img003736.jpg",
+      "image_sha256": "109684deb6b39f288069a3f7c255c2d0ed84d6b6d813bcd8a33ea6927f3fe0d1",
+      "sample_id": "lightbox/img003736.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img003751.jpg",
+      "image_sha256": "ab84a88722fc0f525a8515c359e5bd56110b37612eb638fdc39b9b64013c2447",
+      "sample_id": "lightbox/img003751.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img003790.jpg",
+      "image_sha256": "59bef768f3a4e6c41aa57ecde5da83c9844307671f181c647daf0456de6f0fb6",
+      "sample_id": "lightbox/img003790.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img003891.jpg",
+      "image_sha256": "1cc4365c467a9551d93551f10a35a5130282ab1ff45609e5f9ce7af45180ebcf",
+      "sample_id": "lightbox/img003891.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img003950.jpg",
+      "image_sha256": "cc647fa9259f0dd08828bc35db9f1d2ad5ce454ddfe7170a8364b0a035ec6389",
+      "sample_id": "lightbox/img003950.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img003980.jpg",
+      "image_sha256": "efced1f208d1b847889310ee3c8e1108b96ce0a123a58916e77a4ba1c57d35f6",
+      "sample_id": "lightbox/img003980.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img004014.jpg",
+      "image_sha256": "7740fc2b295d78b1d1ab3f193fc17562f55341f5ca317105735218c327de7894",
+      "sample_id": "lightbox/img004014.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img004111.jpg",
+      "image_sha256": "8e097b496b17031976f6165e01da561b2ec2031ad998d7220fe203b1ca7d0fb6",
+      "sample_id": "lightbox/img004111.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img004248.jpg",
+      "image_sha256": "486ec1a758b2b994d30ea39cea6beb4ca89fd7f51531fc0d588977ed66fab078",
+      "sample_id": "lightbox/img004248.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img004250.jpg",
+      "image_sha256": "29c7a3c3bf333324c4e8f9b0b362553518275ed48cd604ef426a48bac3a4261d",
+      "sample_id": "lightbox/img004250.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img004255.jpg",
+      "image_sha256": "a7acbd7a0662ccd8916fdb593a3c8873fdb906137b8229011084e1973c3a0fbe",
+      "sample_id": "lightbox/img004255.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img004315.jpg",
+      "image_sha256": "32bbe07f853a7a212c37e1caff4bbc4ff88bebada7f389560d3151b58a2aa8d4",
+      "sample_id": "lightbox/img004315.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img004387.jpg",
+      "image_sha256": "a64f637530df20ab9521dfc17ca492a5329fddc80ee6c07d2b85140025235423",
+      "sample_id": "lightbox/img004387.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img004396.jpg",
+      "image_sha256": "658068a21b3f885a37ec08e5766dd0289483de9d60fa928d04827a989ea90d0a",
+      "sample_id": "lightbox/img004396.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img004478.jpg",
+      "image_sha256": "d194b276da318bd43b7494d74c6f356a51064d0c5eba439c642da1bc7ca17bcd",
+      "sample_id": "lightbox/img004478.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img004492.jpg",
+      "image_sha256": "b9b018836cb6f3c16cb9c09ff606f8334926a6eabef447cca14c09005853f5eb",
+      "sample_id": "lightbox/img004492.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img004574.jpg",
+      "image_sha256": "4f87cc40cff4a898c6b359998a0c3acb07b7d012c42aada499b3a340feb330e1",
+      "sample_id": "lightbox/img004574.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img004692.jpg",
+      "image_sha256": "d7233ed7fce9e7c1be55c231b4cbc60aa017d172450f7cb0fbada6947cc33b8f",
+      "sample_id": "lightbox/img004692.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img004702.jpg",
+      "image_sha256": "03506bbd418c00d8a8501bd80c2db0eb4c77a656b93e028e34515757ca08a42b",
+      "sample_id": "lightbox/img004702.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img004761.jpg",
+      "image_sha256": "8db34ffc51f0ed79b13097b69da7cfaa5bc2ec2657006e4f06329763aacc2205",
+      "sample_id": "lightbox/img004761.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img004769.jpg",
+      "image_sha256": "341a173441901a741b1ee6ffde72c7d060a35e2949ee39e018b8a696ec9fd39e",
+      "sample_id": "lightbox/img004769.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img004838.jpg",
+      "image_sha256": "b00b8b4056f049691c812ecf28a23e4331638c94902f5601d98e2a0259ea7421",
+      "sample_id": "lightbox/img004838.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img004843.jpg",
+      "image_sha256": "058c50dad28e2f21271c226c175e5f286792d6f805d23a3ac5c60805887cdd5c",
+      "sample_id": "lightbox/img004843.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img004858.jpg",
+      "image_sha256": "9adb30a70a7bd32e1993532d637b9680b61b04442b019127b862c830c2efc4a2",
+      "sample_id": "lightbox/img004858.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img004871.jpg",
+      "image_sha256": "4df0213579d369fffad05bd99f26f442ff2c0dd1275f809d33c2135f07bee501",
+      "sample_id": "lightbox/img004871.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img004945.jpg",
+      "image_sha256": "cb775a1b9bf2c5ba2feb0554ae076e96d57f0288395e91ed92e712c0fd9d1e96",
+      "sample_id": "lightbox/img004945.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img004992.jpg",
+      "image_sha256": "05cb49a4e82cc37bdd340f6ce51c9047b767914fca006e32ac8190424f615b6e",
+      "sample_id": "lightbox/img004992.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img005054.jpg",
+      "image_sha256": "700e9f9d3aca85364059d0d987d2c1b37a176648d3c7f022e226cf26c43dbf39",
+      "sample_id": "lightbox/img005054.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img005151.jpg",
+      "image_sha256": "c4121122e8ffa3c2b6d17542245cf9c59b6b5d890242dc9fdc5d4f119c8a81dd",
+      "sample_id": "lightbox/img005151.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img005174.jpg",
+      "image_sha256": "8265c96ec013597601b8a444e3b8a334e366805916b9d83889df56fc9634e56b",
+      "sample_id": "lightbox/img005174.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img005228.jpg",
+      "image_sha256": "b50f1a4798701696d7c7aa94eac1d9cdd07b16d9db4666897ad0833d31a2b49b",
+      "sample_id": "lightbox/img005228.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img005258.jpg",
+      "image_sha256": "c91c95fccd4fbf97149d1eb5d16bc1592632cd213d66b07e3366ef56e8b724d2",
+      "sample_id": "lightbox/img005258.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img005299.jpg",
+      "image_sha256": "bbbe99c25b43bae9ed8ae6c64035958a42a090cd36ab3f7b96575342423c99ee",
+      "sample_id": "lightbox/img005299.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img005308.jpg",
+      "image_sha256": "bc2a96a2b742006ac2e8340c98e22886d483024a41211bf2e70d05d1eb4db6a4",
+      "sample_id": "lightbox/img005308.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img005509.jpg",
+      "image_sha256": "126d5075b186d04f179fb85e47e32e6c8fd24b1435ab96a86c839cde2ceb554c",
+      "sample_id": "lightbox/img005509.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img005613.jpg",
+      "image_sha256": "3c05afc3b09820132136f2056d6dd3b81486053ee00479f5554f6382c96e1b14",
+      "sample_id": "lightbox/img005613.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img005861.jpg",
+      "image_sha256": "5014ad1d9f31149ee69fdd963cb89cfa9ec32b1d6108fd448286abec38b2ae5b",
+      "sample_id": "lightbox/img005861.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img005899.jpg",
+      "image_sha256": "8e939f9242dc804ebc36c0d6cbb66d4b41e82baeb5c416e84617de4a0aabcec6",
+      "sample_id": "lightbox/img005899.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img005948.jpg",
+      "image_sha256": "87b420fac50a73edd198e9e90bd51c991c13074458822d33c041c30854d7c1d8",
+      "sample_id": "lightbox/img005948.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img005975.jpg",
+      "image_sha256": "87c390aab14dd05d7b63693060c98b0b785cd86ed33676911b86891bce36687e",
+      "sample_id": "lightbox/img005975.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img005998.jpg",
+      "image_sha256": "4d05db054d90b9c6a225268f33204ed1f48ac933a41aad7a94334d8c24501fab",
+      "sample_id": "lightbox/img005998.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img006024.jpg",
+      "image_sha256": "87aaaf608efb7f741e8339467236c26f9bd1d6bd6efd7b5da2db2f260fe319ee",
+      "sample_id": "lightbox/img006024.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img006031.jpg",
+      "image_sha256": "5e45ed639553274980930009b29a59275f9c53593d888cff903fe4ad9a6fc8a3",
+      "sample_id": "lightbox/img006031.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img006038.jpg",
+      "image_sha256": "6c4e9bf8125e7380cc0227798038ddc3e3bdb7321338a3fa384e5ea7ed27b7df",
+      "sample_id": "lightbox/img006038.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img006072.jpg",
+      "image_sha256": "5e4ab4e1fd7d91570ecef25a1e4979889b9699a4f1581592d7b9983140434966",
+      "sample_id": "lightbox/img006072.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img006117.jpg",
+      "image_sha256": "c253507718d011fff12207975ad8bce0098e532addb17274792e1830e6f565b5",
+      "sample_id": "lightbox/img006117.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img006181.jpg",
+      "image_sha256": "53abbb4bd2201e4af35546ee28bf23fe2fbe5fd332068e1836dc99bfa2149cca",
+      "sample_id": "lightbox/img006181.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img006219.jpg",
+      "image_sha256": "5ff53faaa4d79997fac6a488e828f156ce5e03462017abd120b85bf8969da8cf",
+      "sample_id": "lightbox/img006219.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img006276.jpg",
+      "image_sha256": "0c3f86a9054e80c32694bb5eac019ca9e19ff29ac937e7d0e4ac6d1d02d546ee",
+      "sample_id": "lightbox/img006276.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img006289.jpg",
+      "image_sha256": "8cddc527c68fb65e375f16ea5995af0a0f38bae4f23932e8bc30ac8033708597",
+      "sample_id": "lightbox/img006289.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img006312.jpg",
+      "image_sha256": "0dc594166b71bd15fd3f7de7edb537a038be22454dab6981f6b22713f945a13d",
+      "sample_id": "lightbox/img006312.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img006375.jpg",
+      "image_sha256": "a758a4ca8f4c1311abc5b69cf98f627475a0c04a16e82c36c0be954f7dbe69ac",
+      "sample_id": "lightbox/img006375.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img006583.jpg",
+      "image_sha256": "ad2ff276b13d251e14b402a25614baafaf5f2beed620bb97d5db58c942ebe1e0",
+      "sample_id": "lightbox/img006583.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img006587.jpg",
+      "image_sha256": "a75b2cf42f77b0e589523c9437482962de9935aa63f3dc6aa331bf57609da21c",
+      "sample_id": "lightbox/img006587.jpg"
+    },
+    {
+      "domain": "lightbox",
+      "filename": "img006641.jpg",
+      "image_sha256": "9e7664a5f4e689079f48b2ddd6ee50fa284f3b00c3d61307d42d3c334d7787a9",
+      "sample_id": "lightbox/img006641.jpg"
+    }
+  ],
+  "purpose": "developer",
+  "reference_binding": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/deterministic_20261024/fixed_references/lightbox_2022.json",
+    "sha256": "d6f6bad9c5f79d1d2d2328e0e398d812dba3e5360e99c35790b0d6cbf3e4ef33"
+  },
+  "run_key": "lightbox:2022",
+  "schema": "g50p-diagnostic-panel-v1",
+  "seed": 20261022,
+  "selection_depends_on_outcomes": false,
+  "stream_binding": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/lightbox/stream_2022.json",
+    "sha256": "cfd67b0e57d66bcca5787249fdaed6a1dc0abcc92dd2f20ddf67a1b12693b53e"
+  }
+}

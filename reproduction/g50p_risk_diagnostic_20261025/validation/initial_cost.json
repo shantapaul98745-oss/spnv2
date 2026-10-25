@@ -1,0 +1,15 @@
+{
+  "active_seconds_upper": 360,
+  "classification": "Conservative inclusive charge for new local necessary TinyEHS/backbone correctness tests including repeated successful test invocations; pure records mock tests zero real model forwards. Not SPNv2 scientific results.",
+  "failure_dispatch_unknown_upper": 2,
+  "measured_test_seconds": 69.357,
+  "observed_process_interval_upper_seconds": 314,
+  "physical_forwards_upper": 4748,
+  "schema": "g50p-diagnostic-initial-cost-v1",
+  "source_test_files": {
+    "test_pair_runner.py": "e6c3659f8879b3252bd9f346e1b2ff0f002f3cbeea4837588b7384c463fe56de",
+    "test_verify_pair.py": "ae550ded92ce72454278e4c9c7f62f90599cd9c69c199b868cd18dd95960d890"
+  },
+  "status": "passed",
+  "time_margin_for_pure_contract_checks_seconds": 46
+}

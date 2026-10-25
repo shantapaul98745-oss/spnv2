@@ -1,0 +1,794 @@
+{
+  "auxiliary_seed": 2026112602,
+  "contains_gt": false,
+  "developer_binding": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/sunlamp/developer_images.json",
+    "sha256": "db2df5adb9f99af94371226537578ff9aede7aa6ee959c419e0fd7c570c828e0"
+  },
+  "eligible_count": 310,
+  "image_folder": "images_768x512_RGB",
+  "image_root": "/home/DATA/Downloads/DataSet/speedplus",
+  "items": [
+    {
+      "domain": "sunlamp",
+      "filename": "img000068.jpg",
+      "image_sha256": "54ce97adeb320e32e651b4128226b92e2a9cb693152250428d2e2012e34ad95d",
+      "sample_id": "sunlamp/img000068.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000082.jpg",
+      "image_sha256": "e2c551de29d1b2e93b1069e574ae2bbc3153b10f9862cf889df9b13b9c22d3dd",
+      "sample_id": "sunlamp/img000082.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000089.jpg",
+      "image_sha256": "fe9815c69111a35cbbff4e4a554152fb23496e8d20639db2034ed5696f4e8e55",
+      "sample_id": "sunlamp/img000089.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000094.jpg",
+      "image_sha256": "879d6f66fdb0efaa9c197831fa15ef2be6988d3b7c9438c87d19556c418b73e9",
+      "sample_id": "sunlamp/img000094.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000106.jpg",
+      "image_sha256": "e603ea208a5380a5edbc954942d2ee631953a4d9de372bdde3aea4311ff5600a",
+      "sample_id": "sunlamp/img000106.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000121.jpg",
+      "image_sha256": "fb97aaf704b79bf579f4835d24e9ce993c49208f6881fc5bb178d158b9de477d",
+      "sample_id": "sunlamp/img000121.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000138.jpg",
+      "image_sha256": "0553d90f47d9fbb508979e4a820e8c49230614a7c6d4b2e686ee824a32194c46",
+      "sample_id": "sunlamp/img000138.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000139.jpg",
+      "image_sha256": "083cb72191fcef9000164e81c8b1f0cee49c718dd6e468d9a0a7d4a48d6b522b",
+      "sample_id": "sunlamp/img000139.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000142.jpg",
+      "image_sha256": "d1584d07025fac76c5ad0e9d77235f64775ff1f68c19f9af395d4e1da3009b8a",
+      "sample_id": "sunlamp/img000142.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000160.jpg",
+      "image_sha256": "39aaf21fe5cb6e5dd4f21a5102625d7f6a8f99b70987d2bde4e8e2219b34b91e",
+      "sample_id": "sunlamp/img000160.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000174.jpg",
+      "image_sha256": "2368f279b937def3a9646a2583907a57ebb30bbfe590f84a0fe714e63dc52873",
+      "sample_id": "sunlamp/img000174.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000305.jpg",
+      "image_sha256": "4aba21cc3f73ed0bc7a35ac3945977c8d6fa6d93b70763874d83e8a5b61725e0",
+      "sample_id": "sunlamp/img000305.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000318.jpg",
+      "image_sha256": "cc9fb8f0e03163571f9eaf8771f3ec6dab1f76783f00b21a43b221b122009329",
+      "sample_id": "sunlamp/img000318.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000340.jpg",
+      "image_sha256": "c02bb1ada45b00f710c70a7e08ebde3c75efa0468e8c3220b50d38f1b283a19d",
+      "sample_id": "sunlamp/img000340.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000355.jpg",
+      "image_sha256": "93091fcc63e6ea3c87504363d55d58cbbd5953da64e797d7e29ac458a13ec568",
+      "sample_id": "sunlamp/img000355.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000381.jpg",
+      "image_sha256": "64abab6956b96aab1adf8de0f08b36ec92100bc9d2adafeb8f7072505eac5553",
+      "sample_id": "sunlamp/img000381.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000431.jpg",
+      "image_sha256": "b15366f589e2f1669ba5b93b457e39aaeb79ac2e441d777586b818e7d836c275",
+      "sample_id": "sunlamp/img000431.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000435.jpg",
+      "image_sha256": "4bdcfde02009fd817797e816cf9daa1b8b935542bdeb8bbee57dbead21caa82c",
+      "sample_id": "sunlamp/img000435.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000464.jpg",
+      "image_sha256": "1659017de096261e72d66228e688faf1e42b849b1ebcbc1a63853441eca27129",
+      "sample_id": "sunlamp/img000464.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000465.jpg",
+      "image_sha256": "0559eb4d8bcf0a0bd7c2ae5dcbc3e3b94e0b7d2c0ec2e318eb7199c5681e29e5",
+      "sample_id": "sunlamp/img000465.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000469.jpg",
+      "image_sha256": "e0651bf94b1025966d437fda03314b9f6acc1a88be39de78eccd7b4406f85a5e",
+      "sample_id": "sunlamp/img000469.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000497.jpg",
+      "image_sha256": "8c5c8d03c172e1364c5ded7c790749a48cd7db7e56fa7e8e505b61378991ecf0",
+      "sample_id": "sunlamp/img000497.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000522.jpg",
+      "image_sha256": "d6b358640af6a33a5acec0bbfb87258f7b2791e7f5bbcf5c4521e3106a81b818",
+      "sample_id": "sunlamp/img000522.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000524.jpg",
+      "image_sha256": "e7bfaf3f9d0e9a2bd9d67eb4353446ed3866348c4ff9a57d3ac3807133c2d476",
+      "sample_id": "sunlamp/img000524.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000534.jpg",
+      "image_sha256": "47b0d084ef932c16ad79791e6f19f316ee05ea6ba32808cfc1001bdf4f051610",
+      "sample_id": "sunlamp/img000534.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000545.jpg",
+      "image_sha256": "39ffe58cdd0cce744e045b26557cf254c1c8e895f348c40163344cbbff7a2455",
+      "sample_id": "sunlamp/img000545.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000549.jpg",
+      "image_sha256": "864bdb8b64d3c93dbab2442209b1ffb8fd42ff7af4aedf7d3822a0270a6cfa60",
+      "sample_id": "sunlamp/img000549.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000566.jpg",
+      "image_sha256": "fbf4573da50e5e279b8d260c27bb9010cb9852f98e961838f020f76e9a896e94",
+      "sample_id": "sunlamp/img000566.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000575.jpg",
+      "image_sha256": "279771677fddb8a02a4d6208b516bf5b38a4efefb260ea30f0b975ed458e859b",
+      "sample_id": "sunlamp/img000575.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000624.jpg",
+      "image_sha256": "820a3b6368583f4911c13204ad5d7f0b823fe4d64ed828bf7f8d374566ded2e1",
+      "sample_id": "sunlamp/img000624.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000629.jpg",
+      "image_sha256": "e67cede66bad7bf76fce69e4bfb7c51b01b0e7c51d0a64b98269eea89d1eb68c",
+      "sample_id": "sunlamp/img000629.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000643.jpg",
+      "image_sha256": "43a6995f718cc669e4ceb0b900cf021e92abd4462897fc81eecce0370bd8b7f7",
+      "sample_id": "sunlamp/img000643.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000656.jpg",
+      "image_sha256": "9652b60cd015bf0a6da49bd076b9d19d9de4da6b0b70cd66705f6d32d1530ada",
+      "sample_id": "sunlamp/img000656.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000675.jpg",
+      "image_sha256": "c6f22fc928ae1c58d0dc06bad707df703d8373fdd1dcdc05094831e4ac57ac54",
+      "sample_id": "sunlamp/img000675.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000680.jpg",
+      "image_sha256": "2df09b820efa4b2c9f34124b1e2222a08aefbefd4580143fdf6bb7ef7a36b296",
+      "sample_id": "sunlamp/img000680.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000689.jpg",
+      "image_sha256": "59dda13d498f9d9d651d37026a90ff0292fa96b921fb5f26b793ac29211adf34",
+      "sample_id": "sunlamp/img000689.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000694.jpg",
+      "image_sha256": "12995842c893393a5ba0e47aacb821164de64133ac6ee7000f423bbb6987ccc9",
+      "sample_id": "sunlamp/img000694.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000697.jpg",
+      "image_sha256": "f6974d9ebbda78687cd29040b44872d3ca00aa712d6b2dc7b18eb7c893fb4d70",
+      "sample_id": "sunlamp/img000697.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000705.jpg",
+      "image_sha256": "14d010616e5458ef8444a801fb5d2bb10e4bce4e208709512e290c3e968e6d4c",
+      "sample_id": "sunlamp/img000705.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000720.jpg",
+      "image_sha256": "012e071d30ca143d1d4ff4a968747fac408b3076b201ab3de405d9aef8429e8d",
+      "sample_id": "sunlamp/img000720.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000734.jpg",
+      "image_sha256": "834c9e94bdcd54ae6056db3894dfcf956381e7fce5a781a52339636b7bce9410",
+      "sample_id": "sunlamp/img000734.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000741.jpg",
+      "image_sha256": "3220182d1685ca5aa601062fea2ef97c91f6678630f7a49b01b510d02450285e",
+      "sample_id": "sunlamp/img000741.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000785.jpg",
+      "image_sha256": "0b5f903be9343db59881132c453ef2a2e3cb447a4083b80e79f09928a96b8aa7",
+      "sample_id": "sunlamp/img000785.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000792.jpg",
+      "image_sha256": "d51263b05c309f88e4239c0f5d8a5b989a3eb9a13a848ddcbb58643823cdbc05",
+      "sample_id": "sunlamp/img000792.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000813.jpg",
+      "image_sha256": "32730ef38d67f87bd1bbb783e86caed5efa9b3a898ba809c9264d9b0ab4919ba",
+      "sample_id": "sunlamp/img000813.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000841.jpg",
+      "image_sha256": "c5e84a445d8ab787328674fcb404a0e8ffc46656b29078103e2e34ec5fff89e6",
+      "sample_id": "sunlamp/img000841.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000876.jpg",
+      "image_sha256": "3b4f3c45878db8cc9519a22e60cb43ebb1d277f71ee75d4533459563430646b7",
+      "sample_id": "sunlamp/img000876.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000970.jpg",
+      "image_sha256": "4c1a5554301495241f226f2f32a89c94e9b44334b35107615f6a1f24bcada9dc",
+      "sample_id": "sunlamp/img000970.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000975.jpg",
+      "image_sha256": "315dbfe34b30a67b1d497e8d005099d98a3a457579bc4163d20b1832343970ca",
+      "sample_id": "sunlamp/img000975.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img000991.jpg",
+      "image_sha256": "c6da31dadf0e5c7acf92c398e0c5cc8f86e0335e550981a7edf82600e2d68dac",
+      "sample_id": "sunlamp/img000991.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001049.jpg",
+      "image_sha256": "a60dbea2586eef9ebaf7c2c6f370ddb87b7f07e788ea9ac775786704da229fb5",
+      "sample_id": "sunlamp/img001049.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001067.jpg",
+      "image_sha256": "ae2c02fc1aaa81455b2a25b7e079ddb3933723e82ea3215173170dd8638c7d6a",
+      "sample_id": "sunlamp/img001067.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001120.jpg",
+      "image_sha256": "0d351d52de662ea5272ff7d80e8a49b1aee6f3bb674fe2181af53633fe3a8235",
+      "sample_id": "sunlamp/img001120.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001139.jpg",
+      "image_sha256": "5a4bdee6da6336e86f2c7e8acad4e6b77d6ad1215e66e7f1fe643859d48b514a",
+      "sample_id": "sunlamp/img001139.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001152.jpg",
+      "image_sha256": "526f5a33d04073646d7df6618f413622f9fa0589754094885dd40720756eb82a",
+      "sample_id": "sunlamp/img001152.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001172.jpg",
+      "image_sha256": "370d2127831f5837e3dcbd87e30340f1babc01e6a62b11824e9e544cd9753667",
+      "sample_id": "sunlamp/img001172.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001189.jpg",
+      "image_sha256": "4fc80c5390b4c5950bb78c4ad3e47970e8ff039b6c6b41ee295559f21d11b4df",
+      "sample_id": "sunlamp/img001189.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001215.jpg",
+      "image_sha256": "61579bece09388a124a7d78da9a720663273758e602403240628f8297412f57a",
+      "sample_id": "sunlamp/img001215.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001259.jpg",
+      "image_sha256": "3760a13b385e1bd8069daded6c2c3704972b28da87b8262f7625da0e6e7f42b5",
+      "sample_id": "sunlamp/img001259.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001315.jpg",
+      "image_sha256": "5ef788d39848f2a57e3880c0e4cbda373199f43ffe3807aa8e76dc0551dc2618",
+      "sample_id": "sunlamp/img001315.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001356.jpg",
+      "image_sha256": "527cde92aa5571875c3f727a27989d35a3dc4ee51cda4153d6de3e8f3271ce24",
+      "sample_id": "sunlamp/img001356.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001363.jpg",
+      "image_sha256": "197ef639995bad8a8725f672203ee8ea66aae3482b1fe0ff1d9fd4c28b62ef8d",
+      "sample_id": "sunlamp/img001363.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001374.jpg",
+      "image_sha256": "29964cade08e0e0c957a506ec786eaea4e9999fbb54b28bc9ec45b12931f3c18",
+      "sample_id": "sunlamp/img001374.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001390.jpg",
+      "image_sha256": "3be2e4bc48e8bc01886c326439f2ee6f879e747dea0c0476dad16314d1381a55",
+      "sample_id": "sunlamp/img001390.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001422.jpg",
+      "image_sha256": "1cbc483f1c2ee3ecb889887a062d341866f8afe7a1358b03853e275323261c04",
+      "sample_id": "sunlamp/img001422.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001452.jpg",
+      "image_sha256": "2ccb42eebc1b206e8089d8f7dbf3bae3652389e9ee098bcdca85bb8b16345014",
+      "sample_id": "sunlamp/img001452.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001487.jpg",
+      "image_sha256": "e859daf5c44f9fb1cda2912105049625e0f04f4573952e6285e81bd090baabe9",
+      "sample_id": "sunlamp/img001487.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001628.jpg",
+      "image_sha256": "40630331fb9160b21cc243de5b1a70c538a96b8d2667108231152c9d9ab045e4",
+      "sample_id": "sunlamp/img001628.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001631.jpg",
+      "image_sha256": "e028d8fb8bce7b0e49810dafcb3e0284cd62007e77a576d30d5a63730d81b075",
+      "sample_id": "sunlamp/img001631.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001640.jpg",
+      "image_sha256": "f8f8d31efa0066a15524a4e68bdf47e12c80ac8d3c1fa119375cbbfa7541331b",
+      "sample_id": "sunlamp/img001640.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001641.jpg",
+      "image_sha256": "4cb6cd1c68c69918376a3d2ef9fb1a84cc523b73ae84cdbbf4e43f39971bde22",
+      "sample_id": "sunlamp/img001641.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001655.jpg",
+      "image_sha256": "677272278bf2229eeb2096019fcaa10d6eab691a9fcf06d2f5ccc84d209f486c",
+      "sample_id": "sunlamp/img001655.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001666.jpg",
+      "image_sha256": "778b78f36cf724b6f108c3004c46d7844364a9bc754764e729ea21168d7e1130",
+      "sample_id": "sunlamp/img001666.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001668.jpg",
+      "image_sha256": "9407badabb5ba4174da931ea45dc85aa8c106e9a682ebc7679c5d428b349b05f",
+      "sample_id": "sunlamp/img001668.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001683.jpg",
+      "image_sha256": "092bd38d4220764d89af0a795ffcf7ed3eca095f7f60928e2361324f4e7c4a67",
+      "sample_id": "sunlamp/img001683.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001720.jpg",
+      "image_sha256": "58b18e3a4ceda137adf64b5c8b311984ad45e0b8e8e7038af16c7aadeccdc803",
+      "sample_id": "sunlamp/img001720.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001738.jpg",
+      "image_sha256": "c645c571aaf3700683f7b1c166a5b9258c4d81720591e55c93dddf7a3aba6a14",
+      "sample_id": "sunlamp/img001738.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001753.jpg",
+      "image_sha256": "fa0f863c17a9a9a1738ab35d9bc79105077291392bc21c79bed6fbbfe0d07c69",
+      "sample_id": "sunlamp/img001753.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001779.jpg",
+      "image_sha256": "cfb0e5ce86f2c887911d8502d7946bec7bd768d40ef98fe11c442194d629937f",
+      "sample_id": "sunlamp/img001779.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001791.jpg",
+      "image_sha256": "f755f68523d0f962ccd64b3a4c1c7ebc4a22b7c4ee3fd3b92947180ce7d7350c",
+      "sample_id": "sunlamp/img001791.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001838.jpg",
+      "image_sha256": "fa584b558137a0c5b60210f07d5cefac15139fa4f76473d59e4ae57227488ce1",
+      "sample_id": "sunlamp/img001838.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001843.jpg",
+      "image_sha256": "e480455c61b3acf0c028e0126da9fc2ca1d57aa9ea7498f64d621c02ec2d149a",
+      "sample_id": "sunlamp/img001843.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001847.jpg",
+      "image_sha256": "9c428a95c4959b1698350909aba85481d785094e1605e2d52b1b8a8805c14c99",
+      "sample_id": "sunlamp/img001847.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001856.jpg",
+      "image_sha256": "7a0699a154a5bd1edb57f7f5c181bdc351a99426ebdd2b52eb42590e14c5009d",
+      "sample_id": "sunlamp/img001856.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001866.jpg",
+      "image_sha256": "b72abb25bbea57326f81a358bc7311fb4e071fd562ff1f3ebbff8c6b09da1ae3",
+      "sample_id": "sunlamp/img001866.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001894.jpg",
+      "image_sha256": "4e9a092cf0a4a199617f6a2662bb43f1868e55ed6205224f6afa7e875e5861df",
+      "sample_id": "sunlamp/img001894.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001906.jpg",
+      "image_sha256": "550aef7b1ca4c2a9953a1c4ca926e35f0336b8ed95a80b1d990d5ce1c16060e2",
+      "sample_id": "sunlamp/img001906.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001948.jpg",
+      "image_sha256": "49971ea345b2c6201b3c6b078bfeaf38b89eec4d1085eae937f2161c92f60110",
+      "sample_id": "sunlamp/img001948.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001972.jpg",
+      "image_sha256": "0ac283af8f334d74a72100e0827422f75191c8d47f1f202804418b246ab04b95",
+      "sample_id": "sunlamp/img001972.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001979.jpg",
+      "image_sha256": "e1734df6cbd3f30aa9fc71752cb5248c541855a7ed4130893b61798d7c8c4890",
+      "sample_id": "sunlamp/img001979.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001982.jpg",
+      "image_sha256": "b6380d73c9fceee881f03cc8abd7fe45ba58a100643fb38d3b9392b90be61b07",
+      "sample_id": "sunlamp/img001982.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img001996.jpg",
+      "image_sha256": "ea7340e2001cb35b47cf753d2ceb31dd88e95ad4ce5cdc4ed3b8a1c5a2517b0e",
+      "sample_id": "sunlamp/img001996.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002001.jpg",
+      "image_sha256": "f02c04029fbea5a246e8d5f5b42a84c76f08d5ee741f2c08ff9a7770f0654fdc",
+      "sample_id": "sunlamp/img002001.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002029.jpg",
+      "image_sha256": "749348b197490d9fcdbd2c14d7fe071527103a90886a6b36375ca0821e991b19",
+      "sample_id": "sunlamp/img002029.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002042.jpg",
+      "image_sha256": "364057f9ebbb521de5901ea92bcb0b03305d30972dadbf58432986ae0742e38e",
+      "sample_id": "sunlamp/img002042.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002047.jpg",
+      "image_sha256": "eeea8c82747805b42749102ece3fc6eed6c98b353e71522422c54046224da5f2",
+      "sample_id": "sunlamp/img002047.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002051.jpg",
+      "image_sha256": "16d1cf2cbb67fabf74ca83aef97c250a6aab14236b9535d321cf9551733919a2",
+      "sample_id": "sunlamp/img002051.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002059.jpg",
+      "image_sha256": "9ac430574fe52f71e8c01cacd95eb0408702ca563002733ffb7e62d804e4bde6",
+      "sample_id": "sunlamp/img002059.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002061.jpg",
+      "image_sha256": "ad7a1288865f10a61477b62ba70c404eff8560b0886327d2579d8d3d27040580",
+      "sample_id": "sunlamp/img002061.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002127.jpg",
+      "image_sha256": "3d532b487a373f298dd0146f08f49c94104dde31bc120f5b3ada14b91966a97a",
+      "sample_id": "sunlamp/img002127.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002135.jpg",
+      "image_sha256": "6cdca90c328e16052930aaf4268e8074aa46762cef54ad314c167d45d2cac5f6",
+      "sample_id": "sunlamp/img002135.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002199.jpg",
+      "image_sha256": "431cd0b7e2736cc891090e5fd2543dfa0976266c75b0743d637048cfcf3825b2",
+      "sample_id": "sunlamp/img002199.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002228.jpg",
+      "image_sha256": "7fd4981c522ffe8c4d0aa325e767275bebae6f96ec13c5e0237677fbc5e271b8",
+      "sample_id": "sunlamp/img002228.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002236.jpg",
+      "image_sha256": "8e57dd7b4c4ed380a9db2350fc7822070987408b27e772ff0ed32400954bc413",
+      "sample_id": "sunlamp/img002236.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002312.jpg",
+      "image_sha256": "faea59ed8ee98ea80bfab897f099f150d6e709ce5d8fcce08846a9278fb4ace9",
+      "sample_id": "sunlamp/img002312.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002347.jpg",
+      "image_sha256": "3d8f9fbd11e0af831cfa139fbf27f9573219425e74f594c0251b2f5893932c99",
+      "sample_id": "sunlamp/img002347.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002382.jpg",
+      "image_sha256": "cd2dd7ac055448251319d37ed5b33f5b781f19f409d931b10679b67ac47f59e1",
+      "sample_id": "sunlamp/img002382.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002428.jpg",
+      "image_sha256": "e2e9f132f74fc2ab785517a9d467e531c69581a9f593016e0041d48e34b8c07a",
+      "sample_id": "sunlamp/img002428.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002451.jpg",
+      "image_sha256": "b1283de6da03e1456ad301e20f6b229e76baf6c1fced05ad1d89aa81da1ea675",
+      "sample_id": "sunlamp/img002451.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002466.jpg",
+      "image_sha256": "e6865443c3d71bd38927a92806c78b1033bd13b20a2a1aeeeb583155d1c8ec9b",
+      "sample_id": "sunlamp/img002466.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002467.jpg",
+      "image_sha256": "9343c80349a9ed30cd2b07d20f3b3caf693aae43c823b5f6de7ac63e98e2a3a1",
+      "sample_id": "sunlamp/img002467.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002468.jpg",
+      "image_sha256": "b69f1ee82c094dcf0f47fe7415997d0edfeaa92749ac04d36fe128234e2018ba",
+      "sample_id": "sunlamp/img002468.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002469.jpg",
+      "image_sha256": "83379dc7e3d4a9e224027b7c1fdc88532883f12d036a8863b317f71a9a721843",
+      "sample_id": "sunlamp/img002469.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002476.jpg",
+      "image_sha256": "3c3408efdd05d007fc80d8e20b3d488bcc7ce004f7dd5019da802101af592cee",
+      "sample_id": "sunlamp/img002476.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002478.jpg",
+      "image_sha256": "ce70b5b1db4561c82a588b543782ef65dd047793d4561aa77683fe7d10476e32",
+      "sample_id": "sunlamp/img002478.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002483.jpg",
+      "image_sha256": "a5189099134ca1470c34272e85729a04148a7464a61d70108e56af4c69e37028",
+      "sample_id": "sunlamp/img002483.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002515.jpg",
+      "image_sha256": "770bfbcf69900e601424a40d64fc726f6956b4a9c2423a79587589ccdeeadd8c",
+      "sample_id": "sunlamp/img002515.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002602.jpg",
+      "image_sha256": "b3311402a321ca048d6de7e0adaf75895c7b3a7ed1eb1b82ac1661dc0cc70601",
+      "sample_id": "sunlamp/img002602.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002605.jpg",
+      "image_sha256": "26cb06486c2e409d3637351a10501aa1ac080431680ed942b59ad3e8ccfefc98",
+      "sample_id": "sunlamp/img002605.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002620.jpg",
+      "image_sha256": "577886dd47033241b522af43e9c0d541455e3d8a3610752f8fc9a6607c3f1176",
+      "sample_id": "sunlamp/img002620.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002639.jpg",
+      "image_sha256": "6553ad901bf11433fdc7c99da943fc166c88cdd500198f082de12b09e0a9b4a9",
+      "sample_id": "sunlamp/img002639.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002647.jpg",
+      "image_sha256": "cfba901835f114a146a6d3ed13e2e05a766357805daf152b310533eec152466f",
+      "sample_id": "sunlamp/img002647.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002656.jpg",
+      "image_sha256": "0c69515c97b176561a2d300982c7185b2500279c6cb78e3706cc570e5e98fe2a",
+      "sample_id": "sunlamp/img002656.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002657.jpg",
+      "image_sha256": "32ce148d8ba35ad8c986e8f6f7e8ae9ff0250d8f4dce99a1e86a4d282d57f031",
+      "sample_id": "sunlamp/img002657.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002658.jpg",
+      "image_sha256": "67a9fef87401dc3fab70971c93bb9ce556338a0a1ccdbcbbaaf55aeeb2c7153d",
+      "sample_id": "sunlamp/img002658.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002662.jpg",
+      "image_sha256": "ccc032bc8b21c4d0ac43aae7b0991247d5a3098bd368584b9558623497593cbd",
+      "sample_id": "sunlamp/img002662.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002676.jpg",
+      "image_sha256": "f72ad732991fd4a5fcf2be078d21b7c3e64826a3dd8ead9b8f88cbdecd92f619",
+      "sample_id": "sunlamp/img002676.jpg"
+    },
+    {
+      "domain": "sunlamp",
+      "filename": "img002751.jpg",
+      "image_sha256": "27f53368caac798ccda77a579b3f9783fb89fb5ad913ffc226d67f2dd065cebd",
+      "sample_id": "sunlamp/img002751.jpg"
+    }
+  ],
+  "purpose": "developer",
+  "reference_binding": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/revisions/deterministic_20261024/fixed_references/sunlamp_2022.json",
+    "sha256": "e56acb79ad9609dc4f72c34459a4728cf1eb952262b2ad6bfde2ed5a4307853b"
+  },
+  "run_key": "sunlamp:2022",
+  "schema": "g50p-diagnostic-panel-v1",
+  "seed": 20261022,
+  "selection_depends_on_outcomes": false,
+  "stream_binding": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/sunlamp/stream_2022.json",
+    "sha256": "e275e927377991c57fd779374f39e92a3bcb77cffdb4f522bccf7d1134efc851"
+  }
+}

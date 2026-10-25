@@ -1,0 +1,151 @@
+{
+  "action": "run_pair",
+  "implementation_sha256": {
+    "analyze_existing.py": "55f15e99c148fd1d98f202ba79c128d0086cf3cd91b16290d766b852c3ea2418",
+    "budget.py": "aeaae969b90bfe39d66095dfc507951c7b608f756b9787dfa4e3f0da112dbf37",
+    "extract_A.py": "55570a9001a7e9092296161a8701118437629f8e8f5cde01618e94f25b5f7bb0",
+    "freeze_protocol.py": "a1340735be45c6b1d5a50ce19af2b5439f72f1a33d5c888e9c0884180ba5f325",
+    "host_entry.py": "1c8aa7edb8e14984cc826104ca9ed33af0a1ea25e5fc847bcda1bb687ffbf479",
+    "make_dispatch.py": "92542f7edd20323b0c2387f94e67e9f30e2bb53f10c8dc4fb2281746b9c00826",
+    "manager.py": "97903d37ac5db739f48775ad18324852d2dbdc299a2259567a8641742e474e22",
+    "pair_runner.py": "0fd9292dde118f1c102997ff20fffee117f124e6ad3e3632219b1fc306b61403",
+    "summarize_diagnostic.py": "7ed4e2a1bdfe5d96c0b426ccd9ee0738ca90d31ccb9e7e3a710f2e41727050c0",
+    "test_analyze_existing.py": "41aa5d0d0943af47b6cff34c61281de66f083c0606a96d5b883cde7853781a49",
+    "test_budget.py": "32c37a9cd7d0b392d2ebd7d3cbe472186982befc07a7dab2e30f8e2379fdce01",
+    "test_host_entry.py": "2943cfeb78d5b422d5c3e21bcaff6cce3f8d7ff81877d1e3c17a2d9cb42ed2d5",
+    "test_manager.py": "6daf314a225e1a0bcb0eb943750fef2cff440edd1abc7779aa32d1956d998add",
+    "test_pair_runner.py": "e6c3659f8879b3252bd9f346e1b2ff0f002f3cbeea4837588b7384c463fe56de",
+    "test_verify_pair.py": "ae550ded92ce72454278e4c9c7f62f90599cd9c69c199b868cd18dd95960d890",
+    "verify_pair.py": "f8728d813013dec74a9510c7737447d42437ca94737012c551e85c22dd7a3ba1",
+    "verify_pilots.py": "5d8c246b0e32fe70692dfe8b3aaaaed2fec8dd07c4beac08e7ae1de9f345f35a"
+  },
+  "index_binding": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/frozen_inputs.json",
+    "sha256": "6608ffca250fe9733e1cd244e39eac84146ecd564b097ea101c7d2087f2d63e5"
+  },
+  "output_dir": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/pairs/g50p_diag_v1_sunlamp_s2023_w0097",
+  "panel": {
+    "labels": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_exploratory_20261023/data/sunlamp/dev_labels.json",
+      "sha256": "6782b4fe7f35f7e6f5b88bfde5705ef0362b16610df8086c3b359cea5a4a5239"
+    },
+    "manifest": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/panels/sunlamp_2023.json",
+      "sha256": "ca9f0a90f662a0c8badbb4ce059292ab1690f6e21c3e7a925b4efdc157605073"
+    },
+    "offline_predictions": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_o_sunlamp_offline_dev512/developer_predictions.json",
+      "sha256": "0723119678f41b370dc64662b3eeb88334a30fb15ccd607d112480636f50dd88"
+    }
+  },
+  "producer": {
+    "commit": "3ef5cbd32f16bcfcb650f4b5d7a04a69e718aa47",
+    "implementation_dir": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/implementation",
+    "implementation_sha256": {
+      "artifact_binding.py": "1ac7ae7391f235cda8eabd40105ea86bc78f390708078c0207f74c26cc70ab6c",
+      "audit_revision.py": "026408280468a895056ebb330685e6b30f769a37f0970fdc411a1113e6443528",
+      "complete_phase_tools.py": "b1ccdd6f4741762f288e6cb4f11380367c467ab2ed9c67015dd4b6e43a13ec2e",
+      "deterministic_runtime.py": "59ea6ef8e58e9a238589151a168263e90981a15fb81e3799f33b405df1cc5c30",
+      "durable_state.py": "62d27f792bd13f9bf42146434e21aae1191c34d01953b70debb92cab1c32e2d3",
+      "frozen_backend.py": "1a4034dc4cadf4a02406991e212192438006dd620e2ff2a51199b6cbf27d9bc0",
+      "guard_pools.py": "8479bc7c28b6832c90bece564873931a8f8d99074e9fe5bb44d15f370033ccfe",
+      "guarded_entry.py": "2d1faf9f6a0d031655d188fb8245ac40ea9505a902231996d5e41782c1453077",
+      "host_gate.py": "cbd08e5ca4384c4ab035579eda300d7930c3d8920fadb8eeecbbbc69b252b3c4",
+      "host_snapshot.py": "88e3956ef0ddaaa4933a58ad2f1c420e52108f0b7f7968de8d2bba7a66da4e6c",
+      "offline_baseline.py": "dbafd2d7213e218956471a22ccebc8270e7375a29c2af63ea207abd115c9504d",
+      "preforward_repair.py": "0bd872b31211429aedf8731ee1107e52603e42b6d866ca254c3ff68af08c0256",
+      "prepare_deterministic_revision.py": "c89f74eb1eed1d7de2ca9caa9bec908088b9fba50e7fe3e7a412e74aa7cde56e",
+      "prepare_round2.py": "d0dfacc25633a6c886f77c7eb3068c4828c53089f68c5fa43e4cde6453a96a6e",
+      "protected_engine.py": "88ae9fd81e65cf4dcbd743df81424202240fe5f4352a30136ca07afbd142f5b1",
+      "protected_learning.py": "122409e29979f2021912a9731d6979857ec034ae9ef2e8e0664242e66520634e",
+      "queue_control.py": "91fcf9d886ea82a002a29ae7542c0b4833e6fe4c311dc4c4c25bb374cae2f285",
+      "queue_round2.py": "f887ee9d7f0a9e4399e002ed7be66d82beaa59733f2fcc93553e0f83a7d6e74d",
+      "reference_driver.py": "a376513021a7adf778364999135da4c15d88bec935a5590028a1d3e644130742",
+      "round2_protocol.py": "5e698098bffaaf098a7cbe2b6dac8f599281f72418caaad9869fc0ca623dcdc5",
+      "run_round2.py": "24cd081dafb53013b29ea7ae775e030cea081d1a219191b0b6e3b6748f8e4e3e",
+      "summarize_round2.py": "8e56c78345783a4cc3d90384cb8079023c79b7f750fa70e84840caa972b544f5",
+      "test_artifact_binding.py": "db6ddb9b9fb1b5814eb45cf65890934ed01b84ca396950f08e29515e4c864a59",
+      "test_audit_revision.py": "c3990be9ac96dec3b01b7eb85cc2ff2b1d7d879598c65d5a0a49615d16f70e32",
+      "test_complete_phase_tools.py": "bbf6a97dc786ee95ff5645072cab25e51ff96f3616ee30f1d07e107e27fbcc52",
+      "test_deterministic_runtime.py": "62a4525d14590530e9ed570e8c356cbb073cc43eb600382055380bd55d63a8b6",
+      "test_durable_state.py": "43f89752d3da8ea49fca6cc7cb2b0637918b9bc27d88d71bd11ec2ffef66789b",
+      "test_engineering_repair_audit.py": "ef2283e77ccde66a8f4c6aa0a0491bf3dfe8d9321fedd1ee08e08fc24dc1376a",
+      "test_frozen_backend.py": "828540be15f277396e8355cc1d0f6d0de571d9cfb235af10d6181ee48b67a3d2",
+      "test_guard_pools.py": "aec2f8a54bc992aaac22366c79702ceb9b3875e99cc1023234e2e0a99dbc0ae6",
+      "test_guarded_entry.py": "5cf16c297404cd4fd5ecef1d1b73c04b44e972bfb8ed069bc24a4f647b654817",
+      "test_host_gate.py": "43b6b26a2c547ae1904f322ea017e860d5a2a8e5618cc74320a613cb7f89b226",
+      "test_host_snapshot.py": "a39099b22e372cca3fc0fab3c85f4fb65719060e1e3bc36b85c5f2d1a58b2019",
+      "test_offline_baseline.py": "514da93e1ba7bc2ee6a5d194621c2620f6df16d5260d07a39c33992387ba1e8a",
+      "test_preforward_repair.py": "b7f789bfacd5b3cf357d6a23efbaeab5ed20feb55389adc82f14cbfc8e1dd983",
+      "test_prepare_deterministic_revision.py": "1dec7985898d5360bd9e1632c1e23382cb6fd113816018e1d89ca776156f35ad",
+      "test_private_json.py": "91bfb3616f8e68d84253678915aafa4c946ec07d1bd1c9f53bc71bc006fb1935",
+      "test_protected_engine.py": "3c40405d79e4af19b2e6b9c72f519e8000f4aa9dbb59bd6045262fb5a0f17b5a",
+      "test_protected_learning.py": "9b642577ceacb70a47bfcebd16a908d2b008c63e1c4dc3ef8f2fb6c4af331959",
+      "test_queue_control.py": "f552826d6ae5106efee0bd6c450fc2571724e0258bbf63dd35d69965ccc0ca0c",
+      "test_queue_round2.py": "a73c047459dc3ed55cd8501f0fc94d1bbfa7d4beed04757b50ceeef66ac4fc24",
+      "test_reference_driver.py": "9ef769c93e1157fd03eff1d49b38bf90dfea09bb9a5af4b8887331551fcf405b",
+      "test_round2_protocol.py": "0f00a60e8b5630cf856cf872ba8c70fbe9f1d4c730198d2e042d4057870be6c0",
+      "test_run_round2.py": "fd67f38e0eff0be97d33147546a2934ed46fc8f17b87008d9d22683f34dbd1d4",
+      "test_summarize_round2.py": "a02906cc4bc9d0c2054d081408946109d16e35e9b6aa58956a0cdad5aba33724",
+      "test_verify_complete.py": "1d2c23be248147bbef244547fc42e9a2f60121068cee8defdb594550772ea552",
+      "test_verify_round2.py": "e5bd6874126f2c2f485206de70dcd4a81fb38f89f5e50425432b0b527dea630f",
+      "verify_complete.py": "70c5c4cdc817f2820b90ed747486952ea9d79610abfec3b6f858fbc32b9895a4",
+      "verify_engineering_phase.py": "6fa41caa5ff5fba57cbf52c1cb06b4c65ea3c9eafcf500bbff002899ed043230",
+      "verify_round2.py": "3e85ebe4601c2778b5fc29ce4c820f8d067cb3e24fcc8b220cdd478b1df03b3b"
+    }
+  },
+  "reference_trace_proof_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/inputs/extraction_proof.json",
+  "run_id": "g50p_diag_v1_sunlamp_s2023_w0097",
+  "schema": "g50p-risk-diagnostic-task-v1",
+  "selection": {
+    "candidate_number": 97,
+    "domain": "sunlamp",
+    "match_checkpoint": {
+      "cursors": {
+        "candidates": 99,
+        "commits": 99,
+        "next_index": 896,
+        "observed": 896,
+        "rollbacks": 0
+      },
+      "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000015",
+      "generation": 15,
+      "metadata_sha256": "4167d2978d1500901f908a3e8e7e005ec076a9c057524b075cd2ad894fc16c4c",
+      "state_sha256": "ef0c139787d61e71c79d0b110a88c8cd50a80c0f89c1e874de7667395df3ca94"
+    },
+    "observed_at_decision": 878,
+    "original_decision": "commit",
+    "original_final_checkpoint": {
+      "cursors": {
+        "candidates": 113,
+        "commits": 113,
+        "next_index": 1024,
+        "observed": 1024,
+        "rollbacks": 0
+      },
+      "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000026",
+      "generation": 26,
+      "metadata_sha256": "6ec269582e25932f319231a053010a795f0f1064f315661ea71e222b39134918",
+      "state_sha256": "4554053f1511a873bce4502867a332decc27086162ea84039efc089f5af015b7"
+    },
+    "original_task": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/tasks/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4.json",
+      "sha256": "4e19e663efd2e7671270b0576f83e63feeaa9fd4739449619cf307b26681054c"
+    },
+    "parent_checkpoint": {
+      "cursors": {
+        "candidates": 90,
+        "commits": 90,
+        "next_index": 832,
+        "observed": 832,
+        "rollbacks": 0
+      },
+      "directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/g50p2_det_20261024_p_sunlamp_s2023_N1024_B4/durable/checkpoints/generation-00000000000000000014",
+      "generation": 14,
+      "metadata_sha256": "7bea432bd2a4524333a6d8f34c84ecde3f24d26acd1b654e886971cb10b599f6",
+      "state_sha256": "e9b0084b9b65a40e4646567a41e00e19a03d700269a0b7e6aba605724b8336b0"
+    },
+    "stream_seed": 2023,
+    "window_id": "sunlamp:2023:97"
+  }
+}

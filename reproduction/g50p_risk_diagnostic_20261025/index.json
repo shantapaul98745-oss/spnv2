@@ -1,0 +1,409 @@
+{
+  "a_execution_max_seconds": 1800,
+  "complete_ODR_runs": 0,
+  "diagnostic_id": "g50p_risk_diagnostic_20261025",
+  "frozen_inputs": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/frozen_inputs.json",
+    "sha256": "6608ffca250fe9733e1cd244e39eac84146ecd564b097ea101c7d2087f2d63e5"
+  },
+  "host_modules": {
+    "host_gate": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/implementation/host_gate.py",
+      "sha256": "cbd08e5ca4384c4ab035579eda300d7930c3d8920fadb8eeecbbbc69b252b3c4"
+    },
+    "host_snapshot": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/implementation/host_snapshot.py",
+      "sha256": "88e3956ef0ddaaa4933a58ad2f1c420e52108f0b7f7968de8d2bba7a66da4e6c"
+    }
+  },
+  "implementation_sha256": {
+    "analyze_existing.py": "55f15e99c148fd1d98f202ba79c128d0086cf3cd91b16290d766b852c3ea2418",
+    "budget.py": "aeaae969b90bfe39d66095dfc507951c7b608f756b9787dfa4e3f0da112dbf37",
+    "extract_A.py": "55570a9001a7e9092296161a8701118437629f8e8f5cde01618e94f25b5f7bb0",
+    "freeze_protocol.py": "a1340735be45c6b1d5a50ce19af2b5439f72f1a33d5c888e9c0884180ba5f325",
+    "host_entry.py": "1c8aa7edb8e14984cc826104ca9ed33af0a1ea25e5fc847bcda1bb687ffbf479",
+    "make_dispatch.py": "92542f7edd20323b0c2387f94e67e9f30e2bb53f10c8dc4fb2281746b9c00826",
+    "manager.py": "97903d37ac5db739f48775ad18324852d2dbdc299a2259567a8641742e474e22",
+    "pair_runner.py": "0fd9292dde118f1c102997ff20fffee117f124e6ad3e3632219b1fc306b61403",
+    "summarize_diagnostic.py": "7ed4e2a1bdfe5d96c0b426ccd9ee0738ca90d31ccb9e7e3a710f2e41727050c0",
+    "test_analyze_existing.py": "41aa5d0d0943af47b6cff34c61281de66f083c0606a96d5b883cde7853781a49",
+    "test_budget.py": "32c37a9cd7d0b392d2ebd7d3cbe472186982befc07a7dab2e30f8e2379fdce01",
+    "test_host_entry.py": "2943cfeb78d5b422d5c3e21bcaff6cce3f8d7ff81877d1e3c17a2d9cb42ed2d5",
+    "test_manager.py": "6daf314a225e1a0bcb0eb943750fef2cff440edd1abc7779aa32d1956d998add",
+    "test_pair_runner.py": "e6c3659f8879b3252bd9f346e1b2ff0f002f3cbeea4837588b7384c463fe56de",
+    "test_verify_pair.py": "ae550ded92ce72454278e4c9c7f62f90599cd9c69c199b868cd18dd95960d890",
+    "verify_pair.py": "f8728d813013dec74a9510c7737447d42437ca94737012c551e85c22dd7a3ba1",
+    "verify_pilots.py": "5d8c246b0e32fe70692dfe8b3aaaaed2fec8dd07c4beac08e7ae1de9f345f35a"
+  },
+  "initial_cost_receipt": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/validation/initial_cost.json",
+    "sha256": "108a69f8d67255ac52b45133b0543ccd1943fbd49176b338ac6356a212d3a690"
+  },
+  "pilot_admission_template": {
+    "action": "verify_pilots",
+    "frozen_inputs": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/frozen_inputs.json",
+      "sha256": "6608ffca250fe9733e1cd244e39eac84146ecd564b097ea101c7d2087f2d63e5"
+    },
+    "implementation_sha256": {
+      "analyze_existing.py": "55f15e99c148fd1d98f202ba79c128d0086cf3cd91b16290d766b852c3ea2418",
+      "budget.py": "aeaae969b90bfe39d66095dfc507951c7b608f756b9787dfa4e3f0da112dbf37",
+      "extract_A.py": "55570a9001a7e9092296161a8701118437629f8e8f5cde01618e94f25b5f7bb0",
+      "freeze_protocol.py": "a1340735be45c6b1d5a50ce19af2b5439f72f1a33d5c888e9c0884180ba5f325",
+      "host_entry.py": "1c8aa7edb8e14984cc826104ca9ed33af0a1ea25e5fc847bcda1bb687ffbf479",
+      "make_dispatch.py": "92542f7edd20323b0c2387f94e67e9f30e2bb53f10c8dc4fb2281746b9c00826",
+      "manager.py": "97903d37ac5db739f48775ad18324852d2dbdc299a2259567a8641742e474e22",
+      "pair_runner.py": "0fd9292dde118f1c102997ff20fffee117f124e6ad3e3632219b1fc306b61403",
+      "summarize_diagnostic.py": "7ed4e2a1bdfe5d96c0b426ccd9ee0738ca90d31ccb9e7e3a710f2e41727050c0",
+      "test_analyze_existing.py": "41aa5d0d0943af47b6cff34c61281de66f083c0606a96d5b883cde7853781a49",
+      "test_budget.py": "32c37a9cd7d0b392d2ebd7d3cbe472186982befc07a7dab2e30f8e2379fdce01",
+      "test_host_entry.py": "2943cfeb78d5b422d5c3e21bcaff6cce3f8d7ff81877d1e3c17a2d9cb42ed2d5",
+      "test_manager.py": "6daf314a225e1a0bcb0eb943750fef2cff440edd1abc7779aa32d1956d998add",
+      "test_pair_runner.py": "e6c3659f8879b3252bd9f346e1b2ff0f002f3cbeea4837588b7384c463fe56de",
+      "test_verify_pair.py": "ae550ded92ce72454278e4c9c7f62f90599cd9c69c199b868cd18dd95960d890",
+      "verify_pair.py": "f8728d813013dec74a9510c7737447d42437ca94737012c551e85c22dd7a3ba1",
+      "verify_pilots.py": "5d8c246b0e32fe70692dfe8b3aaaaed2fec8dd07c4beac08e7ae1de9f345f35a"
+    },
+    "proof_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/preflight/pilot_proof.json",
+    "run_id": "g50p_diag_verify_pilots",
+    "schema": "g50p-risk-diagnostic-task-v1"
+  },
+  "preprocessing": [
+    {
+      "action": "extract_a",
+      "run_id": "g50p_diag_extract_A",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_extract_A.json",
+      "task_sha256": "bc3f5bd26665255824217ee7dea533f5830d433452a297d66f27e2bb073bdce1"
+    },
+    {
+      "action": "analyze_a",
+      "run_id": "g50p_diag_analyze_A",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_analyze_A.json",
+      "task_sha256": "b493f18db7b0976a9fc5124f05c92cfbf96ac0738689aa07d832a9b1c2ea7bb5"
+    }
+  ],
+  "protocol": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/protocol.json",
+    "sha256": "3b873f77db09e70e11e062d06af9ff7d6be74e522a09aeb9b34a824f5d6dbe54"
+  },
+  "schema": "g50p-risk-diagnostic-index-v1",
+  "summary_template": {
+    "action": "summarize_diagnostic",
+    "frozen_inputs": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/frozen_inputs.json",
+      "sha256": "6608ffca250fe9733e1cd244e39eac84146ecd564b097ea101c7d2087f2d63e5"
+    },
+    "implementation_sha256": {
+      "analyze_existing.py": "55f15e99c148fd1d98f202ba79c128d0086cf3cd91b16290d766b852c3ea2418",
+      "budget.py": "aeaae969b90bfe39d66095dfc507951c7b608f756b9787dfa4e3f0da112dbf37",
+      "extract_A.py": "55570a9001a7e9092296161a8701118437629f8e8f5cde01618e94f25b5f7bb0",
+      "freeze_protocol.py": "a1340735be45c6b1d5a50ce19af2b5439f72f1a33d5c888e9c0884180ba5f325",
+      "host_entry.py": "1c8aa7edb8e14984cc826104ca9ed33af0a1ea25e5fc847bcda1bb687ffbf479",
+      "make_dispatch.py": "92542f7edd20323b0c2387f94e67e9f30e2bb53f10c8dc4fb2281746b9c00826",
+      "manager.py": "97903d37ac5db739f48775ad18324852d2dbdc299a2259567a8641742e474e22",
+      "pair_runner.py": "0fd9292dde118f1c102997ff20fffee117f124e6ad3e3632219b1fc306b61403",
+      "summarize_diagnostic.py": "7ed4e2a1bdfe5d96c0b426ccd9ee0738ca90d31ccb9e7e3a710f2e41727050c0",
+      "test_analyze_existing.py": "41aa5d0d0943af47b6cff34c61281de66f083c0606a96d5b883cde7853781a49",
+      "test_budget.py": "32c37a9cd7d0b392d2ebd7d3cbe472186982befc07a7dab2e30f8e2379fdce01",
+      "test_host_entry.py": "2943cfeb78d5b422d5c3e21bcaff6cce3f8d7ff81877d1e3c17a2d9cb42ed2d5",
+      "test_manager.py": "6daf314a225e1a0bcb0eb943750fef2cff440edd1abc7779aa32d1956d998add",
+      "test_pair_runner.py": "e6c3659f8879b3252bd9f346e1b2ff0f002f3cbeea4837588b7384c463fe56de",
+      "test_verify_pair.py": "ae550ded92ce72454278e4c9c7f62f90599cd9c69c199b868cd18dd95960d890",
+      "verify_pair.py": "f8728d813013dec74a9510c7737447d42437ca94737012c551e85c22dd7a3ba1",
+      "verify_pilots.py": "5d8c246b0e32fe70692dfe8b3aaaaed2fec8dd07c4beac08e7ae1de9f345f35a"
+    },
+    "output_dir": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/delivery",
+    "run_id": "g50p_diag_summary",
+    "schema": "g50p-risk-diagnostic-task-v1"
+  },
+  "tasks": [
+    {
+      "pilot": true,
+      "run_id": "g50p_diag_v1_lightbox_s2021_w0001",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2021_w0001.json",
+      "task_sha256": "afeb56edb7398f93df7b38e4876d0f57e4d648a1dfdaa3934e67a09f6e75d894"
+    },
+    {
+      "pilot": true,
+      "run_id": "g50p_diag_v1_sunlamp_s2021_w0009",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_sunlamp_s2021_w0009.json",
+      "task_sha256": "6e2489a410a06e8931cbd57754b388ab88de73022c9ee2ccad48088562de9ace"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_lightbox_s2021_w0022",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2021_w0022.json",
+      "task_sha256": "1e0588eb43cf4d8dfe439de6e76adce05d1e083cac52e86962c0f57c08becb54"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_lightbox_s2021_w0044",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2021_w0044.json",
+      "task_sha256": "906465303e88630bfa5659fb9568f5efd6d63a1cb3cc5cef988e991ef12d2df4"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_lightbox_s2021_w0066",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2021_w0066.json",
+      "task_sha256": "263496e1129e224cb725fdcb97683a60ec781b7c0965e65a1b729ecd9eb9b715"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_lightbox_s2021_w0088",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2021_w0088.json",
+      "task_sha256": "cd21ead4a83bd9e114777a77c61dcb7fe80ae7aa217f24a6ae13100af50e95ca"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_lightbox_s2021_w0110",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2021_w0110.json",
+      "task_sha256": "f7f48e7b984ac80184b87969cc3fe63f955612a73cf2bf7c7dac62f383f76c0a"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_lightbox_s2021_w0132",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2021_w0132.json",
+      "task_sha256": "13b4c7c41e1767e4a1a8c4a41729f91f0d4b5a0bae0373cf1e35c225be80c755"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_lightbox_s2021_w0154",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2021_w0154.json",
+      "task_sha256": "5acd1ac58c3c01e6c4e464062d72c5340c672460e2a208289266659fe86a76b0"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_lightbox_s2022_w0001",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2022_w0001.json",
+      "task_sha256": "75f0ab8d6aa96ca773dfc2e05a14cda830a41ab9b68098cfd7552fe19805fc33"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_lightbox_s2022_w0022",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2022_w0022.json",
+      "task_sha256": "51cf8e59606ebe19b3bf62da0661c044b7894df4163ecfae4dd5c0b1931932f5"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_lightbox_s2022_w0044",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2022_w0044.json",
+      "task_sha256": "f3fbb722f52849235e4c7861378dd010f23619d3468874a45668190c636f99c4"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_lightbox_s2022_w0065",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2022_w0065.json",
+      "task_sha256": "5ec7c109838c96b170626633b6fa489cd34d9873e3f9c1d2f33c693f1cd35b5e"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_lightbox_s2022_w0087",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2022_w0087.json",
+      "task_sha256": "b345d2257c451fbdeaf03b1762c9525fc165afaacf7c3273efc2e19c08d55093"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_lightbox_s2022_w0108",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2022_w0108.json",
+      "task_sha256": "14698bafd6f9232825b6f284a157a0b6b811708d21bef9babafe80eab323baff"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_lightbox_s2022_w0130",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2022_w0130.json",
+      "task_sha256": "fc1b5d9b8891a7814e860e4e60ac9dbaa3b6cf409c69bf0bf91ca0116a76945e"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_lightbox_s2022_w0152",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2022_w0152.json",
+      "task_sha256": "96263f3b487d282ec2a7e448d5bf036865fd4798bc96fdca47a1ca43ecf8d89b"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_lightbox_s2023_w0001",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2023_w0001.json",
+      "task_sha256": "ae5d6c08b323dcc0b9d6c34ac5506beccee03e5a81ea0467154db0b3d1308960"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_lightbox_s2023_w0022",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2023_w0022.json",
+      "task_sha256": "fbc3b2026082750295381f89ee07209ac5dd25f0260dc61a611bea5caa2dd672"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_lightbox_s2023_w0044",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2023_w0044.json",
+      "task_sha256": "569fd8bc86728e9f5c297c149cf824ff051ac11456a90ace042bf287a1b57a80"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_lightbox_s2023_w0065",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2023_w0065.json",
+      "task_sha256": "7ce21901d97876f98f44134a92ec3cb37c7294566b121b7e90222c0ec3b05af6"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_lightbox_s2023_w0087",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2023_w0087.json",
+      "task_sha256": "319889166f4962b79e394d520b53b7e44ea4a56862250b99536c181a78629cd8"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_lightbox_s2023_w0108",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2023_w0108.json",
+      "task_sha256": "12afb18bce49476c1e9a7c21f01703a10c5990531ddd113d95967854b56c7a2a"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_lightbox_s2023_w0130",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2023_w0130.json",
+      "task_sha256": "9212f6917c1ac40a87118c0b916de0715a4c151808341c99bb4ada12b62b270d"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_lightbox_s2023_w0152",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2023_w0152.json",
+      "task_sha256": "77837d9deedae509168c36e312701ff7555962a64de65e3c4437920573403a2f"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_sunlamp_s2021_w0001",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_sunlamp_s2021_w0001.json",
+      "task_sha256": "9c8ee529d9793fe85eaa03e1645ce79c398618ba5a798a6425d8588c0383d297"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_sunlamp_s2021_w0016",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_sunlamp_s2021_w0016.json",
+      "task_sha256": "e7fa462a1d6a731ceb6110b8d6f88250156bc78d27b2366836b44876edd09c68"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_sunlamp_s2021_w0023",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_sunlamp_s2021_w0023.json",
+      "task_sha256": "95e4b3c4edf020dde21f940bb7d10542a261380609994db3c392fd4267927b58"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_sunlamp_s2021_w0031",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_sunlamp_s2021_w0031.json",
+      "task_sha256": "a9dc04d63ee6d2369027dbf2874ac47924d730e2923093c80c9bc0774f270393"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_sunlamp_s2021_w0054",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_sunlamp_s2021_w0054.json",
+      "task_sha256": "b4884dbb55d97289ab08995d6fdcd7e74c2d536b8513f8aac92ff7ad427377e1"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_sunlamp_s2021_w0084",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_sunlamp_s2021_w0084.json",
+      "task_sha256": "c362fcca3b9c31331027e6782d4fb7137d923c96cb35c9fcac09bfd87789ff99"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_sunlamp_s2021_w0114",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_sunlamp_s2021_w0114.json",
+      "task_sha256": "7d4179b7fedafc47a44d6439c36611dcaa023dc5ae6595e2c43f9e4292e77340"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_sunlamp_s2022_w0001",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_sunlamp_s2022_w0001.json",
+      "task_sha256": "b05df03c69dce84c3ee78ad3269a82dbd3a4e4c83f62b794e93797c8b1b9bd09"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_sunlamp_s2022_w0005",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_sunlamp_s2022_w0005.json",
+      "task_sha256": "2ae61685942a9cbbbe8ff8a187643ba5c4b4773121a7e29108a8fdc1e64335f8"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_sunlamp_s2022_w0009",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_sunlamp_s2022_w0009.json",
+      "task_sha256": "67b35ed1b04494d79c0a481cc4ade477a11f6f2f683afd8e9c596590a1003ef7"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_sunlamp_s2022_w0014",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_sunlamp_s2022_w0014.json",
+      "task_sha256": "3449ac0c1e39b9ccd03667b076fcb9561b59199105243992e30f6eada3da3242"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_sunlamp_s2022_w0015",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_sunlamp_s2022_w0015.json",
+      "task_sha256": "3f47cc05eaba0f3543aedfc2ec948fb919e5ef2ed90e75a007484d8de6edf533"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_sunlamp_s2022_w0046",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_sunlamp_s2022_w0046.json",
+      "task_sha256": "337aba7b249c552529bf82bb2c0395c6e2c4bf07b632b8bbdf2881730ad17edb"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_sunlamp_s2022_w0077",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_sunlamp_s2022_w0077.json",
+      "task_sha256": "f9504d10f2d41abd2fcd6a253412be18a50f099a374a9d87440dc68d03eb9ba1"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_sunlamp_s2022_w0108",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_sunlamp_s2022_w0108.json",
+      "task_sha256": "d42101194e8c9c3dfe149941e3165c7dabb42505f4bd310e736d6a3a1139bbb2"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_sunlamp_s2023_w0001",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_sunlamp_s2023_w0001.json",
+      "task_sha256": "f05acd42b9a358d93e85cd3868f6d56f966d2432261e8a1a3f1381fc9dce512f"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_sunlamp_s2023_w0017",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_sunlamp_s2023_w0017.json",
+      "task_sha256": "091148c18df79a221d414b4d6a8cff0a6ee9165c5c51de9c924b2b5117155507"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_sunlamp_s2023_w0033",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_sunlamp_s2023_w0033.json",
+      "task_sha256": "89d1912a23a624e8f0eafd6f64eb10f33b3b5d00d753c974b57223518af06351"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_sunlamp_s2023_w0049",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_sunlamp_s2023_w0049.json",
+      "task_sha256": "3b2b97a6a27a46c1581f38a482018d74cefc6cb914271cf49bad8e9eed0baf78"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_sunlamp_s2023_w0065",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_sunlamp_s2023_w0065.json",
+      "task_sha256": "0d7f4f7bb02c50674c530b43e673bc557c7576c59c5970d8278cde3f42eb103c"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_sunlamp_s2023_w0081",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_sunlamp_s2023_w0081.json",
+      "task_sha256": "5d378d0f56e2f0143733f98ebb1042e1c09a7409d5c4d5edf907eb95782584ae"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_sunlamp_s2023_w0097",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_sunlamp_s2023_w0097.json",
+      "task_sha256": "2f0a9d974168a6fcbd6d390cc3aba60f851fd8fb53fea7f85a40910e4ddf5f4b"
+    },
+    {
+      "pilot": false,
+      "run_id": "g50p_diag_v1_sunlamp_s2023_w0113",
+      "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_sunlamp_s2023_w0113.json",
+      "task_sha256": "14b6dd8185183ff8f8fcd051e9dd26d6c623985237084b71e126ba783d6a2602"
+    }
+  ]
+}

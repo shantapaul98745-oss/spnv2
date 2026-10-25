@@ -1,0 +1,33 @@
+{
+  "action": "analyze_a",
+  "analysis_manifest": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/inputs/analysis_manifest.json"
+  },
+  "extraction_proof_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/inputs/extraction_proof.json",
+  "frozen_inputs": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/frozen_inputs.json",
+    "sha256": "6608ffca250fe9733e1cd244e39eac84146ecd564b097ea101c7d2087f2d63e5"
+  },
+  "implementation_sha256": {
+    "analyze_existing.py": "55f15e99c148fd1d98f202ba79c128d0086cf3cd91b16290d766b852c3ea2418",
+    "budget.py": "aeaae969b90bfe39d66095dfc507951c7b608f756b9787dfa4e3f0da112dbf37",
+    "extract_A.py": "55570a9001a7e9092296161a8701118437629f8e8f5cde01618e94f25b5f7bb0",
+    "freeze_protocol.py": "a1340735be45c6b1d5a50ce19af2b5439f72f1a33d5c888e9c0884180ba5f325",
+    "host_entry.py": "1c8aa7edb8e14984cc826104ca9ed33af0a1ea25e5fc847bcda1bb687ffbf479",
+    "make_dispatch.py": "92542f7edd20323b0c2387f94e67e9f30e2bb53f10c8dc4fb2281746b9c00826",
+    "manager.py": "97903d37ac5db739f48775ad18324852d2dbdc299a2259567a8641742e474e22",
+    "pair_runner.py": "0fd9292dde118f1c102997ff20fffee117f124e6ad3e3632219b1fc306b61403",
+    "summarize_diagnostic.py": "7ed4e2a1bdfe5d96c0b426ccd9ee0738ca90d31ccb9e7e3a710f2e41727050c0",
+    "test_analyze_existing.py": "41aa5d0d0943af47b6cff34c61281de66f083c0606a96d5b883cde7853781a49",
+    "test_budget.py": "32c37a9cd7d0b392d2ebd7d3cbe472186982befc07a7dab2e30f8e2379fdce01",
+    "test_host_entry.py": "2943cfeb78d5b422d5c3e21bcaff6cce3f8d7ff81877d1e3c17a2d9cb42ed2d5",
+    "test_manager.py": "6daf314a225e1a0bcb0eb943750fef2cff440edd1abc7779aa32d1956d998add",
+    "test_pair_runner.py": "e6c3659f8879b3252bd9f346e1b2ff0f002f3cbeea4837588b7384c463fe56de",
+    "test_verify_pair.py": "ae550ded92ce72454278e4c9c7f62f90599cd9c69c199b868cd18dd95960d890",
+    "verify_pair.py": "f8728d813013dec74a9510c7737447d42437ca94737012c551e85c22dd7a3ba1",
+    "verify_pilots.py": "5d8c246b0e32fe70692dfe8b3aaaaed2fec8dd07c4beac08e7ae1de9f345f35a"
+  },
+  "output_dir": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/A",
+  "run_id": "g50p_diag_analyze_A",
+  "schema": "g50p-risk-diagnostic-task-v1"
+}
