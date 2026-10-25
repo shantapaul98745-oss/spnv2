@@ -6,6 +6,8 @@ import unittest
 import tempfile
 from pair_runner import atomic_json, sha256, canonical_sha
 from pair_runner import reference_trace
+from pair_runner import configure_frozen_modules
+from types import SimpleNamespace
 
 from pair_runner import (OUTPUT_SCHEMA, derive_branch_snapshots, evaluate_branches,
                          science_state, tree_digest)
@@ -197,6 +199,39 @@ class TraceExtractionContracts(unittest.TestCase):
         atomic_json(self.proof_path,proof)
         with self.assertRaisesRegex(ValueError,"GT-derived fields"):
             reference_trace(self.task,self.identity,budget=self.budget)
+
+
+class BootstrapImportContracts(unittest.TestCase):
+    """Mock original-core bootstrap only; zero models or model forwards."""
+    def scenario(self, fail_config=False):
+        calls=[];configured={"ready":False}
+        original=dict(baseline_task=dict(output_dir="old/run",run_id="old",bindings={"developer_labels":{"path":"dev_labels.json"}}),
+                      frozen_modules={name:{"path":name+".py","sha256":"f"*64}
+                                      for name in ("prediction","state_adapter","run_exploration","data_boundary","gate_core")})
+        def verify(task):calls.append("verify");return {"config":"bound-config"},{},"verified-original-core",{}
+        def configure(task,paths,core):
+            calls.append(("configure",task["output_dir"],task["run_id"],core))
+            if fail_config:raise ValueError("configuration failed before prediction")
+            configured["ready"]=True;return "fixedcfg",{}
+        baseline=SimpleNamespace(GTBoundary=lambda path:SimpleNamespace(phase="preflight"),verify_bindings=verify,configure=configure)
+        def importer(name,spec):
+            calls.append(("import",name))
+            if name=="prediction" and not configured["ready"]:raise ModuleNotFoundError("No module named utils")
+            return baseline if name=="run_exploration" else SimpleNamespace(name=name)
+        return original,SimpleNamespace(import_bound_module=importer),calls
+    def test_prediction_waits_for_verified_original_core_path_bootstrap(self):
+        original,backend,calls=self.scenario();saved=copy.deepcopy(original)
+        result=configure_frozen_modules(backend,original,output_dir="new/pairs/run",run_id="diagnostic",phase="adaptation")
+        position=next(i for i,row in enumerate(calls) if isinstance(row,tuple) and row[0]=="configure")
+        self.assertGreater(calls.index(("import","prediction")),position)
+        self.assertIn(("configure","new/pairs/run","diagnostic","verified-original-core"),calls)
+        self.assertEqual(result[-1],"fixedcfg");self.assertEqual(result[1].phase,"adaptation")
+        self.assertEqual(original,saved)
+    def test_bootstrap_failure_does_not_import_prediction_or_construct_model(self):
+        original,backend,calls=self.scenario(fail_config=True)
+        with self.assertRaisesRegex(ValueError,"configuration failed"):
+            configure_frozen_modules(backend,original,output_dir="new/pairs/run",run_id="diagnostic",phase="evaluation")
+        self.assertNotIn(("import","prediction"),calls)
 
 
 if __name__=="__main__": unittest.main()

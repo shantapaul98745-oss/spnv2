@@ -40,6 +40,50 @@ def immutable(path,value):
     return path
 
 
+def validate_preserved_A(index,row,task,spec):
+    """One exact already-completed A record, never a generic code-drift waiver."""
+    action=task.get('action')
+    if action not in ('extract_a','analyze_a'):
+        raise ValueError('Only already accepted zero-forward A preprocessing can preserve an old implementation map')
+    if spec['task']!=dict(path=row['task_path'],sha256=row['task_sha256']):
+        raise ValueError('Preserved A task binding differs from original row')
+    original=checked(spec['original_index'])
+    if (row not in original.get('preprocessing',[]) or task['implementation_sha256']!=original['implementation_sha256']
+            or original['frozen_inputs']!=index['frozen_inputs'] or original['host_modules']!=index['host_modules']):
+        raise ValueError('Preserved A original index, code, inputs or host admission differs')
+    module='extract_A.py' if action=='extract_a' else 'analyze_existing.py'
+    for name in ('host_entry.py','budget.py',module):
+        old=task['implementation_sha256'].get(name)
+        if old is None or old!=index['implementation_sha256'].get(name) or sha(PLAN/'implementation'/name)!=old:
+            raise ValueError('An actual A execution dependency changed: '+name)
+    proof,outcome,launch=checked(spec['proof']),checked(spec['outcome']),checked(spec['launch_record'])
+    expected_status='a_extracted' if action=='extract_a' else 'a_analyzed'
+    if (checked(spec['exit_code'])!=0 or proof.get('status')!='passed' or proof.get('model_forwards')!=0
+            or proof.get('frozen_inputs')!=index['frozen_inputs']
+            or outcome.get('exit_code')!=0 or outcome.get('status')!=expected_status
+            or outcome.get('proof')!=spec['proof']['path'] or outcome.get('proof_sha256')!=spec['proof']['sha256']):
+        raise ValueError('Preserved A lacks the exact actual exit, zero-forward proof and outcome')
+    state_record=spec['state_record'];attempt=state_record['attempt']
+    argv=launch['argv']
+    if (state_record.get('proof')!=spec['proof'] or attempt.get('run_id')!=row['run_id']
+            or attempt.get('task_path')!=row['task_path'] or attempt.get('task_sha256')!=row['task_sha256']
+            or attempt.get('exit_code')!=0 or attempt.get('outcome')!=outcome
+            or launch.get('project_id')!=PROJECT or launch.get('run_id')!=row['run_id']
+            or launch.get('run_nonce')!=attempt.get('nonce') or len(launch.get('run_nonce',''))<16
+            or type(launch.get('pid')) is not int or launch['pid']<=0
+            or type(launch.get('starttime')) is not int or launch['starttime']<=0 or not launch.get('boot_id')
+            or '--task-json' not in argv or argv[argv.index('--task-json')+1]!=row['task_path']
+            or launch.get('log_path')!=attempt.get('log_path')
+            or spec['exit_code']['path']!=attempt['log_path']+'.exitcode'
+            or Path(spec['outcome']['path'])!=Path(attempt['launch_directory'])/'outcome.json'
+            or Path(spec['launch_record']['path'])!=Path(attempt['launch_directory'])/'launch.json'):
+        raise ValueError('Preserved A state/launch/task/nonce lineage differs')
+    command_hash=hashlib.sha256(('\0'.join(argv)+'\0').encode()).hexdigest()
+    if launch.get('cmdline_sha256')!=command_hash:
+        raise ValueError('Preserved A launch command checksum differs')
+    return True
+
+
 def validate_index(index):
     rows=index.get('tasks',[])
     if (index.get('schema')!='g50p-risk-diagnostic-index-v1' or len(rows)!=48
@@ -48,10 +92,17 @@ def validate_index(index):
             or [row['pilot'] for row in rows]!=[True,True]+[False]*46):
         raise ValueError('Only two fixed included pilots followed by the remaining 46 windows are authorized')
     if index.get('complete_ODR_runs',0)!=0: raise ValueError('This diagnostic authorizes zero complete ODR')
+    preserved=index.get('preserved_preprocessing',{})
+    if not set(preserved)<={row['run_id'] for row in index.get('preprocessing',[])}:
+        raise ValueError('Preserved preprocessing allowance escapes original A rows')
     for row in [*index.get('preprocessing',[]),*rows]:
         task=checked(dict(path=row['task_path'],sha256=row['task_sha256']))
-        if task['run_id']!=row['run_id'] or task['implementation_sha256']!=index['implementation_sha256']:
+        if task['run_id']!=row['run_id']:
             raise ValueError('Diagnostic index/task identity mismatch')
+        if row['run_id'] in preserved:
+            validate_preserved_A(index,row,task,preserved[row['run_id']])
+        elif task['implementation_sha256']!=index['implementation_sha256']:
+            raise ValueError('Diagnostic index/task implementation mismatch')
         if row in rows and task['action']!='run_pair': raise ValueError('Pair window must use the fixed run_pair entry')
     # Root's independently prepared manifest validates exact pair/window IDs,
     # immutable source checkpoints and data boundaries. Absence fails closed.
@@ -222,7 +273,8 @@ def partial_delivery(index,state):
     forty-eight windows completed. A guard can report/analyse this preserved
     subset without restarting a worker or consuming another model forward.
     """
-    manifest_path=PLAN/'delivery/partial_manifest.json'
+    suffix='_'+state['index']['sha256'][:12] if index.get('technical_revision') else ''
+    manifest_path=PLAN/'delivery'/('partial_manifest'+suffix+'.json')
     if manifest_path.exists():
         state['partial_delivery']=binding(manifest_path)
         return manifest_path
@@ -259,7 +311,7 @@ def partial_delivery(index,state):
         all_attempts=state['attempts'],preprocessing=state['preprocessing'],
         queue_wait_seconds=state['queue_wait_seconds'],budget=budget_state,budget_read_error=budget_error,
         new_model_forwards_in_delivery=0,no_automatic_retry=True,scientific_scope_complete=False)
-    receipts_path=immutable(PLAN/'delivery/partial_receipts.json',receipts)
+    receipts_path=immutable(PLAN/'delivery'/('partial_receipts'+suffix+'.json'),receipts)
     manifest=dict(schema='g50p-diagnostic-partial-delivery-v1',status='partial_delivery_required',
                   stop_reason=reason,index=state['index'],receipts=binding(receipts_path),
                   accepted_window_count=len(accepted),main_window_count=len(state['main']),
@@ -299,6 +351,9 @@ def main(index_path):
     with project_lock(PLAN/'manager.lock'):
         state=read(PLAN/'status.json') if (PLAN/'status.json').exists() else new_state(index_path)
         if state['index']!=binding(index_path): raise ValueError('Existing diagnostic manager belongs to another index')
+        for run_id,spec in index.get('preserved_preprocessing',{}).items():
+            if state['preprocessing'].get(run_id)!=spec['state_record']:
+                raise ValueError('Preserved accepted A state changed or is missing; never rerun under a new implementation')
         state['manager']=manager_identity();registry=PLAN/'launches/registry.json'
         if not registry.exists(): atomic_json(registry,dict(schema='spnv2.round2.registry.v1',project_id=PROJECT,records=[]))
         last_write=0.

@@ -16,6 +16,7 @@ from pair_runner import (SCHEMA, OUTPUT_SCHEMA, atomic_json, binding, canonical_
                          derive_branch_snapshots, load_json, load_producer,
                          read_generation, require, science_state, sha256,
                          tree_digest, _metrics_summary, _offline_rows, reference_trace)
+from pair_runner import configure_frozen_modules
 
 
 METRICS = ("valid", "error", "original_valid", "original_error", "rotation_deg", "translation_m",
@@ -200,13 +201,10 @@ def execute(task_path, *, admission, launch_record, conflict_check, budget):
     old = load_producer(run_task)
     backend = old("frozen_backend")
     original_task = load_json(binding(selection["original_task"]))
-    frozen_modules = {name:backend.import_bound_module(name,spec) for name,spec in original_task["frozen_modules"].items()}
-    baseline, prediction = frozen_modules["run_exploration"], frozen_modules["prediction"]
-    boundary = baseline.GTBoundary(original_task["baseline_task"]["bindings"]["developer_labels"]["path"])
-    boundary.phase = "evaluation"
     budget.check_time("CPU verify fixed source/configuration bindings")
-    paths, receipt, core, prepared = baseline.verify_bindings(original_task["baseline_task"])
-    cfg, _ = baseline.configure(original_task["baseline_task"], paths, core)
+    frozen_modules, boundary, paths, receipt, core, prepared, cfg = configure_frozen_modules(
+        backend, original_task, output_dir=run_task["output_dir"], run_id=run_task["run_id"], phase="evaluation")
+    baseline, prediction = frozen_modules["run_exploration"], frozen_modules["prediction"]
     panel_doc = load_json(binding(run_task["panel"]["manifest"]))
     ids = [row["sample_id"] for row in panel_doc["items"]]
     labels = {row["sample_id"]:row for row in load_json(binding(run_task["panel"]["labels"]))["items"]}

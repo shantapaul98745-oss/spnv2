@@ -1,0 +1,204 @@
+{
+  "budget_identity_unchanged": true,
+  "changed_files": [
+    "manager.py",
+    "pair_runner.py",
+    "test_manager.py",
+    "test_verify_pair.py",
+    "verify_pair.py"
+  ],
+  "failed_attempt": {
+    "exit_code": 1,
+    "launch_directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/launches/0c43425d45a44e4cbf452b6e46dcf5be",
+    "launch_state": "wrapper_returned",
+    "log_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/logs/g50p_diag_v1_lightbox_s2021_w0001_0c43425d45a44e4cbf452b6e46dcf5be.log",
+    "nonce": "0c43425d45a44e4cbf452b6e46dcf5be",
+    "outcome": {
+      "error": "No module named 'utils'",
+      "error_type": "ModuleNotFoundError",
+      "exit_code": 1,
+      "finished_at": 1792908737.2566447,
+      "preserve_and_block": true,
+      "status": "failed"
+    },
+    "queued_at": 1792908726.9007561,
+    "run_id": "g50p_diag_v1_lightbox_s2021_w0001",
+    "session": "g50pdiag_0c43425d45a44e4c",
+    "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2021_w0001.json",
+    "task_sha256": "afeb56edb7398f93df7b38e4876d0f57e4d648a1dfdaa3934e67a09f6e75d894",
+    "wrapper_output": "Attach: screen -r g50pdiag_0c43425d45a44e4c\nLog: tail -F /home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/logs/g50p_diag_v1_lightbox_s2021_w0001_0c43425d45a44e4cbf452b6e46dcf5be.log\n",
+    "wrapper_returncode": 0
+  },
+  "failed_budget_cost": {
+    "attempt_id": "87e06f09ea86446bae3c4d166e3563b3",
+    "charged_seconds_upper": 11.825699580833316,
+    "exact_total_time_claim": false,
+    "finalization_reserved_upper_seconds": 2.0,
+    "measured_seconds_before_finalization": 9.825699580833316,
+    "status": "failed",
+    "unresolved_forward_tokens": []
+  },
+  "failed_run_replacement": {
+    "original_run_id": "g50p_diag_v1_lightbox_s2021_w0001",
+    "purpose": "new technical attempt identity, same frozen candidate; original attempt and zero-forward failure retained",
+    "replacement_run_id": "g50p_diag_v1_lightbox_s2021_w0001_importfix1",
+    "window_id": "lightbox:2021:1"
+  },
+  "frozen_inputs": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/frozen_inputs.json",
+    "sha256": "6608ffca250fe9733e1cd244e39eac84146ecd564b097ea101c7d2087f2d63e5"
+  },
+  "implementation_sha256": {
+    "analyze_existing.py": "55f15e99c148fd1d98f202ba79c128d0086cf3cd91b16290d766b852c3ea2418",
+    "budget.py": "aeaae969b90bfe39d66095dfc507951c7b608f756b9787dfa4e3f0da112dbf37",
+    "extract_A.py": "55570a9001a7e9092296161a8701118437629f8e8f5cde01618e94f25b5f7bb0",
+    "freeze_protocol.py": "a1340735be45c6b1d5a50ce19af2b5439f72f1a33d5c888e9c0884180ba5f325",
+    "host_entry.py": "1c8aa7edb8e14984cc826104ca9ed33af0a1ea25e5fc847bcda1bb687ffbf479",
+    "make_dispatch.py": "92542f7edd20323b0c2387f94e67e9f30e2bb53f10c8dc4fb2281746b9c00826",
+    "manager.py": "dc3b615bd3c1ae10d2d84545b2b3902080b656d7feab5d5e224579b231f3c95d",
+    "pair_runner.py": "c2a6c31bfdecaa0cc5422b76af298ae082d707702621dd149dc272ff8ab00e1b",
+    "summarize_diagnostic.py": "7ed4e2a1bdfe5d96c0b426ccd9ee0738ca90d31ccb9e7e3a710f2e41727050c0",
+    "test_analyze_existing.py": "41aa5d0d0943af47b6cff34c61281de66f083c0606a96d5b883cde7853781a49",
+    "test_budget.py": "32c37a9cd7d0b392d2ebd7d3cbe472186982befc07a7dab2e30f8e2379fdce01",
+    "test_host_entry.py": "2943cfeb78d5b422d5c3e21bcaff6cce3f8d7ff81877d1e3c17a2d9cb42ed2d5",
+    "test_manager.py": "e6042566adea6aff52b16515ef3ca86fb7b73add9c5e2a75983a104b93ec2f11",
+    "test_pair_runner.py": "e6c3659f8879b3252bd9f346e1b2ff0f002f3cbeea4837588b7384c463fe56de",
+    "test_verify_pair.py": "cc67a14023376271d2660739da9054e99a456edf3c7b6afbde404bc972189982",
+    "verify_pair.py": "e1be29c60fb1922fd2023b550e25a69f0ab4ddbc04d346b109ba9655bcfadfc0",
+    "verify_pilots.py": "5d8c246b0e32fe70692dfe8b3aaaaed2fec8dd07c4beac08e7ae1de9f345f35a"
+  },
+  "new_complete_ODR": 0,
+  "old_artifacts_overwritten": false,
+  "original_completed_preprocessing": {
+    "g50p_diag_analyze_A": {
+      "exit_code": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/logs/g50p_diag_analyze_A_efccadfd6e0449d48213007bf3293597.log.exitcode",
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "launch_record": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/launches/efccadfd6e0449d48213007bf3293597/launch.json",
+        "sha256": "0070669fac9d9657a54fd2645933553bc3d59d007c8411de455e4dfd7e8d9dc6"
+      },
+      "original_index": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/import_bootstrap_20261025/before/index.json",
+        "sha256": "0aaed9cac3c63b84a82767dd01e90428b1f54022b5bf4fb7adf3ddfbe6bcb550"
+      },
+      "outcome": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/launches/efccadfd6e0449d48213007bf3293597/outcome.json",
+        "sha256": "57c62af406844d121dc39c7688702d2403addb59ed42e21a9ea6a842069785e3"
+      },
+      "proof": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/A/proof.json",
+        "sha256": "7ffa226475bcc566bd67beda1c4573342ce4fb61651c3ee7a53ba1a9d96084ba"
+      },
+      "state_record": {
+        "attempt": {
+          "exit_code": 0,
+          "launch_directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/launches/efccadfd6e0449d48213007bf3293597",
+          "launch_state": "wrapper_returned",
+          "log_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/logs/g50p_diag_analyze_A_efccadfd6e0449d48213007bf3293597.log",
+          "nonce": "efccadfd6e0449d48213007bf3293597",
+          "outcome": {
+            "execution_attempt_elapsed_seconds": 6.8416426023468375,
+            "exit_code": 0,
+            "finished_at": 1792908719.259943,
+            "model_forwards": 0,
+            "proof": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/A/proof.json",
+            "proof_sha256": "7ffa226475bcc566bd67beda1c4573342ce4fb61651c3ee7a53ba1a9d96084ba",
+            "report": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/A/report.json",
+            "status": "a_analyzed"
+          },
+          "queued_at": 1792908711.2736228,
+          "run_id": "g50p_diag_analyze_A",
+          "session": "g50pdiag_efccadfd6e0449d4",
+          "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_analyze_A.json",
+          "task_sha256": "b493f18db7b0976a9fc5124f05c92cfbf96ac0738689aa07d832a9b1c2ea7bb5",
+          "wrapper_output": "Attach: screen -r g50pdiag_efccadfd6e0449d4\nLog: tail -F /home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/logs/g50p_diag_analyze_A_efccadfd6e0449d48213007bf3293597.log\n",
+          "wrapper_returncode": 0
+        },
+        "proof": {
+          "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/A/proof.json",
+          "sha256": "7ffa226475bcc566bd67beda1c4573342ce4fb61651c3ee7a53ba1a9d96084ba"
+        }
+      },
+      "task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_analyze_A.json",
+        "sha256": "b493f18db7b0976a9fc5124f05c92cfbf96ac0738689aa07d832a9b1c2ea7bb5"
+      }
+    },
+    "g50p_diag_extract_A": {
+      "exit_code": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/logs/g50p_diag_extract_A_1b5d7501d7374e38b7bafac4bc1a756d.log.exitcode",
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "launch_record": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/launches/1b5d7501d7374e38b7bafac4bc1a756d/launch.json",
+        "sha256": "2b582cc4f9d2992fa95fdaf2ba0560c9706634232e7fc776bb65642e40029caa"
+      },
+      "original_index": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/import_bootstrap_20261025/before/index.json",
+        "sha256": "0aaed9cac3c63b84a82767dd01e90428b1f54022b5bf4fb7adf3ddfbe6bcb550"
+      },
+      "outcome": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/launches/1b5d7501d7374e38b7bafac4bc1a756d/outcome.json",
+        "sha256": "5af584740018e7911fa29ab1ae6e1f29fef24382ad1f4f4b48b8712c7ce4bb63"
+      },
+      "proof": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/inputs/extraction_proof.json",
+        "sha256": "4e3ed130fb6b653c3d092cb5097d6ef0e3345fcee2e761d5f18d26aa092f9a34"
+      },
+      "state_record": {
+        "attempt": {
+          "exit_code": 0,
+          "launch_directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/launches/1b5d7501d7374e38b7bafac4bc1a756d",
+          "launch_state": "wrapper_returned",
+          "log_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/logs/g50p_diag_extract_A_1b5d7501d7374e38b7bafac4bc1a756d.log",
+          "nonce": "1b5d7501d7374e38b7bafac4bc1a756d",
+          "outcome": {
+            "exit_code": 0,
+            "finished_at": 1792908701.6724498,
+            "model_forwards": 0,
+            "proof": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/inputs/extraction_proof.json",
+            "proof_sha256": "4e3ed130fb6b653c3d092cb5097d6ef0e3345fcee2e761d5f18d26aa092f9a34",
+            "status": "a_extracted"
+          },
+          "queued_at": 1792908670.9398918,
+          "run_id": "g50p_diag_extract_A",
+          "session": "g50pdiag_1b5d7501d7374e38",
+          "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_extract_A.json",
+          "task_sha256": "bc3f5bd26665255824217ee7dea533f5830d433452a297d66f27e2bb073bdce1",
+          "wrapper_output": "Attach: screen -r g50pdiag_1b5d7501d7374e38\nLog: tail -F /home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/logs/g50p_diag_extract_A_1b5d7501d7374e38b7bafac4bc1a756d.log\n",
+          "wrapper_returncode": 0
+        },
+        "proof": {
+          "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/inputs/extraction_proof.json",
+          "sha256": "4e3ed130fb6b653c3d092cb5097d6ef0e3345fcee2e761d5f18d26aa092f9a34"
+        }
+      },
+      "task": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_extract_A.json",
+        "sha256": "bc3f5bd26665255824217ee7dea533f5830d433452a297d66f27e2bb073bdce1"
+      }
+    }
+  },
+  "original_index": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/import_bootstrap_20261025/before/index.json",
+    "sha256": "0aaed9cac3c63b84a82767dd01e90428b1f54022b5bf4fb7adf3ddfbe6bcb550"
+  },
+  "original_published_commit": "d1541af6affe50c295f3d43fa61d56681e82d13c",
+  "physical_forwards_in_failed_server_attempt": 0,
+  "prior_budget_journal_sha256": "8e12f0ec0cdca510b8c362bbfb615457e929004178da23d6f040a7816cc9f26a",
+  "real_pilot_acceptance": "pending",
+  "reason": "Prediction imported before verified original core path; same configure-before-prediction ordering as frozen producer",
+  "revision": "import_bootstrap_20261025",
+  "schema": "g50p-diagnostic-pure-technical-revision-v1",
+  "scientific_windows_unchanged": 48,
+  "validation": {
+    "all_local_pure_metadata_time_remains_within_original_360_second_conservative_charge": true,
+    "bootstrap_mock_tests": 2,
+    "bootstrap_process_seconds": 3.453,
+    "manager_contracts": "targeted preserved-A/no-rerun/partial-version checks; see local manager receipt",
+    "model_constructions": 0,
+    "physical_forwards": 0
+  }
+}

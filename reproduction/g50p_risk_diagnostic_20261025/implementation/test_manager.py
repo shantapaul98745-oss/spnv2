@@ -196,5 +196,57 @@ class DiagnosticManagerContracts(unittest.TestCase):
         self.assertEqual(manager.read(identity_path)['identity'],
                          dict(project_id=manager.PROJECT,frozen_inputs_sha256='f'*64))
 
+    def preserved_A_fixture(self):
+        implementation=self.plan/'implementation';implementation.mkdir(exist_ok=True)
+        code={}
+        for name in ('host_entry.py','budget.py','extract_A.py'):
+            path=implementation/name;path.write_text('# same accepted A module\n');code[name]=manager.sha(path)
+        old_code={**code,'manager.py':'1'*64};new_code={**code,'manager.py':'2'*64}
+        index=copy.deepcopy(self.index);index['implementation_sha256']=new_code;index['host_modules']={}
+        row=index['preprocessing'][0]
+        task=manager.read(row['task_path']);task['implementation_sha256']=old_code
+        atomic_json(row['task_path'],task);row['task_sha256']=manager.sha(row['task_path'])
+        original=copy.deepcopy(index);original['implementation_sha256']=old_code
+        old_index=self.plan/'original_index.json';atomic_json(old_index,original)
+        nonce='a'*32;directory=self.plan/'launches'/nonce;directory.mkdir(exist_ok=True)
+        log=self.plan/'logs/accepted_A.log';log.write_text('accepted A')
+        exit_path=Path(str(log)+'.exitcode');exit_path.write_text('0')
+        proof_path=self.plan/'A_proof.json'
+        atomic_json(proof_path,dict(status='passed',model_forwards=0,frozen_inputs=index['frozen_inputs']))
+        outcome=dict(status='a_extracted',exit_code=0,proof=str(proof_path),proof_sha256=manager.sha(proof_path))
+        atomic_json(directory/'outcome.json',outcome)
+        argv=['python',str(implementation/'host_entry.py'),'--task-json',row['task_path']]
+        launch=dict(project_id=manager.PROJECT,run_id=row['run_id'],run_nonce=nonce,pid=7,starttime=9,
+                    boot_id='original-boot',argv=argv,log_path=str(log),
+                    cmdline_sha256=manager.hashlib.sha256(('\0'.join(argv)+'\0').encode()).hexdigest())
+        atomic_json(directory/'launch.json',launch)
+        attempt=dict(run_id=row['run_id'],task_path=row['task_path'],task_sha256=row['task_sha256'],
+                     nonce=nonce,exit_code=0,outcome=outcome,log_path=str(log),launch_directory=str(directory))
+        state_record=dict(proof=manager.binding(proof_path),attempt=attempt)
+        spec=dict(original_index=manager.binding(old_index),task=dict(path=row['task_path'],sha256=row['task_sha256']),
+                  proof=manager.binding(proof_path),outcome=manager.binding(directory/'outcome.json'),
+                  exit_code=manager.binding(exit_path),launch_record=manager.binding(directory/'launch.json'),state_record=state_record)
+        return index,row,task,spec
+
+    def test_preserved_A_requires_exact_actual_proof_and_unchanged_runtime_modules(self):
+        index,row,task,spec=self.preserved_A_fixture()
+        self.assertTrue(manager.validate_preserved_A(index,row,task,spec))
+        changed=copy.deepcopy(index);changed['implementation_sha256']['extract_A.py']='c'*64
+        with self.assertRaises(ValueError):manager.validate_preserved_A(changed,row,task,spec)
+        with self.assertRaises(ValueError):manager.validate_preserved_A(index,row,{**task,'action':'run_pair'},spec)
+        Path(spec['exit_code']['path']).write_text('1');spec['exit_code']=manager.binding(spec['exit_code']['path'])
+        with self.assertRaises(ValueError):manager.validate_preserved_A(index,row,task,spec)
+
+    def test_revision_partial_delivery_keeps_old_manifest_and_new_revision_separate(self):
+        state=manager.new_state(self.index_path);state['status']='blocked'
+        original=manager.partial_delivery(self.index,state);original_bytes=original.read_bytes()
+        revised=copy.deepcopy(self.index);revised['technical_revision']='import_bootstrap_20261025'
+        state['index']['sha256']='c'*64
+        fresh=manager.partial_delivery(revised,state)
+        self.assertNotEqual(original,fresh)
+        self.assertIn('c'*12,fresh.name)
+        self.assertEqual(original.read_bytes(),original_bytes)
+        self.assertEqual(state['partial_delivery'],manager.binding(fresh))
+
 
 if __name__=='__main__':unittest.main(verbosity=2)

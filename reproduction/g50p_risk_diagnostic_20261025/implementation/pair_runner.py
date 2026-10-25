@@ -322,6 +322,26 @@ def _cursors(state):
     return dict(observed=c["observed"], candidates=c["candidates"], commits=c["commits"], rollbacks=c["rollbacks"], next_index=state["next_index"])
 
 
+def configure_frozen_modules(backend, original, *, output_dir, run_id, phase):
+    """Follow the producer's exact core-path-before-prediction import order.
+
+    prediction imports ``utils.postprocess`` and ``utils.metrics`` at module
+    scope. The producer's reviewed configure() installs its verified source-A
+    core path. Importing prediction before that bootstrap fails even though the
+    immutable prediction bytes are correct. No model is constructed here.
+    """
+    frozen = {name: backend.import_bound_module(name, spec)
+              for name, spec in original["frozen_modules"].items() if name != "prediction"}
+    baseline = frozen["run_exploration"]
+    boundary = baseline.GTBoundary(original["baseline_task"]["bindings"]["developer_labels"]["path"])
+    boundary.phase = phase
+    paths, receipt, core, prepared = baseline.verify_bindings(original["baseline_task"])
+    cfg, _ = baseline.configure({**original["baseline_task"], "output_dir":str(output_dir),
+                                "run_id":run_id}, paths, core)
+    frozen["prediction"] = backend.import_bound_module("prediction", original["frozen_modules"]["prediction"])
+    return frozen, boundary, paths, receipt, core, prepared, cfg
+
+
 def build_runtime(task, output, parent, *, budget, original_report):
     """Actual frozen SPNv2 wiring; no alternative decoder or learning rule."""
     budget.check_time("load producer code")
@@ -337,15 +357,11 @@ def build_runtime(task, output, parent, *, budget, original_report):
             "isolated parent is not the exact original task/source/stream identity")
     for name, digest in original["implementation_sha256"].items():
         require(task["producer"]["implementation_sha256"].get(name) == digest, "source task and producer code differ")
-    frozen = {name: old_backend.import_bound_module(name, spec) for name, spec in original["frozen_modules"].items()}
-    baseline, prediction = frozen["run_exploration"], frozen["prediction"]
-    boundary = baseline.GTBoundary(original["baseline_task"]["bindings"]["developer_labels"]["path"])
-    boundary.phase = "adaptation"
     budget.check_time("verify frozen producer assets")
-    paths, receipt, core, prepared = baseline.verify_bindings(original["baseline_task"])
-    budget.check_time("configure frozen model")
-    cfg, _ = baseline.configure({**original["baseline_task"], "output_dir":str(output),
-                                "run_id":task["run_id"]}, paths, core)
+    frozen, boundary, paths, receipt, core, prepared, cfg = configure_frozen_modules(
+        old_backend, original, output_dir=output, run_id=task["run_id"], phase="adaptation")
+    baseline, prediction = frozen["run_exploration"], frozen["prediction"]
+    budget.check_time("configured frozen model and prediction imports")
     from nets.build import SPNv2
     from dataset.transforms.build import build_transforms
     from utils.utils import load_camera_intrinsics, load_tango_3d_keypoints, set_seeds_cudnn
