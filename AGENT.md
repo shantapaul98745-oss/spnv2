@@ -1,5 +1,18 @@
 # SPNv2 项目工作约定
 
+## 持续有效：精简检查与自主推进（用户确认于2026-10-25）
+
+这些是跨对话的执行要求，不因换聊天或交接而失效。它们优先于旧项目记录中已经被后续授权取代的重复审批和全盘复查要求；不扩大当前实验范围。最新用户指令和当前有效实验协议仍优先。
+
+- **授权内默认执行。** 已授权的技术定位、必要修复、针对性验证和安全续接由执行者负责，不逐项请示，不等待用户反复说“继续”。只有需要改变科学协议、数据边界、预算或确实超出既有授权时，才请求用户决定。
+- **检查必须服务于决策。** 每项新增检查都须对应具体风险及会受结果影响的下一步决定；已有协议明确要求的准入和验收属于必要检查。不得仅以“保险起见”为由增加检查层级，也无需逐项向用户播报检查理由。
+- **证据复用，增量核验。** 已验收且相关代码、输入和环境绑定未变的证据直接复用；新对话只做一次有界交接核验，之后按游标核新增结果。不能因换聊天或阶段切换重读全部模型、重跑已完成实验或重新审计全实现。
+- **最小必要验证。** 启动时执行既定资源、身份和预算准入；结束时核新增退出、结果及协议要求的独立验收和严格一致性。额外检查只由实际变化、失败或未解决的具体疑点触发；通过后立即推进，不继续堆叠无关模拟测试。
+- **停止异常计算，不停止技术排障。** 出现轨迹不一致、NaN/Inf或数据越界时，停止受影响计算及下游派发并保留证据；同时自主定位原因。先利用已有证据；若具体差异未保存，可在原授权、资源门和剩余预算内做限定范围的最小复现，保存首个差异字段。不得盲目重试、近似放行或重算已成功持久化的计算。修复只验证受影响路径，严格通过后安全续接；需要改变研究条件才询问用户。
+- **不把未知原因当作被动等待理由。** 有可执行的排障步骤就继续；若确实只能等待资源或外部信息，明确唯一阻塞项并复用已有调查结果，不反复进行同一无变化检查。
+- **保留真实边界。** 科学规则、确定性要求、GT边界、冻结名单、统计分母、预算和失败成本不因精简流程而放宽。健康worker不热修改、不重启；不干扰他人计算，不用模型试跑探测资源。
+- **安静执行。** 服务器独立执行长任务，聊天仅做必要的单次巡检；只报告实质进展、阶段完成、明确异常、预算停止或需要用户决定的事项。目标模式及守护归属按最新授权，不因本规则自动创建、恢复或改绑。
+
 ## 阅读入口与范围
 
 - 每次接手先读本文件及 `../paper/SPNv2_复现实时进度.md`，随后对照实际配置、源码快照、状态JSON、权重和日志核验。文档不是实时事实的替代品。
@@ -260,3 +273,8 @@ Local validation: A11 pure-record checks; B11 then22 synthetic correctness/recov
 Experiment A extraction and analysis actually exited0 with passed zero-forward proofs. The first B window stopped before any model forward because prediction imported utils before the verified source core path was installed. Both paired runner and independent verifier now use the original producer order: import non-prediction modules, verify bindings/configure core paths, then import prediction. Frozen producer50, science,48 window selections and128-image panels are unchanged. Two targeted import-order mock tests passed with0 model construction/forward (3.453s); manager metadata contracts separately validate preserved A receipts and versioned partial delivery. These bounded pure-metadata tests remain inside the original360s local-validation conservative upper charge; no initial receipt or budget was reset.
 
 The failed actual attempt retains its original task/code/index/exit/failure data and11.825699580833316s active-time upper charge. The same lightbox2021 window1 receives only a new technical run identity ending_importfix1; it is not a new window/ODR. Old A tasks/proofs stay byte-identical and are reused through explicit hash-bound preprocessing receipts. New pending B tasks reside in tasks/import_bootstrap_20261025. A complete original index and changed-code snapshots are preserved under revisions/import_bootstrap_20261025/before. A new manager is allowed only after exact prior process exits and locks were verified; state migration retains all prior attempts and the original project/frozen-input budget. Real two-window acceptance remains pending, never replaced by these local tests.
+
+
+## 2026-10-25 diagnostic scripted-rotation recovery
+
+A and the first lightbox2021/w1 pair have actual passed proofs and must be reused. The second pilot stopped at the first observation after parent64. Bounded evidence identifies the original scripted rotation decoder cold/hot arithmetic as the sole five-float divergence; [1,6] runtime priming restores exactly the original operator output without model forward or RNG changes. A zero-forward targeted real-device check and preserved-pair metadata guard passed. Production repair has its own revision, original failures/code/tasks/costs retained, first accepted pair explicitly preserved, and second logical window technical ID ending_rotfix1. Actual main/verify/pilot acceptance remains determined by runtime status and receipts, not this preparation note. The current scientific producer,48 frozen windows,128-image panels,strict equality and40000/14400 caps stay unchanged.

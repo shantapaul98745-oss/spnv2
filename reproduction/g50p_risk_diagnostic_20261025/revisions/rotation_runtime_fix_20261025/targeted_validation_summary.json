@@ -1,0 +1,53 @@
+{
+  "actual_production_pair_still_pending": true,
+  "all_saved_observation_differences_explained": true,
+  "altered_proof_rejected": true,
+  "candidate_code": {
+    "manager.py": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/rotation_runtime_fix_20261025/candidate/manager.py",
+      "sha256": "e188058f8febdba85d8fc01acbdcecad296833143eda302ccee43d562ba96484"
+    },
+    "pair_runner.py": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/rotation_runtime_fix_20261025/candidate/pair_runner.py",
+      "sha256": "c61c4b244484aa4f9502beb34dbfcf4ba4d7ff68dae480bea2bb6b3c457a677d"
+    }
+  },
+  "candidate_index": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/rotation_runtime_fix_20261025/index_candidate.json",
+    "sha256": "37cd266e0dd0dc3bc85afd2ce3184377d66c132fd89a03cc257b32f28f32e5f5"
+  },
+  "cold_exactly_matches_failure": true,
+  "corrected_hot_exactly_matches_original": true,
+  "first_difference": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/first_trace_difference_20261025/evidence/difference.json",
+    "sha256": "f418766560617986153fb304ea1b7d854f8a4680965cab824c1d45e4e795e301"
+  },
+  "model_constructed": false,
+  "model_forwards": 0,
+  "operator_evidence": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/rotation_decoder_recovery_20261025/evidence/operator_evidence.json",
+    "sha256": "c6cd621660cf0031d03b42f0446baede1b7b0bad296a952a9fddc9be496f0b7c"
+  },
+  "preserved_pair_lineage_valid": true,
+  "raw_input_shape": [
+    1,
+    6
+  ],
+  "rng_unchanged": true,
+  "runtime_recovery": {
+    "dtype": "torch.float32",
+    "input_shape": [
+      1,
+      6
+    ],
+    "model_forwards": 0,
+    "original_operator_unchanged": true,
+    "prior_calls": 64,
+    "schema": "g50p-scripted-rotation-runtime-recovery-v1",
+    "synthetic_operator_calls": 6
+  },
+  "schema": "g50p-rotation-runtime-targeted-validation-v1",
+  "scientific_protocol_changed": false,
+  "status": "passed",
+  "zero_parent_kept_cold": true
+}
