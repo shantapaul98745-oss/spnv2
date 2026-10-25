@@ -139,6 +139,13 @@ def validate_index(index):
             or [row['pilot'] for row in rows]!=[True,True]+[False]*46):
         raise ValueError('Only two fixed included pilots followed by the remaining 46 windows are authorized')
     if index.get('complete_ODR_runs',0)!=0: raise ValueError('This diagnostic authorizes zero complete ODR')
+    for kind,action in [('pilot_admission','verify_pilots'),('summary','summarize_diagnostic')]:
+        template=index[kind+'_template']
+        if template.get('action')!=action or template.get('implementation_sha256')!=index['implementation_sha256']:
+            raise ValueError('Audit template implementation/action differs: '+kind)
+        path=index.get('audit_task_paths',{}).get(kind)
+        if path is not None and (Path(path).parent!=PLAN/'tasks' or Path(path).suffix!='.json'):
+            raise ValueError('Versioned audit task path escapes diagnostic tasks')
     preserved=index.get('preserved_preprocessing',{})
     if not set(preserved)<={row['run_id'] for row in index.get('preprocessing',[])}:
         raise ValueError('Preserved preprocessing allowance escapes original A rows')
@@ -300,7 +307,8 @@ def verification_task(index,row,state):
 
 def audit_task(index,state,kind):
     filename='pilot' if kind=='pilot_admission' else 'final'
-    path=PLAN/'tasks'/('verify_pilots.json' if filename=='pilot' else 'summarize_diagnostic.json')
+    default=PLAN/'tasks'/('verify_pilots.json' if filename=='pilot' else 'summarize_diagnostic.json')
+    path=Path(index.get('audit_task_paths',{}).get(kind,str(default)))
     if path.exists(): return path,read(path)['run_id']
     selected=index['tasks'][:2] if filename=='pilot' else index['tasks']
     receipts=dict(schema='g50p-diagnostic-execution-receipts-v1',
@@ -311,7 +319,8 @@ def audit_task(index,state,kind):
         missing_independent_acceptance_run_ids=[row['run_id'] for row in selected if row['run_id'] not in state['accepted']],
         all_attempts=state['attempts'],queue_wait_seconds=state['queue_wait_seconds'],
         preprocessing=state['preprocessing'])
-    receipts_path=immutable(PLAN/(filename+'_receipts.json'),receipts)
+    receipt_suffix='_'+state['index']['sha256'][:12] if index.get('audit_task_paths') else ''
+    receipts_path=immutable(PLAN/(filename+'_receipts'+receipt_suffix+'.json'),receipts)
     task=copy.deepcopy(index[kind+'_template']);task['execution_receipts']=binding(receipts_path)
     task['index_path']=str(PLAN/'index.json')
     path=immutable(path,task)
