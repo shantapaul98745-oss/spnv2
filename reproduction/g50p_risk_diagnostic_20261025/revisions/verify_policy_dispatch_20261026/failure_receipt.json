@@ -1,0 +1,62 @@
+{
+  "accepted_count_unchanged": 21,
+  "actual_wrapper_exit": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/logs/g50p_diag_v1_lightbox_s2023_w0087_notimelimit1_verify_aaf91bf52390437ca8688514bc05727a.log.exitcode",
+    "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+  },
+  "completed_main_state": {
+    "attempts": [
+      {
+        "exit_code": 0,
+        "launch_directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/launches/1a1df7a849ae4185a8883ad40a13a8ad",
+        "launch_state": "wrapper_returned",
+        "log_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/logs/g50p_diag_v1_lightbox_s2023_w0087_notimelimit1_1a1df7a849ae4185a8883ad40a13a8ad.log",
+        "nonce": "1a1df7a849ae4185a8883ad40a13a8ad",
+        "outcome": {
+          "exit_code": 0,
+          "finished_at": 1792991811.2304459,
+          "report": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/pairs/g50p_diag_v1_lightbox_s2023_w0087_notimelimit1/report.json",
+          "report_sha256": "834c1a29c8fe8f7dcc347c3c25b62f32269314add9e2a7658b4670f572302e1c",
+          "run_id": "g50p_diag_v1_lightbox_s2023_w0087_notimelimit1",
+          "status": "pair_main_complete"
+        },
+        "queued_at": 1792991198.9413128,
+        "run_id": "g50p_diag_v1_lightbox_s2023_w0087_notimelimit1",
+        "session": "g50pdiag_1a1df7a849ae4185",
+        "task_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/time_limit_removal_20261026/g50p_diag_v1_lightbox_s2023_w0087_notimelimit1.json",
+        "task_sha256": "889f4b3c265d80e7b20a20665f00923dd60ee80bbddce37a803583f85a8d2504",
+        "wrapper_output": "Attach: screen -r g50pdiag_1a1df7a849ae4185\nLog: tail -F /home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/logs/g50p_diag_v1_lightbox_s2023_w0087_notimelimit1_1a1df7a849ae4185a8883ad40a13a8ad.log\n",
+        "wrapper_returncode": 0
+      }
+    ],
+    "exit_code_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/logs/g50p_diag_v1_lightbox_s2023_w0087_notimelimit1_1a1df7a849ae4185a8883ad40a13a8ad.log.exitcode",
+    "launch_record_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/launches/1a1df7a849ae4185a8883ad40a13a8ad/launch.json",
+    "log_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/logs/g50p_diag_v1_lightbox_s2023_w0087_notimelimit1_1a1df7a849ae4185a8883ad40a13a8ad.log",
+    "outcome_path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/launches/1a1df7a849ae4185a8883ad40a13a8ad/outcome.json",
+    "report": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/pairs/g50p_diag_v1_lightbox_s2023_w0087_notimelimit1/report.json",
+      "sha256": "834c1a29c8fe8f7dcc347c3c25b62f32269314add9e2a7658b4670f572302e1c"
+    },
+    "run_id": "g50p_diag_v1_lightbox_s2023_w0087_notimelimit1",
+    "task": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/time_limit_removal_20261026/g50p_diag_v1_lightbox_s2023_w0087_notimelimit1.json",
+      "sha256": "889f4b3c265d80e7b20a20665f00923dd60ee80bbddce37a803583f85a8d2504"
+    }
+  },
+  "exit_code": 1,
+  "failed_log": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/logs/g50p_diag_v1_lightbox_s2023_w0087_notimelimit1_verify_aaf91bf52390437ca8688514bc05727a.log",
+    "sha256": "473efae4830b8e40eac41b18caa53c8914c5719dfde25e4ef31316f5c338319d"
+  },
+  "failed_task": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/g50p_diag_v1_lightbox_s2023_w0087_notimelimit1_verify.json",
+    "sha256": "388d20d54d90f1130c6cf8871dd7cc1a28d150432197c830d003342fa548f283"
+  },
+  "failure": "Missing budget_policy on dynamically generated verifier task",
+  "failure_point": "host_entry.validate_task before owned launch, admission, budget and imports",
+  "only_zero_forward_verification_required": true,
+  "owned_outcome_absent": true,
+  "physical_model_forwards": 0,
+  "pre_admission_failure_seconds_upper": 12.0,
+  "schema": "g50p-verifier-policy-predispatch-failure-v1"
+}

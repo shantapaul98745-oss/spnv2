@@ -296,3 +296,8 @@ Both included pilot pairs have actual main and independent verification passed. 
 ## 2026-10-26 current diagnostic budget amendment
 
 The user explicitly removed the cumulative14400-second hard stop and its derived deadline/watchdog termination for the same risk diagnostic. The effective protocol and budget_policy are bound by the current index; original protocol.json and budget/identity.json retain historical bytes. Time and all old charges remain recorded, measured and conservative components separately. The40000-forward cap, frozen48 windows/128 panels, science/GT/identity/resource/independent acceptance rules are unchanged. A and21 accepted pairs are reused; the interrupted87 window resumes from its valid complete512/77 checkpoint under a new technical ID, only unpersisted work replays. Goal mode remains paused. See revisions/time_limit_removal_20261026 and current status/cursor; old budget-stop delivery remains historical.
+
+
+## 2026-10-26 generated verifier policy-binding correction
+
+The time-unlimited resumed87 main completed with exact trace/full-state matching and saved branch outputs. Its independent entry stopped pre-import on an omitted dynamic budget_policy field. The versioned dispatch correction preserves this completed main separately from accepted, then only runs its required independent verifier. Both historical failure and all costs remain; no model replay of the completed main is allowed. Time hard stop stays disabled,40000-forward/scientific/GT/resource/identity requirements remain. Live status/cursor and revisions/verify_policy_dispatch_20261026 govern current progress.

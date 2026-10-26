@@ -179,6 +179,83 @@ def validate_preserved_pair(index, row, task, spec):
     return True
 
 
+def validate_preserved_main(index,row,task,spec):
+    """Preserve a completed producer while its independent verifier is pending.
+
+    This proves only the existing main's immutable completion and lineage. It
+    never adds the run to accepted; the normal verifier/finish path must do so.
+    A later accepted proof does not invalidate preservation of the same main.
+    """
+    task_binding=dict(path=row['task_path'],sha256=row['task_sha256'])
+    original=checked(spec['original_index'])
+    if (spec['task']!=task_binding or row not in original['tasks']
+            or task.get('action')!='run_pair'
+            or task['implementation_sha256']!=original['implementation_sha256']
+            or original['frozen_inputs']!=index['frozen_inputs']
+            or original['host_modules']!=index['host_modules']
+            or original.get('budget_policy')!=index.get('budget_policy')):
+        raise ValueError('Preserved pending main original task/index/input/policy lineage differs')
+    for name,digest in original['implementation_sha256'].items():
+        source=spec['original_code'][name]
+        if source['sha256']!=digest or sha(source['path'])!=digest:
+            raise ValueError('Preserved pending-main execution code changed: '+name)
+    main=spec['main_state'];report=checked(main['report'])
+    if (main['task']!=task_binding or main['run_id']!=row['run_id']
+            or report.get('schema')!='g50p-risk-diagnostic-pair-report-v1'
+            or report.get('status')!='pair_main_complete_pending_independent_verification'
+            or report['run_id']!=row['run_id'] or report['task_sha256']!=row['task_sha256']
+            or report['selection']!=task['selection'] or report['producer']!=task['producer']
+            or report['panel']!=task['panel']
+            or report['excluded_match_fields']!=['ledger_boundary']
+            or not report['full_scientific_checkpoint_equal']
+            or not report['original_trace_reproduced_stepwise']
+            or report['matched_scientific_sha256']!=report['expected_scientific_sha256']
+            or not all(report['branch_results'][branch]['learning_unchanged']
+                       and report['branch_results'][branch]['producer_provider_unchanged']
+                       for branch in ['accept','rollback'])
+            or report['gt_boundary']['forbidden_attempts']!=[]
+            or report['gt_boundary']['restored_phase']!='adaptation'):
+        raise ValueError('Preserved pending main lacks the original complete scientific producer report')
+    attempts=main['attempts']
+    if (not attempts or attempts[-1]['exit_code']!=0
+            or sum(a['exit_code']==0 for a in attempts)!=1
+            or len({a['nonce'] for a in attempts})!=len(attempts)):
+        raise ValueError('Preserved pending main does not have one unique successful producer completion')
+    for attempt in attempts:
+        directory=Path(attempt['launch_directory'])
+        outcome,launch=read(directory/'outcome.json'),read(directory/'launch.json')
+        argv=launch['argv']
+        if (attempt['exit_code'] not in (0,75)
+                or read(attempt['log_path']+'.exitcode')!=attempt['exit_code']
+                or outcome!=attempt['outcome'] or outcome['exit_code']!=attempt['exit_code']
+                or attempt['run_id']!=row['run_id'] or attempt['task_path']!=row['task_path']
+                or attempt['task_sha256']!=row['task_sha256'] or sha(attempt['task_path'])!=row['task_sha256']
+                or launch.get('project_id')!=PROJECT or launch['run_id']!=row['run_id']
+                or launch['task_sha256']!=row['task_sha256']
+                or launch['index_sha256']!=spec['original_index']['sha256']
+                or launch['implementation_sha256']!=original['implementation_sha256']
+                or launch['run_nonce']!=attempt['nonce'] or len(launch['run_nonce'])<16
+                or type(launch.get('pid')) is not int or launch['pid']<=0
+                or type(launch.get('starttime')) is not int or launch['starttime']<=0
+                or not launch.get('boot_id') or launch.get('log_path')!=attempt['log_path']
+                or '--task-json' not in argv or argv[argv.index('--task-json')+1]!=row['task_path']
+                or '--index' not in argv or argv[argv.index('--index')+1]!=str(PLAN/'index.json')
+                or hashlib.sha256(('\0'.join(argv)+'\0').encode()).hexdigest()!=launch['cmdline_sha256']):
+            raise ValueError('Preserved pending-main actual launch/exit/nonce binding changed')
+    last=attempts[-1];directory=Path(last['launch_directory'])
+    outcome=read(directory/'outcome.json');launch=read(directory/'launch.json')
+    launch_digest=hashlib.sha256(json.dumps(launch,sort_keys=True,separators=(',',':'),allow_nan=False).encode()).hexdigest()
+    if (main['log_path']!=last['log_path'] or main['exit_code_path']!=last['log_path']+'.exitcode'
+            or main['outcome_path']!=str(directory/'outcome.json')
+            or main['launch_record_path']!=str(directory/'launch.json')
+            or outcome.get('status')!='pair_main_complete' or outcome.get('run_id')!=row['run_id']
+            or outcome.get('report')!=main['report']['path']
+            or outcome.get('report_sha256')!=main['report']['sha256']
+            or report['launch_record_sha256']!=launch_digest):
+        raise ValueError('Preserved pending-main report/outcome/provenance binding differs')
+    return True
+
+
 def validate_index(index):
     validate_time_limit_policy(index)
     rows=index.get('tasks',[])
@@ -201,6 +278,10 @@ def validate_index(index):
     preserved_pairs=index.get('preserved_pairs',{})
     if not set(preserved_pairs)<={row['run_id'] for row in rows}:
         raise ValueError('Preserved pairs escape the fixed48 rows')
+    preserved_main=index.get('preserved_main',{})
+    if (not set(preserved_main)<={row['run_id'] for row in rows}
+            or set(preserved_main)&set(preserved_pairs)):
+        raise ValueError('Preserved pending main escapes or overlaps the fixed48 preservation rows')
     for row in [*index.get('preprocessing',[]),*rows]:
         task=checked(dict(path=row['task_path'],sha256=row['task_sha256']))
         if task['run_id']!=row['run_id']:
@@ -209,6 +290,8 @@ def validate_index(index):
             validate_preserved_A(index,row,task,preserved[row['run_id']])
         elif row['run_id'] in preserved_pairs:
             validate_preserved_pair(index,row,task,preserved_pairs[row['run_id']])
+        elif row['run_id'] in preserved_main:
+            validate_preserved_main(index,row,task,preserved_main[row['run_id']])
         elif task['implementation_sha256']!=index['implementation_sha256']:
             raise ValueError('Diagnostic index/task implementation mismatch')
         if row in rows and task['action']!='run_pair': raise ValueError('Pair window must use the fixed run_pair entry')
@@ -351,11 +434,15 @@ def finish(state):
 def verification_task(index,row,state):
     science=checked(dict(path=row['task_path'],sha256=row['task_sha256']))
     receipt=state['main'][row['run_id']]
-    task=dict(schema='g50p-risk-diagnostic-task-v1',action='verify_pair',run_id=row['run_id']+'_verify',
+    # A technical manager revision gets a fresh verifier identity/file. The
+    # original failed immutable verify task remains available as evidence.
+    suffix=state['index']['sha256'][:12]
+    task=dict(schema='g50p-risk-diagnostic-task-v1',action='verify_pair',run_id=row['run_id']+'_verify_'+suffix,
               implementation_sha256=index['implementation_sha256'],run_task=receipt['task'],
               execution_receipt=receipt,all_attempts=receipt['attempts'],
               proof_path=str(Path(science['output_dir'])/'proof.json'),index_path=str(PLAN/'index.json'))
     if 'index_binding' in science: task['index_binding']=science['index_binding']
+    if index.get('budget_policy') is not None: task['budget_policy']=copy.deepcopy(index['budget_policy'])
     path=immutable(PLAN/'tasks'/(task['run_id']+'.json'),task)
     return path,task['run_id']
 
@@ -474,6 +561,9 @@ def main(index_path):
         for run_id,spec in index.get('preserved_pairs',{}).items():
             if state['accepted'].get(run_id)!=spec['accepted_state'] or state['main'].get(run_id)!=spec['main_state']:
                 raise ValueError('Preserved accepted pair state changed; never rerun')
+        for run_id,spec in index.get('preserved_main',{}).items():
+            if state['main'].get(run_id)!=spec['main_state']:
+                raise ValueError('Preserved completed main changed; never rerun its model work')
         state['manager']=manager_identity();registry=PLAN/'launches/registry.json'
         if not registry.exists(): atomic_json(registry,dict(schema='spnv2.round2.registry.v1',project_id=PROJECT,records=[]))
         last_write=0.
