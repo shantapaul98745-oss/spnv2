@@ -1,0 +1,91 @@
+{
+  "candidate_refresh_required": true,
+  "controller": {
+    "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2/reproduction/sysu_migration_20261027/deployment_controller.py",
+    "sha256": "d1ef93fc1978c8faa161cdbd844132336d833c2c15f2c2a0a46c437fce8988aa"
+  },
+  "inputs": {
+    "asset_manifest": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/asset_transfer_manifest.json",
+      "sha256": "48ed7e3c79d01138620bf7ff3f6b1b532346a1199585e4ac07633d8004bf65aa"
+    },
+    "candidate_build_receipt": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/runtime_candidate/build_receipt.json",
+      "sha256": "4d6503906db43b3db9582ff4137cbf6805bb4ed957cdc1f527ef73368bd409ce"
+    },
+    "candidate_index": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/runtime_candidate/index_candidate.json",
+      "sha256": "034f364bab822710d4f583d0a821469139e4d19c8766c15bd8460b78681dff16"
+    },
+    "image_cache_receipt": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/required_image_cache_receipt.json",
+      "sha256": "70cd202d3dadcae7ad0193837dc3ceffaab9f93eecf93f7ad6c190ffc9a58dd4"
+    },
+    "image_manifest": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/required_images_spec_20261027.json",
+      "sha256": "3598543d58d3e90cc21267a4b5e7084d5a4c5da91fb7ce414f755099f64152a1"
+    },
+    "metadata_transfer": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/metadata_transfer_verification.json",
+      "sha256": "7cfa1eb60f2093a96c0b9c5a2c6c68c891daa5f36bb7078a2fcbb11d4684f479"
+    },
+    "original_candidate_index": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/source_handoff_snapshot_20261027/index_candidate.json",
+      "sha256": "4b6f9d51b4d1be400be1e2982bbfbdbe35a8147520cd0d9a4c79ee0f391dab75"
+    },
+    "reconciled_state": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/source_handoff_snapshot_20261027/reconciled_state.json",
+      "sha256": "48ffc4b3f64651ad85a6bc01f325ed7590e5a7d1bf3a11c1a077cc3f2801f978"
+    },
+    "screen_probe": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/namespace_screen_probe.json",
+      "sha256": "9d69301b3ea1088f5b6bfab628e0efacbd7ab6405e7bf66f66b0575276f3f2ad"
+    },
+    "source_budget_identity": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/source_handoff_snapshot_20261027/budget/identity.json",
+      "sha256": "05e91d7414e9f753d4b700a782f09f6ed6675f8e0b1b7cc11bb93f1133194857"
+    },
+    "source_budget_journal": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/source_handoff_snapshot_20261027/budget/journal.jsonl",
+      "sha256": "f1dcd1b56790aa9bc8856d539c4dd90e03a6f877546f7e1849aff6be05ce323a"
+    },
+    "source_controller_status": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/source_handoff_snapshot_20261027/controller_status.json",
+      "sha256": "36042732e3ef7e019aeefbbf09f20299fc9b742536a099a2f5a09e6b863a084b"
+    },
+    "source_fence": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/source_fence_receipt.json",
+      "sha256": "f84525e04d9efb8a337569c1071c53295240c8069cb10eb3c0efe5b062223f20"
+    },
+    "source_fence_intent": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/source_fence_intent.json",
+      "sha256": "c6a32b00289fed023f4cee83a5e679bdc52703cc80ab217f91517bb395cd1b7a"
+    },
+    "source_index": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/source_handoff_snapshot_20261027/index.json",
+      "sha256": "d9abd705d9af5613fc4ee23d40d4878bcc53ed1f1f74c9f47cd96750bf085c30"
+    },
+    "storage_plan": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/storage_plan_20261027.json",
+      "sha256": "3c5f6a61445786ca9a0e41386c27b78aa88fdf15fd389bb37c5ba06a377d270c"
+    },
+    "supplemental_closure": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/supplemental_asset_closure.json",
+      "sha256": "8a1131d6b8392cb6e18fa47242786c68d655d9068c619a6526218c701e896ccf"
+    }
+  },
+  "manager_nonce": "36f10b08f5c54fbcb7e0bb4f85c1c872",
+  "migration_id": "sysu_20261027",
+  "nonce": "7ca6d9e9056744a2982df55b56f1ad75",
+  "publication_notes": [
+    "Refresh runtime_candidate index migration_extensions and build_receipt to exact frozen code hashes before authorization.",
+    "Preserve old034f candidate; this sample itself is outsideM and cannot be executed.",
+    "Publish reviewed spec underM, set target_scientific_dispatch_authorized true only for the authorized controller, and bind its final SHA."
+  ],
+  "publication_status": "sample_only_requires_refreshed_candidate",
+  "schema": "spnv2-sysu-deployment-controller-spec-v1",
+  "stale_extension_keys": [
+    "dispatch_config"
+  ],
+  "target_scientific_dispatch_authorized": false
+}

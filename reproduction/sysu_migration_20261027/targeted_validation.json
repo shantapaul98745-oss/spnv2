@@ -1,0 +1,42 @@
+{
+  "schema": "sysu-migration-targeted-validation-v1",
+  "recorded_at_utc": "2026-10-26T19:30:40.020033+00:00",
+  "models_imported": false,
+  "model_forwards": 0,
+  "scope": [
+    "frozen writer byte-preserving storage adapter",
+    "source fence/final ledger and namespace metadata gates",
+    "dynamic saved-main verifier and fixed audit scope",
+    "private readonly image/init-cache mounts",
+    "owned independent screen metadata execution",
+    "lossless delta transport original raw SHA preservation"
+  ],
+  "actual_receipts": {
+    "namespace_path_probe.json": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/namespace_path_probe.json",
+      "sha256": "8cb691e39e62a7e777b5aa602bac8ffa1e6a59d5869ccd2020a16d5d411882ba"
+    },
+    "namespace_screen_probe_failed_root_ro.json": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/namespace_screen_probe_failed_root_ro.json",
+      "sha256": "a8b833824af575f7a3381539832f1cd9185ddf76ff3c58cfe6a8b45c2a23a6b9"
+    },
+    "namespace_screen_probe.json": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/namespace_screen_probe.json",
+      "sha256": "9d69301b3ea1088f5b6bfab628e0efacbd7ab6405e7bf66f66b0575276f3f2ad"
+    },
+    "required_image_cache_receipt.json": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/required_image_cache_receipt.json",
+      "sha256": "70cd202d3dadcae7ad0193837dc3ceffaab9f93eecf93f7ad6c190ffc9a58dd4"
+    },
+    "transport_delta_restore_validation.json": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/transport_delta_restore_validation.json",
+      "sha256": "7639b688239a833e26f1908f7f3e1b63842490743b6c74d9c0860170ffe19373"
+    },
+    "source_fence_receipt.json": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/source_fence_receipt.json",
+      "sha256": "f84525e04d9efb8a337569c1071c53295240c8069cb10eb3c0efe5b062223f20"
+    }
+  },
+  "scientific_acceptance": false,
+  "cross_gpu_strict_state_validation_pending": true
+}

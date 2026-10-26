@@ -362,3 +362,7 @@ Two focused local zero-model contracts passed: PermissionError with terminal arr
 新增 versioned storage_management_20261027 writer：显式磁盘预估、最近两个有效恢复点、冻结引用pins、发布后清理与删除审计；5项零模型测试通过。更新AGENTS/AGENT及实验计划模板。原冻结科学实现和验收绑定未修改；实际清理和迁移记录在服务器storage_audits与migrations目录，目标运行接入仍需版本绑定。
 
 实际清理三阶段已exit0：684个已审查无引用中间检查点，释放511051304960字节文件块；保留冻结父/匹配、最终状态和恢复点。约13.12GB中断/预处理恢复现场单列未决。归档三个受锁保护执行器与证据哈希清单，旧预算前缀不变，零模型前向，新增维护费用已单独追加同一账本。
+
+
+## 2026-10-27 中山大学迁移与保留策略接入候选
+新增 sysu_migration_20261027 版本化namespace/bootstrap/动态单任务配置、原manager最小派发修订和带源码围栏/预算前缀/资产校验的自动续接控制器；原host_entry资源/身份/预算/严格科学验收及producer50文件未改。存储适配器复用旧序列化器一次，state.bin字节一致，按授权root保留最新两个版本与pins。实际零模型namespace与独立screen退出0，补齐2171张冻结派生图像缓存并逐张SHA通过。传输v2以已验收不可变基底做无损差分，真实1.304GB对象编码1.213MB并还原至原始SHA，不改科学数据、不增加模型前向。源空闲控制器按精确PIDfd身份退出143，源派发锁由独立保护进程持有，旧账本最终前缀保留；目标科学计算仍待迁移/实际准入与跨GPU严格重合。所有源码和失败/验证日志在本项目migration目录留存。

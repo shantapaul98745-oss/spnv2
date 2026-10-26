@@ -1,0 +1,31 @@
+{
+  "schema": "sysu-migration-code-manifest-v1",
+  "frozen_scientific_files_modified": false,
+  "code": {
+    "manager_sysu.py": "665596a0f6a5ac8065ab56bb9608c60f6a20a0927b9e684069486d2ef2d86a9b",
+    "test_dispatch_config.py": "4127ae3ccc9a81e444a7bfd9d9c502cc7b9b9c28c792761b4ebf1d5fa1637201",
+    "NAMESPACE_BOOTSTRAP_DESIGN.md": "032036c59ec0476734008016b3e85a6950cde3aad2b651a2711c2a43c0fe6928",
+    "dispatch_config.py": "9547b293dcd694fe0311dcf30474929f2210f865c1bbf57f834984a727c765e0",
+    "DISPATCH_CONFIG_DESIGN.md": "df5bbf6d1a9435be9df2282d4df9009484190a4451ea62847c88cb2e57887778",
+    "README.md": "b098a55ba6213c2a6eea5554a582efce86ff9df9f9f12aa78586a3fb76ddbbdc",
+    "test_storage_adapter_v1.py": "bf2b5a101046c4080d50369aa6980f4a28b08707c69d71b9bac68f9d47f851d7",
+    "storage_adapter_v1.py": "5f357438a643add54c89f489fac3b238ad551cfaf5de5f5f2b5c817aee847233",
+    "namespace_runner.py": "3a78febdd949a52236cd139afdcaa32b5f24be6fb22efffa126ca1f121b34162",
+    "deployment_launch_spec.sample.json": "5b0198672d4d450a37eee9c3bdd40394f3d9b13ac8a2754d07ff5d1c2e4a3453",
+    "bootstrap.py": "1cc81a063843f7abb032dd2bd62bfd51d61c27147966c6333053ef4b4480f632",
+    "test_namespace_bootstrap.py": "49ab3acba601c26175a923e47816421fbbfdea791545062758cdfc1b4f83e4b3",
+    "targeted_validation.json": "15c7277a8d43067abd3f319bc1da1f2035189fffd3a247b874be7a1fc8b80b27",
+    "DEPLOYMENT_CONTROLLER_DESIGN.md": "37e3363029d27d702b2a8f5db9baa2bac10cb2f697058da85283330b01c1a2d4",
+    "deployment_controller.py": "d1ef93fc1978c8faa161cdbd844132336d833c2c15f2c2a0a46c437fce8988aa",
+    "test_deployment_controller.py": "8e960ff0266dd094a1b2aa88f666da192ba859f94cc4ca7846ba25ce4b2c5734",
+    "test_manager_sysu.py": "dba5328c61658e8a8cab91ce5cfbf34c0f88e9053ae08f59e77a6165abbfb3c4",
+    "operations/source_fence_guardian.py": "1e0c15f8016ac22a664d3caf4054d1bcbe5ab53913e89da1020f234b90d2ee14",
+    "operations/cleanup_source_transport_key.py": "96abfefde8981ebfb1f023f62c3944b218adc167043f3d3c35142ea6e1160a2f",
+    "transport/TRANSPORT_V2_README.md": "0a78bcdfdd68008a174113fd4cde49857ab1c4bb351b330004dfb08e8a39aab6",
+    "transport/receive_assets_v2.py": "7d7e2745e54ab2d61829c11c14e9453f7f37fee590d217693d0e1d6c2ec1bd57",
+    "transport/transport_v2.py": "c242ec9e7b670b0f0dcc698790826de08831e2ca8349060091326364cf0e8553",
+    "transport/send_assets_v2.py": "42fa3890988160268afaae64ee998f0615ddc8d59af65879b8077c8f88ee1ec4",
+    "transport/cleanup_target_transfer_key.py": "4472c4b4a9d4120e7e9c44e069a219832b320a087a6cb9ff106041fb62b7b423",
+    "transport/test_transport_v2.py": "ceed82cf6f0e303307dfcc1d99112cae6c64d3a14c5ee2c1ff17e524d2137d36"
+  }
+}
