@@ -1,0 +1,12 @@
+{
+  "schema": "storage-management-code-map-v1",
+  "based_on": "reproduction/odr003_round2_20261023/implementation/durable_state.py",
+  "frozen_runtime_modified": false,
+  "files": {
+    "storage_policy.py": "bbd55c675ef6fc8eb9dc0f982ca076482787087b2003b7deabb1791741952b54",
+    "README.md": "8003ef38c1ac126cd4dbf989bf23011023cd6ddb682e12118ed19cd61330d9bc",
+    "test_storage_policy.py": "64208fecced3ce1942960a5f1e4d8f037cf6ed7b84f91264ddae99daba7d8a0d",
+    "targeted_validation.json": "bdc37313e196ab2de7dfe60ed77a7212d016eacd511c0c67977b24eaa8b4211f",
+    "durable_state.py": "69ae2ee2db2798cb0703a56cfe132b27ced103dbe57997468f78d09fbbd0b54a"
+  }
+}
