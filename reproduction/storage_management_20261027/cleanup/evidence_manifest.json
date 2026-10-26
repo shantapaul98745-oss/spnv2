@@ -1,0 +1,64 @@
+{
+  "schema": "executed-storage-cleanup-evidence-v1",
+  "evidence_root": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/storage_audits/retention_20261027",
+  "files": {
+    "inventory_initial.json": {
+      "bytes": 3019318,
+      "sha256": "5c1eb2ace8c8082e6a489f1009da77cb64f3c1f2921e62a5ac59e77130e0d17b"
+    },
+    "inventory_reviewed.json": {
+      "bytes": 3019401,
+      "sha256": "de8d1af9728b84d79ee7b8199d673b0b28e9f0c1a02b737ea48d6f6c4792ccbc"
+    },
+    "reference_graph.json": {
+      "bytes": 783414,
+      "sha256": "c53acbd25371f7c11f72c13cf0450b03eff050b9eccedef7b0274868a74c3c87"
+    },
+    "inventory_diagnostic_reviewed.json": {
+      "bytes": 3051476,
+      "sha256": "b6caba5a35d1874185fe75cf75811d39bfe5c7cd14b55c79443b2e0796d9a1fb"
+    },
+    "inventory_engineering_reviewed.json": {
+      "bytes": 3015030,
+      "sha256": "11bcd67f5d1744a0464c8d1df7ee933797b45be47da6639491aceec09f07b59e"
+    },
+    "deletion_journal.jsonl": {
+      "bytes": 1405603,
+      "sha256": "c2cf6a1d755d8e6dd9fa18aa7ff78f42ce1ec7974ddc3da5207f4361ad766488"
+    },
+    "deletion_journal_diagnostic.jsonl": {
+      "bytes": 70956,
+      "sha256": "132b5ae7013f0984b5aa03296b0c092f2a967edf70a6e865da8c31be987e671f"
+    },
+    "deletion_journal_engineering.jsonl": {
+      "bytes": 27966,
+      "sha256": "72976689da2e0ccbfa6a175e131e748b7604620eaa39bdd7ae862e4c9111dd80"
+    },
+    "cleanup_result.json": {
+      "bytes": 640,
+      "sha256": "dc4e80e6e45525b05a13f57c889b501c3171913a08dd65c7f5a9e327676cb9e4"
+    },
+    "cleanup_result_diagnostic.json": {
+      "bytes": 637,
+      "sha256": "be66c204adb6e8bd97de66be7d7e41810ecfdba5a72b32b4e0575b27b803bde5"
+    },
+    "cleanup_result_engineering.json": {
+      "bytes": 635,
+      "sha256": "4b7a65bf3a97fe3105f6aba7a7cff8f346c50af147ea900a6f2f23844b2113f4"
+    },
+    "remaining_file_inventory.json": {
+      "bytes": 2741817,
+      "sha256": "b1eeda7dd053ce7a5c0b8dd74a335a568b14b92ccc1dada30d257df645b35cd2"
+    },
+    "final_summary.json": {
+      "bytes": 2920,
+      "sha256": "73a1273f87331a5fd948358ac484befc23862db9f2a0a07258b7cfafabe4232c"
+    },
+    "cost_settlement.json": {
+      "bytes": 127427,
+      "sha256": "cbf8cc73c71a3a4b64aa845949979c1c9f987559e7cdf947fc1d1d49291e1489"
+    }
+  },
+  "no_scientific_state_deserialized": true,
+  "no_scientific_protocol_change": true
+}

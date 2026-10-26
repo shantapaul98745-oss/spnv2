@@ -360,3 +360,5 @@ Two focused local zero-model contracts passed: PermissionError with terminal arr
 
 ## 2026-10-27 存储保留修订
 新增 versioned storage_management_20261027 writer：显式磁盘预估、最近两个有效恢复点、冻结引用pins、发布后清理与删除审计；5项零模型测试通过。更新AGENTS/AGENT及实验计划模板。原冻结科学实现和验收绑定未修改；实际清理和迁移记录在服务器storage_audits与migrations目录，目标运行接入仍需版本绑定。
+
+实际清理三阶段已exit0：684个已审查无引用中间检查点，释放511051304960字节文件块；保留冻结父/匹配、最终状态和恢复点。约13.12GB中断/预处理恢复现场单列未决。归档三个受锁保护执行器与证据哈希清单，旧预算前缀不变，零模型前向，新增维护费用已单独追加同一账本。

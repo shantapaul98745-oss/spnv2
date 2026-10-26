@@ -1,0 +1,67 @@
+{
+  "schema": "spnv2-retention-final-summary-v1",
+  "finished_at": "2026-10-26T16:47:45.694820+00:00",
+  "cleanup_scope": [
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023",
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025"
+  ],
+  "deleted_generations": 684,
+  "released_file_blocks_bytes": 511051304960,
+  "remaining_allocated_bytes": 287184740352,
+  "remaining_allocated_by_directory": {
+    "odr003_round2_20261023": 170431258624,
+    "g50p_risk_diagnostic_20261025": 116753481728
+  },
+  "remaining_logical_by_class": {
+    "must_keep": 275357622778,
+    "undetermined": 13120286422
+  },
+  "remaining_allocated_by_class": {
+    "must_keep": 274064277504,
+    "undetermined": 13120462848
+  },
+  "uncertain_interruption_recovery_stores": {
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/deterministic_20261024/g50p2_det_20261024_eng_lightbox_p_interrupted_resumed/durable": {
+      "bytes": 4613026441,
+      "generations": [
+        "generation-00000000000000000006",
+        "generation-00000000000000000002",
+        "generation-00000000000000000004",
+        "generation-00000000000000000005",
+        "generation-00000000000000000001",
+        "generation-00000000000000000003"
+      ]
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/deterministic_20261024/g50p2_det_20261024_eng_sunlamp_p_interrupted_resumed/durable": {
+      "bytes": 3959169444,
+      "generations": [
+        "generation-00000000000000000002",
+        "generation-00000000000000000004",
+        "generation-00000000000000000001",
+        "generation-00000000000000000003"
+      ]
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/preprocess_rng_fix_20261024/g50p2_eng_sunlamp_p_interrupted_resumed/durable": {
+      "bytes": 2599118117,
+      "generations": [
+        "generation-00000000000000000002",
+        "generation-00000000000000000003"
+      ]
+    },
+    "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/odr003_round2_20261023/runs/preprocess_rng_fix_20261024/g50p2_eng_lightbox_p_interrupted_resumed/durable": {
+      "bytes": 1948959237,
+      "generations": [
+        "generation-00000000000000000002",
+        "generation-00000000000000000003"
+      ]
+    }
+  },
+  "all_163_migration_binary_paths_and_sizes_preserved": true,
+  "diagnostic_accepted_proof_report_bindings_unchanged": 26,
+  "frozen_scientific_implementation_hashes_unchanged": true,
+  "model_forwards": 0,
+  "old_budget_prefix_preserved": true,
+  "cost_receipt": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/storage_audits/retention_20261027/cost_settlement.json",
+  "retention_code_commit": "82939e4ce186059f1496503d772a9bce5f8ef5ed",
+  "new_writer_not_hot_deployed_to_existing_workers": true
+}
