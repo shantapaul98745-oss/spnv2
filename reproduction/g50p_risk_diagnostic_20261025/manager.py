@@ -22,6 +22,7 @@ from host_entry import PLAN, BASE, PROJECT, host_modules, project_lock, read, sh
 PYTHON='/home/ps/anaconda3/envs/SPNv2/bin/python'
 WRAPPER=BASE/'spnv2_runs/scripts/run_in_screen_guarded.sh'
 RESOURCE_INTERVAL=300
+TERMINAL_HANDOFF_GRACE_SECONDS=30
 
 
 def binding(path): return dict(path=str(path),sha256=sha(path))
@@ -344,22 +345,77 @@ def launch(state,task_path,run_id,index_path):
     write_state(state)
 
 
+def wait_for_terminal_evidence(state,item,reason,error_type=None):
+    """Hold the same active attempt through a short unverified exit handoff.
+
+    No process exception proves ownership, life or death. This grace only waits
+    for the existing wrapper/outcome files; it cannot launch or accept a task.
+    A healthy, positively verified running worker never starts this deadline.
+    """
+    now=time.monotonic()
+    handoff=item.get('terminal_evidence_handoff')
+    boot_id=state.get('manager',{}).get('boot_id')
+    if handoff is None:
+        handoff=dict(schema='g50p-terminal-evidence-handoff-v1',first_observed_at=time.time(),
+            started_monotonic=now,deadline_monotonic=now+TERMINAL_HANDOFF_GRACE_SECONDS,
+            grace_seconds=TERMINAL_HANDOFF_GRACE_SECONDS,boot_id=boot_id,
+            identity_status='unverified',reason=reason,identity_probe_error_type=error_type)
+        item['terminal_evidence_handoff']=handoff
+    if handoff['boot_id']!=boot_id:
+        state.update(status='blocked',reason='Boot changed during unresolved terminal-evidence handoff; preserve active attempt, no downstream dispatch')
+    elif now>=handoff['deadline_monotonic']:
+        handoff['timed_out_at']=time.time()
+        state.update(status='blocked',reason='Terminal-evidence handoff timed out with identity unverified; preserve active attempt, no downstream dispatch')
+    else:
+        state.update(status='awaiting_terminal_evidence',reason='Waiting for existing wrapper/outcome evidence; process identity unverified, no downstream dispatch')
+
+
 def finish(state):
     item=state['active'];exit_path=Path(item['log_path']+'.exitcode')
-    if not exit_path.exists():
-        directory=Path(item['launch_directory']);record=directory/'launch.json'
-        if time.time()-item['queued_at']>120:
-            if not record.exists():
-                state.update(status='blocked',reason='Ambiguous launch identity missing; no duplicate launch')
+    directory=Path(item['launch_directory']);outcome_path=directory/'outcome.json'
+    def terminal_ready():
+        return exit_path.is_file() and outcome_path.is_file()
+    if not terminal_ready():
+        reason=None;error_type=None
+        handoff=item.get('terminal_evidence_handoff')
+        if handoff is not None:
+            # Once identity became unavailable, only the existing terminal
+            # files can close this handoff. Do not reinterpret the PID as alive.
+            reason=handoff['reason'];error_type=handoff.get('identity_probe_error_type')
+        elif exit_path.exists() or outcome_path.exists():
+            reason='incomplete_terminal_evidence'
+        elif time.time()-item['queued_at']>120:
+            record=directory/'launch.json'
+            if not record.is_file():
+                reason='launch_identity_missing'
             else:
                 from host_entry import live_identity
-                try: alive=live_identity(read(record))
-                except FileNotFoundError: alive=False
-                if not alive: state.update(status='blocked',reason='Owned worker exited without complete exit evidence')
-        return
-    code=int(exit_path.read_text().strip());outcome_path=Path(item['launch_directory'])/'outcome.json'
-    if not outcome_path.exists():
-        state.update(status='blocked',reason='Actual wrapper exit lacks owned outcome');return
+                try:
+                    alive=live_identity(read(record))
+                except (PermissionError,FileNotFoundError,ProcessLookupError) as error:
+                    # /proc can disappear or deny environ while the worker
+                    # exits. This is unverified, never successful ownership or
+                    # confirmed death. Other exception classes remain visible.
+                    reason='process_identity_unavailable_during_terminal_handoff'
+                    error_type=type(error).__name__
+                else:
+                    if not alive:
+                        reason='process_identity_not_verified'
+        # The actual failure wrote its valid terminal files in the same second
+        # as the /proc exception. Recheck before waiting or blocking.
+        if not terminal_ready():
+            if reason is not None:
+                wait_for_terminal_evidence(state,item,reason,error_type)
+            return
+    handoff=item.get('terminal_evidence_handoff')
+    if handoff is not None:
+        handoff.update(resolved_at=time.time(),resolution='existing_terminal_evidence_received')
+        if state.get('status')=='awaiting_terminal_evidence':
+            state.update(status='running',reason='Terminal evidence arrived; continue normal strict outcome validation')
+    # Completed terminal evidence is authoritative; a normally exited worker
+    # need not retain its old /proc entry. All existing exit/outcome/report and
+    # independent acceptance conditions remain unchanged below.
+    code=int(exit_path.read_text().strip())
     outcome=read(outcome_path);item.update(exit_code=code,outcome=outcome)
     if outcome.get('exit_code')!=code:
         state.update(status='blocked',reason='Wrapper and owned outcome exit codes differ');return

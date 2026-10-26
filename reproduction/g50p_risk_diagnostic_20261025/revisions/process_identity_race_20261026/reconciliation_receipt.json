@@ -1,0 +1,39 @@
+{
+  "accepted_count_unchanged": 26,
+  "completed_main_count": 27,
+  "completed_main_not_reexecuted": true,
+  "exception": "PermissionError reading proc/environ at worker terminal transition",
+  "independent_acceptance_still_pending": true,
+  "main_report": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/pairs/g50p_diag_v1_sunlamp_s2021_w0016/report.json",
+    "sha256": "14ad557a37398745b72657dc1e9cd2b4bed1085a6b66b392294173faadb33c84"
+  },
+  "manager_actual_exit": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/logs/manager_verify_policy_88117b540ac04f76b825113388a34d48.log.exitcode",
+    "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+  },
+  "manager_exit_code": 1,
+  "manager_failure_log": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/logs/manager_verify_policy_88117b540ac04f76b825113388a34d48.log",
+    "sha256": "5474121e23251a38de5ed709136e39f6c2d287bf6d0587226f51c1e5c7b13bcf"
+  },
+  "new_model_forwards": 0,
+  "reconciled_state": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/process_identity_race_20261026/reconciled_state.json",
+    "sha256": "48ffc4b3f64651ad85a6bc01f325ed7590e5a7d1bf3a11c1a077cc3f2801f978"
+  },
+  "schema": "g50p-manager-exit-read-race-reconciliation-v1",
+  "worker_actual_exit": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/logs/g50p_diag_v1_sunlamp_s2021_w0016_9543172610b840e7ac19c2b16f04487f.log.exitcode",
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "worker_exit_code": 0,
+  "worker_launch": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/launches/9543172610b840e7ac19c2b16f04487f/launch.json",
+    "sha256": "b43853abcbb2a93d8395947e4012c9bd298382c9973239b7a2da783c5766dafc"
+  },
+  "worker_outcome": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/launches/9543172610b840e7ac19c2b16f04487f/outcome.json",
+    "sha256": "ead9896786a34eff656baeae6df188f409e9568c7ff7363514bb15a64175f9b2"
+  }
+}

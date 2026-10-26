@@ -301,3 +301,8 @@ The user explicitly removed the cumulative14400-second hard stop and its derived
 ## 2026-10-26 generated verifier policy-binding correction
 
 The time-unlimited resumed87 main completed with exact trace/full-state matching and saved branch outputs. Its independent entry stopped pre-import on an omitted dynamic budget_policy field. The versioned dispatch correction preserves this completed main separately from accepted, then only runs its required independent verifier. Both historical failure and all costs remain; no model replay of the completed main is allowed. Time hard stop stays disabled,40000-forward/scientific/GT/resource/identity requirements remain. Live status/cursor and revisions/verify_policy_dispatch_20261026 govern current progress.
+
+
+## 2026-10-26 owned process terminal-read race
+
+The sunlamp2021/w16 main saved its complete result and actual exit0, while the manager exited1 on a transient proc/environ PermissionError. The focused manager candidate retains an unverified same active attempt during a short terminal-file handoff, never assumes identity or dispatches downstream without evidence, and preserves the strict independent-verification boundary. Local two-case metadata checks passed; actual resource-gated validation is pending behind foreign compute. The sole repair controller in revisions/process_identity_race_20261026 validates then safely resumes only the saved main independent audit. Time remains unlimited;40000 physical forwards and all science/GT rules stay unchanged. Current status/cursor and controller_status.json govern progress.

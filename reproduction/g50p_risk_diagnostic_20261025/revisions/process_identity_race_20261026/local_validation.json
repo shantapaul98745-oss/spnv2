@@ -1,0 +1,8 @@
+{
+  "measured_seconds": 0.0319999999992433,
+  "model_forwards": 0,
+  "models_constructed": false,
+  "scenarios": 2,
+  "schema": "g50p-terminal-handoff-local-contract-v1",
+  "status": "passed"
+}
