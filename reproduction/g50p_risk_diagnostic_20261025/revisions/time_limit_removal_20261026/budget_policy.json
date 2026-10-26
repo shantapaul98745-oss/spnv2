@@ -1,0 +1,32 @@
+{
+  "authorization": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/time_limit_removal_20261026/authorization.json",
+    "sha256": "7e15a45f9b24e3a144dade3e3459a709365075532d8d6a237f4d2f323d97a3a9"
+  },
+  "frozen_inputs_sha256": "6608ffca250fe9733e1cd244e39eac84146ecd564b097ea101c7d2087f2d63e5",
+  "historical_journal_prefix": {
+    "archived_journal": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/time_limit_removal_20261026/before/budget/journal.jsonl",
+      "sha256": "4ec7ff95935e86997fb90e9b2abe76afbe4ff19b79ac57c97c815e55e4dfe689"
+    },
+    "events": 24913,
+    "original_bytes": 9111917,
+    "original_sha256": "4ec7ff95935e86997fb90e9b2abe76afbe4ff19b79ac57c97c815e55e4dfe689",
+    "tail_sha256": "54a6ae15b6e45f609a49093f1b2c5d17c82e3566818d37a3572daf4e8dfc5ce6"
+  },
+  "max_active_seconds": null,
+  "max_physical_forwards": 40000,
+  "original_budget_identity": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/budget/identity.json",
+    "sha256": "05e91d7414e9f753d4b700a782f09f6ed6675f8e0b1b7cc11bb93f1133194857"
+  },
+  "original_protocol": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/protocol.json",
+    "sha256": "3b873f77db09e70e11e062d06af9ff7d6be74e522a09aeb9b34a824f5d6dbe54"
+  },
+  "preserve_all_past_charges": true,
+  "project_id": "g50p_risk_diagnostic_20261025",
+  "resource_wait_separate": true,
+  "schema": "g50p-diagnostic-budget-policy-v2",
+  "time_hard_stop_enabled": false
+}

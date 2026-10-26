@@ -1,0 +1,56 @@
+{
+  "already_persisted_branch_predictions": 0,
+  "global_ledger_continues": true,
+  "new_technical_run_id": "g50p_diag_v1_lightbox_s2023_w0087_notimelimit1",
+  "old_failed_physical_forwards": 191,
+  "old_failed_time_charge_seconds_upper": 212.285456080921,
+  "old_failure": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/pairs/g50p_diag_v1_lightbox_s2023_w0087/failure.json",
+    "sha256": "abfe068dbc762730b0bad5c06c2d8960c0747d8a5c18b414012a9fad33bca5ea"
+  },
+  "old_failure_exit_code_kept": 1,
+  "old_launch": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/launches/eede02ee893b40bc84fe0c021572b51c/launch.json",
+    "sha256": "ebf90fe0167d7302fdefca30121582c8992ddc66adc095eb77d94682a910c459"
+  },
+  "old_outcome": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/launches/eede02ee893b40bc84fe0c021572b51c/outcome.json",
+    "sha256": "539d1e78b0977d852497b513021e67e3ced50ba6ba81ef865f2195239eda2a84"
+  },
+  "old_task": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/tasks/admission_template_fix_20261025/g50p_diag_v1_lightbox_s2023_w0087.json",
+    "sha256": "7dbd553dcf782673cb3db4f950839bd6c2b2f262e0bf10628367911385614ecd"
+  },
+  "old_wrapper_exit": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/logs/g50p_diag_v1_lightbox_s2023_w0087_eede02ee893b40bc84fe0c021572b51c.log.exitcode",
+    "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+  },
+  "other_files_copied_not_linked": true,
+  "schema": "g50p-budget-stop-resume-origin-v1",
+  "scientific_cursors": {
+    "candidates": 77,
+    "commits": 77,
+    "next_index": 512,
+    "observed": 512,
+    "rollbacks": 0
+  },
+  "seed_current": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/pairs/g50p_diag_v1_lightbox_s2023_w0087_notimelimit1/isolated_durable/CURRENT",
+    "sha256": "85f306dae9f43285023ff75892bd6afa9ed64c7d192b6ad37d48430df3ed0c5c"
+  },
+  "seed_directory": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/pairs/g50p_diag_v1_lightbox_s2023_w0087_notimelimit1/isolated_durable",
+  "seed_state_bytes": 1313653092,
+  "source_current": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/pairs/g50p_diag_v1_lightbox_s2023_w0087/isolated_durable/CURRENT",
+    "sha256": "85f306dae9f43285023ff75892bd6afa9ed64c7d192b6ad37d48430df3ed0c5c"
+  },
+  "source_metadata": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/pairs/g50p_diag_v1_lightbox_s2023_w0087/isolated_durable/checkpoints/generation-00000000000000000001/metadata.json",
+    "sha256": "b9a2eca94d192251b2d3e746e7e1a3c64db71d1f4adcf8be0b54ecef34560b14"
+  },
+  "source_run_id": "g50p_diag_v1_lightbox_s2023_w0087",
+  "state_bin_hardlinked_immutable": true,
+  "state_sha256": "f5273c1a36f49eb944f8ed5014a57cb6e4e5935aff214370dd498102171c0153",
+  "unpersisted_work_may_replay": true,
+  "window_id": "lightbox:2023:87"
+}

@@ -1,0 +1,9 @@
+{
+  "measured_seconds": 0.2190000000045984,
+  "mocked_accounting_tokens_not_physical_forwards": true,
+  "models_constructed": false,
+  "physical_model_forwards": 0,
+  "schema": "g50p-time-limit-targeted-local-validation-v1",
+  "status": "passed",
+  "tests": 8
+}

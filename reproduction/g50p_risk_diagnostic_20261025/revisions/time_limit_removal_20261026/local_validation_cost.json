@@ -1,0 +1,26 @@
+{
+  "measured_process_wall_seconds": 5.1196797,
+  "models_constructed": false,
+  "physical_model_forwards": 0,
+  "process_wall_seconds": [
+    1.6623302,
+    1.7199515,
+    1.737398
+  ],
+  "proofs": [
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/time_limit_removal_20261026/local_validation.json",
+      "sha256": "30d71330bab3f20423d886a8a10078b80666a90e5bd4af716ba334e12145baf4"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/time_limit_removal_20261026/local_validation_slow_fsync_failure.json",
+      "sha256": "e6c86e7a28974f4a1a8831e0319fdf7ebcc2a08b0a126be93cc1cc6edd8b2490"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/time_limit_removal_20261026/local_validation_v3.json",
+      "sha256": "f8bcf3d0199e5e0b4d2884789bbb891a9c1b2776c9df97f82d421ae36a7fb832"
+    }
+  ],
+  "schema": "g50p-time-policy-validation-cost-v1",
+  "scope": "three actual local metadata-test process invocations; inner test timings are included, not added twice"
+}

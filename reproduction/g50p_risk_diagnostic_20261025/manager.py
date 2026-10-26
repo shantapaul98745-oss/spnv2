@@ -40,6 +40,52 @@ def immutable(path,value):
     return path
 
 
+def validate_time_limit_policy(index):
+    """The only authorized budget revision removes time stopping, not forwards."""
+    spec=index.get('budget_policy')
+    if spec is None:
+        if index.get('time_limit_revision') is not None:
+            raise ValueError('Time-limit revision lacks its bound budget policy')
+        return None
+    policy=checked(spec)
+    if (policy.get('schema')!='g50p-diagnostic-budget-policy-v2'
+            or policy.get('project_id')!=PROJECT
+            or policy.get('frozen_inputs_sha256')!=index['frozen_inputs']['sha256']
+            or policy.get('max_physical_forwards')!=40000
+            or 'max_active_seconds' not in policy or policy['max_active_seconds'] is not None
+            or policy.get('time_hard_stop_enabled') is not False):
+        raise ValueError('Budget revision changed more than the authorized time hard stop')
+    return policy
+
+
+def validate_preserved_A_time_dependency(index,task,spec,name,old):
+    """Bind exact old A execution bytes while the time-only infrastructure changes.
+
+    This exception is limited to host_entry/budget. The actual A extraction or
+    analysis module must still have its original live bytes. Old task/proof,
+    outcome, launch, nonce and successful wrapper exit checks remain below.
+    """
+    if name not in ('host_entry.py','budget.py') or validate_time_limit_policy(index) is None:
+        raise ValueError('An actual A scientific dependency changed: '+name)
+    revision=checked(index['time_limit_revision'])
+    if (revision.get('schema')!='g50p-time-limit-removal-revision-v1'
+            or revision.get('authorization')!='user_2026-10-26_remove_cumulative_time_limit'
+            or revision.get('budget_policy')!=index['budget_policy']):
+        raise ValueError('Preserved A budget dependency lacks the exact authorized revision')
+    before=checked(revision['before_index'])
+    current=index['implementation_sha256'].get(name)
+    original_code=spec.get('original_execution_code',{}).get(name)
+    if (before['frozen_inputs']!=index['frozen_inputs']
+            or before['host_modules']!=index['host_modules']
+            or before['implementation_sha256'].get(name)!=old
+            or not isinstance(original_code,dict) or original_code.get('sha256')!=old
+            or sha(original_code['path'])!=old
+            or revision.get('modified_implementation_sha256',{}).get(name)!=current
+            or current is None or sha(PLAN/'implementation'/name)!=current):
+        raise ValueError('Preserved A old/new time-dependency bytes differ: '+name)
+    return True
+
+
 def validate_preserved_A(index,row,task,spec):
     """One exact already-completed A record, never a generic code-drift waiver."""
     action=task.get('action')
@@ -54,8 +100,10 @@ def validate_preserved_A(index,row,task,spec):
     module='extract_A.py' if action=='extract_a' else 'analyze_existing.py'
     for name in ('host_entry.py','budget.py',module):
         old=task['implementation_sha256'].get(name)
-        if old is None or old!=index['implementation_sha256'].get(name) or sha(PLAN/'implementation'/name)!=old:
-            raise ValueError('An actual A execution dependency changed: '+name)
+        if old is None:
+            raise ValueError('An actual A execution dependency is missing: '+name)
+        if old!=index['implementation_sha256'].get(name) or sha(PLAN/'implementation'/name)!=old:
+            validate_preserved_A_time_dependency(index,task,spec,name,old)
     proof,outcome,launch=checked(spec['proof']),checked(spec['outcome']),checked(spec['launch_record'])
     expected_status='a_extracted' if action=='extract_a' else 'a_analyzed'
     if (checked(spec['exit_code'])!=0 or proof.get('status')!='passed' or proof.get('model_forwards')!=0
@@ -132,6 +180,7 @@ def validate_preserved_pair(index, row, task, spec):
 
 
 def validate_index(index):
+    validate_time_limit_policy(index)
     rows=index.get('tasks',[])
     if (index.get('schema')!='g50p-risk-diagnostic-index-v1' or len(rows)!=48
             or len({row['run_id'] for row in rows})!=48
@@ -273,17 +322,23 @@ def finish(state):
         final_budget_path=Path(item['launch_directory'])/'budget_closed.json'
         final_budget=read(final_budget_path)
         if (final_budget.get('schema')!='g50p-diagnostic-budget-snapshot-v1'
-                or final_budget.get('unresolved_attempt_ids') or final_budget.get('active_time_bound_violation_attempt_ids')):
+                or final_budget.get('unresolved_attempt_ids')
+                or (final_budget.get('time_hard_stop_enabled',True)
+                    and final_budget.get('active_time_bound_violation_attempt_ids'))):
             raise ValueError('Final delivery requires the actual settled budget receipt after process exit')
         complete=proof.get('complete_scope') is True and proof.get('completed_windows')==48 and len(state['accepted'])==48
         final_manifest=dict(schema='g50p-diagnostic-delivery-manifest-v1',status='complete' if complete else 'partial',
             summary=binding(summary_path),proof=binding(proof_path),final_settled_budget=binding(final_budget_path),
             active_seconds_charged_upper=final_budget['active_seconds_charged_upper'],
+            time_hard_stop_enabled=final_budget.get('time_hard_stop_enabled',True),
+            budget_policy=final_budget.get('budget_policy'),
             initial_cost_receipts=final_budget.get('initial_cost_receipts',[]),
             physical_forwards_reserved_upper=final_budget['physical_forwards_reserved_upper'],
             queue_wait_seconds=state['queue_wait_seconds'],complete_ODR_runs=0,
             independently_accepted_windows=len(state['accepted']),scientific_scope_complete=complete,
-            note='The summary running-time snapshot reserves its live deadline; this post-exit receipt supplies settled cost.')
+            note=('Time is accounted without a hard stop under the bound revision; this post-exit receipt supplies settled cost.'
+                  if final_budget.get('time_hard_stop_enabled') is False else
+                  'The summary running-time snapshot reserves its live deadline; this post-exit receipt supplies settled cost.'))
         manifest_path=immutable(PLAN/'delivery/final_manifest.json',final_manifest)
         state.update(status='complete' if complete else 'partial_delivery_required',active=None,
                      delivery={**outcome,'final_manifest':binding(manifest_path),
@@ -358,7 +413,8 @@ def partial_delivery(index,state):
     try:
         budget_state=GlobalBudget(PLAN/'budget',dict(project_id=PROJECT,
                                  frozen_inputs_sha256=index['frozen_inputs']['sha256']),
-                                 initial_cost_receipt=index.get('initial_cost_receipt')).snapshot()
+                                 initial_cost_receipt=index.get('initial_cost_receipt'),
+                                 budget_policy=index.get('budget_policy')).snapshot()
     except Exception as error: budget_error=dict(type=type(error).__name__,message=str(error))
     receipts=dict(schema='g50p-diagnostic-partial-receipts-v1',status='partial_preserved',
         stop_status=state['status'],stop_reason=reason,created_at=time.time(),

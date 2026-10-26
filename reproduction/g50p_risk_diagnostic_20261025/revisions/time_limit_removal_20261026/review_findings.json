@@ -1,0 +1,14 @@
+{
+  "failed_contract": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/time_limit_removal_20261026/local_validation_slow_fsync_failure.json",
+    "sha256": "e6c86e7a28974f4a1a8831e0319fdf7ebcc2a08b0a126be93cc1cc6edd8b2490"
+  },
+  "finding": "Slow close fsync retained a legacy2s stop; targeted added contract failed before correction and then passed. No production model executed under candidate.",
+  "local_validation": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/time_limit_removal_20261026/local_validation_v3.json",
+    "sha256": "f8bcf3d0199e5e0b4d2884789bbb891a9c1b2776c9df97f82d421ae36a7fb832"
+  },
+  "new_tests_total": 8,
+  "physical_model_forwards": 0,
+  "scope": "time-only and continuous-accounting paths"
+}

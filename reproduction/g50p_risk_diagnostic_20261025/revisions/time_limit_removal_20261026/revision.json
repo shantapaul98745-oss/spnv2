@@ -1,0 +1,38 @@
+{
+  "authorization": "user_2026-10-26_remove_cumulative_time_limit",
+  "authorization_record": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/time_limit_removal_20261026/authorization.json",
+    "sha256": "7e15a45f9b24e3a144dade3e3459a709365075532d8d6a237f4d2f323d97a3a9"
+  },
+  "before_index": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/time_limit_removal_20261026/before/index.json",
+    "sha256": "1ef5c8284903312d3be5ad91041e654d423d6b2c0a6fcb541ac2c1f2dae8fdb4"
+  },
+  "before_status": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/time_limit_removal_20261026/before/status.json",
+    "sha256": "640bfa92297a279c98f5f9658ee5a0fb76afc34497ddbdc1da2aa0e3aec00b3f"
+  },
+  "budget_policy": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/time_limit_removal_20261026/budget_policy.json",
+    "sha256": "9653eafe0c969c1de8e774f4583bbfef02a83b5481b6b3abcb312bcd10da9c63"
+  },
+  "modified_implementation_sha256": {
+    "budget.py": "502f01a309e644639f84fd4628bde4062cdf8dbf3fa83c54af386eaa9782871f",
+    "host_entry.py": "8bb31592ba5ce9a6db5556125ed01562ce0655a355442fa0efa3a37a626ca076",
+    "manager.py": "094b2932ac9243ab2bb36d0edc06d20e603969b9bc226e19de6efb382b9cd804",
+    "verify_pair.py": "0071551d792ca99ab991128a06454f8cda45ea14a682b3318b377c31fa83fb9d",
+    "verify_pilots.py": "46e9a5ea4c5f9cbfc0898bdebfba9103c8d3582842388605a94679ccbd1480d0"
+  },
+  "preserved_A": true,
+  "preserved_completed_windows": 21,
+  "protocol": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/time_limit_removal_20261026/protocol_time_unlimited.json",
+    "sha256": "fb9c2a139027d0ae5f9d49b6a7ebba2c4aa04b7604e3b4f86007d69bad883235"
+  },
+  "resume_origin": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/time_limit_removal_20261026/resume_origin.json",
+    "sha256": "0a3725b5c89d8f06a9eac8d021528a2bc23eafddc2a0ae2d921569dfebc7ed30"
+  },
+  "schema": "g50p-time-limit-removal-revision-v1",
+  "scientific_producer_unchanged": true
+}

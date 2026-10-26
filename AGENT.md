@@ -291,3 +291,8 @@ A and the first lightbox2021/w1 pair have actual passed proofs and must be reuse
 ## 2026-10-25 diagnostic pilot admission template repair
 
 Both included pilot pairs have actual main and independent verification passed. Overall pilot admission is still pending: a stale audit-template implementation binding caused a pre-import exit1. The versioned pilot/summary dispatcher candidate preserves both accepted pairs and all failures/costs, and requires fresh admitted zero-forward metadata validation before deployment. A dedicated server repair controller waits for foreign computation to leave, validates, and safely launches the existing fixed queue; real pilot_admitted status remains authoritative. No new window or scientific rule is introduced. See runtime revisions/admission_template_fix_20261025/controller_status.json and monitoring/guard_cursor.json.
+
+
+## 2026-10-26 current diagnostic budget amendment
+
+The user explicitly removed the cumulative14400-second hard stop and its derived deadline/watchdog termination for the same risk diagnostic. The effective protocol and budget_policy are bound by the current index; original protocol.json and budget/identity.json retain historical bytes. Time and all old charges remain recorded, measured and conservative components separately. The40000-forward cap, frozen48 windows/128 panels, science/GT/identity/resource/independent acceptance rules are unchanged. A and21 accepted pairs are reused; the interrupted87 window resumes from its valid complete512/77 checkpoint under a new technical ID, only unpersisted work replays. Goal mode remains paused. See revisions/time_limit_removal_20261026 and current status/cursor; old budget-stop delivery remains historical.

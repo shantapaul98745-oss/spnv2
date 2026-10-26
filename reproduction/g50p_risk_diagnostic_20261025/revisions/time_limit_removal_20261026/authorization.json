@@ -1,0 +1,10 @@
+{
+  "authorization": "user_2026-10-26_remove_cumulative_time_limit",
+  "authorized_at_client_date": "2026-10-26",
+  "new_time_hard_limit_seconds": null,
+  "old_time_hard_limit_seconds": 14400,
+  "physical_forward_limit_unchanged": 40000,
+  "schema": "g50p-user-authorization-record-v1",
+  "scope": "Cancel cumulative active-time14400-second hard cap and its derived stops; retain original40000 physical forwards, frozen48/panels, all scientific/data boundaries and original ledger history.",
+  "source": "direct user instruction in owning chat01a171ca-454e-7000-a5ad-0b5023f79f38"
+}
