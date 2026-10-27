@@ -1,0 +1,9 @@
+{
+  "schema": "spnv2-reproduction-code-mapping-v1",
+  "purpose": "one all-layer diagnostic of saved BN moments, no acceptance waiver or inference",
+  "source": "reproduction/numeric_acceptance_20261027/inspect_bn_statistics.py",
+  "sha256": "c9e892047a0fe7e72cd075084223760aa6d672556a39fd200e3835712872ff2f",
+  "actual_diagnostic_nonce": "d0aa0247305f4abab989e383583506d1",
+  "model_forwards": 0,
+  "scientific_policy_unchanged": true
+}
