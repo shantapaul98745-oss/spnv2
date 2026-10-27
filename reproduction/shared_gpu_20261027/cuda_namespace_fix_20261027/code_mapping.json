@@ -1,0 +1,26 @@
+{
+  "schema": "spnv2-reproduction-code-mapping-v1",
+  "revision": "cuda_namespace_fix_20261027",
+  "base_commit": "1572171af076109fbee8aceb38a0c9c9d364f6b4",
+  "mapping": [
+    {
+      "path": "reproduction/shared_gpu_20261027/cuda_namespace_fix_20261027/bootstrap.py",
+      "sha256": "1cc81a063843f7abb032dd2bd62bfd51d61c27147966c6333053ef4b4480f632"
+    },
+    {
+      "path": "reproduction/shared_gpu_20261027/cuda_namespace_fix_20261027/dispatch_config.py",
+      "sha256": "b9c8b187c881d443063438c5c67ee4f5024b0e1949ccc0a0f3bc607a857e85d3"
+    },
+    {
+      "path": "reproduction/shared_gpu_20261027/cuda_namespace_fix_20261027/namespace_runner.py",
+      "sha256": "4c17156237d19670bc3912741e5a2a4909c1b62c936a2f7c9b9951eb6ba963fa"
+    },
+    {
+      "path": "reproduction/shared_gpu_20261027/cuda_namespace_fix_20261027/prepare_cuda_runtime_fix.py",
+      "sha256": "72120fe48d5f8b366877da74c3c7f9c9a6bd66c62d749d632ea02d56105ea8fc"
+    }
+  ],
+  "actual_runtime_paths": "same source paths under the migration logical root; three exact versioned namespace extensions; no mathematical/control implementation map changes",
+  "validation": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/shared_gpu_20261027/cuda_namespace_diagnosis/final_candidate_validation.json",
+  "original_resource_policy_unchanged": true
+}
