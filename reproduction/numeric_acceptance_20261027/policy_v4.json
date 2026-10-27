@@ -1,0 +1,37 @@
+{
+  "absolute_tolerance": 1e-06,
+  "authorization": "user_2026-10-27_authorized_scientific_acceptance_revision",
+  "bn_cache_authorization": "explicit_user_reply_2026-10-27_BN_statistics_only",
+  "bn_cache_moment_axes": [
+    0,
+    2,
+    3
+  ],
+  "bn_cache_same_run_rollback": "bitwise_exact",
+  "bn_cache_shape_dtype_keys_and_finiteness": "exact",
+  "bn_cache_validation_accumulation_dtype": "float64",
+  "bn_feature_cache_acceptance": "per_channel_mean_and_mean_square",
+  "bn_statistics_tolerances": "same fixed atol1e-6/rtol1e-5; no change for model,optimizer,gradient,RNG or decisions",
+  "cross_gpu_comparisons_only": true,
+  "derived_HE_delta_acceptance": "recompute_own_arithmetic_and_keep_discrete_conditions_exact",
+  "derived_angle_rationale": "The frozen definition is acos((trace(E@H.T)-1)/2) in degrees. Compare its dimensionless cosine to avoid ill-conditioned acos amplification. Raw E/H representations still require the unchanged float tolerances; all discrete decisions remain exact.",
+  "derived_record_rule": "For original protection HE-increase records, independently verify value=post-pre, compared_value=post, compared_threshold=pre+threshold and exact predicate result. Compare pre/post angular inputs in cosine domain. Do not independently compare redundant derived scalar representations; persisted values retained. All other floats retain fixed raw bounds.",
+  "discrete_types_ids_order_decisions_pool_membership_counters_rng": "exact",
+  "do_not_expand_tolerance_after_failure": true,
+  "dtype_and_shape": "exact",
+  "finite_only": true,
+  "formula": "abs(actual-expected)<=atol+rtol*abs(expected)",
+  "metric_recomputation_and_GT_thresholds": "unchanged",
+  "original_27_accepted_reused": true,
+  "relative_tolerance": 1e-05,
+  "rotation_disagreement_comparison": "cosine_defining_domain_0_to_180_degrees",
+  "same_run_rollback_and_branch_isolation": "bitwise_exact",
+  "schema": "spnv2-cross-gpu-numeric-acceptance-v1",
+  "scope": {
+    "max_physical_forwards": 40000,
+    "panel_denominator": 128,
+    "time_hard_stop": false,
+    "windows": 48
+  },
+  "tolerance_is_fixed_before_new_forward": true
+}

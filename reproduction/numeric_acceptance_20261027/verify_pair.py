@@ -140,6 +140,19 @@ def verify_saved(report, *, task, candidate, actual_match, expected_match, origi
                 model_forwards_added_by_verification=0, efficacy_claim=False)
 
 
+
+def _approved_recovered_failure(report,row):
+    recovery=report.get('saved_artifact_recovery')
+    if recovery is None or row.get('exit_code')!=1:return False
+    manifest=load_json(binding(recovery['manifest']))
+    entries=[x for x in manifest['failed_attempts'] if x['nonce']==row['nonce']]
+    if len(entries)!=1:return False
+    x=entries[0]
+    require(row['task_sha256']==x['task_sha256'] and row['run_id']==manifest['run_id'],'Recovered failure belongs to another task')
+    require(Path(row['launch_directory'])==Path(x['launch_directory']),'Recovered failed launch differs')
+    require(load_json(binding(x['outcome']))==row['outcome'] and Path(binding(x['exit_code'])).read_text().strip()=='1','Recovered failed exit/outcome changed')
+    binding(x['launch']);return True
+
 def _receipt(spec, run_task, run_path):
     report_path = binding(spec["report"])
     require(spec["run_id"] == run_task["run_id"] and report_path == Path(run_task["output_dir"])/"report.json"
@@ -161,7 +174,7 @@ def _receipt(spec, run_task, run_path):
     attempts = spec["attempts"]
     require(attempts and attempts[-1]["exit_code"] == 0
             and sum(row["exit_code"] == 0 for row in attempts) == 1
-            and all(row["exit_code"] in (0,75) for row in attempts), "failed paired attempt was silently retried")
+            and all(row["exit_code"] in (0,75) or _approved_recovered_failure(report,row) for row in attempts), "failed paired attempt was silently retried")
     by_nonce = {}
     for row in attempts:
         require(row["run_id"] == run_task["run_id"] and row["task_sha256"] == sha256(run_path)
@@ -194,6 +207,12 @@ def execute(task_path, *, admission, launch_record, conflict_check, budget):
     frozen = load_json(binding(run_task["index_binding"]))
     require(run_task["selection"] in frozen["windows"] and run_task["producer"] == frozen["producer"], "run outside frozen48 diagnostic scope")
     report_path, report = _receipt(task["execution_receipt"], run_task, run_path)
+    if report.get('saved_artifact_recovery'):
+        rev=numeric.read_bound(load_json(Path('/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/index.json'))['numeric_acceptance']);item=rev['recovery_code']
+        require(item['path']==str(Path(__file__).parent/'recover_saved_main.py') and sha256(item['path'])==item['sha256'],'Recovery auditor binding changed')
+        import importlib.util
+        spec=importlib.util.spec_from_file_location('independent_recovered_cost_audit',item['path']);audit=importlib.util.module_from_spec(spec);spec.loader.exec_module(audit)
+        audit.audit_report(report)
     require([load_json(binding(b)) for b in report["attempt_cost_bindings"]] == report["attempt_costs"], "actual per-attempt cost receipt changed")
     if conflict_check(): return dict(status="waiting_resources", exit_code=75, model_forwards=0)
     selection = run_task["selection"]
@@ -202,7 +221,7 @@ def execute(task_path, *, admission, launch_record, conflict_check, budget):
     trace = reference_trace(run_task, expected_match["identity"], budget=budget)
     with binding(report["candidate_learner"]).open("rb") as handle: candidate = pickle.load(handle)
     budget.check_time("read recorded actual matched state")
-    with binding(report["matched_scientific_state"]).open("rb") as handle: actual_match = pickle.load(handle)
+    with binding(report["matched_scientific_state"]).open("rb") as handle: actual_match = science_state(pickle.load(handle))
     old = load_producer(run_task)
     backend = old("frozen_backend")
     original_task = load_json(binding(selection["original_task"]))

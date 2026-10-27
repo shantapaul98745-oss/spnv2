@@ -14,7 +14,7 @@ def read_bound(x):
 def configure(policy):
  global POLICY
  if policy.get('schema')!='spnv2-cross-gpu-numeric-acceptance-v1' or policy.get('authorization')!='user_2026-10-27_authorized_scientific_acceptance_revision':raise ValueError('Numeric acceptance authorization differs')
- if policy['absolute_tolerance']!=1e-6 or policy['relative_tolerance']!=1e-5 or not policy['finite_only'] or policy['same_run_rollback_and_branch_isolation']!='bitwise_exact' or policy.get('rotation_disagreement_comparison')!='cosine_defining_domain_0_to_180_degrees' or policy.get('derived_HE_delta_acceptance')!='recompute_own_arithmetic_and_keep_discrete_conditions_exact':raise ValueError('Fixed scientific tolerance/strict isolation differs')
+ if policy['absolute_tolerance']!=1e-6 or policy['relative_tolerance']!=1e-5 or not policy['finite_only'] or policy['same_run_rollback_and_branch_isolation']!='bitwise_exact' or policy.get('rotation_disagreement_comparison')!='cosine_defining_domain_0_to_180_degrees' or policy.get('derived_HE_delta_acceptance')!='recompute_own_arithmetic_and_keep_discrete_conditions_exact' or policy.get('bn_feature_cache_acceptance')!='per_channel_mean_and_mean_square':raise ValueError('Fixed scientific tolerance/strict isolation differs')
  if POLICY is not None and POLICY!=policy:raise ValueError('Acceptance policy cannot change during a run')
  POLICY=policy
  return policy
@@ -58,6 +58,20 @@ def equal(actual,expected):
   exact=exact or _exact_path(path)
   if type(x) is not type(y):return fail(path,'type_changed')
   if isinstance(x,dict):
+   if path and path[-1]=='bn_features' and not exact:
+    if set(x)!=set(y):return fail(path,'BN_cache_keys_changed')
+    import numpy as np
+    for key in x:
+     xx,yy=x[key],y[key]
+     if type(xx) is not type(yy):return fail(path+(str(key),),'BN_cache_type_changed')
+     if hasattr(xx,'detach'):xx,yy=xx.detach().cpu().numpy(),yy.detach().cpu().numpy()
+     if not isinstance(xx,np.ndarray) or xx.shape!=yy.shape or xx.dtype!=yy.dtype or xx.ndim!=4:return fail(path+(str(key),),'BN_cache_shape_or_dtype_changed')
+     if not np.isfinite(xx).all() or not np.isfinite(yy).all():return fail(path+(str(key),),'BN_cache_nonfinite')
+     xx,yy=xx.astype(np.float64),yy.astype(np.float64)
+     for label,aa,bb in [('channel_mean',xx.mean(axis=(0,2,3)),yy.mean(axis=(0,2,3))),('channel_mean_square',np.square(xx).mean(axis=(0,2,3)),np.square(yy).mean(axis=(0,2,3)))]:
+      if not visit(aa,bb,path+(str(key),label),False):return False
+     STATS['bn_cache_tensors_compared']=STATS.get('bn_cache_tensors_compared',0)+1
+    return True
    if not exact:
     try:x,y=_he_record(x),_he_record(y)
     except (ValueError,KeyError,TypeError):return fail(path,'inconsistent_derived_protection_record')
@@ -100,4 +114,4 @@ def equal(actual,expected):
   except (ValueError,TypeError):return fail(path,'unsupported_value')
  return visit(actual,expected)
 
-def receipt():return {'standard':'cross_gpu_numeric_v3_derived','bindings':bindings(),'statistics':dict(STATS),'internal_branch_and_rollback':'bitwise_exact','discrete_decisions_and_rng':'exact'}
+def receipt():return {'standard':'cross_gpu_numeric_v4_bn_statistics','bindings':bindings(),'statistics':dict(STATS),'internal_branch_and_rollback':'bitwise_exact','discrete_decisions_and_rng':'exact'}

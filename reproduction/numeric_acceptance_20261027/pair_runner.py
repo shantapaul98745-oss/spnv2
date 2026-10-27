@@ -583,6 +583,13 @@ def execute(task_path, *, admission, launch_record, conflict_check, budget):
     require(not (output/"failure.json").exists(), "preserved pair failure blocks blind retry")
     if (output/"task.json").exists(): require(load_json(output/"task.json") == task, "existing isolated pair belongs to another immutable task")
     else: atomic_json(output/"task.json", task)
+    recovery = numeric.read_bound(load_json(Path('/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/index.json'))['numeric_acceptance'])
+    if recovery.get('saved_main_recovery',{}).get('run_id')==task['run_id']:
+        spec=recovery['recovery_code']
+        require(spec['path']==str(Path(__file__).parent/'recover_saved_main.py') and sha256(spec['path'])==spec['sha256'],'Recovery code binding changed')
+        import importlib.util
+        module_spec=importlib.util.spec_from_file_location('bound_saved_main_recovery',spec['path']);module=importlib.util.module_from_spec(module_spec);module_spec.loader.exec_module(module)
+        return module.execute(sys.modules[__name__],task_path,admission=admission,launch_record=launch_record,conflict_check=conflict_check,budget=budget)
     budget_before = budget.snapshot()
     budget.check_time("before loading parent complete checkpoint")
     parent, parent_meta = read_generation(selection["parent_checkpoint"])
