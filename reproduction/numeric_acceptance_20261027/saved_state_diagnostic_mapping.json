@@ -1,0 +1,9 @@
+{
+  "schema": "spnv2-reproduction-code-mapping-v1",
+  "purpose": "admitted CPU-only inspection of existing failed-window states; no acceptance waiver or model work",
+  "source": "reproduction/numeric_acceptance_20261027/inspect_saved_state.py",
+  "sha256": "c0758a9a0f267bb9a937f82b50241829537dfa42fb1fa7dad8644d2971ede6ec",
+  "actual_successful_diagnostic_nonce": "5f108c3df92d4b2bb30245a5eb23a832",
+  "model_forwards": 0,
+  "original_index_and_numeric_policy_unchanged": true
+}
