@@ -1,0 +1,49 @@
+{
+  "schema": "spnv2-reproduction-code-mapping-v1",
+  "revision": "numeric_acceptance_20261027",
+  "base_commit": "b4f145b37f63b48bdee70845e3bb96be88b9bcb3",
+  "mapping": [
+    {
+      "source": "reproduction/numeric_acceptance_20261027/bootstrap.py",
+      "sha256": "82b7c679d8b488a0267113d2a7c120d9e12af972bf6655564b2289d256835d46",
+      "execution": "explicit index.numeric_acceptance override or namespace extension; canonical frozen scientific files retained"
+    },
+    {
+      "source": "reproduction/numeric_acceptance_20261027/dispatch_config.py",
+      "sha256": "2172387b15b445f4c252e0ada0fb2b759d3fd67c946d316af68b017622b0da0c",
+      "execution": "explicit index.numeric_acceptance override or namespace extension; canonical frozen scientific files retained"
+    },
+    {
+      "source": "reproduction/numeric_acceptance_20261027/namespace_runner.py",
+      "sha256": "907df5af3e53cc44da487eb68c98d41470f8dc71e954b4d2622d5184afb835b2",
+      "execution": "explicit index.numeric_acceptance override or namespace extension; canonical frozen scientific files retained"
+    },
+    {
+      "source": "reproduction/numeric_acceptance_20261027/numeric_compare.py",
+      "sha256": "759a0ae1c6864ac082cf46222dd5b1002864890c3c3d00bbcb96680332199236",
+      "execution": "explicit index.numeric_acceptance override or namespace extension; canonical frozen scientific files retained"
+    },
+    {
+      "source": "reproduction/numeric_acceptance_20261027/pair_runner.py",
+      "sha256": "f8f2346a7559cdf1831486830d851477847b22273203239b907ec3f0e1f2563c",
+      "execution": "explicit index.numeric_acceptance override or namespace extension; canonical frozen scientific files retained"
+    },
+    {
+      "source": "reproduction/numeric_acceptance_20261027/policy.json",
+      "sha256": "dd1efbb82e5d203c5de9945312418ded8f7d63e63724a936f11ad94ff8026705",
+      "execution": "explicit index.numeric_acceptance override or namespace extension; canonical frozen scientific files retained"
+    },
+    {
+      "source": "reproduction/numeric_acceptance_20261027/prepare_runtime.py",
+      "sha256": "55c82ffca4967687d7c165a211e957650395636beb6f25310e77263e03f283b5",
+      "execution": "explicit index.numeric_acceptance override or namespace extension; canonical frozen scientific files retained"
+    },
+    {
+      "source": "reproduction/numeric_acceptance_20261027/verify_pair.py",
+      "sha256": "bfde39df7706178f3cd10ac2e9cfbc2aea83b226093252d70d44efd015fc81e9",
+      "execution": "explicit index.numeric_acceptance override or namespace extension; canonical frozen scientific files retained"
+    }
+  ],
+  "mathematical_model_updates_and_internal_rollback_unchanged": true,
+  "validation": "D/revisions/numeric_acceptance_20261027/targeted_validation.json"
+}

@@ -1,3 +1,5 @@
+Current G50-P scientific acceptance amendment (user2026-10-27): cross-GPU floats use fixed abs1e-6+rel1e-5*abs(expected), finite values only; discrete decisions/IDs/order/RNG and same-run full rollback/branch isolation remain exact. Effective acceptance is original frozen protocol plus index.numeric_acceptance. Preserve prior27 strict acceptances and all failure costs.
+
 ## Current G50-P shared-GPU resource amendment (user2026-10-27)
 
 For this existing diagnostic only, other GPU jobs and nonzero utilization do not block admission. Use the bound shared_gpu_20261027 resource policy: two fresh snapshots must each show at least6144MiB free GPU memory and40960MiB host MemAvailable. The estimates are4GiB+2GiB GPU safety and32GiB+8GiB host safety, based on existing records/configuration, never a model probe. Retain four project locks, exact process registration, single budget writer,300-second resource waits, hourly chat guard,40,000 physical forwards and unchanged strict science/GT/frozen scope. Do not signal others or restart healthy scientific workers. This supersedes the old blanket-foreign-compute wait rule only for this diagnostic.
