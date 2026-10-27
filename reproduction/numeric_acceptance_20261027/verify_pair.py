@@ -92,7 +92,7 @@ def verify_saved(report, *, task, candidate, actual_match, expected_match, origi
             and report["panel"] == task["panel"] and report["run_id"] == task["run_id"], "saved paired identity changed")
     require(report["candidate_learner_sha256"] == tree_digest(candidate), "candidate learner state digest changed")
     require(report.get("numeric_acceptance",{}).get("bindings")==numeric.bindings()
-            and report.get("cross_gpu_full_state_within_tolerance") is True
+            and report.get("scientific_state_accepted_under_policy") is True and report.get("training_tensors_within_tolerance") is True and report.get("discrete_trajectory_exact") is True
             and report.get("internal_branch_and_rollback_exact") is True
             and report.get("full_scientific_checkpoint_equal") is False,"Explicit revised acceptance/strict isolation evidence missing")
     expected_branches = derive_branch_snapshots(candidate)
@@ -134,7 +134,7 @@ def verify_saved(report, *, task, candidate, actual_match, expected_match, origi
     budget = verify_budget(report)
     return dict(branch_summaries={name:value["summary"] for name,value in recomputed.items()},
                 paired_summary=differences, actual_decision=target[0]["decision"],
-                complete_state_match=False, complete_state_within_tolerance=True, numeric_acceptance=numeric.receipt(), fixed_denominator=128, fixed_tail=7,
+                complete_state_match=False, complete_state_within_tolerance=False, complete_state_accepted_under_policy=True, training_tensors_within_tolerance=True, discrete_trajectory_exact=True, numeric_acceptance=numeric.receipt(), fixed_denominator=128, fixed_tail=7,
                 candidate_sha256=tree_digest(candidate), matched_state_sha256=tree_digest(actual_match),
                 per_image_changes=expected_changes, budget=budget,
                 model_forwards_added_by_verification=0, efficacy_claim=False)

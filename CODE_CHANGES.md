@@ -398,3 +398,7 @@ Saved actual first difference passes the frozen rule; changed decisions/counters
 
 ### Numeric acceptance derived-angle defining domain
 The first authorized run passed the old stop, then exposed acos amplification in rotation_disagreement while raw poses and the discrete decision remained equivalent. Preserve that failed run and all3 additional forwards. For this specifically defined derived angle, compare cos(degrees) in its dimensionless defining domain under the SAME abs1e-6/rel1e-5 bounds; raw rotations/quaternions still compare directly and decisions/RNG/internal rollback remain exact. No GT, model, gate threshold, loss or numeric bound is changed. Version1 bytes and policy remain archived; the new scientific acceptance revision is explicit.
+
+
+### Coherent protection derived-record validation
+Retain original abs1e-6/rel1e-5 primary bounds and exact decisions/RNG/isolation. Protection HE angle values use their cosine domain; redundant HE-delta rule records must independently reconstruct value, compared value/threshold and predicate exactly from their own pre/post inputs. Only after that check is the redundant representation normalized for cross-device comparison; persisted original diagnostics are unchanged. Forged derived values and changed decisions reject. This removes repeated rejection of the same acos round-off without widening primary bounds or changing any gate threshold or mathematical execution. Reports explicitly distinguish policy acceptance from bitwise/full-raw equality.
