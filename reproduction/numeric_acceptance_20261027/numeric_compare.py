@@ -14,7 +14,7 @@ def read_bound(x):
 def configure(policy):
  global POLICY
  if policy.get('schema')!='spnv2-cross-gpu-numeric-acceptance-v1' or policy.get('authorization')!='user_2026-10-27_authorized_scientific_acceptance_revision':raise ValueError('Numeric acceptance authorization differs')
- if policy['absolute_tolerance']!=1e-6 or policy['relative_tolerance']!=1e-5 or not policy['finite_only'] or policy['same_run_rollback_and_branch_isolation']!='bitwise_exact':raise ValueError('Fixed scientific tolerance/strict isolation differs')
+ if policy['absolute_tolerance']!=1e-6 or policy['relative_tolerance']!=1e-5 or not policy['finite_only'] or policy['same_run_rollback_and_branch_isolation']!='bitwise_exact' or policy.get('rotation_disagreement_comparison')!='cosine_defining_domain_0_to_180_degrees':raise ValueError('Fixed scientific tolerance/strict isolation differs')
  if POLICY is not None and POLICY!=policy:raise ValueError('Acceptance policy cannot change during a run')
  POLICY=policy
  return policy
@@ -47,6 +47,9 @@ def equal(actual,expected):
    if len(x)!=len(y):return fail(path,'length_changed')
    return all(visit(a,b,path+(str(i),),exact) for i,(a,b) in enumerate(zip(x,y)))
   if isinstance(x,float):
+   if path and path[-1]=='rotation_disagreement' and not exact:
+    if not (math.isfinite(x) and math.isfinite(y) and 0.<=x<=180. and 0.<=y<=180.):return fail(path,'invalid_derived_angle')
+    x,y=math.cos(math.radians(x)),math.cos(math.radians(y))
    if not math.isfinite(x) or not math.isfinite(y):return fail(path,'nonfinite')
    delta=abs(x-y);bound=0. if exact else p['absolute_tolerance']+p['relative_tolerance']*abs(y)
    STATS['numeric_values']+=1;STATS['max_absolute_difference']=max(STATS['max_absolute_difference'],delta)
@@ -77,4 +80,4 @@ def equal(actual,expected):
   except (ValueError,TypeError):return fail(path,'unsupported_value')
  return visit(actual,expected)
 
-def receipt():return {'standard':'cross_gpu_numeric_v1','bindings':bindings(),'statistics':dict(STATS),'internal_branch_and_rollback':'bitwise_exact','discrete_decisions_and_rng':'exact'}
+def receipt():return {'standard':'cross_gpu_numeric_v2_geometry','bindings':bindings(),'statistics':dict(STATS),'internal_branch_and_rollback':'bitwise_exact','discrete_decisions_and_rng':'exact'}
