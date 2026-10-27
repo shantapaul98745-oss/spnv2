@@ -1,0 +1,77 @@
+{
+  "schema": "spnv2-reproduction-code-mapping-v1",
+  "revision": "shared_gpu_20261027",
+  "base_commit": "3745cb39143ae6d1e4dcaca3a8e6527ff7eeb674",
+  "resource_admission_only": true,
+  "mapping": [
+    {
+      "source": "reproduction/shared_gpu_20261027/bootstrap.py",
+      "runtime": "spnv2/reproduction/shared_gpu_20261027/bootstrap.py",
+      "sha256": "1cc81a063843f7abb032dd2bd62bfd51d61c27147966c6333053ef4b4480f632"
+    },
+    {
+      "source": "reproduction/shared_gpu_20261027/dispatch_config.py",
+      "runtime": "spnv2/reproduction/shared_gpu_20261027/dispatch_config.py",
+      "sha256": "b9c8b187c881d443063438c5c67ee4f5024b0e1949ccc0a0f3bc607a857e85d3"
+    },
+    {
+      "source": "reproduction/shared_gpu_20261027/host_entry.py",
+      "runtime": "spnv2_runs/plans/g50p_risk_diagnostic_20261025/implementation/host_entry.py",
+      "sha256": "f4549fe7cf502de4326f8876527955ac99ddd54afa2a33823e0f5592bf3f4777"
+    },
+    {
+      "source": "reproduction/shared_gpu_20261027/host_gate.py",
+      "runtime": "spnv2/reproduction/shared_gpu_20261027/host_gate.py",
+      "sha256": "bc14d1e6a6c0001fa4fa88eab59079cd5df90f0b4504668760df3b7b88d3f7c6"
+    },
+    {
+      "source": "reproduction/shared_gpu_20261027/host_snapshot.py",
+      "runtime": "spnv2/reproduction/shared_gpu_20261027/host_snapshot.py",
+      "sha256": "3d5bfda9562b14ff6a7c20266744a0610c86b6b2b15434b835a5ab87cd195030"
+    },
+    {
+      "source": "reproduction/shared_gpu_20261027/manager_sysu.py",
+      "runtime": "spnv2_runs/plans/g50p_risk_diagnostic_20261025/implementation/manager.py",
+      "sha256": "4f372e4117744ace342f2a9a25984d8fa9cf5d03cf2542e8f0dbd13f15efa52c"
+    },
+    {
+      "source": "reproduction/shared_gpu_20261027/namespace_runner.py",
+      "runtime": "spnv2/reproduction/shared_gpu_20261027/namespace_runner.py",
+      "sha256": "6ea190c661e5b84a851b90a4bfbee4e0bf2b90e6f8fd49cfe3913813e026e689"
+    },
+    {
+      "source": "reproduction/shared_gpu_20261027/prepare_shared_runtime.py",
+      "runtime": "spnv2/reproduction/shared_gpu_20261027/prepare_shared_runtime.py",
+      "sha256": "ddeb16692cb083d007f5078482c8353af8f66a4767f52a2de4c2dc4f5b920f15"
+    },
+    {
+      "source": "reproduction/shared_gpu_20261027/resource_amendment.py",
+      "runtime": "spnv2/reproduction/shared_gpu_20261027/resource_amendment.py",
+      "sha256": "0594979ce53abead0e2c57c776e5b7a5b5fbed177f815ef299df6b47c72b6fed"
+    },
+    {
+      "source": "reproduction/shared_gpu_20261027/resource_policy.json",
+      "runtime": "spnv2/reproduction/shared_gpu_20261027/resource_policy.json",
+      "sha256": "42313c03792706aa8232ec0cc80e5d5e904394b4a6f0fcd5a0f26f637fa77075"
+    },
+    {
+      "source": "reproduction/shared_gpu_20261027/test_resource_amendment.py",
+      "runtime": "spnv2/reproduction/shared_gpu_20261027/test_resource_amendment.py",
+      "sha256": "391dc427becb5219db3b8e7fa41473f8434f41d618eedf3e9892e0fed167ae12"
+    },
+    {
+      "source": "reproduction/shared_gpu_20261027/test_shared_resources.py",
+      "runtime": "spnv2/reproduction/shared_gpu_20261027/test_shared_resources.py",
+      "sha256": "d5c87b2b020a51ea54f0191b540425d8aeaca204d3169f5dfa403ae9b6ddebf8"
+    }
+  ],
+  "gate_validation": {
+    "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/revisions/shared_gpu_20261027/targeted_gate_tests.json",
+    "sha256": "2b745aa1e829af1fab7cd17dcd5358d7c56b5d29b7e0615b59c79430d8d811e1"
+  },
+  "binding_validation": {
+    "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/revisions/shared_gpu_20261027/binding_targeted_validation.json",
+    "sha256": "00b02230c85c641eb2fb70425f1959aab48ae9af38d4a956ae58b0d7eaf63604"
+  },
+  "original_scientific_modules_unchanged": true
+}

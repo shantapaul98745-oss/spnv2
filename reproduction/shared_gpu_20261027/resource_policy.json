@@ -1,0 +1,34 @@
+{
+  "allow_foreign_gpu_processes": true,
+  "authorization": "user_2026-10-27_shared_gpu_capacity_admission",
+  "basis": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/revisions/shared_gpu_20261027/resource_evidence.json",
+    "sha256": "c64b873dbce1b7dc8e6b8aa3ecba3057e300be96076d17b23a8dd4fcbf4047ac"
+  },
+  "gpu_estimate_is_not_new_target_measurement": true,
+  "gpu_peak_estimate_mib": 4096,
+  "gpu_safety_margin_mib": 2048,
+  "host_memory_estimate_is_not_measured_rss_or_guaranteed_upper": true,
+  "host_memory_estimate_reason": "Largest frozen state about1.237GiB; conservative16 state-equivalents plus6GiB framework/unpickle, I/O and two16-image FP32 caches, rounded to32GiB;8GiB margin.",
+  "host_memory_peak_estimate_mib": 32768,
+  "host_memory_safety_margin_mib": 8192,
+  "ignore_gpu_utilization": true,
+  "launch_snapshot_max_age_seconds": 5,
+  "measured_historical_max_reserved_gpu_mib": 2718,
+  "min_free_gpu_mib": 6144,
+  "min_host_mem_available_mib": 40960,
+  "no_signals_or_model_resource_probe": true,
+  "project_id": "g50p_risk_diagnostic_20261025",
+  "resource_admission_only": true,
+  "resource_retry_seconds": 300,
+  "schema": "spnv2-shared-gpu-resource-policy-v1",
+  "scope_unchanged": {
+    "exact_scientific_state_and_trace_required": true,
+    "new_full_odr": 0,
+    "panel_per_stream": 128,
+    "physical_forward_limit": 40000,
+    "time_hard_stop": false,
+    "windows": 48
+  },
+  "snapshot_max_age_seconds": 60
+}
