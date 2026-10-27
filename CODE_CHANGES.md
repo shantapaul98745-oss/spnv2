@@ -420,3 +420,11 @@ The new zero-model finalizer reached statistical comparison and correctly stoppe
 
 ## 2026-10-28: explicit BN-mean-only atol approval
 User authorizes only BN temporary-cache channel-mean absolute tolerance1e-5. Its relative tolerance stays1e-5; mean-squares and every other numeric/discrete/RNG/internal restoration boundary stay unchanged. Scope is selected by exact bn_features/channel_mean path, not global tensor tolerance. Targeted tests accept the approved mean difference while rejecting the same ordinary weight change, an out-of-bound mean-square, changed RNG and changed decision. Existing model work and two128-panel files remain immutable; reuse the saved zero-model finalizer and preserve its previous real failed exit/cost in the new recovery manifest.
+
+
+## 2026-10-28：用户授权几何预测对象范数验收与w31尾段续接
+
+- `reproduction/numeric_acceptance_20261027/numeric_compare.py`：仅完整姿态预测记录中的旋转矩阵、平移、四元数及框按对象范数比较，系数仍为atol1e-6、rtol1e-5；参数/梯度、BN统计、离散决定、RNG及同运行完整回滚不变。保存原始值，不修改指标或保护阈值。
+- `pair_runner.py`、`recover_saved_main.py`及`resume_geometry_norm_20261028.py`：复用w31已完成两支128面板和完整283观察检查点，仅续接未持久化尾段。真实失败exit1和原账本费用保留，由独立验收审计原hash链，不伪造旧成功。恢复状态用不可变硬链接保护，原始科学代码未改。
+- `versions/v5/`保存原执行代码；计划revision_v6/policy_v6及恢复manifest明确新旧绑定与回退入口，28个既有验收结果保持原proof。
+- 定向零前向验证：真实首差异通过；超界几何、NaN、离散决定变化被拒；模型参数逐元素、RNG严格、BN两个统计容差均保留。正式运行仍需原资源/身份/预算准入及真实独立验收，不能把元数据测试称科学窗口通过。

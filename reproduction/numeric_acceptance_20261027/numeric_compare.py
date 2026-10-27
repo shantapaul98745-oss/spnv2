@@ -14,7 +14,7 @@ def read_bound(x):
 def configure(policy):
  global POLICY
  if policy.get('schema')!='spnv2-cross-gpu-numeric-acceptance-v1' or policy.get('authorization')!='user_2026-10-27_authorized_scientific_acceptance_revision':raise ValueError('Numeric acceptance authorization differs')
- if policy['absolute_tolerance']!=1e-6 or policy['relative_tolerance']!=1e-5 or not policy['finite_only'] or policy['same_run_rollback_and_branch_isolation']!='bitwise_exact' or policy.get('rotation_disagreement_comparison')!='cosine_defining_domain_0_to_180_degrees' or policy.get('derived_HE_delta_acceptance')!='recompute_own_arithmetic_and_keep_discrete_conditions_exact' or policy.get('bn_feature_cache_acceptance')!='per_channel_mean_and_mean_square' or policy.get('bn_channel_mean_absolute_tolerance')!=1e-5:raise ValueError('Fixed scientific tolerance/strict isolation differs')
+ if policy['absolute_tolerance']!=1e-6 or policy['relative_tolerance']!=1e-5 or not policy['finite_only'] or policy['same_run_rollback_and_branch_isolation']!='bitwise_exact' or policy.get('rotation_disagreement_comparison')!='cosine_defining_domain_0_to_180_degrees' or policy.get('derived_HE_delta_acceptance')!='recompute_own_arithmetic_and_keep_discrete_conditions_exact' or policy.get('bn_feature_cache_acceptance')!='per_channel_mean_and_mean_square' or policy.get('bn_channel_mean_absolute_tolerance')!=1e-5 or policy.get('geometric_prediction_comparison')!='per_object_norm' or policy.get('geometry_norm_authorization')!='explicit_user_reply_2026-10-28_geometry_object_norm':raise ValueError('Fixed scientific tolerance/strict isolation differs')
  if POLICY is not None and POLICY!=policy:raise ValueError('Acceptance policy cannot change during a run')
  POLICY=policy
  return policy
@@ -53,6 +53,31 @@ def absolute_tolerance(policy,path):
  if 'bn_features' in path and path and path[-1]=='channel_mean':return policy['bn_channel_mean_absolute_tolerance']
  return policy['absolute_tolerance']
 
+# Only full pose-prediction records are eligible. Model/optimizer/gradient
+# tensors with coincidentally similar key names retain pointwise comparison.
+GEOMETRY_SHAPES={'effi_R':(3,3),'effi_t':(3,),'heat_q':(4,),'heat_t':(3,),'bbox':(4,)}
+def geometry_prediction_record(row):
+ return isinstance(row,dict) and {'e_available','h_available','effi_R','effi_t','heat_q','heat_t','bbox'}<=set(row)
+
+def geometry_compare(x,y,key,policy):
+ import numpy as np
+ if x is None or y is None:return (x is y),{'reason':'geometry_availability_changed'}
+ if type(x) is not type(y):return False,{'reason':'geometry_type_changed'}
+ if hasattr(x,'detach'):
+  if x.dtype!=y.dtype:return False,{'reason':'geometry_dtype_changed'}
+  x,y=x.detach().cpu().numpy(),y.detach().cpu().numpy()
+ a,b=np.asarray(x),np.asarray(y)
+ if a.shape!=b.shape or a.shape!=GEOMETRY_SHAPES[key] or a.dtype!=b.dtype or a.dtype.kind!='f':return False,{'reason':'geometry_shape_or_dtype_changed'}
+ if not np.isfinite(a).all() or not np.isfinite(b).all():return False,{'reason':'geometry_nonfinite'}
+ a,b=a.astype(np.float64),b.astype(np.float64)
+ if key=='heat_q':
+  na,nb=float(np.linalg.norm(a)),float(np.linalg.norm(b))
+  if na==0. or nb==0.:return False,{'reason':'geometry_zero_quaternion'}
+  a,b=a/na,b/nb
+  if float(np.dot(a,b))<0.:a=-a
+ delta=float(np.linalg.norm((a-b).ravel()));scale=float(np.linalg.norm(b.ravel()));bound=policy['absolute_tolerance']+policy['relative_tolerance']*scale
+ return delta<=bound,dict(reason='geometry_object_norm_exceeded',difference_norm=delta,expected_norm=scale,bound=bound,shape=list(a.shape))
+
 def equal(actual,expected):
  global LAST_FAILURE
  p=current();STATS['comparisons']+=1;LAST_FAILURE=None
@@ -81,6 +106,17 @@ def equal(actual,expected):
     try:x,y=_he_record(x),_he_record(y)
     except (ValueError,KeyError,TypeError):return fail(path,'inconsistent_derived_protection_record')
    if set(x)!=set(y):return fail(path,'keys_changed')
+   if not exact and not any(part.lower() in ('model','optimizer','gradients','gradient','parameters','param_groups','bn_features') for part in path) and geometry_prediction_record(x) and geometry_prediction_record(y):
+    for key in x:
+     if key in GEOMETRY_SHAPES:
+      ok,detail=geometry_compare(x[key],y[key],key,p)
+      STATS['geometry_objects_compared']=STATS.get('geometry_objects_compared',0)+1
+      if 'bound' in detail:
+       STATS['max_geometry_tolerance_fraction']=max(STATS.get('max_geometry_tolerance_fraction',0.),detail['difference_norm']/detail['bound'])
+      if not ok:
+       fail(path+(str(key),),detail['reason']);LAST_FAILURE.update(detail);return False
+     elif not visit(x[key],y[key],path+(str(key),),exact):return False
+    return True
    return all(visit(x[k],y[k],path+(str(k),),exact) for k in x)
   if isinstance(x,(list,tuple)):
    if len(x)!=len(y):return fail(path,'length_changed')
@@ -119,4 +155,4 @@ def equal(actual,expected):
   except (ValueError,TypeError):return fail(path,'unsupported_value')
  return visit(actual,expected)
 
-def receipt():return {'standard':'cross_gpu_numeric_v5_BN_mean_atol','bindings':bindings(),'statistics':dict(STATS),'internal_branch_and_rollback':'bitwise_exact','discrete_decisions_and_rng':'exact'}
+def receipt():return {'standard':'cross_gpu_numeric_v6_geometry_object_norm','bindings':bindings(),'statistics':dict(STATS),'internal_branch_and_rollback':'bitwise_exact','discrete_decisions_and_rng':'exact'}

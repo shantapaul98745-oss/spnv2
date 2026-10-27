@@ -10,8 +10,8 @@ def read(path):return json.loads(Path(path).read_text())
 def bound(item):
  if sha(item['path'])!=item['sha256']:raise ValueError('Saved recovery artifact changed: '+item['path'])
  return Path(item['path'])
-def manifest_current():
- index=read(P/'index.json');rev=numeric.read_bound(index['numeric_acceptance']);return read(bound(rev['saved_main_recovery']['manifest'])),rev
+def manifest_current(run_id=None):
+ index=read(P/'index.json');rev=numeric.read_bound(index['numeric_acceptance']);entry=rev.get('partial_main_recovery') if run_id is not None and rev.get('partial_main_recovery',{}).get('run_id')==run_id else rev['saved_main_recovery'];return read(bound(entry['manifest'])),rev
 
 def history(manifest):
  raw=(P/'budget/journal.jsonl').read_bytes();prefix=raw[:manifest['ledger_prefix']['bytes']]
@@ -44,13 +44,29 @@ def history(manifest):
  return result
 
 def audit_report(report):
- recovery=report['saved_artifact_recovery'];manifest=read(bound(recovery['manifest']));live,rev=manifest_current()
+ recovery=report['saved_artifact_recovery'];manifest=read(bound(recovery['manifest']));live,rev=manifest_current(report['run_id'])
  if live!=manifest or manifest['run_id']!=report['run_id']:raise ValueError('Report recovery authorization differs')
  expected=history(manifest);rows={x['run_nonce']:x for x in report['attempt_costs']}
  for nonce,want in expected.items():
   if nonce not in rows or rows[nonce]!=want:raise ValueError('Derived failed cost record is not the actual ledger history')
  for name,item in manifest['artifacts'].items():bound(item)
  return True
+
+def prepare_partial(p,task_path,revision):
+ manifest,rev=manifest_current(p.load_json(task_path)['run_id']);task=p.load_json(task_path);output=Path(task['output_dir'])
+ p.require(manifest['schema']=='spnv2-partial-saved-main-recovery-v1' and p.sha256(task_path)==manifest['task']['sha256'],'Partial recovery task binding differs')
+ for item in manifest['artifacts'].values():bound(item)
+ actual,meta=p.read_generation(manifest['actual_checkpoint'])
+ p.require(meta['scientific_cursors']==manifest['saved_cursors'] and meta['scientific_cursors']['next_index']<task['selection']['match_checkpoint']['cursors']['next_index'],'Partial recovery cursor differs')
+ current=p.load_json(output/'isolated_durable/CURRENT')
+ current_dir=output/'isolated_durable/checkpoints'/('generation-'+str(current['generation']).zfill(20));current_meta=p.load_json(current_dir/'metadata.json')
+ p.require(p.sha256(current_dir/'metadata.json')==current['metadata_sha256'] and manifest['saved_cursors']['next_index']<=current_meta['scientific_cursors']['next_index']<=task['selection']['match_checkpoint']['cursors']['next_index'],'Partial CURRENT outside the authorized continuation interval')
+ rows=history(manifest);directory=output/'attempt_costs';directory.mkdir(exist_ok=True)
+ for nonce,row in rows.items():
+  path=directory/(nonce+'.json')
+  if path.exists():p.require(p.load_json(path)==row,'Partial recovery old cost changed')
+  else:p.atomic_json(path,row)
+ return dict(manifest=rev['partial_main_recovery']['manifest'],old_failure_exit_codes_preserved=True,failed_costs_derived_read_only=True,reused_panels=['accept','rollback'],reused_complete_checkpoint=manifest['actual_checkpoint'],recompute_only_unpersisted_tail=True)
 
 def execute(p,task_path,*,admission,launch_record,conflict_check,budget):
  started=time.monotonic();task=p.load_json(task_path);output=Path(task['output_dir']);manifest,revision=manifest_current()

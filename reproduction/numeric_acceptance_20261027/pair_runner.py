@@ -543,7 +543,7 @@ def _offline_rows(task, panel_ids):
     return result
 
 
-def record_attempt_cost(output, launch, before, after, counts, started, *, status):
+def record_attempt_cost(output, launch, before, after, counts, started, *, status, recovered=None):
     nonce = launch["run_nonce"]
     require(len(nonce) >= 16 and Path(nonce).name == nonce, "invalid actual launch nonce")
     path = Path(output)/"attempt_costs"/(nonce+".json")
@@ -556,7 +556,12 @@ def record_attempt_cost(output, launch, before, after, counts, started, *, statu
     rows = [load_json(p) for p in paths]
     summed = Counter()
     for row in rows:
-        require(row["status"] in ("waiting_resources", "pair_main_complete"), "unknown diagnostic attempt outcome")
+        if row["status"] == 'failed':
+            require(recovered is not None,'Unknown failed diagnostic cost')
+            import recover_saved_main as auditor
+            approved=auditor.history(auditor.read(auditor.bound(recovered['manifest'])))
+            require(row['run_nonce'] in approved and row==approved[row['run_nonce']],'Failed cost must match real closed ledger history')
+        else: require(row["status"] in ("waiting_resources", "pair_main_complete"), "unknown diagnostic attempt outcome")
         summed.update(row["forward_categories"])
     return rows, dict(summed), [dict(path=str(p), sha256=sha256(p)) for p in paths]
 
@@ -590,6 +595,12 @@ def execute(task_path, *, admission, launch_record, conflict_check, budget):
         import importlib.util
         module_spec=importlib.util.spec_from_file_location('bound_saved_main_recovery',spec['path']);module=importlib.util.module_from_spec(module_spec);module_spec.loader.exec_module(module)
         return module.execute(sys.modules[__name__],task_path,admission=admission,launch_record=launch_record,conflict_check=conflict_check,budget=budget)
+    partial_recovery = None
+    if recovery.get('partial_main_recovery',{}).get('run_id')==task['run_id']:
+        spec=recovery['recovery_code']
+        require(spec['path']==str(Path(__file__).parent/'recover_saved_main.py') and sha256(spec['path'])==spec['sha256'],'Partial recovery code binding changed')
+        import recover_saved_main as auditor
+        partial_recovery=auditor.prepare_partial(sys.modules[__name__],task_path,recovery)
     budget_before = budget.snapshot()
     budget.check_time("before loading parent complete checkpoint")
     parent, parent_meta = read_generation(selection["parent_checkpoint"])
@@ -606,7 +617,7 @@ def execute(task_path, *, admission, launch_record, conflict_check, budget):
     try:
         budget.check_time("read frozen producer and checkpoints")
         if conflict_check():
-            record_attempt_cost(output, launch_record, budget_before, budget.snapshot(), {}, started, status="waiting_resources")
+            record_attempt_cost(output, launch_record, budget_before, budget.snapshot(), {}, started, status="waiting_resources", recovered=partial_recovery)
             return dict(status="waiting_resources", exit_code=75, reason="foreign compute before model build")
         original_record = frozen_inputs["runs"][pair_key]
         original_report = load_json(binding(original_record["original_report"]))
@@ -685,7 +696,7 @@ def execute(task_path, *, admission, launch_record, conflict_check, budget):
         budget.check_time("persist matched scientific state evidence")
         matched_binding = save_pickle(output/"matched_scientific_state.bin", science_state(actual_match))
         costs, counts, cost_bindings = record_attempt_cost(output, launch_record, budget_before, budget.snapshot(),
-                                      hook.counts, started, status="pair_main_complete")
+                                      hook.counts, started, status="pair_main_complete", recovered=partial_recovery)
         report = dict(schema=OUTPUT_SCHEMA, status="pair_main_complete_pending_independent_verification",
                       run_id=task["run_id"], task_sha256=sha256(task_path), selection=selection,
                       producer=task["producer"], panel=task["panel"], original_target=target,
@@ -709,6 +720,10 @@ def execute(task_path, *, admission, launch_record, conflict_check, budget):
                       actual_attempt_elapsed_seconds=time.monotonic()-started,
                       launch_record_sha256=canonical_sha(launch_record),
                       scientific_interpretation="paired diagnostic association on fixed128 developer panel; not method validation or threshold selection")
+        if partial_recovery is not None:
+            report['saved_artifact_recovery']=partial_recovery
+            import recover_saved_main as auditor
+            auditor.audit_report(report)
         budget.check_time("publish complete paired result")
         atomic_json(output/"report.json", report)
         return dict(status="pair_main_complete", exit_code=0, run_id=task["run_id"], report=str(output/"report.json"), report_sha256=sha256(output/"report.json"))
@@ -716,7 +731,7 @@ def execute(task_path, *, admission, launch_record, conflict_check, budget):
         budget.check_time("cooperative checkpoint after foreign compute")
         runtime["engine"].checkpoint("diagnostic_shared_host_cooperative_yield")
         record_attempt_cost(output, launch_record, budget_before, budget.snapshot(), runtime["hook"].counts,
-                            started, status="waiting_resources")
+                            started, status="waiting_resources", recovered=partial_recovery)
         atomic_json(output/"yield.json", dict(status="waiting_resources", reason=str(exc),
                     task_sha256=sha256(task_path), budget=budget.snapshot()))
         return dict(status="waiting_resources", exit_code=75, reason=str(exc), run_id=task["run_id"])
