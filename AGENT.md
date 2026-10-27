@@ -1,3 +1,5 @@
+Current explicit approval2026-10-28: only cross-GPU BN temporary-cache channel-mean atol is1e-5 (rtol1e-5). Mean-square and all other numeric tolerances remain1e-6/1e-5; all discrete/RNG/same-run restoration requirements remain unchanged. Effective authority is index.numeric_acceptance. Reuse saved panels/checkpoints, no replay.
+
 Current additional G50-P approval2026-10-27: only cross-GPU BN temporary feature caches compare per-channel mean/mean-square under unchanged atol1e-6/rtol1e-5, exact key/shape/dtype/finiteness. Same-run complete cache rollback remains bitwise exact; all other numerical/discrete/RNG/model/GT/forward limits unchanged. Reuse saved panels/checkpoints without new model evaluation.
 
 Current G50-P scientific acceptance amendment (user2026-10-27): cross-GPU floats use fixed abs1e-6+rel1e-5*abs(expected), finite values only; discrete decisions/IDs/order/RNG and same-run full rollback/branch isolation remain exact. Effective acceptance is original frozen protocol plus index.numeric_acceptance. Preserve prior27 strict acceptances and all failure costs.

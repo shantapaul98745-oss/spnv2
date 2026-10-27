@@ -14,7 +14,7 @@ def read_bound(x):
 def configure(policy):
  global POLICY
  if policy.get('schema')!='spnv2-cross-gpu-numeric-acceptance-v1' or policy.get('authorization')!='user_2026-10-27_authorized_scientific_acceptance_revision':raise ValueError('Numeric acceptance authorization differs')
- if policy['absolute_tolerance']!=1e-6 or policy['relative_tolerance']!=1e-5 or not policy['finite_only'] or policy['same_run_rollback_and_branch_isolation']!='bitwise_exact' or policy.get('rotation_disagreement_comparison')!='cosine_defining_domain_0_to_180_degrees' or policy.get('derived_HE_delta_acceptance')!='recompute_own_arithmetic_and_keep_discrete_conditions_exact' or policy.get('bn_feature_cache_acceptance')!='per_channel_mean_and_mean_square':raise ValueError('Fixed scientific tolerance/strict isolation differs')
+ if policy['absolute_tolerance']!=1e-6 or policy['relative_tolerance']!=1e-5 or not policy['finite_only'] or policy['same_run_rollback_and_branch_isolation']!='bitwise_exact' or policy.get('rotation_disagreement_comparison')!='cosine_defining_domain_0_to_180_degrees' or policy.get('derived_HE_delta_acceptance')!='recompute_own_arithmetic_and_keep_discrete_conditions_exact' or policy.get('bn_feature_cache_acceptance')!='per_channel_mean_and_mean_square' or policy.get('bn_channel_mean_absolute_tolerance')!=1e-5:raise ValueError('Fixed scientific tolerance/strict isolation differs')
  if POLICY is not None and POLICY!=policy:raise ValueError('Acceptance policy cannot change during a run')
  POLICY=policy
  return policy
@@ -47,6 +47,11 @@ def _he_record(row):
  for k in ('value','compared_value','compared_threshold'):cond[k]=0.
  STATS['derived_HE_records_recomputed']=STATS.get('derived_HE_records_recomputed',0)+1
  return r
+
+
+def absolute_tolerance(policy,path):
+ if 'bn_features' in path and path and path[-1]=='channel_mean':return policy['bn_channel_mean_absolute_tolerance']
+ return policy['absolute_tolerance']
 
 def equal(actual,expected):
  global LAST_FAILURE
@@ -85,7 +90,7 @@ def equal(actual,expected):
     if not (math.isfinite(x) and math.isfinite(y) and 0.<=x<=180. and 0.<=y<=180.):return fail(path,'invalid_derived_angle')
     x,y=math.cos(math.radians(x)),math.cos(math.radians(y))
    if not math.isfinite(x) or not math.isfinite(y):return fail(path,'nonfinite')
-   delta=abs(x-y);bound=0. if exact else p['absolute_tolerance']+p['relative_tolerance']*abs(y)
+   delta=abs(x-y);bound=0. if exact else absolute_tolerance(p,path)+p['relative_tolerance']*abs(y)
    STATS['numeric_values']+=1;STATS['max_absolute_difference']=max(STATS['max_absolute_difference'],delta)
    if bound:STATS['max_tolerance_fraction']=max(STATS['max_tolerance_fraction'],delta/bound)
    return delta<=bound or fail(path,'numeric_tolerance_exceeded' if not exact else 'exact_state_changed')
@@ -96,7 +101,7 @@ def equal(actual,expected):
     if x.dtype.kind in 'fc':
      if not np.isfinite(x).all() or not np.isfinite(y).all():return fail(path,'nonfinite')
      if exact:return bool(np.array_equal(x,y)) or fail(path,'exact_state_changed')
-     diff=np.abs(x-y);bounds=p['absolute_tolerance']+p['relative_tolerance']*np.abs(y)
+     diff=np.abs(x-y);bounds=absolute_tolerance(p,path)+p['relative_tolerance']*np.abs(y)
      STATS['numeric_values']+=int(x.size)
      if x.size:STATS['max_absolute_difference']=max(STATS['max_absolute_difference'],float(np.max(diff)));STATS['max_tolerance_fraction']=max(STATS['max_tolerance_fraction'],float(np.max(diff/bounds)))
      return bool(np.all(diff<=bounds)) or fail(path,'numeric_tolerance_exceeded')
@@ -114,4 +119,4 @@ def equal(actual,expected):
   except (ValueError,TypeError):return fail(path,'unsupported_value')
  return visit(actual,expected)
 
-def receipt():return {'standard':'cross_gpu_numeric_v4_bn_statistics','bindings':bindings(),'statistics':dict(STATS),'internal_branch_and_rollback':'bitwise_exact','discrete_decisions_and_rng':'exact'}
+def receipt():return {'standard':'cross_gpu_numeric_v5_BN_mean_atol','bindings':bindings(),'statistics':dict(STATS),'internal_branch_and_rollback':'bitwise_exact','discrete_decisions_and_rng':'exact'}

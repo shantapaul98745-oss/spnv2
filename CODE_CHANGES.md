@@ -416,3 +416,7 @@ The w23 GPU attempt actually completed candidate, two128-image panels and comple
 
 ### All-layer BN statistics diagnosis after explicit approval
 The new zero-model finalizer reached statistical comparison and correctly stopped on a BN channel mean outside the unchanged bound; no panel or model was rerun. One registered, admitted CPU-only inspector checked all290 cache tensor instances /105984 channels in the existing matching checkpoints. All mean-square statistics pass(maxboundfraction0.08548); maximum channel-mean absolute difference3.7535404171507025e-6, worst boundfraction2.08923. Fixed acceptance is not bypassed. A proposed change only to BN mean atol1e-5 is recorded unapplied and requires user authorization; other boundaries remain unchanged.
+
+
+## 2026-10-28: explicit BN-mean-only atol approval
+User authorizes only BN temporary-cache channel-mean absolute tolerance1e-5. Its relative tolerance stays1e-5; mean-squares and every other numeric/discrete/RNG/internal restoration boundary stay unchanged. Scope is selected by exact bn_features/channel_mean path, not global tensor tolerance. Targeted tests accept the approved mean difference while rejecting the same ordinary weight change, an out-of-bound mean-square, changed RNG and changed decision. Existing model work and two128-panel files remain immutable; reuse the saved zero-model finalizer and preserve its previous real failed exit/cost in the new recovery manifest.
