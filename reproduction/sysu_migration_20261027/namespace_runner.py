@@ -217,6 +217,17 @@ def check_asset_layout(config, *, inside_namespace=False):
     files = manifest.get("files")
     require(isinstance(files, list) and len(files) > 0,
             "Canonical asset layout requires the actual bound transfer manifest")
+    if receipt.get("schema") == "spnv2-streaming-canonical-asset-layout-v1":
+        require(receipt.get("status") == "verified_metadata_with_incremental_immutable_assets"
+                and receipt.get("target_root") == TARGET_ROOT
+                and receipt.get("source_staging") == TARGET_ROOT + "/spnv2_runs/migrations/" + MIGRATION + "/source_snapshot"
+                and receipt.get("transfer_manifest_sha256") == manifest_binding["sha256"]
+                and receipt.get("no_file_content_changes") is True
+                and receipt.get("staging_paths_preserved") is True
+                and receipt.get("source_dispatch_fenced") is True
+                and receipt.get("dependencies") == config.get("streaming_migration", {}).get("dependencies"),
+                "Streaming canonical receipt is incomplete or for another immutable dependency plan")
+        return
     require(receipt.get("schema") == "spnv2-canonical-asset-layout-v1"
             and receipt.get("status") == "verified_renamed_immutable_assets"
             and receipt.get("target_root") == TARGET_ROOT
@@ -393,6 +404,23 @@ def validate_config(config, *, scientific=False, inside_namespace=False):
     binding(config, config["original_durable_state"], inside_namespace=inside_namespace)
     require(config["original_durable_state"]["path"] == LOGICAL_ROOT + "/spnv2_runs/plans/odr003_round2_20261023/implementation/durable_state.py",
             "Only the unchanged original frozen durable module may be adapted")
+    streaming = config.get("streaming_migration")
+    if streaming is not None:
+        expected = LOGICAL_ROOT + "/spnv2/reproduction/sysu_migration_20261027/streaming_assets_v1.py"
+        require(streaming.get("code", {}).get("path") == expected,
+                "Streaming helper must be the exact approved project module")
+        code_path = binding(config, streaming["code"], inside_namespace=inside_namespace)
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("spnv2_streaming_bound", code_path)
+        module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+        index = metadata(binding(config, config["diagnostic_index"], inside_namespace=inside_namespace))
+        require(index.get("streaming_migration") == streaming, "Task config/dependency index binding differs")
+        # Native composition resolves logical paths itself; inside the namespace
+        # the same bound helper repeats the actual receipt/stat gate before import.
+        if inside_namespace:
+            for item in config["approved_tasks"]:
+                task = metadata(binding(config, item, inside_namespace=True, scientific=True))
+                require(module.readiness(index, task)["ready"], "Task dependencies are not all verified/published")
     for _, source, target in mounts(config, True):
         path = Path(target) if inside_namespace else Path(source)
         require(path.exists() and path.absolute() == path.resolve(), "Missing or aliased mount: " + str(path))

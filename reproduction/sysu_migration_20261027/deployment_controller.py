@@ -1,9 +1,9 @@
-"""Versioned SYSU handoff controller. Default CLI only inspects its launch spec.
+"""Explicit streaming migration handoff: w16 ready first, archives in background.
 
-An explicitly bound --execute run waits for completed transfers, prepares owned
-metadata/assets, validates a zero-model namespace, and launches only the bound
-generic manager. Original worker admission and science/proof stops are intact.
-No state pickle, model, GT, GPU/resource probe, or source process action exists.
+Original complete transfer is retained as an archive/reproduction objective,
+not a prerequisite for scientific windows whose exact dependencies are ready.
+Staging bytes and patch bases never move; verified immutable inodes are linked
+into the admitted canonical namespace, with original gates and ledger intact.
 """
 from __future__ import annotations
 
@@ -33,10 +33,11 @@ S = M / 'source_snapshot'
 D = U / ns.DIAGNOSTIC
 J = Path(ns.LOGICAL_ROOT)
 WAIT_SECONDS = 300
+import importlib.util
 INPUTS = {'asset_manifest', 'candidate_index', 'candidate_build_receipt', 'source_fence',
           'reconciled_state', 'source_index', 'original_candidate_index', 'source_budget_identity',
           'source_budget_journal', 'image_manifest', 'image_cache_receipt', 'storage_plan', 'screen_probe',
-          'metadata_transfer', 'supplemental_closure','source_controller_status','source_fence_intent'}
+          'metadata_transfer', 'supplemental_closure','source_controller_status','source_fence_intent','streaming_dependencies'}
 INPUT_RELATIVE_PATHS=dict(asset_manifest='asset_transfer_manifest.json',candidate_index='runtime_candidate/index_candidate.json',
     candidate_build_receipt='runtime_candidate/build_receipt.json',source_fence='source_fence_receipt.json',
     reconciled_state='source_handoff_snapshot_20261027/reconciled_state.json',source_index='source_handoff_snapshot_20261027/index.json',
@@ -46,7 +47,7 @@ INPUT_RELATIVE_PATHS=dict(asset_manifest='asset_transfer_manifest.json',candidat
     image_manifest='required_images_spec_20261027.json',image_cache_receipt='required_image_cache_receipt.json',
     storage_plan='storage_plan_20261027.json',screen_probe='namespace_screen_probe.json',
     metadata_transfer='metadata_transfer_verification.json',supplemental_closure='supplemental_asset_closure.json',
-    source_controller_status='source_handoff_snapshot_20261027/controller_status.json',source_fence_intent='source_fence_intent.json')
+    source_controller_status='source_handoff_snapshot_20261027/controller_status.json',source_fence_intent='source_fence_intent.json',streaming_dependencies='pipeline_optimization_20261027/window_dependencies.json')
 
 
 def raw_json(value):
@@ -354,64 +355,85 @@ class Controller:
             immutable(delta_path,dict(inputs=expected_delta_inputs,checked_rows=checked_rows,
                 scientific_fields_unchanged=True,model_forwards=0))
 
+    def verify_streaming_plan(self):
+        index=self.inputs['candidate_index'];plan=self.inputs['streaming_dependencies']
+        helper=U/'spnv2/reproduction/sysu_migration_20261027/streaming_assets_v1.py'
+        expected=dict(path=str(J/'spnv2/reproduction/sysu_migration_20261027/streaming_assets_v1.py'),sha256=ns.sha(helper))
+        ns.require(index.get('streaming_migration')==dict(code=expected,dependencies=bind(self.spec['inputs']['streaming_dependencies']['path'],True)),
+            'Candidate does not bind the exact streaming code/dependency plan')
+        module_spec=importlib.util.spec_from_file_location('spnv2_streaming_controller',helper)
+        self.stream=importlib.util.module_from_spec(module_spec);module_spec.loader.exec_module(self.stream)
+        ns.require(plan['schema']==self.stream.SCHEMA and plan['frozen_order']==[r['run_id'] for r in index['tasks']]
+            and set(plan['windows'])==set(plan['frozen_order']) and plan['asset_manifest']==bind(self.spec['inputs']['asset_manifest']['path'],True),
+            'Streaming plan escapes original manifest/frozen order')
+        missing_main=set(self.inputs['reconciled_state']['main'])-set(self.inputs['reconciled_state']['accepted'])
+        ns.require(missing_main=={'g50p_diag_v1_sunlamp_s2021_w0016'},'Initial streaming task must be saved w16 verify')
+        return plan
+
+    def transfer_status(self):
+        status=ns.metadata(M/'asset_receive_status.json')
+        ns.require(status.get('phase') in ('receiving','complete') and status.get('error') is None
+            and status.get('model_forwards')==0,'Background transfer failed; preserve evidence')
+        return status
+
+    def publish_assets(self):
+        self.transfer_status();self.verify_streaming_plan()
+        with exclusive(M/'streaming_publish.lock'):
+            return self.stream.publish_verified(self.inputs['asset_manifest'],M,S,U)
+
     def verified_assets(self):
-        manifest = self.inputs['asset_manifest']; rows = manifest['files']
-        status = ns.metadata(M/'asset_receive_status.json')
-        ns.require(status.get('phase') in ('receiving','complete') and status.get('error') is None,
-                   'Asset transfer has failed; preserve evidence instead of waiting blindly')
-        if status.get('phase') != 'complete' or status.get('active') is not None:
-            return False
-        ns.require(status['verified_files'] == status['expected_files'] == len(rows)
-            and status['verified_raw_bytes'] == status['expected_raw_bytes'] == sum(row['bytes'] for row in rows)
-            and status.get('error') is None and status.get('model_forwards')==0, 'Completed transfer summary does not match bound manifest')
-        ns.require(len({row['relative_path'] for row in rows}) == len(rows), 'Duplicate manifest paths')
-        for row in rows:
-            rel = PurePosixPath(row['relative_path'])
-            ns.require(not rel.is_absolute() and '..' not in rel.parts and rel.parts[:2] in
-                (('spnv2_runs','plans'),('spnv2_runs','scripts'),('spnv2_runs','frozen')), 'Asset escapes owned transfer roots')
-            receipt = ns.metadata(M/'asset_receipts'/(sha_bytes(str(rel).encode())+'.json'))
-            path = S/rel if (S/rel).exists() else U/rel
-            owned(path, U)
-            ns.require(receipt['status'] == 'verified' and receipt['relative_path'] == str(rel)
-                and receipt['sha256'] == row['sha256'] and receipt['bytes'] == row['bytes']
-                and path.is_file() and signature(path) == receipt['file_stat'], 'Immutable per-file receipt/stat mismatch: '+str(rel))
-        return True
+        self.transfer_status();plan=self.verify_streaming_plan()
+        required=set(plan['common_relative_paths'])|set(plan['windows']['g50p_diag_v1_sunlamp_s2021_w0016']['verify_pair'])
+        rows={row['relative_path']:row for row in self.inputs['asset_manifest']['files']}
+        ns.require(required<=set(rows),'Initial dependencies escape original asset manifest')
+        return all(self.stream.checked_receipt(M,rows[rel],staging_root=S) is not None for rel in required)
 
     def layout(self):
-        receipt_path = M/'canonical_asset_layout_receipt.json'
-        if receipt_path.exists():
-            receipt = ns.metadata(receipt_path)
-            ns.require(receipt['transfer_manifest_sha256'] == self.spec['inputs']['asset_manifest']['sha256']
-                and receipt['status'] == 'verified_renamed_immutable_assets' and self.verified_assets(), 'Existing canonical receipt differs')
-            return receipt_path
-        locks = [U/'spnv2_runs/plans'/name/'pipeline.lock' for name in ns.LOCK_PLANS] + [D/'manager.lock']
-        allowed_cache = U/'spnv2_runs/frozen/required_images_20261027'
-        records = self.run/'move_records'
-        if not records.exists():
-            for path in S.rglob('*'): owned(path,U)
-            for category in ('plans','scripts','frozen'):
-                destination = U/'spnv2_runs'/category
-                if destination.exists():
-                    for path in destination.rglob('*'):
-                        owned(path, U)
-                        if path.is_dir(): continue
-                        ns.require(path in locks or path.is_relative_to(allowed_cache), 'Unexpected pre-existing canonical file: '+str(path))
-        mover = TreeMover(U, records, self.rollback/'staging_lock_files', locks)
-        for category in ('plans','scripts','frozen'):
-            mover.move(S/'spnv2_runs'/category, U/'spnv2_runs'/category)
-        ns.require(self.verified_assets(), 'Asset inode/stat proof failed after canonical rename')
-        # All large manifest assets have moved. Keep the remaining initial
-        # metadata tree as an immutable owned archive rather than another runtime.
-        metadata_archive=self.run/'initial_staging_metadata'
-        if S.exists():
-            remaining = [p for p in S.rglob('*') if p.is_file()]
-            ns.require(sum(p.stat().st_size for p in remaining) < 256*1024**2, 'Unexpected large assets remain in metadata staging')
-        if S.exists() or metadata_archive.exists(): mover.move(S,metadata_archive)
-        immutable(receipt_path, dict(schema='spnv2-canonical-asset-layout-v1',status='verified_renamed_immutable_assets',
-            target_root=str(U),source_staging=str(S),transfer_manifest_sha256=self.spec['inputs']['asset_manifest']['sha256'],
-            verified_file_count=len(self.inputs['asset_manifest']['files']),no_file_content_changes=True,
-            source_dispatch_fenced=True,controller=self.spec_binding,move_records=str(records)))
+        receipt_path=M/'streaming_canonical_asset_layout_receipt.json'
+        records=self.run/'metadata_copy_records';records.mkdir(parents=True,exist_ok=True)
+        manifest_paths={row['relative_path'] for row in self.inputs['asset_manifest']['files']}
+        locks={str(U/'spnv2_runs/plans'/name/'pipeline.lock') for name in ns.LOCK_PLANS}|{str(D/'manager.lock')}
+        # Initial metadata is copied, never hardlinked: future append/write cannot
+        # modify immutable staging history. Scientific blobs are separate links.
+        for source in sorted(S.rglob('*')):
+            owned(source,U)
+            if not source.is_file():continue
+            rel=source.relative_to(S)
+            if rel.parts[:2] not in (('spnv2_runs','plans'),('spnv2_runs','scripts'),('spnv2_runs','frozen')):continue
+            if str(rel) in manifest_paths or str(U/rel) in locks:continue
+            ns.require(source.stat().st_size <= 128*1024**2,'Unexpected nonmanifest binary in metadata copy')
+            destination=U/rel;marker=records/(sha_bytes(str(rel).encode())+'.json')
+            if marker.exists():
+                proof=ns.metadata(marker)
+                ns.require(proof['source_sha256']==ns.sha(source),'Initial metadata source changed')
+                continue
+            ns.require(not destination.exists(),'Unexpected existing canonical metadata: '+str(rel))
+            immutable_bytes(destination,source.read_bytes())
+            immutable(marker,dict(source=str(source),destination=str(destination),source_sha256=ns.sha(source),bytes=source.stat().st_size))
+        self.publish_assets()
+        for rid in self.inputs['reconciled_state']['accepted']:
+            (D/'pairs'/rid).mkdir(parents=True,exist_ok=True)
+        immutable(receipt_path,dict(schema='spnv2-streaming-canonical-asset-layout-v1',
+            status='verified_metadata_with_incremental_immutable_assets',target_root=str(U),source_staging=str(S),
+            transfer_manifest_sha256=self.spec['inputs']['asset_manifest']['sha256'],
+            dependencies=bind(self.spec['inputs']['streaming_dependencies']['path'],True),
+            no_file_content_changes=True,staging_paths_preserved=True,source_dispatch_fenced=True,
+            publication='receiptverified immutable hardlinks; original staging/bases remain intact',
+            metadata_copy_records=str(records),controller=self.spec_binding))
         return receipt_path
+
+    def publish_until_transfer_complete(self):
+        while True:
+            published=self.publish_assets();status=self.transfer_status()
+            if status['phase']=='complete':
+                ns.require(not published['missing'] and len(published['published'])==len(self.inputs['asset_manifest']['files']),
+                    'Completed transfer lacks canonical receiptverified publications')
+                self.status('streaming_transfer_complete_manager_continues',verified_files=status['verified_files'],
+                    scientific_acceptance_pending=True,automatic_manager_restart=False);return
+            self.status('manager_launched_background_transfer',verified_files=status['verified_files'],
+                expected_files=status['expected_files'],next_check_at=time.time()+WAIT_SECONDS,
+                scientific_acceptance_pending=True,automatic_manager_restart=False)
+            time.sleep(WAIT_SECONDS)
 
     def archive_before(self, path):
         path = Path(path)
@@ -525,6 +547,7 @@ class Controller:
             store_policies={rid:dict(schema='spnv2-storage-policy-v1',retain_latest=2,estimated_peak_bytes=storage['per_isolated_store_peak_bytes'],
                 protected_generations={}) for rid in storage['remaining_scientific_run_ids']},
             asset_layout_receipt=bind(layout_receipt,True),asset_transfer_manifest=bind(self.spec['inputs']['asset_manifest']['path'],True),
+            streaming_migration=index['streaming_migration'],
             initialization_cache=dict(source=str(U/init_rel),target='/home/ps/.cache/torch/hub/checkpoints/'+ns.INITIALIZATION_NAME,
                 sha256=ns.INITIALIZATION_SHA256,receipt=bind(init_receipt,True)),
             frozen_image_cache=dict(source=self.inputs['image_cache_receipt']['cache_root'],
@@ -590,13 +613,16 @@ class Controller:
         raise ns.MigrationConfigError('Unresolved prior manager launch intent; refuse duplicate launch')
 
     def execute(self):
-        self.common_gate()
-        if self.existing_manager(): return
+        self.common_gate();self.verify_streaming_plan()
+        if self.existing_manager():
+            if ns.metadata(self.run/'status.json')['phase']=='manager_already_running':
+                self.publish_until_transfer_complete()
+            return
         while True:
             if not self.verified_assets():
                 self.status('waiting_asset_transfer',next_check_at=time.time()+WAIT_SECONDS);time.sleep(WAIT_SECONDS);continue
             try:
-                with exclusive(M/'asset_receive.lock'):
+                with exclusive(M/'streaming_handoff.lock'):
                     with ExitStack() as stack:
                         for path in [U/'spnv2_runs/plans'/name/'pipeline.lock' for name in ns.LOCK_PLANS]+[D/'manager.lock']:
                             stack.enter_context(exclusive(path))
@@ -621,7 +647,8 @@ class Controller:
                         record=ns.metadata(D/'status.json').get('manager')
                         if record and record.get('manager_nonce')==nonce and exact_live(record,'SPNV2_MANAGER_NONCE',nonce):
                             self.status('manager_launched',manager=record,deployment=deployment,validation=proof,
-                                scientific_acceptance_pending=True,first_gpu_proof_passed=False);return
+                                scientific_acceptance_pending=True,first_gpu_proof_passed=False)
+                            self.publish_until_transfer_complete();return
                         time.sleep(.2)
                     raise ns.MigrationConfigError('Manager exact identity unresolved; never launch a duplicate')
             except BlockingIOError:

@@ -1,0 +1,40 @@
+{
+  "schema": "spnv2-reproduction-code-mapping-v1",
+  "revision": "streaming_dependencies_20261027",
+  "base_commit": "1970fccc141e759aa1a265ab29e99d18b9a04956",
+  "mapping": [
+    {
+      "versioned_snapshot": "reproduction/sysu_migration_20261027/pipelined_v1/deployment_controller.py",
+      "runtime_code": "reproduction/sysu_migration_20261027/deployment_controller.py",
+      "sha256": "7b45e0275a52a689a9dabdc07c752f3925a112a745eed38336d213a7722df0be"
+    },
+    {
+      "versioned_snapshot": "reproduction/sysu_migration_20261027/pipelined_v1/namespace_runner.py",
+      "runtime_code": "reproduction/sysu_migration_20261027/namespace_runner.py",
+      "sha256": "1cf1d8243e6304c0fbb56622e9cd427a6105d9d3876e479fe7b9b61f32c72372"
+    },
+    {
+      "versioned_snapshot": "reproduction/sysu_migration_20261027/pipelined_v1/manager_sysu.py",
+      "runtime_code": "reproduction/sysu_migration_20261027/manager_sysu.py",
+      "sha256": "25603ca37c9f9e6110e6d2c18133959ce2c5ffb4df6e6c70eeb44989c6def8a9"
+    },
+    {
+      "versioned_snapshot": "reproduction/sysu_migration_20261027/pipelined_v1/streaming_assets_v1.py",
+      "runtime_code": "reproduction/sysu_migration_20261027/streaming_assets_v1.py",
+      "sha256": "af56d2489debcb0fca9186c261a2b9a3b664d84aebbed710497d1153b1acf094"
+    },
+    {
+      "versioned_snapshot": "reproduction/sysu_migration_20261027/pipelined_v1/build_stream_candidate.py",
+      "runtime_code": "reproduction/sysu_migration_20261027/build_stream_candidate.py",
+      "sha256": "97af533f93a9c1f6ee0e456379296b5edd4293dd1f892f1551b8ef10508129c9"
+    },
+    {
+      "versioned_snapshot": "reproduction/sysu_migration_20261027/pipelined_v1/test_streaming_assets_v1.py",
+      "runtime_code": "reproduction/sysu_migration_20261027/test_streaming_assets_v1.py",
+      "sha256": "2a07c1ba6d90083c5c45991151ba73855b5f997a284f38d1c22818715e2a60c3"
+    }
+  ],
+  "original_scientific_code_unchanged": true,
+  "validation_evidence": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/pipeline_optimization_20261027/candidate_targeted_validation.json",
+  "transfer_manifest_unchanged": true
+}

@@ -366,3 +366,10 @@ Two focused local zero-model contracts passed: PermissionError with terminal arr
 
 ## 2026-10-27 中山大学迁移与保留策略接入候选
 新增 sysu_migration_20261027 版本化namespace/bootstrap/动态单任务配置、原manager最小派发修订和带源码围栏/预算前缀/资产校验的自动续接控制器；原host_entry资源/身份/预算/严格科学验收及producer50文件未改。存储适配器复用旧序列化器一次，state.bin字节一致，按授权root保留最新两个版本与pins。实际零模型namespace与独立screen退出0，补齐2171张冻结派生图像缓存并逐张SHA通过。传输v2以已验收不可变基底做无损差分，真实1.304GB对象编码1.213MB并还原至原始SHA，不改科学数据、不增加模型前向。源空闲控制器按精确PIDfd身份退出143，源派发锁由独立保护进程持有，旧账本最终前缀保留；目标科学计算仍待迁移/实际准入与跨GPU严格重合。所有源码和失败/验证日志在本项目migration目录留存。
+
+
+## 2026-10-27: resume through verified window dependencies during background migration
+
+Replace the all276-assets deployment prerequisite with exact per-window receipt/stat gates. Independently verify the already persisted sunlamp2021/w16 main first; keep original frozen order and wait300s for the next missing dependency before the unchanged host resource gate. Native controller publishes only verified immutable hardlinks without moving receiver staging/bases; mutable metadata is copied independently. Namespace repeats the task readiness/binding checks before heavy imports. Accepted26 producers and all source originals/proofs remain reused.59,036,584,274 bytes of accepted-state replicas can transfer later for reproducibility; no scientific bytes or acceptance tolerance change.
+
+Versioned snapshots and mapping are reproduction/sysu_migration_20261027/pipelined_v1.11 focused zero-model contracts and independent receipt/publication checks passed. Old idle deployment controller exact identity was stopped with actual wrapper exit143; scientific workers and background transport were not restarted. Runtime switch still requires the real bound namespace validation and original admission; no target science acceptance is claimed by unit tests. Source ledger/fence and40000-forward cap remain intact; time stopping remains disabled, pending migration/control costs retained separately for one safe final settlement.

@@ -265,6 +265,14 @@ def validate_index(index):
         raise ValueError('Wrong explicit SYSU task revision')
     if set(index.get('migration_extensions',{}))!={'namespace_runner','bootstrap','dispatch_config','storage_adapter','storage_policy'}:
         raise ValueError('Incomplete exact migration extension map')
+    stream = index.get('streaming_migration')
+    if stream is None: raise ValueError('Explicit streaming dependency plan is required')
+    code=stream['code']
+    if code['path']!=str(BASE/'spnv2/reproduction/sysu_migration_20261027/streaming_assets_v1.py') or sha(code['path'])!=code['sha256']:
+        raise ValueError('Streaming dependency helper binding differs')
+    spec=importlib.util.spec_from_file_location('spnv2_streaming_bound',code['path'])
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    module.load_plan(index)
     validate_time_limit_policy(index)
     rows=index.get('tasks',[])
     if (index.get('schema')!='g50p-risk-diagnostic-index-v1' or len(rows)!=48
@@ -671,6 +679,15 @@ def main(index_path,deployment_path,deployment_sha256):
             else:
                 task_path,run_id=next_task(index,state)
                 if time.time()>=state['next_resource_check']:
+                    stream_code=index['streaming_migration']['code']
+                    if sha(stream_code['path'])!=stream_code['sha256']:raise ValueError('Streaming helper changed')
+                    spec=importlib.util.spec_from_file_location('spnv2_streaming_ready',stream_code['path'])
+                    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+                    ready=module.readiness(index,read(task_path))
+                    state['dependency_readiness']=ready
+                    if not ready['ready']:
+                        state.update(status='waiting_verified_dependencies',reason=ready['missing'],next_resource_check=time.time()+RESOURCE_INTERVAL)
+                        write_state(state);time.sleep(5);continue
                     snapshot=collector.collect_snapshot(registry,project_root=PLAN,project_id=PROJECT)
                     decision=gate.assess_snapshot(snapshot,now=time.time(),task_kind='gpu')
                     state['resource_snapshot']=snapshot;state['resource_sampled_at']=snapshot.get('captured_at')
