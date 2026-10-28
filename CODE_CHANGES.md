@@ -467,3 +467,10 @@ User authorizes only BN temporary-cache channel-mean absolute tolerance1e-5. Its
 - `numeric_acceptance_20261027/numeric_compare.py`仅完整姿态预测记录中的11维heat_peaks改用L2整体范数，仍为atol1e-6/rtol1e-5；shape/dtype/有限性、顺序、实际阈值/离散决定均保持。其他预测字段、旋转0.01度、两BN均值、模型/优化器/梯度、RNG、同运行回滚/分支隔离和GT规则不改，原始记录不改。
 - `resume_heat_peaks_20261028.py`核对V9真实退出及连续账本/原四锁，在安全边界将w84从实际完整704检查点续接，保留旧失败77物理前向费用。此窗口尚无候选或面板，不能虚称复用；30个已验收窗口直接复用、不重跑。旧V9比较器在`versions/v9/`。
 - 定向零模型验证：真实首差异通过，大误差/错误维数/非有限值和离散决定改变仍拒绝，无关model同名向量不放宽；实际科学完成仍需新main和独立verify真实exit0/proof。版本化policy_v10/revision_v10与恢复manifest保留原任务、输入、父检查点、旧错误及回退链。
+
+
+## 2026-10-28：用户授权confidence原公式自洽验收
+
+- `numeric_acceptance_20261027/numeric_compare.py`仅对完整姿态预测中的confidence，核验其等于全部11个原FP32 heat_peaks按`np.quantile(...,.25,method='linear')`重算值；验证原输入float32回转无静默舍入后，只在比较副本归一化冗余confidence，不改原值。原G50重算先用未修改arrival执行，保持真实分数/阈值/决定自洽；None可用性、各点输入及其他标准不改，同名模型参数不放宽。
+- `resume_confidence_20261028.py`在V10真实退出/原四锁/连续账本安全边界，保留w84两个旧失败及77+222前向费用，从实际704完整恢复点续接未持久化部分；尚无候选/面板，30个已验收结果直接复用。旧V10比较器在`versions/v10/`。
+- 定向零前向验证：真实保存事件通过、原字典不变；伪造派生值、非原始float32峰值、修改决定、缺峰却有confidence和无关同名参数均拒绝。policy_v11/revision_v11保留旧标准、原任务输入/版本/失败及回退链；最终必须真实main及独立verify退出和proof通过。

@@ -7,6 +7,7 @@ POLICY=None
 STATS={'comparisons':0,'numeric_values':0,'max_absolute_difference':0.,'max_tolerance_fraction':0.,'failures':0}
 LAST_FAILURE=None
 GATE_RUNTIME=None
+CONFIDENCE_CODE_VERIFIED=False
 
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def read_bound(x):
@@ -15,7 +16,7 @@ def read_bound(x):
 def configure(policy):
  global POLICY
  if policy.get('schema')!='spnv2-cross-gpu-numeric-acceptance-v1' or policy.get('authorization')!='user_2026-10-27_authorized_scientific_acceptance_revision':raise ValueError('Numeric acceptance authorization differs')
- if policy['absolute_tolerance']!=1e-6 or policy['relative_tolerance']!=1e-5 or not policy['finite_only'] or policy['same_run_rollback_and_branch_isolation']!='bitwise_exact' or policy.get('rotation_disagreement_comparison')!='fixed_absolute_angle_degrees' or policy.get('rotation_angular_tolerance_degrees')!=0.01 or policy.get('derived_HE_delta_acceptance')!='recompute_own_arithmetic_and_keep_discrete_conditions_exact' or policy.get('bn_feature_cache_acceptance')!='per_channel_mean_and_mean_square' or policy.get('bn_channel_mean_absolute_tolerance')!=2e-5 or policy.get('bn_window_mean_absolute_tolerance')!=1e-5 or policy.get('bn_two_means_authorization')!='explicit_user_reply_2026-10-28_only_window_mean_1e5_cache_mean_2e5' or policy.get('geometric_prediction_comparison')!='per_object_norm' or policy.get('geometry_norm_authorization')!='explicit_user_reply_2026-10-28_geometry_object_norm' or policy.get('derived_gate_score_acceptance')!='exact_own_input_frozen_calibration_recomputation' or policy.get('heat_peaks_comparison')!='fixed11_vector_L2_norm':raise ValueError('Fixed scientific tolerance/strict isolation differs')
+ if policy['absolute_tolerance']!=1e-6 or policy['relative_tolerance']!=1e-5 or not policy['finite_only'] or policy['same_run_rollback_and_branch_isolation']!='bitwise_exact' or policy.get('rotation_disagreement_comparison')!='fixed_absolute_angle_degrees' or policy.get('rotation_angular_tolerance_degrees')!=0.01 or policy.get('derived_HE_delta_acceptance')!='recompute_own_arithmetic_and_keep_discrete_conditions_exact' or policy.get('bn_feature_cache_acceptance')!='per_channel_mean_and_mean_square' or policy.get('bn_channel_mean_absolute_tolerance')!=2e-5 or policy.get('bn_window_mean_absolute_tolerance')!=1e-5 or policy.get('bn_two_means_authorization')!='explicit_user_reply_2026-10-28_only_window_mean_1e5_cache_mean_2e5' or policy.get('geometric_prediction_comparison')!='per_object_norm' or policy.get('geometry_norm_authorization')!='explicit_user_reply_2026-10-28_geometry_object_norm' or policy.get('derived_gate_score_acceptance')!='exact_own_input_frozen_calibration_recomputation' or policy.get('heat_peaks_comparison')!='fixed11_vector_L2_norm' or policy.get('derived_confidence_acceptance')!='exact_own_float32_peaks_q25_linear':raise ValueError('Fixed scientific tolerance/strict isolation differs')
  if POLICY is not None and POLICY!=policy:raise ValueError('Acceptance policy cannot change during a run')
  POLICY=policy
  return policy
@@ -75,6 +76,32 @@ def _gate_record(row):
  # comparison copy, after exact independent recomputation on each side.
  result=dict(row);result['gate_score']=0.
  STATS['derived_gate_records_recomputed']=STATS.get('derived_gate_records_recomputed',0)+1
+ return result
+
+def _confidence_record(row,path=()):
+ """Check the frozen confidence definition before comparing its inputs."""
+ global CONFIDENCE_CODE_VERIFIED
+ if any(part.lower() in ('model','optimizer','gradients','gradient','parameters','param_groups','bn_features') for part in path) or not geometry_prediction_record(row) or 'confidence' not in row:return row
+ peaks=row.get('heat_peaks');value=row['confidence']
+ if peaks is None:
+  if value is not None:raise ValueError('Confidence exists without original peak inputs')
+  return row
+ import numpy as np
+ arr=np.asarray(peaks)
+ if arr.shape!=(11,) or arr.dtype.kind!='f' or not np.isfinite(arr).all():raise ValueError('Invalid confidence source peaks')
+ p=current()
+ if not CONFIDENCE_CODE_VERIFIED:
+  spec=p['derived_confidence_prediction_code']
+  if sha(spec['path'])!=spec['sha256']:raise ValueError('Frozen confidence definition code changed')
+  CONFIDENCE_CODE_VERIFIED=True
+ # Original prediction.py computes quantile on peaks.numpy(), a float32
+ # tensor. JSON preserves those scalar values, not the array dtype.
+ source=arr.astype(np.float32)
+ if not np.isfinite(source).all() or not np.array_equal(source.astype(arr.dtype),arr):raise ValueError('Stored confidence peaks are not the exact original float32 values')
+ recomputed=float(np.quantile(source,.25,method='linear'))
+ if type(value) is not float or not math.isfinite(value) or value!=recomputed:raise ValueError('Confidence does not exactly recompute from own original peaks')
+ result=dict(row);result['confidence']=0.
+ STATS['derived_confidence_records_recomputed']=STATS.get('derived_confidence_records_recomputed',0)+1
  return result
 
 def absolute_tolerance(policy,path):
@@ -144,6 +171,8 @@ def equal(actual,expected):
     except (ValueError,KeyError,TypeError):return fail(path,'inconsistent_derived_protection_record')
     try:x,y=_gate_record(x),_gate_record(y)
     except (ValueError,KeyError,TypeError):return fail(path,'inconsistent_derived_gate_record')
+    try:x,y=_confidence_record(x,path),_confidence_record(y,path)
+    except (ValueError,KeyError,TypeError):return fail(path,'inconsistent_derived_confidence_record')
    if set(x)!=set(y):return fail(path,'keys_changed')
    if not exact and not any(part.lower() in ('model','optimizer','gradients','gradient','parameters','param_groups','bn_features') for part in path) and geometry_prediction_record(x) and geometry_prediction_record(y):
     for key in x:
@@ -196,4 +225,4 @@ def equal(actual,expected):
   except (ValueError,TypeError):return fail(path,'unsupported_value')
  return visit(actual,expected)
 
-def receipt():return {'standard':'cross_gpu_numeric_v10_heat_peaks_vector_norm','bindings':bindings(),'statistics':dict(STATS),'internal_branch_and_rollback':'bitwise_exact','discrete_decisions_and_rng':'exact'}
+def receipt():return {'standard':'cross_gpu_numeric_v11_derived_confidence','bindings':bindings(),'statistics':dict(STATS),'internal_branch_and_rollback':'bitwise_exact','discrete_decisions_and_rng':'exact'}
