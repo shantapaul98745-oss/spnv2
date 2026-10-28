@@ -9,3 +9,5 @@ inspect_w54_state_categories.py classifies current-policy failures across learni
 The scientific run remains29accepted out of the frozen48scope until a real new main and independent verifier exit0 with proof. Preserved model attempt3d2a29a7f22d4fe48f23696be6114253 really exited1 after both128panels, at full-state comparison. Use the resulting bound evidence before any targeted technical repair or authorized scientific revision.
 
 Actual category scan: nonce135e7037db694ab8bfa6248d96c201fc, wrapper exit0, zero model forwards. Current V8 fails only learner.learning.bn_mean and learner.window_base.bn_features channel_mean. All remaining groups and scientific state pass their existing standards. Proposed tolerances are not applied.
+
+The one cache tensor whose channel mean fails was separately checked for both moments by inspect_w54_failed_cache_moments.py, nonce93d012b186d34c1b9dcd0a014413048c, actual exit0 and zero forwards. Its mean-square passes the unchanged bound (max fraction0.05063). Only the two proposed mean tolerances await user approval; none has been applied.

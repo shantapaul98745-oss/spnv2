@@ -451,3 +451,5 @@ User authorizes only BN temporary-cache channel-mean absolute tolerance1e-5. Its
 - `inspect_w54_state_categories.py`用于一次分类核对参数、buffers、优化器、梯度、BN累加器、缓存及其余科学状态，诊断结果不能当独立科学验收或删除失败依据；任何拟议容差仅作诊断预测、不生效。运行证据在D/launches/<实际nonce>/，旧model失败、完整检查点和两支128面板原样保留。
 
 - 分类入口实际CPU验收已exit0，nonce135e7037db694ab8bfa6248d96c201fc，新增模型前向0。明确仅当前bn_mean累加器20个张量/86元素与窗口基点临时缓存通道均值1个张量/1通道超界；参数、buffers、优化器、梯度、BN二阶、RNG及其余完整科学状态均符合原标准。新的BN容差只提出给用户，未应用。两次CPU读取及全部科学失败费用留原账本，未退款/重置。
+
+- `inspect_w54_failed_cache_moments.py`补核唯一在通道均值处提前退出的缓存层，避免把尚未访问的均方误称通过。真实admitted CPU nonce93d012b186d34c1b9dcd0a014413048c、exit0、前向0：该层均方最大现行界限比例0.05063，仍通过；均值仅1通道超界，在拟议atol2e-5下最大比例0.58548（未应用）。这使全部受影响类别明确为BN均值累加器与缓存通道均值，其他状态标准未改。
