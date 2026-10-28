@@ -1,0 +1,29 @@
+{
+  "actual_command": "ssh -o BatchMode=yes -o ConnectTimeout=15 sysu /home/ps/miniconda3/envs/SPNv2/bin/python -B -s /home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2/reproduction/final_cost_accounting_20261028/promotion.py --self-test",
+  "actual_exit_code": 0,
+  "actual_result_chunk_id": "87599b",
+  "cpu_measurement_status": "unavailable_from_exec_tool_not_zero",
+  "entry_core_bytes_unchanged": true,
+  "final_source_sha256": "111baf851db956d7b0a3572047600059391bcfc53570ec5ea3a18eb637036184",
+  "measured_cpu_seconds": null,
+  "measured_wall_seconds": 6.216677,
+  "model_forwards": 0,
+  "no_actual_fund_or_install_executed": true,
+  "no_runtime_or_ledger_IO": true,
+  "published_core_sha256": "d3a0fbfaad5784b51df4d82acc6b1f12b059732bd18514c17bf284378cb1ce3b",
+  "published_entry_sha256": "7b3bc8f1c58e99a96cb112f9b5ece3736aa5e9f07b5ca38fd02292acc325444b",
+  "recorded_at_utc": "2026-10-28T18:06:43.227597+00:00",
+  "schema": "spnv2-paid-promotion-targeted-test-receipt-v1",
+  "scope": "Five previously reviewed tests plus the requested root terminal-disposition recovery test for real0/missing failure receipt; no scientific tests.",
+  "status": "passed_pure_candidate_tests_only",
+  "test_count": 6,
+  "test_names": [
+    "recognized_fund_charge_separates_fixed60_from_measured_time",
+    "exact_nonce_request_and_no_other_ledger_writer",
+    "one_time_reservation_cannot_retry_or_refund",
+    "unknown_or_over60_duration_never_completes",
+    "exclusive_final_and_only_own_caught_failure_rollback",
+    "root_disposition_preserves_real0_and_missing_exit_without_fake_failure"
+  ],
+  "wall_measurement_scope": "Actual exec tool wall_time_seconds for SSH pure-test command; includes connection/orchestration, not exact remote active/CPU time"
+}

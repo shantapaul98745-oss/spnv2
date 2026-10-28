@@ -27,9 +27,30 @@
     {
       "source": "reproduction/final_cost_accounting_20261028/targeted_test_receipt.json",
       "sha256": "3c2b66586133d4aff68b53945559570c70bb4806fbe5218366d055ab412050a5"
+    },
+    {
+      "source": "reproduction/final_cost_accounting_20261028/promotion.py",
+      "sha256": "111baf851db956d7b0a3572047600059391bcfc53570ec5ea3a18eb637036184"
+    },
+    {
+      "source": "reproduction/final_cost_accounting_20261028/promotion_tests_receipt.json",
+      "sha256": "2602735b1435c77074655c3e682e6ed37b1569bb017f7be59dd4f7d2d5c600d4"
+    },
+    {
+      "source": "reproduction/final_cost_accounting_20261028/promotion_review_receipt.json",
+      "sha256": "b60395204681418b05a7b21fdfe92e160b0c44107a1286eeb6504d7f73768f5c"
+    },
+    {
+      "source": "reproduction/final_cost_accounting_20261028/FINANCIAL_NAMESPACE_AND_PROMOTION.md",
+      "sha256": "8691928ca2c6d68052cd59271188e9960fa9e6d2b8ad5448ffea600b774d3fc1"
     }
   ],
   "original_scientific_and_budget_implementation_unchanged": true,
   "no_existing_settlement_script_reexecuted": true,
-  "no_model_or_summary_reexecution": true
+  "no_model_or_summary_reexecution": true,
+  "paid_promotion_candidate_status": "reviewed_pure_tests_only_no_actual_charge_or_install",
+  "financial_metadata_namespace_recipe": {
+    "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/runtime_control/financial_metadata_namespace_v1.json",
+    "sha256": "a2dd962d2a12ef8854cc5bc027b40b57ec8dc627e6bd552120562ce6a7d35268"
+  }
 }

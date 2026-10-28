@@ -1,0 +1,22 @@
+{
+  "schema": "spnv2-paid-final-installation-candidate-review-v1",
+  "at_utc": "2026-10-28T19:02:00.212098+00:00",
+  "status": "reviewed_candidate_not_executed",
+  "baseline_commit": "c70902c35b8c68d28cd9e8a25f09349c9e52faa9",
+  "promotion_sha256": "111baf851db956d7b0a3572047600059391bcfc53570ec5ea3a18eb637036184",
+  "tests_sha256": "2602735b1435c77074655c3e682e6ed37b1569bb017f7be59dd4f7d2d5c600d4",
+  "initial_unpublished_candidate_sha256": "fea3bdaa00996d6e7a274c22841b76ea7a6275ac464b6c5142ecabc7b06c33ef",
+  "resolved_specific_review_finding": "Prior terminal disposition may preserve real exit0 or missing failure receipt only with exact termination, not-accepted own-link isolation and a paid finite timing bound or real original-ledger overrun resolution",
+  "normal_path_checks": [
+    "Original locks/two fresh resource snapshots/exact registration",
+    "Recognized fund close adds explicit prospective60s conservative allowance separate from real measured metadata wall",
+    "Only actual previous wrapper0 and exact installer code/request/nonce/ledger head may consume allowance once",
+    "Install opens no new budget allocation; unknown/overrun stays pending and no refunds",
+    "Never overwrite accepted final; root must verify actual installer wrapper0 and whole timing before accepting"
+  ],
+  "original_entry_core_unchanged": true,
+  "actual_fee_import": false,
+  "actual_fund_install": false,
+  "actual_model_forwards": 0,
+  "actual_final_manifest_published": false
+}
