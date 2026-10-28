@@ -435,3 +435,11 @@ User authorizes only BN temporary-cache channel-mean absolute tolerance1e-5. Its
 - `reproduction/numeric_acceptance_20261027/numeric_compare.py`：仅observation记录中的派生G50门控分数，先用各自原始arrival及冻结gate_core/calibration精确重算分数、阈值判断和原因；通过后仅在比较副本中排除冗余分数。原始值不改，原始输入仍按已批准规则比较，实际离散决定/阈值不放宽，模型、优化器、梯度、BN及RNG/同运行回滚标准不变。
 - `resume_gate_score_20261028.py`：精确核对V6停止、真实exit1、无活动科学进程的原锁边界及连续账本，保留两个实际失败及全部费用；复用已保存283观察检查点与两支128面板，仅续接未持久化尾段。旧V6比较器和续接代码归档在`versions/v6/`。
 - 定向零前向验证：保存的ECDF排名跳档首差异通过；伪造自身分数、修改接受决定、模型参数超界和RNG改变仍拒绝；BN容差保持。正式窗口验收以新main及独立verify真实退出/proof为准。计划revision_v7/policy_v7绑定实现、授权、旧证据及回退路径，28个已验收proof不改。
+
+
+## 2026-10-28：用户授权旋转相关固定0.01度跨GPU验收
+
+- `reproduction/numeric_acceptance_20261027/numeric_compare.py`：仅完整姿态预测的旋转矩阵及四元数、派生旋转角改用0.01度。矩阵使用原始Frobenius弦长`2sqrt(2)sin(theta/2)`，四元数使用归一化符号等价弦长`2sin(theta/4)`；float64比较避免近零角acos放大，不投影抹去矩阵误差。形状、dtype、有限性、正交/正定向及非零四元数核验；其他数值、实际离散决定/阈值、RNG、同运行回滚/分支隔离、GT指标均不改。
+- `resume_rotation_degree_20261028.py`：按真实退出和原锁安全续接w54的完整448观察恢复点，保留旧33前向失败及成本。29个既有验收结果直接复用；使用已固定的初始化校验回执，避免后台传输刷新元数据影响运行绑定。
+- `recover_saved_main.py`：恢复回执只列实际存在并复用的面板，w54在目标候选前失败、尚无面板，不虚称复用面板；真实失败成本仍从原hash链重建并独立审计。旧V7源代码在`versions/v7/`。
+- 定向零前向验证：真实w54首差异通过；旋转/四元数0.0099度通过、0.0101度拒绝；符号等价、零四元数、反射/缩放矩阵、平移/参数/RNG及实际决定边界均核验。实际main/独立验收仍以真实退出和proof为准，不能用本测试冒充通过。

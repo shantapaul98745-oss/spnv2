@@ -1,0 +1,5 @@
+# Fixed0.01degree rotation acceptance, 2026-10-28
+
+Explicit user authorization changes only cross-GPU rotations/quaternions/derived angular comparisons. Matrices use raw Frobenius chord <=2sqrt(2)sin(radians(.01)/2), with original shape/dtype/finite and SO3 validity checks; no projection. Unit sign-equivalent quaternions use chord <=2sin(radians(.01)/4); derived finite0..180degree angles use absolute difference<=.01degree. Translation/box, training tensors, BN moments, actual decisions/RNG/exact rollback and GT metrics remain unchanged. Original gate_score/HE arithmetic self-consistency rules remain.
+
+Runtime mapping: revision_v8.policy ->policy_v8.json; revision_v8.comparator ->numeric_compare.py; revision_v8.recovery_code ->recover_saved_main.py. resume_rotation_degree_20261028.py binds the original w54 task, actual failed nonce/exit, complete448 checkpoint, continuous ledger and immutable initialization receipt. D/revisions/numeric_acceptance_20261027/v8_rotation_0_01_degree retains before/failure/manifest/validation/launch evidence.29 accepted pairs keep original proofs. No frozen producer/canonical diagnostic implementation bytes change.

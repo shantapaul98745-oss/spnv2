@@ -15,7 +15,7 @@ def read_bound(x):
 def configure(policy):
  global POLICY
  if policy.get('schema')!='spnv2-cross-gpu-numeric-acceptance-v1' or policy.get('authorization')!='user_2026-10-27_authorized_scientific_acceptance_revision':raise ValueError('Numeric acceptance authorization differs')
- if policy['absolute_tolerance']!=1e-6 or policy['relative_tolerance']!=1e-5 or not policy['finite_only'] or policy['same_run_rollback_and_branch_isolation']!='bitwise_exact' or policy.get('rotation_disagreement_comparison')!='cosine_defining_domain_0_to_180_degrees' or policy.get('derived_HE_delta_acceptance')!='recompute_own_arithmetic_and_keep_discrete_conditions_exact' or policy.get('bn_feature_cache_acceptance')!='per_channel_mean_and_mean_square' or policy.get('bn_channel_mean_absolute_tolerance')!=1e-5 or policy.get('geometric_prediction_comparison')!='per_object_norm' or policy.get('geometry_norm_authorization')!='explicit_user_reply_2026-10-28_geometry_object_norm' or policy.get('derived_gate_score_acceptance')!='exact_own_input_frozen_calibration_recomputation':raise ValueError('Fixed scientific tolerance/strict isolation differs')
+ if policy['absolute_tolerance']!=1e-6 or policy['relative_tolerance']!=1e-5 or not policy['finite_only'] or policy['same_run_rollback_and_branch_isolation']!='bitwise_exact' or policy.get('rotation_disagreement_comparison')!='fixed_absolute_angle_degrees' or policy.get('rotation_angular_tolerance_degrees')!=0.01 or policy.get('derived_HE_delta_acceptance')!='recompute_own_arithmetic_and_keep_discrete_conditions_exact' or policy.get('bn_feature_cache_acceptance')!='per_channel_mean_and_mean_square' or policy.get('bn_channel_mean_absolute_tolerance')!=1e-5 or policy.get('geometric_prediction_comparison')!='per_object_norm' or policy.get('geometry_norm_authorization')!='explicit_user_reply_2026-10-28_geometry_object_norm' or policy.get('derived_gate_score_acceptance')!='exact_own_input_frozen_calibration_recomputation':raise ValueError('Fixed scientific tolerance/strict isolation differs')
  if POLICY is not None and POLICY!=policy:raise ValueError('Acceptance policy cannot change during a run')
  POLICY=policy
  return policy
@@ -98,11 +98,18 @@ def geometry_compare(x,y,key,policy):
  if a.shape!=b.shape or a.shape!=GEOMETRY_SHAPES[key] or a.dtype!=b.dtype or a.dtype.kind!='f':return False,{'reason':'geometry_shape_or_dtype_changed'}
  if not np.isfinite(a).all() or not np.isfinite(b).all():return False,{'reason':'geometry_nonfinite'}
  a,b=a.astype(np.float64),b.astype(np.float64)
+ if key=='effi_R':
+  identity=np.eye(3)
+  if any(not np.allclose(z.T@z,identity,atol=policy['absolute_tolerance'],rtol=policy['relative_tolerance']) or not math.isclose(float(np.linalg.det(z)),1.,abs_tol=policy['absolute_tolerance'],rel_tol=policy['relative_tolerance']) for z in (a,b)):return False,{'reason':'invalid_rotation_matrix'}
+  delta=float(np.linalg.norm(a-b));bound=2.*math.sqrt(2.)*math.sin(math.radians(policy['rotation_angular_tolerance_degrees'])/2.)
+  return delta<=bound,dict(reason='rotation_angular_tolerance_exceeded',difference_norm=delta,bound=bound,angular_tolerance_degrees=policy['rotation_angular_tolerance_degrees'],comparison='raw_matrix_Frobenius_chord_no_projection')
  if key=='heat_q':
   na,nb=float(np.linalg.norm(a)),float(np.linalg.norm(b))
-  if na==0. or nb==0.:return False,{'reason':'geometry_zero_quaternion'}
+  if not(math.isfinite(na) and math.isfinite(nb)) or na==0. or nb==0.:return False,{'reason':'geometry_zero_quaternion'}
   a,b=a/na,b/nb
   if float(np.dot(a,b))<0.:a=-a
+  delta=float(np.linalg.norm(a-b));bound=2.*math.sin(math.radians(policy['rotation_angular_tolerance_degrees'])/4.)
+  return delta<=bound,dict(reason='quaternion_angular_tolerance_exceeded',difference_norm=delta,bound=bound,angular_tolerance_degrees=policy['rotation_angular_tolerance_degrees'],comparison='normalized_sign_equivalent_quaternion_chord')
  delta=float(np.linalg.norm((a-b).ravel()));scale=float(np.linalg.norm(b.ravel()));bound=policy['absolute_tolerance']+policy['relative_tolerance']*scale
  return delta<=bound,dict(reason='geometry_object_norm_exceeded',difference_norm=delta,expected_norm=scale,bound=bound,shape=list(a.shape))
 
@@ -154,7 +161,9 @@ def equal(actual,expected):
   if isinstance(x,float):
    if path and path[-1] in ('rotation_disagreement','he_rotation_deg') and not exact:
     if not (math.isfinite(x) and math.isfinite(y) and 0.<=x<=180. and 0.<=y<=180.):return fail(path,'invalid_derived_angle')
-    x,y=math.cos(math.radians(x)),math.cos(math.radians(y))
+    delta=abs(x-y);bound=p['rotation_angular_tolerance_degrees']
+    STATS['numeric_values']+=1;STATS['max_angular_difference_degrees']=max(STATS.get('max_angular_difference_degrees',0.),delta)
+    return delta<=bound or fail(path,'derived_angle_tolerance_exceeded')
    if not math.isfinite(x) or not math.isfinite(y):return fail(path,'nonfinite')
    delta=abs(x-y);bound=0. if exact else absolute_tolerance(p,path)+p['relative_tolerance']*abs(y)
    STATS['numeric_values']+=1;STATS['max_absolute_difference']=max(STATS['max_absolute_difference'],delta)
@@ -185,4 +194,4 @@ def equal(actual,expected):
   except (ValueError,TypeError):return fail(path,'unsupported_value')
  return visit(actual,expected)
 
-def receipt():return {'standard':'cross_gpu_numeric_v7_derived_gate_score','bindings':bindings(),'statistics':dict(STATS),'internal_branch_and_rollback':'bitwise_exact','discrete_decisions_and_rng':'exact'}
+def receipt():return {'standard':'cross_gpu_numeric_v8_rotation_0_01_degree','bindings':bindings(),'statistics':dict(STATS),'internal_branch_and_rollback':'bitwise_exact','discrete_decisions_and_rng':'exact'}

@@ -66,7 +66,7 @@ def prepare_partial(p,task_path,revision):
   path=directory/(nonce+'.json')
   if path.exists():p.require(p.load_json(path)==row,'Partial recovery old cost changed')
   else:p.atomic_json(path,row)
- return dict(manifest=rev['partial_main_recovery']['manifest'],old_failure_exit_codes_preserved=True,failed_costs_derived_read_only=True,reused_panels=['accept','rollback'],reused_complete_checkpoint=manifest['actual_checkpoint'],recompute_only_unpersisted_tail=True)
+ return dict(manifest=rev['partial_main_recovery']['manifest'],old_failure_exit_codes_preserved=True,failed_costs_derived_read_only=True,reused_panels=[name for name in ('accept','rollback') if 'progress_'+name in manifest['artifacts']],reused_complete_checkpoint=manifest['actual_checkpoint'],recompute_only_unpersisted_tail=True)
 
 def execute(p,task_path,*,admission,launch_record,conflict_check,budget):
  started=time.monotonic();task=p.load_json(task_path);output=Path(task['output_dir']);manifest,revision=manifest_current()
