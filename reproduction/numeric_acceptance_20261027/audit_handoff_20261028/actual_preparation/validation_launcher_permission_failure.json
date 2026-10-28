@@ -1,0 +1,5 @@
+{
+  "exception": "Script is not executable; no child launched",
+  "recovery": "invoke unchanged wrapper with bash",
+  "model_forwards": 0
+}

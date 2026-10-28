@@ -57,6 +57,31 @@
       "source": "reproduction/numeric_acceptance_20261027/test_final_audit_handoff.py",
       "sha256": "102d36470eaae61be27fff55cbacb1140943dd4c324447dd7197f8068bf8dfb2",
       "execution": "Versioned metadata-only audit handoff; original manager and strict receipt checks unchanged; all saved main/verify evidence reused"
+    },
+    {
+      "source": "reproduction/numeric_acceptance_20261027/audit_handoff_20261028/actual_preparation/execution_mapping.json",
+      "sha256": "629daa20fe7f3df90b0e5a1cb1953df01f31066546f3d52ead1741915f9ff0d4",
+      "execution": "Historical actual metadata preparation and real failures; preserve source evidence and do not rerun completed science"
+    },
+    {
+      "source": "reproduction/numeric_acceptance_20261027/audit_handoff_20261028/actual_preparation/finish_preparation_recovery.py",
+      "sha256": "cbccbe1884b6270449928ee2df2f98e32910a328b88167cb7cdcc73053a04325",
+      "execution": "Historical actual metadata preparation and real failures; preserve source evidence and do not rerun completed science"
+    },
+    {
+      "source": "reproduction/numeric_acceptance_20261027/audit_handoff_20261028/actual_preparation/preparation_failures.json",
+      "sha256": "327e961d39e828964c2aa08ca77c37b5de25375f4615ea95ee2ad76a4cf86503",
+      "execution": "Historical actual metadata preparation and real failures; preserve source evidence and do not rerun completed science"
+    },
+    {
+      "source": "reproduction/numeric_acceptance_20261027/audit_handoff_20261028/actual_preparation/reconcile_saved_acceptance_and_prepare.py",
+      "sha256": "5e61a7706497256f831a73a6ccf2b4c664d4c8ad7371fceaf03f59e5cf273b26",
+      "execution": "Historical actual metadata preparation and real failures; preserve source evidence and do not rerun completed science"
+    },
+    {
+      "source": "reproduction/numeric_acceptance_20261027/audit_handoff_20261028/actual_preparation/validation_launcher_permission_failure.json",
+      "sha256": "2d257f5946e5bcdc956e7ab3c4027272fa845ad2cb6e3995cb81be577a6dfb49",
+      "execution": "Historical actual metadata preparation and real failures; preserve source evidence and do not rerun completed science"
     }
   ],
   "mathematical_model_updates_and_internal_rollback_unchanged": true,

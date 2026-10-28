@@ -1,0 +1,27 @@
+{
+  "ledger_unchanged": true,
+  "model_forwards": 0,
+  "original_immutable_task_and_receipts_unchanged": true,
+  "real_failed_preparations": [
+    {
+      "actual_exit_code": 1,
+      "code": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2/reproduction/numeric_acceptance_20261027/resume_summary_handoff_20261028.py",
+        "sha256": "63d740a559eed2c4352e919bd5a3d3f6ba35a8d6f0e842ad110dbe45249ed481"
+      },
+      "error": "Missing routing pilot metadata"
+    },
+    {
+      "actual_exit_code": 1,
+      "code": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/summary_handoff_20261028/finish_preparation_recovery.py",
+        "sha256": "cbccbe1884b6270449928ee2df2f98e32910a328b88167cb7cdcc73053a04325"
+      },
+      "error": "Strict acceptance namespace rejected audit-path/template change"
+    }
+  ],
+  "recovery_code": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/summary_handoff_20261028/reconcile_saved_acceptance_and_prepare.py",
+    "sha256": "5e61a7706497256f831a73a6ccf2b4c664d4c8ad7371fceaf03f59e5cf273b26"
+  }
+}

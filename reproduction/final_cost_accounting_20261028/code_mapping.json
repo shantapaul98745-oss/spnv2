@@ -1,0 +1,35 @@
+{
+  "schema": "spnv2-final-cost-code-mapping-v1",
+  "baseline_commit": "b37e5309e80dc721c6ab7c481417dd6adf7a8260",
+  "execution_status": "candidate_only_not_settled_or_published",
+  "runtime_plan": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025",
+  "mapping": [
+    {
+      "source": "reproduction/final_cost_accounting_20261028/README.md",
+      "sha256": "b6a426da783f58f6dcd8a5cce6993f8882bf0bc5d57ae712f01e88973c7c21ed"
+    },
+    {
+      "source": "reproduction/final_cost_accounting_20261028/core.py",
+      "sha256": "d3a0fbfaad5784b51df4d82acc6b1f12b059732bd18514c17bf284378cb1ce3b"
+    },
+    {
+      "source": "reproduction/final_cost_accounting_20261028/entry.py",
+      "sha256": "7b3bc8f1c58e99a96cb112f9b5ece3736aa5e9f07b5ca38fd02292acc325444b"
+    },
+    {
+      "source": "reproduction/final_cost_accounting_20261028/review_receipt.json",
+      "sha256": "a331b1c710cd04ef268dbc4d0841b130d31d0d3fac5c0eb411136859e92d8de2"
+    },
+    {
+      "source": "reproduction/final_cost_accounting_20261028/selftest.py",
+      "sha256": "5e9029043882e3bdefde2c77bdb92cb6852539ba2f33cf1ef17b294e2d4aeffc"
+    },
+    {
+      "source": "reproduction/final_cost_accounting_20261028/targeted_test_receipt.json",
+      "sha256": "3c2b66586133d4aff68b53945559570c70bb4806fbe5218366d055ab412050a5"
+    }
+  ],
+  "original_scientific_and_budget_implementation_unchanged": true,
+  "no_existing_settlement_script_reexecuted": true,
+  "no_model_or_summary_reexecution": true
+}

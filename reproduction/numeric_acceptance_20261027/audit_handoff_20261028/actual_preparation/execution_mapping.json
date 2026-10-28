@@ -1,0 +1,219 @@
+{
+  "schema": "spnv2-final-audit-handoff-actual-execution-mapping-v1",
+  "created_at_utc": "2026-10-28T14:12:17.548044+00:00",
+  "status": "actual_scientific_summary_succeeded_final_external_costs_pending",
+  "published_code_commit": "b37e5309e80dc721c6ab7c481417dd6adf7a8260",
+  "published_commit_scope": "b37e5309e80dc721c6ab7c481417dd6adf7a8260 contains the new driver and initial preparation entry; it does not itself contain these later actual recovery scripts. The copied immutable scripts below document the preparation that actually succeeded and are awaiting the next unified archive commit.",
+  "archive_files": [
+    {
+      "source": {
+        "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/summary_handoff_20261028/finish_preparation_recovery.py",
+        "sha256": "cbccbe1884b6270449928ee2df2f98e32910a328b88167cb7cdcc73053a04325",
+        "bytes": 4341
+      },
+      "archive": {
+        "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2/reproduction/numeric_acceptance_20261027/audit_handoff_20261028/actual_preparation/finish_preparation_recovery.py",
+        "sha256": "cbccbe1884b6270449928ee2df2f98e32910a328b88167cb7cdcc73053a04325",
+        "bytes": 4341
+      },
+      "bytes_identical": true
+    },
+    {
+      "source": {
+        "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/summary_handoff_20261028/reconcile_saved_acceptance_and_prepare.py",
+        "sha256": "5e61a7706497256f831a73a6ccf2b4c664d4c8ad7371fceaf03f59e5cf273b26",
+        "bytes": 7567
+      },
+      "archive": {
+        "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2/reproduction/numeric_acceptance_20261027/audit_handoff_20261028/actual_preparation/reconcile_saved_acceptance_and_prepare.py",
+        "sha256": "5e61a7706497256f831a73a6ccf2b4c664d4c8ad7371fceaf03f59e5cf273b26",
+        "bytes": 7567
+      },
+      "bytes_identical": true
+    },
+    {
+      "source": {
+        "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/summary_handoff_20261028/preparation_failures.json",
+        "sha256": "327e961d39e828964c2aa08ca77c37b5de25375f4615ea95ee2ad76a4cf86503",
+        "bytes": 1195
+      },
+      "archive": {
+        "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2/reproduction/numeric_acceptance_20261027/audit_handoff_20261028/actual_preparation/preparation_failures.json",
+        "sha256": "327e961d39e828964c2aa08ca77c37b5de25375f4615ea95ee2ad76a4cf86503",
+        "bytes": 1195
+      },
+      "bytes_identical": true
+    },
+    {
+      "source": {
+        "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/summary_handoff_20261028/validation_launcher_permission_failure.json",
+        "sha256": "2d257f5946e5bcdc956e7ab3c4027272fa845ad2cb6e3995cb81be577a6dfb49",
+        "bytes": 140
+      },
+      "archive": {
+        "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2/reproduction/numeric_acceptance_20261027/audit_handoff_20261028/actual_preparation/validation_launcher_permission_failure.json",
+        "sha256": "2d257f5946e5bcdc956e7ab3c4027272fa845ad2cb6e3995cb81be577a6dfb49",
+        "bytes": 140
+      },
+      "bytes_identical": true
+    }
+  ],
+  "preparation_failures_preserved": [
+    {
+      "actual_exit_code": 1,
+      "code": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2/reproduction/numeric_acceptance_20261027/resume_summary_handoff_20261028.py",
+        "sha256": "63d740a559eed2c4352e919bd5a3d3f6ba35a8d6f0e842ad110dbe45249ed481"
+      },
+      "error": "Missing routing pilot metadata"
+    },
+    {
+      "actual_exit_code": 1,
+      "code": {
+        "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/summary_handoff_20261028/finish_preparation_recovery.py",
+        "sha256": "cbccbe1884b6270449928ee2df2f98e32910a328b88167cb7cdcc73053a04325"
+      },
+      "error": "Strict acceptance namespace rejected audit-path/template change"
+    }
+  ],
+  "validation_launcher_permission_failure": {
+    "evidence": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/summary_handoff_20261028/validation_launcher_permission_failure.json",
+      "sha256": "2d257f5946e5bcdc956e7ab3c4027272fa845ad2cb6e3995cb81be577a6dfb49",
+      "bytes": 140
+    },
+    "interpretation": "PermissionError occurred before a child process was created because the wrapper did not have an executable bit; invoking the unchanged wrapper through bash then succeeded. The failed call and evidence remain preserved."
+  },
+  "actual_successful_preparation": {
+    "script": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2/reproduction/numeric_acceptance_20261027/audit_handoff_20261028/actual_preparation/reconcile_saved_acceptance_and_prepare.py",
+      "sha256": "5e61a7706497256f831a73a6ccf2b4c664d4c8ad7371fceaf03f59e5cf273b26",
+      "bytes": 7567
+    },
+    "original_script": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/summary_handoff_20261028/reconcile_saved_acceptance_and_prepare.py",
+      "sha256": "5e61a7706497256f831a73a6ccf2b4c664d4c8ad7371fceaf03f59e5cf273b26",
+      "bytes": 7567
+    },
+    "receipt": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/summary_handoff_20261028/preparation_receipt.json",
+      "sha256": "4534d6c237723ae45369fee3a2f2e817dbf2d263820e1381fd3ca18d733e70f0",
+      "bytes": 37513
+    },
+    "original_final_receipts": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/final_receipts_dea906ca7dac.json",
+      "sha256": "9a3cdbfdc6cf6c4de713f4504896486e62a432071c381b077df165353ae579bc"
+    },
+    "pre_reconciliation_status": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/summary_handoff_20261028/pre_reconciliation_status.json",
+      "sha256": "606d517b1b2f112b0c2d27572b8b04006be30edb089b16bb516629a8e96a6733",
+      "bytes": 1078048
+    },
+    "reconciled_state": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/summary_handoff_20261028/reconciled_state.json",
+      "sha256": "b28b71ab4008d8a61b6c037c8951b23c7c0ebf00a15a64c1773ed45c45d97362",
+      "bytes": 1080073
+    },
+    "independently_accepted_reused": 48,
+    "main_reused": 48,
+    "successful_last_verifier_reused": true,
+    "ledger_prefix": {
+      "bytes": 20024161,
+      "sha256": "b1f79088e8175d4834ddeaa2451c3460450ab7614e13a99d491065e85850b2bf"
+    },
+    "method": "Restored the last already-successful independent acceptance and terminal fields from the original hash-bound durable final_receipts_dea906ca7dac.json. Existing 47 acceptances and all 48 main records were matched first, and actual final verifier exit/proof were checked. No synthetic acceptance, model rerun or verifier rerun. Original audit task paths, summary template and strict receipt-cohort comparison remain unchanged."
+  },
+  "targeted_validation": {
+    "receipt": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/summary_handoff_20261028/targeted_validation.json",
+      "sha256": "25d559a5560c05e7cc250e6b6d174814b627263619f340a80e26b0c55df42613",
+      "bytes": 410
+    },
+    "proof": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/migrations/sysu_20261027/runtime_control/config_versions/summary_handoff2_validation_3ae43c47eb054cc2a97cfe09f9dffa1d.json",
+      "sha256": "c5c74c21e5514ddc581df31d9df3b4702ac4675f41f452150747044e5842b977"
+    },
+    "wrapper_exit": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/summary_handoff_20261028/validation.log.exitcode",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "bytes": 2
+    },
+    "actual_exit_code": 0,
+    "model_forwards": 0
+  },
+  "actual_manager": {
+    "launch_intent": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/summary_handoff_20261028/manager_launch_intent.json",
+      "sha256": "0984ee90cb8e81694269db6826b35106c59e534237e106aa783bd4f96a7eae9a",
+      "bytes": 16911
+    },
+    "wrapper": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/summary_handoff_20261028/manager_wrapper.json",
+      "sha256": "c71eee2a6eea46fc9bb28234b518043dc0d7a3f9184ebcc7da55fdb92437e87e",
+      "bytes": 258
+    },
+    "log": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/summary_handoff_20261028/manager.log",
+      "sha256": "3e361aafb0df3282b50dacdc513b290191db264a40b6ae97a0a9d3105c45d2ae",
+      "bytes": 15003
+    },
+    "wrapper_exit": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/revisions/summary_handoff_20261028/manager.log.exitcode",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "bytes": 2
+    },
+    "actual_exit_code": 0,
+    "manager_nonce": "99556e696b534bf48affa961cad4c406"
+  },
+  "scientific_summary": {
+    "summary": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/delivery/summary.json",
+      "sha256": "9504b5ee61250e850ea98d6d41a00a5c3469fe64900ac4076cdc20b6b3b5b79f"
+    },
+    "independent_proof": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/delivery/proof.json",
+      "sha256": "c895d65367bd6f8f9c55be506e25398c94638beb0b0b832c26735ae072edb2e1"
+    },
+    "actual_summary_nonce": "1d845530573342f68a457abab5e88f14",
+    "actual_summary_exit": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/logs/g50p_diag_summary_bindingfix1_notimelimit1_1d845530573342f68a457abab5e88f14.log.exitcode",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "bytes": 2
+    },
+    "outcome": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/launches/1d845530573342f68a457abab5e88f14/outcome.json",
+      "sha256": "89b4e608e14665c39636b0e4d67e21684fc2c4b11f82de87e1c08e2974e84682",
+      "bytes": 430
+    },
+    "launch": {
+      "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/launches/1d845530573342f68a457abab5e88f14/launch.json",
+      "sha256": "2fd83c0cb91c8dae60139fa27e35d192118928fe8cb14abe3356032fb27b3b00",
+      "bytes": 3530
+    },
+    "summary_worker_closed_budget": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/launches/1d845530573342f68a457abab5e88f14/budget_closed.json",
+      "sha256": "6c9fcb567629a1db818b2c66aa68c328a251ee0e1ce8f4573abeab618b89706a"
+    },
+    "actual_summary_exit_code": 0,
+    "independently_accepted_windows": 48,
+    "scope_complete": true,
+    "provisional_manifest": {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/g50p_risk_diagnostic_20261025/delivery/provisional_costs_pending_1d845530573342f68a457abab5e88f14_e4998fa89bb2.json",
+      "sha256": "48219e22e34dc29a8ac0b2e0655b0938661ea7d207463aaab2a2853646a57517"
+    }
+  },
+  "final_cost_boundary": {
+    "final_manifest_not_published": true,
+    "summary_budget_not_final_external_cost_total": true,
+    "real_migration_control_costs_still_need_original_ledger_settlement": true
+  },
+  "archive_operation": {
+    "model_forwards": 0,
+    "runtime_index_status_ledger_or_code_bindings_modified": false,
+    "new_runtime_tests": false,
+    "measured_wall_seconds_before_final_mapping_write": 0.009779674932360649,
+    "cpu_user_seconds_before_final_mapping_write": 0.004086999999999999,
+    "cpu_system_seconds_before_final_mapping_write": 0.004386999999999999,
+    "not_yet_appended_to_original_budget": true
+  }
+}

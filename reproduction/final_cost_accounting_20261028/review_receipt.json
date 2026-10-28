@@ -1,0 +1,30 @@
+{
+  "schema": "spnv2-final-cost-candidate-review-v1",
+  "at_utc": "2026-10-28T16:00:09.410524+00:00",
+  "status": "reviewed_candidate_not_executed",
+  "baseline_commit": "b37e5309e80dc721c6ab7c481417dd6adf7a8260",
+  "tests": {
+    "path": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2/reproduction/final_cost_accounting_20261028/targeted_test_receipt.json",
+    "sha256": "3c2b66586133d4aff68b53945559570c70bb4806fbe5218366d055ab412050a5"
+  },
+  "critical_repairs_verified": [
+    "Cross-label/process-host-alias duplicate charges rejected across previous imports and within one inventory",
+    "Uniform outer failure receipt records before-admission/before-begin costs and existing allocation without refund or duplicate import",
+    "Publication writes only launch-local candidate; failed candidate cannot block final path"
+  ],
+  "original_API_compatibility_checked": [
+    "GlobalBudget._append returns recognized hash-chain event",
+    "GlobalBudget.begin_attempt current policy has deadlineNone and closed-allocation gate",
+    "Original launch_record and conflict signatures match candidate calls",
+    "Actual saved scientific summary launch argv carries its real --task-json identity"
+  ],
+  "actual_model_forwards": 0,
+  "actual_admitted_execution": false,
+  "actual_settlement": false,
+  "actual_final_publication": false,
+  "remaining_required_work": [
+    "Actual external transfer termination and immutable final fee inventory",
+    "Targeted admitted settle/publish only when all evidence exists",
+    "A separately accounted final promotion with fresh final-budget snapshot; candidate must never be renamed/copied as an uncharged final manifest"
+  ]
+}
