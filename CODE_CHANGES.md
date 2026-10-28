@@ -453,3 +453,10 @@ User authorizes only BN temporary-cache channel-mean absolute tolerance1e-5. Its
 - 分类入口实际CPU验收已exit0，nonce135e7037db694ab8bfa6248d96c201fc，新增模型前向0。明确仅当前bn_mean累加器20个张量/86元素与窗口基点临时缓存通道均值1个张量/1通道超界；参数、buffers、优化器、梯度、BN二阶、RNG及其余完整科学状态均符合原标准。新的BN容差只提出给用户，未应用。两次CPU读取及全部科学失败费用留原账本，未退款/重置。
 
 - `inspect_w54_failed_cache_moments.py`补核唯一在通道均值处提前退出的缓存层，避免把尚未访问的均方误称通过。真实admitted CPU nonce93d012b186d34c1b9dcd0a014413048c、exit0、前向0：该层均方最大现行界限比例0.05063，仍通过；均值仅1通道超界，在拟议atol2e-5下最大比例0.58548（未应用）。这使全部受影响类别明确为BN均值累加器与缓存通道均值，其他状态标准未改。
+
+
+## 2026-10-28：用户授权两项BN均值容差并复用w54完整成果
+
+- `numeric_acceptance_20261027/numeric_compare.py`仅对`learner.learning/window_base.bn_mean`窗口均值累加器采用atol1e-5、相同learning快照的BN缓存通道均值采用atol2e-5，rtol保持1e-5。BN二阶、缓存均方、真实running buffers、参数/梯度/优化器、其余数值及离散/RNG/同运行完整回滚和GT要求不变；不按字段名字模糊放宽。
+- `resume_BN_two_means_20261028.py`在真实旧退出及原四锁/manager锁安全边界，绑定已保存512观察完整状态、候选和两支128面板，移除被完整恢复取代的旧448 partial提示，沿用零模型finalizer生成新main后执行真实独立验收。原两次失败、原标准、29个已验收proof及全部账本费用保留，不退款、不改写旧成功或失败。
+- 旧V8比较器和实际分支执行代码归档于`versions/v8/`；完整状态只建立不可变硬链接，不复制模型或重算面板。定向零模型检查通过两项新界限及越界拒绝，并确认二阶、参数/running buffer、无关同名字段、RNG仍按原标准。真正科学验收以新main/verify实际退出和proof为准。
