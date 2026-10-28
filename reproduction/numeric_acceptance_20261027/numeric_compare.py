@@ -6,6 +6,7 @@ PLAN=ROOT/'spnv2_runs/plans/g50p_risk_diagnostic_20261025'
 POLICY=None
 STATS={'comparisons':0,'numeric_values':0,'max_absolute_difference':0.,'max_tolerance_fraction':0.,'failures':0}
 LAST_FAILURE=None
+GATE_RUNTIME=None
 
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def read_bound(x):
@@ -14,7 +15,7 @@ def read_bound(x):
 def configure(policy):
  global POLICY
  if policy.get('schema')!='spnv2-cross-gpu-numeric-acceptance-v1' or policy.get('authorization')!='user_2026-10-27_authorized_scientific_acceptance_revision':raise ValueError('Numeric acceptance authorization differs')
- if policy['absolute_tolerance']!=1e-6 or policy['relative_tolerance']!=1e-5 or not policy['finite_only'] or policy['same_run_rollback_and_branch_isolation']!='bitwise_exact' or policy.get('rotation_disagreement_comparison')!='cosine_defining_domain_0_to_180_degrees' or policy.get('derived_HE_delta_acceptance')!='recompute_own_arithmetic_and_keep_discrete_conditions_exact' or policy.get('bn_feature_cache_acceptance')!='per_channel_mean_and_mean_square' or policy.get('bn_channel_mean_absolute_tolerance')!=1e-5 or policy.get('geometric_prediction_comparison')!='per_object_norm' or policy.get('geometry_norm_authorization')!='explicit_user_reply_2026-10-28_geometry_object_norm':raise ValueError('Fixed scientific tolerance/strict isolation differs')
+ if policy['absolute_tolerance']!=1e-6 or policy['relative_tolerance']!=1e-5 or not policy['finite_only'] or policy['same_run_rollback_and_branch_isolation']!='bitwise_exact' or policy.get('rotation_disagreement_comparison')!='cosine_defining_domain_0_to_180_degrees' or policy.get('derived_HE_delta_acceptance')!='recompute_own_arithmetic_and_keep_discrete_conditions_exact' or policy.get('bn_feature_cache_acceptance')!='per_channel_mean_and_mean_square' or policy.get('bn_channel_mean_absolute_tolerance')!=1e-5 or policy.get('geometric_prediction_comparison')!='per_object_norm' or policy.get('geometry_norm_authorization')!='explicit_user_reply_2026-10-28_geometry_object_norm' or policy.get('derived_gate_score_acceptance')!='exact_own_input_frozen_calibration_recomputation':raise ValueError('Fixed scientific tolerance/strict isolation differs')
  if POLICY is not None and POLICY!=policy:raise ValueError('Acceptance policy cannot change during a run')
  POLICY=policy
  return policy
@@ -48,6 +49,33 @@ def _he_record(row):
  STATS['derived_HE_records_recomputed']=STATS.get('derived_HE_records_recomputed',0)+1
  return r
 
+
+def _gate_record(row):
+ """Audit the original gate computation; never rewrite persisted score data."""
+ global GATE_RUNTIME
+ if not isinstance(row,dict) or row.get('kind')!='observation' or not {'arrival','accepted','gate_reason','gate_score'}<=set(row):return row
+ p=current()
+ if GATE_RUNTIME is None:
+  import importlib.util
+  item=p['derived_gate_code']
+  if sha(item['path'])!=item['sha256']:raise ValueError('Frozen gate code changed')
+  spec=importlib.util.spec_from_file_location('numeric_bound_original_gate',item['path']);gate=importlib.util.module_from_spec(spec);spec.loader.exec_module(gate)
+  bundle=read_bound(p['derived_gate_calibration'])
+  if bundle.get('status')!='passed' or bundle['calibration']['schema']!='odr003-frozen-shared-calibration-v1':raise ValueError('Frozen gate calibration invalid')
+  GATE_RUNTIME=(gate,bundle['calibration'])
+ gate,calibration=GATE_RUNTIME
+ decision,reason,score=gate.decide('G50',row['arrival'],calibration)
+ if type(row['accepted']) is not bool or row['accepted'] is not decision or row['gate_reason']!=reason:raise ValueError('Actual gate threshold decision is not self-consistent')
+ stored=row['gate_score']
+ if score is None:
+  if stored is not None:raise ValueError('Unavailable gate score was replaced')
+ elif type(stored) is not float or not math.isfinite(stored) or stored!=score:raise ValueError('Derived gate score does not exactly recompute from own frozen inputs')
+ # Its original inputs and discrete outcome still undergo their unchanged
+ # cross-device checks. Only the redundant derived score is normalized in a
+ # comparison copy, after exact independent recomputation on each side.
+ result=dict(row);result['gate_score']=0.
+ STATS['derived_gate_records_recomputed']=STATS.get('derived_gate_records_recomputed',0)+1
+ return result
 
 def absolute_tolerance(policy,path):
  if 'bn_features' in path and path and path[-1]=='channel_mean':return policy['bn_channel_mean_absolute_tolerance']
@@ -105,6 +133,8 @@ def equal(actual,expected):
    if not exact:
     try:x,y=_he_record(x),_he_record(y)
     except (ValueError,KeyError,TypeError):return fail(path,'inconsistent_derived_protection_record')
+    try:x,y=_gate_record(x),_gate_record(y)
+    except (ValueError,KeyError,TypeError):return fail(path,'inconsistent_derived_gate_record')
    if set(x)!=set(y):return fail(path,'keys_changed')
    if not exact and not any(part.lower() in ('model','optimizer','gradients','gradient','parameters','param_groups','bn_features') for part in path) and geometry_prediction_record(x) and geometry_prediction_record(y):
     for key in x:
@@ -155,4 +185,4 @@ def equal(actual,expected):
   except (ValueError,TypeError):return fail(path,'unsupported_value')
  return visit(actual,expected)
 
-def receipt():return {'standard':'cross_gpu_numeric_v6_geometry_object_norm','bindings':bindings(),'statistics':dict(STATS),'internal_branch_and_rollback':'bitwise_exact','discrete_decisions_and_rng':'exact'}
+def receipt():return {'standard':'cross_gpu_numeric_v7_derived_gate_score','bindings':bindings(),'statistics':dict(STATS),'internal_branch_and_rollback':'bitwise_exact','discrete_decisions_and_rng':'exact'}

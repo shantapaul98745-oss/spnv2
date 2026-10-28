@@ -428,3 +428,10 @@ User authorizes only BN temporary-cache channel-mean absolute tolerance1e-5. Its
 - `pair_runner.py`、`recover_saved_main.py`及`resume_geometry_norm_20261028.py`：复用w31已完成两支128面板和完整283观察检查点，仅续接未持久化尾段。真实失败exit1和原账本费用保留，由独立验收审计原hash链，不伪造旧成功。恢复状态用不可变硬链接保护，原始科学代码未改。
 - `versions/v5/`保存原执行代码；计划revision_v6/policy_v6及恢复manifest明确新旧绑定与回退入口，28个既有验收结果保持原proof。
 - 定向零前向验证：真实首差异通过；超界几何、NaN、离散决定变化被拒；模型参数逐元素、RNG严格、BN两个统计容差均保留。正式运行仍需原资源/身份/预算准入及真实独立验收，不能把元数据测试称科学窗口通过。
+
+
+## 2026-10-28：用户授权仅派生门控分数精确重算自洽
+
+- `reproduction/numeric_acceptance_20261027/numeric_compare.py`：仅observation记录中的派生G50门控分数，先用各自原始arrival及冻结gate_core/calibration精确重算分数、阈值判断和原因；通过后仅在比较副本中排除冗余分数。原始值不改，原始输入仍按已批准规则比较，实际离散决定/阈值不放宽，模型、优化器、梯度、BN及RNG/同运行回滚标准不变。
+- `resume_gate_score_20261028.py`：精确核对V6停止、真实exit1、无活动科学进程的原锁边界及连续账本，保留两个实际失败及全部费用；复用已保存283观察检查点与两支128面板，仅续接未持久化尾段。旧V6比较器和续接代码归档在`versions/v6/`。
+- 定向零前向验证：保存的ECDF排名跳档首差异通过；伪造自身分数、修改接受决定、模型参数超界和RNG改变仍拒绝；BN容差保持。正式窗口验收以新main及独立verify真实退出/proof为准。计划revision_v7/policy_v7绑定实现、授权、旧证据及回退路径，28个已验收proof不改。
