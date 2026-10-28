@@ -503,3 +503,11 @@ User authorizes only BN temporary-cache channel-mean absolute tolerance1e-5. Its
 - `numeric_acceptance_20261027/final_cost_guard.py`为显式revision绑定的metadata manager driver候选，固定核对原manager字节SHA；普通main/verify等finish原样委托，仅成功科学汇总分支保留原真实proof/summary SHA、worker退出和预算闭合检查后，发布明确非最终的provisional并置scientific_complete_costs_pending，退出0保留已完成科学汇总，不生成final_manifest。即便费用receipt声明ready，也仅转显式metadata最终费用发布阶段，不拿旧summary预算冒充最终全费用。
 - 原因：真实后台迁移仍在继续且M.control费用待结算，原manager不会检查该pending，可能过早封最终账。候选不估算费用、不将pending标False、不改原18/50科学文件、预算账本或旧退出证据，须在下一安全manager切换显式绑定后才生效。
 - 验证：语法及6项纯内存分支用例通过，覆盖普通任务委托、pending、缺结算receipt、receipt ready仍不发布最终账、坏科学proof拒绝；模型前向0、运行文件/账本读写0。此候选尚未激活，实际已结算费用与最终发布仍需独立真实metadata阶段。
+
+
+## 2026-10-28：用户授权heat_peaks向量固定绝对界限并接入最终费用门
+
+- `numeric_compare.py`仅heat_peaks11维整体范数采用固定atol1e-4，rtol1e-5。平移/框、旋转、两类BN均值、可训练BN仿射及其余字段/原阈值/实际决定/同运行回滚/RNG/GT规则全部保持；原始预测不改，不自动调界限。
+- `resume_heat_bound_cost_guard_20261028.py`在原锁与真实旧退出安全边界，复用sunlamp2023/w1完整8观察恢复点、已保存候选及两支128面板，只重算未持久化尾段；40个已验收proof和旧失败费用不改。
+- 同一明确revision绑定`final_cost_guard.py`及原canonical manager SHA，只替换manager启动入口，不改原18/50文件或科学dispatch。成功科学汇总保留为明确非最终provisional，待原账本真实结算异步迁移/控制成本后再由metadata阶段完成最终发布，避免过早漏费用封账。
+- 定向零模型检查：保存heat-vector首差异通过、越界/其他平移参数/RNG/实际决定不放宽；费用门6项纯metadata用例通过，无运行文件或账本读写。旧V13比较器归档versions/v13；实际验收仍需真实main/独立verify退出和proof。
