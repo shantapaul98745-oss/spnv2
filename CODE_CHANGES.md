@@ -460,3 +460,10 @@ User authorizes only BN temporary-cache channel-mean absolute tolerance1e-5. Its
 - `numeric_acceptance_20261027/numeric_compare.py`仅对`learner.learning/window_base.bn_mean`窗口均值累加器采用atol1e-5、相同learning快照的BN缓存通道均值采用atol2e-5，rtol保持1e-5。BN二阶、缓存均方、真实running buffers、参数/梯度/优化器、其余数值及离散/RNG/同运行完整回滚和GT要求不变；不按字段名字模糊放宽。
 - `resume_BN_two_means_20261028.py`在真实旧退出及原四锁/manager锁安全边界，绑定已保存512观察完整状态、候选和两支128面板，移除被完整恢复取代的旧448 partial提示，沿用零模型finalizer生成新main后执行真实独立验收。原两次失败、原标准、29个已验收proof及全部账本费用保留，不退款、不改写旧成功或失败。
 - 旧V8比较器和实际分支执行代码归档于`versions/v8/`；完整状态只建立不可变硬链接，不复制模型或重算面板。定向零模型检查通过两项新界限及越界拒绝，并确认二阶、参数/running buffer、无关同名字段、RNG仍按原标准。真正科学验收以新main/verify实际退出和proof为准。
+
+
+## 2026-10-28：用户授权仅heat_peaks向量范数验收
+
+- `numeric_acceptance_20261027/numeric_compare.py`仅完整姿态预测记录中的11维heat_peaks改用L2整体范数，仍为atol1e-6/rtol1e-5；shape/dtype/有限性、顺序、实际阈值/离散决定均保持。其他预测字段、旋转0.01度、两BN均值、模型/优化器/梯度、RNG、同运行回滚/分支隔离和GT规则不改，原始记录不改。
+- `resume_heat_peaks_20261028.py`核对V9真实退出及连续账本/原四锁，在安全边界将w84从实际完整704检查点续接，保留旧失败77物理前向费用。此窗口尚无候选或面板，不能虚称复用；30个已验收窗口直接复用、不重跑。旧V9比较器在`versions/v9/`。
+- 定向零模型验证：真实首差异通过，大误差/错误维数/非有限值和离散决定改变仍拒绝，无关model同名向量不放宽；实际科学完成仍需新main和独立verify真实exit0/proof。版本化policy_v10/revision_v10与恢复manifest保留原任务、输入、父检查点、旧错误及回退链。

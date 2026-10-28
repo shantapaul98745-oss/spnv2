@@ -15,7 +15,7 @@ def read_bound(x):
 def configure(policy):
  global POLICY
  if policy.get('schema')!='spnv2-cross-gpu-numeric-acceptance-v1' or policy.get('authorization')!='user_2026-10-27_authorized_scientific_acceptance_revision':raise ValueError('Numeric acceptance authorization differs')
- if policy['absolute_tolerance']!=1e-6 or policy['relative_tolerance']!=1e-5 or not policy['finite_only'] or policy['same_run_rollback_and_branch_isolation']!='bitwise_exact' or policy.get('rotation_disagreement_comparison')!='fixed_absolute_angle_degrees' or policy.get('rotation_angular_tolerance_degrees')!=0.01 or policy.get('derived_HE_delta_acceptance')!='recompute_own_arithmetic_and_keep_discrete_conditions_exact' or policy.get('bn_feature_cache_acceptance')!='per_channel_mean_and_mean_square' or policy.get('bn_channel_mean_absolute_tolerance')!=2e-5 or policy.get('bn_window_mean_absolute_tolerance')!=1e-5 or policy.get('bn_two_means_authorization')!='explicit_user_reply_2026-10-28_only_window_mean_1e5_cache_mean_2e5' or policy.get('geometric_prediction_comparison')!='per_object_norm' or policy.get('geometry_norm_authorization')!='explicit_user_reply_2026-10-28_geometry_object_norm' or policy.get('derived_gate_score_acceptance')!='exact_own_input_frozen_calibration_recomputation':raise ValueError('Fixed scientific tolerance/strict isolation differs')
+ if policy['absolute_tolerance']!=1e-6 or policy['relative_tolerance']!=1e-5 or not policy['finite_only'] or policy['same_run_rollback_and_branch_isolation']!='bitwise_exact' or policy.get('rotation_disagreement_comparison')!='fixed_absolute_angle_degrees' or policy.get('rotation_angular_tolerance_degrees')!=0.01 or policy.get('derived_HE_delta_acceptance')!='recompute_own_arithmetic_and_keep_discrete_conditions_exact' or policy.get('bn_feature_cache_acceptance')!='per_channel_mean_and_mean_square' or policy.get('bn_channel_mean_absolute_tolerance')!=2e-5 or policy.get('bn_window_mean_absolute_tolerance')!=1e-5 or policy.get('bn_two_means_authorization')!='explicit_user_reply_2026-10-28_only_window_mean_1e5_cache_mean_2e5' or policy.get('geometric_prediction_comparison')!='per_object_norm' or policy.get('geometry_norm_authorization')!='explicit_user_reply_2026-10-28_geometry_object_norm' or policy.get('derived_gate_score_acceptance')!='exact_own_input_frozen_calibration_recomputation' or policy.get('heat_peaks_comparison')!='fixed11_vector_L2_norm':raise ValueError('Fixed scientific tolerance/strict isolation differs')
  if POLICY is not None and POLICY!=policy:raise ValueError('Acceptance policy cannot change during a run')
  POLICY=policy
  return policy
@@ -85,7 +85,7 @@ def absolute_tolerance(policy,path):
 
 # Only full pose-prediction records are eligible. Model/optimizer/gradient
 # tensors with coincidentally similar key names retain pointwise comparison.
-GEOMETRY_SHAPES={'effi_R':(3,3),'effi_t':(3,),'heat_q':(4,),'heat_t':(3,),'bbox':(4,)}
+GEOMETRY_SHAPES={'effi_R':(3,3),'effi_t':(3,),'heat_q':(4,),'heat_t':(3,),'bbox':(4,),'heat_peaks':(11,)}
 def geometry_prediction_record(row):
  return isinstance(row,dict) and {'e_available','h_available','effi_R','effi_t','heat_q','heat_t','bbox'}<=set(row)
 
@@ -196,4 +196,4 @@ def equal(actual,expected):
   except (ValueError,TypeError):return fail(path,'unsupported_value')
  return visit(actual,expected)
 
-def receipt():return {'standard':'cross_gpu_numeric_v9_two_BN_mean_tolerances','bindings':bindings(),'statistics':dict(STATS),'internal_branch_and_rollback':'bitwise_exact','discrete_decisions_and_rng':'exact'}
+def receipt():return {'standard':'cross_gpu_numeric_v10_heat_peaks_vector_norm','bindings':bindings(),'statistics':dict(STATS),'internal_branch_and_rollback':'bitwise_exact','discrete_decisions_and_rng':'exact'}
