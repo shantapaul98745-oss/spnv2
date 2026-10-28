@@ -42,6 +42,21 @@
       "source": "reproduction/numeric_acceptance_20261027/verify_pair.py",
       "sha256": "bfde39df7706178f3cd10ac2e9cfbc2aea83b226093252d70d44efd015fc81e9",
       "execution": "explicit index.numeric_acceptance override or namespace extension; canonical frozen scientific files retained"
+    },
+    {
+      "source": "reproduction/numeric_acceptance_20261027/final_cost_guard_v15.py",
+      "sha256": "e4998fa89bb21c35ba2200892f0aa703e7c154b7bcd7b9cbd0697c4af32699c2",
+      "execution": "Versioned metadata-only audit handoff; original manager and strict receipt checks unchanged; all saved main/verify evidence reused"
+    },
+    {
+      "source": "reproduction/numeric_acceptance_20261027/resume_summary_handoff_20261028.py",
+      "sha256": "63d740a559eed2c4352e919bd5a3d3f6ba35a8d6f0e842ad110dbe45249ed481",
+      "execution": "Versioned metadata-only audit handoff; original manager and strict receipt checks unchanged; all saved main/verify evidence reused"
+    },
+    {
+      "source": "reproduction/numeric_acceptance_20261027/test_final_audit_handoff.py",
+      "sha256": "102d36470eaae61be27fff55cbacb1140943dd4c324447dd7197f8068bf8dfb2",
+      "execution": "Versioned metadata-only audit handoff; original manager and strict receipt checks unchanged; all saved main/verify evidence reused"
     }
   ],
   "mathematical_model_updates_and_internal_rollback_unchanged": true,

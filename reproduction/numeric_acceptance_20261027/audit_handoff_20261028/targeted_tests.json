@@ -1,0 +1,48 @@
+{
+  "schema": "spnv2-final-audit-handoff-targeted-tests-v1",
+  "status": "passed",
+  "tests": [
+    {
+      "file": "test_final_audit_handoff.py",
+      "argv": [
+        "/home/ps/miniconda3/envs/SPNv2/bin/python",
+        "-B",
+        "-s",
+        "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2/reproduction/numeric_acceptance_20261027/test_final_audit_handoff.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "started_wall_time": 1793195627.798344,
+      "elapsed_wall_seconds": 0.0317191518843174,
+      "child_cpu_user_seconds": 0.026383,
+      "child_cpu_system_seconds": 0.004397,
+      "stdout": "",
+      "stderr": "test_changed_receipt_still_rejected_after_fresh_state (__main__.AuditHandoffTests.test_changed_receipt_still_rejected_after_fresh_state) ... ok\ntest_stale47_is_persisted_before_original_audit48 (__main__.AuditHandoffTests.test_stale47_is_persisted_before_original_audit48) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nOK\n",
+      "model_forwards": 0
+    },
+    {
+      "file": "final_cost_guard_v15.py",
+      "argv": [
+        "/home/ps/miniconda3/envs/SPNv2/bin/python",
+        "-B",
+        "-s",
+        "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2/reproduction/numeric_acceptance_20261027/final_cost_guard_v15.py",
+        "--self-test"
+      ],
+      "exit_code": 0,
+      "started_wall_time": 1793195627.8300638,
+      "elapsed_wall_seconds": 0.016044171527028084,
+      "child_cpu_user_seconds": 0.011862999999999995,
+      "child_cpu_system_seconds": 0.003953999999999999,
+      "stdout": "{\"status\": \"pure_metadata_tests_passed\", \"cases\": 6, \"model_forwards\": 0, \"no_runtime_file_or_ledger_reads\": true, \"no_runtime_writes\": true}\n",
+      "stderr": "",
+      "model_forwards": 0
+    }
+  ],
+  "candidate_sha256": "e4998fa89bb21c35ba2200892f0aa703e7c154b7bcd7b9cbd0697c4af32699c2",
+  "original_guard_sha256": "01618dd18f83bb4aeba16d8e50d0bc706b63c489df20db38fdb171a5e9aa7030",
+  "audit_dispatcher_sha256": "2172387b15b445f4c252e0ada0fb2b759d3fd67c946d316af68b017622b0da0c",
+  "model_forwards": 0,
+  "no_runtime_state_or_ledger_writes": true,
+  "code_source_reads_only": true
+}

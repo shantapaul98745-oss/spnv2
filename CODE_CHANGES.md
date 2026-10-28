@@ -511,3 +511,11 @@ User authorizes only BN temporary-cache channel-mean absolute tolerance1e-5. Its
 - `resume_heat_bound_cost_guard_20261028.py`在原锁与真实旧退出安全边界，复用sunlamp2023/w1完整8观察恢复点、已保存候选及两支128面板，只重算未持久化尾段；40个已验收proof和旧失败费用不改。
 - 同一明确revision绑定`final_cost_guard.py`及原canonical manager SHA，只替换manager启动入口，不改原18/50文件或科学dispatch。成功科学汇总保留为明确非最终provisional，待原账本真实结算异步迁移/控制成本后再由metadata阶段完成最终发布，避免过早漏费用封账。
 - 定向零模型检查：保存heat-vector首差异通过、越界/其他平移参数/RNG/实际决定不放宽；费用门6项纯metadata用例通过，无运行文件或账本读写。旧V13比较器归档versions/v13；实际验收仍需真实main/独立verify退出和proof。
+
+## 2026-10-28：最终审计前持久化真实验收状态
+
+- 文件：`reproduction/numeric_acceptance_20261027/final_cost_guard_v15.py`、`resume_summary_handoff_20261028.py`、`test_final_audit_handoff.py`及同目录`audit_handoff_20261028/`证据。
+- 原因：第48窗独立验收真实退出0后，管理器内存已有48条验收，磁盘仍为47条；汇总派发严格对照磁盘状态而拒绝，原模型与面板均已保存。
+- 修改：仅在原pilot/summary审计派发前，先调用原原子状态写入，再调用原派发；旧driver及冻结manager、严格receipt对照保持原字节。版本化切换复用48个main、47条已登记验收及最后真实成功verify，由原finish完成登记。
+- 验证：旧47条磁盘状态拒绝、新48条原子状态通过；篡改receipt继续拒绝。两项交接测试和原六项费用门测试通过，模型前向0；运行时收尾须以新退出和汇总proof为准。
+- 边界：数值标准、科学/GT、48窗口和40000前向不变；费用未结清仍只发布临时科学交付，不假称最终结算。原失败、任务、退出和成本全部保留。

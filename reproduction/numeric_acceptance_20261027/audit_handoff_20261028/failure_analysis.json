@@ -1,0 +1,19 @@
+{
+  "schema": "spnv2-final-audit-handoff-failure-v1",
+  "created_at_utc": "2026-10-28T13:53:28.853828+00:00",
+  "original_guard_sha256": "01618dd18f83bb4aeba16d8e50d0bc706b63c489df20db38fdb171a5e9aa7030",
+  "canonical_manager_sha256": "4f372e4117744ace342f2a9a25984d8fa9cf5d03cf2542e8f0dbd13f15efa52c",
+  "manager_actual_exit_code": 1,
+  "manager_log_sha256": "04cd0e7a319b974d734a7c4b0920a007655c7948457405db14fcfd1baa89dfd9",
+  "last_verifier_nonce": "f9222d5f12954aad97d96a1d8b3e376c",
+  "last_verifier_actual_exit_code": 0,
+  "last_verifier_proof_sha256": "aacea3d7c38b0df4a5a504199fcd9075985e5dbe972ecca15eb012c53a59b7d4",
+  "cause": "Canonical finish updates the last accepted pair in memory before the periodic state flush; the unchanged audit reads the previous on-disk cohort and correctly rejects the newer receipt.",
+  "candidate": "/home/ps/Downloads/UsrSourceCode/LuXinghai/spnv2/reproduction/numeric_acceptance_20261027/final_cost_guard_v15.py",
+  "candidate_sha256": "e4998fa89bb21c35ba2200892f0aa703e7c154b7bcd7b9cbd0697c4af32699c2",
+  "change": "Only verify_pilots/summarize_diagnostic launch flushes original state with original atomic writer before original launch/compose; exact audit comparisons unchanged.",
+  "deployment_performed": false,
+  "runtime_state_modified": false,
+  "ledger_modified": false,
+  "model_forwards": 0
+}
