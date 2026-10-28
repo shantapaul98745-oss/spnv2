@@ -474,3 +474,10 @@ User authorizes only BN temporary-cache channel-mean absolute tolerance1e-5. Its
 - `numeric_acceptance_20261027/numeric_compare.py`仅对完整姿态预测中的confidence，核验其等于全部11个原FP32 heat_peaks按`np.quantile(...,.25,method='linear')`重算值；验证原输入float32回转无静默舍入后，只在比较副本归一化冗余confidence，不改原值。原G50重算先用未修改arrival执行，保持真实分数/阈值/决定自洽；None可用性、各点输入及其他标准不改，同名模型参数不放宽。
 - `resume_confidence_20261028.py`在V10真实退出/原四锁/连续账本安全边界，保留w84两个旧失败及77+222前向费用，从实际704完整恢复点续接未持久化部分；尚无候选/面板，30个已验收结果直接复用。旧V10比较器在`versions/v10/`。
 - 定向零前向验证：真实保存事件通过、原字典不变；伪造派生值、非原始float32峰值、修改决定、缺峰却有confidence和无关同名参数均拒绝。policy_v11/revision_v11保留旧标准、原任务输入/版本/失败及回退链；最终必须真实main及独立verify退出和proof通过。
+
+
+## 2026-10-28：一次性完整状态分类入口及BN缓存双矩穷尽核对
+
+- `numeric_acceptance_20261027/inspect_saved_state_categories.py`将既有分类入口参数化为`--run-id`，只允许当前blocked且未accepted的冻结窗口；核对当前index未变、完整恢复游标等于原match后才读取状态。沿用四pipeline锁/manager锁、两新鲜共享资源快照、精确身份读回和原账本零模型attempt，绝不构造模型、读取图像/GT或改变验收。
+- 同一次读取中显式计算每层BN缓存的通道均值与均方，即使原比较器在均值处先返回失败，也不会漏掉第二项；保留原路径语义，报告各类失败、最大差/比例和仅诊断的最小必要绝对界限，不能将其作为放行或自动调容差。
+- w84实际诊断nonce27c47b50f9fe4bd685020930787df358，真实exit0、模型前向0，完整768观察状态与两支128面板未改。仅当前bn_mean及当前/窗口基点的缓存通道均值超界；BN缓存均方、参数/优化器/梯度、真实运行buffers、RNG及其余科学状态通过。当前V11科学标准仍不变，新界限需要用户决定。
