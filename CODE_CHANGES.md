@@ -443,3 +443,11 @@ User authorizes only BN temporary-cache channel-mean absolute tolerance1e-5. Its
 - `resume_rotation_degree_20261028.py`：按真实退出和原锁安全续接w54的完整448观察恢复点，保留旧33前向失败及成本。29个既有验收结果直接复用；使用已固定的初始化校验回执，避免后台传输刷新元数据影响运行绑定。
 - `recover_saved_main.py`：恢复回执只列实际存在并复用的面板，w54在目标候选前失败、尚无面板，不虚称复用面板；真实失败成本仍从原hash链重建并独立审计。旧V7源代码在`versions/v7/`。
 - 定向零前向验证：真实w54首差异通过；旋转/四元数0.0099度通过、0.0101度拒绝；符号等价、零四元数、反射/缩放矩阵、平移/参数/RNG及实际决定边界均核验。实际main/独立验收仍以真实退出和proof为准，不能用本测试冒充通过。
+
+
+## 2026-10-28：w54已保存完整状态的零前向差异定位
+
+- `reproduction/numeric_acceptance_20261027/inspect_w54_saved_state.py`：在原四pipeline锁、manager锁、两新鲜shared heavy-CPU资源快照、精确登记读回及原GlobalBudget零模型attempt内，比较w54保存的512观察完整状态与原冻结match；不加载图像/GT、不构造模型、不改变任何数值标准。修复诊断器对BN虚拟通道统计路径的只读解析，使用当前字段实际绝对容差，先持久化首差异避免详情构建失败丢现场。实际CPU诊断exit0，原账本结算真实CPU费用、前向0；首差异为当前更新窗口BN均值累加器，尚未获准改变其标准。
+- `inspect_w54_state_categories.py`用于一次分类核对参数、buffers、优化器、梯度、BN累加器、缓存及其余科学状态，诊断结果不能当独立科学验收或删除失败依据；任何拟议容差仅作诊断预测、不生效。运行证据在D/launches/<实际nonce>/，旧model失败、完整检查点和两支128面板原样保留。
+
+- 分类入口实际CPU验收已exit0，nonce135e7037db694ab8bfa6248d96c201fc，新增模型前向0。明确仅当前bn_mean累加器20个张量/86元素与窗口基点临时缓存通道均值1个张量/1通道超界；参数、buffers、优化器、梯度、BN二阶、RNG及其余完整科学状态均符合原标准。新的BN容差只提出给用户，未应用。两次CPU读取及全部科学失败费用留原账本，未退款/重置。
