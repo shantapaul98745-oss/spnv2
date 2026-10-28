@@ -496,3 +496,10 @@ User authorizes only BN temporary-cache channel-mean absolute tolerance1e-5. Its
 - `inspect_saved_state_categories.py`对model子树使用当前已读取完整快照的只读限定上下文，详情的有效界限由同一个selector决定，避免分类与实际完整验收出现假矛盾；不改任何状态。
 - `resume_BN_affine_20261028.py`保留sunlamp2022/w1真实失败和原账本，从已保存64完整状态及两支128面板零模型完成新main，再由独立verifier验收；32个已验收proof复用。旧V12比较器/pair执行/分类工具在versions/v12保留。
 - 定向零模型测试覆盖联合BN资格、新界限及超界拒绝；冻结BN、头部BN、Conv bias、running buffer、梯度、requires_grad变化与缺上下文不放宽，分类详情界限与完整比较一致。实际通过须有真实main/verify退出0和proof。
+
+
+## 2026-10-28：最终外部费用结算门候选（尚未部署）
+
+- `numeric_acceptance_20261027/final_cost_guard.py`为显式revision绑定的metadata manager driver候选，固定核对原manager字节SHA；普通main/verify等finish原样委托，仅成功科学汇总分支保留原真实proof/summary SHA、worker退出和预算闭合检查后，发布明确非最终的provisional并置scientific_complete_costs_pending，退出0保留已完成科学汇总，不生成final_manifest。即便费用receipt声明ready，也仅转显式metadata最终费用发布阶段，不拿旧summary预算冒充最终全费用。
+- 原因：真实后台迁移仍在继续且M.control费用待结算，原manager不会检查该pending，可能过早封最终账。候选不估算费用、不将pending标False、不改原18/50科学文件、预算账本或旧退出证据，须在下一安全manager切换显式绑定后才生效。
+- 验证：语法及6项纯内存分支用例通过，覆盖普通任务委托、pending、缺结算receipt、receipt ready仍不发布最终账、坏科学proof拒绝；模型前向0、运行文件/账本读写0。此候选尚未激活，实际已结算费用与最终发布仍需独立真实metadata阶段。
