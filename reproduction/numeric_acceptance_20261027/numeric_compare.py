@@ -16,7 +16,7 @@ def read_bound(x):
 def configure(policy):
  global POLICY
  if policy.get('schema')!='spnv2-cross-gpu-numeric-acceptance-v1' or policy.get('authorization')!='user_2026-10-27_authorized_scientific_acceptance_revision':raise ValueError('Numeric acceptance authorization differs')
- if policy['absolute_tolerance']!=1e-6 or policy['relative_tolerance']!=1e-5 or not policy['finite_only'] or policy['same_run_rollback_and_branch_isolation']!='bitwise_exact' or policy.get('rotation_disagreement_comparison')!='fixed_absolute_angle_degrees' or policy.get('rotation_angular_tolerance_degrees')!=0.01 or policy.get('derived_HE_delta_acceptance')!='recompute_own_arithmetic_and_keep_discrete_conditions_exact' or policy.get('bn_feature_cache_acceptance')!='per_channel_mean_and_mean_square' or policy.get('bn_channel_mean_absolute_tolerance')!=1e-4 or policy.get('bn_window_mean_absolute_tolerance')!=1e-4 or policy.get('bn_two_means_authorization')!='explicit_user_reply_2026-10-28_two_BN_means_fixed_1e4' or policy.get('geometric_prediction_comparison')!='per_object_norm' or policy.get('geometry_norm_authorization')!='explicit_user_reply_2026-10-28_geometry_object_norm' or policy.get('derived_gate_score_acceptance')!='exact_own_input_frozen_calibration_recomputation' or policy.get('heat_peaks_comparison')!='fixed11_vector_L2_norm' or policy.get('derived_confidence_acceptance')!='exact_own_float32_peaks_q25_linear':raise ValueError('Fixed scientific tolerance/strict isolation differs')
+ if policy['absolute_tolerance']!=1e-6 or policy['relative_tolerance']!=1e-5 or not policy['finite_only'] or policy['same_run_rollback_and_branch_isolation']!='bitwise_exact' or policy.get('rotation_disagreement_comparison')!='fixed_absolute_angle_degrees' or policy.get('rotation_angular_tolerance_degrees')!=0.01 or policy.get('derived_HE_delta_acceptance')!='recompute_own_arithmetic_and_keep_discrete_conditions_exact' or policy.get('bn_feature_cache_acceptance')!='per_channel_mean_and_mean_square' or policy.get('bn_channel_mean_absolute_tolerance')!=1e-4 or policy.get('bn_window_mean_absolute_tolerance')!=1e-4 or policy.get('bn_two_means_authorization')!='explicit_user_reply_2026-10-28_two_BN_means_fixed_1e4' or policy.get('geometric_prediction_comparison')!='per_object_norm' or policy.get('geometry_norm_authorization')!='explicit_user_reply_2026-10-28_geometry_object_norm' or policy.get('derived_gate_score_acceptance')!='exact_own_input_frozen_calibration_recomputation' or policy.get('heat_peaks_comparison')!='fixed11_vector_L2_norm' or policy.get('derived_confidence_acceptance')!='exact_own_float32_peaks_q25_linear' or policy.get('trainable_bn_affine_absolute_tolerance')!=1e-5 or policy.get('trainable_bn_affine_authorization')!='explicit_user_reply_2026-10-28_only_trainable_BN_affine_1e5':raise ValueError('Fixed scientific tolerance/strict isolation differs')
  if POLICY is not None and POLICY!=policy:raise ValueError('Acceptance policy cannot change during a run')
  POLICY=policy
  return policy
@@ -104,7 +104,31 @@ def _confidence_record(row,path=()):
  STATS['derived_confidence_records_recomputed']=STATS.get('derived_confidence_records_recomputed',0)+1
  return result
 
-def absolute_tolerance(policy,path):
+def trainable_bn_affine_paths(actual,expected):
+ """Select only jointly identified trainable backbone BN affine leaves."""
+ result=set()
+ if not isinstance(actual,dict) or not isinstance(expected,dict):return result
+ aa,ee=actual.get('learner'),expected.get('learner')
+ if not isinstance(aa,dict) or not isinstance(ee,dict):return result
+ for section in ('learning','window_base'):
+  a,e=aa.get(section),ee.get(section)
+  if not isinstance(a,dict) or not isinstance(e,dict):continue
+  if not all(isinstance(z.get(k),dict) for z in (a,e) for k in ('model','buffers','requires_grad')):continue
+  am,em,ab,eb=a['model'],e['model'],a['buffers'],e['buffers']
+  for name in am.keys()&em.keys():
+   if not isinstance(name,str) or not name.startswith('backbone.') or not name.endswith(('.weight','.bias')) or name in ab or name in eb:continue
+   if a['requires_grad'].get(name) is not True or e['requires_grad'].get(name) is not True:continue
+   stem=name.rsplit('.',1)[0];keys=(stem+'.running_mean',stem+'.running_var')
+   if not all(k in z for k in keys for z in (am,em,ab,eb)):continue
+   x,y=am[name],em[name]
+   if not all(hasattr(z,'shape') and hasattr(z,'dtype') for z in (x,y)) or tuple(x.shape)!=tuple(y.shape) or len(x.shape)!=1 or x.shape[0]<=0 or x.dtype!=y.dtype or str(x.dtype) not in ('torch.float32','float32'):continue
+   values=[z[k] for z in (am,em,ab,eb) for k in keys]
+   if not all(hasattr(z,'shape') and hasattr(z,'dtype') and tuple(z.shape)==tuple(x.shape) and z.dtype==x.dtype for z in values):continue
+   result.add('.'.join(('learner',section,'model',name)))
+ return result
+
+def absolute_tolerance(policy,path,*,bn_affine_paths=()):
+ if '.'.join(map(str,path)) in bn_affine_paths:return policy['trainable_bn_affine_absolute_tolerance']
  if len(path)>=3 and path[0]=='learner' and path[1] in ('learning','window_base'):
   if path[2]=='bn_mean':return policy['bn_window_mean_absolute_tolerance']
   if path[2]=='bn_features' and path[-1]=='channel_mean':return policy['bn_channel_mean_absolute_tolerance']
@@ -142,9 +166,13 @@ def geometry_compare(x,y,key,policy):
  delta=float(np.linalg.norm((a-b).ravel()));scale=float(np.linalg.norm(b.ravel()));bound=policy['absolute_tolerance']+policy['relative_tolerance']*scale
  return delta<=bound,dict(reason='geometry_object_norm_exceeded',difference_norm=delta,expected_norm=scale,bound=bound,shape=list(a.shape))
 
-def equal(actual,expected):
+def equal(actual,expected,*,learning_context=None):
  global LAST_FAILURE
  p=current();STATS['comparisons']+=1;LAST_FAILURE=None
+ context=(actual,expected) if learning_context is None else learning_context
+ if not isinstance(context,(tuple,list)) or len(context)!=2:raise ValueError('Read-only learning context must contain both snapshots')
+ affine_paths=trainable_bn_affine_paths(context[0],context[1])
+ STATS['max_jointly_selected_trainable_BN_affine_tensors']=max(STATS.get('max_jointly_selected_trainable_BN_affine_tensors',0),len(affine_paths))
  def fail(path,reason):
   global LAST_FAILURE
   STATS['failures']+=1;LAST_FAILURE={'path':'.'.join(map(str,path)),'reason':reason};return False
@@ -196,7 +224,7 @@ def equal(actual,expected):
     STATS['numeric_values']+=1;STATS['max_angular_difference_degrees']=max(STATS.get('max_angular_difference_degrees',0.),delta)
     return delta<=bound or fail(path,'derived_angle_tolerance_exceeded')
    if not math.isfinite(x) or not math.isfinite(y):return fail(path,'nonfinite')
-   delta=abs(x-y);bound=0. if exact else absolute_tolerance(p,path)+p['relative_tolerance']*abs(y)
+   delta=abs(x-y);bound=0. if exact else absolute_tolerance(p,path,bn_affine_paths=affine_paths)+p['relative_tolerance']*abs(y)
    STATS['numeric_values']+=1;STATS['max_absolute_difference']=max(STATS['max_absolute_difference'],delta)
    if bound:STATS['max_tolerance_fraction']=max(STATS['max_tolerance_fraction'],delta/bound)
    return delta<=bound or fail(path,'numeric_tolerance_exceeded' if not exact else 'exact_state_changed')
@@ -207,7 +235,7 @@ def equal(actual,expected):
     if x.dtype.kind in 'fc':
      if not np.isfinite(x).all() or not np.isfinite(y).all():return fail(path,'nonfinite')
      if exact:return bool(np.array_equal(x,y)) or fail(path,'exact_state_changed')
-     diff=np.abs(x-y);bounds=absolute_tolerance(p,path)+p['relative_tolerance']*np.abs(y)
+     diff=np.abs(x-y);bounds=absolute_tolerance(p,path,bn_affine_paths=affine_paths)+p['relative_tolerance']*np.abs(y)
      STATS['numeric_values']+=int(x.size)
      if x.size:STATS['max_absolute_difference']=max(STATS['max_absolute_difference'],float(np.max(diff)));STATS['max_tolerance_fraction']=max(STATS['max_tolerance_fraction'],float(np.max(diff/bounds)))
      return bool(np.all(diff<=bounds)) or fail(path,'numeric_tolerance_exceeded')
@@ -225,4 +253,4 @@ def equal(actual,expected):
   except (ValueError,TypeError):return fail(path,'unsupported_value')
  return visit(actual,expected)
 
-def receipt():return {'standard':'cross_gpu_numeric_v12_fixed_BN_mean_bounds','bindings':bindings(),'statistics':dict(STATS),'internal_branch_and_rollback':'bitwise_exact','discrete_decisions_and_rng':'exact'}
+def receipt():return {'standard':'cross_gpu_numeric_v13_trainable_BN_affine','bindings':bindings(),'statistics':dict(STATS),'internal_branch_and_rollback':'bitwise_exact','discrete_decisions_and_rng':'exact'}

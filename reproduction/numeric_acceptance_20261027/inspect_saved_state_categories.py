@@ -40,7 +40,7 @@ def learning_roots(a,e,path=()):
   for i,(x,y) in enumerate(zip(a,e)):found+=learning_roots(x,y,path+(i,))
  return found
 
-def tensor_detail(x,y,path,numeric,*,atol_override=None):
+def tensor_detail(x,y,path,numeric,*,atol_override=None,bn_affine_paths=()):
  import numpy as np
  if hasattr(x,'detach'):x=x.detach().cpu().numpy()
  if hasattr(y,'detach'):y=y.detach().cpu().numpy()
@@ -49,7 +49,7 @@ def tensor_detail(x,y,path,numeric,*,atol_override=None):
  if x.dtype.kind not in 'fc':return dict(out,different_elements=int(np.count_nonzero(x!=y)))
  xx,yy=x.astype(np.complex128 if x.dtype.kind=='c' else np.float64),y.astype(np.complex128 if y.dtype.kind=='c' else np.float64)
  if not np.isfinite(xx).all() or not np.isfinite(yy).all():return dict(out,nonfinite=True)
- atol=numeric.absolute_tolerance(numeric.current(),tuple(map(str,path))) if atol_override is None else atol_override
+ atol=(numeric.absolute_tolerance(numeric.current(),tuple(map(str,path)),bn_affine_paths=bn_affine_paths) if hasattr(numeric,'trainable_bn_affine_paths') else numeric.absolute_tolerance(numeric.current(),tuple(map(str,path)))) if atol_override is None else atol_override
  exact=numeric._exact_path(tuple(map(str,path)))
  bounds=np.zeros_like(np.abs(yy)) if exact else atol+numeric.current()['relative_tolerance']*np.abs(yy);delta=np.abs(xx-yy)
  ratio=np.divide(delta,bounds,out=np.zeros_like(delta),where=bounds!=0);bad=(bounds==0)&(delta>0)
@@ -86,15 +86,17 @@ def main():
    if meta['scientific_cursors']!=task['selection']['match_checkpoint']['cursors']:raise ValueError('Expected the saved complete matching boundary')
    actual,_=pair_runner.read_generation(actual_spec);expected,_=pair_runner.read_generation(task['selection']['match_checkpoint']);a,e=pair_runner.science_state(actual),pair_runner.science_state(expected)
    full_ok=numeric.equal(a,e);full_failure=copy.deepcopy(numeric.LAST_FAILURE);atomic_json(attempt/'first_difference.json',dict(accepted_under_current_policy=full_ok,first_difference=full_failure,model_forwards=0))
+   affine_paths=numeric.trainable_bn_affine_paths(a,e) if hasattr(numeric,'trainable_bn_affine_paths') else set()
+   def current_tensor_detail(x,y,path,_numeric,*,atol_override=None):return tensor_detail(x,y,path,_numeric,atol_override=atol_override,bn_affine_paths=affine_paths)
    roots=learning_roots(a,e);groups=[];detail_count=0
    if not roots:raise ValueError('No complete learning snapshot identified')
    def compare(x,y,path):
-    ok=numeric.equal(wrapped(x,path),wrapped(y,path));return ok,copy.deepcopy(numeric.LAST_FAILURE)
+    ok=numeric.equal(wrapped(x,path),wrapped(y,path),learning_context=(a,e)) if hasattr(numeric,'trainable_bn_affine_paths') else numeric.equal(wrapped(x,path),wrapped(y,path));return ok,copy.deepcopy(numeric.LAST_FAILURE)
    def detail(failure):
     path=failure['path'];out=dict(path=path,reason=failure['reason'])
     try:
      xx,yy=resolve(a,path),resolve(e,path)
-     if hasattr(xx,'shape') or isinstance(xx,float):out.update(tensor_detail(xx,yy,tuple(path.split('.')),numeric))
+     if hasattr(xx,'shape') or isinstance(xx,float):out.update(current_tensor_detail(xx,yy,tuple(path.split('.')),numeric))
      elif isinstance(xx,(str,int,bool,type(None))):out.update(actual=xx,expected=yy)
      else:out.update(actual_type=type(xx).__name__,expected_type=type(yy).__name__)
     except (KeyError,ValueError,TypeError,IndexError) as exc:out['optional_detail_unavailable']=repr(exc)
@@ -131,7 +133,7 @@ def main():
        if xx.shape!=yy.shape or xx.dtype!=yy.dtype or xx.ndim!=4 or not np.isfinite(xx).all() or not np.isfinite(yy).all():raise ValueError('BN cache structure/finiteness differs')
        xx,yy=xx.astype(np.float64),yy.astype(np.float64)
        for moment,aa,bb in [('channel_mean',xx.mean(axis=(0,2,3)),yy.mean(axis=(0,2,3))),('channel_mean_square',np.square(xx).mean(axis=(0,2,3)),np.square(yy).mean(axis=(0,2,3)))]:
-        stat=tensor_detail(aa,bb,path+(key,moment),numeric);item=moments[moment];item['tensors']+=1;item['channels']+=int(aa.size);item['max_abs']=max(item['max_abs'],stat['max_abs']);item['violating_elements']+=stat['violating_elements'];item['min_required_atol_with_fixed_rtol']=max(item['min_required_atol_with_fixed_rtol'],float(np.max(np.maximum(np.abs(aa-bb)-numeric.current()['relative_tolerance']*np.abs(bb),0.))))
+        stat=current_tensor_detail(aa,bb,path+(key,moment),numeric);item=moments[moment];item['tensors']+=1;item['channels']+=int(aa.size);item['max_abs']=max(item['max_abs'],stat['max_abs']);item['violating_elements']+=stat['violating_elements'];item['min_required_atol_with_fixed_rtol']=max(item['min_required_atol_with_fixed_rtol'],float(np.max(np.maximum(np.abs(aa-bb)-numeric.current()['relative_tolerance']*np.abs(bb),0.))))
         if stat['max_fraction']>=item['max_fraction']:item['max_fraction']=stat['max_fraction'];item['worst']=stat
       group['both_cache_moments_exhaustively_checked']=moments
      if category in ('bn_mean','bn_mean_sq'):
@@ -140,7 +142,7 @@ def main():
        if not hasattr(xx,'shape'):
         if not compare(xx,yy,leaf_path)[0]:summary['proposed_atol_1e5_passes_diagnostic_only']=False
         continue
-       cur=tensor_detail(xx,yy,leaf_path,numeric);pro=tensor_detail(xx,yy,leaf_path,numeric,atol_override=1e-5);summary['tensors']+=1
+       cur=current_tensor_detail(xx,yy,leaf_path,numeric);pro=current_tensor_detail(xx,yy,leaf_path,numeric,atol_override=1e-5);summary['tensors']+=1
        import numpy as np
        xa=xx.detach().cpu().numpy() if hasattr(xx,'detach') else np.asarray(xx);ya=yy.detach().cpu().numpy() if hasattr(yy,'detach') else np.asarray(yy)
        if xa.shape==ya.shape and np.isfinite(xa).all() and np.isfinite(ya).all():summary['min_required_atol_with_fixed_rtol']=max(summary['min_required_atol_with_fixed_rtol'],float(np.max(np.maximum(np.abs(xa.astype(np.float64)-ya.astype(np.float64))-numeric.current()['relative_tolerance']*np.abs(ya.astype(np.float64)),0.)))) if xa.size else summary['min_required_atol_with_fixed_rtol']

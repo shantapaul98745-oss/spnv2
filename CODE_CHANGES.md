@@ -488,3 +488,11 @@ User authorizes only BN temporary-cache channel-mean absolute tolerance1e-5. Its
 - `numeric_compare.py`仅将既有两个精确路径范围的BN窗口均值累加器与缓存通道均值固定为atol1e-4，rtol1e-5；不动态调界限。二阶累加器/缓存均方/真实running buffers、参数/优化器/梯度及其他预测/离散/RNG/回滚/GT标准全部保持。
 - `resume_fixed_BN_means_20261028.py`核对原V11失败、完整768状态、已完成两支128面板和一次全类别诊断，在无活科学worker且原锁可用的边界复用零模型finalizer与真实独立验收。所有三次旧pair失败和原hash链费用保留，移除被完整恢复取代的旧704partial提示，30个既有proof直接复用。
 - 旧V11比较器/实际pair执行代码保存在`versions/v11/`；状态用不可变硬链接保护，原tensor/面板不修改。定向零模型检查确认两类固定界限及越界拒绝，二阶、参数/running buffer、无关同名字段和RNG不放宽。真实验收必须另有新main/verify退出0及proof。
+
+
+## 2026-10-28：用户授权仅可训练BN仿射参数atol1e-5
+
+- `numeric_compare.py`从本次两侧完整快照联合筛选：仅learner.learning/window_base.model中backbone前缀的weight/bias，requires_grad双方均True、非buffer、FP32一维，且同模块running_mean/var在双方model和buffers中同通道形状存在。仅这些叶子采用atol1e-5、rtol1e-5；不凭字段名字模糊放宽，无完整上下文则退回原界限。参数值与模型数学不修改；冻结/头部/其他参数、真实running统计、梯度、优化器、RNG及同运行回滚规则不变。
+- `inspect_saved_state_categories.py`对model子树使用当前已读取完整快照的只读限定上下文，详情的有效界限由同一个selector决定，避免分类与实际完整验收出现假矛盾；不改任何状态。
+- `resume_BN_affine_20261028.py`保留sunlamp2022/w1真实失败和原账本，从已保存64完整状态及两支128面板零模型完成新main，再由独立verifier验收；32个已验收proof复用。旧V12比较器/pair执行/分类工具在versions/v12保留。
+- 定向零模型测试覆盖联合BN资格、新界限及超界拒绝；冻结BN、头部BN、Conv bias、running buffer、梯度、requires_grad变化与缺上下文不放宽，分类详情界限与完整比较一致。实际通过须有真实main/verify退出0和proof。
