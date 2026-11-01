@@ -1,0 +1,54 @@
+{
+  "schema": "source150-runtime-archive-v1",
+  "files": [
+    {
+      "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/revisions/source150_resume_20261101/build_continuation.py",
+      "archive": "reproduction/source150_resume_20261101/build_continuation.py",
+      "sha256": "9cdf9ed86a9ebb3a29b09488d294ae8709717bcd7f7ee4311b8b8e48f32d8987"
+    },
+    {
+      "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/revisions/source150_resume_20261101/prepare_deployment.py",
+      "archive": "reproduction/source150_resume_20261101/prepare_deployment.py",
+      "sha256": "239d6f61cf1c97d5e704260eaa4a44fa36a7c06e229203ddadeb290c29dc73b8"
+    },
+    {
+      "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/revisions/source150_resume_20261101/manager_entry.py",
+      "archive": "reproduction/source150_resume_20261101/manager_entry.py",
+      "sha256": "4673b5c3a907b62b0e90e67ab534020b03cd92352bf1c6f7525d4ce375a784cb"
+    },
+    {
+      "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/revisions/source150_resume_20261101/activate_once.py",
+      "archive": "reproduction/source150_resume_20261101/activate_once.py",
+      "sha256": "a6724dd239f1a654baa8281f87639e7ad45b30d2158a49b0ea78712ce93bd60d"
+    },
+    {
+      "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/revisions/source150_resume_20261101/task_entry.py",
+      "archive": "reproduction/source150_resume_20261101/task_entry.py",
+      "sha256": "67b0c0c3686306f4338548a460b64450f2e4f7de943d1271a5fd756555577ff3"
+    },
+    {
+      "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/revisions/source150_resume_20261101/progress.py",
+      "archive": "reproduction/source150_resume_20261101/progress.py",
+      "sha256": "f2a6fddc174a2bbbb25bd19ede07800bbc5c3c2ba62f5f0553ed6a5159f96803"
+    },
+    {
+      "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/revisions/source150_resume_20261101/storage_entry.py",
+      "archive": "reproduction/source150_resume_20261101/storage_entry.py",
+      "sha256": "b69ac7413ddb6bc79ac09a4dc8b79c26da8faa913866b4c46cabc14cc919c632"
+    },
+    {
+      "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/revisions/source150_resume_20261101/checkpoint_retention.py",
+      "archive": "reproduction/source150_resume_20261101/checkpoint_retention.py",
+      "sha256": "1175827ac4787449bd2b584007b7fb3744a361235b67287052b331cd16d46432"
+    },
+    {
+      "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/revisions/source150_resume_20261101/test_checkpoint_retention.py",
+      "archive": "reproduction/source150_resume_20261101/test_checkpoint_retention.py",
+      "sha256": "bfd1c408062952dc69e49851e9576f464624e319ec3d5973de98a06ea26ab1a3"
+    }
+  ],
+  "scientific_source_unchanged": true,
+  "models_imported_by_preparation": false,
+  "storage_tests_real_exit": 0,
+  "model_forwards_in_preparation": 0
+}
