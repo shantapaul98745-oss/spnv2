@@ -540,3 +540,10 @@ User authorizes only BN temporary-cache channel-mean absolute tolerance1e-5. Its
 - 按用户新指令恢复原190轮计划中尚未执行的8套模型150轮及24域评价；复用52项已验收任务，保留旧003失败与全部55项历史，不重跑已完成G50-P。
 - `reproduction/source150_resume_20261101/`归档明确分支续接、原队列入口和存储薄适配；原科学源码、配置、初始化、数学和独立验收保持原字节。普通恢复点保留最近两个完整SHA版本，initial/final及证据保护；保存记录用量，冻结磁盘预估，不无限累积。
 - 江南大学实际3项零模型文件保存/失败/空间针对性验证退出0，原52项真实main/verify退出与新32项依赖/同次评价包装核对通过。正式训练是否运行以实时status/身份为准，不能把准备当成果。
+
+
+## 2026-11-07：仅Flare独立验收及三域评价
+
+- 按本侧对话用户明确授权，复用已结束Flare20轮及最终权重，仅补原独立模型验收和synthetic/lightbox/sunlamp三域评价，保持Table4和其他训练停止。旧停止回执、退出、费用及既有72项验收保留。
+- `reproduction/flare_evaluation_20261107/finite_flare.py`只选择7个允许阶段，显式拒绝producer main和任何后续训练；沿原runner、资源门、pipeline锁、精确身份和screen记录执行，结束立即阻止下游。原冻结科学实现/配置/数据/指标不修改。
+- 语法与启动前范围门检查通过；真实原独立模型验收已exit0，synthetic评价已启动。三域结果须真实退出和原独立proof后另行接受，不将启动称完成。

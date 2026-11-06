@@ -1,0 +1,28 @@
+{
+  "schema": "flare-evaluation-runtime-archive-v1",
+  "runtime": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/revisions/flare_evaluation_20261107/finite_flare.py",
+  "archive": "reproduction/flare_evaluation_20261107/finite_flare.py",
+  "sha256": "c12dd328a84bcc2ce0f58c00c977c8d5033cf2b311ba93f2e8048254fa0150f6",
+  "original_runner": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/pipeline/runner.py",
+    "sha256": "35c3de5c4b0d3fc3dd320587da984958e5403dc0ccc5bd540f58d46941407e39"
+  },
+  "reused_metadata_entries": [
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/revisions/flare_evaluation_20261107/task_entry.py",
+      "sha256": "67b0c0c3686306f4338548a460b64450f2e4f7de943d1271a5fd756555577ff3",
+      "archive_original": "reproduction/source150_resume_20261101/task_entry.py"
+    },
+    {
+      "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/revisions/flare_evaluation_20261107/progress.py",
+      "sha256": "f2a6fddc174a2bbbb25bd19ede07800bbc5c3c2ba62f5f0553ed6a5159f96803",
+      "archive_original": "reproduction/source150_resume_20261101/progress.py"
+    }
+  ],
+  "request": {
+    "path": "/home/DATA/Downloads/UsrSourceCode/LuXinghai/spnv2_runs/plans/rebaseline_20261017/revisions/flare_evaluation_20261107/request.json",
+    "sha256": "30c6e89605e3ec2421a4e7ae0e68c50142ad2f63f105920f039795aa8738e75a"
+  },
+  "native_training_replayed": false,
+  "only_flare_verification_and3evaluations": true
+}
